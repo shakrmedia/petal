@@ -1,0 +1,184 @@
+/* ================================= *
+ *  Buttons 
+ * ================================= */
+
+.button {
+	font-size: 0.8rem;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	white-space: pre;
+	letter-spacing: 2px;
+	line-height: 1rem;
+	color: #fff;
+	outline: none !important;
+
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 8px 20px;
+	margin: 0 5px 0 0;
+	background: none;
+	background-color: @blue;
+	cursor: pointer;
+	border: 2px solid transparent;
+	border-radius: 0;
+	transition: 0.2s background, 0.2s border-color, 0.3s box-shadow;
+
+	&:hover {
+		color: #fff;
+		background-color: @blue-l1;
+		border-color: @blue-d1;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	}
+
+	&:active {
+		color: #fff;
+		background-color: @blue-d1;
+		border-color: @blue-d2;
+		box-shadow: 0 0px 1px rgba(0,0,0,0.2);
+	}
+
+	&:focus {
+		color: #fff;
+	}
+}
+
+/* button colors and variations */
+.button-colors(@color) {
+	&.@{color} {
+		background-color: @@color;
+		
+		&:hover {
+			background-color: ~'@{@{color}-l1}';
+			border-color: ~'@{@{color}-d1}';
+		}
+
+		&:active {
+			background-color: ~'@{@{color}-d1}';
+			border-color: ~'@{@{color}-d2}';
+		}
+	}
+}
+
+.button {
+	.button-colors(~"blue");
+	.button-colors(~"green");
+	.button-colors(~"red");
+}
+
+/* on dark */
+.button-colors-dark(@color) {
+	&.@{color} {
+		background-color: ~'@{@{color}-d1}';
+		
+		&:hover {
+			background-color: @@color;
+			border-color: ~'@{@{color}-l2}';
+		}
+
+		&:active {
+			background-color: ~'@{@{color}-d2}';
+			border-color: @@color;
+		}
+	}
+}
+
+.dark .button {
+	& {
+		background-color: @blue-d1;
+		
+		&:hover {
+			background-color: @blue;
+			border-color: @blue-l2;
+		}
+
+		&:active {
+			background-color: @blue-d2;
+			border-color: @blue;
+		}
+	}
+
+	.button-colors-dark(~"blue");
+	.button-colors-dark(~"green");
+	.button-colors-dark(~"red");
+}
+
+/* disabled */
+.button {
+	&.disabled, &:disabled {
+		background-color: #666;
+		color: #aaa;
+		box-shadow: none;
+
+		&:hover, &:active, &:focus {
+			background-color: #666;
+			border-color: transparent;
+			cursor: default;
+		}
+	}
+}
+
+
+/* hollow alternative */
+.button-colors-hollow(@color) {
+	&.@{color} {
+		color: @@color;
+		border-color: @@color;
+		background: none;
+		
+		&:hover {
+			color: #fff;
+			border-color: @@color;
+			background-color: @@color;
+		}
+
+		&:active {
+			color: #fff;
+			background-color: ~'@{@{color}-d2}';
+			border-color: @@color;
+		}
+	}
+}
+
+.button.hollow {
+	background: none;
+
+	& {
+		color: @blue;
+		border-color: @blue;
+		
+		&:hover {
+			color: #fff;
+			border-color: @blue;
+			background-color: @blue;
+		}
+
+		&:active {
+			color: #fff;
+			background-color: @blue-d2;
+			border-color: @blue;
+		}
+	}
+
+	.button-colors-hollow(~"blue");
+	.button-colors-hollow(~"green");
+	.button-colors-hollow(~"red");
+
+	&.disabled, &:disabled {
+		color: #aaa;
+		border-color: #aaa;
+		box-shadow: none;
+
+		&:hover, &:active, &:focus {
+			background: none;
+			color: #aaa;
+			border-color: #aaa;
+			cursor: default;
+		}
+	}
+}
+
+.dark .button.hollow.whitetext:not(.disabled) {
+	color: #fff;
+}
