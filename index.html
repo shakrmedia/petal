@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+		
+		
+		<!-- Page style -->
+		<style>
+			body {
+				color: #333;
+				padding: 20px 0 50px 0;
+			}
+			.container {
+				width: 980px;
+				margin: 0 auto;
+			}
+
+			.light {
+				background: #fff;
+			}
+			.dark {
+				background: #333;
+				color: #fff;
+			}
+			.label {
+				margin-top: 5px;
+			}
+			.borders [class^="col-"] {
+				border: 1px solid #fff;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.colorblock {
+				display: inline;
+				width: 50px;
+				height: 20px;
+				padding: 2px 10px;
+				margin-right: 5px;
+				font-weight: bold;
+				text-transform: uppercase;
+				font-size: 0.8em;
+				color: #fff;
+				background: #eee;
+			}
+		</style>
+
+		<link rel="stylesheet" href="./css/petal.css">
+
+		<title>Shakr UI Kit Documentation</title>
+	</head>
+	<body>
+	<div class="container">
+		<div class="row">
+			<h1>Petal</h1>
+			<p>A custom-built CSS framework for Shakr.</p>
+			<p>Use this kit on top of <a href="http://necolas.github.io/normalize.css/">normalize.css</a>.</p>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<h3>Buttons</h3>
+
+			<section>
+				<div class="row">
+					<div class="col-2">
+						<h5>Default</h5>
+						<div class="block">
+							<a href="#" class="button">Button</a>
+							<p class="inline-block label"><code>.button</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button green">Button</a>
+							<p class="inline-block label"><code>.button.green</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button red">Button</a>
+							<p class="inline-block label"><code>.button.red</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button disabled">Button</a>
+							<p class="inline-block label"><code>.button.disabled</code></p>
+						</div>
+					</div>
+					<div class="col-2">
+						<h5>Hollow</h5>
+						<div class="block">
+							<a href="#" class="button hollow">Button</a>
+							<p class="inline-block label"><code>.button.hollow</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button hollow green">Button</a>
+							<p class="inline-block label"><code>.button.hollow.green</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button hollow red">Button</a>
+							<p class="inline-block label"><code>.button.hollow.red</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button hollow disabled">Button</a>
+							<p class="inline-block label"><code>.button.hollow.disabled</code></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<p>Variation for on dark backgrounds: will apply when parent container has <code>.dark</code> in any level.</p>
+				<div class="row dark pb-10">
+					<div class="col-2">
+						<h5>Default</h5>
+						<div class="block">
+							<a href="#" class="button">Button</a>
+							<p class="inline-block label"><code>.button</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button green">Button</a>
+							<p class="inline-block label"><code>.button.green</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button red">Button</a>
+							<p class="inline-block label"><code>.button.red</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button disabled">Button</a>
+							<p class="inline-block label"><code>.button.red</code></p>
+						</div>				
+					</div>
+					<div class="col-2">
+						<h5>Hollow</h5>
+						<div class="block">
+							<a href="#" class="button hollow">Button</a>
+							<p class="inline-block label"><code>.button.hollow</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button hollow green">Button</a>
+							<p class="inline-block label"><code>.button.hollow.green</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button hollow red">Button</a>
+							<p class="inline-block label"><code>.button.hollow.red</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="button hollow disabled">Button</a>
+							<p class="inline-block label"><code>.button.hollow.disabled</code></p>
+						</div>
+					</div>
+				</div>
+				<h5>Options</h5>
+				<p>Append <code>.whitetext</code> class if you want white text in hollow style button.</p>
+			</section>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<h3>Basic Layout</h3>
+			<div class="row borders mb-10">
+				<div class="col-2 bg-red-l2">.col-2</div>
+				<div class="col-2 bg-red-l2">.col-2</div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-3 bg-green-l2">.col-3</div>
+				<div class="col-3 bg-green-l2">.col-3</div>
+				<div class="col-3 bg-green-l2">.col-3</div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-4 bg-blue-l2">.col-4</div>
+				<div class="col-4 bg-blue-l2">.col-4</div>
+				<div class="col-4 bg-blue-l2">.col-4</div>
+				<div class="col-4 bg-blue-l2">.col-4</div>
+			</div>
+			<p>Insert <code>.col-<em>x</em></code> class to whatever divs you want to make columns of, where <em>x</em> is the number of columns the row is divided into. (Currently supports 2,3,4 columns)</p>
+
+			<h5>Requirements</h5>
+			<p>You must have a single <code>.container</code> div at root level, and a <code>.row</code> element contain the divs you want to group as columns.</p>
+		</div>
+		
+		<hr> 
+
+		<div class="row">
+			<h3>Quick Margins &amp; Paddings</h3>
+			<p>Use quick preset classes to add margins and paddings to any elements.</p>
+			
+			<div class="row">
+				<div class="col-2">
+					<h5>Margins</h5>
+					<ul>
+						<li><strong><code>.mt-10</code></strong> : 10px top margin</li>
+						<li><strong><code>.mt-20</code></strong> : 20px top margin</li>
+						<li><strong><code>.mb-10</code></strong> : 10px bottom margin</li>
+						<li><strong><code>.mb-20</code></strong> : 20px bottom margin</li>
+					</ul>
+				</div>
+				<div class="col-2">
+					<h5>Paddings</h5>
+					<ul>
+						<li><strong><code>.pt-10</code></strong> : 10px top padding</li>
+						<li><strong><code>.pt-20</code></strong> : 20px top padding</li>
+						<li><strong><code>.pb-10</code></strong> : 10px bottop padding</li>
+						<li><strong><code>.pb-20</code></strong> : 20px bottom padding</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<h3>Colors</h3>
+			<div class="row">
+				<div class="col-3">
+					<h5>Text colors</h5>
+					<p><div class="colorblock text-red-l2">Text</div><code>.text-red-l2</code> : lighter+2</p>
+					<p><div class="colorblock text-red-l1">Text</div><code>.text-red-l1</code> : lighter+1</p>
+					<p><div class="colorblock text-red">Text</div><code>.text-red</code> : base color</p>
+					<p><div class="colorblock text-red-d1">Text</div><code>.text-red-d1</code> : darker-1</p>
+					<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code> : darker-2</p>
+				</div>
+				<div class="col-3">
+					<h5>Background colors</h5>
+					<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code> : lighter+2</p>
+					<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code> : lighter+1</p>
+					<p><div class="colorblock bg-green">Text</div><code>.bg-green</code> : base color</p>
+					<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code> : darker-1</p>
+					<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code> : darker-2</p>
+				</div>
+				<div class="col-3">
+					<h5>Also has blue, of course</h5>
+					<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code> : lighter+2</p>
+					<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code> : lighter+1</p>
+					<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code> : base color</p>
+					<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code> : darker-1</p>
+					<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code> : darker-2</p>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<p>Asdf.</p>
+
+
+	</div><!-- container end -->
+
+	</body>
+</html>

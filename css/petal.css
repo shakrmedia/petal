@@ -1,0 +1,456 @@
+/* ================================= *
+ *  petal.less 
+ *  (c)2015 Shakr
+ * ================================= */
+/* ================================= *
+ *  Colors 
+ * ================================= */
+/* ================================= *
+ *  Basic Formatting
+ * ================================= */
+body {
+  font-size: 12pt;
+  font-family: "Museo Sans", sans-serif;
+}
+* {
+  font-family: "Museo Sans", sans-serif;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+pre,
+code {
+  font-family: "Consolas", "Menlo", "Monaco", "Source Code Pro", monospace;
+  font-size: 0.9em;
+  background: #ddd;
+  padding: 1px 5px;
+  margin: 0 1px;
+}
+.dark pre,
+.dark code {
+  background: #666;
+}
+p {
+  font-size: 1rem;
+}
+hr {
+  margin: 20px -15px;
+  border: none;
+  height: 1px;
+  background: #ddd;
+}
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* ================================= *
+ *  Layout Classes 
+ * ================================= */
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+/* clearfix mixin */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+/* basic layout */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+/* columns */
+[class^="col-"] {
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-2 {
+  float: left;
+  width: 50%;
+}
+.col-3 {
+  float: left;
+  width: 33.3333%;
+}
+.col-4 {
+  float: left;
+  width: 25%;
+}
+/* quick margins and paddings */
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.pt-10 {
+  padding-top: 10px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.pb-10 {
+  padding-bottom: 10px;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+/* ================================= *
+ *  Color Classes 
+ * ================================= */
+.text-red {
+  color: #f05a67;
+}
+.text-red-l1 {
+  color: #f4838d;
+}
+.text-red-l2 {
+  color: #f8adb3;
+}
+.text-red-d1 {
+  color: #d8515c;
+}
+.text-red-d2 {
+  color: #b4434d;
+}
+.text-blue {
+  color: #30a4dc;
+}
+.text-blue-l1 {
+  color: #64bbe5;
+}
+.text-blue-l2 {
+  color: #98d2ee;
+}
+.text-blue-d1 {
+  color: #2b93c6;
+}
+.text-blue-d2 {
+  color: #247ba5;
+}
+.text-green {
+  color: #b2cf65;
+}
+.text-green-l1 {
+  color: #c5db8c;
+}
+.text-green-l2 {
+  color: #d9e7b2;
+}
+.text-green-d1 {
+  color: #a0ba5b;
+}
+.text-green-d2 {
+  color: #859b4c;
+}
+.bg-red {
+  background-color: #f05a67;
+}
+.bg-red-l1 {
+  background-color: #f4838d;
+}
+.bg-red-l2 {
+  background-color: #f8adb3;
+}
+.bg-red-d1 {
+  background-color: #d8515c;
+}
+.bg-red-d2 {
+  background-color: #b4434d;
+}
+.bg-blue {
+  background-color: #30a4dc;
+}
+.bg-blue-l1 {
+  background-color: #64bbe5;
+}
+.bg-blue-l2 {
+  background-color: #98d2ee;
+}
+.bg-blue-d1 {
+  background-color: #2b93c6;
+}
+.bg-blue-d2 {
+  background-color: #247ba5;
+}
+.bg-green {
+  background-color: #b2cf65;
+}
+.bg-green-l1 {
+  background-color: #c5db8c;
+}
+.bg-green-l2 {
+  background-color: #d9e7b2;
+}
+.bg-green-d1 {
+  background-color: #a0ba5b;
+}
+.bg-green-d2 {
+  background-color: #859b4c;
+}
+/* ================================= *
+ *  Paragraphs 
+ * ================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+h1.normal,
+h2.normal,
+h3.normal,
+h4.normal,
+h5.normal,
+h6.normal {
+  text-transform: none;
+  letter-spacing: 0;
+}
+/* ================================= *
+ *  Buttons 
+ * ================================= */
+.button {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  white-space: pre;
+  letter-spacing: 2px;
+  line-height: 1rem;
+  color: #fff;
+  outline: none !important;
+  display: inline-block;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 8px 20px;
+  margin: 0 5px 0 0;
+  background: none;
+  background-color: #30a4dc;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 0;
+  -webkit-transition: 0.2s background, 0.2s border-color, 0.3s box-shadow;
+          transition: 0.2s background, 0.2s border-color, 0.3s box-shadow;
+}
+.button:hover {
+  color: #fff;
+  background-color: #64bbe5;
+  border-color: #2b93c6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.button:active {
+  color: #fff;
+  background-color: #2b93c6;
+  border-color: #247ba5;
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
+}
+.button:focus {
+  color: #fff;
+}
+/* button colors and variations */
+.button.blue {
+  background-color: #30a4dc;
+}
+.button.blue:hover {
+  background-color: #64bbe5;
+  border-color: #2b93c6;
+}
+.button.blue:active {
+  background-color: #2b93c6;
+  border-color: #247ba5;
+}
+.button.green {
+  background-color: #b2cf65;
+}
+.button.green:hover {
+  background-color: #c5db8c;
+  border-color: #a0ba5b;
+}
+.button.green:active {
+  background-color: #a0ba5b;
+  border-color: #859b4c;
+}
+.button.red {
+  background-color: #f05a67;
+}
+.button.red:hover {
+  background-color: #f4838d;
+  border-color: #d8515c;
+}
+.button.red:active {
+  background-color: #d8515c;
+  border-color: #b4434d;
+}
+/* on dark */
+.dark .button {
+  background-color: #2b93c6;
+}
+.dark .button:hover {
+  background-color: #30a4dc;
+  border-color: #98d2ee;
+}
+.dark .button:active {
+  background-color: #247ba5;
+  border-color: #30a4dc;
+}
+.dark .button.blue {
+  background-color: #2b93c6;
+}
+.dark .button.blue:hover {
+  background-color: #30a4dc;
+  border-color: #98d2ee;
+}
+.dark .button.blue:active {
+  background-color: #247ba5;
+  border-color: #30a4dc;
+}
+.dark .button.green {
+  background-color: #a0ba5b;
+}
+.dark .button.green:hover {
+  background-color: #b2cf65;
+  border-color: #d9e7b2;
+}
+.dark .button.green:active {
+  background-color: #859b4c;
+  border-color: #b2cf65;
+}
+.dark .button.red {
+  background-color: #d8515c;
+}
+.dark .button.red:hover {
+  background-color: #f05a67;
+  border-color: #f8adb3;
+}
+.dark .button.red:active {
+  background-color: #b4434d;
+  border-color: #f05a67;
+}
+/* disabled */
+.button.disabled,
+.button:disabled {
+  background-color: #666;
+  color: #aaa;
+  box-shadow: none;
+}
+.button.disabled:hover,
+.button:disabled:hover,
+.button.disabled:active,
+.button:disabled:active,
+.button.disabled:focus,
+.button:disabled:focus {
+  background-color: #666;
+  border-color: transparent;
+  cursor: default;
+}
+/* hollow alternative */
+.button.hollow {
+  background: none;
+  color: #30a4dc;
+  border-color: #30a4dc;
+}
+.button.hollow:hover {
+  color: #fff;
+  border-color: #30a4dc;
+  background-color: #30a4dc;
+}
+.button.hollow:active {
+  color: #fff;
+  background-color: #247ba5;
+  border-color: #30a4dc;
+}
+.button.hollow.blue {
+  color: #30a4dc;
+  border-color: #30a4dc;
+  background: none;
+}
+.button.hollow.blue:hover {
+  color: #fff;
+  border-color: #30a4dc;
+  background-color: #30a4dc;
+}
+.button.hollow.blue:active {
+  color: #fff;
+  background-color: #247ba5;
+  border-color: #30a4dc;
+}
+.button.hollow.green {
+  color: #b2cf65;
+  border-color: #b2cf65;
+  background: none;
+}
+.button.hollow.green:hover {
+  color: #fff;
+  border-color: #b2cf65;
+  background-color: #b2cf65;
+}
+.button.hollow.green:active {
+  color: #fff;
+  background-color: #859b4c;
+  border-color: #b2cf65;
+}
+.button.hollow.red {
+  color: #f05a67;
+  border-color: #f05a67;
+  background: none;
+}
+.button.hollow.red:hover {
+  color: #fff;
+  border-color: #f05a67;
+  background-color: #f05a67;
+}
+.button.hollow.red:active {
+  color: #fff;
+  background-color: #b4434d;
+  border-color: #f05a67;
+}
+.button.hollow.disabled,
+.button.hollow:disabled {
+  color: #aaa;
+  border-color: #aaa;
+  box-shadow: none;
+}
+.button.hollow.disabled:hover,
+.button.hollow:disabled:hover,
+.button.hollow.disabled:active,
+.button.hollow:disabled:active,
+.button.hollow.disabled:focus,
+.button.hollow:disabled:focus {
+  background: none;
+  color: #aaa;
+  border-color: #aaa;
+  cursor: default;
+}
+.dark .button.hollow.whitetext:not(.disabled) {
+  color: #fff;
+}
+/* ================================= */
