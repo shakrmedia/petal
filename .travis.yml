@@ -1,8 +1,23 @@
 language: node_js
 node_js:
-  - "0.10"
+  - '0.10'
+
 install:
   - npm install -g grunt-cli
   - npm install
+
 script:
   - grunt default
+
+deploy:
+  provider: s3
+  bucket: shakr-petal
+  access_key_id:
+    secure: KNoqgvmWQq4vLNzmHc4SSIHnKO3qKF5shOtpM8Yi1se+Tj57ozf/5FOr0mxhoX7D9BVieUSoXH0wtZ2cdKUNDnYZ9Cj9hwxvXEUREND8yFTx69X97+6dDjzf4e0L4chxEPPzoKXhSMDtmxV15It/bhozL9rFlWXlMKSVRWpFnsQ=
+  secret_access_key:
+    secure: JNoLcCIln2BzS14JBuDpA2BvjuC/gZChLdRTL6gacGJTGcTqWGilh6zu1X2VG0JaSMrYzsV+r6SSSm6UdfJRVPYS2akvOUFXO6JbavDXDGd6pNI638CscLSDrjbn8VpWIMYsUjv11bGiqLzj/KHyxducDFCWo29MoF75UIX5STw=
+  skip_cleanup: true
+  acl: public_read
+  region: ap-northeast-1
+  local_dir: build
+  upload_dir: edge
