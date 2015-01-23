@@ -21,7 +21,3 @@ deploy:
   region: ap-northeast-1
   local_dir: build
   upload_dir: edge
-
-notifications:
-  slack:
-    secure: AfBsUmO5rYMBzMSbsHPULUzOude4cKT9OMCFY3IERPHr3yEB09VimKSWMtDpk4HNGXaWbBLfjg8TfJ87qBiODN4WtPvg+LPkKAZCNo44X7Tr5P4x5Hj6gpMC25KGBuhnNflRFQiKfraPZh0oCCR7cbc9ANmrKYJtgmpkrChAuzU=
