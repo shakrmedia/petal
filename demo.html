@@ -1,178 +1,103 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- 
+			Petal
+			(c)2015 Shakr 
+		-->
+
 		<meta charset="utf-8"> 
-		
-		<!-- Page style -->
-		<style>
-			body {
-				color: #333;
-				padding: 20px 0 50px 0;
-			}
-			.container {
-				width: 980px;
-				margin: 0 auto;
-			}
 
-			.light {
-				background: #fff;
-			}
-			.dark {
-				background: #333;
-				color: #fff;
-			}
-			.label {
-				margin-top: 5px;
-			}
-			.borders [class^="col-"] {
-				border: 1px solid #fff;
-				padding-top: 10px;
-				padding-bottom: 10px;
-			}
-			.colorblock {
-				display: inline;
-				width: 50px;
-				height: 20px;
-				padding: 2px 10px;
-				margin-right: 5px;
-				font-weight: bold;
-				text-transform: uppercase;
-				font-size: 0.8em;
-				color: #fff;
-				background: #eee;
-			}
-		</style>
-
+		<link rel="stylesheet" href="./demo.css">
 		<link rel="stylesheet" href="./css/petal.css">
 
-		<title>Shakr UI Kit Documentation</title>
+		<title>Petal Documentation</title>
 	</head>
 	<body>
-	<div class="container">
+	<div class="container responsive">
 		<div class="row">
-			<h1>Petal</h1>
-			<p>A custom-built CSS UI framework for Shakr.</p>
-			<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a>.</p>
+			<img align="right" src="./logo.svg" width="200" height="200" alt="Petal Logo">
+			<h1 class="keepcase">Petal</h1>
+			<p>A new, clean and modern CSS UI framework.</p>
+			<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
+
 		</div>
 
 		<hr>
 
 		<div class="row">
-			<h3>Buttons</h3>
-
-			<section>
-				<div class="row">
-					<div class="col-2">
-						<h5>Default</h5>
-						<div class="block">
-							<a href="#" class="button">Button</a>
-							<p class="inline-block label"><code>.button</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button green">Button</a>
-							<p class="inline-block label"><code>.button.green</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button red">Button</a>
-							<p class="inline-block label"><code>.button.red</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button disabled">Button</a>
-							<p class="inline-block label"><code>.button.disabled</code></p>
-						</div>
-					</div>
-					<div class="col-2">
-						<h5>Hollow</h5>
-						<div class="block">
-							<a href="#" class="button hollow">Button</a>
-							<p class="inline-block label"><code>.button.hollow</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button hollow green">Button</a>
-							<p class="inline-block label"><code>.button.hollow.green</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button hollow red">Button</a>
-							<p class="inline-block label"><code>.button.hollow.red</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button hollow disabled">Button</a>
-							<p class="inline-block label"><code>.button.hollow.disabled</code></p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section>
-				<p>Variation for on dark backgrounds: will apply when parent container has <code>.dark</code> in any level.</p>
-				<div class="row dark pb-10">
-					<div class="col-2">
-						<h5>Default</h5>
-						<div class="block">
-							<a href="#" class="button">Button</a>
-							<p class="inline-block label"><code>.button</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button green">Button</a>
-							<p class="inline-block label"><code>.button.green</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button red">Button</a>
-							<p class="inline-block label"><code>.button.red</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button disabled">Button</a>
-							<p class="inline-block label"><code>.button.red</code></p>
-						</div>				
-					</div>
-					<div class="col-2">
-						<h5>Hollow</h5>
-						<div class="block">
-							<a href="#" class="button hollow">Button</a>
-							<p class="inline-block label"><code>.button.hollow</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button hollow green">Button</a>
-							<p class="inline-block label"><code>.button.hollow.green</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button hollow red">Button</a>
-							<p class="inline-block label"><code>.button.hollow.red</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="button hollow disabled">Button</a>
-							<p class="inline-block label"><code>.button.hollow.disabled</code></p>
-						</div>
-					</div>
-				</div>
-				<h5>Options</h5>
-				<p>Append <code>.whitetext</code> class if you want white text in hollow style button.</p>
-			</section>
-		</div>
-
-		<hr>
-
-		<div class="row">
-			<h3>Basic Layout</h3>
+			<h2>Petal Grid System</h2>
+			<p>Easily create column layouts for the whole page or parts of the page.</p>
 			<div class="row borders mb-10">
-				<div class="col-2 bg-red-l2">.col-2</div>
-				<div class="col-2 bg-red-l2">.col-2</div>
+				<div class="col-1 bg-green-l2"><span>.col-1</span></div>
 			</div>
 			<div class="row borders mb-10">
-				<div class="col-3 bg-green-l2">.col-3</div>
-				<div class="col-3 bg-green-l2">.col-3</div>
-				<div class="col-3 bg-green-l2">.col-3</div>
+				<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+				<div class="col-2 bg-green-l2"><span>.col-2</span></div>
 			</div>
 			<div class="row borders mb-10">
-				<div class="col-4 bg-blue-l2">.col-4</div>
-				<div class="col-4 bg-blue-l2">.col-4</div>
-				<div class="col-4 bg-blue-l2">.col-4</div>
-				<div class="col-4 bg-blue-l2">.col-4</div>
+				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
 			</div>
+			<div class="row borders mb-10">
+				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+			</div>
+			
 			<p>Insert <code>.col-<em>x</em></code> class to whatever divs you want to make columns of, where <em>x</em> is the number of columns the row is divided into. (Currently supports 2,3,4 columns)</p>
 
 			<h5>Requirements</h5>
 			<p>You must have a single <code>.container</code> div at root level, and a <code>.row</code> element contain the divs you want to group as columns.</p>
+			
+			<br>
+
+			<h4>Spanned columns</h4>
+			<div class="row borders mb-10">
+				<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+				<div class="col-3 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+				<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+			</div>
+
+			<p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
+
+			<br>
+
+			<h4>Nesting columns</h4>
+			<div class="row borders mb-10">
+				<div class="col-3 bg-blue-l2">
+					<span>.col-3</span>
+					<div class="row borders">
+						<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+						<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+					</div>
+				</div>
+				<div class="col-3 bg-green-l2">
+					<span>.col-3</span>
+					<div class="row borders">
+						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+					</div>
+				</div>
+				<div class="col-3 bg-red-l2">
+					<span>.col-3</span>
+					<div class="row borders">
+						<div class="col-1 bg-red-l1"><span>.col-1</span></div>
+					</div>
+				</div>
+			</div>
+			<p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code> containers as well. </p>
 		</div>
 		
 		<hr> 
@@ -236,9 +161,110 @@
 		</div>
 
 		<hr>
+		
+		<div class="row">
+			<h3>Buttons</h3>
 
+			<section>
+				<div class="row">
+					<div class="col-2">
+						<h5>Default</h5>
+						<div class="block">
+							<a href="#" class="btn">Button</a>
+							<p class="inline-block label"><code>.btn</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn green">Button</a>
+							<p class="inline-block label"><code>.btn.green</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn red">Button</a>
+							<p class="inline-block label"><code>.btn.red</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn disabled">Button</a>
+							<p class="inline-block label"><code>.btn.disabled</code></p>
+						</div>
+					</div>
+					<div class="col-2">
+						<h5>Hollow</h5>
+						<div class="block">
+							<a href="#" class="btn hollow">Button</a>
+							<p class="inline-block label"><code>.btn.hollow</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn hollow green">Button</a>
+							<p class="inline-block label"><code>.btn.hollow.green</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn hollow red">Button</a>
+							<p class="inline-block label"><code>.btn.hollow.red</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn hollow disabled">Button</a>
+							<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<p>Blue is the default color, you can omit the <code>.blue</code> class.</p>
+				<p>Variation for on dark backgrounds: will apply when parent container has <code>.dark</code> in any level.</p>
+				<div class="row dark pb-10">
+					<div class="col-2">
+						<h5>Default</h5>
+						<div class="block">
+							<a href="#" class="btn">Button</a>
+							<p class="inline-block label"><code>.btn</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn green">Button</a>
+							<p class="inline-block label"><code>.btn.green</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn red">Button</a>
+							<p class="inline-block label"><code>.btn.red</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn disabled">Button</a>
+							<p class="inline-block label"><code>.btn.red</code></p>
+						</div>				
+					</div>
+					<div class="col-2">
+						<h5>Hollow</h5>
+						<div class="block">
+							<a href="#" class="btn hollow">Button</a>
+							<p class="inline-block label"><code>.btn.hollow</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn hollow green">Button</a>
+							<p class="inline-block label"><code>.btn.hollow.green</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn hollow red">Button</a>
+							<p class="inline-block label"><code>.btn.hollow.red</code></p>
+						</div>
+						<div class="block">
+							<a href="#" class="btn hollow disabled">Button</a>
+							<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
+						</div>
+					</div>
+				</div>
+				<h5>Options</h5>
+				<p>Append <code>.whitetext</code> class if you want white text in hollow style button.</p>
+			</section>
+		</div>
+
+		<hr>
+
+		<div class="row credits">
+			<h4>Credits</h4>
+			<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
+			<p>©2015 Shakr. Released under the MIT License</p>
+		</div>
 
 	</div><!-- container end -->
-
+	
 	</body>
 </html>
