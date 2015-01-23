@@ -2,7 +2,7 @@
  *  Buttons 
  * ================================= */
 
-.button {
+.btn {
 	display: inline-block;
 	margin: 0 5px 0 0;
 	padding: 8px 20px;
@@ -46,7 +46,7 @@
 }
 
 /* button colors and variations */
-.button-colors(@color) {
+.btn-colors(@color) {
 	&.@{color} {
 		background-color: @@color;
 		
@@ -62,14 +62,14 @@
 	}
 }
 
-.button {
-	.button-colors(~"blue");
-	.button-colors(~"green");
-	.button-colors(~"red");
+.btn {
+	.btn-colors(~"blue");
+	.btn-colors(~"green");
+	.btn-colors(~"red");
 }
 
 /* on dark */
-.button-colors-dark(@color) {
+.btn-colors-dark(@color) {
 	&.@{color} {
 		background-color: ~'@{@{color}-d1}';
 		
@@ -85,7 +85,7 @@
 	}
 }
 
-.dark .button {
+.dark .btn {
 	& {
 		background-color: @blue-d1;
 		
@@ -100,13 +100,13 @@
 		}
 	}
 
-	.button-colors-dark(~"blue");
-	.button-colors-dark(~"green");
-	.button-colors-dark(~"red");
+	.btn-colors-dark(~"blue");
+	.btn-colors-dark(~"green");
+	.btn-colors-dark(~"red");
 }
 
 /* disabled */
-.button {
+.btn {
 	&.disabled, &:disabled {
 		background-color: #666;
 		color: #aaa;
@@ -122,7 +122,7 @@
 
 
 /* hollow alternative */
-.button-colors-hollow(@color) {
+.btn-colors-hollow(@color) {
 	&.@{color} {
 		color: @@color;
 		border-color: @@color;
@@ -142,7 +142,7 @@
 	}
 }
 
-.button.hollow {
+.btn.hollow {
 	background: none;
 
 	& {
@@ -162,9 +162,9 @@
 		}
 	}
 
-	.button-colors-hollow(~"blue");
-	.button-colors-hollow(~"green");
-	.button-colors-hollow(~"red");
+	.btn-colors-hollow(~"blue");
+	.btn-colors-hollow(~"green");
+	.btn-colors-hollow(~"red");
 
 	&.disabled, &:disabled {
 		color: #aaa;
@@ -180,6 +180,6 @@
 	}
 }
 
-.dark .button.hollow.whitetext:not(.disabled) {
+.dark .btn.hollow.whitetext:not(.disabled) {
 	color: #fff;
 }
