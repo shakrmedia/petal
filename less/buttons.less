@@ -3,26 +3,27 @@
  * ================================= */
 
 .button {
+	display: inline-block;
+	margin: 0 5px 0 0;
+	padding: 8px 20px;
+
 	font-size: 0.8rem;
-	font-weight: bold;
+	font-weight: 900;
 	text-align: center;
 	text-decoration: none !important;
 	text-transform: uppercase;
 	white-space: pre;
 	letter-spacing: 2px;
 	line-height: 1rem;
-	color: #fff;
-	outline: none !important;
 
-	display: inline-block;
-	box-sizing: border-box;
-	padding: 8px 20px;
-	margin: 0 5px 0 0;
+	color: #fff;
 	background: none;
 	background-color: @blue;
 	cursor: pointer;
 	border: 2px solid transparent;
 	border-radius: 0;
+	outline: none !important;
+	
 	transition: 0.2s background, 0.2s border-color, 0.3s box-shadow;
 
 	&:hover {
