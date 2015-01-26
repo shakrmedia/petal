@@ -10,7 +10,7 @@ Petal aims to provide a rich set of consistently designed UI components you can 
 While it's similar to Twitter's [Bootstrap](http://getbootstrap.com) and shares some naming conventions and structures, it's completely independent and is coded from scratch on LESS.
 
 ## NOTE: WIP
-Petal is a work-in-progree project since January 2015. Core modules code and documentation are incomplete. Delete this notice when it's ready for public release.
+Petal is a work-in-progress project since January 2015. Core modules code and documentation are incomplete. Delete this notice when it's ready for public release.
 
 
 ## Get Started
