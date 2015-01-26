@@ -1,4 +1,4 @@
-Petal
+Petal [![Build Status](https://magnum.travis-ci.com/ShakrMedia/petal.svg?token=oGydrksF8C4ZzTmuT3Ki&branch=master)](https://magnum.travis-ci.com/ShakrMedia/petal)
 =====
 
 <img align="right" width="100" height="100" src="http://shakrmedia.github.io/petal/logo.svg">
