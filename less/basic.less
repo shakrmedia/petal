@@ -2,20 +2,24 @@
  *  Basic Formatting
  * ================================= */
 
+html, body {
+	width: auto;
+}
+
 body {
-	font-family: "Lato", "Helvetica Neue", "Arial", sans-serif;
+	font-family: @base-font, "Helvetica Neue", "Arial", sans-serif;
 	font-size: 12pt;
 }
 
 * {
-	font-family: "Lato", "Helvetica Neue", "Arial", sans-serif;
+	font-family: @base-font, "Helvetica Neue", "Arial", sans-serif;
 	box-sizing: border-box;
 }
 
 pre, code {
 	margin: 0 1px;
 	padding: 1px 5px;
-	background: #ddd;
+	background: #eee;
 	font-family: "Consolas", "Menlo", "Monaco", "Source Code Pro", monospace;
 	font-size: 0.9em;
 
@@ -24,15 +28,27 @@ pre, code {
 	}
 }
 
+pre {
+	padding: 10px;
+}
+
 p {
 	font-size: 1rem;
+	line-height: 1.4em;
 }
 
 hr {
 	height: 1px;
-	margin: 20px -15px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	border: none;
 	background: #ddd;
+
+	[class^="col"] > &,
+	.row > & {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
 }
 
 li {
