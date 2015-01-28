@@ -1,47 +1,113 @@
 /* demo page stylesheet */
-
+/* ================================= *
+ *  Color Palette 
+ * ================================= */
 body {
-	color: #333;
-	padding: 20px 0 50px 0;
+  color: #333;
+  padding: 0;
 }
-
 .light {
-	background: #fff;
+  background: #fff;
 }
 .dark {
-	background: #333;
-	color: #fff;
+  background: #333;
+  color: #fff;
 }
-
 .label {
-	margin-top: 5px;
+  margin-top: 5px;
 }
-
 .row.borders {
-	outline: 1px dashed #aaa;
+  outline: 1px dashed #aaa;
 }
-
 .borders [class^="col-"] {
-	box-shadow: 0 0 0 1px #fff inset;
-	padding-top: 10px;
-	padding-bottom: 10px;
+  box-shadow: 0 0 0 1px #fff inset;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-
 .borders [class^="col-"] span {
-	display: block;
-	padding-top: 5px;
-	padding-bottom: 5px;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
-
 .colorblock {
-	display: inline;
-	width: 50px;
-	height: 20px;
-	padding: 2px 10px;
-	margin-right: 5px;
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 0.8em;
-	color: #fff;
-	background: #eee;
+  display: inline;
+  width: 50px;
+  height: 20px;
+  padding: 2px 10px;
+  margin-right: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #fff;
+  background: #eee;
+}
+#page-header {
+  height: 250px;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 10px;
+}
+#menu {
+  position: relative;
+  top: 0;
+  width: 240px;
+  padding: 10px 0 10px 30px;
+  box-sizing: border-box;
+  margin: 20px 0;
+}
+#menu.fix-top {
+  position: fixed;
+}
+#menu a {
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: bold;
+  transition: 0.2s;
+}
+#menu a:hover {
+  text-decoration: none;
+  color: #f05a67;
+}
+#menu a.totop {
+  color: #aaa;
+}
+#menu a.totop:hover {
+  color: #666;
+}
+#menu ul {
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+#menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#menu li a {
+  display: block;
+  padding: 7px 0;
+  border-bottom: 1px solid #eee;
+}
+#menu li a:hover {
+  border-bottom: 1px solid #f05a67;
+}
+#menu li.active a {
+  color: #f05a67;
+  border-bottom-color: #f05a67;
+}
+section {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #eee;
+}
+section:first-child {
+  margin-top: 0;
+}
+section:last-child {
+  border-bottom: none;
+}
+footer {
+  border-top: 2px solid #eee;
+  padding: 30px 0;
+  margin: 30px 0;
 }

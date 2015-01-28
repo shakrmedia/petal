@@ -1,271 +1,378 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<!-- 
-			Petal
+			Petal Documentation Page
 			(c)2015 Shakr 
 		-->
 
 		<meta charset="utf-8"> 
-
 		<link rel="stylesheet" href="./demo.css">
 		<link rel="stylesheet" href="./css/petal.css">
 
 		<title>Petal Documentation</title>
 	</head>
+
 	<body>
-	<div class="container responsive">
-		<div class="row">
-			<img align="right" src="./logo.svg" width="200" height="200" alt="Petal Logo">
-			<h1 class="keepcase">Petal</h1>
-			<p>A new, clean and modern CSS UI framework.</p>
-			<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
 
-		</div>
-
-		<hr>
-
-		<div class="row">
-			<h2>Petal Grid System</h2>
-			<p>Easily create column layouts for the whole page or parts of the page.</p>
-			<div class="row borders mb-10">
-				<div class="col-1 bg-green-l2"><span>.col-1</span></div>
-			</div>
-			<div class="row borders mb-10">
-				<div class="col-2 bg-green-l2"><span>.col-2</span></div>
-				<div class="col-2 bg-green-l2"><span>.col-2</span></div>
-			</div>
-			<div class="row borders mb-10">
-				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-			</div>
-			<div class="row borders mb-10">
-				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-			</div>
-			
-			<p>Insert <code>.col-<em>x</em></code> class to whatever divs you want to make columns of, where <em>x</em> is the number of columns the row is divided into. (Currently supports 2,3,4 columns)</p>
-
-			<h5>Requirements</h5>
-			<p>You must have a single <code>.container</code> div at root level, and a <code>.row</code> element contain the divs you want to group as columns.</p>
-			
-			<br>
-
-			<h4>Spanned columns</h4>
-			<div class="row borders mb-10">
-				<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
-				<div class="col-3 bg-blue-l2"><span>.col-3.colspan-2</span></div>
-			</div>
-			<div class="row borders mb-10">
-				<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
-				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-			</div>
-			<div class="row borders mb-10">
-				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-				<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-2</span></div>
-			</div>
-
-			<p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
-
-			<br>
-
-			<h4>Nesting columns</h4>
-			<div class="row borders mb-10">
-				<div class="col-3 bg-blue-l2">
-					<span>.col-3</span>
-					<div class="row borders">
-						<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
-						<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
-					</div>
-				</div>
-				<div class="col-3 bg-green-l2">
-					<span>.col-3</span>
-					<div class="row borders">
-						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-					</div>
-				</div>
-				<div class="col-3 bg-red-l2">
-					<span>.col-3</span>
-					<div class="row borders">
-						<div class="col-1 bg-red-l1"><span>.col-1</span></div>
-					</div>
-				</div>
-			</div>
-			<p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code> containers as well. </p>
-		</div>
-		
-		<hr> 
-
-		<div class="row">
-			<h3>Quick Margins &amp; Paddings</h3>
-			<p>Use quick preset classes to add margins and paddings to any elements.</p>
-			
-			<div class="row">
-				<div class="col-2">
-					<h5>Margins</h5>
-					<ul>
-						<li><strong><code>.mt-10</code></strong> : 10px top margin</li>
-						<li><strong><code>.mt-20</code></strong> : 20px top margin</li>
-						<li><strong><code>.mb-10</code></strong> : 10px bottom margin</li>
-						<li><strong><code>.mb-20</code></strong> : 20px bottom margin</li>
-					</ul>
-				</div>
-				<div class="col-2">
-					<h5>Paddings</h5>
-					<ul>
-						<li><strong><code>.pt-10</code></strong> : 10px top padding</li>
-						<li><strong><code>.pt-20</code></strong> : 20px top padding</li>
-						<li><strong><code>.pb-10</code></strong> : 10px bottop padding</li>
-						<li><strong><code>.pb-20</code></strong> : 20px bottom padding</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<hr>
-
-		<div class="row">
-			<h3>Colors</h3>
-			<p>Petal offers shades of the 3 colors from the Shakr color scheme.</p>
-			<div class="row">
-				<div class="col-3">
-					<h5>Text colors</h5>
-					<p><div class="colorblock text-red-l2">Text</div><code>.text-red-l2</code> : lighter+2</p>
-					<p><div class="colorblock text-red-l1">Text</div><code>.text-red-l1</code> : lighter+1</p>
-					<p><div class="colorblock text-red">Text</div><code>.text-red</code> : base color</p>
-					<p><div class="colorblock text-red-d1">Text</div><code>.text-red-d1</code> : darker-1</p>
-					<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code> : darker-2</p>
-				</div>
-				<div class="col-3">
-					<h5>Background colors</h5>
-					<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code> : lighter+2</p>
-					<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code> : lighter+1</p>
-					<p><div class="colorblock bg-green">Text</div><code>.bg-green</code> : base color</p>
-					<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code> : darker-1</p>
-					<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code> : darker-2</p>
-				</div>
-				<div class="col-3">
-					<h5>Also has blue, of course</h5>
-					<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code> : lighter+2</p>
-					<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code> : lighter+1</p>
-					<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code> : base color</p>
-					<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code> : darker-1</p>
-					<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code> : darker-2</p>
-				</div>
-			</div>
-		</div>
-
-		<hr>
-		
-		<div class="row">
-			<h3>Buttons</h3>
-
-			<section>
+		<header class="stretch" id="page-header">
+			<div class="container" id="top">
 				<div class="row">
-					<div class="col-2">
-						<h5>Default</h5>
-						<div class="block">
-							<a href="#" class="btn">Button</a>
-							<p class="inline-block label"><code>.btn</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="btn green">Button</a>
-							<p class="inline-block label"><code>.btn.green</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="btn red">Button</a>
-							<p class="inline-block label"><code>.btn.red</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="btn disabled">Button</a>
-							<p class="inline-block label"><code>.btn.disabled</code></p>
-						</div>
-					</div>
-					<div class="col-2">
-						<h5>Hollow</h5>
-						<div class="block">
-							<a href="#" class="btn hollow">Button</a>
-							<p class="inline-block label"><code>.btn.hollow</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="btn hollow green">Button</a>
-							<p class="inline-block label"><code>.btn.hollow.green</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="btn hollow red">Button</a>
-							<p class="inline-block label"><code>.btn.hollow.red</code></p>
-						</div>
-						<div class="block">
-							<a href="#" class="btn hollow disabled">Button</a>
-							<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
-						</div>
-					</div>
+					<img align="right" src="./logo.svg" width="200" height="200" alt="Petal Logo">
+					<h1 class="keepcase">Petal</h1>
+					<p>A new, clean and modern CSS UI framework.</p>
+					<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
 				</div>
-			</section>
+			</div>
+		</header>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-4 colspan-3">
+					<section class="row">
+						<h2 id="section-layout">Layout</h2>
 
-			<section>
-				<p>Blue is the default color, you can omit the <code>.blue</code> class.</p>
-				<p>Variation for on dark backgrounds: will apply when parent container has <code>.dark</code> in any level.</p>
-				<div class="row dark pb-10">
-					<div class="col-2">
-						<h5>Default</h5>
-						<div class="block">
-							<a href="#" class="btn">Button</a>
-							<p class="inline-block label"><code>.btn</code></p>
+						<h3>Base structure</h3>
+						<p>Set a container with <code>.container</code> class in which you will place <code>.row</code>s. Use appropriate HTML5 semantic tags such as <code>&lt;section&gt;</code>,<code>&lt;article&gt;</code>,<code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> along with the class.</p>
+
+						<p>You must have <code>.row</code> sub-containers for child elements to align to the page width. </p>
+
+						<h5>Container widths and responsive layout</h5>
+						<p>Container width is set as a LESS variable <code>@container-width</code> in the base <code>petal.less</code> file. Default value is 980px; modify the value to change fixed width.</p>
+
+						<p>Responsive layout is enabled by default, and the page will automatically fit the window width when screen width is smaller than the container width.</p>
+					</section>
+					<section class="row">
+						<h3>Columns</h3>
+						<p>Easily create column layouts for the whole page or parts of the page. You need the basic <code>.container</code> and <code>.row</code> structure explained above for the column layout to work properly.</p>
+						<div class="row borders mb-10">
+							<div class="col-1 bg-green-l2"><span>.col-1</span></div>
 						</div>
-						<div class="block">
-							<a href="#" class="btn green">Button</a>
-							<p class="inline-block label"><code>.btn.green</code></p>
+						<div class="row borders mb-10">
+							<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+							<div class="col-2 bg-green-l2"><span>.col-2</span></div>
 						</div>
-						<div class="block">
-							<a href="#" class="btn red">Button</a>
-							<p class="inline-block label"><code>.btn.red</code></p>
+						<div class="row borders mb-10">
+							<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+							<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+							<div class="col-3 bg-green-l2"><span>.col-3</span></div>
 						</div>
-						<div class="block">
-							<a href="#" class="btn disabled">Button</a>
-							<p class="inline-block label"><code>.btn.red</code></p>
-						</div>				
-					</div>
-					<div class="col-2">
-						<h5>Hollow</h5>
-						<div class="block">
-							<a href="#" class="btn hollow">Button</a>
-							<p class="inline-block label"><code>.btn.hollow</code></p>
+						<div class="row borders mb-10">
+							<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+							<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+							<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+							<div class="col-4 bg-green-l2"><span>.col-4</span></div>
 						</div>
-						<div class="block">
-							<a href="#" class="btn hollow green">Button</a>
-							<p class="inline-block label"><code>.btn.hollow.green</code></p>
+						
+						<p>Insert <code>.col-<em>x</em></code> class to whatever divs you want to make columns of, where <em>x</em> is the number of columns the row is divided into. (Currently supports 2,3,4 columns)</p>
+						
+						<br>
+
+						<h5>Spanned columns</h5>
+						<div class="row borders mb-10">
+							<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+							<div class="col-3 bg-blue-l2"><span>.col-3.colspan-2</span></div>
 						</div>
-						<div class="block">
-							<a href="#" class="btn hollow red">Button</a>
-							<p class="inline-block label"><code>.btn.hollow.red</code></p>
+						<div class="row borders mb-10">
+							<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+							<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+							<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
 						</div>
-						<div class="block">
-							<a href="#" class="btn hollow disabled">Button</a>
-							<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
+						<div class="row borders mb-10">
+							<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+							<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-2</span></div>
 						</div>
-					</div>
+
+						<p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
+
+						<br>
+
+						<h5>Nesting columns</h5>
+						<div class="row borders mb-10">
+							<div class="col-3 bg-blue-l2">
+								<span>.col-3</span>
+								<div class="row borders">
+									<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+									<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+								</div>
+							</div>
+							<div class="col-3 bg-green-l2">
+								<span>.col-3</span>
+								<div class="row borders">
+									<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+									<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+									<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+								</div>
+							</div>
+							<div class="col-3 bg-red-l2">
+								<span>.col-3</span>
+								<div class="row borders">
+									<div class="col-1 bg-red-l1"><span>.col-1</span></div>
+								</div>
+							</div>
+						</div>
+						<p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code> containers as well. </p>
+					</section>
+
+					<section class="row">
+						<h2 id="section-quickmargins">Quick Margins &amp; Paddings</h2>
+						<p>Use quick preset classes to add margins and paddings to any elements.</p>
+						
+						<div class="row">
+							<div class="col-2">
+								<h5>Margins</h5>
+								<ul>
+									<li><code>.mt-10</code> : 10px top margin</li>
+									<li><code>.mt-20</code> : 20px top margin</li>
+									<li><code>.mt-50</code> : 50px top margin</li>
+									<li><code>.mb-10</code> : 10px bottom margin</li>
+									<li><code>.mb-20</code> : 20px bottom margin</li>
+									<li><code>.mb-50</code> : 50px bottom margin</li>
+								</ul>
+							</div>
+							<div class="col-2">
+								<h5>Paddings</h5>
+								<ul>
+									<li><code>.pt-10</code> : 10px top padding</li>
+									<li><code>.pt-20</code> : 20px top padding</li>
+									<li><code>.pt-50</code> : 50px top padding</li>
+									<li><code>.pb-10</code> : 10px bottop padding</li>
+									<li><code>.pb-20</code> : 20px bottom padding</li>
+									<li><code>.pb-50</code> : 50px bottom padding</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section class="row">
+						<h2 id="section-colors">Colors</h2>
+						<p>Petal offers shades of the 3 colors from the Shakr color scheme.</p>
+						<div class="row">
+							<div class="col-3">
+								<h5>Text colors</h5>
+								<p><div class="colorblock text-red-l2">Text</div><code>.text-red-l2</code> : lighter+2</p>
+								<p><div class="colorblock text-red-l1">Text</div><code>.text-red-l1</code> : lighter+1</p>
+								<p><div class="colorblock text-red">Text</div><code>.text-red</code> : base color</p>
+								<p><div class="colorblock text-red-d1">Text</div><code>.text-red-d1</code> : darker-1</p>
+								<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code> : darker-2</p>
+							</div>
+							<div class="col-3">
+								<h5>Background colors</h5>
+								<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code> : lighter+2</p>
+								<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code> : lighter+1</p>
+								<p><div class="colorblock bg-green">Text</div><code>.bg-green</code> : base color</p>
+								<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code> : darker-1</p>
+								<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code> : darker-2</p>
+							</div>
+							<div class="col-3">
+								<h5>Also has blue, of course</h5>
+								<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code> : lighter+2</p>
+								<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code> : lighter+1</p>
+								<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code> : base color</p>
+								<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code> : darker-1</p>
+								<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code> : darker-2</p>
+							</div>
+						</div>
+					</section>
+					
+					<section class="row">
+						<h2 id="section-buttons">Buttons</h2>
+						
+						<h3>Single</h3>
+						<div class="row">
+							<div class="col-2">
+								<h5>Default</h5>
+								<div class="block">
+									<a href="#" class="btn">Button</a>
+									<p class="inline-block label"><code>.btn</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn green">Button</a>
+									<p class="inline-block label"><code>.btn.green</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn red">Button</a>
+									<p class="inline-block label"><code>.btn.red</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn disabled">Button</a>
+									<p class="inline-block label"><code>.btn.disabled</code></p>
+								</div>
+							</div>
+							<div class="col-2">
+								<h5>Hollow</h5>
+								<div class="block">
+									<a href="#" class="btn hollow">Button</a>
+									<p class="inline-block label"><code>.btn.hollow</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn hollow green">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.green</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn hollow red">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.red</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn hollow disabled">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
+								</div>
+							</div>
+						</div>
+
+						<p>Blue is the default color, you can omit the <code>.blue</code> class.</p>
+						<p>Variation for on dark backgrounds: will apply when parent container has <code>.dark</code> in any level.</p>
+
+						<div class="row dark pb-10">
+							<div class="col-2">
+								<h5>Default</h5>
+								<div class="block">
+									<a href="#" class="btn">Button</a>
+									<p class="inline-block label"><code>.btn</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn green">Button</a>
+									<p class="inline-block label"><code>.btn.green</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn red">Button</a>
+									<p class="inline-block label"><code>.btn.red</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn disabled">Button</a>
+									<p class="inline-block label"><code>.btn.red</code></p>
+								</div>				
+							</div>
+							<div class="col-2">
+								<h5>Hollow</h5>
+								<div class="block">
+									<a href="#" class="btn hollow">Button</a>
+									<p class="inline-block label"><code>.btn.hollow</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn hollow green">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.green</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn hollow red">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.red</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn hollow disabled">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
+								</div>
+							</div>
+						</div>
+
+						<h5>Options</h5>
+						<p>Append <code>.whitetext</code> class if you want white text in hollow style button.</p>
+
+						<h3>Button groups</h3>
+					</section>
 				</div>
-				<h5>Options</h5>
-				<p>Append <code>.whitetext</code> class if you want white text in hollow style button.</p>
-			</section>
+				<div class="col-4">
+					<nav id="menu">
+						<ul>
+							<li><a href="#section-layout">Layout</a></li>
+							<li><a href="#section-quickmargins">Quick Margins &amp; Paddings</a></li>
+							<li><a href="#section-colors">Colors</a></li>
+							<li><a href="#section-buttons">Buttons</a></li>
+						</ul>
+
+						<p>
+							<a href="#top" class="totop">Back to top</a>
+						</p>
+					</nav> 
+				</div>
+			</div>
 		</div>
-
-		<hr>
-
-		<div class="row credits">
-			<h4>Credits</h4>
-			<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
-			<p>©2015 Shakr. Released under the MIT License</p>
-		</div>
-
-	</div><!-- container end -->
+		<footer class="stretch">
+			<div class="container">
+				<div class="row credits">
+					<h4>Credits</h4>
+					<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
+					<p>©2015 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
+				</div>
+			</div>
+		</footer>
+		
 	
 	</body>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		// original code from http://jsfiddle.net/mekwall/up4nu/
+
+		// prevent href="#" button clicks
+		$('a[href="#"]').click(function(event) {  
+			event.preventDefault();
+		});
+
+		// Cache selectors
+		var lastId;
+		var header = $("#page-header");
+		var nav = $("nav#menu");
+		var headerHeight = header.outerHeight();
+
+		// All list items
+		var menuItems = nav.find("li a");
+
+		// Anchors corresponding to menu items
+		var scrollItems = menuItems.map(function(){
+			var item = $($(this).attr("href"));
+			if (item.length==1) { return item; }
+		});
+
+		// Bind click handler to menu items
+		// so we can get a fancy scroll animation
+		$('nav a').click(function(e){
+			var href = $(this).attr("href");
+			var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
+			$("html").stop().animate({ 
+				scrollTop: offsetTop
+			}, 300);
+			e.preventDefault();
+		});
+
+		function scrollnav(){
+			// Get container scroll position
+			var fromTop = $(window).scrollTop()+headerHeight;
+			
+			// Get id of current scroll item
+			var cur = scrollItems.map(function(){
+				if ($(this).offset().top < fromTop) {
+					return this;
+				}
+			});
+
+			// Get the id of the current element
+			cur = cur[cur.length-1];
+			var id = cur && cur.length ? cur[0].id : "";
+
+			if (lastId !== id) {
+				lastId = id;
+				// Set/remove active class
+				menuItems
+				 .parent().removeClass("active")
+				 .end().filter("[href=#"+id+"]").parent().addClass("active");
+			};
+
+			// toggle fix-top class for menu
+			if ($(window).scrollTop() > headerHeight) {
+				nav.addClass("fix-top"); 
+			} else {
+				nav.removeClass("fix-top");
+			}
+
+		}
+
+		$(document).ready(function(){
+			scrollnav();
+		});
+
+		// Bind to scroll
+		$(window).scroll(scrollnav);
+
+	</script>
 </html>
