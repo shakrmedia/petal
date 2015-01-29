@@ -3,11 +3,11 @@ Petal [![Build Status](https://magnum.travis-ci.com/ShakrMedia/petal.svg?token=o
 
 <img align="right" width="100" height="100" src="http://shakrmedia.github.io/petal/logo.svg">
 
-Petal is a new, clean and modern CSS UI framework developed at [Shakr](http://shakr.com). 
+Petal is a modern, light CSS UI framework developed at [Shakr](http://shakr.com). 
 
-Petal aims to provide a rich set of consistently designed UI components you can easily use in your web projects, while keeping everything lighter and simple.
+Petal aims to provide an ample set of consistently designed UI components you can easily utilize in your web projects.
 
-While it's similar to Twitter's [Bootstrap](http://getbootstrap.com) and shares some naming conventions and structures, it's completely independent and is coded from scratch on LESS.
+Petal is fully coded on LESS from scratch.
 
 ## NOTE: WIP
 Petal is a work-in-progress project since January 2015. Core modules code and documentation are incomplete. Delete this notice when it's ready for public release.
