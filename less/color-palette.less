@@ -1,7 +1,15 @@
 /* ================================= *
  *  Color Palette 
  * ================================= */
- 
+
+// Includes color variables used globally in other modules.
+// generally, the static palette (red, blue, green) should not be touched
+
+
+@black: #000;
+@white: #fff;
+
+// default static palette
 @red: #f05a67;
 @red-l1: #f4838d;
 @red-l2: #f8adb3;
@@ -20,10 +28,16 @@
 @green-d1: #a0ba5b;
 @green-d2: #859b4c;
 
+
+// generated dynamic palette
 @yellow: #ecd05d;
 @yellow-l1: lighten(@yellow,10%);
 @yellow-l2: lighten(@yellow,20%);
 @yellow-d1: darken(@yellow,10%);
 @yellow-d2: darken(@yellow,20%);
 
+
+// user added custom colors
 @purple: #c37dc4;
+@orange: #f1a85b;
+@teal: #21c5c7;

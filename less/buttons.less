@@ -29,8 +29,7 @@
 	line-height: 1em;	
 }
 
-/* button - static color palette */
-// you need the full 5 shades color palette
+/* default button - dynamic */
 .btn {
 	position: relative;
 
@@ -57,35 +56,97 @@
 	
 	transition: 0.2s background, 0.2s border-color, 0.3s box-shadow;
 
-
 	&:hover {
 		color: #fff;
-		background-color: @blue-l1;
-		border-color: @blue-d1;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+		border-color: rgba(0,0,0,0.1);
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(255,255,255,0.2) inset;
 	}
 
 	&:active {
 		color: #fff;
-		background-color: @blue-d1;
-		border-color: @blue-d2;
-		box-shadow: 0 0px 1px rgba(0,0,0,0.2);
+		border-color: rgba(0,0,0,0.2);
+		box-shadow: 0 0px 1px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
+	}
+
+	&.active, .active > & {
+		color: #fff;
+		border-color: transparent;
+		box-shadow: none;
+		z-index: 1000;
 	}
 
 	&:focus {
 		color: #fff;
 	}
 
-	.active > &, &.active {
-		border-color: transparent;
-		background-color: @blue-d2;
-		z-index: 1000;
-	}
 
+	// on dark background
+	&.ondark, .dark & {
+		border-color: rgba(0,0,0,0.05); 
+		box-shadow: 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
+		
+		&:hover {
+			border-color: rgba(255,255,255,0.3);
+		}
+
+		&:active {
+			box-shadow: 0 0 1000px 1000px rgba(0,0,0,0.2) inset;
+			border-color: transparent;
+		}
+	}
 }
 
-// button styles generator mixin
-.generate-btn-styles(@base-color: 'blue') {
+// hollow style generator mixin
+.generate-btn(@base-color: 'blue'; @text-color: 'white') {
+	background-color: @@base-color;
+	color: @@text-color;
+
+	&.hollow {
+		color: @@base-color;
+		border-color: @@base-color;
+		background: none;
+
+		.caret {
+			border-top-color: @@base-color; 
+		}
+		
+		&:hover {
+			color: @@text-color;
+			border-color: @@base-color;
+			background-color: @@base-color;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+			.caret {
+				border-top-color: @@text-color; 
+			}
+		}
+
+		&:active {
+			color: @@text-color;
+			background-color: @@base-color;
+			border-color: rgba(0,0,0,0.2);
+			box-shadow: 0 0px 1px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
+
+			.caret {
+				border-top-color: @@text-color; 
+			}
+		}
+
+		.active > &, &.active {
+			color: @@text-color;
+			border-color: transparent;
+			background-color: @blue-d2;
+			z-index: 1000;
+
+			.caret {
+				border-top-color: @@text-color; 
+			}
+		}
+	}
+}
+
+// static palette button styles generator mixin
+.generate-btn-custom(@base-color: 'blue'; @text-color: 'white') {
 
 	// default filled style
 	& {
@@ -94,11 +155,13 @@
 		&:hover {
 			background-color: ~'@{@{base-color}-l1}';
 			border-color: ~'@{@{base-color}-d1}';
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 		}
 
 		&:active {
 			background-color: ~'@{@{base-color}-d1}';
 			border-color: ~'@{@{base-color}-d2}';
+			box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 		}
 
 		.active > &, &.active {
@@ -109,6 +172,8 @@
 
 	// on dark background
 	&.ondark, .dark & {
+		box-shadow: none;
+		border-color: transparent;
 		background-color: ~'@{@{base-color}-d1}';
 		
 		&:hover {
@@ -133,72 +198,71 @@
 		}
 		
 		&:hover {
-			color: #fff;
+			color: @@text-color;
 			border-color: @@base-color;
 			background-color: @@base-color;
 
 			.caret {
-				border-top-color: #fff; 
+				border-top-color: @@text-color; 
 			}
 		}
 
 		&:active {
-			color: #fff;
+			color: @@text-color;
 			background-color: ~'@{@{base-color}-d1}';
 			border-color: ~'@{@{base-color}-d2}';
 
 			.caret {
-				border-top-color: #fff; 
+				border-top-color: @@text-color; 
 			}
 		}
 
 		.active > &, &.active {
-			color: #fff;
+			color: @@text-color;
 			border-color: transparent;
 			background-color: ~'@{@{base-color}-d2}';
 			z-index: 1000;
 
 			.caret {
-				border-top-color: #fff; 
+				border-top-color: @@text-color; 
 			}
 		}
 	}
 }
 
+
+/* Dynamic button color sets */
 .btn {
-	// first, add your color variable in color-palette.less
-	// then add a new line below to generate the code.
+	& 		{ .generate-btn(); }
+	&.blue 	{ .generate-btn('blue'); }
+	&.green { .generate-btn('green'); }
+	&.red 	{ .generate-btn('red'); }
 
-	& 		{ .generate-btn-styles(); }
-	&.blue 	{ .generate-btn-styles('blue'); }
-	&.green { .generate-btn-styles('green'); }
-	&.red 	{ .generate-btn-styles('red'); }
+	&.black 	{ .generate-btn('black'); } 
+	&.white 	{ .generate-btn('white'; 'black'); } //define custom text color
+
+	&.purple 	{ .generate-btn('purple'); }
+	&.orange 	{ .generate-btn('orange'); }
+	&.teal 		{ .generate-btn('teal'); }
 }
 
+/* Custom button color sets */
+.btn {
 
-/* button - dynamic color palette */
-// you only need one base color
-.btn.dc {
-	&:hover {
-		color: #fff;
-		border-color: rgba(0,0,0,0.1);
-		box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(255,255,255,0.2) inset;
-	}
+	// NOTE
+	//
+	// To use this generator you must have all 4 shades of
+	// your color in color-palette.less.
+	//
+	// Generating these custom classes with the same name 
+	// will override the former dynamic variants
 
-	&:active, &.active, .active > & {
-		color: #fff;
-		border-color: rgba(0,0,0,0.2);
-		box-shadow: 0 0px 1px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
-	}
 
-	&:focus {
-		color: #fff;
-	}
-}
+	&.blue 	{ .generate-btn-custom('blue'); }
+	&.green { .generate-btn-custom('green'); }
+	&.red 	{ .generate-btn-custom('red'); }
 
-// add colors here
-.btn.dc.purple {
-	background-color: @purple;
+	&.yellow 	{ .generate-btn-custom('yellow'); }
 }
 
 
@@ -208,6 +272,7 @@
 		background-color: #666;
 		color: #aaa;
 		box-shadow: none;
+		border-color: transparent;
 
 		&:hover, &:active, &:focus {
 			background-color: #666;
@@ -230,12 +295,13 @@
 			color: #aaa;
 			border-color: #aaa;
 			cursor: default;
+			box-shadow: none;
 		}
 	}
-}
 
-.dark .btn.hollow.whitetext:not(.disabled) {
-	color: #fff;
+	.dark &.whitetext:not(.disabled) {
+		color: #fff;
+	}
 }
 
 
@@ -252,6 +318,7 @@
 		display: inline-block;
 	}
 }
+
 
 /* dropdowns */
 ul.dropdown-menu {

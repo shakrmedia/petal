@@ -182,13 +182,25 @@
 					<section class="row">
 						<h2 id="section-buttons">Buttons</h2>
 						
-						<h3>Single</h3>
+						<p>Petal features a complex button style generator inside the LESS code to make adding new color sets as simple as possible.</p>
+
+						<h3>Single Button</h3>
+						<div class="row">
+							<div class="col-1">
+								<div class="block">
+									<a href="#" class="btn">Button</a>
+									<p class="inline-block label"><code>.btn</code></p>
+								</div>
+
+								<p>To make something look like a button, simply add the <code>.btn</code> class, presumably to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. The default color is blue, and some preset colors provided are demonstrated below:</p>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-2">
 								<h5>Default</h5>
 								<div class="block">
-									<a href="#" class="btn">Button</a>
-									<p class="inline-block label"><code>.btn</code></p>
+									<a href="#" class="btn blue">Button</a>
+									<p class="inline-block label"><code>.btn.blue</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn green">Button</a>
@@ -199,6 +211,10 @@
 									<p class="inline-block label"><code>.btn.red</code></p>
 								</div>
 								<div class="block">
+									<a href="#" class="btn black">Button</a>
+									<p class="inline-block label"><code>.btn.black</code></p>
+								</div>
+								<div class="block">
 									<a href="#" class="btn disabled">Button</a>
 									<p class="inline-block label"><code>.btn.disabled</code></p>
 								</div>
@@ -206,8 +222,8 @@
 							<div class="col-2">
 								<h5>Hollow</h5>
 								<div class="block">
-									<a href="#" class="btn hollow">Button</a>
-									<p class="inline-block label"><code>.btn.hollow</code></p>
+									<a href="#" class="btn hollow blue">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.blue</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn hollow green">Button</a>
@@ -218,23 +234,49 @@
 									<p class="inline-block label"><code>.btn.hollow.red</code></p>
 								</div>
 								<div class="block">
+									<a href="#" class="btn hollow black">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.black</code></p>
+								</div>
+								<div class="block">
 									<a href="#" class="btn hollow disabled">Button</a>
 									<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
 								</div>
 							</div>
 						</div>
 
+						<p>There are two appearance variations: the default filled style and a hollow style. Append <code>.hollow</code> to switch to the latter variant.</p>
+
+						<p>To disable a button, either add a <code>.disable</code> class or <code>disabled</code> attribute to the element.</p>
+
+						<br>
+
+						<h5>Adding additional colors</h5>
 						<div class="row">
-							<div class="col-1">
-								<h5>Dynamic Colors</h5>
+							<div class="col-2">
 								<div class="block">
-									<a href="#" class="btn dc purple">Button</a>
-									<p class="inline-block label"><code>.btn.dc</code></p>
+									<a href="#" class="btn purple">Button</a>
+									<p class="inline-block label"><code>.btn.purple</code></p>
+								</div>
+								<div class="block">
+									<a href="#" class="btn yellow">Button</a>
+									<p class="inline-block label"><code>.btn.yellow</code></p>
+								</div>	
+							</div>
+							<div class="col-2">
+								<div class="block">
+									<a href="#" class="btn teal">Button</a>
+									<p class="inline-block label"><code>.btn.teal</code></p>
+								</div>	
+								<div class="block">
+									<a href="#" class="btn hollow orange">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.orange</code></p>
 								</div>	
 							</div>
 						</div>
 
-						<p>If you omit the color class, default color will be blue.</p>
+						<p>All button color sets are generated dynamically when the LESS file is compiled. To add a new button color you can use, just write another line in <b>buttons.less</b> file where it calls either <code>.generate-btn()</code> or <code>.generate-btn-custom()</code> LESS mixin functions.</p>
+
+						<p>The difference between the first one is that it requires only one base color (it will generate all other needed shades automatically) and the 'custom' one requires all 5 shade variants including base colors variables set in the <b>color-palette.less</b> file. Use the custom generator mixin if you want more finer control over the tones of your color set.</p>
 
 						<div class="row dark pb-10">
 							<div class="col-2">
@@ -251,6 +293,10 @@
 									<a href="#" class="btn red">Button</a>
 									<p class="inline-block label"><code>.btn.red</code></p>
 								</div>
+								<div class="block">
+									<a href="#" class="btn white">Button</a>
+									<p class="inline-block label"><code>.btn.white</code></p>
+								</div>			
 								<div class="block">
 									<a href="#" class="btn disabled">Button</a>
 									<p class="inline-block label"><code>.btn.disabled</code></p>
@@ -271,13 +317,17 @@
 									<p class="inline-block label"><code>.btn.hollow.red</code></p>
 								</div>
 								<div class="block">
+									<a href="#" class="btn hollow white">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.white</code></p>
+								</div>	
+								<div class="block">
 									<a href="#" class="btn hollow disabled">Button</a>
 									<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
 								</div>
 							</div>
 						</div>
 
-						<p>Variation for on dark backgrounds: will apply when parent container has <code>.dark</code> in any level.</p>
+						<p>There is another variation for buttons on dark backgrounds: will apply automatically when parent container has <code>.dark</code> in any level, or you can also manually apply them appending <code>.ondark</code> on the <code>.btn</code> element themselves.</p>
 
 						<h5>Options</h5>
 						<p>Append <code>.whitetext</code> class if you want white text in hollow style button.</p>
@@ -376,7 +426,6 @@
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 	<script src="./js/petal-functions.js"></script>
 
 	<script>
@@ -445,10 +494,6 @@
 
 		$(function(){
 			scrollnav();
-
-			$('pre code').each(function(i, block) {
-				hljs.highlightBlock(block);
-			});
 		});
 
 		// Bind to scroll
