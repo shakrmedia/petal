@@ -10,6 +10,7 @@
 		<meta charset="utf-8"> 
 		<link rel="stylesheet" href="./demo.css">
 		<link rel="stylesheet" href="./css/petal.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/tomorrow.min.css">
 
 		<title>Petal Documentation</title>
 	</head>
@@ -19,10 +20,12 @@
 		<header class="stretch" id="page-header">
 			<div class="container" id="top">
 				<div class="row">
-					<img align="right" src="./logo.svg" width="200" height="200" alt="Petal Logo">
+					<div class="logo">
+						<img src="./logo.svg" width="150" height="150" alt="Petal Logo">
+					</div>
 					<h1 class="keepcase">Petal</h1>
 					<p>A modern, light CSS UI framework.</p>
-					<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
+					<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). <br>Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
 				</div>
 			</div>
 		</header>
@@ -151,27 +154,27 @@
 						<div class="row">
 							<div class="col-3">
 								<h5>Text colors</h5>
-								<p><div class="colorblock text-red-l2">Text</div><code>.text-red-l2</code> : lighter+2</p>
-								<p><div class="colorblock text-red-l1">Text</div><code>.text-red-l1</code> : lighter+1</p>
-								<p><div class="colorblock text-red">Text</div><code>.text-red</code> : base color</p>
-								<p><div class="colorblock text-red-d1">Text</div><code>.text-red-d1</code> : darker-1</p>
-								<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code> : darker-2</p>
+								<p><div class="colorblock text-red-l2">Text</div><code>.text-red-l2</code></p>
+								<p><div class="colorblock text-red-l1">Text</div><code>.text-red-l1</code></p>
+								<p><div class="colorblock text-red">Text</div><code>.text-red</code></p>
+								<p><div class="colorblock text-red-d1">Text</div><code>.text-red-d1</code></p>
+								<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code></p>
 							</div>
 							<div class="col-3">
 								<h5>Background colors</h5>
-								<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code> : lighter+2</p>
-								<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code> : lighter+1</p>
-								<p><div class="colorblock bg-green">Text</div><code>.bg-green</code> : base color</p>
-								<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code> : darker-1</p>
-								<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code> : darker-2</p>
+								<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code></p>
+								<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code></p>
+								<p><div class="colorblock bg-green">Text</div><code>.bg-green</code></p>
+								<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code></p>
+								<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code></p>
 							</div>
 							<div class="col-3">
-								<h5>Also has blue, of course</h5>
-								<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code> : lighter+2</p>
-								<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code> : lighter+1</p>
-								<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code> : base color</p>
-								<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code> : darker-1</p>
-								<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code> : darker-2</p>
+								<h5>Also, blue</h5>
+								<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code></p>
+								<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code></p>
+								<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code></p>
+								<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code></p>
+								<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code></p>
 							</div>
 						</div>
 					</section>
@@ -221,8 +224,17 @@
 							</div>
 						</div>
 
-						<p>Blue is the default color, you can omit the <code>.blue</code> class.</p>
-						<p>Variation for on dark backgrounds: will apply when parent container has <code>.dark</code> in any level.</p>
+						<div class="row">
+							<div class="col-1">
+								<h5>Dynamic Colors</h5>
+								<div class="block">
+									<a href="#" class="btn dc purple">Button</a>
+									<p class="inline-block label"><code>.btn.dc</code></p>
+								</div>	
+							</div>
+						</div>
+
+						<p>If you omit the color class, default color will be blue.</p>
 
 						<div class="row dark pb-10">
 							<div class="col-2">
@@ -241,8 +253,8 @@
 								</div>
 								<div class="block">
 									<a href="#" class="btn disabled">Button</a>
-									<p class="inline-block label"><code>.btn.red</code></p>
-								</div>				
+									<p class="inline-block label"><code>.btn.disabled</code></p>
+								</div>			
 							</div>
 							<div class="col-2">
 								<h5>Hollow</h5>
@@ -265,10 +277,72 @@
 							</div>
 						</div>
 
+						<p>Variation for on dark backgrounds: will apply when parent container has <code>.dark</code> in any level.</p>
+
 						<h5>Options</h5>
 						<p>Append <code>.whitetext</code> class if you want white text in hollow style button.</p>
+						
+						<br>
 
 						<h3>Button groups</h3>
+						<div class="btn-group">
+							<button class="btn">Button</button>
+							<button class="btn green">Button</button>
+							<button class="btn red">Button</button>
+						</div>
+
+						<p>Just put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
+
+						<br>
+
+						<h3>Dropdown</h3>
+						
+						<div class="btn-group">
+							<div class="btn-group">
+								<button class="btn dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Menu item 1</a></li>
+									<li><a href="#">Menu item 2</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Menu item 3</a></li>
+								</ul>
+							</div>
+
+							<div class="btn-group">
+								<button class="btn hollow dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Menu item 1</a></li>
+									<li><a href="#">Menu item 2</a></li>
+									<li class="divider"></li>
+									<li class="submenu">
+										<a href="#">Submenu 1</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Submenu item 1</a></li>
+											<li><a href="#">Submenu item 2</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Menu item 3</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="btn-group">
+							<button class="btn green dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a href="#">Menu item 1</a></li>
+								<li><a href="#">Menu item 2</a></li>
+								<li class="divider"></li>
+								<li class="submenu">
+									<a href="#">Submenu 1</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Submenu item 1</a></li>
+										<li><a href="#">Submenu item 2</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Menu item 3</a></li>
+							</ul>
+						</div>
+	
 					</section>
 				</div>
 				<div class="col-4">
@@ -299,8 +373,12 @@
 		
 	
 	</body>
-	
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script src="./js/petal-functions.js"></script>
+
 	<script>
 		// original code from http://jsfiddle.net/mekwall/up4nu/
 
@@ -309,7 +387,6 @@
 			event.preventDefault();
 		});
 
-		// Cache selectors
 		var lastId;
 		var header = $("#page-header");
 		var nav = $("nav#menu");
@@ -324,8 +401,7 @@
 			if (item.length==1) { return item; }
 		});
 
-		// Bind click handler to menu items
-		// so we can get a fancy scroll animation
+		// smooth scroll to anchor
 		$('nav a').click(function(e){
 			var href = $(this).attr("href");
 			var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
@@ -367,12 +443,18 @@
 
 		}
 
-		$(document).ready(function(){
+		$(function(){
 			scrollnav();
+
+			$('pre code').each(function(i, block) {
+				hljs.highlightBlock(block);
+			});
 		});
 
 		// Bind to scroll
 		$(window).scroll(scrollnav);
 
 	</script>
+
+
 </html>

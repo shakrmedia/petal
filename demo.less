@@ -49,9 +49,28 @@ body {
 }
 
 #page-header {
-	height: 250px;
-	border-bottom: 2px solid #eee;
+	height: auto;
+	border-bottom: 2px solid @red;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	margin-bottom: 10px;
+	
+	.logo {
+		float: right;
+		padding-right: 20px;
+	}
+	.logo img {
+		width: 190px;
+		height: 190px;
+		padding: 20px;
+		border-radius: 100px;
+		border: 1px solid #eee;
+	}
+
+	h1 {
+		margin: 20px 0 10px;
+	}
+
 }
 
 #menu {
