@@ -2,7 +2,38 @@
  *  Buttons 
  * ================================= */
 
+/* common caret */
+.caret {
+	position: relative;
+	display: inline-block;
+	bottom: 2px;
+	margin-left: 5px;
+	width: 0;
+	height: 0;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	border-top: 4px solid #fff;
+	line-height: 1em;	
+}
+
+.caret-right {
+	position: relative;
+	display: inline-block;
+	bottom: 2px;
+	margin-left: 5px;
+	width: 0;
+	height: 0;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	border-left: 4px solid #fff;
+	line-height: 1em;	
+}
+
+/* button - static color palette */
+// you need the full 5 shades color palette
 .btn {
+	position: relative;
+
 	display: inline-block;
 	margin: 0 5px 0 0;
 	padding: 8px 20px;
@@ -26,6 +57,7 @@
 	
 	transition: 0.2s background, 0.2s border-color, 0.3s box-shadow;
 
+
 	&:hover {
 		color: #fff;
 		background-color: @blue-l1;
@@ -43,67 +75,132 @@
 	&:focus {
 		color: #fff;
 	}
+
+	.active > &, &.active {
+		border-color: transparent;
+		background-color: @blue-d2;
+		z-index: 1000;
+	}
+
 }
 
-/* button colors and variations */
-.btn-colors(@color) {
-	&.@{color} {
-		background-color: @@color;
+// button styles generator mixin
+.generate-btn-styles(@base-color: 'blue') {
+
+	// default filled style
+	& {
+		background-color: @@base-color;
 		
 		&:hover {
-			background-color: ~'@{@{color}-l1}';
-			border-color: ~'@{@{color}-d1}';
+			background-color: ~'@{@{base-color}-l1}';
+			border-color: ~'@{@{base-color}-d1}';
 		}
 
 		&:active {
-			background-color: ~'@{@{color}-d1}';
-			border-color: ~'@{@{color}-d2}';
+			background-color: ~'@{@{base-color}-d1}';
+			border-color: ~'@{@{base-color}-d2}';
+		}
+
+		.active > &, &.active {
+			border-color: transparent;
+			background-color: ~'@{@{base-color}-d2}';
+		}
+	}
+
+	// on dark background
+	&.ondark, .dark & {
+		background-color: ~'@{@{base-color}-d1}';
+		
+		&:hover {
+			background-color: @@base-color;
+			border-color: ~'@{@{base-color}-l2}';
+		}
+
+		&:active {
+			background-color: ~'@{@{base-color}-d2}';
+			border-color: @@base-color;
+		}
+	}
+
+	// hollow style
+	&.hollow {
+		color: @@base-color;
+		border-color: @@base-color;
+		background: none;
+
+		.caret {
+			border-top-color: @@base-color; 
+		}
+		
+		&:hover {
+			color: #fff;
+			border-color: @@base-color;
+			background-color: @@base-color;
+
+			.caret {
+				border-top-color: #fff; 
+			}
+		}
+
+		&:active {
+			color: #fff;
+			background-color: ~'@{@{base-color}-d1}';
+			border-color: ~'@{@{base-color}-d2}';
+
+			.caret {
+				border-top-color: #fff; 
+			}
+		}
+
+		.active > &, &.active {
+			color: #fff;
+			border-color: transparent;
+			background-color: ~'@{@{base-color}-d2}';
+			z-index: 1000;
+
+			.caret {
+				border-top-color: #fff; 
+			}
 		}
 	}
 }
 
 .btn {
-	.btn-colors(~"blue");
-	.btn-colors(~"green");
-	.btn-colors(~"red");
+	// first, add your color variable in color-palette.less
+	// then add a new line below to generate the code.
+
+	& 		{ .generate-btn-styles(); }
+	&.blue 	{ .generate-btn-styles('blue'); }
+	&.green { .generate-btn-styles('green'); }
+	&.red 	{ .generate-btn-styles('red'); }
 }
 
-/* on dark */
-.btn-colors-dark(@color) {
-	&.@{color} {
-		background-color: ~'@{@{color}-d1}';
-		
-		&:hover {
-			background-color: @@color;
-			border-color: ~'@{@{color}-l2}';
-		}
 
-		&:active {
-			background-color: ~'@{@{color}-d2}';
-			border-color: @@color;
-		}
+/* button - dynamic color palette */
+// you only need one base color
+.btn.dc {
+	&:hover {
+		color: #fff;
+		border-color: rgba(0,0,0,0.1);
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(255,255,255,0.2) inset;
+	}
+
+	&:active, &.active, .active > & {
+		color: #fff;
+		border-color: rgba(0,0,0,0.2);
+		box-shadow: 0 0px 1px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
+	}
+
+	&:focus {
+		color: #fff;
 	}
 }
 
-.dark .btn {
-	& {
-		background-color: @blue-d1;
-		
-		&:hover {
-			background-color: @blue;
-			border-color: @blue-l2;
-		}
-
-		&:active {
-			background-color: @blue-d2;
-			border-color: @blue;
-		}
-	}
-
-	.btn-colors-dark(~"blue");
-	.btn-colors-dark(~"green");
-	.btn-colors-dark(~"red");
+// add colors here
+.btn.dc.purple {
+	background-color: @purple;
 }
+
 
 /* disabled */
 .btn {
@@ -120,51 +217,8 @@
 	}
 }
 
-
-/* hollow alternative */
-.btn-colors-hollow(@color) {
-	&.@{color} {
-		color: @@color;
-		border-color: @@color;
-		background: none;
-		
-		&:hover {
-			color: #fff;
-			border-color: @@color;
-			background-color: @@color;
-		}
-
-		&:active {
-			color: #fff;
-			background-color: ~'@{@{color}-d2}';
-			border-color: @@color;
-		}
-	}
-}
-
 .btn.hollow {
 	background: none;
-
-	& {
-		color: @blue;
-		border-color: @blue;
-		
-		&:hover {
-			color: #fff;
-			border-color: @blue;
-			background-color: @blue;
-		}
-
-		&:active {
-			color: #fff;
-			background-color: @blue-d2;
-			border-color: @blue;
-		}
-	}
-
-	.btn-colors-hollow(~"blue");
-	.btn-colors-hollow(~"green");
-	.btn-colors-hollow(~"red");
 
 	&.disabled, &:disabled {
 		color: #aaa;
@@ -183,3 +237,97 @@
 .dark .btn.hollow.whitetext:not(.disabled) {
 	color: #fff;
 }
+
+
+/* button groups */
+.btn-group {
+	margin-bottom: 5px;
+
+	.btn {
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	.btn-group {
+		display: inline-block;
+	}
+}
+
+/* dropdowns */
+ul.dropdown-menu {
+	display: none;
+	position: absolute;
+	z-index: 1000;
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: @blue-d1;
+	color: #fff;
+	//border: 2px solid @blue;
+	.drop-shadow;
+
+	li {
+		margin: 0;
+		padding: 0;
+		min-width: 160px;
+
+		a {
+			width: 100%;
+			display: block;
+			padding: 5px 10px;
+			color: inherit;
+			font-size: 0.9em;
+		}
+
+		&:hover > a {
+			text-decoration: none;
+			background: @blue-l1;
+		}
+
+		&.divider {
+			height: 5px;
+			border-bottom: 1px solid rgba(255,255,255,0.3);
+			padding-bottom: 5px;
+			margin-bottom: 5px;
+		}
+	}
+	
+	/* nested submenu */
+	& > .submenu {
+		position: relative;
+		width: 100%;
+
+		& > a {
+			position: relative;
+
+			&:after {
+				content: " ";
+				.caret-right;
+				position: absolute;
+				top: 50%;
+				right: 5px;
+				margin-top: -4px;
+			}
+		}
+
+		ul.dropdown-menu {
+			display: none;
+			top: 0;
+			left: 100%;
+		}
+
+		&:hover ul.dropdown-menu {
+			display: block;
+		}
+	}
+
+
+	.active & {
+		display: block;
+	}
+
+
+}
+
+
