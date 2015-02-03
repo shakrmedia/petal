@@ -274,16 +274,18 @@
 							</div>
 						</div>
 
-						<p>All button color sets are generated dynamically when the LESS file is compiled. To add a new button color you can use, just write another line in <b>buttons.less</b> file where it calls either <code>.generate-btn()</code> or <code>.generate-btn-custom()</code> LESS mixin functions.</p>
+						<p>All button color sets are generated dynamically when the LESS file is compiled. To add a new button color you can use, just write another line in <b>buttons.less</b> file where it calls either <code>.generate-btn()</code> or <code>.generate-btn-custom()</code> LESS mixin functions and compile (build) Petal.</p>
 
-						<p>The difference between the first one is that it requires only one base color (it will generate all other needed shades automatically) and the 'custom' one requires all 5 shade variants including base colors variables set in the <b>color-palette.less</b> file. Use the custom generator mixin if you want more finer control over the tones of your color set.</p>
+						<p>The difference between the first 'static' one is that it requires only one base color (it will generate all other needed shades automatically) and the 'custom' one requires all 5 shade variants including base colors variables set in the <b>color-palette.less</b> file. Use the custom generator mixin if you want more finer control over the tones of your color set.</p>
+
+						<br>
 
 						<div class="row dark pb-10">
 							<div class="col-2">
 								<h5>Default</h5>
 								<div class="block">
-									<a href="#" class="btn">Button</a>
-									<p class="inline-block label"><code>.btn</code></p>
+									<a href="#" class="btn blue">Button</a>
+									<p class="inline-block label"><code>.btn.blue</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn green">Button</a>
@@ -305,8 +307,8 @@
 							<div class="col-2">
 								<h5>Hollow</h5>
 								<div class="block">
-									<a href="#" class="btn hollow">Button</a>
-									<p class="inline-block label"><code>.btn.hollow</code></p>
+									<a href="#" class="btn hollow blue">Button</a>
+									<p class="inline-block label"><code>.btn.hollow.blue</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn hollow green">Button</a>
@@ -336,9 +338,9 @@
 
 						<h3>Button groups</h3>
 						<div class="btn-group">
-							<button class="btn">Button</button>
-							<button class="btn green">Button</button>
-							<button class="btn red">Button</button>
+							<button class="btn">Foo</button>
+							<button class="btn green">Bar</button>
+							<button class="btn red">Baz</button>
 						</div>
 
 						<p>Just put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
@@ -374,23 +376,86 @@
 									<li><a href="#">Menu item 3</a></li>
 								</ul>
 							</div>
-						</div>
 
-						<div class="btn-group">
-							<button class="btn green dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
-							<ul class="dropdown-menu">
-								<li><a href="#">Menu item 1</a></li>
-								<li><a href="#">Menu item 2</a></li>
-								<li class="divider"></li>
-								<li class="submenu">
-									<a href="#">Submenu 1</a>
+							<div class="btn-group">
+								<button class="btn green dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Menu item 1</a></li>
+									<li><a href="#">Menu item 2</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Menu item 3</a></li>
+								</ul>
+							</div>
+
+							<div class="btn-group">
+								<button class="btn hollow green dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Menu item 1</a></li>
+									<li><a href="#">Menu item 2</a></li>
+									<li class="divider"></li>
+									<li class="submenu">
+										<a href="#">Submenu 1</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Submenu item 1</a></li>
+											<li><a href="#">Submenu item 2</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Menu item 3</a></li>
+								</ul>
+							</div>
+
+							<div class="btn-group">
+								<button class="btn red dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Menu item 1</a></li>
+									<li><a href="#">Menu item 2</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Menu item 3</a></li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="row dark pt-10">
+							<div class="col-1">
+
+							<div class="btn-group">
+
+								<div class="btn-group">
+									<button class="btn purple dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
 									<ul class="dropdown-menu">
-										<li><a href="#">Submenu item 1</a></li>
-										<li><a href="#">Submenu item 2</a></li>
+										<li><a href="#">Menu item 1</a></li>
+										<li><a href="#">Menu item 2</a></li>
+										<li class="divider"></li>
+										<li class="submenu">
+											<a href="#">Submenu 1</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Submenu item 1</a></li>
+												<li><a href="#">Submenu item 2</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Menu item 3</a></li>
 									</ul>
-								</li>
-								<li><a href="#">Menu item 3</a></li>
-							</ul>
+								</div>
+							
+								<div class="btn-group">
+									<button class="btn yellow hollow dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Menu item 1</a></li>
+										<li><a href="#">Menu item 2</a></li>
+										<li class="divider"></li>
+										<li class="submenu">
+											<a href="#">Submenu 1</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Submenu item 1</a></li>
+												<li><a href="#">Submenu item 2</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Menu item 3</a></li>
+									</ul>
+								</div>
+							</div>
+
+							</div>
 						</div>
 	
 					</section>

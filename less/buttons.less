@@ -13,7 +13,8 @@
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
 	border-top: 4px solid #fff;
-	line-height: 1em;	
+	line-height: 1em;
+	transition: 0.2s border-color, 0.3s transform;
 }
 
 .caret-right {
@@ -54,7 +55,7 @@
 	border-radius: 0;
 	outline: none !important;
 	
-	transition: 0.2s background, 0.2s border-color, 0.3s box-shadow;
+	transition: 0.2s background, 0.2s border-color, 0.2s color, 0.2s box-shadow;
 
 	&:hover {
 		color: #fff;
@@ -70,9 +71,17 @@
 
 	&.active, .active > & {
 		color: #fff;
-		border-color: transparent;
-		box-shadow: none;
+		border-color: rgba(0,0,0,0.2);
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.2) inset;
 		z-index: 1000;
+		perspective: 500;
+
+		.caret {
+			transform-style: preserve-3d;
+		}
+	}
+	.active[data-dropdown="open"] > & .caret {
+		transform: rotateX(180deg);
 	}
 
 	&:focus {
@@ -93,6 +102,10 @@
 			box-shadow: 0 0 1000px 1000px rgba(0,0,0,0.2) inset;
 			border-color: transparent;
 		}
+	}
+	.active > &.ondark, .dark .active & {
+		box-shadow: 0 0 1000px 1000px rgba(255,255,255,0.1) inset;
+		border-color: rgba(255,255,255,0.1);
 	}
 }
 
@@ -134,14 +147,21 @@
 
 		.active > &, &.active {
 			color: @@text-color;
-			border-color: transparent;
-			background-color: @blue-d2;
+			border-color: rgba(0,0,0,0.2);
+			background-color: @@base-color;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.2) inset;
 			z-index: 1000;
 
 			.caret {
 				border-top-color: @@text-color; 
 			}
 		}
+	}
+
+	// dropdown styles
+	& + ul.dropdown-menu,
+	& + ul.dropdown-menu ul.dropdown-menu {
+		background: darken(@@base-color, 10%);
 	}
 }
 
@@ -167,6 +187,7 @@
 		.active > &, &.active {
 			border-color: transparent;
 			background-color: ~'@{@{base-color}-d2}';
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 		}
 	}
 
@@ -179,12 +200,20 @@
 		&:hover {
 			background-color: @@base-color;
 			border-color: ~'@{@{base-color}-l2}';
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 		}
 
 		&:active {
 			background-color: ~'@{@{base-color}-d2}';
 			border-color: @@base-color;
+			box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 		}
+	}
+
+	.active > &.ondark, .dark .active & {
+		border-color: transparent;
+		background-color: @@base-color;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 	}
 
 	// hollow style
@@ -201,6 +230,7 @@
 			color: @@text-color;
 			border-color: @@base-color;
 			background-color: @@base-color;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 
 			.caret {
 				border-top-color: @@text-color; 
@@ -211,6 +241,7 @@
 			color: @@text-color;
 			background-color: ~'@{@{base-color}-d1}';
 			border-color: ~'@{@{base-color}-d2}';
+			box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 
 			.caret {
 				border-top-color: @@text-color; 
@@ -221,6 +252,7 @@
 			color: @@text-color;
 			border-color: transparent;
 			background-color: ~'@{@{base-color}-d2}';
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 			z-index: 1000;
 
 			.caret {
@@ -228,57 +260,23 @@
 			}
 		}
 	}
-}
-
-
-/* Dynamic button color sets */
-.btn {
-	& 		{ .generate-btn(); }
-	&.blue 	{ .generate-btn('blue'); }
-	&.green { .generate-btn('green'); }
-	&.red 	{ .generate-btn('red'); }
-
-	&.black 	{ .generate-btn('black'); } 
-	&.white 	{ .generate-btn('white'; 'black'); } //define custom text color
-
-	&.purple 	{ .generate-btn('purple'); }
-	&.orange 	{ .generate-btn('orange'); }
-	&.teal 		{ .generate-btn('teal'); }
-}
-
-/* Custom button color sets */
-.btn {
-
-	// NOTE
-	//
-	// To use this generator you must have all 4 shades of
-	// your color in color-palette.less.
-	//
-	// Generating these custom classes with the same name 
-	// will override the former dynamic variants
-
-
-	&.blue 	{ .generate-btn-custom('blue'); }
-	&.green { .generate-btn-custom('green'); }
-	&.red 	{ .generate-btn-custom('red'); }
-
-	&.yellow 	{ .generate-btn-custom('yellow'); }
+	
+	// dropdown styles
+	& + ul.dropdown-menu,
+	& + ul.dropdown-menu ul.dropdown-menu {
+		background: ~'@{@{base-color}-d1}';
+	}
 }
 
 
 /* disabled */
 .btn {
 	&.disabled, &:disabled {
-		background-color: #666;
-		color: #aaa;
-		box-shadow: none;
-		border-color: transparent;
-
-		&:hover, &:active, &:focus {
-			background-color: #666;
-			border-color: transparent;
-			cursor: default;
-		}
+		background-color: #666 !important;
+		color: #aaa !important;
+		box-shadow: none !important;
+		border-color: transparent !important;
+		cursor: default !important
 	}
 }
 
@@ -286,17 +284,10 @@
 	background: none;
 
 	&.disabled, &:disabled {
-		color: #aaa;
-		border-color: #aaa;
-		box-shadow: none;
-
-		&:hover, &:active, &:focus {
-			background: none;
-			color: #aaa;
-			border-color: #aaa;
-			cursor: default;
-			box-shadow: none;
-		}
+		background: none !important;
+		color: #aaa !important;
+		border-color: #aaa !important;
+		box-shadow: none !important;
 	}
 
 	.dark &.whitetext:not(.disabled) {
@@ -322,34 +313,35 @@
 
 /* dropdowns */
 ul.dropdown-menu {
-	display: none;
 	position: absolute;
 	z-index: 1000;
+	display: none;
 	float: left;
 	margin: 0;
 	padding: 0;
 	list-style: none;
+
 	background: @blue-d1;
 	color: #fff;
-	//border: 2px solid @blue;
 	.drop-shadow;
+
 
 	li {
 		margin: 0;
 		padding: 0;
-		min-width: 160px;
+		min-width: 180px;
 
 		a {
 			width: 100%;
 			display: block;
-			padding: 5px 10px;
+			padding: 7px 20px;
 			color: inherit;
 			font-size: 0.9em;
 		}
 
 		&:hover > a {
 			text-decoration: none;
-			background: @blue-l1;
+			background: rgba(255,255,255,0.3);
 		}
 
 		&.divider {
@@ -373,8 +365,9 @@ ul.dropdown-menu {
 				.caret-right;
 				position: absolute;
 				top: 50%;
-				right: 5px;
+				right: 10px;
 				margin-top: -4px;
+				transition: 0.2s transform;
 			}
 		}
 
@@ -384,17 +377,59 @@ ul.dropdown-menu {
 			left: 100%;
 		}
 
-		&:hover ul.dropdown-menu {
-			display: block;
+		&:hover {
+
+			& > a:after {
+				transform: translateX(2px);
+			}
+
+			ul.dropdown-menu {
+				display: block;
+			}
 		}
 	}
 
-
-	.active & {
+	/* display when active */
+	[data-dropdown="open"] > & {
 		display: block;
 	}
 
-
 }
+
+
+// NOTE
+//
+// First add your color as variables in color-palette.less
+// then add a line below to run the mixins.
+
+/* Dynamic button color sets */
+.btn {
+	& 		{ .generate-btn(); }
+
+	&.black 	{ .generate-btn('black'); } 
+	&.white 	{ .generate-btn('white'; 'black'); } //define custom text color
+
+	&.purple 	{ .generate-btn('purple'); }
+	&.orange 	{ .generate-btn('orange'); }
+	&.teal 		{ .generate-btn('teal'); }
+}
+
+/* Custom button color sets */
+.btn {
+
+	// For custom generator you must have all 4 shades of
+	// your color in color-palette.less.
+
+	&.blue 	{ .generate-btn-custom('blue'); }
+	&.green { .generate-btn-custom('green'); }
+	&.red 	{ .generate-btn-custom('red'); }
+
+	&.yellow 	{ .generate-btn-custom('yellow'); }
+}
+
+
+/* dropdown color variations */
+
+
 
 
