@@ -451,10 +451,10 @@
 		});
 
 		// smooth scroll to anchor
-		$('nav a').click(function(e){
+		$('nav#menu a').click(function(e){
 			var href = $(this).attr("href");
 			var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
-			$("html").stop().animate({ 
+			$("html,body").stop().animate({ 
 				scrollTop: offsetTop
 			}, 300);
 			e.preventDefault();
