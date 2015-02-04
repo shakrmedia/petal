@@ -7,7 +7,6 @@
 	position: relative;
 	display: inline-block;
 	bottom: 2px;
-	margin-left: 5px;
 	width: 0;
 	height: 0;
 	border-right: 4px solid transparent;
@@ -21,7 +20,6 @@
 	position: relative;
 	display: inline-block;
 	bottom: 2px;
-	margin-left: 5px;
 	width: 0;
 	height: 0;
 	border-top: 4px solid transparent;
@@ -35,7 +33,7 @@
 	position: relative;
 
 	display: inline-block;
-	margin: 0 5px 0 0;
+	margin: 0;
 	padding: 8px 20px;
 
 	font-size: 0.8rem;
@@ -60,7 +58,7 @@
 	&:hover {
 		color: #fff;
 		border-color: rgba(0,0,0,0.1);
-		box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(255,255,255,0.2) inset;
+		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(255,255,255,0.2) inset;
 	}
 
 	&:active {
@@ -69,10 +67,10 @@
 		box-shadow: 0 0px 1px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
 	}
 
-	&.active, .active > & {
+	&.active, .active > &[data-toggle] {
 		color: #fff;
-		border-color: rgba(0,0,0,0.2);
-		box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.2) inset;
+		border-color: rgba(0,0,0,0.3);
+		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.3) inset;
 		z-index: 1000;
 		perspective: 500;
 
@@ -103,9 +101,9 @@
 			border-color: transparent;
 		}
 	}
-	.active > &.ondark, .dark .active & {
-		box-shadow: 0 0 1000px 1000px rgba(255,255,255,0.1) inset;
-		border-color: rgba(255,255,255,0.1);
+	.active > &.ondark, .dark .active > &[data-toggle] {
+		box-shadow: 0 0 1000px 1000px rgba(0,0,0,0.3) inset;
+		border-color: rgba(0,0,0,0.3);
 	}
 }
 
@@ -127,7 +125,7 @@
 			color: @@text-color;
 			border-color: @@base-color;
 			background-color: @@base-color;
-			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 
 			.caret {
 				border-top-color: @@text-color; 
@@ -145,11 +143,16 @@
 			}
 		}
 
-		.active > &, &.active {
+		.dark &:active {
+			border-color: rgba(255,255,255,0.3);
+		}
+
+		&.active, .active > &[data-toggle], 
+		.dark .active > &[data-toggle]:active {
 			color: @@text-color;
-			border-color: rgba(0,0,0,0.2);
+			border-color: rgba(0,0,0,0.3);
 			background-color: @@base-color;
-			box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.2) inset;
+			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.3) inset;
 			z-index: 1000;
 
 			.caret {
@@ -175,7 +178,7 @@
 		&:hover {
 			background-color: ~'@{@{base-color}-l1}';
 			border-color: ~'@{@{base-color}-d1}';
-			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 		}
 
 		&:active {
@@ -184,10 +187,10 @@
 			box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 		}
 
-		.active > &, &.active {
+		.active > &[data-toggle], &.active {
 			border-color: transparent;
 			background-color: ~'@{@{base-color}-d2}';
-			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 		}
 	}
 
@@ -200,7 +203,7 @@
 		&:hover {
 			background-color: @@base-color;
 			border-color: ~'@{@{base-color}-l2}';
-			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 		}
 
 		&:active {
@@ -210,10 +213,10 @@
 		}
 	}
 
-	.active > &.ondark, .dark .active & {
+	.active > &[data-toggle].ondark, .dark .active > &[data-toggle] {
 		border-color: transparent;
 		background-color: @@base-color;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 	}
 
 	// hollow style
@@ -230,7 +233,7 @@
 			color: @@text-color;
 			border-color: @@base-color;
 			background-color: @@base-color;
-			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 
 			.caret {
 				border-top-color: @@text-color; 
@@ -248,11 +251,16 @@
 			}
 		}
 
-		.active > &, &.active {
+		.dark &:active {
+			border-color: ~'@{@{base-color}-l1}';
+		}
+
+		&.active, .active > &[data-toggle], 
+		.dark .active > &[data-toggle]:active {
 			color: @@text-color;
 			border-color: transparent;
 			background-color: ~'@{@{base-color}-d2}';
-			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 			z-index: 1000;
 
 			.caret {
@@ -298,22 +306,45 @@
 
 /* button groups */
 .btn-group {
+	display: inline-block;
+	position: relative;
 	margin-bottom: 5px;
 
 	.btn {
-		display: inline-block;
-		margin-right: 5px;
+		float: left;
+		z-index: 1;
+
+		&:hover {
+			z-index: 2;
+		}
+	}
+
+	.btn + .btn {
+		margin-left: 5px;
 	}
 
 	.btn-group {
-		display: inline-block;
+		float: left;
 	}
+
+	.btn-group + .btn-group {
+		margin-left: 5px;
+	}
+
+	.btn + .btn.dropdown {
+		padding-left: 7px;
+		padding-right: 7px;
+		margin-left: 2px;
+	}
+
+	.cf;
 }
 
 
 /* dropdowns */
 ul.dropdown-menu {
 	position: absolute;
+	top: 100%;
 	z-index: 1000;
 	display: none;
 	float: left;
@@ -324,6 +355,10 @@ ul.dropdown-menu {
 	background: @blue-d1;
 	color: #fff;
 	.drop-shadow;
+
+	&[data-dropdown-align="right"] {
+		right: 0%;
+	}
 
 
 	li {

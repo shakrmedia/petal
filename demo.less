@@ -7,6 +7,10 @@ body {
 	padding: 0;
 }
 
+.asterisk {
+	color: @red;
+}
+
 .light {
 	background: #fff;
 }
@@ -14,6 +18,13 @@ body {
 	background: #333;
 	color: #fff;
 }
+
+pre code.hljs {
+	background: #f0f0f0;
+	padding: 15px;
+	font-size: 0.8em;
+}
+
 
 .label {
 	margin-top: 5px;
@@ -145,6 +156,20 @@ section {
 	&:last-child {
 		border-bottom: none;
 	}
+}
+
+.demo-panel {
+	border: 1px solid #ddd;
+	margin: 10px 0;
+}
+
+.demo-code {
+	border: 1px solid #ddd;
+	margin: 10px 0;
+}
+
+.demo-panel + .demo-code {
+	margin-top: -11px;
 }
 
 footer {

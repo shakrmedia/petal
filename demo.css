@@ -3,12 +3,20 @@ body {
   color: #333;
   padding: 0;
 }
+.asterisk {
+  color: #f05a67;
+}
 .light {
   background: #fff;
 }
 .dark {
   background: #333;
   color: #fff;
+}
+pre code.hljs {
+  background: #f0f0f0;
+  padding: 15px;
+  font-size: 0.8em;
 }
 .label {
   margin-top: 5px;
@@ -118,6 +126,17 @@ section:first-child {
 }
 section:last-child {
   border-bottom: none;
+}
+.demo-panel {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+.demo-code {
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+.demo-panel + .demo-code {
+  margin-top: -11px;
 }
 footer {
   border-top: 2px solid #eee;
