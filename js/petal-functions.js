@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	// dropdown toggle
 	function clearMenus() {
-		$('.btn-group.active').removeClass('active').removeAttr('data-dropdown');
+		$('[data-toggle="dropdown"]').parent().removeClass('active').removeAttr('data-dropdown');
 	}
 
 	$('[data-toggle="dropdown"]').click(function() {
