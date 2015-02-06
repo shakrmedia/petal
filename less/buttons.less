@@ -28,7 +28,7 @@
 	line-height: 1em;	
 }
 
-/* default button - dynamic */
+/* default button */
 .btn {
 	position: relative;
 
@@ -55,13 +55,22 @@
 	
 	transition: 0.2s background, 0.2s border-color, 0.2s color, 0.2s box-shadow;
 
-	.caret {
-		transform-style: preserve-3d;
+	&:hover {
+		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+	}
+
+	&:active {
+		box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 	}
 
 	&.active, .active > &[data-toggle] {
 		z-index: 1000;
 		perspective: 500;
+		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+	}
+
+	.caret {
+		transform-style: preserve-3d;
 	}
 
 	.active[data-dropdown="open"] > & .caret {
@@ -82,45 +91,35 @@
 			&:hover {
 				background-color: @btn-color-l1;
 				border-color: @btn-color-d1;
-				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 			}
 
 			&:active {
 				background-color: @btn-color-d1;
 				border-color: @btn-color-d2;
-				box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 			}
 
-			.active > &[data-toggle], &.active {
-				border-color: transparent;
+			&.active,
+			.active > &[data-toggle],
+			.active > &[data-toggle]:hover,
+			.active > &[data-toggle]:active {
+				color: @text-color;
 				background-color: @btn-color-d2;
-				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+				border-color: @btn-color-d2;
 			}
 		}
 
 		// on dark background
 		&.ondark, .dark & {
-			box-shadow: none;
-			border-color: transparent;
-			background-color: @btn-color-d1;
 			
 			&:hover {
-				background-color: @btn-color;
-				border-color: @btn-color-l2;
-				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+				background-color: @btn-color-d1;
+				border-color: @btn-color-l1;
 			}
 
 			&:active {
 				background-color: @btn-color-d2;
 				border-color: @btn-color;
-				box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 			}
-		}
-
-		.active > &[data-toggle].ondark, .dark .active > &[data-toggle] {
-			border-color: transparent;
-			background-color: @btn-color;
-			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 		}
 
 		// hollow style
@@ -137,32 +136,22 @@
 				color: @text-color;
 				border-color: @btn-color;
 				background-color: @btn-color;
-				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
 			}
 
 			&:active {
 				color: @text-color;
 				background-color: @btn-color-d1;
 				border-color: @btn-color-d2;
-				box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 			}
 
 			.dark &:active {
 				border-color: @btn-color-l1;
 			}
 
-			&.active, .active > &[data-toggle], 
-			.dark .active > &[data-toggle]:active {
-				color: @text-color;
-				border-color: transparent;
-				background-color: @btn-color-d2;
-				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
-				z-index: 1000;
-			}
+
 
 			&:hover, &:active,
-			&.active, .active > &[data-toggle], 
-			.dark .active > &[data-toggle]:active {
+			&.active, .active > &[data-toggle] {
 				.caret {
 					border-top-color: @text-color; 
 				}
@@ -226,7 +215,7 @@
 	}
 
 	.dark &.whitetext:not(.disabled) {
-		color: #fff;
+		color: #fff !important;
 	}
 }
 
