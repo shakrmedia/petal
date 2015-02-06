@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	// dropdown toggle
 	function clearMenus() {
-		$('[data-toggle="dropdown"]').parent().removeClass('active').removeAttr('data-dropdown');
+		$('[data-toggle="dropdown"]').parent().removeClass('active').removeAttr('data-dropdown-state');
 	}
 
 	$('[data-toggle="dropdown"]').click(function() {
@@ -14,13 +14,13 @@ $(document).ready(function() {
 			return;
 		}
 
-		if (self.parent().attr('data-dropdown') === 'open')	{
+		if (self.parent().attr('data-dropdown-state') === 'open')	{
 			clearMenus();
 		}
 
 		else {
 			clearMenus();
-			self.parent().addClass('active').attr('data-dropdown','open');
+			self.parent().addClass('active').attr('data-dropdown-state','open');
 		}		
 	});
 

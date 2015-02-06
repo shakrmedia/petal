@@ -73,7 +73,7 @@
 		transform-style: preserve-3d;
 	}
 
-	.active[data-dropdown="open"] > & .caret {
+	.active[data-dropdown-state="open"] > & .caret {
 		transform: rotateX(180deg);
 	}
 }
@@ -147,8 +147,6 @@
 			.dark &:active {
 				border-color: @btn-color-l1;
 			}
-
-
 
 			&:hover, &:active,
 			&.active, .active > &[data-toggle] {
@@ -341,13 +339,11 @@ ul.dropdown-menu {
 	}
 
 	/* display when active */
-	[data-dropdown="open"] > & {
+	[data-dropdown-state="open"] > & {
 		display: block;
 	}
 
 }
-
-
 
 
 /* button color sets */
