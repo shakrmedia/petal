@@ -249,7 +249,7 @@
 							</div>
 						</div>
 
-						<a href="#" class="btn" id="btn-demo-toggle">Toggle Light/Dark</a>
+					
 
 						<div class="demo-panel pb-10 cf" data-toggle-bg="toggle">
 							<div class="col-2">
@@ -358,9 +358,11 @@
 
 						<div class="demo-panel p-15" data-toggle-bg="toggle">
 							<div class="btn-group">	
-								<button class="btn toggle" data-toggle="toggle">Button</button>
-								<button class="btn green toggle" data-toggle="toggle">Button</button>
-								<button class="btn hollow red toggle" data-toggle="toggle">Button</button>
+								<button class="btn hollow blue toggle active" data-toggle="toggle" data-toggle-state="active">Toggle</button>
+								<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+								<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+								<button class="btn green toggle" data-toggle="toggle">Toggle</button>
+								<button class="btn red toggle" data-toggle="toggle">Toggle</button>
 							</div>
 						</div>
 
@@ -373,7 +375,7 @@
 						<div class="demo-panel p-15" data-toggle-bg="toggle">
 							<div class="btn-group">
 								<div class="btn-group">
-									<button class="btn dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+									<button class="btn dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
 									<ul class="dropdown-menu">
 										<li><a href="#">Menu item 1</a></li>
 										<li><a href="#">Menu item 2</a></li>
@@ -383,34 +385,7 @@
 								</div>
 
 								<div class="btn-group">
-									<button class="btn hollow dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
-									<ul class="dropdown-menu">
-										<li><a href="#">Menu item 1</a></li>
-										<li><a href="#">Menu item 2</a></li>
-										<li class="divider"></li>
-										<li class="submenu">
-											<a href="#">Submenu 1</a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Submenu item 1</a></li>
-												<li><a href="#">Submenu item 2</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Menu item 3</a></li>
-									</ul>
-								</div>
-
-								<div class="btn-group">
-									<button class="btn green dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
-									<ul class="dropdown-menu">
-										<li><a href="#">Menu item 1</a></li>
-										<li><a href="#">Menu item 2</a></li>
-										<li class="divider"></li>
-										<li><a href="#">Menu item 3</a></li>
-									</ul>
-								</div>
-
-								<div class="btn-group">
-									<button class="btn hollow green dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+									<button class="btn hollow dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
 									<ul class="dropdown-menu">
 										<li><a href="#">Menu item 1</a></li>
 										<li><a href="#">Menu item 2</a></li>
@@ -427,7 +402,34 @@
 								</div>
 
 								<div class="btn-group">
-									<button class="btn red dropdown" data-toggle="dropdown">Button <span class="caret"></span></button>
+									<button class="btn green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Menu item 1</a></li>
+										<li><a href="#">Menu item 2</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Menu item 3</a></li>
+									</ul>
+								</div>
+
+								<div class="btn-group">
+									<button class="btn hollow green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Menu item 1</a></li>
+										<li><a href="#">Menu item 2</a></li>
+										<li class="divider"></li>
+										<li class="submenu">
+											<a href="#">Submenu 1</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Submenu item 1</a></li>
+												<li><a href="#">Submenu item 2</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Menu item 3</a></li>
+									</ul>
+								</div>
+
+								<div class="btn-group">
+									<button class="btn red dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
 									<ul class="dropdown-menu">
 										<li><a href="#">Menu item 1</a></li>
 										<li><a href="#">Menu item 2</a></li>
@@ -463,6 +465,8 @@
 						<p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
 
 						<p>The <code>.btn-group</code> class on parent element is not required but is recommended for better layout.</p>
+
+						<br>
 
 						<h4>Split button variant</h4>
 
@@ -509,6 +513,8 @@
 						<p>
 							<a href="#top" class="totop">Back to top</a>
 						</p>
+
+						<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
 					</nav> 
 				</div>
 			</div>

@@ -63,7 +63,8 @@
 		box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 	}
 
-	&.active, .active > &[data-toggle] {
+	&.active, 
+	.active > &[data-toggle] {
 		z-index: 1000;
 		perspective: 500;
 		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
@@ -88,6 +89,13 @@
 			color: @text-color;
 			background-color: @btn-color;
 			
+			// for toggle button
+			&.active, &.hollow.active {
+				color: @text-color;
+				background-color: @btn-color-l1;
+				border-color: @btn-color-d2;
+			}
+			
 			&:hover {
 				background-color: @btn-color-l1;
 				border-color: @btn-color-d1;
@@ -102,7 +110,19 @@
 
 		// on dark background
 		&.ondark, .dark & {
-			
+
+			// for toggle button
+			&.active {
+				color: @text-color;
+				background-color: @btn-color-d1;
+				border-color: @btn-color-l2;
+
+				&:hover {
+					border-color: @btn-color-l2;
+					background-color: @btn-color;
+				}
+			}
+
 			&:hover {
 				background-color: @btn-color-d1;
 				border-color: @btn-color-l1;
@@ -141,21 +161,21 @@
 			}
 
 			&:hover, &:active,
-			&.active, .active > &[data-toggle] {
+			&.active, .active > &[data-toggle="dropdown"] {
 				.caret {
 					border-top-color: @text-color; 
 				}
 			} 
 		}
 
-		&.active,
-		.active > &[data-toggle],
-		.active > &[data-toggle]:hover,
-		.active > &[data-toggle]:active {
+		.active > &[data-toggle="dropdown"],
+		.active > &[data-toggle="dropdown"]:hover,
+		.active > &[data-toggle="dropdown"]:active {
 			color: @text-color;
 			background-color: @btn-color-d2;
 			border-color: @btn-color-d2;
 		}
+
 		
 		// dropdown styles
 		& + ul.dropdown-menu,
