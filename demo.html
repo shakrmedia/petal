@@ -255,16 +255,20 @@
 							<div class="col-2">
 								<h5>Default</h5>
 								<div class="block">
+									<a href="#" class="btn">Button</a>
+									<p class="inline-block label"><code>.btn</code></p>
+								</div>
+								<div class="block">
 									<a href="#" class="btn blue">Button</a>
-									<p class="inline-block label"><code>.btn.blue</code><span class="asterisk">*</span></p>
+									<p class="inline-block label"><code>.btn.blue</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn green">Button</a>
-									<p class="inline-block label"><code>.btn.green</code><span class="asterisk">*</span></p>
+									<p class="inline-block label"><code>.btn.green</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn red">Button</a>
-									<p class="inline-block label"><code>.btn.red</code><span class="asterisk">*</span></p>
+									<p class="inline-block label"><code>.btn.red</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn black">Button</a>
@@ -282,16 +286,20 @@
 							<div class="col-2">
 								<h5>Hollow</h5>
 								<div class="block">
+									<a href="#" class="btn hollow">Button</a>
+									<p class="inline-block label"><code>.btn.hollow</code></p>
+								</div>
+								<div class="block">
 									<a href="#" class="btn hollow blue">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.blue</code><span class="asterisk">*</span></p>
+									<p class="inline-block label"><code>.btn.hollow.blue</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn hollow green">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.green</code><span class="asterisk">*</span></p>
+									<p class="inline-block label"><code>.btn.hollow.green</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn hollow red">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.red</code><span class="asterisk">*</span></p>
+									<p class="inline-block label"><code>.btn.hollow.red</code></p>
 								</div>
 								<div class="block">
 									<a href="#" class="btn hollow black">Button</a>
@@ -308,12 +316,16 @@
 							</div>
 						</div>
 
-						<h5>Optional classes</h5>
+						<h5>Options</h5>
 
-						<p><code>.hollow</code> : Hollow style alternative</p>
-						<p><code>.disabled</code> or <code>:disabled</code> (attribute) : Disabled state</p>
+						<ul>
+							<li><code>.hollow</code> : Hollow style alternative</li>
+							<li><code>.disabled</code> OR <code>:disabled</code> (attribute) : Disabled state</li>
+							<li><code>.ondark</code> on button OR <code>.dark</code> on parent : Alternative style on dark backgrounds</li>
+							<li><code>.whitetext</code> : White text on buttons (hollow + ondark style only)</li>
+						</ul>
 
-						<h5>Additional colors</h5>
+						<h5>Including additional colors</h5>
 						<div class="demo-panel cf pt-10" data-toggle-bg="toggle">
 							<div class="col-2">
 								<div class="block">
@@ -322,7 +334,7 @@
 								</div>
 								<div class="block">
 									<a href="#" class="btn yellow">Button</a>
-									<p class="inline-block label"><code>.btn.yellow</code><span class="asterisk">*</span></p>
+									<p class="inline-block label"><code>.btn.yellow</code></p>
 								</div>	
 							</div>
 							<div class="col-2">
@@ -337,17 +349,15 @@
 							</div>
 						</div>
 
-						<p>All button color sets are generated dynamically when the LESS file is compiled. To add a new button color you can use, just write another line at the bottom of <b>buttons.less</b> file where the generator mixin functions are executed and compile Petal.</p>
+						<p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
+						
+						<div class="demo-code">
+						<pre><code class="less css" data-lang="less">// Add colors here
+&amp;.my-color    { .generate-btn('my-color') }
+&amp;.my-color2   { .generate-btn('my-color2'; 'custom') }</code></pre>
+						</div>
 
-						<p>The first 'static' <code>.generate-btn()</code> requires only one base color (uses semi-transparent overlay colors to imitate shades) and the 'custom' one <code>.generate-btn-custom()</code> requires all 5 shade color variables declared in the <b>color-palette.less</b> file. Use the custom generator mixin if you want more finer control over the tones of your color set.</p>
-
-						<p><em>Note: the buttons marked with an asterisk (<span class="asterisk">*</span>) are generated with the custom mixin.</em></p>
-
-						<h5>Dark backgrounds</h5>
-						<p>When parent container has a <code>.dark</code> class in any level, the buttons will automatically switch to a slightly different style noticeable when hover/clicking. To manually apply them, append <code>.ondark</code> on the <code>.btn</code> element itself.</p>
-
-						<h5>Options</h5>
-						<p>Append <code>.whitetext</code> class if you want white text in hollow style button on dark background.</p>
+						<p>The 'custom' option is provided for when you want to specify the l1, l2, d1, d2 shades manually. Define all 5 variables including base color in <b>color-palette.less</b> and append the <code>'custom'</code> option at the end.</p>
 						
 						<br>
 
@@ -527,6 +537,7 @@
 	<script src="./js/petal-functions.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
 
 
 

@@ -13,10 +13,11 @@ body {
   background: #333;
   color: #fff;
 }
+pre code,
 pre code.hljs {
   background: #f0f0f0;
   padding: 15px;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 .label {
   margin-top: 5px;

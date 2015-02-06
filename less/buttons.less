@@ -55,225 +55,152 @@
 	
 	transition: 0.2s background, 0.2s border-color, 0.2s color, 0.2s box-shadow;
 
-	&:hover {
-		color: #fff;
-		border-color: rgba(0,0,0,0.1);
-		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(255,255,255,0.2) inset;
-	}
-
-	&:active {
-		color: #fff;
-		border-color: rgba(0,0,0,0.2);
-		box-shadow: 0 0px 1px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
+	.caret {
+		transform-style: preserve-3d;
 	}
 
 	&.active, .active > &[data-toggle] {
-		color: #fff;
-		border-color: rgba(0,0,0,0.3);
-		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.3) inset;
 		z-index: 1000;
 		perspective: 500;
-
-		.caret {
-			transform-style: preserve-3d;
-		}
 	}
+
 	.active[data-dropdown="open"] > & .caret {
 		transform: rotateX(180deg);
-	}
-
-	&:focus {
-		color: #fff;
-	}
-
-
-	// on dark background
-	&.ondark, .dark & {
-		border-color: rgba(0,0,0,0.05); 
-		box-shadow: 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
-		
-		&:hover {
-			border-color: rgba(255,255,255,0.3);
-		}
-
-		&:active {
-			box-shadow: 0 0 1000px 1000px rgba(0,0,0,0.2) inset;
-			border-color: transparent;
-		}
-	}
-	.active > &.ondark, .dark .active > &[data-toggle] {
-		box-shadow: 0 0 1000px 1000px rgba(0,0,0,0.3) inset;
-		border-color: rgba(0,0,0,0.3);
-	}
-}
-
-// hollow style generator mixin
-.generate-btn(@base-color: 'blue'; @text-color: 'white') {
-	background-color: @@base-color;
-	color: @@text-color;
-
-	&.hollow {
-		color: @@base-color;
-		border-color: @@base-color;
-		background: none;
-
-		.caret {
-			border-top-color: @@base-color; 
-		}
-		
-		&:hover {
-			color: @@text-color;
-			border-color: @@base-color;
-			background-color: @@base-color;
-			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
-
-			.caret {
-				border-top-color: @@text-color; 
-			}
-		}
-
-		&:active {
-			color: @@text-color;
-			background-color: @@base-color;
-			border-color: rgba(0,0,0,0.2);
-			box-shadow: 0 0px 1px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.05) inset;
-
-			.caret {
-				border-top-color: @@text-color; 
-			}
-		}
-
-		.dark &:active {
-			border-color: rgba(255,255,255,0.3);
-		}
-
-		&.active, .active > &[data-toggle], 
-		.dark .active > &[data-toggle]:active {
-			color: @@text-color;
-			border-color: rgba(0,0,0,0.3);
-			background-color: @@base-color;
-			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2), 0 0 1000px 1000px rgba(0,0,0,0.3) inset;
-			z-index: 1000;
-
-			.caret {
-				border-top-color: @@text-color; 
-			}
-		}
-	}
-
-	// dropdown styles
-	& + ul.dropdown-menu,
-	& + ul.dropdown-menu ul.dropdown-menu {
-		background: darken(@@base-color, 10%);
 	}
 }
 
 // static palette button styles generator mixin
-.generate-btn-custom(@base-color: 'blue'; @text-color: 'white') {
+.generate-btn(@base-color: 'blue'; @option: 'auto';) {
+	
+	// inner mixin
+	.generate-btn-styles() {
+		// default filled style
+		& {
+			color: @text-color;
+			background-color: @btn-color;
+			
+			&:hover {
+				background-color: @btn-color-l1;
+				border-color: @btn-color-d1;
+				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+			}
 
-	// default filled style
-	& {
-		background-color: @@base-color;
-		
-		&:hover {
-			background-color: ~'@{@{base-color}-l1}';
-			border-color: ~'@{@{base-color}-d1}';
-			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+			&:active {
+				background-color: @btn-color-d1;
+				border-color: @btn-color-d2;
+				box-shadow: 0 0px 1px rgba(0,0,0,0.2);
+			}
+
+			.active > &[data-toggle], &.active {
+				border-color: transparent;
+				background-color: @btn-color-d2;
+				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+			}
 		}
 
-		&:active {
-			background-color: ~'@{@{base-color}-d1}';
-			border-color: ~'@{@{base-color}-d2}';
-			box-shadow: 0 0px 1px rgba(0,0,0,0.2);
-		}
-
-		.active > &[data-toggle], &.active {
+		// on dark background
+		&.ondark, .dark & {
+			box-shadow: none;
 			border-color: transparent;
-			background-color: ~'@{@{base-color}-d2}';
-			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
-		}
-	}
+			background-color: @btn-color-d1;
+			
+			&:hover {
+				background-color: @btn-color;
+				border-color: @btn-color-l2;
+				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+			}
 
-	// on dark background
-	&.ondark, .dark & {
-		box-shadow: none;
-		border-color: transparent;
-		background-color: ~'@{@{base-color}-d1}';
-		
-		&:hover {
-			background-color: @@base-color;
-			border-color: ~'@{@{base-color}-l2}';
-			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
-		}
-
-		&:active {
-			background-color: ~'@{@{base-color}-d2}';
-			border-color: @@base-color;
-			box-shadow: 0 0px 1px rgba(0,0,0,0.2);
-		}
-	}
-
-	.active > &[data-toggle].ondark, .dark .active > &[data-toggle] {
-		border-color: transparent;
-		background-color: @@base-color;
-		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
-	}
-
-	// hollow style
-	&.hollow {
-		color: @@base-color;
-		border-color: @@base-color;
-		background: none;
-
-		.caret {
-			border-top-color: @@base-color; 
-		}
-		
-		&:hover {
-			color: @@text-color;
-			border-color: @@base-color;
-			background-color: @@base-color;
-			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
-
-			.caret {
-				border-top-color: @@text-color; 
+			&:active {
+				background-color: @btn-color-d2;
+				border-color: @btn-color;
+				box-shadow: 0 0px 1px rgba(0,0,0,0.2);
 			}
 		}
 
-		&:active {
-			color: @@text-color;
-			background-color: ~'@{@{base-color}-d1}';
-			border-color: ~'@{@{base-color}-d2}';
-			box-shadow: 0 0px 1px rgba(0,0,0,0.2);
-
-			.caret {
-				border-top-color: @@text-color; 
-			}
-		}
-
-		.dark &:active {
-			border-color: ~'@{@{base-color}-l1}';
-		}
-
-		&.active, .active > &[data-toggle], 
-		.dark .active > &[data-toggle]:active {
-			color: @@text-color;
+		.active > &[data-toggle].ondark, .dark .active > &[data-toggle] {
 			border-color: transparent;
-			background-color: ~'@{@{base-color}-d2}';
+			background-color: @btn-color;
 			box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
-			z-index: 1000;
+		}
+
+		// hollow style
+		&.hollow {
+			color: @btn-color;
+			border-color: @btn-color;
+			background: none;
 
 			.caret {
-				border-top-color: @@text-color; 
+				border-top-color: @btn-color; 
 			}
+			
+			&:hover {
+				color: @text-color;
+				border-color: @btn-color;
+				background-color: @btn-color;
+				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+			}
+
+			&:active {
+				color: @text-color;
+				background-color: @btn-color-d1;
+				border-color: @btn-color-d2;
+				box-shadow: 0 0px 1px rgba(0,0,0,0.2);
+			}
+
+			.dark &:active {
+				border-color: @btn-color-l1;
+			}
+
+			&.active, .active > &[data-toggle], 
+			.dark .active > &[data-toggle]:active {
+				color: @text-color;
+				border-color: transparent;
+				background-color: @btn-color-d2;
+				box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+				z-index: 1000;
+			}
+
+			&:hover, &:active,
+			&.active, .active > &[data-toggle], 
+			.dark .active > &[data-toggle]:active {
+				.caret {
+					border-top-color: @text-color; 
+				}
+			} 
+		}
+		
+		// dropdown styles
+		& + ul.dropdown-menu,
+		& + ul.dropdown-menu ul.dropdown-menu {
+			background: @btn-color-d1;
 		}
 	}
 	
-	// dropdown styles
-	& + ul.dropdown-menu,
-	& + ul.dropdown-menu ul.dropdown-menu {
-		background: ~'@{@{base-color}-d1}';
+	// define text color
+	@text-color: contrast(@@base-color, #000, #fff, 80%);
+
+	// when option is provided
+	& when (@option = 'custom') {
+		@btn-color: @@base-color;
+		@btn-color-l1: ~'@{@{base-color}-l1}';
+		@btn-color-l2: ~'@{@{base-color}-l2}';
+		@btn-color-d1: ~'@{@{base-color}-d1}';
+		@btn-color-d2: ~'@{@{base-color}-d2}';
+		
+		.generate-btn-styles();
 	}
+
+	// else
+	& when not (@option = 'custom') {
+		@btn-color: @@base-color;
+		@btn-color-l1: screen(@btn-color,@l1-additive);
+		@btn-color-l2: screen(@btn-color,@l2-additive);
+		@btn-color-d1: multiply(@btn-color,@d1-additive);
+		@btn-color-d2: multiply(@btn-color,@d2-additive);
+
+		.generate-btn-styles();
+	}
+	
 }
 
 
@@ -432,38 +359,26 @@ ul.dropdown-menu {
 }
 
 
-// NOTE
-//
-// First add your color as variables in color-palette.less
-// then add a line below to run the mixins.
 
-/* Dynamic button color sets */
-.btn {
-	& 		{ .generate-btn(); }
 
-	&.black 	{ .generate-btn('black'); } 
-	&.white 	{ .generate-btn('white'; 'black'); } //define custom text color
-
-	&.purple 	{ .generate-btn('purple'); }
-	&.orange 	{ .generate-btn('orange'); }
-	&.teal 		{ .generate-btn('teal'); }
-}
-
-/* Custom button color sets */
+/* button color sets */
 .btn {
 
-	// For custom generator you must have all 4 shades of
-	// your color in color-palette.less.
+	&, 
+	&.blue 	{ .generate-btn('blue'; 'custom') }
+	&.green { .generate-btn('green'; 'custom') }
+	&.red 	{ .generate-btn('red'; 'custom') }
 
-	&.blue 	{ .generate-btn-custom('blue'); }
-	&.green { .generate-btn-custom('green'); }
-	&.red 	{ .generate-btn-custom('red'); }
+	&.black 	{ .generate-btn('black') } 
+	&.white 	{ .generate-btn('white') }
 
-	&.yellow 	{ .generate-btn-custom('yellow'); }
+	// Add colors here
+	&.purple 	{ .generate-btn('purple') }
+	&.orange 	{ .generate-btn('orange') }
+	&.teal 		{ .generate-btn('teal') }
+	&.yellow 	{ .generate-btn('yellow') }
 }
 
-
-/* dropdown color variations */
 
 
 

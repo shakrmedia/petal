@@ -5,36 +5,41 @@
 // Includes color variables used globally in other modules.
 // generally, the static palette (red, blue, green) should not be touched
 
+// required for dynamic color generation
+@l1-additive: #464646;
+@l2-additive: #898989;
+@d1-additive: #e1e1e1;
+@d2-additive: #c2c2c2;
 
 @black: #000;
 @white: #fff;
 
 // default static palette
 @red: #f05a67;
-@red-l1: #f4838d;
-@red-l2: #f8adb3;
-@red-d1: #d8515c;
-@red-d2: #b4434d;
+@red-l1: #f48791;
+@red-l2: #f8b3b9;
+@red-d1: #d44f5b;
+@red-d2: #b7444e;
 
 @blue: #30a4dc;
-@blue-l1: #64bbe5;
-@blue-l2: #98d2ee;
-@blue-d1: #2b93c6;
-@blue-d2: #247ba5;
+@blue-l1: #69bde6;
+@blue-l2: #9fd5ef;
+@blue-d1: #2a91c2;
+@blue-d2: #257da7;
 
 @green: #b2cf65;
-@green-l1: #c5db8c;
-@green-l2: #d9e7b2;
-@green-d1: #a0ba5b;
-@green-d2: #859b4c;
+@green-l1: #c7dc8f;
+@green-l2: #dbe9b8;
+@green-d1: #9db759;
+@green-d2: #879d4d;
 
 
 // generated dynamic palette
 @yellow: #ecd05d;
-@yellow-l1: lighten(@yellow,10%);
-@yellow-l2: lighten(@yellow,20%);
-@yellow-d1: darken(@yellow,10%);
-@yellow-d2: darken(@yellow,20%);
+@yellow-l1: screen(@yellow,@l1-additive);
+@yellow-l2: screen(@yellow,@l2-additive);
+@yellow-d1: multiply(@yellow,@d1-additive);
+@yellow-d2: multiply(@yellow,@d2-additive);
 
 
 // user added custom colors
