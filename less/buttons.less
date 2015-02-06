@@ -53,21 +53,22 @@
 	border-radius: 0;
 	outline: none !important;
 	
-	transition: 0.2s background, 0.2s border-color, 0.2s color, 0.2s box-shadow;
+	transition: .15s background, .15s border-color, .15s color, .15s box-shadow;
 
 	&:hover {
-		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+		box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
 	}
 
 	&:active {
-		box-shadow: 0 0px 1px rgba(0,0,0,0.2);
+		box-shadow: 0 0px 1px rgba(0,0,0,.2);
+		transition-duration: 0s;
 	}
 
 	&.active, 
 	.active > &[data-toggle] {
 		z-index: 1000;
 		perspective: 500;
-		box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+		box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
 	}
 
 	.caret {
@@ -311,12 +312,12 @@ ul.dropdown-menu {
 
 		&:hover > a {
 			text-decoration: none;
-			background: rgba(255,255,255,0.3);
+			background: rgba(255,255,255,.3);
 		}
 
 		&.divider {
 			height: 5px;
-			border-bottom: 1px solid rgba(255,255,255,0.3);
+			border-bottom: 1px solid rgba(255,255,255,.3);
 			padding-bottom: 5px;
 			margin-bottom: 5px;
 		}
