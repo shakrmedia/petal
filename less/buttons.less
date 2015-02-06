@@ -98,14 +98,6 @@
 				border-color: @btn-color-d2;
 			}
 
-			&.active,
-			.active > &[data-toggle],
-			.active > &[data-toggle]:hover,
-			.active > &[data-toggle]:active {
-				color: @text-color;
-				background-color: @btn-color-d2;
-				border-color: @btn-color-d2;
-			}
 		}
 
 		// on dark background
@@ -154,6 +146,15 @@
 					border-top-color: @text-color; 
 				}
 			} 
+		}
+
+		&.active,
+		.active > &[data-toggle],
+		.active > &[data-toggle]:hover,
+		.active > &[data-toggle]:active {
+			color: @text-color;
+			background-color: @btn-color-d2;
+			border-color: @btn-color-d2;
 		}
 		
 		// dropdown styles

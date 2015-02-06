@@ -325,6 +325,8 @@
 							<li><code>.whitetext</code> : White text on buttons (hollow + ondark style only)</li>
 						</ul>
 
+						<br>
+
 						<h5>Including additional colors</h5>
 
 						<p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
@@ -348,8 +350,22 @@
 							</div>
 						</div>
 
-						<p>Just put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
+						<p>Put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
 
+						<br>
+
+						<h3>Toggle Buttons</h3>
+
+						<div class="demo-panel p-15" data-toggle-bg="toggle">
+							<div class="btn-group">	
+								<button class="btn toggle" data-toggle="toggle">Button</button>
+								<button class="btn green toggle" data-toggle="toggle">Button</button>
+								<button class="btn hollow red toggle" data-toggle="toggle">Button</button>
+							</div>
+						</div>
+
+						<p>Add <code>data-toggle="toggle"</code> on the button to make it toggleable.</p>
+						
 						<br>
 
 						<h3>Button Dropdowns</h3>
