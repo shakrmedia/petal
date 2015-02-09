@@ -1,447 +1,447 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<!-- 
-			Petal Documentation Page
-			(c)2015 Shakr 
-		-->
+<head>
+	<!-- 
+		Petal Documentation Page
+		(c)2015 Shakr 
+	-->
 
-		<meta charset="utf-8"> 
-		<link rel="stylesheet" href="./demo.css">
-		<link rel="stylesheet" href="./build/petal.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/tomorrow.min.css">
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" href="./demo.css">
+	<link rel="stylesheet" href="./build/petal.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/tomorrow.min.css">
 
-		<title>Petal Documentation</title>
-	</head>
+	<title>Petal Documentation</title>
+</head>
 
-	<body>
+<body>
 
-		<header class="stretch" id="page-header">
-			<div class="container" id="top">
-				<div class="row">
-					<div class="logo">
-						<img src="./logo.svg" width="150" height="150" alt="Petal Logo">
+<header class="stretch" id="page-header">
+	<div class="container" id="top">
+		<div class="row">
+			<div class="logo">
+				<img src="./logo.svg" width="150" height="150" alt="Petal Logo">
+			</div>
+			<h1 class="keepcase">Petal</h1>
+			<p>A modern, light CSS UI framework.</p>
+			<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). <br>Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
+		</div>
+	</div>
+</header>
+
+<div class="container">
+<div class="row">
+	<div class="col-4 colspan-3">
+		<section class="row">
+			<h2 id="section-layout">Layout</h2>
+
+			<h3>Base structure</h3>
+			<p>Set a container with <code>.container</code> class in which you will place <code>.row</code>s. Use appropriate HTML5 semantic tags such as <code>&lt;section&gt;</code>,<code>&lt;article&gt;</code>,<code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> along with the class.</p>
+
+			<p>You must have <code>.row</code> sub-containers for child elements to align to the page width. </p>
+
+			<h5>Container widths and responsive layout</h5>
+			<p>Container width is set as a LESS variable <code>@container-width</code> in the base <code>petal.less</code> file. Default value is 980px; modify the value to change fixed width.</p>
+
+			<p>Responsive layout is enabled by default, and the page will automatically fit the window width when screen width is smaller than the container width.</p>
+		</section>
+		<section class="row">
+			<h3>Columns</h3>
+			<p>Easily create column layouts for the whole page or parts of the page. You need the basic <code>.container</code> and <code>.row</code> structure explained above for the column layout to work properly.</p>
+			<div class="row borders mb-10">
+				<div class="col-1 bg-green-l2"><span>.col-1</span></div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+				<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+				<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+				<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+			</div>
+			
+			<p>Insert <code>.col-<em>x</em></code> class to whatever divs you want to make columns of, where <em>x</em> is the number of columns the row is divided into. (Currently supports 2,3,4 columns)</p>
+			
+			<br>
+
+			<h5>Spanned columns</h5>
+			<div class="row borders mb-10">
+				<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+				<div class="col-3 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+			</div>
+			<div class="row borders mb-10">
+				<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+				<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+			</div>
+
+			<p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
+
+			<br>
+
+			<h5>Nesting columns</h5>
+			<div class="row borders mb-10">
+				<div class="col-3 bg-blue-l2">
+					<span>.col-3</span>
+					<div class="row borders">
+						<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+						<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
 					</div>
-					<h1 class="keepcase">Petal</h1>
-					<p>A modern, light CSS UI framework.</p>
-					<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). <br>Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
+				</div>
+				<div class="col-3 bg-green-l2">
+					<span>.col-3</span>
+					<div class="row borders">
+						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+						<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+					</div>
+				</div>
+				<div class="col-3 bg-red-l2">
+					<span>.col-3</span>
+					<div class="row borders">
+						<div class="col-1 bg-red-l1"><span>.col-1</span></div>
+					</div>
 				</div>
 			</div>
-		</header>
-		
-		<div class="container">
+			<p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code> containers as well. </p>
+		</section>
+
+		<section class="row">
+			<h2 id="section-quickmargins">Quick Margins &amp; Paddings</h2>
+			<p>Use quick preset classes to add margins and paddings to any elements.</p>
+			
 			<div class="row">
-				<div class="col-4 colspan-3">
-					<section class="row">
-						<h2 id="section-layout">Layout</h2>
+				<div class="col-2">
+					<h5>margin (all directions)</h5>
+					<ul>
+						<li><code>.m-10</code> : 10px margin</li>
+						<li><code>.m-15</code> : 15px margin</li>
+						<li><code>.m-20</code> : 20px margin</li>
+					</ul>
 
-						<h3>Base structure</h3>
-						<p>Set a container with <code>.container</code> class in which you will place <code>.row</code>s. Use appropriate HTML5 semantic tags such as <code>&lt;section&gt;</code>,<code>&lt;article&gt;</code>,<code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> along with the class.</p>
+					<h5>margin (horizontal)</h5>
+					<ul>
+						<li><code>.mh-10</code> : 10px left+right margin</li>
+						<li><code>.mh-15</code> : 15px left+right margin</li>
+						<li><code>.mh-20</code> : 20px left+right margin</li>
+					</ul>
 
-						<p>You must have <code>.row</code> sub-containers for child elements to align to the page width. </p>
+					<h5>margin (vertical)</h5>
+					<ul>
+						<li><code>.mv-10</code> : 10px top+bottom margin</li>
+						<li><code>.mv-15</code> : 15px top+bottom margin</li>
+						<li><code>.mv-20</code> : 20px top+bottom margin</li>
+					</ul>
 
-						<h5>Container widths and responsive layout</h5>
-						<p>Container width is set as a LESS variable <code>@container-width</code> in the base <code>petal.less</code> file. Default value is 980px; modify the value to change fixed width.</p>
+					<h5>margin-top</h5>
+					<ul>
+						<li><code>.mt-10</code> : 10px top margin</li>
+						<li><code>.mt-15</code> : 15px top margin</li>
+						<li><code>.mt-20</code> : 20px top margin</li>
+						<li><code>.mt-50</code> : 50px top margin</li>
+					</ul>
 
-						<p>Responsive layout is enabled by default, and the page will automatically fit the window width when screen width is smaller than the container width.</p>
-					</section>
-					<section class="row">
-						<h3>Columns</h3>
-						<p>Easily create column layouts for the whole page or parts of the page. You need the basic <code>.container</code> and <code>.row</code> structure explained above for the column layout to work properly.</p>
-						<div class="row borders mb-10">
-							<div class="col-1 bg-green-l2"><span>.col-1</span></div>
-						</div>
-						<div class="row borders mb-10">
-							<div class="col-2 bg-green-l2"><span>.col-2</span></div>
-							<div class="col-2 bg-green-l2"><span>.col-2</span></div>
-						</div>
-						<div class="row borders mb-10">
-							<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-							<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-							<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-						</div>
-						<div class="row borders mb-10">
-							<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-							<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-							<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-							<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-						</div>
-						
-						<p>Insert <code>.col-<em>x</em></code> class to whatever divs you want to make columns of, where <em>x</em> is the number of columns the row is divided into. (Currently supports 2,3,4 columns)</p>
-						
-						<br>
+					<h5>margin-bottom</h5>
+					<ul>
+						<li><code>.mb-10</code> : 10px bottom margin</li>
+						<li><code>.mb-15</code> : 15px bottom margin</li>
+						<li><code>.mb-20</code> : 20px bottom margin</li>
+						<li><code>.mb-50</code> : 50px bottom margin</li>
+					</ul>
+				</div>
+				<div class="col-2">
+					<h5>padding (all directions)</h5>
+					<ul>
+						<li><code>.p-10</code> : 10px padding</li>
+						<li><code>.p-15</code> : 15px padding</li>
+						<li><code>.p-20</code> : 20px padding</li>
+					</ul>
 
-						<h5>Spanned columns</h5>
-						<div class="row borders mb-10">
-							<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
-							<div class="col-3 bg-blue-l2"><span>.col-3.colspan-2</span></div>
-						</div>
-						<div class="row borders mb-10">
-							<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
-							<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-							<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-						</div>
-						<div class="row borders mb-10">
-							<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-							<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-2</span></div>
-						</div>
+					<h5>padding (horizontal)</h5>
+					<ul>
+						<li><code>.ph-10</code> : 10px left+right padding</li>
+						<li><code>.ph-15</code> : 15px left+right padding</li>
+						<li><code>.ph-20</code> : 20px left+right padding</li>
+					</ul>
 
-						<p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
+					<h5>padding (vertical)</h5>
+					<ul>
+						<li><code>.pv-10</code> : 10px top+bottom padding</li>
+						<li><code>.pv-15</code> : 15px top+bottom padding</li>
+						<li><code>.pv-20</code> : 20px top+bottom padding</li>
+					</ul>
 
-						<br>
+					<h5>padding-top</h5>
+					<ul>
+						<li><code>.pt-10</code> : 10px top padding</li>
+						<li><code>.pt-15</code> : 15px top padding</li>
+						<li><code>.pt-20</code> : 20px top padding</li>
+						<li><code>.pt-50</code> : 50px top padding</li>
+					</ul>
+					<h5>padding-bottom</h5>
+					<ul>
+						<li><code>.pb-10</code> : 10px bottom padding</li>
+						<li><code>.pb-15</code> : 15px bottom padding</li>
+						<li><code>.pb-20</code> : 20px bottom padding</li>
+						<li><code>.pb-50</code> : 50px bottom padding</li>
+					</ul>
+				</div>
+			</div>
+		</section>
 
-						<h5>Nesting columns</h5>
-						<div class="row borders mb-10">
-							<div class="col-3 bg-blue-l2">
-								<span>.col-3</span>
-								<div class="row borders">
-									<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
-									<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
-								</div>
-							</div>
-							<div class="col-3 bg-green-l2">
-								<span>.col-3</span>
-								<div class="row borders">
-									<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-									<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-									<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-								</div>
-							</div>
-							<div class="col-3 bg-red-l2">
-								<span>.col-3</span>
-								<div class="row borders">
-									<div class="col-1 bg-red-l1"><span>.col-1</span></div>
-								</div>
-							</div>
-						</div>
-						<p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code> containers as well. </p>
-					</section>
+		<section class="row">
+			<h2 id="section-colors">Colors</h2>
+			<p>Petal offers shades of the 3 colors from the Shakr color scheme.</p>
+			<div class="row">
+				<div class="col-3">
+					<h5>Text colors</h5>
+					<p><div class="colorblock text-red-l2">Text</div><code>.text-red-l2</code></p>
+					<p><div class="colorblock text-red-l1">Text</div><code>.text-red-l1</code></p>
+					<p><div class="colorblock text-red">Text</div><code>.text-red</code></p>
+					<p><div class="colorblock text-red-d1">Text</div><code>.text-red-d1</code></p>
+					<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code></p>
+				</div>
+				<div class="col-3">
+					<h5>Background colors</h5>
+					<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code></p>
+					<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code></p>
+					<p><div class="colorblock bg-green">Text</div><code>.bg-green</code></p>
+					<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code></p>
+					<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code></p>
+				</div>
+				<div class="col-3">
+					<h5>Also, blue</h5>
+					<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code></p>
+					<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code></p>
+					<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code></p>
+					<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code></p>
+					<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code></p>
+				</div>
+			</div>
+		</section>
+		
+		<section class="row">
+			<h2 id="section-buttons">Buttons</h2>
+			
+			<p>Petal features a complex button style generator inside the LESS code to make adding new color sets as simple as possible.</p>
 
-					<section class="row">
-						<h2 id="section-quickmargins">Quick Margins &amp; Paddings</h2>
-						<p>Use quick preset classes to add margins and paddings to any elements.</p>
-						
-						<div class="row">
-							<div class="col-2">
-								<h5>margin (all directions)</h5>
-								<ul>
-									<li><code>.m-10</code> : 10px margin</li>
-									<li><code>.m-15</code> : 15px margin</li>
-									<li><code>.m-20</code> : 20px margin</li>
-								</ul>
+			<h3>Basic Button</h3>
+			<div class="row">
+				<div class="col-1">
+					<div class="block">
+						<a href="#" class="btn">Button</a>
+						<p class="inline-block label"><code>.btn</code></p>
+					</div>
 
-								<h5>margin (horizontal)</h5>
-								<ul>
-									<li><code>.mh-10</code> : 10px left+right margin</li>
-									<li><code>.mh-15</code> : 15px left+right margin</li>
-									<li><code>.mh-20</code> : 20px left+right margin</li>
-								</ul>
+					<p>To make a button, simply add the <code>.btn</code> class, presumably to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. The default color is blue, and some preset colors provided are demonstrated below:</p>
+				</div>
+			</div>
 
-								<h5>margin (vertical)</h5>
-								<ul>
-									<li><code>.mv-10</code> : 10px top+bottom margin</li>
-									<li><code>.mv-15</code> : 15px top+bottom margin</li>
-									<li><code>.mv-20</code> : 20px top+bottom margin</li>
-								</ul>
+		
 
-								<h5>margin-top</h5>
-								<ul>
-									<li><code>.mt-10</code> : 10px top margin</li>
-									<li><code>.mt-15</code> : 15px top margin</li>
-									<li><code>.mt-20</code> : 20px top margin</li>
-									<li><code>.mt-50</code> : 50px top margin</li>
-								</ul>
+			<div class="demo-panel pb-10 cf" data-toggle-bg="toggle">
+				<div class="col-2">
+					<h5>Default</h5>
+					<div class="block">
+						<a href="#" class="btn">Button</a>
+						<p class="inline-block label"><code>.btn</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn blue">Button</a>
+						<p class="inline-block label"><code>.btn.blue</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn green">Button</a>
+						<p class="inline-block label"><code>.btn.green</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn red">Button</a>
+						<p class="inline-block label"><code>.btn.red</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn black">Button</a>
+						<p class="inline-block label"><code>.btn.black</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn white">Button</a>
+						<p class="inline-block label"><code>.btn.white</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn disabled">Button</a>
+						<p class="inline-block label"><code>.btn.disabled</code></p>
+					</div>
+				</div>
+				<div class="col-2">
+					<h5>Hollow</h5>
+					<div class="block">
+						<a href="#" class="btn hollow">Button</a>
+						<p class="inline-block label"><code>.btn.hollow</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn hollow blue">Button</a>
+						<p class="inline-block label"><code>.btn.hollow.blue</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn hollow green">Button</a>
+						<p class="inline-block label"><code>.btn.hollow.green</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn hollow red">Button</a>
+						<p class="inline-block label"><code>.btn.hollow.red</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn hollow black">Button</a>
+						<p class="inline-block label"><code>.btn.hollow.black</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn hollow white">Button</a>
+						<p class="inline-block label"><code>.btn.hollow.white</code></p>
+					</div>
+					<div class="block">
+						<a href="#" class="btn hollow disabled">Button</a>
+						<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
+					</div>
+				</div>
+			</div>
 
-								<h5>margin-bottom</h5>
-								<ul>
-									<li><code>.mb-10</code> : 10px bottom margin</li>
-									<li><code>.mb-15</code> : 15px bottom margin</li>
-									<li><code>.mb-20</code> : 20px bottom margin</li>
-									<li><code>.mb-50</code> : 50px bottom margin</li>
-								</ul>
-							</div>
-							<div class="col-2">
-								<h5>padding (all directions)</h5>
-								<ul>
-									<li><code>.p-10</code> : 10px padding</li>
-									<li><code>.p-15</code> : 15px padding</li>
-									<li><code>.p-20</code> : 20px padding</li>
-								</ul>
+			<h5>Options</h5>
 
-								<h5>padding (horizontal)</h5>
-								<ul>
-									<li><code>.ph-10</code> : 10px left+right padding</li>
-									<li><code>.ph-15</code> : 15px left+right padding</li>
-									<li><code>.ph-20</code> : 20px left+right padding</li>
-								</ul>
+			<ul>
+				<li><code>.hollow</code> : Hollow style alternative</li>
+				<li><code>.disabled</code> OR <code>:disabled</code> (attribute) : Disabled state</li>
+				<li><code>.ondark</code> on button OR <code>.dark</code> on parent : Alternative style on dark backgrounds</li>
+				<li><code>.whitetext</code> : White text on buttons (hollow + ondark style only)</li>
+			</ul>
 
-								<h5>padding (vertical)</h5>
-								<ul>
-									<li><code>.pv-10</code> : 10px top+bottom padding</li>
-									<li><code>.pv-15</code> : 15px top+bottom padding</li>
-									<li><code>.pv-20</code> : 20px top+bottom padding</li>
-								</ul>
+			<br>
 
-								<h5>padding-top</h5>
-								<ul>
-									<li><code>.pt-10</code> : 10px top padding</li>
-									<li><code>.pt-15</code> : 15px top padding</li>
-									<li><code>.pt-20</code> : 20px top padding</li>
-									<li><code>.pt-50</code> : 50px top padding</li>
-								</ul>
-								<h5>padding-bottom</h5>
-								<ul>
-									<li><code>.pb-10</code> : 10px bottom padding</li>
-									<li><code>.pb-15</code> : 15px bottom padding</li>
-									<li><code>.pb-20</code> : 20px bottom padding</li>
-									<li><code>.pb-50</code> : 50px bottom padding</li>
-								</ul>
-							</div>
-						</div>
-					</section>
+			<h5>Including additional colors</h5>
 
-					<section class="row">
-						<h2 id="section-colors">Colors</h2>
-						<p>Petal offers shades of the 3 colors from the Shakr color scheme.</p>
-						<div class="row">
-							<div class="col-3">
-								<h5>Text colors</h5>
-								<p><div class="colorblock text-red-l2">Text</div><code>.text-red-l2</code></p>
-								<p><div class="colorblock text-red-l1">Text</div><code>.text-red-l1</code></p>
-								<p><div class="colorblock text-red">Text</div><code>.text-red</code></p>
-								<p><div class="colorblock text-red-d1">Text</div><code>.text-red-d1</code></p>
-								<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code></p>
-							</div>
-							<div class="col-3">
-								<h5>Background colors</h5>
-								<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code></p>
-								<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code></p>
-								<p><div class="colorblock bg-green">Text</div><code>.bg-green</code></p>
-								<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code></p>
-								<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code></p>
-							</div>
-							<div class="col-3">
-								<h5>Also, blue</h5>
-								<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code></p>
-								<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code></p>
-								<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code></p>
-								<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code></p>
-								<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code></p>
-							</div>
-						</div>
-					</section>
-					
-					<section class="row">
-						<h2 id="section-buttons">Buttons</h2>
-						
-						<p>Petal features a complex button style generator inside the LESS code to make adding new color sets as simple as possible.</p>
-
-						<h3>Basic Button</h3>
-						<div class="row">
-							<div class="col-1">
-								<div class="block">
-									<a href="#" class="btn">Button</a>
-									<p class="inline-block label"><code>.btn</code></p>
-								</div>
-
-								<p>To make a button, simply add the <code>.btn</code> class, presumably to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. The default color is blue, and some preset colors provided are demonstrated below:</p>
-							</div>
-						</div>
-
-					
-
-						<div class="demo-panel pb-10 cf" data-toggle-bg="toggle">
-							<div class="col-2">
-								<h5>Default</h5>
-								<div class="block">
-									<a href="#" class="btn">Button</a>
-									<p class="inline-block label"><code>.btn</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn blue">Button</a>
-									<p class="inline-block label"><code>.btn.blue</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn green">Button</a>
-									<p class="inline-block label"><code>.btn.green</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn red">Button</a>
-									<p class="inline-block label"><code>.btn.red</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn black">Button</a>
-									<p class="inline-block label"><code>.btn.black</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn white">Button</a>
-									<p class="inline-block label"><code>.btn.white</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn disabled">Button</a>
-									<p class="inline-block label"><code>.btn.disabled</code></p>
-								</div>
-							</div>
-							<div class="col-2">
-								<h5>Hollow</h5>
-								<div class="block">
-									<a href="#" class="btn hollow">Button</a>
-									<p class="inline-block label"><code>.btn.hollow</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn hollow blue">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.blue</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn hollow green">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.green</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn hollow red">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.red</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn hollow black">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.black</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn hollow white">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.white</code></p>
-								</div>
-								<div class="block">
-									<a href="#" class="btn hollow disabled">Button</a>
-									<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
-								</div>
-							</div>
-						</div>
-
-						<h5>Options</h5>
-
-						<ul>
-							<li><code>.hollow</code> : Hollow style alternative</li>
-							<li><code>.disabled</code> OR <code>:disabled</code> (attribute) : Disabled state</li>
-							<li><code>.ondark</code> on button OR <code>.dark</code> on parent : Alternative style on dark backgrounds</li>
-							<li><code>.whitetext</code> : White text on buttons (hollow + ondark style only)</li>
-						</ul>
-
-						<br>
-
-						<h5>Including additional colors</h5>
-
-						<p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
-						
-						<div class="demo-code">
-						<pre><code class="less css" data-lang="less">// Add colors here
+			<p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
+			
+			<div class="demo-code">
+			<pre><code class="less css" data-lang="less">// Add colors here
 &amp;.my-color    { .generate-btn('my-color') }
 &amp;.my-color2   { .generate-btn('my-color2'; 'custom') }</code></pre>
-						</div>
+			</div>
 
-						<p>The 'custom' option is provided for when you want to specify the l1, l2, d1, d2 shades manually. Define all 5 variables including base color in <b>color-palette.less</b> and append the <code>'custom'</code> option at the end.</p>
-						
-						<br>
+			<p>The 'custom' option is provided for when you want to specify the l1, l2, d1, d2 shades manually. Define all 5 variables including base color in <b>color-palette.less</b> and append the <code>'custom'</code> option at the end.</p>
+			
+			<br>
 
-						<h3>Button groups</h3>
-						<div class="demo-panel p-15" data-toggle-bg="toggle">
-							<div class="btn-group">
-								<button class="btn">Button</button>
-								<button class="btn green">Button</button>
-								<button class="btn red">Button</button>
-							</div>
-						</div>
+			<h3>Button groups</h3>
+			<div class="demo-panel p-15" data-toggle-bg="toggle">
+				<div class="btn-group">
+					<button class="btn">Button</button>
+					<button class="btn green">Button</button>
+					<button class="btn red">Button</button>
+				</div>
+			</div>
 
-						<p>Put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
+			<p>Put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
 
-						<br>
+			<br>
 
-						<h3>Toggle Buttons</h3>
+			<h3>Toggle Buttons</h3>
 
-						<div class="demo-panel p-15" data-toggle-bg="toggle">
-							<div class="btn-group">	
-								<button class="btn hollow blue toggle active" data-toggle="toggle" data-toggle-state="active">Toggle</button>
-								<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
-								<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
-								<button class="btn green toggle" data-toggle="toggle">Toggle</button>
-								<button class="btn red toggle" data-toggle="toggle">Toggle</button>
-							</div>
-						</div>
+			<div class="demo-panel p-15" data-toggle-bg="toggle">
+				<div class="btn-group">	
+					<button class="btn hollow blue toggle active" data-toggle="toggle" data-toggle-state="active">Toggle</button>
+					<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+					<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+					<button class="btn green toggle" data-toggle="toggle">Toggle</button>
+					<button class="btn red toggle" data-toggle="toggle">Toggle</button>
+				</div>
+			</div>
 
-						<p>Add <code>data-toggle="toggle"</code> on the button to make it toggleable.</p>
-						
-						<br>
+			<p>Add <code>data-toggle="toggle"</code> on the button to make it toggleable.</p>
+			
+			<br>
 
-						<h3>Button Dropdowns</h3>
+			<h3>Button Dropdowns</h3>
 
-						<div class="demo-panel p-15" data-toggle-bg="toggle">
-							<div class="btn-group">
-								<div class="btn-group">
-									<button class="btn dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
-									<ul class="dropdown-menu">
-										<li><a href="#">Menu item 1</a></li>
-										<li><a href="#">Menu item 2</a></li>
-										<li class="divider"></li>
-										<li><a href="#">Menu item 3</a></li>
-									</ul>
-								</div>
+			<div class="demo-panel p-15" data-toggle-bg="toggle">
+				<div class="btn-group">
+					<div class="btn-group">
+						<button class="btn dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Menu item 1</a></li>
+							<li><a href="#">Menu item 2</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Menu item 3</a></li>
+						</ul>
+					</div>
 
-								<div class="btn-group">
-									<button class="btn hollow dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
-									<ul class="dropdown-menu">
-										<li><a href="#">Menu item 1</a></li>
-										<li><a href="#">Menu item 2</a></li>
-										<li class="divider"></li>
-										<li class="submenu">
-											<a href="#">Submenu 1</a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Submenu item 1</a></li>
-												<li><a href="#">Submenu item 2</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Menu item 3</a></li>
-									</ul>
-								</div>
+					<div class="btn-group">
+						<button class="btn hollow dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Menu item 1</a></li>
+							<li><a href="#">Menu item 2</a></li>
+							<li class="divider"></li>
+							<li class="submenu">
+								<a href="#">Submenu 1</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Submenu item 1</a></li>
+									<li><a href="#">Submenu item 2</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Menu item 3</a></li>
+						</ul>
+					</div>
 
-								<div class="btn-group">
-									<button class="btn green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
-									<ul class="dropdown-menu">
-										<li><a href="#">Menu item 1</a></li>
-										<li><a href="#">Menu item 2</a></li>
-										<li class="divider"></li>
-										<li><a href="#">Menu item 3</a></li>
-									</ul>
-								</div>
+					<div class="btn-group">
+						<button class="btn green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Menu item 1</a></li>
+							<li><a href="#">Menu item 2</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Menu item 3</a></li>
+						</ul>
+					</div>
 
-								<div class="btn-group">
-									<button class="btn hollow green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
-									<ul class="dropdown-menu">
-										<li><a href="#">Menu item 1</a></li>
-										<li><a href="#">Menu item 2</a></li>
-										<li class="divider"></li>
-										<li class="submenu">
-											<a href="#">Submenu 1</a>
-											<ul class="dropdown-menu">
-												<li><a href="#">Submenu item 1</a></li>
-												<li><a href="#">Submenu item 2</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Menu item 3</a></li>
-									</ul>
-								</div>
+					<div class="btn-group">
+						<button class="btn hollow green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Menu item 1</a></li>
+							<li><a href="#">Menu item 2</a></li>
+							<li class="divider"></li>
+							<li class="submenu">
+								<a href="#">Submenu 1</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Submenu item 1</a></li>
+									<li><a href="#">Submenu item 2</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Menu item 3</a></li>
+						</ul>
+					</div>
 
-								<div class="btn-group">
-									<button class="btn red dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
-									<ul class="dropdown-menu">
-										<li><a href="#">Menu item 1</a></li>
-										<li><a href="#">Menu item 2</a></li>
-										<li class="divider"></li>
-										<li><a href="#">Menu item 3</a></li>
-									</ul>
-								</div>
+					<div class="btn-group">
+						<button class="btn red dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Menu item 1</a></li>
+							<li><a href="#">Menu item 2</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Menu item 3</a></li>
+						</ul>
+					</div>
 
-							</div>
-						</div>
-						<div class="demo-code">
-						<pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
+				</div>
+			</div>
+			<div class="demo-code">
+			<pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
   &lt;button class=&quot;btn dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;
     Button &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
   &lt;/button&gt;
@@ -459,28 +459,28 @@
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
-						</code></pre>
-						</div>
+</code></pre>
+			</div>
 
-						<p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
+			<p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
 
-						<p>The <code>.btn-group</code> class on parent element is not required but is recommended for better layout.</p>
+			<p>The <code>.btn-group</code> class on parent element is not required but is recommended for better layout.</p>
 
-						<br>
+			<br>
 
-						<h4>Split button variant</h4>
+			<h4>Split button variant</h4>
 
-						<div class="demo-panel p-15" data-toggle-bg="toggle">
-							<div class="btn-group">
-								<button class="btn green">Button</button>
-								<button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
-								<ul class="dropdown-menu" data-dropdown-align="right">
-									<li><a href="#">Menu item 1</a></li>
-									<li><a href="#">Menu item 2</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="demo-code">
+			<div class="demo-panel p-15" data-toggle-bg="toggle">
+				<div class="btn-group">
+					<button class="btn green">Button</button>
+					<button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+					<ul class="dropdown-menu" data-dropdown-align="right">
+						<li><a href="#">Menu item 1</a></li>
+						<li><a href="#">Menu item 2</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="demo-code">
 <pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
   &lt;button class=&quot;btn green&quot;&gt;Button&lt;/button&gt;
   &lt;button class=&quot;btn green dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;
@@ -490,142 +490,168 @@
   &lt;/ul&gt;
 &lt;/div&gt;
 </code></pre>
-						</div>
+			</div>
 
-						<p>Create two <code>.btn</code>s and insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
+			<p>Create two <code>.btn</code>s and insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
 
-						<p>In this case, the <code>.btn-group</code> class on parent element is <b>required</b> for correct appearance.</p>
+			<p>In this case, the <code>.btn-group</code> class on parent element is <b>required</b> for correct appearance.</p>
 
-						<h5>Options</h5>
-						<p>Add <code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code>to right align the menu.</p>
-	
-					</section>
+			<h5>Options</h5>
+			<p>Add <code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code>to right align the menu.</p>
+
+		</section>
+
+		<section class="row">
+			<h2 id="section-forms">Form Elements</h2>
+
+			<h3>Input boxes</h3>
+
+			<div class="demo-panel p-15" data-toggle-bg="toggle">
+				<input class="input" type="text" placeholder="Name" />
+				<input class="input" type="email" placeholder="Email" />
+				<input class="input" type="text" placeholder="Disabled" disabled />
+			</div>
+
+			<div class="demo-panel p-15" data-toggle-bg="toggle">
+				<div class="form-group">
+					<label for="demoFormEmail">Email</label>
+					<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
 				</div>
-				<div class="col-4">
-					<nav id="menu">
-						<ul>
-							<li><a href="#section-layout">Layout</a></li>
-							<li><a href="#section-quickmargins">Quick Margins &amp; Paddings</a></li>
-							<li><a href="#section-colors">Colors</a></li>
-							<li><a href="#section-buttons">Buttons</a></li>
-						</ul>
-
-						<p>
-							<a href="#top" class="totop">Back to top</a>
-						</p>
-
-						<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
-					</nav> 
+				<div class="form-group">
+					<label for="demoFormPassword">Password</label>
+					<input class="input" id="demoFormPassword" type="password" placeholder="Password" />
 				</div>
 			</div>
+
+		</section>
+	</div>
+	<div class="col-4">
+		<nav id="menu">
+			<ul>
+				<li><a href="#section-layout">Layout</a></li>
+				<li><a href="#section-quickmargins">Quick Margins &amp; Paddings</a></li>
+				<li><a href="#section-colors">Colors</a></li>
+				<li><a href="#section-buttons">Buttons</a></li>
+				<li><a href="#section-forms">Form elements</a></li>
+			</ul>
+
+			<p>
+				<a href="#top" class="totop">Back to top</a>
+			</p>
+
+			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
+		</nav> 
+	</div>
+</div>
+</div><!-- container end -->
+
+<footer class="stretch">
+	<div class="container">
+		<div class="row credits">
+			<h4>Credits</h4>
+			<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
+			<p>©2015 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
 		</div>
-		<footer class="stretch">
-			<div class="container">
-				<div class="row credits">
-					<h4>Credits</h4>
-					<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
-					<p>©2015 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
-				</div>
-			</div>
-		</footer>
-		
+	</div>
+</footer>
 	
-	</body>
+
+</body>
 
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="./js/petal-functions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="./js/petal-functions.js"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
 
 
 
-	<script>
-		// original code from http://jsfiddle.net/mekwall/up4nu/
+<script>
+	// original code from http://jsfiddle.net/mekwall/up4nu/
 
-		// prevent href="#" button clicks
-		$('a[href="#"]').click(function(event) {  
-			event.preventDefault();
-		});
+	// prevent href="#" button clicks
+	$('a[href="#"]').click(function(event) {  
+		event.preventDefault();
+	});
 
-		var lastId;
-		var header = $("#page-header");
-		var nav = $("nav#menu");
-		var headerHeight = header.outerHeight();
+	var lastId;
+	var header = $("#page-header");
+	var nav = $("nav#menu");
+	var headerHeight = header.outerHeight();
 
-		// All list items
-		var menuItems = nav.find("li a");
+	// All list items
+	var menuItems = nav.find("li a");
 
-		// Anchors corresponding to menu items
-		var scrollItems = menuItems.map(function(){
-			var item = $($(this).attr("href"));
-			if (item.length==1) { return item; }
-		});
+	// Anchors corresponding to menu items
+	var scrollItems = menuItems.map(function(){
+		var item = $($(this).attr("href"));
+		if (item.length==1) { return item; }
+	});
 
-		// smooth scroll to anchor
-		$('nav#menu a').click(function(e){
-			var href = $(this).attr("href");
-			var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
-			$("html,body").stop().animate({ 
-				scrollTop: offsetTop
-			}, 300);
-			e.preventDefault();
-		});
+	// smooth scroll to anchor
+	$('nav#menu a').click(function(e){
+		var href = $(this).attr("href");
+		var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
+		$("html,body").stop().animate({ 
+			scrollTop: offsetTop
+		}, 300);
+		e.preventDefault();
+	});
 
-		function scrollnav(){
-			// Get container scroll position
-			var fromTop = $(window).scrollTop()+headerHeight;
-			
-			// Get id of current scroll item
-			var cur = scrollItems.map(function(){
-				if ($(this).offset().top < fromTop) {
-					return this;
-				}
-			});
-
-			// Get the id of the current element
-			cur = cur[cur.length-1];
-			var id = cur && cur.length ? cur[0].id : "";
-
-			if (lastId !== id) {
-				lastId = id;
-				// Set/remove active class
-				menuItems
-				 .parent().removeClass("active")
-				 .end().filter("[href=#"+id+"]").parent().addClass("active");
-			};
-
-			// toggle fix-top class for menu
-			if ($(window).scrollTop() > headerHeight) {
-				nav.addClass("fix-top"); 
-			} else {
-				nav.removeClass("fix-top");
+	function scrollnav(){
+		// Get container scroll position
+		var fromTop = $(window).scrollTop()+headerHeight;
+		
+		// Get id of current scroll item
+		var cur = scrollItems.map(function(){
+			if ($(this).offset().top < fromTop) {
+				return this;
 			}
+		});
 
+		// Get the id of the current element
+		cur = cur[cur.length-1];
+		var id = cur && cur.length ? cur[0].id : "";
+
+		if (lastId !== id) {
+			lastId = id;
+			// Set/remove active class
+			menuItems
+			 .parent().removeClass("active")
+			 .end().filter("[href=#"+id+"]").parent().addClass("active");
+		};
+
+		// toggle fix-top class for menu
+		if ($(window).scrollTop() > headerHeight) {
+			nav.addClass("fix-top"); 
+		} else {
+			nav.removeClass("fix-top");
 		}
 
-		$(function(){
-			scrollnav();
-		});
+	}
 
-		// Bind to scroll
-		$(window).scroll(scrollnav);
+	$(function(){
+		scrollnav();
+	});
 
-		// button demo background toggler
-		$('#btn-demo-toggle').click(function(e) {
-			e.preventDefault();
-			$('[data-toggle-bg]').toggleClass('dark');
-		});
+	// Bind to scroll
+	$(window).scroll(scrollnav);
 
-		// load highlight.js
-		$(document).ready(function() {
-		  $('pre code').each(function(i, block) {
-		    hljs.highlightBlock(block);
-		  });
-		});
+	// button demo background toggler
+	$('#btn-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('[data-toggle-bg]').toggleClass('dark');
+	});
 
-	</script>
+	// load highlight.js
+	$(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+	    hljs.highlightBlock(block);
+	  });
+	});
+
+</script>
 
 
 </html>
