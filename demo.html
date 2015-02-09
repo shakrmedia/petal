@@ -505,22 +505,61 @@
 			<h2 id="section-forms">Form Elements</h2>
 
 			<h3>Input boxes</h3>
-
+			
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
 				<input class="input" type="text" placeholder="Name" />
 				<input class="input" type="email" placeholder="Email" />
 				<input class="input" type="text" placeholder="Disabled" disabled />
 			</div>
 
+			<p>Add <code>.input</code> class to an <code>&lt;input&gt;</code> element to apply the design.</p>
+
+			<br>
+
+			<h4>Form groups</h4>
+
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
+			<form>
 				<div class="form-group">
 					<label for="demoFormEmail">Email</label>
 					<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
+					<p class="form-caption">Enter your email address.</p>
 				</div>
 				<div class="form-group">
-					<label for="demoFormPassword">Password</label>
+					<label for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
 					<input class="input" id="demoFormPassword" type="password" placeholder="Password" />
 				</div>
+				<div class="form-group">
+					<label for="demoFormDoYouLike">Do you like Petal?</label>
+					<input class="input" id="demoFormDoYouLike" type="text" placeholder="Yes"/>
+				</div>
+				<div class="form-group">
+					<a class="btn">Submit</a>
+				</div>
+			</form>
+			</div>
+			
+			<p>Include <code>&lt;label&gt;</code>s and <code>&lt;input&gt;</code>s inside a <code>.form-group</code> to have them stretch across the container as block elements.</p>
+
+			<p>Add <code>.form-caption</code> class for captions.</p>
+			<br>
+
+			<h4>Inline form groups</h4>
+
+			<div class="demo-panel p-15" data-toggle-bg="toggle">
+			<form class="form-inline">
+				<div class="form-group">
+					<label for="demoForm2Email">Email</label>
+					<input class="input" id="demoForm2Email" type="email" placeholder="Email" />
+				</div>
+				<div class="form-group">
+					<label for="demoForm2Password">Password</label>
+					<input class="input" id="demoForm2Password" type="password" placeholder="Password" />
+				</div>
+				<div class="form-group">
+					<a class="btn">Submit</a>
+				</div>
+			</form>
 			</div>
 
 		</section>

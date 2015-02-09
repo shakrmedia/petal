@@ -5,9 +5,10 @@
 input.input,
 textarea.input {
 	border: 2px solid @gray-l1;
-	padding: 7px 10px;
+	padding: 8px 10px;
+	margin: 5px 0;
 	font-size: 0.9rem;
-	line-height: 1.4em;
+	line-height: 1rem;
 	transition: 0.2s;
 	box-shadow: 0 2px 1px rgba(0,0,0,.05) inset;
 
@@ -61,13 +62,31 @@ label {
 	letter-spacing: 2px;
 	line-height: 1rem;
 	display: block;
-	padding-bottom: 5px;
+	margin: 5px 0;
+	padding-right: 5px;
+}
+
+.form-caption {
+	font-size: 0.9em;
+	color: @gray-d1;
+	line-height: 1em;
+	margin: 8px 0;
+	text-decoration: none;
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: normal;
+
+	label & {
+		display: inline-block;
+		margin: 0;
+		font-size: 1em;
+	}
 }
 
 
 .form-group {
 	width: 100%;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 
 	.form-group {
 		margin-bottom: 0;
@@ -84,4 +103,26 @@ label {
 		display: block;
 	}
 
+}
+
+.form-inline {
+	.form-group {
+		vertical-align: middle;
+		display: inline-block;
+		width: auto;
+	}
+
+	.form-group + .form-group {
+		margin-left: 5px;
+	}
+
+	input.input {
+		display: inline-block;
+		width: auto;
+	}
+
+	label {
+		display: inline-block;
+		width: auto;
+	}
 }
