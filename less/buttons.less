@@ -47,7 +47,7 @@
 
 	color: #fff;
 	background: none;
-	background-color: @blue;
+	background-color: @primary-accent-color;
 	cursor: pointer;
 	border: 2px solid transparent;
 	border-radius: 0;
@@ -81,7 +81,7 @@
 }
 
 // static palette button styles generator mixin
-.generate-btn(@base-color: 'blue'; @option: 'auto';) {
+.generate-btn(@base-color: 'primary-accent-color'; @option: 'auto';) {
 	
 	// inner mixin
 	.generate-btn-styles() {
@@ -371,7 +371,8 @@ ul.dropdown-menu {
 /* button color sets */
 .btn {
 
-	&, 
+	& 		{ .generate-btn('primary-accent-color') } 
+	
 	&.blue 	{ .generate-btn('blue'; 'custom') }
 	&.green { .generate-btn('green'; 'custom') }
 	&.red 	{ .generate-btn('red'; 'custom') }
