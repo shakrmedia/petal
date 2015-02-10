@@ -472,12 +472,30 @@
 
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
 				<div class="btn-group">
-					<button class="btn green">Button</button>
-					<button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
-					<ul class="dropdown-menu" data-dropdown-align="right">
-						<li><a href="#">Menu item 1</a></li>
-						<li><a href="#">Menu item 2</a></li>
-					</ul>
+					<div class="btn-group">
+						<button class="btn green">Button</button>
+						<button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+						<ul class="dropdown-menu" data-dropdown-align="right">
+							<li><a href="#">Menu item 1</a></li>
+							<li><a href="#">Menu item 2</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button class="btn red">Button</button>
+						<button class="btn red dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+						<ul class="dropdown-menu" data-dropdown-align="right">
+							<li><a href="#">Menu item 1</a></li>
+							<li><a href="#">Menu item 2</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button class="btn blue hollow">Button</button>
+						<button class="btn blue hollow dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+						<ul class="dropdown-menu" data-dropdown-align="right">
+							<li><a href="#">Menu item 1</a></li>
+							<li><a href="#">Menu item 2</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div class="demo-code">
@@ -521,16 +539,16 @@
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
 			<form>
 				<div class="form-group">
-					<label for="demoFormEmail">Email</label>
+					<label class="input-label" for="demoFormEmail">Email</label>
 					<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
 					<p class="form-caption">Enter your email address.</p>
 				</div>
 				<div class="form-group">
-					<label for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
+					<label class="input-label" for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
 					<input class="input" id="demoFormPassword" type="password" placeholder="Password" />
 				</div>
 				<div class="form-group">
-					<label for="demoFormDoYouLike">Do you like Petal?</label>
+					<label class="input-label" for="demoFormDoYouLike">Do you like Petal?</label>
 					<input class="input" id="demoFormDoYouLike" type="text" placeholder="Yes"/>
 				</div>
 				<div class="form-group">
@@ -549,17 +567,64 @@
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
 			<form class="form-inline">
 				<div class="form-group">
-					<label for="demoForm2Email">Email</label>
+					<label class="input-label" for="demoForm2Email">Email</label>
 					<input class="input" id="demoForm2Email" type="email" placeholder="Email" />
 				</div>
 				<div class="form-group">
-					<label for="demoForm2Password">Password</label>
+					<label class="input-label" for="demoForm2Password">Password</label>
 					<input class="input" id="demoForm2Password" type="password" placeholder="Password" />
 				</div>
 				<div class="form-group">
 					<a class="btn">Submit</a>
 				</div>
 			</form>
+			</div>
+
+			<h4>Input groups</h4>
+			<div class="demo-panel p-15" data-toggle-bg="toggle">
+			<form>
+				<div class="form-group">
+					<label class="input-label" for="demoForm3Username">Username</label>
+					<div class="input-group">
+						<span class="input-addon">@</span>
+						<input class="input" id="demoForm3Username" type="text" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="input-label" for="demoForm3Subdomain">Subdomain</label>
+					<div class="input-group">
+						<input class="input" id="demoForm3Subdomain" type="text" />
+						<span class="input-addon">.somesite.com</span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="input-label" for="demoForm3Price">Price</label>
+					<div class="input-group">
+						<span class="input-addon">$</span>
+						<input class="input" id="demoForm3Price" type="text" />
+						<div class="btn-group">
+							<button class="btn">Action</button>
+							<button class="btn dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+							<ul class="dropdown-menu" data-dropdown-align="right">
+								<li><a href="#">Menu item 1</a></li>
+								<li><a href="#">Menu item 2</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Menu item 3</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</form>
+			</div>
+
+			<br>
+
+			<h4>Checkboxes and Radioboxes</h4>
+			<div class="demo-panel p-15">
+				<input class="checkbox" type="checkbox" id="demoCheck1">
+				<label for="demoCheck1">What the fuq</label>
 			</div>
 
 		</section>
@@ -609,8 +674,8 @@
 <script>
 	// original code from http://jsfiddle.net/mekwall/up4nu/
 
-	// prevent href="#" button clicks
-	$('a[href="#"]').click(function(event) {  
+	// prevent default button clicks
+	$('a[href="#"], button').click(function(event) {  
 		event.preventDefault();
 	});
 

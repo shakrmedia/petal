@@ -247,15 +247,6 @@
 	position: relative;
 	margin-bottom: 5px;
 
-	.btn {
-		float: left;
-		z-index: 1;
-
-		&:hover {
-			z-index: 2;
-		}
-	}
-
 	.btn + .btn {
 		margin-left: 5px;
 	}
@@ -267,11 +258,72 @@
 	.btn-group + .btn-group {
 		margin-left: 5px;
 	}
+	
 
+	// split button
 	.btn + .btn.dropdown {
 		padding-left: 7px;
 		padding-right: 7px;
-		margin-left: 2px;
+		margin-left: 0px;
+		position: relative;
+		border-left-width: 0;
+
+		&:not(.hollow):before {
+			content: " ";
+			display: block;
+			position: absolute;
+			width: 2px;
+			margin: -2px 0;
+			left: -2px;
+			top: 0;
+			bottom: 0;
+			background: rgba(0,0,0,0.1);
+			opacity: 1;
+			transition: opacity .15s;
+			z-index: 0;
+		}
+
+		&:active {
+			border-left-width: 2px;
+			margin-left: -2px;
+			transition-duration: 0s;
+		}
+	}
+
+	.dark & .btn + .btn.dropdown:not(.hollow):before {
+		background: rgba(255,255,255,0.3);
+	}
+
+	.btn {
+		float: left;
+		z-index: 1;
+
+		&:active {
+			z-index: 2;
+		}
+	}
+
+	// active override 
+	&.active .btn + .btn.dropdown {
+		border-left-width: 2px;
+		margin-left: -2px;
+	}
+	
+	
+	.btn:hover + .btn.dropdown:before,
+	.btn + .btn.dropdown:active:before,
+	&.active .btn + .btn.dropdown:before {
+		opacity: 0;
+	}
+
+	.btn + .btn.dropdown:active:before {
+		transition-duration: 0s;
+	}
+	&.active .btn + .btn.dropdown:before {
+		transition-duration: .15s;
+	}
+	&.active .btn + .btn.dropdown:active:before {
+		transition-duration: 0s !important;
 	}
 
 	.cf;
@@ -291,6 +343,7 @@ ul.dropdown-menu {
 
 	background: @blue-d1;
 	color: #fff;
+	font-size: 1rem;
 	.drop-shadow;
 
 	&[data-dropdown-align="right"] {
@@ -318,7 +371,7 @@ ul.dropdown-menu {
 
 		&.divider {
 			height: 5px;
-			border-bottom: 1px solid rgba(255,255,255,.3);
+			border-bottom: 1px solid rgba(0,0,0,.1);
 			padding-bottom: 5px;
 			margin-bottom: 5px;
 		}
@@ -333,7 +386,7 @@ ul.dropdown-menu {
 			position: relative;
 
 			&:after {
-				content: " ";
+				content: "";
 				.caret-right;
 				position: absolute;
 				top: 50%;

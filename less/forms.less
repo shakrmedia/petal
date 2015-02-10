@@ -2,15 +2,29 @@
 // *  Forms
 // * ================================= *
 
+// remove spinners
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+input[type="number"]::-moz-inner-spin-button,
+input[type="number"]::-moz-outer-spin-button, {
+	-webkit-appearance: none;
+}
+
+
+// default style
 input.input,
 textarea.input {
-	border: 2px solid @gray-l1;
-	padding: 8px 10px;
+	border: @input-border-width solid @gray-l1;
+	border-radius: none;
+	padding: (10px-@input-border-width) 10px;
 	margin: 5px 0;
 	font-size: 0.9rem;
 	line-height: 1rem;
 	transition: 0.2s;
-	box-shadow: 0 2px 1px rgba(0,0,0,.05) inset;
+	box-shadow: 0 1px 1px rgba(0,0,0,.1) inset;
+	appearance: none;
+	outline: none;
 
 	&:hover {
 		border-color: darken(@gray-l1,10%);
@@ -29,6 +43,7 @@ textarea.input {
 			border-color: @gray-l1;
 		}
 		&:focus {
+			border-color: @primary-accent-color;
 			background-color: fadeout(@black,30%);
 		}
 	}
@@ -40,6 +55,7 @@ textarea.input {
 	}
 }
 
+// attribute styles
 input.input,
 textarea.input {
 
@@ -54,7 +70,7 @@ textarea.input {
 	}
 }
 
-label {
+label.input-label {
 	font-size: 0.8rem;
 	font-weight: 900;
 	text-decoration: none !important;
@@ -83,10 +99,14 @@ label {
 	}
 }
 
-
+// form groups
 .form-group {
 	width: 100%;
 	margin-bottom: 20px;
+
+	&:last-child {
+		margin-bottom: inherit;
+	}
 
 	.form-group {
 		margin-bottom: 0;
@@ -105,15 +125,61 @@ label {
 
 }
 
+
+// input groups
+.input-group {
+	display: table;
+	width: 100%;
+
+	.input-addon {
+		width: 1%;
+		padding: (10px-@input-border-width) 10px;
+		display: table-cell;
+		margin: 0;
+		background: fadeout(@gray-l2,50%);
+		border: @input-border-width solid @gray-l1;
+		font-size: 0.9rem;
+		line-height: 1rem;
+		border-right-width: 0;
+	}
+
+	.input-addon:last-child {
+		border-right-width: @input-border-width;
+		border-left-width: 0;
+	}
+
+	.btn-group {
+		display: table-cell;
+		vertical-align: middle;
+		margin: 0 0 0 -1px;
+		width: 1%;
+		white-space: nowrap;
+		font-size: 0pt;
+
+		.btn {
+			display: inline-block;
+			float: none;
+		}
+	}
+
+	input.input {
+		display: table-cell;
+		margin: 0;
+	}
+}
+
+
+// inline form groups
 .form-inline {
 	.form-group {
 		vertical-align: middle;
 		display: inline-block;
 		width: auto;
+		margin-bottom: inherit;
 	}
 
-	.form-group + .form-group {
-		margin-left: 5px;
+	.input-group {
+		width: auto;
 	}
 
 	input.input {
@@ -124,5 +190,62 @@ label {
 	label {
 		display: inline-block;
 		width: auto;
+	}
+}
+
+
+// checkboxes
+input[type="checkbox"].checkbox:checked,
+input[type="checkbox"].checkbox:not(:checked) {
+	display: none;
+}
+
+input[type="checkbox"].checkbox + label {
+	position: relative;
+	padding-left: (@default-checkbox-size+4px);
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: "";
+		width: @default-checkbox-size;
+		height: @default-checkbox-size;
+		z-index: 2;
+		border: 2px solid @gray-l1;
+		background: lighten(@gray-l2,10%);
+		border-radius: 100%;
+		box-sizing: border-box;
+		transition: background-color 0.2s;
+	}
+
+	&:hover:before {
+		background-color: @white;
+	}
+
+	&:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: "";
+		width: @default-checkbox-size;
+		height: @default-checkbox-size;
+		background: url('../assets/checkmark-check.svg');
+		background-size: cover;
+		z-index: 2;
+		box-sizing: border-box;
+		opacity: 0;
+
+	}
+}
+
+input[type="checkbox"].checkbox:checked + label{
+	&:before {
+		background-color: @white;
+	}
+	&:after {
+		opacity: 1;
 	}
 }
