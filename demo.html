@@ -580,6 +580,10 @@
 			</form>
 			</div>
 
+			<p>Append <code>.form-inline</code> class to a parent container to put <code>.form-groups</code> in one line. You need to apply paddings and margins manually.</p>
+			
+			<br>
+
 			<h4>Input groups</h4>
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
 			<form>
@@ -619,12 +623,47 @@
 			</form>
 			</div>
 
+			<p>Place <code>.input-addon</code> class blocks before or after the input. Enclose them with a <code>.input-group</code> container.</p>
+
+			<p>When placing buttons inside input groups, you don't need put it inside another <code>.input-addon</code> container; just place the <code>.btn-group</code> alongside the input.</p>
+
 			<br>
 
-			<h4>Checkboxes and Radioboxes</h4>
+			<h3>Checkboxes and Radioboxes</h3>
 			<div class="demo-panel p-15">
-				<input class="checkbox" type="checkbox" id="demoCheck1">
-				<label for="demoCheck1">What the fuq</label>
+				
+				<div class="form-group">
+					<input class="checkbox" type="checkbox" id="demoCheck1">
+					<label for="demoCheck1">Checkbox 1</label>
+					<input class="checkbox" type="checkbox" id="demoCheck2" checked>
+					<label for="demoCheck2">Checkbox 2</label>
+					<input class="checkbox" type="checkbox" id="demoCheck3" disabled>
+					<label for="demoCheck3">Disabled</label>
+					<input class="checkbox" type="checkbox" id="demoCheck4" disabled checked>
+					<label for="demoCheck4">Disabled (Pre-checked)</label>
+				</div>
+			
+				<div class="form-group">
+					<input class="radiobox" type="radio" name="demoRadio" id="demoRadio1">
+					<label for="demoRadio1">Radiobox 1</label>
+					<input class="radiobox" type="radio" name="demoRadio" id="demoRadio2">
+					<label for="demoRadio2">Radiobox 2</label>
+					<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
+					<label for="demoRadio3">Disabled</label>
+				</div>
+			</div>
+
+			<p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
+			<p>Therefore, <code>&lt;label&gt;</code>s are a requirement and must be placed <b>after</b> the <code>&lt;input&gt;</code>s. Also you need to append <code>.checkbox</code> or <code>.radiobox</code> classes to each <code>&lt;input&gt;</code>s for correct appearance.</p>
+
+			<h3>Selectboxes</h3>
+			<div class="demo-panel p-15">
+				<div class="selectbox-outer">
+					<select class="select-box">
+						<option value="Option 1">Option 1</option>
+						<option value="Option 2">Option 2</option>
+					</select>
+				</div>
 			</div>
 
 		</section>
