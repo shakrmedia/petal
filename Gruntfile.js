@@ -10,6 +10,20 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt);
   
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
+    // Meta
+    meta: {
+      banner: '/* \n' +
+              ' * <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> \n' +
+              ' * <%= pkg.description %> \n' +
+              ' * <%= pkg.homepage %> \n' +
+              ' * \n' +
+              ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; <%= pkg.license %> License \n' +
+              ' */\n'
+    },
+
+    // LESS
     less: {
       src: {
         expand: true,
@@ -19,6 +33,8 @@ module.exports = function(grunt) {
         dest: "build"
       }
     },
+
+    // Autoprefixer
     autoprefixer: {
       options: {
         browser: ["last 3 versions", "ie 10"]
@@ -30,12 +46,31 @@ module.exports = function(grunt) {
         dest: "build"
       }
     },
+
+    // css minify
     cssmin: {
       minify: {
         src: "build/petal.css",
         dest: "build/petal.min.css"
       }
     },
+
+
+    // Banner
+    usebanner: {
+      options: {
+        position: 'top',
+        banner: '<%= meta.banner %>'
+      },
+      files: {
+        src: [
+            "build/<%= pkg.codename %>.css",
+            "build/<%= pkg.codename %>.min.css",
+          ]
+      }
+    },
+
+    // watch
     watch: {
       less: {
         files: ['less/**/*'],
@@ -44,7 +79,7 @@ module.exports = function(grunt) {
     }
   });
   
-  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'usebanner']);
   grunt.registerTask('dev', ['watch']);
   
 }
