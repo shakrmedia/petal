@@ -67,7 +67,7 @@
 
 	&.active, 
 	.active > &[data-toggle] {
-		z-index: 1000;
+		z-index: @btn-active-z-index;
 		perspective: 500;
 		box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
 	}
@@ -296,10 +296,10 @@
 
 	.btn {
 		float: left;
-		z-index: 1;
+		z-index: @btn-normal-z-index;
 
 		&:active {
-			z-index: 2;
+			z-index: @btn-active-z-index;
 		}
 	}
 
@@ -334,7 +334,7 @@
 ul.dropdown-menu {
 	position: absolute;
 	top: 100%;
-	z-index: 1000;
+	z-index: @dropdown-menu-z-index;
 	display: none;
 	float: left;
 	margin: 0;

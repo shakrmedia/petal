@@ -370,11 +370,13 @@ input[type="radio"].radiobox:disabled + label {
 
 
 
+
+
 .selecter {
 	position: relative;
 	display: block;
 	margin: 10px 0;
-	z-index: 1;
+	z-index: @selectbox-container-z-index;
 
 	&:focus {
 		box-shadow: none;
@@ -396,7 +398,7 @@ input[type="radio"].radiobox:disabled + label {
 		left: 0;
 
 		opacity: 0;
-		z-index: -1;
+		z-index: @selectbox-original-z-index;
 
 		&,
 		&:focus {
@@ -421,7 +423,7 @@ input[type="radio"].radiobox:disabled + label {
 		overflow: hidden;
 		padding: 8px 40px 8px 20px;
 		text-overflow: clip;
-		z-index: 2;
+		z-index: @selectbox-selected-z-index;
 		
 
 		// caret
@@ -480,7 +482,8 @@ input[type="radio"].radiobox:disabled + label {
 		overflow: auto;
 		overflow-x: hidden;
 		padding: 0;
-		z-index: 50;
+		z-index: @selectbox-options-z-index;
+	}
 
 		.focus &, .selecter:focus & {
 			border-color: @gray;
@@ -549,10 +552,10 @@ input[type="radio"].radiobox:disabled + label {
 
 	// open
 	&.open {
-		z-index: 3;
+		z-index: @selectbox-container-open-z-index;
 
 		.selecter-selected {
-			z-index: 51;
+			z-index: @selectbox-open-z-index;
 
 		}
 	}
