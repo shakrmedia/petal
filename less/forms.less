@@ -262,7 +262,8 @@ input[type="radio"].radiobox + label　{
 		width: @checkbox-size;
 		height: @checkbox-size;
 		padding: (@checkbox-size / 2);
-		background-color: @blue-d1;
+		background-color: @color-d1;
+		.colorset(@checkbox-color);
 	}
 }
 
@@ -413,9 +414,9 @@ input[type="radio"].radiobox:disabled + label {
 	.selecter-selected {
 		position: relative;
 
-		background: @selecter-background-color;
-		border: 2px solid #aaa;
-		color: @selecter-text-color;
+		background: #fff;
+		border: @selectbox-border-width solid #aaa;
+		color: inherit;
 		cursor: pointer;
 		display: block;
 		font-size: 0.9rem;
@@ -442,28 +443,36 @@ input[type="radio"].radiobox:disabled + label {
 			content: '';
 			display: block;
 			margin: auto 0;
+
+			transform-style: preserve-3d;
+			transition: 0.2s border-color, 0.3s transform;
 		}
 
 		&:hover {
-			border-color: @blue;
+			border-color: @selectbox-color;
 			
 			&:after {
-				border-top-color: @blue;
+				border-top-color: @selectbox-color;
 			}
 		}
 
-		.focus &, &:focus {
-			color: @selecter-hover-text-color;
-			border-color: @blue;
 
-			&:after {
-				border-top-color: @blue;
-			}
+	}
+
+	&.focus .selecter-selected, 
+	&:focus .selecter-selected {
+		border-color: @selectbox-color;
+
+		&:after {
+			border-top-color: @selectbox-color;
 		}
 	}
 
-
-
+	&.open .selecter-selected {
+		&:after {
+			transform: rotateX(180deg);
+		}
+	}
 
 	// selectbox options
 	.selecter-options {
@@ -474,9 +483,9 @@ input[type="radio"].radiobox:disabled + label {
 		top: 100%;
 		left: 0;
 
-		border: 2px solid @gray-l1;
-		border-width: 0 2px 2px;
-		background-color: @selecter-options-background-color;
+		border: @selectbox-border-width solid @gray;
+		border-width: 0 @selectbox-border-width @selectbox-border-width;
+		background-color: #fff;
 		display: none;
 		margin: 0;
 		overflow: auto;
@@ -485,16 +494,16 @@ input[type="radio"].radiobox:disabled + label {
 		z-index: @selectbox-options-z-index;
 	}
 
-		.focus &, .selecter:focus & {
-			border-color: @gray;
-			.drop-shadow;
-		}
+	&.focus .selecter-options,
+	&:focus .selecter-options {
+		border-color: @gray;
+		.drop-shadow;
 	}
 
 
 	// optgroup header
 	.selecter-group {
-		color: @selecter-group-text-color;
+		color: #aaa;
 		display: block;
 		font-size: @selecter-group-font-size;
 		padding: @selecter-group-padding;
@@ -521,31 +530,27 @@ input[type="radio"].radiobox:disabled + label {
 			display: none;
 		}
 
-		&.selected {
-			background: @selecter-item-selected-color;
-		}
-
-		&.disabled {
-			color: @selecter-item-disabled-text-color;
-			cursor: default;
-		}
-
-
-
 		&:last-child {
 			border-bottom: 0;
 		}
+		
 
+		// option hover
 		&:hover,
 		&.selected:hover {
 			color: @selecter-item-hover-text-color;
-			background-color: @blue-l2;
+			background-color: rgba(0,0,0,.1);
+		}
+
+		&.selected {
+			background: fadeout(@color-l1,50%);
+			.colorset(@selectbox-color);
 		}
 
 		&.disabled,
 		&.disabled:hover {
-			color: @selecter-disabled-text-color;
-			background-color: @selecter-disabled-background-color;
+			color: @selecter-item-disabled-text-color;
+			cursor: default;
 		}
 	}
 
@@ -562,7 +567,7 @@ input[type="radio"].radiobox:disabled + label {
 
 	&.open .selecter-selected,
 	&.focus .selecter-selected {
-		background-color: @selecter-open-background-color;
+		background-color: @blue-l2;
 	}
 
 
@@ -570,14 +575,10 @@ input[type="radio"].radiobox:disabled + label {
 	&.cover {
 
 		.selecter-options {
-			border-width: @selecter-border-width;
+			border-width: @selectbox-border-width;
 			top: 0;
 		}
 
-		&.open .selecter-selected {
-			z-index: 49;
-
-		}
 	}
 
 
@@ -588,7 +589,7 @@ input[type="radio"].radiobox:disabled + label {
 			top: auto;
 			bottom: 100%;
 
-			border-width: 2px 2px 0;
+			border-width: @selectbox-border-width @selectbox-border-width 0;
 		}
 
 		.selecter-item:last-child {

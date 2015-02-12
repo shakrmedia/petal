@@ -542,16 +542,16 @@
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
 			<form>
 				<div class="form-group">
-					<label class="input-label" for="demoFormEmail">Email</label>
+					<label class="form-label" for="demoFormEmail">Email</label>
 					<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
 					<p class="form-caption">Enter your email address.</p>
 				</div>
 				<div class="form-group">
-					<label class="input-label" for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
+					<label class="form-label" for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
 					<input class="input" id="demoFormPassword" type="password" placeholder="Password" />
 				</div>
 				<div class="form-group">
-					<label class="input-label" for="demoFormDoYouLike">Do you like Petal?</label>
+					<label class="form-label" for="demoFormDoYouLike">Do you like Petal?</label>
 					<input class="input" id="demoFormDoYouLike" type="text" placeholder="Yes"/>
 				</div>
 				<div class="form-group">
@@ -570,11 +570,11 @@
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
 			<form class="form-inline">
 				<div class="form-group">
-					<label class="input-label" for="demoForm2Email">Email</label>
+					<label class="form-label" for="demoForm2Email">Email</label>
 					<input class="input" id="demoForm2Email" type="email" placeholder="Email" />
 				</div>
 				<div class="form-group">
-					<label class="input-label" for="demoForm2Password">Password</label>
+					<label class="form-label" for="demoForm2Password">Password</label>
 					<input class="input" id="demoForm2Password" type="password" placeholder="Password" />
 				</div>
 				<div class="form-group">
@@ -591,7 +591,7 @@
 			<div class="demo-panel p-15" data-toggle-bg="toggle">
 			<form>
 				<div class="form-group">
-					<label class="input-label" for="demoForm3Username">Username</label>
+					<label class="form-label" for="demoForm3Username">Username</label>
 					<div class="input-group">
 						<span class="input-addon">@</span>
 						<input class="input" id="demoForm3Username" type="text" />
@@ -599,7 +599,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="input-label" for="demoForm3Subdomain">Subdomain</label>
+					<label class="form-label" for="demoForm3Subdomain">Subdomain</label>
 					<div class="input-group">
 						<input class="input" id="demoForm3Subdomain" type="text" />
 						<span class="input-addon">.somesite.com</span>
@@ -607,7 +607,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="input-label" for="demoForm3Price">Price</label>
+					<label class="form-label" for="demoForm3Price">Price</label>
 					<div class="input-group">
 						<span class="input-addon">$</span>
 						<input class="input" id="demoForm3Price" type="text" />
@@ -661,13 +661,80 @@
 
 			<h3>Selectboxes</h3>
 			<div class="demo-panel p-15">
-				<div class="form-group">
-					<label for="demoSelectbox">Label Name</label>
+			<form>
+			<div class="row">
+			
+				<div class="col-2">
+					<label class="form-label" for="demoSelectbox">Selectbox</label>
 					<select name="selectbox" id="demoSelectbox" class="selectbox">
-						<option>One</option>
-						<option>Two</option>
+						<option>Lorem</option>
+						<option>ipsum</option>
+						<option>dolor</option>
 					</select>
 				</div>
+				<div class="col-2">
+					<label class="form-label" for="demoSelectbox2">Selectbox 2</label>
+					<select name="selectbox2" id="demoSelectbox2" class="selectbox">
+						<optgroup label="Group 1">
+							<option>Lorem</option>
+							<option>ipsum</option>
+						</optgroup>
+						<optgroup label="Group 2">
+							<option>dolor</option>
+							<option>sit</option>
+							<option>amet</option>
+							<option>consectetur</option>
+						</optgroup>
+						<optgroup label="Group 3">
+							<option>adipisicing</option>
+							<option>elit</option>
+							<option>Distinctio</option>
+							<option>facere</option>
+							<option>nemo</option>
+							<option>facilis</option>
+							<option>ipsam</option>
+							<option>possimus</option>
+							<option>voluptatibus</option>
+							<option>provident</option>
+							<option>minus</option>
+							<option>necessitatibus</option>
+							<option>dolor</option>
+						</optgroup>
+					</select>
+				</div>
+			
+			</div>
+			<div class="row">
+			
+				<div class="col-2">
+					<label class="form-label" for="demoSelectbox3">Cover style</label>
+					<select name="selectbox3" id="demoSelectbox3" class="selectbox cover">
+						<option>Lorem</option>
+						<option>ipsum</option>
+						<option>dolor</option>
+						<option>sit</option>
+						<option>amet</option>
+						<option>consectetur</option>
+					</select>
+				</div>
+				<div class="col-2">
+					<label class="form-label" for="demoSelectbox4">Select Multiple</label>
+					<select name="selectbox4" id="demoSelectbox4" class="selectbox" multiple>
+						<optgroup label="Group 1">
+							<option>Lorem</option>
+							<option>ipsum</option>
+						</optgroup>
+						<optgroup label="Group 2">
+							<option>dolor</option>
+							<option>sit</option>
+							<option>amet</option>
+							<option>consectetur</option>
+						</optgroup>
+					</select>
+				</div>
+			
+			</div>
+			</form>
 			</div>
 
 		</section>
@@ -798,7 +865,10 @@
 	    hljs.highlightBlock(block);
 	  });
 
-	  $(".demo-panel select").selecter();
+	  $(".demo-panel select").not('.cover').selecter();
+	  $(".demo-panel select.cover").selecter({
+	  	cover: true
+	  });
 	});
 
 
