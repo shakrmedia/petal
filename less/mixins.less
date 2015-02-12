@@ -2,6 +2,16 @@
 // *  Global Mixins
 // * ================================= *
  
+
 .drop-shadow {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+// color generate mixin
+.colorset(@input-color) {
+	@color: @input-color;
+	@color-l1: screen(@color,@l1-additive);
+	@color-l2: screen(@color,@l2-additive);
+	@color-d1: multiply(@color,@d1-additive);
+	@color-d2: multiply(@color,@d2-additive);
 }
