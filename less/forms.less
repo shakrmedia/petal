@@ -250,24 +250,34 @@ input[type="radio"].radiobox + label　{
 		background-image: data-uri('../assets/checkmark-check.svg');
 		background-size: cover;
 		box-sizing: border-box;
-		opacity: 0;
+		padding: 0 @checkbox-size 0 0;
+		opacity: 1;
+		transition: padding 0.1s;
+		background-clip: content-box;
 
 	}
 }
 
 input[type="radio"].radiobox + label　{
 	&:after {
-		width: (@checkbox-size - 10px);
-		height: (@checkbox-size - 10px);
-		margin: 5px;
+		width: (@checkbox-size);
+		height: (@checkbox-size);
+		padding: (@checkbox-size / 2);
 		background-color: @blue-d1;
 	}
 }
 
-input[type="checkbox"].checkbox:checked + label, 
-input[type="radio"].radiobox:checked + label {
+input[type="checkbox"].checkbox:checked + label {
 	&:after {
 		opacity: 1;
+		padding-right: 0;
+	}
+}
+
+input[type="radio"].radiobox:checked + label　{
+	&:after {
+		opacity: 1;
+		padding: 5px;
 	}
 }
 
