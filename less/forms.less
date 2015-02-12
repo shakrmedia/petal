@@ -288,8 +288,7 @@ input[type="radio"].radiobox:disabled + label {
 }
 
 // selectboxes
-
-// from Selecter (https://github.com/Formstone/Selecter)
+// uses Selecter (https://github.com/Formstone/Selecter)
 
 .selecter {
 	position: relative;
@@ -338,11 +337,14 @@ input[type="radio"].radiobox:disabled + label {
 		cursor: pointer;
 		display: block;
 		font-size: 0.9rem;
+		font-weight: bold;
 		margin: 0;
 		overflow: hidden;
 		padding: 8px 40px 8px 20px;
 		text-overflow: clip;
 		z-index: @selectbox-selected-z-index;
+
+		transition: border-color .15s, background-color .15s, box-shadow .15s;
 		
 
 		// caret
@@ -401,9 +403,15 @@ input[type="radio"].radiobox:disabled + label {
 		.selecter-group {
 			color: #aaa;
 			display: block;
-			font-size: 0.9rem;
-			padding: 8px 20px;
+			font-size: 0.8em;
+			margin: 5px 0 0 0;
+			padding: 5px 20px 5px 15px;
 			text-transform: uppercase;
+			font-weight: bold;
+
+			&:first-child {
+				margin-top: 0;
+			}
 		}
 
 
@@ -416,7 +424,7 @@ input[type="radio"].radiobox:disabled + label {
 			cursor: pointer;
 			display: block;
 			font-size: 0.9rem;
-			margin: 0;
+			margin: 0 0 1px 0;
 			overflow: hidden;
 			padding: 8px 20px;
 			text-decoration: none;
@@ -427,50 +435,54 @@ input[type="radio"].radiobox:disabled + label {
 			}
 
 			&:last-child {
-				border-bottom: 0;
+				margin-bottom: 0;
 			}
 			
 
 			// option hover
-			&:hover,
-			&.selected:hover {
-				background-color: rgba(0,0,0,.1);
+			&:hover {
+				background-color: rgba(0,0,0,.05);
 			}
 
 			&.selected {
-				background: fadeout(@color-l1,50%);
+				font-weight: bold;
+				background: fadeout(@color-l1,80%);
 				.colorset(@selectbox-color);
+
+				&:hover {
+					background: fadeout(@color-l1,60%);
+				}
 			}
 
 			&.disabled,
 			&.disabled:hover {
 				color: #aaa;
-				cursor: default;
+				cursor: not-allowed;
 			}
 		}
 
 	}
 
 	
-	// focused
+	// focused state
 	&.focus, &:focus { 
 		.selecter-selected {
 			border-color: @selectbox-color;
-			background-color: fadeout(@color-l1,50%);
-			.colorset(@selectbox-color);
+			.drop-shadow;
 
+			// caret color
 			&:after {
 				border-top-color: @selectbox-color;
 			}
 		}
 
 		.selecter-options {
-			border-color: @gray;
+			border-color: @selectbox-color;
 			.drop-shadow;
 		}
 	}
 
-	// open
+	// open state
 	&.open {
 		z-index: @selectbox-container-open-z-index;
 
@@ -546,6 +558,11 @@ input[type="radio"].radiobox:disabled + label {
 			border-color: #ccc;
 			color: #ccc;
 			cursor: default;
+		}
+		
+		// caret
+		.selecter-selected:after {
+			border-top-color: #ccc;
 		}
 
 		.selecter-options {
