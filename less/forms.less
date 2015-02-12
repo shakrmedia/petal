@@ -291,88 +291,6 @@ input[type="radio"].radiobox:disabled + label {
 
 // from Selecter (https://github.com/Formstone/Selecter)
 
-// Variables
-
-@selecter-max-height:							260px;			// 260px, "none" to disable
-@selecter-max-width:							true;			// true, "false" to disable
-
-@selecter-text-color:							#222;			// #222
-@selecter-font-size:							13px;			// 13px
-@selecter-padding:								10px 15px;		// 10px 15px
-
-@selecter-background-color:						#fff;			// #fff
-
-@selecter-border-width:							1px;			// 1px
-@selecter-border-color:							#ccc;			// #ccc
-@selecter-border-radius-outside:				3px;			// 3px
-@selecter-border-radius-inside:					2px;			// 2px
-
-// Caret
-@selecter-caret-color:							#ccc;			// #ccc
-@selecter-caret-size:							5px;			// 5px
-
-// Hover
-
-@selecter-hover-text-color:						#333;			// #333
-@selecter-hover-background-color:				#ccc;			// #ccc
-
-// Selected
-
-@selecter-selected-background-color:			#ccc;			// #ccc
-
-// Open
-
-@selecter-open-background-color:				#fff;			// #fff
-
-// Options
-
-@selecter-options-background-color:				#fff;			// #fff
-
-// Group
-
-@selecter-group-border-color:					#ccc;			// #ccc
-@selecter-group-text-color:						#999;			// #999
-@selecter-group-font-size:						11px;			// 11px
-@selecter-group-padding:						10px 15px;		// 10px 15px
-@selecter-group-text-transform:					uppercase;		// uppercase, "normal" to disable
-
-// Disabled
-
-@selecter-disabled-border-color:				#ccc;			// #ccc
-@selecter-disabled-text-color:					#ccc;			// #ccc
-@selecter-disabled-background-color:			#fff;			// #fff
-@selecter-disabled-selected-background-color:	#fafafa;		// #fafafa
-
-// Item
-
-@selecter-item-text-color:						#222;			// #222
-@selecter-item-font-size:						13px;			// 13px
-@selecter-item-background-color:				#fff;			// #fff
-@selecter-item-border-color:					#ccc;			// #ccc
-@selecter-item-border-width:					1px;			// 1px
-@selecter-item-padding:							10px 15px;		// 10px 15px
-	
-	// Item - Hover
-	@selecter-item-hover-text-color:			#333;			// #333
-	@selecter-item-hover-background-color:		#ccc;			// #ccc
-	
-	// Item - Selected
-
-	@selecter-item-selected-color:				#eee;			// #eee
-
-	// Item - Disabled
-
-	@selecter-item-disabled-text-color:			#999;			// #999
-
-// Shadows
-
-@selecter-selected-box-shadow:		0 0 5px rgba(0, 0, 0, 0.1);		// 0 0 5px rgba(0, 0, 0, 0.1), "none" to disable
-@selecter-options-box-shadow:		0 1px 4px rgba(0, 0, 0, 0.15);	// 0 1px 4px rgba(0, 0, 0, 0.15), "none" to disable
-
-
-
-
-
 .selecter {
 	position: relative;
 	display: block;
@@ -459,21 +377,6 @@ input[type="radio"].radiobox:disabled + label {
 
 	}
 
-	&.focus .selecter-selected, 
-	&:focus .selecter-selected {
-		border-color: @selectbox-color;
-
-		&:after {
-			border-top-color: @selectbox-color;
-		}
-	}
-
-	&.open .selecter-selected {
-		&:after {
-			transform: rotateX(180deg);
-		}
-	}
-
 	// selectbox options
 	.selecter-options {
 		width: 100%;
@@ -492,82 +395,93 @@ input[type="radio"].radiobox:disabled + label {
 		overflow-x: hidden;
 		padding: 0;
 		z-index: @selectbox-options-z-index;
-	}
-
-	&.focus .selecter-options,
-	&:focus .selecter-options {
-		border-color: @gray;
-		.drop-shadow;
-	}
 
 
-	// optgroup header
-	.selecter-group {
-		color: #aaa;
-		display: block;
-		font-size: @selecter-group-font-size;
-		padding: @selecter-group-padding;
-		text-transform: @selecter-group-text-transform;
-	}
-
-
-	// selectbox option items
-	.selecter-item {
-		width: 100%;
-
-		background: @selecter-item-background-color;
-		color: @selecter-item-text-color;
-		cursor: pointer;
-		display: block;
-		font-size: 0.9rem;
-		margin: 0;
-		overflow: hidden;
-		padding: 8px 20px;
-		text-decoration: none;
-		text-overflow: ellipsis;
-
-		&.placeholder {
-			display: none;
+		// optgroup header
+		.selecter-group {
+			color: #aaa;
+			display: block;
+			font-size: 0.9rem;
+			padding: 8px 20px;
+			text-transform: uppercase;
 		}
 
-		&:last-child {
-			border-bottom: 0;
-		}
-		
 
-		// option hover
-		&:hover,
-		&.selected:hover {
-			color: @selecter-item-hover-text-color;
-			background-color: rgba(0,0,0,.1);
+		// selectbox option items
+		.selecter-item {
+			width: 100%;
+
+			background: #fff;
+			color: #333;
+			cursor: pointer;
+			display: block;
+			font-size: 0.9rem;
+			margin: 0;
+			overflow: hidden;
+			padding: 8px 20px;
+			text-decoration: none;
+			text-overflow: ellipsis;
+
+			&.placeholder {
+				display: none;
+			}
+
+			&:last-child {
+				border-bottom: 0;
+			}
+			
+
+			// option hover
+			&:hover,
+			&.selected:hover {
+				background-color: rgba(0,0,0,.1);
+			}
+
+			&.selected {
+				background: fadeout(@color-l1,50%);
+				.colorset(@selectbox-color);
+			}
+
+			&.disabled,
+			&.disabled:hover {
+				color: #aaa;
+				cursor: default;
+			}
 		}
 
-		&.selected {
-			background: fadeout(@color-l1,50%);
+	}
+
+	
+	// focused
+	&.focus, &:focus { 
+		.selecter-selected {
+			border-color: @selectbox-color;
+			background-color: fadeout(@color-l1,50%);
 			.colorset(@selectbox-color);
+
+			&:after {
+				border-top-color: @selectbox-color;
+			}
 		}
 
-		&.disabled,
-		&.disabled:hover {
-			color: @selecter-item-disabled-text-color;
-			cursor: default;
+		.selecter-options {
+			border-color: @gray;
+			.drop-shadow;
 		}
 	}
-
 
 	// open
 	&.open {
 		z-index: @selectbox-container-open-z-index;
 
 		.selecter-selected {
-			z-index: @selectbox-open-z-index;
+			
+			// flip caret
+			&:after {
+				transform: rotateX(180deg);
+			}
 
 		}
-	}
-
-	&.open .selecter-selected,
-	&.focus .selecter-selected {
-		background-color: @blue-l2;
 	}
 
 
@@ -576,6 +490,7 @@ input[type="radio"].radiobox:disabled + label {
 
 		.selecter-options {
 			border-width: @selectbox-border-width;
+			border-color: @selectbox-color;
 			top: 0;
 		}
 
@@ -598,7 +513,7 @@ input[type="radio"].radiobox:disabled + label {
 
 
 		// 'cover' style option
-		.cover {
+		&.cover {
 
 			.selecter-options {
 				top: auto;
@@ -610,13 +525,15 @@ input[type="radio"].radiobox:disabled + label {
 
 
 	// multiple select
-	&.multiple .selecter-options {
-		width: 100%;
+	&.multiple {
+		.selecter-options {
+			width: 100%;
 
-		position: static;
+			position: static;
 
-		border-width: 2px;
-		display: block;
+			border-width: 2px;
+			display: block;
+		}
 	}
 
 
@@ -625,46 +542,35 @@ input[type="radio"].radiobox:disabled + label {
 
 		.selecter-selected,
 		.selecter-selected:hover {
-			background: @selecter-disabled-background-color;
-			border-color: @selecter-disabled-border-color;
-			color: @selecter-disabled-text-color;
+			background: #fff;
+			border-color: #ccc;
+			color: #ccc;
 			cursor: default;
 		}
 
 		.selecter-options {
-			background: @selecter-disabled-background-color;
-			border-color: @selecter-disabled-border-color;
+			background: #fff;
+			border-color: #ccc;
 		}
 
 		.selecter-group,
 		.selecter-item {
-			border-color: @selecter-disabled-border-color;
-			color: @selecter-disabled-text-color;
+			border-color: #ccc;
+			color: #ccc;
 			cursor: default;
 		}
 
 		.selecter-item.selected,
 		.selecter-item.selected:hover {
-			background: @selecter-disabled-selected-background-color;
+			background: #fff;
 		}
 
 		.selecter-item,
 		.selecter-item:hover {
-			color: @selecter-disabled-text-color;
-			background-color: @selecter-disabled-background-color;
+			color: #ccc;
+			background-color: #fff;
 		}
 	}
 
-
-	// .selecter-options.scroller
-	.selecter-options.scroller {
-		overflow: hidden;
-
-		.scroller-content {
-			max-height: @selecter-max-height;
-
-			padding: 0;
-		}
-	}
 
 }// end .selecter
