@@ -103,6 +103,11 @@ section .demo-panel .card h5 {
 section .demo-panel .card .card-image {
   background: #c7dc8f;
   height: 200px;
+  overflow: hidden;
+}
+section .demo-panel .card .card-image img {
+  width: 100%;
+  height: auto;
 }
 section .light {
   background: #fff;
@@ -140,10 +145,10 @@ section .borders [class^="col-"] span {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-section .label {
+.clabel {
   margin-top: 5px;
 }
-section .colorblock {
+.colorblock {
   display: inline;
   width: 50px;
   height: 20px;

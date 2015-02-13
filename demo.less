@@ -134,6 +134,12 @@ section {
 			.card-image {
 				background: @green-l1;
 				height: 200px;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
 			}
 
 		}
@@ -184,28 +190,27 @@ section {
 		padding-top: 5px;
 		padding-bottom: 5px;
 	}
-	
-
-	// for color demo
-	.label {
-		margin-top: 5px;
-	}
-
-	.colorblock {
-		display: inline;
-		width: 50px;
-		height: 20px;
-		padding: 2px 10px;
-		margin-right: 5px;
-		font-weight: bold;
-		text-transform: uppercase;
-		font-size: 0.8em;
-		color: #fff;
-		background: #eee;
-	}
 
 }
 
+
+// for color demo
+.clabel {
+	margin-top: 5px;
+}
+
+.colorblock {
+	display: inline;
+	width: 50px;
+	height: 20px;
+	padding: 2px 10px;
+	margin-right: 5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	color: #fff;
+	background: #eee;
+}
 
 // footer
 footer {

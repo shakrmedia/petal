@@ -135,6 +135,10 @@
 			</div>
 
 			<p>Simple stuff. Add <code>&lt;small&gt;</code> for inline captions.</p>
+
+			<p>The uppercase style is applied to header paragraph tags starting from <code>&lt;h3&gt;</code>. You can change the default setting by changing the <code>@header-uppercase</code> variable in <b>petal.less</b> to <code>false</code>.</p>
+
+			<p>To manually apply the uppercase and wide letter-spacing appearance, use <code>.uppercase</code> and <span class="code">.keepcase</span> if the other way around.</p>
 			
 			<br>
 
@@ -279,7 +283,7 @@
 			<div class="demo-panel p-15">
 				<div class="block">
 					<a href="#" class="btn">Button</a>
-					<p class="inline-block label"><code>.btn</code></p>
+					<p class="inline-block clabel"><code>.btn</code></p>
 				</div>
 			</div>
 
@@ -292,62 +296,62 @@
 					<h5>Default</h5>
 					<div class="block">
 						<a href="#" class="btn">Button</a>
-						<p class="inline-block label"><code>.btn</code></p>
+						<p class="inline-block clabel"><code>.btn</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn blue">Button</a>
-						<p class="inline-block label"><code>.btn.blue</code></p>
+						<p class="inline-block clabel"><code>.btn.blue</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn green">Button</a>
-						<p class="inline-block label"><code>.btn.green</code></p>
+						<p class="inline-block clabel"><code>.btn.green</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn red">Button</a>
-						<p class="inline-block label"><code>.btn.red</code></p>
+						<p class="inline-block clabel"><code>.btn.red</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn black">Button</a>
-						<p class="inline-block label"><code>.btn.black</code></p>
+						<p class="inline-block clabel"><code>.btn.black</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn white">Button</a>
-						<p class="inline-block label"><code>.btn.white</code></p>
+						<p class="inline-block clabel"><code>.btn.white</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn disabled">Button</a>
-						<p class="inline-block label"><code>.btn.disabled</code></p>
+						<p class="inline-block clabel"><code>.btn.disabled</code></p>
 					</div>
 				</div>
 				<div class="col-2">
 					<h5>Hollow</h5>
 					<div class="block">
 						<a href="#" class="btn hollow">Button</a>
-						<p class="inline-block label"><code>.btn.hollow</code></p>
+						<p class="inline-block clabel"><code>.btn.hollow</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn hollow blue">Button</a>
-						<p class="inline-block label"><code>.btn.hollow.blue</code></p>
+						<p class="inline-block clabel"><code>.btn.hollow.blue</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn hollow green">Button</a>
-						<p class="inline-block label"><code>.btn.hollow.green</code></p>
+						<p class="inline-block clabel"><code>.btn.hollow.green</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn hollow red">Button</a>
-						<p class="inline-block label"><code>.btn.hollow.red</code></p>
+						<p class="inline-block clabel"><code>.btn.hollow.red</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn hollow black">Button</a>
-						<p class="inline-block label"><code>.btn.hollow.black</code></p>
+						<p class="inline-block clabel"><code>.btn.hollow.black</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn hollow white">Button</a>
-						<p class="inline-block label"><code>.btn.hollow.white</code></p>
+						<p class="inline-block clabel"><code>.btn.hollow.white</code></p>
 					</div>
 					<div class="block">
 						<a href="#" class="btn hollow disabled">Button</a>
-						<p class="inline-block label"><code>.btn.hollow.disabled</code></p>
+						<p class="inline-block clabel"><code>.btn.hollow.disabled</code></p>
 					</div>
 				</div>
 			</div>
@@ -692,6 +696,8 @@
 			<p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
 			<p>Therefore, <code>&lt;label&gt;</code>s are a requirement and must be placed <b>after</b> the <code>&lt;input&gt;</code>s. Also you need to append <code>.checkbox</code> or <code>.radiobox</code> classes to each <code>&lt;input&gt;</code>s for correct appearance.</p>
 
+			<br>
+
 			<h3>Selectboxes</h3>
 			<div class="demo-panel p-15">
 			<form>
@@ -780,6 +786,20 @@
 			</form>
 			</div>
 
+			<p>Selectboxes uses <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal-functions.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
+
+			<p>The Selecter plugin is not activated by default because of possible usability issues. To initialize, include the line of code below in your site page (change the selector to whichever selectbox you want to apply to).</p>
+
+			<div class="demo-code">
+			<pre><code class="javascript" data-lang="javascript">$(".myclass1 select.selectbox").selecter();</code></pre>
+			</div>
+
+			<p>Then append the <code>.selectbox</code> class to properly apply styles.</p>
+
+			<p>Refer to the <a href="http://formstone.it/components/selecter">Selecter documentation page</a> for more options.</p>
+
+			<p></p>
+
 		</section>
 		<section class="row">
 			<h2 id="section-panels">Panels</h2>
@@ -802,7 +822,9 @@
 				<div class="row">
 					<div class="col-2">
 						<div class="card hover-em">
-							<div class="card-image"></div>
+							<div class="card-image">
+								<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMzNBM0RDIiBkPSJNMCAwaDIwMHYyMDBIMHoiLz48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMCAwdjIwMGg3Ny40QzEwNC4zIDEyMi43IDE2Mi4zIDY3IDIwMCA0MC4yVjBIMHoiLz48cGF0aCBmaWxsPSIjRjE1QjY3IiBkPSJNMCAwdjIwMGgyNy41QzI3LjEgMTI2LjEgNTIuNCA1NC42IDk0LjIgMEgweiIvPjwvc3ZnPg==" alt="">
+							</div>
 							<div class="p-20">
 								<h5>Lorem Ipsum</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -813,7 +835,9 @@
 
 					<div class="col-2">
 						<div class="card hover-em">
-							<div class="card-image"></div>
+							<div class="card-image">
+								<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMzNBM0RDIiBkPSJNMCAwaDIwMHYyMDBIMHoiLz48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMCAwdjIwMGg3Ny40QzEwNC4zIDEyMi43IDE2Mi4zIDY3IDIwMCA0MC4yVjBIMHoiLz48cGF0aCBmaWxsPSIjRjE1QjY3IiBkPSJNMCAwdjIwMGgyNy41QzI3LjEgMTI2LjEgNTIuNCA1NC42IDk0LjIgMEgweiIvPjwvc3ZnPg==" alt="">
+							</div>
 							<div class="p-20">
 								<h5>Consectetur Elit</h5>
 								<p>Velit saepe, aspernatur ipsa? Dolores sint harum dolorem quod tempore.</p>
@@ -830,8 +854,33 @@
 				<li><code>.hover-em</code> : darken shadow when hovering over.
 			</ul>
 
+			<br>
 
+			<h4>Labels</h4>
+			<div class="demo-panel p-20">
+				<h1>h1. Lorem Ipsum <span class="label">Label</span></h1>
+				<h2>h2. Lorem Ipsum <span class="label">Label</span></h2>
+				<h3>h3. Lorem Ipsum <span class="label">Label</span></h3>
+				<h4>h4. Lorem Ipsum <span class="label">Label</span></h4>
+				<h5>h5. Lorem Ipsum <span class="label">Label</span></h5>
+				<h6>h6. Lorem Ipsum <span class="label">Label</span></h6>
+				
+				<br>
 
+				<h5>Variations</h5>
+				<div>
+					<span class="label">Default</span> <span class="label accent">Accent</span> <span class="label okay">Okay</span> <span class="label warning">Warning</span> <span class="label danger">Danger</span>
+				</div>
+			</div>
+
+			<p>Append <code>.label</code> to a <code>&lt;span&gt;</code> element. Append <code>.accent</code>, <code>.okay</code>, <code>.warning</code>, <code>.danger</code> for color variations. Also, <code>.white</code> for white backgrounds.</p>
+
+			<h4>Labels</h4>
+			<div class="demo-panel p-20">
+				<span class="badge">1</span> <span class="badge accent">20</span> <span class="badge okay">3</span> <span class="badge warning">4</span> <span class="badge danger">5</span>
+			</div>
+
+			<p>Same thing as labels, just change it to <code>.badge</code>.</p>
 
 		</section>
 	</div>

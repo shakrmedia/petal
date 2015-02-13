@@ -22,3 +22,47 @@
 		height: 100px;
 	}
 }
+
+span.label,
+span.badge {
+	background: @gray;
+	color: #fff;
+	padding: 0.2em 0.5em;
+	font-size: 0.8em;
+	font-weight: bold;
+	letter-spacing: 0;
+	text-transform: none;
+
+	&.accent {
+		background-color: @primary-accent-color;
+	}
+
+	&.okay {
+		background-color: @okay-color;
+	}
+
+	&.warning {
+		background-color: @warning-color;
+	}
+
+	&.warning {
+		background-color: @warning-color;
+	}
+
+	&.danger {
+		background-color: @danger-color;
+	}
+
+	&.white {
+		background-color: @white;
+		color: @base-font-color;
+	}
+}
+
+span.label {
+	font-style: italic;
+}
+
+span.badge {
+	border-radius: 10em;
+}
