@@ -22,7 +22,7 @@ textarea.input {
 	font-size: 0.9rem;
 	line-height: 1rem;
 	transition: box-shadow .15s, border-color .15s, background-color .15s;
-	box-shadow: 0 1px 1px rgba(0,0,0,.1) inset;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05) inset;
 	appearance: none;
 	outline: none;
 
@@ -32,7 +32,7 @@ textarea.input {
 
 	&:focus {
 		border-color: @primary-accent-color;
-		box-shadow: 0 2px 4px rgba(0,0,0,.1);
+		.drop-shadow-light;
 	}
 
 	.dark &, &.ondark {
@@ -145,6 +145,10 @@ label.form-label {
 		font-size: 0.9rem;
 		line-height: 1rem;
 		border-right-width: 0;
+
+		.dark &, &.ondark {
+			border-color: @gray;
+		}
 	}
 
 	.input-addon:last-child {
@@ -473,7 +477,7 @@ input[type="radio"].radiobox:disabled + label {
 	&.focus, &:focus { 
 		.selecter-selected {
 			border-color: @selectbox-color;
-			.drop-shadow;
+			.drop-shadow-light;
 
 			// caret color
 			&:after {
