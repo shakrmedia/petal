@@ -3,50 +3,6 @@ body {
   color: #333;
   padding: 0;
 }
-.asterisk {
-  color: #f05a67;
-}
-.light {
-  background: #fff;
-}
-.dark {
-  background: #333;
-  color: #fff;
-}
-pre code,
-pre code.hljs {
-  background: #f0f0f0;
-  padding: 15px;
-  font-size: 0.9em;
-}
-.label {
-  margin-top: 5px;
-}
-.row.borders {
-  outline: 1px dashed #aaa;
-}
-.borders [class^="col-"] {
-  box-shadow: 0 0 0 1px #fff inset;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.borders [class^="col-"] span {
-  display: block;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-.colorblock {
-  display: inline;
-  width: 50px;
-  height: 20px;
-  padding: 2px 10px;
-  margin-right: 5px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  color: #fff;
-  background: #eee;
-}
 #page-header {
   height: auto;
   border-bottom: 2px solid #f05a67;
@@ -128,20 +84,76 @@ section:first-child {
 section:last-child {
   border-bottom: none;
 }
-.demo-panel {
+section h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f8b3b9;
+  margin-bottom: 30px;
+}
+section .demo-panel {
   border: 1px solid #ddd;
   margin: 10px 0;
   transition: 0.2s;
 }
-.demo-panel.dark {
+section .demo-panel.dark {
   border-color: #000;
 }
-.demo-code {
+section .demo-panel .card h5 {
+  margin: 0 0 10px 0;
+}
+section .demo-panel .card .card-image {
+  background: #c7dc8f;
+  height: 200px;
+}
+section .light {
+  background: #fff;
+}
+section .dark {
+  background: #333;
+  color: #fff;
+}
+section .gray {
+  background: #eee;
+}
+section pre code,
+section pre code.hljs {
+  background: #f0f0f0;
+  padding: 15px;
+  font-size: 0.9em;
+}
+section .demo-code {
   border: 1px solid #ddd;
   margin: 10px 0;
 }
-.demo-panel + .demo-code {
+section .demo-panel + .demo-code {
   margin-top: -11px;
+}
+section .row.borders {
+  outline: 1px dashed #aaa;
+}
+section .borders [class^="col-"] {
+  box-shadow: 0 0 0 1px #fff inset;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+section .borders [class^="col-"] span {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+section .label {
+  margin-top: 5px;
+}
+section .colorblock {
+  display: inline;
+  width: 50px;
+  height: 20px;
+  padding: 2px 10px;
+  margin-right: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #fff;
+  background: #eee;
 }
 footer {
   border-top: 2px solid #eee;
