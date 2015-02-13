@@ -61,14 +61,16 @@ h6 {
 }
 
 h3,h4,h5,h6 {
-	text-transform: uppercase;
-	letter-spacing: 2px;
+	& when (@header-uppercase = true) {
+		text-transform: uppercase;
+		letter-spacing: @header-letter-spacing;
+	}
 }
 
 
 .uppercase {
 	text-transform: uppercase;
-	letter-spacing: 2px;
+	letter-spacing: @header-letter-spacing;
 }
 
 .keepcase {
