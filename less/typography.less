@@ -2,6 +2,21 @@
 // *  Typography 
 // * ================================= *
 
+
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+	small {
+		color: @gray;
+		font-size: 0.7em;
+		font-weight: normal;
+		text-transform: none;
+		letter-spacing: 0;
+	}
+}
+
+
 h1 {
 	font-weight: 900;
 	font-size: 3em;
@@ -20,24 +35,38 @@ h3 {
 h4 {
 	font-weight: 900;
 	font-size: 1.25em;
+
+	small {
+		font-size: 0.8em;
+	}
 }
 
 h5 {
 	font-weight: 900;
 	font-size: 1em;
 	margin-bottom: 1.1em;
+
+	small {
+		font-size: 0.9em;
+	}
 }
 
-h5 {
+h6 {
 	font-weight: 900;
 	font-size: 0.9em;
 	margin-bottom: 1em;
+
+	small {
+		font-size: 0.9em;
+	}
 }
 
 h3,h4,h5,h6 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
+
+
 
 .uppercase {
 	text-transform: uppercase;

@@ -122,6 +122,22 @@
 		</section>
 
 		<section class="row">
+			<h2 id="section-typography">Typography</h2>
+
+			<h4>Paragraphs</h4>
+			<div class="demo-panel p-20">
+				<h1>h1. Lorem Ipsum <small>Small caption</small></h1>
+				<h2>h2. Lorem Ipsum <small>Small caption</small></h2>
+				<h3>h3. Lorem Ipsum <small>Small caption</small></h3>
+				<h4>h4. Lorem Ipsum <small>Small caption</small></h4>
+				<h5>h5. Lorem Ipsum <small>Small caption</small></h5>
+				<h6>h6. Lorem Ipsum <small>Small caption</small></h6>
+			</div>
+
+			<p>Simple stuff. Add <code>&lt;small&gt;</code></p>
+		</section>
+
+		<section class="row">
 			<h2 id="section-quickmargins">Quick Margins &amp; Paddings</h2>
 			<p>Use quick preset classes to add margins and paddings to any elements.</p>
 			
@@ -551,10 +567,6 @@
 					<input class="input" id="demoFormPassword" type="password" placeholder="Password" />
 				</div>
 				<div class="form-group">
-					<label class="form-label" for="demoFormDoYouLike">Do you like Petal?</label>
-					<input class="input" id="demoFormDoYouLike" type="text" placeholder="Yes"/>
-				</div>
-				<div class="form-group">
 					<label class="form-label" for="demoFormComments">Comments</label>
 					<textarea class="input" name="demoFormComments" id="demoFormComments" cols="30" rows="10"></textarea>
 				</div>
@@ -752,15 +764,64 @@
 			</div>
 
 		</section>
+		<section class="row">
+			<h2 id="section-panels">Panels</h2>
+			
+			<h4>Basic Panels</h4>
+			<div class="demo-panel gray">
+				<div class="panel m-20">
+					<div class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+				</div>
+				<div class="panel m-20">
+					<div class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+				</div>
+			</div>
+			<p>For various sections of a page. Add the <code>.panel</code> class to apply a white background and a subtle shadow. Manually apply padding and margins appropriately.</p>
+
+			<h4>Cards</h4>
+			<div class="demo-panel p-20 gray">
+				<div class="row">
+					<div class="col-2">
+						<div class="card hover-em">
+							<div class="card-image"></div>
+							<div class="p-20">
+								<h5>Lorem Ipsum</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+								<button class="btn green hollow">View</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-2">
+						<div class="card hover-em">
+							<div class="card-image"></div>
+							<div class="p-20">
+								<h5>Consectetur Elit</h5>
+								<p>Velit saepe, aspernatur ipsa? Dolores sint harum dolorem quod tempore.</p>
+								<button class="btn green hollow">View</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p>A variation of a panel, use for card-based item lists.</p>
+
+			<h5>Options</h5>
+			<ul>
+				<li><code>.hover-em</code> : darken shadow when hovering over.</li>
+			</ul>
+		</section>
 	</div>
 	<div class="col-4">
 		<nav id="menu">
 			<ul>
 				<li><a href="#section-layout">Layout</a></li>
+				<li><a href="#section-typography">Typography</a></li>
 				<li><a href="#section-quickmargins">Quick Margins &amp; Paddings</a></li>
 				<li><a href="#section-colors">Colors</a></li>
 				<li><a href="#section-buttons">Buttons</a></li>
 				<li><a href="#section-forms">Form elements</a></li>
+				<li><a href="#section-panels">Panels</a></li>
 			</ul>
 
 			<p>
