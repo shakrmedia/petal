@@ -76,7 +76,7 @@ body {
 section {
   margin-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 2px solid #eee;
+  margin-bottom: 50px;
 }
 section:first-child {
   margin-top: 0;
@@ -84,9 +84,9 @@ section:first-child {
 section:last-child {
   border-bottom: none;
 }
-section h2 {
+section > h2 {
   padding-bottom: 10px;
-  border-bottom: 1px solid #f8b3b9;
+  border-bottom: 2px solid #f8b3b9;
   margin-bottom: 30px;
 }
 section .demo-panel {
