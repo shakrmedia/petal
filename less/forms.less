@@ -21,7 +21,7 @@ textarea.input {
 	margin: 5px 0;
 	font-size: 0.9rem;
 	line-height: 1rem;
-	transition: 0.2s;
+	transition: box-shadow .15s, border-color .15s, background-color .15s;
 	box-shadow: 0 1px 1px rgba(0,0,0,.1) inset;
 	appearance: none;
 	outline: none;
@@ -47,6 +47,11 @@ textarea.input {
 			background-color: fadeout(@black,30%);
 		}
 	}
+}
+
+textarea.input {
+	min-height: 60px;
+	min-width: 250px;
 }
 
 .dark {
