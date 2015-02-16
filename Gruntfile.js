@@ -7,7 +7,9 @@
 module.exports = function(grunt) {
   'use strict';
   
-  require("load-grunt-tasks")(grunt);
+  require("load-grunt-tasks")(grunt, {
+    pattern: ['grunt-*', 'assemble']
+  });
   
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -80,21 +82,21 @@ module.exports = function(grunt) {
     // watch
     watch: {
       less: {
-        files: ['less/**/*'],
+        files: ['less/**/*', 'docs/contents/**/*', 'docs/less/*'],
         tasks: ['default']
       }
     },
     
     // assemble
     assemble: {
-	  options: {
-        flatten: true,
-        partials: 'docs/template/partial/*.hbs',
-        layoutdir: 'docs/template/layouts',
-        layout: 'default.hbs'
+  	  options: {
+          flatten: true,
+          partials: 'docs/contents/sections/*.hbs',
+          layoutdir: 'docs/contents/frame',
+          layout: 'default.hbs'
       },
       docs: {
-        files: {'index': 'docs/template/layouts/*.hbs'}
+        files: {'docs/index': 'docs/contents/sections/*.hbs'}
       }
     }
   });
