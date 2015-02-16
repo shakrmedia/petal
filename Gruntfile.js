@@ -78,6 +78,26 @@ module.exports = function(grunt) {
           ]
       }
     },
+    
+    // uglify
+    uglify: {
+      options: {
+        mangle: false
+      },
+      build: {
+		src: ['js/*.js'],
+		dest: 'build/<%= pkg.codename %>.min.js'
+	  }
+    },
+    
+    // concat
+    concat: {
+      build: {
+	    files: {
+		  'build/<%= pkg.codename %>.js':'js/*.js'
+	    }
+	  }
+    },
 
     // watch
     watch: {
@@ -101,7 +121,7 @@ module.exports = function(grunt) {
     }
   });
   
-  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'usebanner', 'assemble']);
+  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'uglify', 'concat', 'usebanner', 'assemble']);
   grunt.registerTask('dev', ['watch']);
   
 }
