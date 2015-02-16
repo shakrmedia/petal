@@ -1,0 +1,238 @@
+<h2 id="section-forms">Form Elements</h2>
+
+<h3>Input boxes</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<input class="input" type="text" placeholder="Name" />
+	<input class="input" type="email" placeholder="Email" />
+	<input class="input" type="text" placeholder="Disabled" disabled />
+</div>
+
+<p>Add <code>.input</code> class to an <code>&lt;input&gt;</code> element to apply the design.</p>
+
+<br>
+
+<h4>Form groups</h4>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form>
+	<div class="form-group">
+		<label class="form-label" for="demoFormEmail">Email</label>
+		<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
+		<p class="form-caption">Enter your email address.</p>
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
+		<input class="input" id="demoFormPassword" type="password" placeholder="Password" />
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoFormComments">Comments</label>
+		<textarea class="input" name="demoFormComments" id="demoFormComments" cols="30" rows="10"></textarea>
+	</div>
+	<div class="form-group">
+		<a class="btn">Submit</a>
+	</div>
+</form>
+</div>
+
+<p>Include <code>&lt;label&gt;</code>s and <code>&lt;input&gt;</code>s inside a <code>.form-group</code> to have them stretch across the container as block elements.</p>
+
+<p>Add <code>.form-caption</code> class for captions.</p>
+<br>
+
+<h4>Inline form groups</h4>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form class="form-inline">
+	<div class="form-group">
+		<label class="form-label" for="demoForm2Email">Email</label>
+		<input class="input" id="demoForm2Email" type="email" placeholder="Email" />
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoForm2Password">Password</label>
+		<input class="input" id="demoForm2Password" type="password" placeholder="Password" />
+	</div>
+	<div class="form-group">
+		<a class="btn">Submit</a>
+	</div>
+</form>
+</div>
+
+<p>Append <code>.form-inline</code> class to a parent container to put <code>.form-groups</code> in one line. You need to apply paddings and margins manually.</p>
+
+<br>
+
+<h4>Input groups</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form>
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Username">Username</label>
+		<div class="input-group">
+			<span class="input-addon">@</span>
+			<input class="input" id="demoForm3Username" type="text" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Subdomain">Subdomain</label>
+		<div class="input-group">
+			<input class="input" id="demoForm3Subdomain" type="text" />
+			<span class="input-addon">.somesite.com</span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Price">Price</label>
+		<div class="input-group">
+			<span class="input-addon">$</span>
+			<input class="input" id="demoForm3Price" type="text" />
+			<div class="btn-group">
+				<button class="btn">Action</button>
+				<button class="btn dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+				<ul class="dropdown-menu" data-dropdown-align="right">
+					<li><a href="#">Menu item 1</a></li>
+					<li><a href="#">Menu item 2</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Menu item 3</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</form>
+</div>
+
+<p>Place <code>.input-addon</code> class blocks before or after the input. Enclose them with a <code>.input-group</code> container.</p>
+
+<p>When placing buttons inside input groups, you don't need put it inside another <code>.input-addon</code> container; just place the <code>.btn-group</code> alongside the input.</p>
+
+<br>
+
+<h3>Checkboxes and Radioboxes</h3>
+<div class="demo-panel p-15">
+	
+	<div class="form-group">
+		<input class="checkbox" type="checkbox" id="demoCheck1">
+		<label for="demoCheck1">Checkbox 1</label>
+		<input class="checkbox" type="checkbox" id="demoCheck2" checked>
+		<label for="demoCheck2">Checkbox 2</label>
+		<input class="checkbox" type="checkbox" id="demoCheck3" disabled>
+		<label for="demoCheck3">Disabled</label>
+		<input class="checkbox" type="checkbox" id="demoCheck4" disabled checked>
+		<label for="demoCheck4">Disabled (Pre-checked)</label>
+	</div>
+
+	<div class="form-group">
+		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio1">
+		<label for="demoRadio1">Radiobox 1</label>
+		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio2">
+		<label for="demoRadio2">Radiobox 2</label>
+		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
+		<label for="demoRadio3">Disabled</label>
+	</div>
+</div>
+
+<p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
+<p>Therefore, <code>&lt;label&gt;</code>s are a requirement and must be placed <b>after</b> the <code>&lt;input&gt;</code>s. Also you need to append <code>.checkbox</code> or <code>.radiobox</code> classes to each <code>&lt;input&gt;</code>s for correct appearance.</p>
+
+<br>
+
+<h3>Selectboxes</h3>
+<div class="demo-panel p-15">
+<form>
+<div class="row">
+
+	<div class="col-2">
+		<label class="form-label" for="demoSelectbox">Selectbox</label>
+		<select name="selectbox" id="demoSelectbox" class="selectbox">
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+		</select>
+	</div>
+	<div class="col-2">
+		<label class="form-label" for="demoSelectbox2">Selectbox 2</label>
+		<select name="selectbox2" id="demoSelectbox2" class="selectbox">
+			<optgroup label="Group 1">
+				<option>Lorem</option>
+				<option>ipsum</option>
+			</optgroup>
+			<optgroup label="Group 2">
+				<option>dolor</option>
+				<option>sit</option>
+				<option>amet</option>
+				<option>consectetur</option>
+			</optgroup>
+			<optgroup label="Group 3">
+				<option>adipisicing</option>
+				<option>elit</option>
+				<option>Distinctio</option>
+				<option>facere</option>
+				<option>nemo</option>
+				<option>facilis</option>
+				<option>ipsam</option>
+				<option>possimus</option>
+				<option>voluptatibus</option>
+				<option disabled>provident</option>
+				<option>minus</option>
+				<option disabled>necessitatibus</option>
+				<option>dolor</option>
+			</optgroup>
+		</select>
+	</div>
+
+</div>
+<div class="row">
+
+	<div class="col-2">
+		<label class="form-label" for="demoSelectbox3">Cover style</label>
+		<select name="selectbox3" id="demoSelectbox3" class="selectbox cover">
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+			<option>sit</option>
+			<option>amet</option>
+			<option>consectetur</option>
+		</select>
+
+		<label class="form-label" for="demoSelectbox-disabled">Disabled</label>
+		<select name="selectbox-disabled" id="demoSelectbox-disabled" class="selectbox" disabled>
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+			<option>sit</option>
+			<option>amet</option>
+			<option>consectetur</option>
+		</select>
+	</div>
+	<div class="col-2">
+		<label class="form-label" for="demoSelectbox4">Select Multiple</label>
+		<select name="selectbox4" id="demoSelectbox4" class="selectbox" multiple>
+			<optgroup label="Group 1">
+				<option>Lorem</option>
+				<option>ipsum</option>
+			</optgroup>
+			<optgroup label="Group 2">
+				<option>dolor</option>
+				<option>sit</option>
+				<option>amet</option>
+				<option>consectetur</option>
+			</optgroup>
+		</select>
+	</div>
+
+</div>
+</form>
+</div>
+
+<p>Selectboxes uses <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal-functions.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
+
+<p>The Selecter plugin is not activated by default because of possible usability issues. To initialize, include the line of code below in your site page (change the selector to whichever selectbox you want to apply to).</p>
+
+<div class="demo-code">
+<pre><code class="javascript" data-lang="javascript">$(".myclass1 select.selectbox").selecter();</code></pre>
+</div>
+
+<p>Then append the <code>.selectbox</code> class to properly apply styles.</p>
+
+<p>Refer to the <a href="http://formstone.it/components/selecter">Selecter documentation page</a> for more options.</p>
+

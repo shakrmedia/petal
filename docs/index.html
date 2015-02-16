@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- 
+		Petal Documentation Page
+		(c)2015 Shakr 
+	-->
+
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" href="./demo.css">
+	<link rel="stylesheet" href="../build/petal.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/tomorrow.min.css">
+
+	<title>Petal Documentation</title>
+</head>
+
+<body>
+
+<header class="stretch" id="page-header">
+	<div class="container" id="top">
+		<div class="row">
+			<div class="logo">
+				<img src="../logo.svg" width="150" height="150" alt="Petal Logo">
+			</div>
+			<h1 class="keepcase">Petal</h1>
+			<p>A modern, light CSS UI framework.</p>
+			<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). <br>
+			Includes <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License).
+			<br>
+			Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
+		</div>
+	</div>
+</header>
+
+<div class="container">
+<div class="row">
+	<div class="col-4 colspan-3">
+		<section class="row">
+			<h2 id="section-layout">Layout</h2>
+
+<h3>Base structure</h3>
+<p>Set a container with <code>.container</code> class in which you will place <code>.row</code>s. Use appropriate HTML5 semantic tags such as <code>&lt;section&gt;</code>,<code>&lt;article&gt;</code>,<code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> along with the class.</p>
+
+<p>You must have <code>.row</code> sub-containers for child elements to align to the page width. </p>
+
+<h5>Container widths and responsive layout</h5>
+<p>Container width is set as a LESS variable <code>@container-width</code> in the base <code>petal.less</code> file. Default value is 980px; modify the value to change fixed width.</p>
+
+<p>Responsive layout is enabled by default, and the page will automatically fit the window width when screen width is smaller than the container width.</p>
+
+<br>
+
+<h3>Columns</h3>
+<p>Easily create column layouts for the whole page or parts of the page. You need the basic <code>.container</code> and <code>.row</code> structure explained above for the column layout to work properly.</p>
+<div class="row borders mb-10">
+	<div class="col-1 bg-green-l2"><span>.col-1</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+	<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+</div>
+
+<p>Insert <code>.col-<em>x</em></code> class to whatever divs you want to make columns of, where <em>x</em> is the number of columns the row is divided into. (Currently supports 2,3,4 columns)</p>
+
+<br>
+
+<h5>Spanned columns</h5>
+<div class="row borders mb-10">
+	<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+	<div class="col-3 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+	<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+</div>
+
+<p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
+
+<br>
+
+<h5>Nesting columns</h5>
+<div class="row borders mb-10">
+	<div class="col-3 bg-blue-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+			<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+		</div>
+	</div>
+	<div class="col-3 bg-green-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+		</div>
+	</div>
+	<div class="col-3 bg-red-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-1 bg-red-l1"><span>.col-1</span></div>
+		</div>
+	</div>
+</div>
+<p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code> containers as well. </p>
+		</section>
+
+		<section class="row">
+			<h2 id="section-typography">Typography</h2>
+
+<h4>Paragraphs</h4>
+<div class="demo-panel p-20">
+	<h1>h1. Lorem Ipsum <small>Small caption</small></h1>
+	<h2>h2. Lorem Ipsum <small>Small caption</small></h2>
+	<h3>h3. Lorem Ipsum <small>Small caption</small></h3>
+	<h4>h4. Lorem Ipsum <small>Small caption</small></h4>
+	<h5>h5. Lorem Ipsum <small>Small caption</small></h5>
+	<h6>h6. Lorem Ipsum <small>Small caption</small></h6>
+</div>
+
+<p>Simple stuff. Add <code>&lt;small&gt;</code> for inline captions.</p>
+
+<p>The uppercase style is applied to header paragraph tags starting from <code>&lt;h3&gt;</code>. You can change the default setting by changing the <code>@header-uppercase</code> variable in <b>petal.less</b> to <code>false</code>.</p>
+
+<p>To manually apply the uppercase and wide letter-spacing appearance, use <code>.uppercase</code> and <span class="code">.keepcase</span> if the other way around.</p>
+
+<br>
+
+<h4>Blockquotes</h4>
+<div class="demo-panel p-20">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit esse aut quia accusamus? Tempora itaque, culpa adipisci nostrum suscipit libero</p>
+
+	<blockquote>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, ducimus officia excepturi consequuntur magnam praesentium maxime ab dicta reiciendis, odit fuga, suscipit. Eius, dolor, reprehenderit. Dignissimos voluptatum, sint similique fuga?</p>
+		<p>Quia voluptas numquam accusantium beatae exercitationem culpa provident itaque fuga repudiandae nostrum placeat, laborum esse dolores velit dolor atque blanditiis molestiae perferendis.</p>
+	</blockquote>
+
+	<p>Tempora itaque, culpa adipisci nostrum suscipit libero, nemo illum necessitatibus tempore repellendus at fugiat iusto. Voluptates, similique?</p>
+	
+</div>
+
+<p><code>&lt;blockquote&gt;</code> stuff.</p>
+		</section>
+
+		<section class="row">
+			<h2 id="section-quickmargins">Quick Margins &amp; Paddings</h2>
+<p>Use quick preset classes to add margins and paddings to any elements.</p>
+
+<div class="row">
+	<div class="col-2">
+		<h5>margin (all directions)</h5>
+		<ul>
+			<li><code>.m-10</code> : 10px margin</li>
+			<li><code>.m-15</code> : 15px margin</li>
+			<li><code>.m-20</code> : 20px margin</li>
+		</ul>
+
+		<h5>margin (horizontal)</h5>
+		<ul>
+			<li><code>.mh-10</code> : 10px left+right margin</li>
+			<li><code>.mh-15</code> : 15px left+right margin</li>
+			<li><code>.mh-20</code> : 20px left+right margin</li>
+		</ul>
+
+		<h5>margin (vertical)</h5>
+		<ul>
+			<li><code>.mv-10</code> : 10px top+bottom margin</li>
+			<li><code>.mv-15</code> : 15px top+bottom margin</li>
+			<li><code>.mv-20</code> : 20px top+bottom margin</li>
+		</ul>
+
+		<h5>margin-top</h5>
+		<ul>
+			<li><code>.mt-10</code> : 10px top margin</li>
+			<li><code>.mt-15</code> : 15px top margin</li>
+			<li><code>.mt-20</code> : 20px top margin</li>
+			<li><code>.mt-50</code> : 50px top margin</li>
+		</ul>
+
+		<h5>margin-bottom</h5>
+		<ul>
+			<li><code>.mb-10</code> : 10px bottom margin</li>
+			<li><code>.mb-15</code> : 15px bottom margin</li>
+			<li><code>.mb-20</code> : 20px bottom margin</li>
+			<li><code>.mb-50</code> : 50px bottom margin</li>
+		</ul>
+	</div>
+	<div class="col-2">
+		<h5>padding (all directions)</h5>
+		<ul>
+			<li><code>.p-10</code> : 10px padding</li>
+			<li><code>.p-15</code> : 15px padding</li>
+			<li><code>.p-20</code> : 20px padding</li>
+		</ul>
+
+		<h5>padding (horizontal)</h5>
+		<ul>
+			<li><code>.ph-10</code> : 10px left+right padding</li>
+			<li><code>.ph-15</code> : 15px left+right padding</li>
+			<li><code>.ph-20</code> : 20px left+right padding</li>
+		</ul>
+
+		<h5>padding (vertical)</h5>
+		<ul>
+			<li><code>.pv-10</code> : 10px top+bottom padding</li>
+			<li><code>.pv-15</code> : 15px top+bottom padding</li>
+			<li><code>.pv-20</code> : 20px top+bottom padding</li>
+		</ul>
+
+		<h5>padding-top</h5>
+		<ul>
+			<li><code>.pt-10</code> : 10px top padding</li>
+			<li><code>.pt-15</code> : 15px top padding</li>
+			<li><code>.pt-20</code> : 20px top padding</li>
+			<li><code>.pt-50</code> : 50px top padding</li>
+		</ul>
+		<h5>padding-bottom</h5>
+		<ul>
+			<li><code>.pb-10</code> : 10px bottom padding</li>
+			<li><code>.pb-15</code> : 15px bottom padding</li>
+			<li><code>.pb-20</code> : 20px bottom padding</li>
+			<li><code>.pb-50</code> : 50px bottom padding</li>
+		</ul>
+	</div>
+</div>
+		</section>
+
+		<section class="row">
+			<h2 id="section-colors">Colors</h2>
+<p>Petal offers shades of the 3 colors from the Shakr color scheme.</p>
+<div class="row">
+	<div class="col-3">
+		<h5>Text colors</h5>
+		<p><div class="colorblock text-red-l2">Text</div><code>.text-red-l2</code></p>
+		<p><div class="colorblock text-red-l1">Text</div><code>.text-red-l1</code></p>
+		<p><div class="colorblock text-red">Text</div><code>.text-red</code></p>
+		<p><div class="colorblock text-red-d1">Text</div><code>.text-red-d1</code></p>
+		<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code></p>
+	</div>
+	<div class="col-3">
+		<h5>Background colors</h5>
+		<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code></p>
+		<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code></p>
+		<p><div class="colorblock bg-green">Text</div><code>.bg-green</code></p>
+		<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code></p>
+		<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code></p>
+	</div>
+	<div class="col-3">
+		<h5>Also, blue</h5>
+		<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code></p>
+		<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code></p>
+		<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code></p>
+		<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code></p>
+		<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code></p>
+	</div>
+</div>
+		</section>
+		
+		<section class="row">
+			<h2 id="section-buttons">Buttons</h2>
+			
+<p>Petal features a complex button style generator inside the LESS code to make adding new color sets as simple as possible.</p>
+
+<br>
+
+<h3>Basic Button</h3>
+<div class="demo-panel p-15">
+	<div class="block">
+		<a href="#" class="btn">Button</a>
+		<p class="inline-block clabel"><code>.btn</code></p>
+	</div>
+</div>
+
+<p>To make a button, simply add the <code>.btn</code> class, presumably to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. The default color is blue, and some preset colors provided are demonstrated below:</p>
+
+<br>
+
+<div class="demo-panel pb-10 cf" data-toggle-bg="toggle">
+	<div class="col-2">
+		<h5>Default</h5>
+		<div class="block">
+			<a href="#" class="btn">Button</a>
+			<p class="inline-block clabel"><code>.btn</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn blue">Button</a>
+			<p class="inline-block clabel"><code>.btn.blue</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn green">Button</a>
+			<p class="inline-block clabel"><code>.btn.green</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn red">Button</a>
+			<p class="inline-block clabel"><code>.btn.red</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn black">Button</a>
+			<p class="inline-block clabel"><code>.btn.black</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn white">Button</a>
+			<p class="inline-block clabel"><code>.btn.white</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn disabled">Button</a>
+			<p class="inline-block clabel"><code>.btn.disabled</code></p>
+		</div>
+	</div>
+	<div class="col-2">
+		<h5>Hollow</h5>
+		<div class="block">
+			<a href="#" class="btn hollow">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow blue">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.blue</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow green">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.green</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow red">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.red</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow black">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.black</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow white">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.white</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow disabled">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.disabled</code></p>
+		</div>
+	</div>
+</div>
+
+<h5>Options</h5>
+
+<ul>
+	<li><code>.hollow</code> : Hollow style alternative</li>
+	<li><code>.disabled</code> OR <code>:disabled</code> (attribute) : Disabled state</li>
+	<li><code>.ondark</code> on button OR <code>.dark</code> on parent : Alternative style on dark backgrounds</li>
+	<li><code>.whitetext</code> : White text on buttons (hollow + ondark style only)</li>
+</ul>
+
+<br>
+
+<h5>Including additional colors</h5>
+
+<p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
+
+<div class="demo-code">
+<pre><code class="less css" data-lang="less">// Add colors here
+&amp;.my-color    { .generate-btn('my-color') }
+&amp;.my-color2   { .generate-btn('my-color2'; 'custom') }</code></pre>
+</div>
+
+<p>The 'custom' option is provided for when you want to specify the l1, l2, d1, d2 shades manually. Define all 5 variables including base color in <b>color-palette.less</b> and append the <code>'custom'</code> option at the end.</p>
+
+<br>
+
+<h3>Button groups</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">
+		<button class="btn">Button</button>
+		<button class="btn green">Button</button>
+		<button class="btn red">Button</button>
+	</div>
+</div>
+
+<p>Put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
+
+<br>
+
+<h3>Toggle Buttons</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">	
+		<button class="btn hollow blue toggle active" data-toggle="toggle" data-toggle-state="active">Toggle</button>
+		<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn green toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn red toggle" data-toggle="toggle">Toggle</button>
+	</div>
+</div>
+
+<p>Add <code>data-toggle="toggle"</code> on the button to make it toggleable.</p>
+
+<br>
+
+<h3>Button Dropdowns</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">
+		<div class="btn-group">
+			<button class="btn dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn hollow dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li class="submenu">
+					<a href="#">Submenu 1</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Submenu item 1</a></li>
+						<li><a href="#">Submenu item 2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn hollow green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li class="submenu">
+					<a href="#">Submenu 1</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Submenu item 1</a></li>
+						<li><a href="#">Submenu item 2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn red dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="demo-code">
+<pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
+  &lt;button class=&quot;btn dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;
+    Button &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class=&quot;dropdown-menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;submenu&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Submenu 1&lt;/a&gt;
+      &lt;ul class=&quot;dropdown-menu&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item 2&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
+
+<p>The <code>.btn-group</code> class on parent element is not required but is recommended for better layout.</p>
+
+<br>
+
+<h4>Split button variant</h4>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">
+		<div class="btn-group">
+			<button class="btn green">Button</button>
+			<button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+		<div class="btn-group">
+			<button class="btn red">Button</button>
+			<button class="btn red dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+		<div class="btn-group">
+			<button class="btn blue hollow">Button</button>
+			<button class="btn blue hollow dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
+  &lt;button class=&quot;btn green&quot;&gt;Button&lt;/button&gt;
+  &lt;button class=&quot;btn green dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;ul class=&quot;dropdown-menu&quot; data-dropdown-align=&quot;right&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<p>Create two <code>.btn</code>s and insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
+
+<p>In this case, the <code>.btn-group</code> class on parent element is <b>required</b> for correct appearance.</p>
+
+<h5>Options</h5>
+<p>Add <code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code>to right align the menu.</p>
+		</section>
+
+		<section class="row">
+			<h2 id="section-forms">Form Elements</h2>
+
+<h3>Input boxes</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<input class="input" type="text" placeholder="Name" />
+	<input class="input" type="email" placeholder="Email" />
+	<input class="input" type="text" placeholder="Disabled" disabled />
+</div>
+
+<p>Add <code>.input</code> class to an <code>&lt;input&gt;</code> element to apply the design.</p>
+
+<br>
+
+<h4>Form groups</h4>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form>
+	<div class="form-group">
+		<label class="form-label" for="demoFormEmail">Email</label>
+		<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
+		<p class="form-caption">Enter your email address.</p>
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
+		<input class="input" id="demoFormPassword" type="password" placeholder="Password" />
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoFormComments">Comments</label>
+		<textarea class="input" name="demoFormComments" id="demoFormComments" cols="30" rows="10"></textarea>
+	</div>
+	<div class="form-group">
+		<a class="btn">Submit</a>
+	</div>
+</form>
+</div>
+
+<p>Include <code>&lt;label&gt;</code>s and <code>&lt;input&gt;</code>s inside a <code>.form-group</code> to have them stretch across the container as block elements.</p>
+
+<p>Add <code>.form-caption</code> class for captions.</p>
+<br>
+
+<h4>Inline form groups</h4>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form class="form-inline">
+	<div class="form-group">
+		<label class="form-label" for="demoForm2Email">Email</label>
+		<input class="input" id="demoForm2Email" type="email" placeholder="Email" />
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoForm2Password">Password</label>
+		<input class="input" id="demoForm2Password" type="password" placeholder="Password" />
+	</div>
+	<div class="form-group">
+		<a class="btn">Submit</a>
+	</div>
+</form>
+</div>
+
+<p>Append <code>.form-inline</code> class to a parent container to put <code>.form-groups</code> in one line. You need to apply paddings and margins manually.</p>
+
+<br>
+
+<h4>Input groups</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form>
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Username">Username</label>
+		<div class="input-group">
+			<span class="input-addon">@</span>
+			<input class="input" id="demoForm3Username" type="text" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Subdomain">Subdomain</label>
+		<div class="input-group">
+			<input class="input" id="demoForm3Subdomain" type="text" />
+			<span class="input-addon">.somesite.com</span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Price">Price</label>
+		<div class="input-group">
+			<span class="input-addon">$</span>
+			<input class="input" id="demoForm3Price" type="text" />
+			<div class="btn-group">
+				<button class="btn">Action</button>
+				<button class="btn dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+				<ul class="dropdown-menu" data-dropdown-align="right">
+					<li><a href="#">Menu item 1</a></li>
+					<li><a href="#">Menu item 2</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Menu item 3</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</form>
+</div>
+
+<p>Place <code>.input-addon</code> class blocks before or after the input. Enclose them with a <code>.input-group</code> container.</p>
+
+<p>When placing buttons inside input groups, you don't need put it inside another <code>.input-addon</code> container; just place the <code>.btn-group</code> alongside the input.</p>
+
+<br>
+
+<h3>Checkboxes and Radioboxes</h3>
+<div class="demo-panel p-15">
+	
+	<div class="form-group">
+		<input class="checkbox" type="checkbox" id="demoCheck1">
+		<label for="demoCheck1">Checkbox 1</label>
+		<input class="checkbox" type="checkbox" id="demoCheck2" checked>
+		<label for="demoCheck2">Checkbox 2</label>
+		<input class="checkbox" type="checkbox" id="demoCheck3" disabled>
+		<label for="demoCheck3">Disabled</label>
+		<input class="checkbox" type="checkbox" id="demoCheck4" disabled checked>
+		<label for="demoCheck4">Disabled (Pre-checked)</label>
+	</div>
+
+	<div class="form-group">
+		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio1">
+		<label for="demoRadio1">Radiobox 1</label>
+		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio2">
+		<label for="demoRadio2">Radiobox 2</label>
+		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
+		<label for="demoRadio3">Disabled</label>
+	</div>
+</div>
+
+<p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
+<p>Therefore, <code>&lt;label&gt;</code>s are a requirement and must be placed <b>after</b> the <code>&lt;input&gt;</code>s. Also you need to append <code>.checkbox</code> or <code>.radiobox</code> classes to each <code>&lt;input&gt;</code>s for correct appearance.</p>
+
+<br>
+
+<h3>Selectboxes</h3>
+<div class="demo-panel p-15">
+<form>
+<div class="row">
+
+	<div class="col-2">
+		<label class="form-label" for="demoSelectbox">Selectbox</label>
+		<select name="selectbox" id="demoSelectbox" class="selectbox">
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+		</select>
+	</div>
+	<div class="col-2">
+		<label class="form-label" for="demoSelectbox2">Selectbox 2</label>
+		<select name="selectbox2" id="demoSelectbox2" class="selectbox">
+			<optgroup label="Group 1">
+				<option>Lorem</option>
+				<option>ipsum</option>
+			</optgroup>
+			<optgroup label="Group 2">
+				<option>dolor</option>
+				<option>sit</option>
+				<option>amet</option>
+				<option>consectetur</option>
+			</optgroup>
+			<optgroup label="Group 3">
+				<option>adipisicing</option>
+				<option>elit</option>
+				<option>Distinctio</option>
+				<option>facere</option>
+				<option>nemo</option>
+				<option>facilis</option>
+				<option>ipsam</option>
+				<option>possimus</option>
+				<option>voluptatibus</option>
+				<option disabled>provident</option>
+				<option>minus</option>
+				<option disabled>necessitatibus</option>
+				<option>dolor</option>
+			</optgroup>
+		</select>
+	</div>
+
+</div>
+<div class="row">
+
+	<div class="col-2">
+		<label class="form-label" for="demoSelectbox3">Cover style</label>
+		<select name="selectbox3" id="demoSelectbox3" class="selectbox cover">
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+			<option>sit</option>
+			<option>amet</option>
+			<option>consectetur</option>
+		</select>
+
+		<label class="form-label" for="demoSelectbox-disabled">Disabled</label>
+		<select name="selectbox-disabled" id="demoSelectbox-disabled" class="selectbox" disabled>
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+			<option>sit</option>
+			<option>amet</option>
+			<option>consectetur</option>
+		</select>
+	</div>
+	<div class="col-2">
+		<label class="form-label" for="demoSelectbox4">Select Multiple</label>
+		<select name="selectbox4" id="demoSelectbox4" class="selectbox" multiple>
+			<optgroup label="Group 1">
+				<option>Lorem</option>
+				<option>ipsum</option>
+			</optgroup>
+			<optgroup label="Group 2">
+				<option>dolor</option>
+				<option>sit</option>
+				<option>amet</option>
+				<option>consectetur</option>
+			</optgroup>
+		</select>
+	</div>
+
+</div>
+</form>
+</div>
+
+<p>Selectboxes uses <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal-functions.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
+
+<p>The Selecter plugin is not activated by default because of possible usability issues. To initialize, include the line of code below in your site page (change the selector to whichever selectbox you want to apply to).</p>
+
+<div class="demo-code">
+<pre><code class="javascript" data-lang="javascript">$(".myclass1 select.selectbox").selecter();</code></pre>
+</div>
+
+<p>Then append the <code>.selectbox</code> class to properly apply styles.</p>
+
+<p>Refer to the <a href="http://formstone.it/components/selecter">Selecter documentation page</a> for more options.</p>
+
+
+		</section>
+		<section class="row">
+			<h2 id="section-panels">Panels</h2>
+			
+<h4>Basic Panels</h4>
+<div class="demo-panel gray">
+	<div class="panel m-20">
+		<div class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+	</div>
+	<div class="panel m-20">
+		<div class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+	</div>
+</div>
+<p>For various sections of a page. Add the <code>.panel</code> class to apply a white background and a subtle shadow. Manually apply padding and margins appropriately.</p>
+
+<br>
+
+<h4>Cards</h4>
+<div class="demo-panel p-20 gray">
+	<div class="row">
+		<div class="col-2">
+			<div class="card hover-em">
+				<div class="card-image">
+					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMzNBM0RDIiBkPSJNMCAwaDIwMHYyMDBIMHoiLz48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMCAwdjIwMGg3Ny40QzEwNC4zIDEyMi43IDE2Mi4zIDY3IDIwMCA0MC4yVjBIMHoiLz48cGF0aCBmaWxsPSIjRjE1QjY3IiBkPSJNMCAwdjIwMGgyNy41QzI3LjEgMTI2LjEgNTIuNCA1NC42IDk0LjIgMEgweiIvPjwvc3ZnPg==" alt="">
+				</div>
+				<div class="p-20">
+					<h5>Lorem Ipsum</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					<button class="btn green hollow">View</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-2">
+			<div class="card hover-em">
+				<div class="card-image">
+					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMzNBM0RDIiBkPSJNMCAwaDIwMHYyMDBIMHoiLz48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMCAwdjIwMGg3Ny40QzEwNC4zIDEyMi43IDE2Mi4zIDY3IDIwMCA0MC4yVjBIMHoiLz48cGF0aCBmaWxsPSIjRjE1QjY3IiBkPSJNMCAwdjIwMGgyNy41QzI3LjEgMTI2LjEgNTIuNCA1NC42IDk0LjIgMEgweiIvPjwvc3ZnPg==" alt="">
+				</div>
+				<div class="p-20">
+					<h5>Consectetur Elit</h5>
+					<p>Velit saepe, aspernatur ipsa? Dolores sint harum dolorem quod tempore.</p>
+					<button class="btn green hollow">View</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<p>A variation of a panel, use for card-based item lists.</p>
+
+<h5>Options</h5>
+<ul>
+	<li><code>.hover-em</code> : darken shadow when hovering over.
+</ul>
+
+<br>
+
+<h4>Labels</h4>
+<div class="demo-panel p-20">
+	<h1>h1. Lorem Ipsum <span class="label">Label</span></h1>
+	<h2>h2. Lorem Ipsum <span class="label">Label</span></h2>
+	<h3>h3. Lorem Ipsum <span class="label">Label</span></h3>
+	<h4>h4. Lorem Ipsum <span class="label">Label</span></h4>
+	<h5>h5. Lorem Ipsum <span class="label">Label</span></h5>
+	<h6>h6. Lorem Ipsum <span class="label">Label</span></h6>
+	
+	<br>
+
+	<h5>Variations</h5>
+	<div>
+		<span class="label">Default</span> <span class="label accent">Accent</span> <span class="label okay">Okay</span> <span class="label warning">Warning</span> <span class="label danger">Danger</span>
+	</div>
+</div>
+
+<p>Append <code>.label</code> to a <code>&lt;span&gt;</code> element. Append <code>.accent</code>, <code>.okay</code>, <code>.warning</code>, <code>.danger</code> for color variations. Also, <code>.white</code> for white backgrounds.</p>
+
+<h4>Labels</h4>
+<div class="demo-panel p-20">
+	<span class="badge">1</span> <span class="badge accent">20</span> <span class="badge okay">3</span> <span class="badge warning">4</span> <span class="badge danger">5</span>
+</div>
+
+<p>Same thing as labels, just change it to <code>.badge</code>.</p>
+		</section>
+	</div>
+	<div class="col-4">
+		<nav id="menu">
+			<ul>
+				<li><a href="#section-layout">Layout</a></li>
+				<li><a href="#section-typography">Typography</a></li>
+				<li><a href="#section-quickmargins">Quick Margins &amp; Paddings</a></li>
+				<li><a href="#section-colors">Colors</a></li>
+				<li><a href="#section-buttons">Buttons</a></li>
+				<li><a href="#section-forms">Form elements</a></li>
+				<li><a href="#section-panels">Panels</a></li>
+			</ul>
+
+			<p>
+				<a href="#top" class="totop">Back to top</a>
+			</p>
+
+			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
+		</nav> 
+	</div>
+</div>
+</div><!-- container end -->
+
+<footer class="stretch">
+	<div class="container">
+		<div class="row credits">
+			<h4>Credits</h4>
+			<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
+			<p>©2015 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
+		</div>
+	</div>
+</footer>
+	
+
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="./js/petal-functions.js"></script>
+<script src="./js/jquery.fs.selecter.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
+
+
+
+<script>
+	// original code from http://jsfiddle.net/mekwall/up4nu/
+
+	// prevent default button clicks
+	$('a[href="#"], button').click(function(event) {  
+		event.preventDefault();
+	});
+
+	var lastId;
+	var header = $("#page-header");
+	var nav = $("nav#menu");
+	var headerHeight = header.outerHeight();
+
+	// All list items
+	var menuItems = nav.find("li a");
+
+	// Anchors corresponding to menu items
+	var scrollItems = menuItems.map(function(){
+		var item = $($(this).attr("href"));
+		if (item.length==1) { return item; }
+	});
+
+	// smooth scroll to anchor
+	$('nav#menu a').click(function(e){
+		var href = $(this).attr("href");
+		var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
+		$("html,body").stop().animate({ 
+			scrollTop: offsetTop
+		}, 300);
+		e.preventDefault();
+	});
+
+	function scrollnav(){
+		// Get container scroll position
+		var fromTop = $(window).scrollTop()+headerHeight;
+		
+		// Get id of current scroll item
+		var cur = scrollItems.map(function(){
+			if ($(this).offset().top < fromTop) {
+				return this;
+			}
+		});
+
+		// Get the id of the current element
+		cur = cur[cur.length-1];
+		var id = cur && cur.length ? cur[0].id : "";
+
+		if (lastId !== id) {
+			lastId = id;
+			// Set/remove active class
+			menuItems
+			 .parent().removeClass("active")
+			 .end().filter("[href=#"+id+"]").parent().addClass("active");
+		};
+
+		// toggle fix-top class for menu
+		if ($(window).scrollTop() > headerHeight) {
+			nav.addClass("fix-top"); 
+		} else {
+			nav.removeClass("fix-top");
+		}
+
+	}
+
+	$(function(){
+		scrollnav();
+	});
+
+	// Bind to scroll
+	$(window).scroll(scrollnav);
+
+	// button demo background toggler
+	$('#btn-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('[data-toggle-bg]').toggleClass('dark');
+	});
+
+	// load highlight.js
+	$(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+	    hljs.highlightBlock(block);
+	  });
+
+	  $(".demo-panel select").not('.cover').selecter();
+	  $(".demo-panel select.cover").selecter({
+	  	cover: true
+	  });
+	});
+
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,284 @@
+<h2 id="section-buttons">Buttons</h2>
+			
+<p>Petal features a complex button style generator inside the LESS code to make adding new color sets as simple as possible.</p>
+
+<br>
+
+<h3>Basic Button</h3>
+<div class="demo-panel p-15">
+	<div class="block">
+		<a href="#" class="btn">Button</a>
+		<p class="inline-block clabel"><code>.btn</code></p>
+	</div>
+</div>
+
+<p>To make a button, simply add the <code>.btn</code> class, presumably to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. The default color is blue, and some preset colors provided are demonstrated below:</p>
+
+<br>
+
+<div class="demo-panel pb-10 cf" data-toggle-bg="toggle">
+	<div class="col-2">
+		<h5>Default</h5>
+		<div class="block">
+			<a href="#" class="btn">Button</a>
+			<p class="inline-block clabel"><code>.btn</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn blue">Button</a>
+			<p class="inline-block clabel"><code>.btn.blue</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn green">Button</a>
+			<p class="inline-block clabel"><code>.btn.green</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn red">Button</a>
+			<p class="inline-block clabel"><code>.btn.red</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn black">Button</a>
+			<p class="inline-block clabel"><code>.btn.black</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn white">Button</a>
+			<p class="inline-block clabel"><code>.btn.white</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn disabled">Button</a>
+			<p class="inline-block clabel"><code>.btn.disabled</code></p>
+		</div>
+	</div>
+	<div class="col-2">
+		<h5>Hollow</h5>
+		<div class="block">
+			<a href="#" class="btn hollow">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow blue">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.blue</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow green">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.green</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow red">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.red</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow black">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.black</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow white">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.white</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow disabled">Button</a>
+			<p class="inline-block clabel"><code>.btn.hollow.disabled</code></p>
+		</div>
+	</div>
+</div>
+
+<h5>Options</h5>
+
+<ul>
+	<li><code>.hollow</code> : Hollow style alternative</li>
+	<li><code>.disabled</code> OR <code>:disabled</code> (attribute) : Disabled state</li>
+	<li><code>.ondark</code> on button OR <code>.dark</code> on parent : Alternative style on dark backgrounds</li>
+	<li><code>.whitetext</code> : White text on buttons (hollow + ondark style only)</li>
+</ul>
+
+<br>
+
+<h5>Including additional colors</h5>
+
+<p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
+
+<div class="demo-code">
+<pre><code class="less css" data-lang="less">// Add colors here
+&amp;.my-color    { .generate-btn('my-color') }
+&amp;.my-color2   { .generate-btn('my-color2'; 'custom') }</code></pre>
+</div>
+
+<p>The 'custom' option is provided for when you want to specify the l1, l2, d1, d2 shades manually. Define all 5 variables including base color in <b>color-palette.less</b> and append the <code>'custom'</code> option at the end.</p>
+
+<br>
+
+<h3>Button groups</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">
+		<button class="btn">Button</button>
+		<button class="btn green">Button</button>
+		<button class="btn red">Button</button>
+	</div>
+</div>
+
+<p>Put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
+
+<br>
+
+<h3>Toggle Buttons</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">	
+		<button class="btn hollow blue toggle active" data-toggle="toggle" data-toggle-state="active">Toggle</button>
+		<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn green toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn red toggle" data-toggle="toggle">Toggle</button>
+	</div>
+</div>
+
+<p>Add <code>data-toggle="toggle"</code> on the button to make it toggleable.</p>
+
+<br>
+
+<h3>Button Dropdowns</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">
+		<div class="btn-group">
+			<button class="btn dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn hollow dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li class="submenu">
+					<a href="#">Submenu 1</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Submenu item 1</a></li>
+						<li><a href="#">Submenu item 2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn hollow green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li class="submenu">
+					<a href="#">Submenu 1</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Submenu item 1</a></li>
+						<li><a href="#">Submenu item 2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn red dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="demo-code">
+<pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
+  &lt;button class=&quot;btn dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;
+    Button &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class=&quot;dropdown-menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;submenu&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Submenu 1&lt;/a&gt;
+      &lt;ul class=&quot;dropdown-menu&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item 2&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
+
+<p>The <code>.btn-group</code> class on parent element is not required but is recommended for better layout.</p>
+
+<br>
+
+<h4>Split button variant</h4>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">
+		<div class="btn-group">
+			<button class="btn green">Button</button>
+			<button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+		<div class="btn-group">
+			<button class="btn red">Button</button>
+			<button class="btn red dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+		<div class="btn-group">
+			<button class="btn blue hollow">Button</button>
+			<button class="btn blue hollow dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
+  &lt;button class=&quot;btn green&quot;&gt;Button&lt;/button&gt;
+  &lt;button class=&quot;btn green dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;ul class=&quot;dropdown-menu&quot; data-dropdown-align=&quot;right&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+
+<p>Create two <code>.btn</code>s and insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
+
+<p>In this case, the <code>.btn-group</code> class on parent element is <b>required</b> for correct appearance.</p>
+
+<h5>Options</h5>
+<p>Add <code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code>to right align the menu.</p>

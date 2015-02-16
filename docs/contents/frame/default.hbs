@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- 
+		Petal Documentation Page
+		(c)2015 Shakr 
+	-->
+
+	<meta charset="utf-8"> 
+	<link rel="stylesheet" href="./demo.css">
+	<link rel="stylesheet" href="../build/petal.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/tomorrow.min.css">
+
+	<title>Petal Documentation</title>
+</head>
+
+<body>
+
+<header class="stretch" id="page-header">
+	<div class="container" id="top">
+		<div class="row">
+			<div class="logo">
+				<img src="../logo.svg" width="150" height="150" alt="Petal Logo">
+			</div>
+			<h1 class="keepcase">Petal</h1>
+			<p>A modern, light CSS UI framework.</p>
+			<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). <br>
+			Includes <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License).
+			<br>
+			Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
+		</div>
+	</div>
+</header>
+
+<div class="container">
+<div class="row">
+	<div class="col-4 colspan-3">
+		<section class="row">
+			{{> layouts }}
+		</section>
+
+		<section class="row">
+			{{> typography }}
+		</section>
+
+		<section class="row">
+			{{> quickmargins }}
+		</section>
+
+		<section class="row">
+			{{> colors }}
+		</section>
+		
+		<section class="row">
+			{{> buttons }}
+		</section>
+
+		<section class="row">
+			{{> forms }}
+		</section>
+		<section class="row">
+			{{> panels }}
+		</section>
+	</div>
+	<div class="col-4">
+		<nav id="menu">
+			<ul>
+				<li><a href="#section-layout">Layout</a></li>
+				<li><a href="#section-typography">Typography</a></li>
+				<li><a href="#section-quickmargins">Quick Margins &amp; Paddings</a></li>
+				<li><a href="#section-colors">Colors</a></li>
+				<li><a href="#section-buttons">Buttons</a></li>
+				<li><a href="#section-forms">Form elements</a></li>
+				<li><a href="#section-panels">Panels</a></li>
+			</ul>
+
+			<p>
+				<a href="#top" class="totop">Back to top</a>
+			</p>
+
+			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
+		</nav> 
+	</div>
+</div>
+</div><!-- container end -->
+
+<footer class="stretch">
+	<div class="container">
+		<div class="row credits">
+			<h4>Credits</h4>
+			<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
+			<p>©2015 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
+		</div>
+	</div>
+</footer>
+	
+
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="./js/petal-functions.js"></script>
+<script src="./js/jquery.fs.selecter.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
+
+
+
+<script>
+	// original code from http://jsfiddle.net/mekwall/up4nu/
+
+	// prevent default button clicks
+	$('a[href="#"], button').click(function(event) {  
+		event.preventDefault();
+	});
+
+	var lastId;
+	var header = $("#page-header");
+	var nav = $("nav#menu");
+	var headerHeight = header.outerHeight();
+
+	// All list items
+	var menuItems = nav.find("li a");
+
+	// Anchors corresponding to menu items
+	var scrollItems = menuItems.map(function(){
+		var item = $($(this).attr("href"));
+		if (item.length==1) { return item; }
+	});
+
+	// smooth scroll to anchor
+	$('nav#menu a').click(function(e){
+		var href = $(this).attr("href");
+		var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
+		$("html,body").stop().animate({ 
+			scrollTop: offsetTop
+		}, 300);
+		e.preventDefault();
+	});
+
+	function scrollnav(){
+		// Get container scroll position
+		var fromTop = $(window).scrollTop()+headerHeight;
+		
+		// Get id of current scroll item
+		var cur = scrollItems.map(function(){
+			if ($(this).offset().top < fromTop) {
+				return this;
+			}
+		});
+
+		// Get the id of the current element
+		cur = cur[cur.length-1];
+		var id = cur && cur.length ? cur[0].id : "";
+
+		if (lastId !== id) {
+			lastId = id;
+			// Set/remove active class
+			menuItems
+			 .parent().removeClass("active")
+			 .end().filter("[href=#"+id+"]").parent().addClass("active");
+		};
+
+		// toggle fix-top class for menu
+		if ($(window).scrollTop() > headerHeight) {
+			nav.addClass("fix-top"); 
+		} else {
+			nav.removeClass("fix-top");
+		}
+
+	}
+
+	$(function(){
+		scrollnav();
+	});
+
+	// Bind to scroll
+	$(window).scroll(scrollnav);
+
+	// button demo background toggler
+	$('#btn-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('[data-toggle-bg]').toggleClass('dark');
+	});
+
+	// load highlight.js
+	$(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+	    hljs.highlightBlock(block);
+	  });
+
+	  $(".demo-panel select").not('.cover').selecter();
+	  $(".demo-panel select.cover").selecter({
+	  	cover: true
+	  });
+	});
+
+
+
+</script>
+
+
+</html>

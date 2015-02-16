@@ -1,0 +1,83 @@
+<h2 id="section-layout">Layout</h2>
+
+<h3>Base structure</h3>
+<p>Set a container with <code>.container</code> class in which you will place <code>.row</code>s. Use appropriate HTML5 semantic tags such as <code>&lt;section&gt;</code>,<code>&lt;article&gt;</code>,<code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> along with the class.</p>
+
+<p>You must have <code>.row</code> sub-containers for child elements to align to the page width. </p>
+
+<h5>Container widths and responsive layout</h5>
+<p>Container width is set as a LESS variable <code>@container-width</code> in the base <code>petal.less</code> file. Default value is 980px; modify the value to change fixed width.</p>
+
+<p>Responsive layout is enabled by default, and the page will automatically fit the window width when screen width is smaller than the container width.</p>
+
+<br>
+
+<h3>Columns</h3>
+<p>Easily create column layouts for the whole page or parts of the page. You need the basic <code>.container</code> and <code>.row</code> structure explained above for the column layout to work properly.</p>
+<div class="row borders mb-10">
+	<div class="col-1 bg-green-l2"><span>.col-1</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+	<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+</div>
+
+<p>Insert <code>.col-<em>x</em></code> class to whatever divs you want to make columns of, where <em>x</em> is the number of columns the row is divided into. (Currently supports 2,3,4 columns)</p>
+
+<br>
+
+<h5>Spanned columns</h5>
+<div class="row borders mb-10">
+	<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+	<div class="col-3 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+	<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+</div>
+
+<p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
+
+<br>
+
+<h5>Nesting columns</h5>
+<div class="row borders mb-10">
+	<div class="col-3 bg-blue-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+			<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+		</div>
+	</div>
+	<div class="col-3 bg-green-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+		</div>
+	</div>
+	<div class="col-3 bg-red-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-1 bg-red-l1"><span>.col-1</span></div>
+		</div>
+	</div>
+</div>
+<p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code> containers as well. </p>
