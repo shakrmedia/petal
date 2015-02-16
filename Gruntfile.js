@@ -25,12 +25,19 @@ module.exports = function(grunt) {
 
     // LESS
     less: {
-      src: {
+      main: {
         expand: true,
         cwd: "less",
         src: ["petal.less"],
         ext: ".css",
         dest: "build"
+      },
+      docs: {
+        expand: true,
+        cwd: "docs/less",
+        src: ["*.less"],
+        ext: ".css",
+        dest: "docs"
       }
     },
 
@@ -76,10 +83,23 @@ module.exports = function(grunt) {
         files: ['less/**/*'],
         tasks: ['default']
       }
+    },
+    
+    // assemble
+    assemble: {
+	  options: {
+        flatten: true,
+        partials: 'docs/template/partial/*.hbs',
+        layoutdir: 'docs/template/layouts',
+        layout: 'default.hbs'
+      },
+      docs: {
+        files: {'index': 'docs/template/layouts/*.hbs'}
+      }
     }
   });
   
-  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'usebanner']);
+  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'usebanner', 'assemble']);
   grunt.registerTask('dev', ['watch']);
   
 }
