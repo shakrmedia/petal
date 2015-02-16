@@ -122,6 +122,7 @@ module.exports = function(grunt) {
   });
   
   grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'uglify', 'concat', 'usebanner', 'assemble']);
+  grunt.registerTask('js', ['uglify', 'concat']);
   grunt.registerTask('dev', ['watch']);
   
 }
