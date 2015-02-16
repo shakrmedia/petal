@@ -76,6 +76,19 @@ module.exports = function(grunt) {
         files: ['less/**/*'],
         tasks: ['default']
       }
+    },
+    
+    // assemble
+    assemble: {
+	  options: {
+        flatten: true,
+        partials: 'docs/template/partial/*.hbs',
+        layoutdir: 'docs/template/layouts',
+        layout: 'default.hbs'
+      },
+      docs: {
+        files: {'index': ['docs/template/layouts/*.hbs']}
+      }
     }
   });
   
