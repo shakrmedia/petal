@@ -97,9 +97,13 @@
 <p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
 
 <div class="demo-code">
-<pre><code class="less css" data-lang="less">// Add colors here
+{{#markdown}}
+``` less
+// Add colors here
 &amp;.my-color    { .generate-btn('my-color') }
-&amp;.my-color2   { .generate-btn('my-color2'; 'custom') }</code></pre>
+&amp;.my-color2   { .generate-btn('my-color2'; 'custom') }
+```
+{{/markdown}}
 </div>
 
 <p>The 'custom' option is provided for when you want to specify the l1, l2, d1, d2 shades manually. Define all 5 variables including base color in <b>color-palette.less</b> and append the <code>'custom'</code> option at the end.</p>
@@ -207,25 +211,26 @@
 </div>
 
 <div class="demo-code">
-<pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
-  &lt;button class=&quot;btn dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;
-    Button &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-  &lt;/button&gt;
-  &lt;ul class=&quot;dropdown-menu&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
-    &lt;li class=&quot;submenu&quot;&gt;
-      &lt;a href=&quot;#&quot;&gt;Submenu 1&lt;/a&gt;
-      &lt;ul class=&quot;dropdown-menu&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item 2&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
+{{#markdown}}
+``` html
+<div class="btn-group">
+  <button class="btn hollow dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Menu item 1</a></li>
+    <li><a href="#">Menu item 2</a></li>
+    <li class="divider"></li>
+    <li class="submenu">
+      <a href="#">Submenu 1</a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Submenu item 1</a></li>
+        <li><a href="#">Submenu item 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Menu item 3</a></li>
+  </ul>
+</div>
+```
+{{/markdown}}
 </div>
 
 <p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
@@ -265,15 +270,18 @@
 	</div>
 </div>
 <div class="demo-code">
-<pre><code class="html" data-lang="html">&lt;div class=&quot;btn-group&quot;&gt;
-  &lt;button class=&quot;btn green&quot;&gt;Button&lt;/button&gt;
-  &lt;button class=&quot;btn green dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;
-  &lt;ul class=&quot;dropdown-menu&quot; data-dropdown-align=&quot;right&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
+{{#markdown}}
+``` html
+<div class="btn-group">
+  <button class="btn green">Button</button>
+  <button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+  <ul class="dropdown-menu" data-dropdown-align="right">
+    <li><a href="#">Menu item 1</a></li>
+    <li><a href="#">Menu item 2</a></li>
+  </ul>
+</div>
+```
+{{/markdown}}
 </div>
 
 <p>Create two <code>.btn</code>s and insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
