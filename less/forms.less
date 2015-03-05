@@ -19,8 +19,8 @@ textarea.input {
 	border-radius: none;
 	padding: (10px - @input-border-width) 10px;
 	margin: 5px 0;
-	font-size: 0.9rem;
-	line-height: 1rem;
+	font-size: 0.9em;
+	line-height: 1em;
 	transition: box-shadow .15s, border-color .15s, background-color .15s;
 	box-shadow: 0 1px 1px rgba(0,0,0,.05) inset;
 	appearance: none;
@@ -75,19 +75,19 @@ textarea.input {
 }
 
 label.form-label {
-	font-size: 0.8rem;
+	font-size: 0.8em;
 	font-weight: 900;
 	text-decoration: none !important;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	line-height: 1rem;
+	line-height: 1;
 	display: block;
 	margin: 5px 0;
 	padding-right: 5px;
 }
 
 .form-caption {
-	font-size: 0.9em;
+	font-size: 0.8em;
 	color: @gray-d1;
 	line-height: 1em;
 	margin: 8px 0;
@@ -142,8 +142,8 @@ label.form-label {
 		margin: 0;
 		background: fadeout(@gray-l2,50%);
 		border: @input-border-width solid @gray-l1;
-		font-size: 0.9rem;
-		line-height: 1rem;
+		font-size: 0.9em;
+		line-height: 1em;
 		border-right-width: 0;
 
 		.dark &, &.ondark {
@@ -156,19 +156,6 @@ label.form-label {
 		border-left-width: 0;
 	}
 
-	.btn-group {
-		display: table-cell;
-		vertical-align: middle;
-		margin: 0 0 0 -1px;
-		width: 1%;
-		white-space: nowrap;
-		font-size: 0pt;
-
-		.btn {
-			display: inline-block;
-			float: none;
-		}
-	}
 
 	input.input {
 		display: table-cell;
@@ -345,7 +332,7 @@ input[type="radio"].radiobox:disabled + label {
 		color: inherit;
 		cursor: pointer;
 		display: block;
-		font-size: 0.9rem;
+		font-size: 0.9em;
 		font-weight: bold;
 		margin: 0;
 		overflow: hidden;
@@ -432,7 +419,7 @@ input[type="radio"].radiobox:disabled + label {
 			color: #333;
 			cursor: pointer;
 			display: block;
-			font-size: 0.9rem;
+			font-size: 0.9em;
 			margin: 0 0 1px 0;
 			overflow: hidden;
 			padding: 8px 20px;
