@@ -19,7 +19,7 @@ textarea.input {
 	border-radius: none;
 	padding: (10px - @input-border-width) 10px;
 	margin: 5px 0;
-	font-size: 0.9em;
+	font-size: @input-font-size;
 	line-height: 1em;
 	transition: box-shadow .15s, border-color .15s, background-color .15s;
 	box-shadow: 0 1px 1px rgba(0,0,0,.05) inset;
@@ -75,7 +75,7 @@ textarea.input {
 }
 
 label.form-label {
-	font-size: 0.8em;
+	font-size: @input-label-font-size;
 	font-weight: 900;
 	text-decoration: none !important;
 	text-transform: uppercase;
@@ -87,7 +87,7 @@ label.form-label {
 }
 
 .form-caption {
-	font-size: 0.8em;
+	font-size: @input-caption-font-size;
 	color: @gray-d1;
 	line-height: 1em;
 	margin: 8px 0;
@@ -142,7 +142,7 @@ label.form-label {
 		margin: 0;
 		background: fadeout(@gray-l2,50%);
 		border: @input-border-width solid @gray-l1;
-		font-size: 0.9em;
+		font-size: @input-font-size;
 		line-height: 1em;
 		border-right-width: 0;
 
