@@ -54,7 +54,8 @@
 	border-radius: 0;
 	outline: none !important;
 	
-	transition: .15s background, .15s border-color, .15s color, .15s box-shadow;
+	transition-property: background, border-color, color, box-shadow, opacity;
+	transition-duration: .15s;
 
 	&:hover {
 		box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
@@ -108,6 +109,13 @@
 				border-color: @btn-color-d2;
 			}
 
+		}
+
+		&.disabled,
+		&:disabled {
+			color: @text-color !important;
+			background-color: @btn-color !important;
+			border-color: transparent !important;
 		}
 
 		// on dark background
@@ -170,6 +178,13 @@
 			} 
 		}
 
+		&.hollow.disabled,
+		&.hollow:disabled {
+			color: @btn-color !important;
+			border-color: @btn-color !important;
+			background: none !important;
+		}
+
 		.active > &[data-toggle="dropdown"],
 		.active > &[data-toggle="dropdown"]:hover,
 		.active > &[data-toggle="dropdown"]:active {
@@ -215,31 +230,39 @@
 
 
 /* disabled */
-.btn {
-	&.disabled, &:disabled {
-		background-color: #666 !important;
-		color: #aaa !important;
-		box-shadow: none !important;
-		border-color: transparent !important;
-		cursor: default !important
+& when (@gray-disabled-btn = true) {
+	.btn {
+		&.disabled, &:disabled {
+			background-color: #666 !important;
+			color: #aaa !important;
+			box-shadow: none !important;
+			border-color: transparent !important;
+			cursor: default !important
+		}
+	}
+
+	.btn.hollow {
+		background: none;
+
+		&.disabled, &:disabled {
+			background: none !important;
+			color: #aaa !important;
+			border-color: #aaa !important;
+			box-shadow: none !important;
+		}
+
+		.dark &.whitetext:not(.disabled) {
+			color: #fff !important;
+		}
 	}
 }
 
-.btn.hollow {
-	background: none;
-
-	&.disabled, &:disabled {
-		background: none !important;
-		color: #aaa !important;
-		border-color: #aaa !important;
-		box-shadow: none !important;
-	}
-
-	.dark &.whitetext:not(.disabled) {
-		color: #fff !important;
-	}
+.btn.disabled,
+.btn:disabled {
+	opacity: 0.5;
+	cursor: default !important;
+	box-shadow: none !important;
 }
-
 
 /* button groups */
 .btn-group {
@@ -437,8 +460,3 @@ ul.dropdown-menu {
 	// Add colors here
 
 }
-
-
-
-
-
