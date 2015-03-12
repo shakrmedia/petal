@@ -99,7 +99,7 @@
 				border-color: @btn-color-d2;
 			}
 			
-			&:hover {
+			&:hover, &:focus {
 				background-color: @btn-color-l1;
 				border-color: @btn-color-d1;
 			}
@@ -133,7 +133,7 @@
 				}
 			}
 
-			&:hover {
+			&:hover, &:focus {
 				background-color: @btn-color-d1;
 				border-color: @btn-color-l1;
 			}
@@ -154,7 +154,7 @@
 				border-top-color: @btn-color; 
 			}
 			
-			&:hover {
+			&:hover, &:focus {
 				color: @text-color;
 				border-color: @btn-color;
 				background-color: @btn-color;
@@ -170,7 +170,7 @@
 				border-color: @btn-color-l1;
 			}
 
-			&:hover, &:active,
+			&:hover, &:focus, &:active,
 			&.active, .active > &[data-toggle="dropdown"] {
 				.caret {
 					border-top-color: @text-color; 
@@ -187,6 +187,7 @@
 
 		.active > &[data-toggle="dropdown"],
 		.active > &[data-toggle="dropdown"]:hover,
+		.active > &[data-toggle="dropdown"]:focus,
 		.active > &[data-toggle="dropdown"]:active {
 			color: @text-color;
 			background-color: @btn-color-d2;
