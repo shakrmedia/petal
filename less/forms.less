@@ -257,8 +257,11 @@ input[type="radio"].radiobox + label　{
 		background-size: cover;
 		box-sizing: border-box;
 		padding: 0 @checkbox-size 0 0;
-		transition: padding 0.1s;
 		background-clip: content-box;
+
+		& when (@checkbox-disable-animation = false) {
+			transition: padding 0.1s;
+		}
 	}
 }
 
