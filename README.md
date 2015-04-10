@@ -9,11 +9,9 @@ Petal aims to provide an ample set of consistently designed UI components you ca
 
 Petal is fully coded on LESS from scratch.
 
-## NOTE: WIP
-Petal is a work-in-progress project since January 2015. Core modules code and documentation are incomplete. Delete this notice when it's ready for public release.
 
-
-## Get Started
+## Setting up Petal
+### The Quick Way
 Include the `link` code inside the `<head>` of your HTML file.
 ```HTML
 <link rel="stylesheet" type="text/css" href="https://shakr-petal.s3-ap-northeast-1.amazonaws.com/edge/petal.min.css">
@@ -34,6 +32,16 @@ https://shakr-petal.s3-ap-northeast-1.amazonaws.com/edge/petal.css
 ```
 https://shakr-petal.s3-ap-northeast-1.amazonaws.com/edge/petal.min.css
 ```
+
+### The Custom Way
+You can customize some settings like colors and font options to fit the look of your project design and manually compile your own build of Petal.
+
+If you already have a LESS compiler set up in your project, just copy the files in the `less` folder from the [Petal repository](https://github.com/ShakrMedia/petal) to your local project folder. It's recommended you put the Petal files in a separate directory (presumably, named "Petal") to avoid confusion.
+
+Alternatively, you can also clone the whole repository and use [grunt](http://gruntjs.com/) to compile Petal, then add the compiled CSS file to your project.
+
+To customize options, change the values of variables in `petal.less` before compiling.
+
 
 
 ## External projects included in Petal
