@@ -31,6 +31,34 @@
 			<br>
 			Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
 		</div>
+		
+		<br>
+		
+		<div class="row">
+			<hr>
+
+<h3>Setting up Petal</h3>
+<h5>The Quick Way</h5>
+<p>Include the <code>link</code> code inside the <code>&lt;head&gt;</code> of your HTML file. Place it before any other site page stylesheets.</p>
+
+<div class="code-block">
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://shakr-petal.s3-ap-northeast-1.amazonaws.com/edge/petal.min.css&quot;&gt;</code></pre>
+
+</div>
+
+<p>Now you can use all the Petal classes and styles in your project.</p>
+
+<br>
+
+<h5>The Custom Way</h5>
+<p>You can customize some settings like colors and font options to fit the look of your project design and manually compile your own build of Petal.</p>
+
+<p>If you already have a LESS compiler set up in your project, just copy the files in the <code>less</code> folder from the <a href="https://github.com/ShakrMedia/petal">Petal repository</a> to your local project folder. It's recommended you put the Petal files in a separate directory (presumably, named "Petal") to avoid confusion.</p>
+
+<p>Alternatively, you can also clone the whole repository and use <a href="http://gruntjs.com/">grunt</a> to compile Petal, then add the compiled CSS file to your project.</p>
+
+<p>To customize options, change the values of variables in <code>petal.less</code> before compiling.</p>
+		</div>
 	</div>
 </header>
 
@@ -558,6 +586,20 @@
 
 <h5>Options</h5>
 <p>Add <code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code>to right align the menu.</p>
+
+
+<br>
+
+<h5>Customizable options</h5>
+<div class="demo-code">
+<pre><code class="language-less">// buttons 
+@btn-font-size: 0.8em;
+@btn-dropdown-menu-item-font-size: 0.9em;
+@gray-disabled-btn: false;
+@btn-disable-transition: false;
+@btn-disable-shadows: false;</code></pre>
+
+</div>
 		</section>
 
 		<section class="row">
@@ -653,6 +695,20 @@
 
 <br>
 
+<h5>Customizable options</h5>
+<div class="demo-code">
+<pre><code class="language-less">// forms 
+@input-border-width: 2px;
+@input-font-size: 0.9em;
+@input-textarea-font-size: 0.8em;
+@input-label-font-size: 0.8em;
+@input-caption-font-size: 0.8em;
+@input-label-letter-spacing: 2px;</code></pre>
+
+</div>
+
+<br>
+
 <h3>Checkboxes and Radioboxes</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 	
@@ -679,6 +735,22 @@
 
 <p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
 <p>Therefore, <code>&lt;label&gt;</code>s are a requirement and must be placed <b>after</b> the <code>&lt;input&gt;</code>s. Also you need to append <code>.checkbox</code> or <code>.radiobox</code> classes to each <code>&lt;input&gt;</code>s for correct appearance.</p>
+
+<p><code>.dark</code> classes on parent elements are supported for darker check/radiobox style variations.</p>
+
+<br>
+
+<h5>Customizable options</h5>
+<div class="demo-code">
+<pre><code class="language-less">// checkboxes &amp; radioboxes
+@checkbox-size: 20px;
+@checkbox-border-width: @input-border-width; //2px
+@checkbox-border-radius: 100%;
+@radiobox-border-radius: 100%;
+@checkbox-color: @primary-accent-color;
+@checkbox-disable-animation: false;</code></pre>
+
+</div>
 
 <br>
 
@@ -782,6 +854,16 @@
 
 <p>Refer to the <a href="http://formstone.it/components/selecter">Selecter documentation page</a> for more options.</p>
 
+<br>
+
+<h5>Customizable options</h5>
+<div class="demo-code">
+<pre><code class="language-less">// selectbox
+@selectbox-border-width: @input-border-width;
+@selectbox-color: @primary-accent-color;</code></pre>
+
+</div>
+
 
 		</section>
 		<section class="row">
@@ -834,7 +916,7 @@
 
 <h5>Options</h5>
 <ul>
-	<li><code>.hover-em</code> : darken shadow when hovering over.
+	<li><code>.hover-em</code> : darkened shadow emphasis when hovering over.
 </ul>
 
 <br>

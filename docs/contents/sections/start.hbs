@@ -1,0 +1,26 @@
+<hr>
+
+<h3>Setting up Petal</h3>
+<h5>The Quick Way</h5>
+<p>Include the <code>link</code> code inside the <code>&lt;head&gt;</code> of your HTML file. Place it before any other site page stylesheets.</p>
+
+<div class="code-block">
+{{#markdown}}
+``` html
+<link rel="stylesheet" type="text/css" href="https://shakr-petal.s3-ap-northeast-1.amazonaws.com/edge/petal.min.css">
+```
+{{/markdown}}
+</div>
+
+<p>Now you can use all the Petal classes and styles in your project.</p>
+
+<br>
+
+<h5>The Custom Way</h5>
+<p>You can customize some settings like colors and font options to fit the look of your project design and manually compile your own build of Petal.</p>
+
+<p>If you already have a LESS compiler set up in your project, just copy the files in the <code>less</code> folder from the <a href="https://github.com/ShakrMedia/petal">Petal repository</a> to your local project folder. It's recommended you put the Petal files in a separate directory (presumably, named "Petal") to avoid confusion.</p>
+
+<p>Alternatively, you can also clone the whole repository and use <a href="http://gruntjs.com/">grunt</a> to compile Petal, then add the compiled CSS file to your project.</p>
+
+<p>To customize options, change the values of variables in <code>petal.less</code> before compiling.</p>

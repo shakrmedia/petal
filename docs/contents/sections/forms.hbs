@@ -90,6 +90,23 @@
 
 <br>
 
+<h5>Customizable options</h5>
+<div class="demo-code">
+{{#markdown}}
+``` less
+// forms 
+@input-border-width: 2px;
+@input-font-size: 0.9em;
+@input-textarea-font-size: 0.8em;
+@input-label-font-size: 0.8em;
+@input-caption-font-size: 0.8em;
+@input-label-letter-spacing: 2px;
+```
+{{/markdown}}
+</div>
+
+<br>
+
 <h3>Checkboxes and Radioboxes</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 	
@@ -116,6 +133,25 @@
 
 <p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
 <p>Therefore, <code>&lt;label&gt;</code>s are a requirement and must be placed <b>after</b> the <code>&lt;input&gt;</code>s. Also you need to append <code>.checkbox</code> or <code>.radiobox</code> classes to each <code>&lt;input&gt;</code>s for correct appearance.</p>
+
+<p><code>.dark</code> classes on parent elements are supported for darker check/radiobox style variations.</p>
+
+<br>
+
+<h5>Customizable options</h5>
+<div class="demo-code">
+{{#markdown}}
+``` less
+// checkboxes & radioboxes
+@checkbox-size: 20px;
+@checkbox-border-width: @input-border-width; //2px
+@checkbox-border-radius: 100%;
+@radiobox-border-radius: 100%;
+@checkbox-color: @primary-accent-color;
+@checkbox-disable-animation: false;
+```
+{{/markdown}}
+</div>
 
 <br>
 
@@ -218,4 +254,17 @@
 <p>Then append the <code>.selectbox</code> class to properly apply styles.</p>
 
 <p>Refer to the <a href="http://formstone.it/components/selecter">Selecter documentation page</a> for more options.</p>
+
+<br>
+
+<h5>Customizable options</h5>
+<div class="demo-code">
+{{#markdown}}
+``` less
+// selectbox
+@selectbox-border-width: @input-border-width;
+@selectbox-color: @primary-accent-color;
+```
+{{/markdown}}
+</div>
 
