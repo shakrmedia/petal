@@ -231,6 +231,7 @@ input[type="radio"].radiobox + label {
 		border-color: darken(@gray-l1,10%);
 	}
 	&:active:before {
+		border-color: @primary-accent-color;
 		background-color: @gray-l2;
 		transition-duration: 0;
 	}
@@ -245,14 +246,17 @@ input[type="radio"].radiobox + label {
 		border-color: lighten(@gray-d2,10%);
 	}
 
-	.dark &:active:before  {
+	.dark &:active:before {
 		background-color: #000;
 	}
 }
 
-input[type="checkbox"].checkbox:focus + label:before,
-input[type="radio"].radiobox:focus + label:before {
-	border-color: @primary-accent-color;
+input[type="checkbox"].checkbox:focus + label,
+input[type="radio"].radiobox:focus + label {
+	&:before,
+	.dark &:before {
+		border-color: @primary-accent-color;
+	}
 }
 
 input[type="checkbox"].checkbox + label,
@@ -268,7 +272,7 @@ input[type="radio"].radiobox + label　{
 		border-radius: @checkbox-border-radius;
 		//background-image: data-uri('../assets/checkmark.svg');
 
-		@checkmark-svg-data: escape("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='@{checkbox-color}' d='M2 8l2-2 3 3 6-6 2 2-8 8z'/></svg>");
+		@checkmark-svg-data: escape("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='@{color-d1}' d='M2 8l2-2 3 3 6-6 2 2-8 8z'/></svg>");
 		background-image: url("data:image/svg+xml,@{checkmark-svg-data}");
 
 		background-size: @checkbox-size @checkbox-size;
@@ -281,17 +285,30 @@ input[type="radio"].radiobox + label　{
 			transition: width 0.1s, transform 0.1s;
 		}
 	}
+
+	.dark &:after {
+		@checkmark-svg-data: escape("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='@{color-l1}' d='M2 8l2-2 3 3 6-6 2 2-8 8z'/></svg>");
+		background-image: url("data:image/svg+xml,@{checkmark-svg-data}");
+	}
+
+	.colorset(@checkbox-color);
 }
 
 input[type="radio"].radiobox + label　{
+
 	&:after {
 		width: @checkbox-size;
 		height: @checkbox-size;
 		padding: 5px;
 		transform: scale(0);
 		background-color: @color-d1;
-		.colorset(@checkbox-color);
 	}
+
+	.dark &:after {
+		background-color: @color-l1;
+	}
+
+	.colorset(@checkbox-color);
 }
 
 input[type="checkbox"].checkbox:checked + label {
@@ -303,7 +320,7 @@ input[type="checkbox"].checkbox:checked + label {
 input[type="radio"].radiobox:checked + label　{
 	&:after {
 		transform: scale(1);
-		background-image: none;
+		background-image: none !important;
 	}
 }
 
