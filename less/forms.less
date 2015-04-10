@@ -221,7 +221,7 @@ input[type="radio"].radiobox + label {
 		width: @checkbox-size;
 		height: @checkbox-size;
 		border: 2px solid @gray-l1;
-		background: #fff;
+		background-color: #fff;
 		border-radius: @checkbox-border-radius;
 		box-sizing: border-box;
 		transition: 0.2s;
@@ -231,8 +231,22 @@ input[type="radio"].radiobox + label {
 		border-color: darken(@gray-l1,10%);
 	}
 	&:active:before {
-		background: @gray-l2;
+		background-color: @gray-l2;
 		transition-duration: 0;
+	}
+
+	// on dark
+	.dark &:before {
+		border-color: @gray-d2;
+		background-color: #111;
+	}
+
+	.dark &:hover:before {
+		border-color: lighten(@gray-d2,10%);
+	}
+
+	.dark &:active:before  {
+		background-color: #000;
 	}
 }
 
@@ -249,18 +263,22 @@ input[type="radio"].radiobox + label　{
 		left: 0;
 		display: block;
 		content: "";
-		width: @checkbox-size;
+		width: 0;
 		height: @checkbox-size;
 		border-radius: @checkbox-border-radius;
-		//background-image: data-uri('../assets/checkmark-check.svg');
-		background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%220%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%0D%0A%3Cpolygon%20fill%3D%22%232a91c2%22%20points%3D%222%2C8%204%2C6%207%2C9%2013%2C3%2015%2C5%207%2C13%22%2F%3E%0D%0A%0D%0A%3C%2Fsvg%3E%0D%0A");
-		background-size: cover;
+		//background-image: data-uri('../assets/checkmark.svg');
+
+		@checkmark-svg-data: escape("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='@{checkbox-color}' d='M2 8l2-2 3 3 6-6 2 2-8 8z'/></svg>");
+		background-image: url("data:image/svg+xml,@{checkmark-svg-data}");
+
+		background-size: @checkbox-size @checkbox-size;
+		background-position: left center;
 		box-sizing: border-box;
-		padding: 0 @checkbox-size 0 0;
+		padding: 0;
 		background-clip: content-box;
 
 		& when (@checkbox-disable-animation = false) {
-			transition: padding 0.1s;
+			transition: width 0.1s, transform 0.1s;
 		}
 	}
 }
@@ -269,7 +287,8 @@ input[type="radio"].radiobox + label　{
 	&:after {
 		width: @checkbox-size;
 		height: @checkbox-size;
-		padding: (@checkbox-size / 2);
+		padding: 5px;
+		transform: scale(0);
 		background-color: @color-d1;
 		.colorset(@checkbox-color);
 	}
@@ -277,21 +296,32 @@ input[type="radio"].radiobox + label　{
 
 input[type="checkbox"].checkbox:checked + label {
 	&:after {
-		padding-right: 0;
+		width: @checkbox-size;
 	}
 }
 
 input[type="radio"].radiobox:checked + label　{
 	&:after {
-		padding: 5px;
+		transform: scale(1);
+		background-image: none;
 	}
 }
 
 input[type="checkbox"].checkbox:disabled + label, 
 input[type="radio"].radiobox:disabled + label {
 	&:before, &:hover:before {
-		background: @gray-l2;
-		border-color: @gray-l1;
+		background-color: fadeout(@gray,60%);
+		border-color: fadeout(@gray-l1,50%);
+	}
+
+	&:after {
+		opacity: 0.5;
+	}
+
+	.dark &:before,
+	.dark &:hover:before {
+		background-color: fadeout(@gray-d2,60%);
+		border-color: fadeout(@gray,50%);
 	}
 }
 
