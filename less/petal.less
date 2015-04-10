@@ -9,7 +9,7 @@
 @base-font-color: #333;
 
 // typography
-@header-uppercase: true; // false to disable
+@header-uppercase: true;
 @header-letter-spacing: 2px;
 
 // colors
@@ -26,19 +26,24 @@
 @btn-disable-shadows: false;
 
 // forms 
+@input-border-width: 2px;
 @input-font-size: 0.9em;
 @input-textarea-font-size: 0.8em;
 @input-label-font-size: 0.8em;
 @input-caption-font-size: 0.8em;
 @input-label-letter-spacing: 2px;
 
-@input-border-width: 2px;
+// checkboxes & radioboxes
 @checkbox-size: 20px;
+@checkbox-border-width: @input-border-width; //2px
 @checkbox-border-radius: 100%;
+@radiobox-border-radius: 100%;
 @checkbox-color: @primary-accent-color;
 @checkbox-disable-animation: false;
+
+// selectbox
+@selectbox-border-width: @input-border-width; //2px
 @selectbox-color: @primary-accent-color;
-@selectbox-border-width: 2px;
 
 
 // * ================================= *

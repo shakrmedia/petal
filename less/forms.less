@@ -220,9 +220,8 @@ input[type="radio"].radiobox + label {
 		content: "";
 		width: @checkbox-size;
 		height: @checkbox-size;
-		border: 2px solid @gray-l1;
+		border: @checkbox-border-width solid @gray-l1;
 		background-color: #fff;
-		border-radius: @checkbox-border-radius;
 		box-sizing: border-box;
 		transition: 0.2s;
 	}
@@ -251,6 +250,20 @@ input[type="radio"].radiobox + label {
 	}
 }
 
+// border radius
+input[type="checkbox"].checkbox + label {
+	&:before, &:after {
+		border-radius: @checkbox-border-radius;
+	}
+}
+
+input[type="radio"].radiobox + label {
+	&:before, &:after {
+		border-radius: @radiobox-border-radius;
+	}
+}
+
+// focus (tab select) state
 input[type="checkbox"].checkbox:focus + label,
 input[type="radio"].radiobox:focus + label {
 	&:before,
@@ -269,7 +282,6 @@ input[type="radio"].radiobox + label　{
 		content: "";
 		width: 0;
 		height: @checkbox-size;
-		border-radius: @checkbox-border-radius;
 		//background-image: data-uri('../assets/checkmark.svg');
 
 		@checkmark-svg-data: escape("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='@{color-d1}' d='M2 8l2-2 3 3 6-6 2 2-8 8z'/></svg>");
@@ -295,7 +307,6 @@ input[type="radio"].radiobox + label　{
 }
 
 input[type="radio"].radiobox + label　{
-
 	&:after {
 		width: @checkbox-size;
 		height: @checkbox-size;
@@ -307,10 +318,10 @@ input[type="radio"].radiobox + label　{
 	.dark &:after {
 		background-color: @color-l1;
 	}
-
 	.colorset(@checkbox-color);
 }
 
+// checked state
 input[type="checkbox"].checkbox:checked + label {
 	&:after {
 		width: @checkbox-size;
@@ -324,6 +335,7 @@ input[type="radio"].radiobox:checked + label　{
 	}
 }
 
+// disabled
 input[type="checkbox"].checkbox:disabled + label, 
 input[type="radio"].radiobox:disabled + label {
 	&:before, &:hover:before {
@@ -341,6 +353,7 @@ input[type="radio"].radiobox:disabled + label {
 		border-color: fadeout(@gray,50%);
 	}
 }
+
 
 // selectboxes
 // uses Selecter (https://github.com/Formstone/Selecter)
@@ -598,7 +611,7 @@ input[type="radio"].radiobox:disabled + label {
 
 			position: static;
 
-			border-width: 2px;
+			border-width: @selectbox-border-width;
 			display: block;
 		}
 	}
