@@ -11,12 +11,16 @@ input[type="number"]::-webkit-outer-spin-button, {
 	-webkit-appearance: none;
 }
 
+input[type="text"], input[type="search"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 
 // default style
 input.input,
 textarea.input {
 	border: @input-border-width solid @gray-l1;
-	border-radius: none;
 	padding: (10px - @input-border-width) 10px;
 	margin: 5px 0;
 	font-size: @input-font-size;
@@ -25,6 +29,7 @@ textarea.input {
 	box-shadow: 0 1px 1px rgba(0,0,0,.05) inset;
 	appearance: none;
 	outline: none;
+	border-radius: 0;
 
 	&:hover {
 		border-color: darken(@gray-l1,10%);
