@@ -3,7 +3,13 @@
 	"use strict";
 	
 	function clearMenus(self) {
-		self.parent().removeClass('active').removeAttr('data-dropdown-state');
+		$('[data-dropdown-state="open"]').filter(function() {
+			return !this.contains(self[0]) || self.attr('data-toggle') === 'dropdown';
+		}).map(function() {
+			return $(this).find('button.dropdown');
+		}).each(function() {
+			$(this).parent().removeClass('active').removeAttr('data-dropdown-state');
+		});
 	}
 
 	$(document).on('click', function(event) {
