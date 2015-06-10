@@ -34,6 +34,30 @@
 	</div>
 </form>
 </div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<form>
+	<div class="form-group">
+		<label class="form-label" for="demoFormEmail">Email</label>
+		<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
+		<p class="form-caption">Enter your email address.</p>
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
+		<input class="input" id="demoFormPassword" type="password" placeholder="Password" />
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoFormComments">Comments</label>
+		<textarea class="input" name="demoFormComments" id="demoFormComments" cols="30" rows="10"></textarea>
+	</div>
+	<div class="form-group">
+		<a class="btn">Submit</a>
+	</div>
+</form>
+```
+{{/markdown}}
+</div>
 
 <p>Include <code>&lt;label&gt;</code>s and <code>&lt;input&gt;</code>s inside a <code>.form-group</code> to have them stretch across the container as block elements.</p>
 
@@ -56,6 +80,25 @@
 		<a class="btn">Submit</a>
 	</div>
 </form>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<form class="form-inline">
+	<div class="form-group">
+		<label class="form-label" for="demoForm2Email">Email</label>
+		<input class="input" id="demoForm2Email" type="email" placeholder="Email" />
+	</div>
+	<div class="form-group">
+		<label class="form-label" for="demoForm2Password">Password</label>
+		<input class="input" id="demoForm2Password" type="password" placeholder="Password" />
+	</div>
+	<div class="form-group">
+		<a class="btn">Submit</a>
+	</div>
+</form>
+```
+{{/markdown}}
 </div>
 
 <p>Append <code>.form-inline</code> class to a parent container to put <code>.form-groups</code> in one line. You need to apply paddings and margins manually.</p>
@@ -129,6 +172,19 @@
 		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
 		<label for="demoRadio3">Disabled</label>
 	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<!-- Checkbox -->
+<input class="checkbox" type="checkbox" id="demoCheck1" checked disabled>
+<label for="demoCheck1">Checkbox 1</label>
+
+<!-- Radiobox -->
+<input class="radiobox" type="radio" name="demoRadio" id="demoRadio1" checked>
+<label for="demoRadio1">Radiobox 1</label>
+```
+{{/markdown}}
 </div>
 
 <p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>

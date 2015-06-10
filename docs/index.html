@@ -639,6 +639,27 @@
 	</div>
 </form>
 </div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;form&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;demoFormEmail&quot;&gt;Email&lt;/label&gt;
+        &lt;input class=&quot;input&quot; id=&quot;demoFormEmail&quot; type=&quot;email&quot; placeholder=&quot;Email&quot; /&gt;
+        &lt;p class=&quot;form-caption&quot;&gt;Enter your email address.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;demoFormPassword&quot;&gt;Password &lt;span class=&quot;form-caption&quot;&gt;- Inline captions inside labels are fine too.&lt;/span&gt;&lt;/label&gt;
+        &lt;input class=&quot;input&quot; id=&quot;demoFormPassword&quot; type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;demoFormComments&quot;&gt;Comments&lt;/label&gt;
+        &lt;textarea class=&quot;input&quot; name=&quot;demoFormComments&quot; id=&quot;demoFormComments&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;a class=&quot;btn&quot;&gt;Submit&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+</div>
 
 <p>Include <code>&lt;label&gt;</code>s and <code>&lt;input&gt;</code>s inside a <code>.form-group</code> to have them stretch across the container as block elements.</p>
 
@@ -661,6 +682,22 @@
 		<a class="btn">Submit</a>
 	</div>
 </form>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;form class=&quot;form-inline&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;demoForm2Email&quot;&gt;Email&lt;/label&gt;
+        &lt;input class=&quot;input&quot; id=&quot;demoForm2Email&quot; type=&quot;email&quot; placeholder=&quot;Email&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;demoForm2Password&quot;&gt;Password&lt;/label&gt;
+        &lt;input class=&quot;input&quot; id=&quot;demoForm2Password&quot; type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;a class=&quot;btn&quot;&gt;Submit&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
 </div>
 
 <p>Append <code>.form-inline</code> class to a parent container to put <code>.form-groups</code> in one line. You need to apply paddings and margins manually.</p>
@@ -731,6 +768,16 @@
 		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
 		<label for="demoRadio3">Disabled</label>
 	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;!-- Checkbox --&gt;
+&lt;input class=&quot;checkbox&quot; type=&quot;checkbox&quot; id=&quot;demoCheck1&quot; checked disabled&gt;
+&lt;label for=&quot;demoCheck1&quot;&gt;Checkbox 1&lt;/label&gt;
+
+&lt;!-- Radiobox --&gt;
+&lt;input class=&quot;radiobox&quot; type=&quot;radio&quot; name=&quot;demoRadio&quot; id=&quot;demoRadio1&quot; checked&gt;
+&lt;label for=&quot;demoRadio1&quot;&gt;Radiobox 1&lt;/label&gt;</code></pre>
+
 </div>
 
 <p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
