@@ -744,6 +744,7 @@
 </div>
 
 <br>
+<hr class="subdivider">
 
 <h3>Checkboxes and Radioboxes</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
@@ -785,7 +786,6 @@
 <p><code>.dark</code> classes on parent elements are supported for darker check/radiobox style variations.</p>
 
 <br>
-
 <h5>Customizable options</h5>
 <div class="demo-code">
 <pre><code class="language-less">// checkboxes &amp; radioboxes
@@ -797,8 +797,61 @@
 @checkbox-disable-animation: false;</code></pre>
 
 </div>
+<br>
+
+
+<h3>Switches</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="form-group">
+		<span class="chk-switch-label">Toggle Switch</span>
+		<div class="chk-switch">
+			<input type="checkbox" id="demoSwitch1">
+			<label for="demoSwitch1"><span></span></label>
+		</div>
+	</div>
+	<div class="form-group">
+		<span class="chk-switch-label">Toggle Switch (Disabled)</span>
+		<div class="chk-switch disabled">
+			<input type="checkbox" id="demoSwitch2" disabled>
+			<label for="demoSwitch2"><span></span></label>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;form-group&quot;&gt;
+    &lt;span class=&quot;chk-switch-label&quot;&gt;Toggle Switch&lt;/span&gt;
+    &lt;div class=&quot;chk-switch&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch1&quot;&gt;
+        &lt;label for=&quot;demoSwitch1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;span class=&quot;chk-switch-label&quot;&gt;Toggle Switch (Disabled)&lt;/span&gt;
+    &lt;div class=&quot;chk-switch disabled&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch2&quot; disabled&gt;
+        &lt;label for=&quot;demoSwitch2&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+</div>
+
+<p>"Switch" style toggles using checkboxes. <code>span.chk-switch-label</code> is optional. You must have the <code>.chk-switch</code> and the markup inside for the switch to work.</p>
 
 <br>
+
+<h5>Customizable options</h5>
+<div class="demo-code">
+<pre><code class="language-less">// switch toggle
+@chk-switch-size: 24px;
+@chk-switch-border-width: @input-border-width; //2px
+@chk-switch-border-radius: @checkbox-size;
+@chk-switch-color: @primary-accent-color;
+@chk-switch-disable-animation: false;</code></pre>
+
+</div>
+
+<br>
+<hr class="subdivider">
 
 <h3>Selectboxes</h3>
 <div class="demo-panel p-15">

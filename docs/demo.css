@@ -155,6 +155,9 @@ section .borders [class^="col-"] span {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+section hr.subdivider {
+  margin: 40px 0;
+}
 .clabel {
   margin-top: 5px;
 }
