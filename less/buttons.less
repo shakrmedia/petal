@@ -39,14 +39,14 @@
 	margin: 0;
 	padding: 8px 20px;
 
-	font-size: @btn-font-size;
+	font-size: @btn-font-size; //0.8em
 	font-weight: @btn-font-weight;
 	text-align: center;
 	text-decoration: none !important;
 	text-transform: uppercase;
 	white-space: nowrap;
 	letter-spacing: 2px;
-	line-height: 1em;
+	line-height: (@input-font-size / @btn-font-size); // match line height of input
 	vertical-align: middle;
 
 	color: #fff;
