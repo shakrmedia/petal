@@ -721,8 +721,27 @@
 			<span class="input-addon">.somesite.com</span>
 		</div>
 	</div>
-
 </form>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;form&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;demoForm3Username&quot;&gt;Username&lt;/label&gt;
+        &lt;div class=&quot;input-group&quot;&gt;
+            &lt;span class=&quot;input-addon&quot;&gt;@&lt;/span&gt;
+            &lt;input class=&quot;input&quot; id=&quot;demoForm3Username&quot; type=&quot;text&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot; for=&quot;demoForm3Subdomain&quot;&gt;Subdomain&lt;/label&gt;
+        &lt;div class=&quot;input-group&quot;&gt;
+            &lt;input class=&quot;input&quot; id=&quot;demoForm3Subdomain&quot; type=&quot;text&quot; /&gt;
+            &lt;span class=&quot;input-addon&quot;&gt;.somesite.com&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
 </div>
 
 <p>Place <code>.input-addon</code> class blocks before or after the input. Enclose them with a <code>.input-group</code> container.</p>
@@ -803,39 +822,67 @@
 <h3>Switches</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 	<div class="form-group">
-		<span class="chk-switch-label">Toggle Switch</span>
+		<label class="form-label">Toggle Switch (ON/OFF)</label>
+		<span class="chk-switch-label">ON</span>
 		<div class="chk-switch">
 			<input type="checkbox" id="demoSwitch1">
 			<label for="demoSwitch1"><span></span></label>
 		</div>
+		<span class="chk-switch-label">OFF</span>
 	</div>
 	<div class="form-group">
-		<span class="chk-switch-label">Toggle Switch (Disabled)</span>
-		<div class="chk-switch disabled">
-			<input type="checkbox" id="demoSwitch2" disabled>
+		<label class="form-label">A/B Type Switch</label>
+		<span class="chk-switch-label">A</span>
+		<div class="chk-switch ab-type">
+			<input type="checkbox" id="demoSwitch2">
 			<label for="demoSwitch2"><span></span></label>
+		</div>
+		<span class="chk-switch-label">B</span>
+	</div>
+	<div class="form-group">
+		<label class="form-label">Toggle Switch (Disabled)</label>
+		<span class="chk-switch-label">Disabled Switch</span>
+		<div class="chk-switch disabled">
+			<input type="checkbox" id="demoSwitch3" disabled>
+			<label for="demoSwitch3"><span></span></label>
 		</div>
 	</div>
 </div>
 <div class="demo-code">
 <pre><code class="language-html">&lt;div class=&quot;form-group&quot;&gt;
-    &lt;span class=&quot;chk-switch-label&quot;&gt;Toggle Switch&lt;/span&gt;
-    &lt;div class=&quot;chk-switch&quot;&gt;
-        &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch1&quot;&gt;
-        &lt;label for=&quot;demoSwitch1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+        &lt;label class=&quot;form-label&quot;&gt;Toggle Switch (ON/OFF)&lt;/label&gt;
+        &lt;span class=&quot;chk-switch-label&quot;&gt;ON&lt;/span&gt;
+        &lt;div class=&quot;chk-switch&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch1&quot;&gt;
+            &lt;label for=&quot;demoSwitch1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;span class=&quot;chk-switch-label&quot;&gt;OFF&lt;/span&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;form-group&quot;&gt;
-    &lt;span class=&quot;chk-switch-label&quot;&gt;Toggle Switch (Disabled)&lt;/span&gt;
-    &lt;div class=&quot;chk-switch disabled&quot;&gt;
-        &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch2&quot; disabled&gt;
-        &lt;label for=&quot;demoSwitch2&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot;&gt;A/B Type Switch&lt;/label&gt;
+        &lt;span class=&quot;chk-switch-label&quot;&gt;A&lt;/span&gt;
+        &lt;div class=&quot;chk-switch ab-type&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch2&quot;&gt;
+            &lt;label for=&quot;demoSwitch2&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;span class=&quot;chk-switch-label&quot;&gt;B&lt;/span&gt;
     &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;form-label&quot;&gt;Toggle Switch (Disabled)&lt;/label&gt;
+        &lt;span class=&quot;chk-switch-label&quot;&gt;Disabled Switch&lt;/span&gt;
+        &lt;div class=&quot;chk-switch disabled&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch3&quot; disabled&gt;
+            &lt;label for=&quot;demoSwitch3&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
 
 </div>
 
 <p>"Switch" style toggles using checkboxes. <code>span.chk-switch-label</code> is optional. You must have the <code>.chk-switch</code> and the markup inside for the switch to work.</p>
+
+<p>Add <code>.ab-type</code> class to <code>.chk-switch</code> for an A/B-type toggle without the switch background color.</p>
+
+<p>To disable a switch, you need to add both <code>.disabled</code> class on the <div>.chk-switch</div> container and also a <code>disabled</code> attribute on the input.</p>
 
 <br>
 

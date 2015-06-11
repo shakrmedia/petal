@@ -207,11 +207,13 @@ label.form-label {
 	input.input {
 		display: inline-block;
 		width: auto;
+		vertical-align: middle;
 	}
 
 	label {
 		display: inline-block;
 		width: auto;
+		vertical-align: middle;
 	}
 }
 
@@ -390,7 +392,7 @@ input[type="radio"].radiobox:disabled + label {
 
 .chk-switch-label + .chk-switch {
 	vertical-align: middle;
-	margin-left: 5px;
+	margin: 0 3px;
 }
 
 .chk-switch {
@@ -464,7 +466,6 @@ input[type="radio"].radiobox:disabled + label {
 			width: 100%;
 			height: (@chk-switch-size - 8px);
 			border-radius: @chk-switch-border-radius;
-			background-color: fadeout(@color,50%);
 			background-clip: content-box;
 			transform: translate(-@chk-switch-size);
 
@@ -494,14 +495,15 @@ input[type="radio"].radiobox:disabled + label {
 		}
 	}
 	
-	// hover
+	&:not(.ab-type) label span:before {
+		background-color: fadeout(@color,50%);
+	}
+	&:not(.ab-type):hover label span:before {
+		background-color: fadeout(@color,40%);
+	}
 	&:hover input[type="checkbox"]:not(:disabled) + label span:before, 
 	&:hover input[type="checkbox"]:not(:disabled) + label span:after {
 		transform: translate(-@chk-switch-size+2px);
-	}
-
-	&:hover label span:before {
-		background-color: fadeout(@color,40%);
 	}
 
 	// checked state

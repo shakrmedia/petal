@@ -123,8 +123,30 @@
 			<span class="input-addon">.somesite.com</span>
 		</div>
 	</div>
-
 </form>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<form>
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Username">Username</label>
+		<div class="input-group">
+			<span class="input-addon">@</span>
+			<input class="input" id="demoForm3Username" type="text" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Subdomain">Subdomain</label>
+		<div class="input-group">
+			<input class="input" id="demoForm3Subdomain" type="text" />
+			<span class="input-addon">.somesite.com</span>
+		</div>
+	</div>
+</form>
+```
+{{/markdown}}
 </div>
 
 <p>Place <code>.input-addon</code> class blocks before or after the input. Enclose them with a <code>.input-group</code> container.</p>
@@ -214,17 +236,29 @@
 <h3>Switches</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 	<div class="form-group">
-		<span class="chk-switch-label">Toggle Switch</span>
+		<label class="form-label">Toggle Switch (ON/OFF)</label>
+		<span class="chk-switch-label">ON</span>
 		<div class="chk-switch">
 			<input type="checkbox" id="demoSwitch1">
 			<label for="demoSwitch1"><span></span></label>
 		</div>
+		<span class="chk-switch-label">OFF</span>
 	</div>
 	<div class="form-group">
-		<span class="chk-switch-label">Toggle Switch (Disabled)</span>
-		<div class="chk-switch disabled">
-			<input type="checkbox" id="demoSwitch2" disabled>
+		<label class="form-label">A/B Type Switch</label>
+		<span class="chk-switch-label">A</span>
+		<div class="chk-switch ab-type">
+			<input type="checkbox" id="demoSwitch2">
 			<label for="demoSwitch2"><span></span></label>
+		</div>
+		<span class="chk-switch-label">B</span>
+	</div>
+	<div class="form-group">
+		<label class="form-label">Toggle Switch (Disabled)</label>
+		<span class="chk-switch-label">Disabled Switch</span>
+		<div class="chk-switch disabled">
+			<input type="checkbox" id="demoSwitch3" disabled>
+			<label for="demoSwitch3"><span></span></label>
 		</div>
 	</div>
 </div>
@@ -232,24 +266,40 @@
 {{#markdown}}
 ``` html
 <div class="form-group">
-	<span class="chk-switch-label">Toggle Switch</span>
-	<div class="chk-switch">
-		<input type="checkbox" id="demoSwitch1">
-		<label for="demoSwitch1"><span></span></label>
+		<label class="form-label">Toggle Switch (ON/OFF)</label>
+		<span class="chk-switch-label">ON</span>
+		<div class="chk-switch">
+			<input type="checkbox" id="demoSwitch1">
+			<label for="demoSwitch1"><span></span></label>
+		</div>
+		<span class="chk-switch-label">OFF</span>
 	</div>
-</div>
-<div class="form-group">
-	<span class="chk-switch-label">Toggle Switch (Disabled)</span>
-	<div class="chk-switch disabled">
-		<input type="checkbox" id="demoSwitch2" disabled>
-		<label for="demoSwitch2"><span></span></label>
+	<div class="form-group">
+		<label class="form-label">A/B Type Switch</label>
+		<span class="chk-switch-label">A</span>
+		<div class="chk-switch ab-type">
+			<input type="checkbox" id="demoSwitch2">
+			<label for="demoSwitch2"><span></span></label>
+		</div>
+		<span class="chk-switch-label">B</span>
 	</div>
-</div>
+	<div class="form-group">
+		<label class="form-label">Toggle Switch (Disabled)</label>
+		<span class="chk-switch-label">Disabled Switch</span>
+		<div class="chk-switch disabled">
+			<input type="checkbox" id="demoSwitch3" disabled>
+			<label for="demoSwitch3"><span></span></label>
+		</div>
+	</div>
 ```
 {{/markdown}}
 </div>
 
 <p>"Switch" style toggles using checkboxes. <code>span.chk-switch-label</code> is optional. You must have the <code>.chk-switch</code> and the markup inside for the switch to work.</p>
+
+<p>Add <code>.ab-type</code> class to <code>.chk-switch</code> for an A/B-type toggle without the switch background color.</p>
+
+<p>To disable a switch, you need to add both <code>.disabled</code> class on the <div>.chk-switch</div> container and also a <code>disabled</code> attribute on the input.</p>
 
 <br>
 
