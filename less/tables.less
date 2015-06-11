@@ -1,0 +1,49 @@
+// * ================================= *
+// *  Tables
+// * ================================= *
+
+table.table {
+	width: 100%;
+	
+	caption {
+		text-align: left;
+		margin: 10px 0;
+		font-size: 0.9em;
+	}
+
+	th, td {
+		padding: 8px 15px;
+		text-align: left;
+		background-color: #fff;
+		border-bottom: 1px solid #ddd;
+	}
+
+	thead th,
+	thead td {
+		border-bottom: 2px solid #aaa;
+	}
+
+	tfoot th,
+	tfoot td {
+		border-top: 2px solid #aaa;
+	}
+
+	&.table-inner-borders {
+		th, td {
+			border-right: 1px solid #ddd;
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		tr:last-child th,
+		tr:last-child td {
+			border-bottom: none;
+		}
+	}
+
+	&.table-outer-borders {
+		border: 1px solid #ddd;
+	}
+}
