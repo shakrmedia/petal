@@ -157,45 +157,65 @@ label.form-label {
 	display: table;
 	width: 100%;
 
-	.input-addon {
-		width: 1%;
-		padding: (10px-@input-border-width) 10px;
+	input.input {
 		display: table-cell;
 		margin: 0;
+		vertical-align: middle;
+	}
+
+	.input-addon, .input-addon-btn {
+		width: 1%;
+		display: table-cell;
+		vertical-align: middle;
+		margin: 0;
+		line-height: 1em;
+		
+	}
+
+	.input-addon {
+		padding: (10px-@input-border-width) 10px;
 		background: fadeout(@gray-l2,50%);
 		border: @input-border-width solid @gray-l1;
 		font-size: @input-font-size;
-		line-height: 1em;
 		border-right-width: 0;
 
 		.dark &, &.ondark {
 			border-color: @gray;
 		}
+
+		&:last-child {
+			border-right-width: @input-border-width;
+			border-left-width: 0;
+		}
 	}
 
-	.input-addon:last-child {
-		border-right-width: @input-border-width;
-		border-left-width: 0;
+	// spaced
+	.input-addon, .input-addon-btn {
+		&.spaced {
+			padding-right: 5px;
+
+			&:last-child {
+				padding-right: 0;
+				padding-left: 5px;
+			}
+		}
 	}
 
-
-	input.input {
-		display: table-cell;
-		margin: 0;
-	}
 }
 
 
 // inline form groups
-.form-inline {
-	.form-group {
-		vertical-align: middle;
-		display: inline-block;
-		width: auto;
-		margin-bottom: inherit;
-	}
-
+.form-inline .form-group,
+.form-group-inline {
+	vertical-align: middle;
+	display: inline-block;
+	width: auto;
+	margin-bottom: inherit;
+}
+.form-inline,
+.form-group-inline {
 	.input-group {
+		display: inline-block;
 		width: auto;
 	}
 

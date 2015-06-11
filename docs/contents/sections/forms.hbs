@@ -6,6 +6,7 @@
 	<input class="input" type="text" placeholder="Name" />
 	<input class="input" type="email" placeholder="Email" />
 	<input class="input" type="text" placeholder="Disabled" disabled />
+	<button class="btn">Button</button>
 </div>
 
 <p>Add <code>.input</code> class to an <code>&lt;input&gt;</code> element to apply the design.</p>
@@ -20,10 +21,6 @@
 		<label class="form-label" for="demoFormEmail">Email</label>
 		<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
 		<p class="form-caption">Enter your email address.</p>
-		<div class="form-inline">
-			<input class="input" id="demoFormEmail" type="email" placeholder="Email" />
-			<button class="btn">Button</button>
-		</div>
 	</div>
 	<div class="form-group">
 		<label class="form-label" for="demoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
@@ -117,6 +114,7 @@
 		<div class="input-group">
 			<span class="input-addon">@</span>
 			<input class="input" id="demoForm3Username" type="text" />
+			<span class="input-addon-btn spaced"><button class="btn green">Check</button></span>
 		</div>
 	</div>
 
@@ -125,6 +123,14 @@
 		<div class="input-group">
 			<input class="input" id="demoForm3Subdomain" type="text" />
 			<span class="input-addon">.somesite.com</span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Search">Search</label>
+		<div class="input-group">
+			<input class="input" id="demoForm3Search" type="text" />
+			<span class="input-addon-btn"><button class="btn">Search</button></span>
 		</div>
 	</div>
 </form>
@@ -138,6 +144,7 @@
 		<div class="input-group">
 			<span class="input-addon">@</span>
 			<input class="input" id="demoForm3Username" type="text" />
+			<span class="input-addon-btn spaced"><button class="btn green">Check</button></span>
 		</div>
 	</div>
 
@@ -148,6 +155,14 @@
 			<span class="input-addon">.somesite.com</span>
 		</div>
 	</div>
+
+	<div class="form-group">
+		<label class="form-label" for="demoForm3Search">Search</label>
+		<div class="input-group">
+			<input class="input" id="demoForm3Search" type="text" />
+			<span class="input-addon-btn"><button class="btn">Search</button></span>
+		</div>
+	</div>
 </form>
 ```
 {{/markdown}}
@@ -155,7 +170,9 @@
 
 <p>Place <code>.input-addon</code> class blocks before or after the input. Enclose them with a <code>.input-group</code> container.</p>
 
-<p>Placing buttons inside button groups are not supported.</p>
+<p>To place a button in an input group, use <code>.input-addon-btn</code> instead.</p>
+
+<p>If you want spacing inbetween the text input and the button, add <code>.spaced</code> class in the addon span.</p>
 
 <br>
 
