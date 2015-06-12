@@ -196,25 +196,29 @@
 
 <h3>Checkboxes and Radioboxes</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
-	
-	<div class="form-group">
-		<input class="checkbox" type="checkbox" id="demoCheck1">
-		<label for="demoCheck1">Checkbox 1</label>
-		<input class="checkbox" type="checkbox" id="demoCheck2" checked>
-		<label for="demoCheck2">Checkbox 2</label>
-		<input class="checkbox" type="checkbox" id="demoCheck3" disabled>
-		<label for="demoCheck3">Disabled</label>
-		<input class="checkbox" type="checkbox" id="demoCheck4" disabled checked>
-		<label for="demoCheck4">Disabled (Pre-checked)</label>
-	</div>
-
-	<div class="form-group">
-		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio1" checked>
-		<label for="demoRadio1">Radiobox 1</label>
-		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio2">
-		<label for="demoRadio2">Radiobox 2</label>
-		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
-		<label for="demoRadio3">Disabled</label>
+	<div class="row">
+		<div class="col-2">
+			<div class="form-group">
+				<input class="checkbox" type="checkbox" id="demoCheck1">
+				<label for="demoCheck1">Checkbox 1</label>
+				<input class="checkbox" type="checkbox" id="demoCheck2" checked>
+				<label for="demoCheck2">Checkbox 2</label>
+				<input class="checkbox" type="checkbox" id="demoCheck3" disabled>
+				<label for="demoCheck3">Disabled</label>
+				<input class="checkbox" type="checkbox" id="demoCheck4" disabled checked>
+				<label for="demoCheck4">Disabled (Pre-checked)</label>
+			</div>
+		</div>
+		<div class="col-2">
+			<div class="form-group">
+				<input class="radiobox" type="radio" name="demoRadio" id="demoRadio1" checked>
+				<label for="demoRadio1">Radiobox 1</label>
+				<input class="radiobox" type="radio" name="demoRadio" id="demoRadio2">
+				<label for="demoRadio2">Radiobox 2</label>
+				<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
+				<label for="demoRadio3">Disabled</label>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="demo-code">
@@ -256,30 +260,38 @@
 
 <h3>Switches</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
-	<div class="form-group">
-		<label class="form-label">Toggle Switch (ON/OFF)</label>
-		<span class="chk-switch-label">ON</span>
-		<div class="chk-switch">
-			<input type="checkbox" id="demoSwitch1">
-			<label for="demoSwitch1"><span></span></label>
+	<div class="row">
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">ON/OFF Type Switch</label>
+				<span class="chk-switch-label">OFF</span>
+				<div class="chk-switch">
+					<input type="checkbox" id="demoSwitch1" checked>
+					<label for="demoSwitch1"><span></span></label>
+				</div>
+				<span class="chk-switch-label">ON</span>
+			</div>
 		</div>
-		<span class="chk-switch-label">OFF</span>
-	</div>
-	<div class="form-group">
-		<label class="form-label">A/B Type Switch</label>
-		<span class="chk-switch-label">A</span>
-		<div class="chk-switch ab-type">
-			<input type="checkbox" id="demoSwitch2">
-			<label for="demoSwitch2"><span></span></label>
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">A/B Type Switch</label>
+				<span class="chk-switch-label">Cats</span>
+				<div class="chk-switch ab-type">
+					<input type="checkbox" id="demoSwitch2">
+					<label for="demoSwitch2"><span></span></label>
+				</div>
+				<span class="chk-switch-label">Dogs</span>
+			</div>
 		</div>
-		<span class="chk-switch-label">B</span>
-	</div>
-	<div class="form-group">
-		<label class="form-label">Toggle Switch (Disabled)</label>
-		<span class="chk-switch-label">Disabled Switch</span>
-		<div class="chk-switch disabled">
-			<input type="checkbox" id="demoSwitch3" disabled>
-			<label for="demoSwitch3"><span></span></label>
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">Disabled Switch</label>
+				<span class="chk-switch-label">Skip Tuesdays</span>
+				<div class="chk-switch disabled">
+					<input type="checkbox" id="demoSwitch3" disabled>
+					<label for="demoSwitch3"><span></span></label>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -287,31 +299,14 @@
 {{#markdown}}
 ``` html
 <div class="form-group">
-		<label class="form-label">Toggle Switch (ON/OFF)</label>
-		<span class="chk-switch-label">ON</span>
-		<div class="chk-switch">
-			<input type="checkbox" id="demoSwitch1">
-			<label for="demoSwitch1"><span></span></label>
-		</div>
-		<span class="chk-switch-label">OFF</span>
+	<label class="form-label">ON/OFF Type Switch</label>
+	<span class="chk-switch-label">OFF</span>
+	<div class="chk-switch">
+		<input type="checkbox" id="demoSwitch1" checked>
+		<label for="demoSwitch1"><span></span></label>
 	</div>
-	<div class="form-group">
-		<label class="form-label">A/B Type Switch</label>
-		<span class="chk-switch-label">A</span>
-		<div class="chk-switch ab-type">
-			<input type="checkbox" id="demoSwitch2">
-			<label for="demoSwitch2"><span></span></label>
-		</div>
-		<span class="chk-switch-label">B</span>
-	</div>
-	<div class="form-group">
-		<label class="form-label">Toggle Switch (Disabled)</label>
-		<span class="chk-switch-label">Disabled Switch</span>
-		<div class="chk-switch disabled">
-			<input type="checkbox" id="demoSwitch3" disabled>
-			<label for="demoSwitch3"><span></span></label>
-		</div>
-	</div>
+	<span class="chk-switch-label">ON</span>
+</div>
 ```
 {{/markdown}}
 </div>
@@ -320,7 +315,10 @@
 
 <p>Add <code>.ab-type</code> class to <code>.chk-switch</code> for an A/B-type toggle without the switch background color.</p>
 
-<p>To disable a switch, you need to add both <code>.disabled</code> class on the <div>.chk-switch</div> container and also a <code>disabled</code> attribute on the input.</p>
+<p>To disable a switch, you need to add both <code>.disabled</code> class on the <code>.chk-switch</code> container and also a <code>disabled</code> attribute on the input.</p>
+
+<p>Use an optional <code>.align-right</code> class on <code>.chk-switch</code> to align the switch to the right.</p>
+
 
 <br>
 
