@@ -4,6 +4,7 @@
 
 table.table {
 	width: 100%;
+	background-color: #fff;
 	
 	caption {
 		text-align: left;
@@ -11,23 +12,43 @@ table.table {
 		font-size: 0.9em;
 	}
 
+	colgroup, col, th, td {
+		&.fit {
+			width: 1%;
+		}
+	}
+
 	th, td {
-		padding: 8px 15px;
+		padding: 10px 10px;
 		text-align: left;
-		background-color: #fff;
 		border-bottom: 1px solid #ddd;
+
+		&.nowrap {
+			white-space: nowrap;
+		}
 	}
 
-	thead th,
-	thead td {
-		border-bottom: 2px solid #aaa;
+	thead tr:last-child th,
+	thead tr:last-child td {
+		border-bottom: 2px solid #ccc;
 	}
 
-	tfoot th,
-	tfoot td {
-		border-top: 2px solid #aaa;
+	tfoot tr:first-child th,
+	tfoot tr:first-child td {
+		border-top: 2px solid #ccc;
 	}
 
+	tbody tr:last-child th,
+	tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	tfoot tr:last-child th,
+	tfoot tr:last-child td {
+		border-bottom: none;
+	}
+	
+	// inner borders
 	&.table-inner-borders {
 		th, td {
 			border-right: 1px solid #ddd;
@@ -36,14 +57,32 @@ table.table {
 				border-right: none;
 			}
 		}
-
-		tr:last-child th,
-		tr:last-child td {
-			border-bottom: none;
+	}
+	
+	// outer borders
+	&.table-outer-borders {
+		border: 1px solid #ddd;
+	}
+	
+	// striped rows
+	&.table-striped {
+		tr:nth-child(2n) {
+			background-color: #fcfcfc;
 		}
 	}
 
-	&.table-outer-borders {
-		border: 1px solid #ddd;
+	// highligh rows on hover
+	&.table-hover {
+		& > tr:hover,
+		tbody tr:hover {
+			background-color: #f7f7f7;
+		}
+	}
+	
+	// condensed padding
+	&.table-condensed {
+		th, td {
+			padding: 7px 10px;
+		}
 	}
 }

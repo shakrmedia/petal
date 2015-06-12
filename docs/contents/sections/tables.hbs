@@ -2,10 +2,50 @@
 
 <h3>Basic table</h3>
 
-<div class="demo-panel p-15" data-toggle-bg="toggle">
-	
-	<table class="table table-inner-borders">
-		<caption>Optional table caption.</caption>
+<div class="demo-panel form-group gray p-10">
+	<label class="form-label">Preview Optional Classes</label>
+	<div class="row">
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-inner-borders</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-inner-borders-switch" data-toggle-class="table-inner-borders">
+				<label for="table-inner-borders-switch"><span></span></label>
+			</div>
+		</div>
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-outer-borders</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-outer-borders-switch" data-toggle-class="table-outer-borders">
+				<label for="table-outer-borders-switch"><span></span></label>
+			</div>
+		</div>
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-striped</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-striped-switch" data-toggle-class="table-striped">
+				<label for="table-striped-switch"><span></span></label>
+			</div>
+		</div>
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-hover</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-hover-switch" data-toggle-class="table-hover">
+				<label for="table-hover-switch"><span></span></label>
+			</div>
+		</div>
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-condensed</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-condensed-switch" data-toggle-class="table-condensed">
+				<label for="table-condensed-switch"><span></span></label>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="demo-panel p-15" id="table-demo" data-toggle-bg="toggle">
+
+	<table class="table">
+		<caption>Optional Table Caption</caption>
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -50,34 +90,52 @@
 			</tr>
 		</tfoot>
 	</table>
+	
+	<br>
+
+	<table class="table">
+		<colgroup class="fit"></colgroup>
+		<colgroup span="3"></colgroup>
+		<colgroup></colgroup>
+		<thead>
+			<tr>
+				<th scope="col">ID Number</th>
+				<th scope="col">User Name</th>
+				<th scope="col">Videos</th>
+				<th scope="col">Join Date</th>
+				<th scope="col" class="fit nowrap">View User Detail</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>00124</td>
+				<td>David</td>
+				<td>12</td>
+				<td>2012/01/01</td>
+				<td><button class="btn">View</button></td>
+			</tr>
+			<tr>
+				<td>00125</td>
+				<td>Simon</td>
+				<td>5</td>
+				<td>2013/04/18</td>
+				<td><button class="btn">View</button></td>
+			</tr>
+			<tr>
+				<td>00128</td>
+				<td>Anton</td>
+				<td>8</td>
+				<td>2014/08/15</td>
+				<td><button class="btn">View</button></td>
+			</tr>
+		</tbody>
+	</table>
 
 </div>
-<div class="demo-code">
-{{#markdown}}
-``` html
-<table class="table panel">
-	<caption>Optional table caption.</caption>
-	<thead>
-		<tr>
-			<th scope="col">...</th>
-			...
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>...</td>
-			...
-		</tr>
-		...
-	</tbody>
-</table>
 
-```
-{{/markdown}}
-</div>
+<p>Simple table styling is provided when you add <code>.table</code> class to the <code>&lt;table&gt;</code> element. Append optional classes as needed on the table element.</p>
 
-
-<p>Tables WIP</p>
+<p>Add <code>.fit</code> class to <code>&lt;colgroup&gt;</code>, <code>&lt;col&gt;</code>, <code>&lt;th&gt;</code> or <code>&lt;td&gt;</code> to shrink the width of the column to the minimum. This will likely cause line breaks in long text strings: to prevent, <code>.nowrap</code> on <code>&lt;th&gt;</code> or <code>&lt;td&gt;</code> tags. (Note: Adding <code>.nowrap</code> to <code>&lt;colgroup&gt;</code> or <code>&lt;col&gt;</code> won't have any effect.</p>
 
 <br>
 

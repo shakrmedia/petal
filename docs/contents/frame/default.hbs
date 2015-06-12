@@ -194,6 +194,21 @@
 		$('[data-toggle-bg]').toggleClass('dark');
 	});
 
+	// Table section class toggle
+	$('input[data-toggle-class]').each(function(e) {
+		var tableClass = $(this).attr('data-toggle-class');
+		if($(this).prop('checked')){
+			$('#table-demo table').addClass(tableClass);	
+		}
+	});
+
+	$('input[data-toggle-class]').click(function(e) {
+		var tableClass = $(this).attr('data-toggle-class');
+		console.log(tableClass);
+		$('#table-demo table').toggleClass(tableClass);
+	});
+
+
 	// load highlight.js
 	$(document).ready(function() {
 	  $('pre code').each(function(i, block) {

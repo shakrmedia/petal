@@ -195,6 +195,7 @@
 	<div class="col-2">
 		<h5>margin (all directions)</h5>
 		<ul>
+			<li><code>.m-5</code> : 5px margin</li>
 			<li><code>.m-10</code> : 10px margin</li>
 			<li><code>.m-15</code> : 15px margin</li>
 			<li><code>.m-20</code> : 20px margin</li>
@@ -202,6 +203,7 @@
 
 		<h5>margin (horizontal)</h5>
 		<ul>
+			<li><code>.mh-5</code> : 5px left+right margin</li>
 			<li><code>.mh-10</code> : 10px left+right margin</li>
 			<li><code>.mh-15</code> : 15px left+right margin</li>
 			<li><code>.mh-20</code> : 20px left+right margin</li>
@@ -209,6 +211,7 @@
 
 		<h5>margin (vertical)</h5>
 		<ul>
+			<li><code>.mv-5</code> : 5px top+bottom margin</li>
 			<li><code>.mv-10</code> : 10px top+bottom margin</li>
 			<li><code>.mv-15</code> : 15px top+bottom margin</li>
 			<li><code>.mv-20</code> : 20px top+bottom margin</li>
@@ -216,6 +219,7 @@
 
 		<h5>margin-top</h5>
 		<ul>
+			<li><code>.mt-5</code> : 5px top margin</li>
 			<li><code>.mt-10</code> : 10px top margin</li>
 			<li><code>.mt-15</code> : 15px top margin</li>
 			<li><code>.mt-20</code> : 20px top margin</li>
@@ -224,6 +228,7 @@
 
 		<h5>margin-bottom</h5>
 		<ul>
+			<li><code>.mb-5</code> : 5px bottom margin</li>
 			<li><code>.mb-10</code> : 10px bottom margin</li>
 			<li><code>.mb-15</code> : 15px bottom margin</li>
 			<li><code>.mb-20</code> : 20px bottom margin</li>
@@ -233,6 +238,7 @@
 	<div class="col-2">
 		<h5>padding (all directions)</h5>
 		<ul>
+			<li><code>.p-5</code> : 5px padding</li>
 			<li><code>.p-10</code> : 10px padding</li>
 			<li><code>.p-15</code> : 15px padding</li>
 			<li><code>.p-20</code> : 20px padding</li>
@@ -240,6 +246,7 @@
 
 		<h5>padding (horizontal)</h5>
 		<ul>
+			<li><code>.ph-5</code> : 5px left+right padding</li>
 			<li><code>.ph-10</code> : 10px left+right padding</li>
 			<li><code>.ph-15</code> : 15px left+right padding</li>
 			<li><code>.ph-20</code> : 20px left+right padding</li>
@@ -247,6 +254,7 @@
 
 		<h5>padding (vertical)</h5>
 		<ul>
+			<li><code>.pv-5</code> : 5px top+bottom padding</li>
 			<li><code>.pv-10</code> : 10px top+bottom padding</li>
 			<li><code>.pv-15</code> : 15px top+bottom padding</li>
 			<li><code>.pv-20</code> : 20px top+bottom padding</li>
@@ -254,6 +262,7 @@
 
 		<h5>padding-top</h5>
 		<ul>
+			<li><code>.pt-5</code> : 5px top padding</li>
 			<li><code>.pt-10</code> : 10px top padding</li>
 			<li><code>.pt-15</code> : 15px top padding</li>
 			<li><code>.pt-20</code> : 20px top padding</li>
@@ -261,6 +270,7 @@
 		</ul>
 		<h5>padding-bottom</h5>
 		<ul>
+			<li><code>.pb-5</code> : 5px bottom padding</li>
 			<li><code>.pb-10</code> : 10px bottom padding</li>
 			<li><code>.pb-15</code> : 15px bottom padding</li>
 			<li><code>.pb-20</code> : 20px bottom padding</li>
@@ -788,25 +798,29 @@
 
 <h3>Checkboxes and Radioboxes</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
-	
-	<div class="form-group">
-		<input class="checkbox" type="checkbox" id="demoCheck1">
-		<label for="demoCheck1">Checkbox 1</label>
-		<input class="checkbox" type="checkbox" id="demoCheck2" checked>
-		<label for="demoCheck2">Checkbox 2</label>
-		<input class="checkbox" type="checkbox" id="demoCheck3" disabled>
-		<label for="demoCheck3">Disabled</label>
-		<input class="checkbox" type="checkbox" id="demoCheck4" disabled checked>
-		<label for="demoCheck4">Disabled (Pre-checked)</label>
-	</div>
-
-	<div class="form-group">
-		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio1" checked>
-		<label for="demoRadio1">Radiobox 1</label>
-		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio2">
-		<label for="demoRadio2">Radiobox 2</label>
-		<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
-		<label for="demoRadio3">Disabled</label>
+	<div class="row">
+		<div class="col-2">
+			<div class="form-group">
+				<input class="checkbox" type="checkbox" id="demoCheck1">
+				<label for="demoCheck1">Checkbox 1</label>
+				<input class="checkbox" type="checkbox" id="demoCheck2" checked>
+				<label for="demoCheck2">Checkbox 2</label>
+				<input class="checkbox" type="checkbox" id="demoCheck3" disabled>
+				<label for="demoCheck3">Disabled</label>
+				<input class="checkbox" type="checkbox" id="demoCheck4" disabled checked>
+				<label for="demoCheck4">Disabled (Pre-checked)</label>
+			</div>
+		</div>
+		<div class="col-2">
+			<div class="form-group">
+				<input class="radiobox" type="radio" name="demoRadio" id="demoRadio1" checked>
+				<label for="demoRadio1">Radiobox 1</label>
+				<input class="radiobox" type="radio" name="demoRadio" id="demoRadio2">
+				<label for="demoRadio2">Radiobox 2</label>
+				<input class="radiobox" type="radio" name="demoRadio" id="demoRadio3" disabled>
+				<label for="demoRadio3">Disabled</label>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="demo-code">
@@ -842,60 +856,51 @@
 
 <h3>Switches</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
-	<div class="form-group">
-		<label class="form-label">Toggle Switch (ON/OFF)</label>
-		<span class="chk-switch-label">ON</span>
-		<div class="chk-switch">
-			<input type="checkbox" id="demoSwitch1">
-			<label for="demoSwitch1"><span></span></label>
+	<div class="row">
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">ON/OFF Type Switch</label>
+				<span class="chk-switch-label">OFF</span>
+				<div class="chk-switch">
+					<input type="checkbox" id="demoSwitch1" checked>
+					<label for="demoSwitch1"><span></span></label>
+				</div>
+				<span class="chk-switch-label">ON</span>
+			</div>
 		</div>
-		<span class="chk-switch-label">OFF</span>
-	</div>
-	<div class="form-group">
-		<label class="form-label">A/B Type Switch</label>
-		<span class="chk-switch-label">A</span>
-		<div class="chk-switch ab-type">
-			<input type="checkbox" id="demoSwitch2">
-			<label for="demoSwitch2"><span></span></label>
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">A/B Type Switch</label>
+				<span class="chk-switch-label">Cats</span>
+				<div class="chk-switch ab-type">
+					<input type="checkbox" id="demoSwitch2">
+					<label for="demoSwitch2"><span></span></label>
+				</div>
+				<span class="chk-switch-label">Dogs</span>
+			</div>
 		</div>
-		<span class="chk-switch-label">B</span>
-	</div>
-	<div class="form-group">
-		<label class="form-label">Toggle Switch (Disabled)</label>
-		<span class="chk-switch-label">Disabled Switch</span>
-		<div class="chk-switch disabled">
-			<input type="checkbox" id="demoSwitch3" disabled>
-			<label for="demoSwitch3"><span></span></label>
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">Disabled Switch</label>
+				<span class="chk-switch-label">Skip Tuesdays</span>
+				<div class="chk-switch disabled">
+					<input type="checkbox" id="demoSwitch3" disabled>
+					<label for="demoSwitch3"><span></span></label>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 <div class="demo-code">
 <pre><code class="language-html">&lt;div class=&quot;form-group&quot;&gt;
-        &lt;label class=&quot;form-label&quot;&gt;Toggle Switch (ON/OFF)&lt;/label&gt;
-        &lt;span class=&quot;chk-switch-label&quot;&gt;ON&lt;/span&gt;
-        &lt;div class=&quot;chk-switch&quot;&gt;
-            &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch1&quot;&gt;
-            &lt;label for=&quot;demoSwitch1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
-        &lt;/div&gt;
-        &lt;span class=&quot;chk-switch-label&quot;&gt;OFF&lt;/span&gt;
+    &lt;label class=&quot;form-label&quot;&gt;ON/OFF Type Switch&lt;/label&gt;
+    &lt;span class=&quot;chk-switch-label&quot;&gt;OFF&lt;/span&gt;
+    &lt;div class=&quot;chk-switch&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch1&quot; checked&gt;
+        &lt;label for=&quot;demoSwitch1&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label class=&quot;form-label&quot;&gt;A/B Type Switch&lt;/label&gt;
-        &lt;span class=&quot;chk-switch-label&quot;&gt;A&lt;/span&gt;
-        &lt;div class=&quot;chk-switch ab-type&quot;&gt;
-            &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch2&quot;&gt;
-            &lt;label for=&quot;demoSwitch2&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
-        &lt;/div&gt;
-        &lt;span class=&quot;chk-switch-label&quot;&gt;B&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label class=&quot;form-label&quot;&gt;Toggle Switch (Disabled)&lt;/label&gt;
-        &lt;span class=&quot;chk-switch-label&quot;&gt;Disabled Switch&lt;/span&gt;
-        &lt;div class=&quot;chk-switch disabled&quot;&gt;
-            &lt;input type=&quot;checkbox&quot; id=&quot;demoSwitch3&quot; disabled&gt;
-            &lt;label for=&quot;demoSwitch3&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
+    &lt;span class=&quot;chk-switch-label&quot;&gt;ON&lt;/span&gt;
+&lt;/div&gt;</code></pre>
 
 </div>
 
@@ -903,7 +908,10 @@
 
 <p>Add <code>.ab-type</code> class to <code>.chk-switch</code> for an A/B-type toggle without the switch background color.</p>
 
-<p>To disable a switch, you need to add both <code>.disabled</code> class on the <div>.chk-switch</div> container and also a <code>disabled</code> attribute on the input.</p>
+<p>To disable a switch, you need to add both <code>.disabled</code> class on the <code>.chk-switch</code> container and also a <code>disabled</code> attribute on the input.</p>
+
+<p>Use an optional <code>.align-right</code> class on <code>.chk-switch</code> to align the switch to the right.</p>
+
 
 <br>
 
@@ -1119,10 +1127,50 @@
 
 <h3>Basic table</h3>
 
-<div class="demo-panel p-15" data-toggle-bg="toggle">
-	
-	<table class="table table-inner-borders">
-		<caption>Optional table caption.</caption>
+<div class="demo-panel form-group gray p-10">
+	<label class="form-label">Preview Optional Classes</label>
+	<div class="row">
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-inner-borders</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-inner-borders-switch" data-toggle-class="table-inner-borders">
+				<label for="table-inner-borders-switch"><span></span></label>
+			</div>
+		</div>
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-outer-borders</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-outer-borders-switch" data-toggle-class="table-outer-borders">
+				<label for="table-outer-borders-switch"><span></span></label>
+			</div>
+		</div>
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-striped</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-striped-switch" data-toggle-class="table-striped">
+				<label for="table-striped-switch"><span></span></label>
+			</div>
+		</div>
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-hover</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-hover-switch" data-toggle-class="table-hover">
+				<label for="table-hover-switch"><span></span></label>
+			</div>
+		</div>
+		<div class="col-2 pv-5">
+			<span class="chk-switch-label"><code>.table-condensed</code></span>
+			<div class="chk-switch align-right">
+				<input type="checkbox" class="chk-switch" id="table-condensed-switch" data-toggle-class="table-condensed">
+				<label for="table-condensed-switch"><span></span></label>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="demo-panel p-15" id="table-demo" data-toggle-bg="toggle">
+
+	<table class="table">
+		<caption>Optional Table Caption</caption>
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -1167,30 +1215,52 @@
 			</tr>
 		</tfoot>
 	</table>
+	
+	<br>
+
+	<table class="table">
+		<colgroup class="fit"></colgroup>
+		<colgroup span="3"></colgroup>
+		<colgroup></colgroup>
+		<thead>
+			<tr>
+				<th scope="col">ID Number</th>
+				<th scope="col">User Name</th>
+				<th scope="col">Videos</th>
+				<th scope="col">Join Date</th>
+				<th scope="col" class="fit nowrap">View User Detail</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>00124</td>
+				<td>David</td>
+				<td>12</td>
+				<td>2012/01/01</td>
+				<td><button class="btn">View</button></td>
+			</tr>
+			<tr>
+				<td>00125</td>
+				<td>Simon</td>
+				<td>5</td>
+				<td>2013/04/18</td>
+				<td><button class="btn">View</button></td>
+			</tr>
+			<tr>
+				<td>00128</td>
+				<td>Anton</td>
+				<td>8</td>
+				<td>2014/08/15</td>
+				<td><button class="btn">View</button></td>
+			</tr>
+		</tbody>
+	</table>
 
 </div>
-<div class="demo-code">
-<pre><code class="language-html">&lt;table class=&quot;table panel&quot;&gt;
-    &lt;caption&gt;Optional table caption.&lt;/caption&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;
-            ...
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;...&lt;/td&gt;
-            ...
-        &lt;/tr&gt;
-        ...
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
 
-</div>
+<p>Simple table styling is provided when you add <code>.table</code> class to the <code>&lt;table&gt;</code> element. Append optional classes as needed on the table element.</p>
 
-
-<p>Tables WIP</p>
+<p>Add <code>.fit</code> class to <code>&lt;colgroup&gt;</code>, <code>&lt;col&gt;</code>, <code>&lt;th&gt;</code> or <code>&lt;td&gt;</code> to shrink the width of the column to the minimum. This will likely cause line breaks in long text strings: to prevent, <code>.nowrap</code> on <code>&lt;th&gt;</code> or <code>&lt;td&gt;</code> tags. (Note: Adding <code>.nowrap</code> to <code>&lt;colgroup&gt;</code> or <code>&lt;col&gt;</code> won't have any effect.</p>
 
 <br>
 
@@ -1318,6 +1388,21 @@
 		e.preventDefault();
 		$('[data-toggle-bg]').toggleClass('dark');
 	});
+
+	// Table section class toggle
+	$('input[data-toggle-class]').each(function(e) {
+		var tableClass = $(this).attr('data-toggle-class');
+		if($(this).prop('checked')){
+			$('#table-demo table').addClass(tableClass);	
+		}
+	});
+
+	$('input[data-toggle-class]').click(function(e) {
+		var tableClass = $(this).attr('data-toggle-class');
+		console.log(tableClass);
+		$('#table-demo table').toggleClass(tableClass);
+	});
+
 
 	// load highlight.js
 	$(document).ready(function() {
