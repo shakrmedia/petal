@@ -90,6 +90,11 @@ textarea.input {
 	&:disabled {
 		border-color: @gray-l1;
 		background: fadeout(@gray,80%);
+		opacity: 0.7;
+
+		.dark &, &.ondark {
+			border-color: @gray-d1;
+		}
 	}
 }
 

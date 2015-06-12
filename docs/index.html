@@ -1100,7 +1100,7 @@
 <br>
 
 <h4>Labels</h4>
-<div class="demo-panel p-20">
+<div class="demo-panel p-20" data-toggle-bg="toggle">
 	<h1>h1. Lorem Ipsum <span class="label">Label</span></h1>
 	<h2>h2. Lorem Ipsum <span class="label">Label</span></h2>
 	<h3>h3. Lorem Ipsum <span class="label">Label</span></h3>
@@ -1114,16 +1114,21 @@
 	<div>
 		<span class="label">Default</span> <span class="label accent">Accent</span> <span class="label okay">Okay</span> <span class="label warning">Warning</span> <span class="label danger">Danger</span>
 	</div>
+	<div class="mt-10">
+		<span class="label white">Default</span> <span class="label white accent">Accent</span> <span class="label white okay">Okay</span> <span class="label white warning">Warning</span> <span class="label white danger">Danger</span>
+	</div>
 </div>
 
-<p>Append <code>.label</code> to a <code>&lt;span&gt;</code> element. Append <code>.accent</code>, <code>.okay</code>, <code>.warning</code>, <code>.danger</code> for color variations. Also, <code>.white</code> for white backgrounds.</p>
+<p>Use <code>.label</code> on a <code>&lt;span&gt;</code> element. <b>Does not support other elements other than <code>&lt;span&gt;</code></b> to minimize the Petal style being inherited in project-specific classes because it is a rather commonly used class name.</p>
+<p></b>Append emphasis classes <code>.accent</code>, <code>.okay</code>, <code>.warning</code>, <code>.danger</code> for color variations.</p>
+<p><code>.white</code> will make inverted color with a white background and black text; append the emphasis classes listed above with <code>.white</code> and it will change the text colors instead.</p>
 
 <h4>Badges</h4>
 <div class="demo-panel p-20">
 	<span class="badge">1</span> <span class="badge accent">20</span> <span class="badge okay">3</span> <span class="badge warning">4</span> <span class="badge danger">5</span>
 </div>
 
-<p>Same thing as labels, just change it to <code>.badge</code>.</p>
+<p>Same thing as labels, just change it to <code>.badge</code>. Applies to <code>&lt;span&gt;</code> only.</p>
 		</section>
 		<section class="row">
 			<h2 id="section-tables">Tables</h2>
