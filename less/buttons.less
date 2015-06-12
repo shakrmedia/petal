@@ -6,7 +6,7 @@
 .caret {
 	position: relative;
 	display: inline-block;
-	bottom: 2px;
+	vertical-align: middle;
 	width: 0;
 	height: 0;
 	border-right: 4px solid transparent;
@@ -91,6 +91,14 @@
 
 	.active[data-dropdown-state="open"] > & .caret {
 		transform: rotateX(180deg);
+	}
+
+	&.compact {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 15px;
+		padding-right: 15px;
+		line-height: 1em;
 	}
 }
 

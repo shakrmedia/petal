@@ -88,6 +88,7 @@
 	<li><code>.disabled</code> OR <code>:disabled</code> (attribute) : Disabled state</li>
 	<li><code>.ondark</code> on button OR <code>.dark</code> on parent : Alternative style on dark backgrounds</li>
 	<li><code>.whitetext</code> : Force white text on buttons</li>
+	<li><code>.compact</code> : Smaller sized buttons with reduced padding</li>
 </ul>
 
 <br>
@@ -288,13 +289,15 @@
 
 <p>In this case, the <code>.btn-group</code> class on parent element is <b>required</b> for correct appearance.</p>
 
+<p>If you're using the <code>.compact</code> option, you need to apply them to both the actual button and the dropdown caret button.</p>
+
 <h5>Options</h5>
 <p>Add <code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code>to right align the menu.</p>
 
 
 <br>
 
-<h5>Customizable options</h5>
+<h4>Customizable LESS variables</h4>
 <div class="demo-code">
 {{#markdown}}
 ``` less
