@@ -24,6 +24,10 @@ body {
 #page-header h1 {
   margin: 20px 0 10px;
 }
+#page-header .version {
+  font-size: 0.9em;
+  margin-top: 0;
+}
 #page-header pre code,
 #page-header pre code.hljs {
   background: #f0f0f0;

@@ -113,10 +113,13 @@ module.exports = function(grunt) {
           flatten: true,
           partials: 'docs/contents/sections/*.hbs',
           layoutdir: 'docs/contents/frame',
-          layout: 'default.hbs'
+          layout: 'default.hbs',
+          data: 'package.json'
       },
       docs: {
-        files: {'docs/index': 'docs/contents/sections/*.hbs'}
+        files: {
+          'docs/index': 'docs/contents/sections/*.hbs'
+        }
       }
     }
   });

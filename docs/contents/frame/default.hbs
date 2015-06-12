@@ -4,7 +4,12 @@
 <head>
 	<!-- 
 		Petal Documentation Page
-		(c)2015 Shakr 
+
+		{{package.name}} v{{package.version}} - {{now "%Y-%m-%d"}}
+		{{package.description}}
+		{{package.homepage}}
+
+		Copyright {{now "%Y"}} {{package.author.name}}; {{package.license}} License
 	-->
 
 	<meta charset="utf-8"> 
@@ -23,8 +28,10 @@
 				<img src="../logo.svg" width="150" height="150" alt="Petal Logo">
 			</div>
 			<h1 class="keepcase">Petal</h1>
-			<p>A modern, light CSS UI framework.</p>
-			<p>Fork on <a href="https://github.com/ShakrMedia/petal">GitHub repo</a>.</p>
+			<br>
+			<p class="version">v{{package.version}} - {{now "%Y-%m-%d"}}</p>
+			<p>{{package.description}}</p>
+			<p>Fork on <a href="{{package.repository.url}}">GitHub repo</a>.</p>
 			<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). <br>
 			Includes <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License).
 			<br>
@@ -99,6 +106,7 @@
 	<div class="container">
 		<div class="row credits">
 			<h4>Credits</h4>
+			<p>{{package.name}} v{{package.version}} - {{now "%Y-%m-%d"}}</p>
 			<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
 			<p>©2015 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
 		</div>
