@@ -126,12 +126,12 @@ section .demo-panel .card .card-image img {
 section .light {
   background: #fff;
 }
+section .gray {
+  background: #eee;
+}
 section .dark {
   background: #333;
   color: #fff;
-}
-section .gray {
-  background: #eee;
 }
 section pre code,
 section pre code.hljs {

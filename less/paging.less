@@ -1,0 +1,173 @@
+// * ================================= *
+// *  Paging
+// * ================================= *
+
+/* paging */
+.paging {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+
+	.cf;
+
+	.pg-list {
+		display: block;
+		float: left;
+		list-style: none;
+		padding: 0;
+		margin: 0 auto;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+
+	.pg-block {
+		display: block;
+		float: left;
+		vertical-align: middle;
+		margin: 0;
+		padding: 0;
+
+		a {
+			display: inline-block;
+			min-height: 20px;
+			padding: 8px 15px;
+			margin: 0 2px;
+			text-align: center;
+			text-transform: uppercase;
+			color: #666;
+			background-color: #fff;
+			overflow: hidden;
+			cursor: pointer;
+			box-sizing: content-box;
+			vertical-align: middle;
+			.drop-shadow-lighter;
+
+			transition-property: background-color, color, transform;
+			transition-duration: 0.2s;
+
+			&:hover {
+				text-decoration: none;
+				color: @primary-accent-color;
+			}
+
+			span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+
+		&:not(.disabled) a:hover {
+			.drop-shadow-light;
+		}
+
+		&:not(.disabled) a:active {
+			.drop-shadow-lighter;
+		}
+
+		&.active a {
+			color: #fff;
+			background-color: @color-l1;
+			font-weight: bold;
+
+			.colorset(@primary-accent-color);
+		}
+
+		&.disabled {
+			opacity: 0.3;
+
+			a {
+				color: #666;
+				cursor: default;
+			}
+		}
+	
+
+		&.prev, &.next {
+			min-width: 90px;
+			margin: 0 10px;
+		}
+
+		.petalicon {
+			font-size: 1em;
+			position: relative;
+			top: -1px;
+			transition: transform 0.2s;
+		}
+
+		&.prev {
+			margin-left: 5px;
+			
+			.petalicon { 
+				.petalicon-chevron-left;
+				margin-right: 5px; 
+			}
+		}
+
+		&.next {
+			margin-right: 5px;
+			float: right;
+			
+			.petalicon { 
+				.petalicon-chevron-right;
+				margin-left: 5px; 
+			}
+		}
+		
+		&.prev:not(.disabled) {
+			&:hover .petalicon { transform: translateX(-2px); }
+		}
+
+		&.next:not(.disabled) {
+			&:hover .petalicon { transform: translateX(2px); }
+		}
+
+	}
+
+	.pg-ellipsis {
+		display: block;
+		float: left;
+		vertical-align: middle;
+		min-height: 20px;
+		padding: 8px 15px;
+		margin: 0 2px;
+		text-align: center;
+		color: #666;
+		overflow: hidden;
+		box-sizing: content-box;
+		vertical-align: middle;
+	}
+
+	&.inline {
+		.pg-block{
+
+			.dark & a {
+				color: #fff;
+			}
+			
+			a, 
+			a:hover,
+			a:active,
+			&.active a {
+				background-color: transparent;
+				box-shadow: none;
+			}
+
+			&.active a {
+				color: @primary-accent-color;
+			}
+		}
+	}
+
+	&.align-pager {
+		display: block;
+		width: 100%;
+
+		.pg-list {
+			display: inline-block;
+			float: none;
+		}
+	}
+
+
+}

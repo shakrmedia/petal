@@ -1,0 +1,87 @@
+<h2 id="section-paging">Paging</h2>
+
+<div class="demo-panel p-15 gray" id="table-demo" data-toggle-bg="toggle">
+
+	<nav class="paging">
+		<div class="prev pg-block disabled"><a><i class="petalicon"></i>PREV</a></div>
+		<ul class="pg-list">
+			<li class="pg-block active"><a>1</a></li>
+			<li class="pg-block"><a>2</a></li>
+			<li class="pg-block"><a>3</a></li>
+			<li class="pg-ellipsis">⋯</li>
+			<li class="pg-block"><a>9</a></li>
+			<li class="pg-block"><a>10</a></li>
+		</ul>
+		<div class="next pg-block"><a>NEXT<i class="petalicon"></i></a></div>
+	</nav>
+
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<nav class="paging">
+	<div class="prev pg-block disabled"><a><i class="petalicon"></i>PREV</a></div>
+	<ul class="pg-list">
+		<li class="pg-block active"><a>1</a></li>
+		<li class="pg-block"><a>2</a></li>
+		<li class="pg-block"><a>3</a></li>
+		<li class="pg-ellipsis">⋯</li>
+		<li class="pg-block"><a>9</a></li>
+		<li class="pg-block"><a>10</a></li>
+	</ul>
+	<div class="next pg-block"><a>NEXT<i class="petalicon"></i></a></div>
+</nav>
+```
+{{/markdown}}
+</div>
+
+<p>Paging module. The topmost <code>.paging</code> wrapper is set as an <code>inline-block</code>, so you can center easily by adding <code>text-align: center</code> to the parent container if you want to.</p>
+
+<p>Use <code>.disabled</code> class on <code>.pg-block</code> to disable.</p>
+
+<p>If you want to make a paging module with just the prev/next pager buttons, remove the <code>pg-list</code> inbetween; same thing if you want it vice versa with only the page list.</p>
+
+<br>
+
+<h5>Inline Variant</h5>
+
+<div class="demo-panel p-15" id="table-demo" data-toggle-bg="toggle">
+
+	<nav class="paging inline">
+		<div class="prev pg-block disabled"><a><i class="petalicon"></i>PREV</a></div>
+		<ul class="pg-list">
+			<li class="pg-block active"><a>1</a></li>
+			<li class="pg-block"><a>2</a></li>
+			<li class="pg-block"><a>3</a></li>
+			<li class="pg-ellipsis">⋯</li>
+			<li class="pg-block"><a>9</a></li>
+			<li class="pg-block"><a>10</a></li>
+		</ul>
+		<div class="next pg-block"><a>NEXT<i class="petalicon"></i></a></div>
+	</nav>
+
+</div>
+
+<p>Add <code>.inline</code> to paging container if you want an inline version without any backgrounds and box shadows.</p>
+
+<br>
+
+<h5>Stretched</h5>
+<div class="demo-panel p-15 gray" id="table-demo" data-toggle-bg="toggle">
+
+	<nav class="paging align-pager">
+		<div class="prev pg-block disabled"><a><i class="petalicon"></i>PREV</a></div>
+		<ul class="pg-list">
+			<li class="pg-block active"><a>1</a></li>
+			<li class="pg-block"><a>2</a></li>
+			<li class="pg-block"><a>3</a></li>
+			<li class="pg-ellipsis">⋯</li>
+			<li class="pg-block"><a>9</a></li>
+			<li class="pg-block"><a>10</a></li>
+		</ul>
+		<div class="next pg-block"><a>NEXT<i class="petalicon"></i></a></div>
+	</nav>
+
+</div>
+
+<p>Add <code>.stretch</code> to paging container if you want to align the pager buttons to the ends.</p>
