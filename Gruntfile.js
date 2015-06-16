@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         cwd: "docs/less",
         src: ["*.less"],
         ext: ".css",
-        dest: "build/docs"
+        dest: "./"
       }
     },
 
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
       },
       docs: {
         files: {
-          'build/docs/index': 'docs/contents/sections/*.hbs'
+          'index': 'docs/contents/sections/*.hbs'
         }
       }
     }
