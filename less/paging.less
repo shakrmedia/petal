@@ -89,9 +89,7 @@
 		}
 
 		.petalicon {
-			font-size: 1em;
-			position: relative;
-			top: -1px;
+			vertical-align: top;
 			transition: transform 0.2s;
 		}
 
@@ -99,7 +97,9 @@
 			margin-left: 5px;
 			
 			.petalicon { 
-				.petalicon-chevron-left;
+				&:before {
+					.petalicon-chevron-left;
+				}
 				margin-right: 5px; 
 			}
 		}
@@ -109,7 +109,9 @@
 			float: right;
 			
 			.petalicon { 
-				.petalicon-chevron-right;
+				&:before {
+					.petalicon-chevron-right;
+				}
 				margin-left: 5px; 
 			}
 		}

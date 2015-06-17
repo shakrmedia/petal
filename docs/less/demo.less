@@ -1,6 +1,8 @@
 /* demo page stylesheet */
 
+@petalicon-file-path: '../assets';
 @import "./less/color-palette.less";
+@import "./less/petalicon.less";
 
 body {
 	color: #333;
@@ -231,6 +233,46 @@ section {
 	font-size: 0.8em;
 	color: #fff;
 	background: #eee;
+}
+
+// petalicons
+.petalicon-demo {
+	.inner-wrap {
+		border: 1px solid #fff;
+	}
+
+	.icon-block {
+		padding: 5px 10px;
+		background: #f0f0f0;
+		border: 1px solid #fff;
+
+		i {
+			margin-right: 8px;
+		}
+
+		span {
+			vertical-align: middle;
+			font-family: "Consolas", "Menlo", "Monaco", "Source Code Pro", monospace;
+			font-size: 0.8em;
+
+		}
+
+		&:hover {
+			background: @blue-l1;
+			color: #fff;
+		}
+	}
+}
+
+.dynamic-icon-container {
+
+	&:before {
+		.petalicon;
+		.petalicon-check-round;
+		font-size: 40px;
+		background: #eee;
+		color: #f05a67;
+	}
 }
 
 // footer
