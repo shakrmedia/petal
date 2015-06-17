@@ -1,0 +1,25 @@
+{
+  "name": "petal",
+  "version": "0.1.1",
+  "homepage": "https://github.com/ShakrMedia/petal",
+  "authors": [
+    "Shakr Media Co., Ltd. <http://www.shakr.com>"
+  ],
+  "description": "A modern, light CSS UI framework.",
+  "main": "less/petal.less",
+  "keywords": [
+    "petal",
+    "css",
+    "ui",
+    "framework",
+    "library"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
