@@ -17,8 +17,8 @@
 	width: @container-width;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: @container-padding;
+	padding-right: @container-padding;
 
 	@media screen and (max-width: (@container-width + 40)) {
 		width: 100%;
@@ -26,13 +26,9 @@
 		padding-right: 40px;
 	}
 
-	.unresponsive & {
-		width: @container-width;
-	}
-
 	.row {
-		margin-left: -15px;
-		margin-right: -15px;
+		margin-left: -@col-padding;
+		margin-right: -@col-padding;
 
 		.cf;
 	}
@@ -42,8 +38,8 @@
 /* columns */
 [class^="col-"] {
 	min-height: 1px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: @col-padding;
+	padding-right: @col-padding;
 }
 .col-1 {
 	width: 100%;
@@ -72,3 +68,51 @@
 	}
 }
 
+
+/* Flexbox method */
+.flex-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	margin-right: -(@flex-col-spacing /2);
+	margin-left: -(@flex-col-spacing /2)
+}
+[class^="flex-col-"] {
+	min-height: 1px;
+	padding-left: (@flex-col-spacing /2);
+	padding-right: (@flex-col-spacing /2);
+
+	.stretch {
+		height: 100%;
+	}
+}
+.flex-col-1 {
+	max-width: 100%;
+	flex-basis: 100%;
+}
+.flex-col-2 {
+	max-width: (100% / 2);
+	flex-basis: (100% / 2);
+}
+.flex-col-3 {
+	max-width: (100% / 3);
+	flex-basis: (100% / 3);
+
+	&.colspan-2 {
+		max-width: (100% * (2/3));
+		flex-basis: (100% * (2/3));
+	}
+}
+.flex-col-4 {
+	max-width: (100% / 4);
+	flex-basis: (100% / 4);
+
+	&.colspan-2 {
+		max-width: (100% * (2/4));
+		flex-basis: (100% * (2/4));
+	}
+	&.colspan-3 {
+		max-width: (100% * (3/4));
+		flex-basis: (100% * (3/4));
+	}
+}

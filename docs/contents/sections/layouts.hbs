@@ -49,7 +49,7 @@
 </div>
 <div class="row borders mb-10">
 	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-	<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+	<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-3</span></div>
 </div>
 
 <p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
@@ -81,3 +81,144 @@
 	</div>
 </div>
 <p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code> containers as well. </p>
+
+<br>
+<h3>Columns (Flexbox)</h3>
+<p>You can also use an alternative method to make column grid layout using the CSS flexbox property. Use the <code>.flex-row</code> class on row containers and <code>.flex-col-x</code> as column classes.</p>
+
+<p>Because this uses the newer CSS3 Flexbox property, make sure the browser you're developing your project for <a href="http://caniuse.com/#search=flex">has proper support for flexboxes</a>. Petal does not provide automatic table fallback when you use this method.</p>
+
+<div class="demo-panel gray p-15">
+	<div class="flex-row pb-10">
+		<div class="flex-col-2"><div class="panel p-15">.flex-col-2</div></div>
+		<div class="flex-col-2"><div class="panel p-15">.flex-col-2</div></div>
+	</div>
+	
+	<div class="flex-row pb-10">
+		<div class="flex-col-3 colspan-2"><div class="panel p-15">.flex-col-3.colspan-2</div></div>
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3</div></div>
+	</div>
+	<div class="flex-row pb-10">
+		<div class="flex-col-4"><div class="panel p-15">.flex-col-4</div></div>
+		<div class="flex-col-4"><div class="panel p-15">.flex-col-4</div></div>
+		<div class="flex-col-4"><div class="panel p-15">.flex-col-4</div></div>
+		<div class="flex-col-4"><div class="panel p-15">.flex-col-4</div></div>
+	</div>
+	<div class="flex-row pb-10">
+		<div class="flex-col-4 colspan-2"><div class="panel p-15">.flex-col-4.colspan-2</div></div>
+		<div class="flex-col-4"><div class="panel p-15">.flex-col-4</div></div>
+		<div class="flex-col-4"><div class="panel p-15">.flex-col-4</div></div>
+	</div>
+	<div class="flex-row pb-10">
+		<div class="flex-col-4"><div class="panel p-15">.flex-col-4</div></div>
+		<div class="flex-col-4 colspan-3"><div class="panel p-15">.flex-col-4.colspan-3</div></div>
+	</div>
+</div>
+
+<p>Works the same way as the non-flexbox column method above, but the main difference is that this method takes the gutter width inbetween when calculating column widths. This method is useful when you use <a href="#section-panels">Panels</a> inside columns to make a perfect grid layout with equal distances between blocks.</p>
+
+<p>You can set the gutter width inbetween columns by changing the value of <code>@flex-col-spacing</code> variable in Petal.less file.</p>
+
+<p>Unlike the first method, <code>.container</code> class on parent element is <b>optional</b> for the flexbox columns.</p>
+
+
+<div class="demo-panel gray p-15">
+	<h5>Ordinary columns (float)</h5>
+	<div class="row pb-10">
+		<div class="col-3 bg-red-l1 pv-15">.col-3</div>
+		<div class="col-3 bg-green-l1 pv-15">.col-3</div>
+		<div class="col-3 bg-blue-l1 pv-15">.col-3</div>
+	</div>
+	<h5>Ordinary columns (float, with panels inside)</h5>
+	<div class="row pb-10">
+		<div class="col-3"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3"><div class="panel p-15">.col-3</div></div>
+	</div>
+	<h5>Flexbox columns with panels</h5>
+	<div class="flex-row pb-10">
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3</div></div>
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3</div></div>
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3</div></div>
+	</div>
+</div>
+
+<p>You can see how the flexbox columns will stack up when used with ordinary column layouts. Depending on your settings, both might look similar but they still behave a bit differently, so use whichever way you see fits your needs.</p>
+
+<br>
+
+<h5>Stretching columns</h5>
+<div class="demo-panel gray p-15">
+	<div class="flex-row pb-10">
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3</div></div>
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3</div></div>
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3<br>(Multiline <br>Content)</div></div>
+	</div>
+	<div class="flex-row pb-10">
+		<div class="flex-col-3"><div class="panel stretch p-15">.flex-col-3 (stretch)</div></div>
+		<div class="flex-col-3"><div class="panel stretch p-15">.flex-col-3 (stretch)</div></div>
+		<div class="flex-col-3"><div class="panel stretch p-15">.flex-col-3<br>(Multiline <br>Content)</div></div>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="flex-row pb-10">
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3</div></div>
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3</div></div>
+		<div class="flex-col-3"><div class="panel p-15">.flex-col-3<br>(Multiline <br>Content)</div></div>
+	</div>
+	<div class="flex-row pb-10">
+		<div class="flex-col-3"><div class="panel stretch p-15">.flex-col-3 (stretch)</div></div>
+		<div class="flex-col-3"><div class="panel stretch p-15">.flex-col-3 (stretch)</div></div>
+		<div class="flex-col-3"><div class="panel stretch p-15">.flex-col-3<br>(Multiline <br>Content)</div></div>
+	</div>
+```
+{{/markdown}}
+</div>
+
+<p>Add <code>.stretch</code> class to the child wrapper element inside the <code>.flex-col-x</code> to make it stretch vertically following the sibiling with the highest height.</p>
+
+<br>
+
+<h5>Example Layout</h5>
+<div class="demo-panel gray p-15">
+	<div class="flex-row pb-10">
+		<div class="flex-col-3 colspan-2">
+			<div class="panel stretch p-15">.flex-col-3.colspan-2<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quas quisquam nisi voluptatibus.
+			<div class="flex-row mv-10">
+				<div class="flex-col-2"><div class="bg-red-l1 p-10">Nested Column 1</div></div>
+				<div class="flex-col-2"><div class="bg-red-l1 p-10">Nested Column 2</div></div>
+			</div>
+			</div>		
+		</div>
+		<div class="flex-col-3">
+			<div class="panel p-15 mb-10">.flex-col-3</div>
+			<div class="panel p-15 mb-10">.flex-col-3</div>
+			<div class="panel p-15">.flex-col-3</div>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="flex-row pb-10">
+		<div class="flex-col-3 colspan-2">
+			<div class="panel stretch p-15">.flex-col-3.colspan-2<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quas quisquam nisi voluptatibus.
+			<div class="flex-row mv-10">
+				<div class="flex-col-2"><div class="bg-red-l2 p-10">Nested Column 1</div></div>
+				<div class="flex-col-2"><div class="bg-red-l2 p-10">Nested Column 2</div></div>
+			</div>
+			</div>		
+		</div>
+		<div class="flex-col-3">
+			<div class="panel p-15 mb-10">.flex-col-3</div>
+			<div class="panel p-15 mb-10">.flex-col-3</div>
+			<div class="panel p-15">.flex-col-3</div>
+		</div>
+	</div>
+```
+{{/markdown}}
+</div>
+
+<p>As you can see, nested columns inside columns are also possible. Use the quick margin/padding classes appropriately to space out the panels.</p>
