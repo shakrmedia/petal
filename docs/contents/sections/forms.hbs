@@ -339,7 +339,47 @@
 <br>
 <hr class="subdivider">
 
-<h3>Selectboxes</h3>
+
+<h3 id="section-forms-segmented-radio">Segmented Buttons (Radiobox method)</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group btn-group-segmented">
+		<input type="radio" name="demoSegmented" id="demoSegmented1" checked>
+		<label for="demoSegmented1"><div class="btn hollow">Left</div></label>
+
+		<input type="radio" name="demoSegmented" id="demoSegmented2">
+		<label for="demoSegmented2"><div class="btn hollow">Center</div></label>
+
+		<input type="radio" name="demoSegmented" id="demoSegmented3">
+		<label for="demoSegmented3"><div class="btn hollow">Right</div></label>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="btn-group btn-group-segmented">
+	<input type="radio" name="demoSegmented" id="demoSegmented1" checked>
+	<label for="demoSegmented1"><div class="btn hollow">Left</div></label>
+
+	<input type="radio" name="demoSegmented" id="demoSegmented2">
+	<label for="demoSegmented2"><div class="btn hollow">Center</div></label>
+
+	<input type="radio" name="demoSegmented" id="demoSegmented3">
+	<label for="demoSegmented3"><div class="btn hollow">Right</div></label>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>This method uses radio buttons to make segmented button groups toggle function work.</p>
+
+<p>Use the same <code>.btn-group-segmented</code> class on the button group, insert the buttons inside a <code>&lt;label&gt;</code> which must be placed directly after the <code>&lt;input type="radio"&gt;</code> .</p>
+
+<br>
+<hr class="subdivider">
+
+
+
+<h3 id="section-forms-selectboxes">Selectboxes</h3>
 <div class="demo-panel p-15">
 <form>
 <div class="row">

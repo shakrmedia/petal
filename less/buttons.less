@@ -113,7 +113,9 @@
 			background-color: @btn-color;
 			
 			// for toggle button
-			&.active, &.hollow.active {
+			&.active, &.hollow.active,
+			:checked + label &,
+			:checked + label &.hollow {
 				color: @text-color;
 				background-color: @btn-color-l1;
 				border-color: @btn-color-d2;
@@ -132,7 +134,8 @@
 		}
 
 		&.disabled,
-		&:disabled {
+		&:disabled,
+		:disabled + label & {
 			color: @text-color !important;
 			background-color: @btn-color !important;
 			border-color: transparent !important;
@@ -161,6 +164,19 @@
 			&:active {
 				background-color: @btn-color-d2;
 				border-color: @btn-color;
+			}
+		}
+		
+		// for segmented button active state on dark
+		.dark :checked + label &,
+		.dark :checked + label &.hollow {
+			color: @text-color;
+			background-color: @btn-color-d1;
+			border-color: @btn-color-l2;
+
+			&:hover {
+				border-color: @btn-color-l2;
+				background-color: @btn-color;
 			}
 		}
 
@@ -199,7 +215,8 @@
 		}
 
 		&.hollow.disabled,
-		&.hollow:disabled {
+		&.hollow:disabled,
+		:disabled + label &.hollow {
 			color: @btn-color !important;
 			border-color: @btn-color !important;
 			background: none !important;
@@ -375,6 +392,40 @@
 	}
 
 	.cf;
+}
+
+/* segmented button group */
+.btn-group.btn-group-segmented {
+	.btn + .btn {
+		margin-left: -2px;
+	}
+	.btn {
+		z-index: @btn-normal-z-index;
+	}
+	.btn.active {
+		z-index: @btn-active-z-index;
+	}
+	
+	// radiobox method
+	input[type="radio"] {
+		opacity: 0;
+		height: 0;
+		width: 0;
+		position: absolute;
+		overflow: hidden;
+		//visibility: hidden;
+	}
+
+	label ~ label .btn {
+		margin-left: -2px;
+	}
+
+	label .btn {
+		z-index: @btn-normal-z-index;
+	}
+	:checked + label .btn {
+		z-index: @btn-active-z-index;
+	}
 }
 
 
