@@ -344,13 +344,16 @@
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 	<div class="btn-group btn-group-segmented">
 		<input type="radio" name="demoSegmented" id="demoSegmented1" checked>
-		<label for="demoSegmented1"><div class="btn hollow">Left</div></label>
+		<label for="demoSegmented1"><div class="btn hollow">Option 1</div></label>
 
 		<input type="radio" name="demoSegmented" id="demoSegmented2">
-		<label for="demoSegmented2"><div class="btn hollow">Center</div></label>
+		<label for="demoSegmented2"><div class="btn hollow">Option 2</div></label>
 
 		<input type="radio" name="demoSegmented" id="demoSegmented3">
-		<label for="demoSegmented3"><div class="btn hollow">Right</div></label>
+		<label for="demoSegmented3"><div class="btn hollow">Option 3</div></label>
+
+		<input type="radio" name="demoSegmented" id="demoSegmented4" disabled>
+		<label for="demoSegmented4"><div class="btn hollow">Option 4</div></label>
 	</div>
 </div>
 <div class="demo-code">
@@ -358,13 +361,16 @@
 ``` html
 <div class="btn-group btn-group-segmented">
 	<input type="radio" name="demoSegmented" id="demoSegmented1" checked>
-	<label for="demoSegmented1"><div class="btn hollow">Left</div></label>
+	<label for="demoSegmented1"><div class="btn hollow">Option 1</div></label>
 
 	<input type="radio" name="demoSegmented" id="demoSegmented2">
-	<label for="demoSegmented2"><div class="btn hollow">Center</div></label>
+	<label for="demoSegmented2"><div class="btn hollow">Option 2</div></label>
 
 	<input type="radio" name="demoSegmented" id="demoSegmented3">
-	<label for="demoSegmented3"><div class="btn hollow">Right</div></label>
+	<label for="demoSegmented3"><div class="btn hollow">Option 3</div></label>
+
+	<input type="radio" name="demoSegmented" id="demoSegmented4" disabled>
+	<label for="demoSegmented4"><div class="btn hollow">Option 4</div></label>
 </div>
 ```
 {{/markdown}}
@@ -373,6 +379,8 @@
 <p>This method uses radio buttons to make segmented button groups toggle function work.</p>
 
 <p>Use the same <code>.btn-group-segmented</code> class on the button group, insert the buttons inside a <code>&lt;label&gt;</code> which must be placed directly after the <code>&lt;input type="radio"&gt;</code> .</p>
+
+<p>Add <code>disabled</code> attribute on <code>&lt;input&gt;</code> to disable the button.</p>
 
 <br>
 <hr class="subdivider">
