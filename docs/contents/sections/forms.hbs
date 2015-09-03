@@ -263,7 +263,7 @@
 	<div class="row">
 		<div class="col-3">
 			<div class="form-group">
-				<label class="form-label">ON/OFF Type Switch</label>
+				<label class="form-label">Default Switch</label>
 				<span class="chk-switch-label">OFF</span>
 				<div class="chk-switch">
 					<input type="checkbox" id="demoSwitch1" checked>
@@ -288,8 +288,41 @@
 				<label class="form-label">Disabled Switch</label>
 				<span class="chk-switch-label">Skip Tuesdays</span>
 				<div class="chk-switch disabled">
-					<input type="checkbox" id="demoSwitch3" disabled>
+					<input type="checkbox" id="demoSwitch3" checked disabled>
 					<label for="demoSwitch3"><span></span></label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row mv-15">
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">ON/OFF Type Switch</label>
+				<span class="chk-switch-label">OFF</span>
+				<div class="chk-switch onoff-type">
+					<input type="checkbox" id="demoSwitch4" checked>
+					<label for="demoSwitch4"><span></span></label>
+				</div>
+				<span class="chk-switch-label">ON</span>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">ON/OFF with LED</label>
+				<span class="chk-switch-label">Activate</span>
+				<div class="chk-switch onoff-type led">
+					<input type="checkbox" id="demoSwitch5">
+					<label for="demoSwitch5"><span></span></label>
+				</div>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="form-group">
+				<label class="form-label">ON/OFF Disabled</label>
+				<span class="chk-switch-label">Activate</span>
+				<div class="chk-switch onoff-type led disabled">
+					<input type="checkbox" id="demoSwitch6" checked disabled>
+					<label for="demoSwitch6"><span></span></label>
 				</div>
 			</div>
 		</div>
@@ -301,7 +334,7 @@
 <div class="form-group">
 	<label class="form-label">ON/OFF Type Switch</label>
 	<span class="chk-switch-label">OFF</span>
-	<div class="chk-switch">
+	<div class="chk-switch onoff-type">
 		<input type="checkbox" id="demoSwitch1" checked>
 		<label for="demoSwitch1"><span></span></label>
 	</div>
@@ -313,6 +346,7 @@
 
 <p>"Switch" style toggles using checkboxes. <code>span.chk-switch-label</code> is optional. You must have the <code>.chk-switch</code> and the markup inside for the switch to work.</p>
 
+<p>Add <code>.onoff-type</code> class to <code>.chk-switch</code> for an ON-OFF toggle with a LED light indicator on the ticker.</p>
 <p>Add <code>.ab-type</code> class to <code>.chk-switch</code> for an A/B-type toggle without the switch background color.</p>
 
 <p>To disable a switch, you need to add both <code>.disabled</code> class on the <code>.chk-switch</code> container and also a <code>disabled</code> attribute on the input.</p>
@@ -332,6 +366,7 @@
 @chk-switch-border-radius: @checkbox-size;
 @chk-switch-color: @primary-accent-color;
 @chk-switch-disable-animation: false;
+@chk-switch-disable-shadows: false;
 ```
 {{/markdown}}
 </div>
