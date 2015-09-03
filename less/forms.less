@@ -460,6 +460,7 @@ input[type="radio"].radiobox:disabled + label {
 	}
 
 	.dark &:active {
+		border-color: @primary-accent-color;
 		background-color: #000;
 	}
 	
@@ -540,8 +541,8 @@ input[type="radio"].radiobox:disabled + label {
 		}
 	}
 
-	&:hover input[type="checkbox"]:checked + label span:before, 
-	&:hover input[type="checkbox"]:checked + label span:after {
+	&:hover input[type="checkbox"]:checked:not(:disabled) + label span:before, 
+	&:hover input[type="checkbox"]:checked:not(:disabled) + label span:after {
 		transform: translate(-2px);
 	}
 
