@@ -25,94 +25,114 @@
 		padding-left: 40px;
 		padding-right: 40px;
 	}
-
-	.row {
-		margin-left: -@col-padding;
-		margin-right: -@col-padding;
-
-		.cf;
-	}
 }
 
 
 /* columns */
+.row {
+	margin-left: -@col-padding;
+	margin-right: -@col-padding;
+
+	& when (@col-method = float) {
+		.cf; // clearfix
+	}
+	
+	& when (@col-method = flex) {
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		flex-wrap: wrap;
+	}
+}
 [class^="col-"] {
 	min-height: 1px;
 	padding-left: @col-padding;
 	padding-right: @col-padding;
+
+	& when (@col-method = float) {
+		float: left;
+	}
+	
+	& when (@col-method = flex) {
+		.stretch {
+			display: flex;
+
+			& > * {
+				width: 100%;
+			}
+		}
+	}
+	
+	// collapsed gutter
+	&.collapse-gutter {
+		&:not(:first-of-type):not(:last-of-type) {
+			padding-left: @col-padding /2;
+			padding-right: @col-padding /2;
+		}
+		&:first-of-type {
+			padding-right: @col-padding /2;
+		}
+		&:last-of-type {
+			padding-left: @col-padding /2;
+		}
+	}
 }
 .col-1 {
 	width: 100%;
+	
+	& when (@col-method = flex) {
+		max-width: 100%;
+		flex-basis: 100%;
+	}
 }
 .col-2 {
-	float: left;
 	width: 50%;
+
+	& when (@col-method = flex) {
+		max-width: (100% / 2);
+		flex-basis: (100% / 2);		
+	}
 }
 .col-3 {
-	float: left;
 	width: 33.3333%;
 
+	& when (@col-method = flex) {
+		max-width: (100% / 3);
+		flex-basis: (100% / 3);		
+	}
+
 	&.colspan-2 {
-		width: 66.6666%;
+		width: (100% * (2/3));
+
+		& when (@col-method = flex) {
+			max-width: (100% * (2/3));
+			flex-basis: (100% * (2/3));	
+		}
 	}
 }
 .col-4 {
-	float: left;
 	width: 25%;
+
+	& when (@col-method = flex) {
+		max-width: (100% / 4);
+		flex-basis: (100% / 4);
+	}
 
 	&.colspan-2 {
 		width: 50%;
+
+		& when (@col-method = flex) {
+			max-width: (100% * (2/4));
+			flex-basis: (100% * (2/4));
+		}
 	}
 	&.colspan-3 {
 		width: 75%;
+
+		& when (@col-method = flex) {
+			max-width: (100% * (3/4));
+			flex-basis: (100% * (3/4));
+		}
 	}
 }
 
-
-/* Flexbox method */
-.flex-row {
-	display: flex;
-	justify-content: space-between;
-	align-items: stretch;
-	margin-right: -(@flex-col-spacing /2);
-	margin-left: -(@flex-col-spacing /2)
-}
-[class^="flex-col-"] {
-	min-height: 1px;
-	margin-left: (@flex-col-spacing /2);
-	margin-right: (@flex-col-spacing /2);
-
-	.stretch {
-		height: 100%;
-	}
-}
-.flex-col-1 {
-	max-width: 100%;
-	flex-basis: 100%;
-}
-.flex-col-2 {
-	max-width: (100% / 2);
-	flex-basis: (100% / 2);
-}
-.flex-col-3 {
-	max-width: (100% / 3);
-	flex-basis: (100% / 3);
-
-	&.colspan-2 {
-		max-width: (100% * (2/3));
-		flex-basis: (100% * (2/3));
-	}
-}
-.flex-col-4 {
-	max-width: (100% / 4);
-	flex-basis: (100% / 4);
-
-	&.colspan-2 {
-		max-width: (100% * (2/4));
-		flex-basis: (100% * (2/4));
-	}
-	&.colspan-3 {
-		max-width: (100% * (3/4));
-		flex-basis: (100% * (3/4));
-	}
-}
