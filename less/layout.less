@@ -37,8 +37,25 @@
 		align-items: stretch;
 		flex-wrap: wrap;
 	}
+
+	// collapsed gutter
+	&.collapse-gutter {
+		& > [class^="col-"],
+		& > [class*=" col-"] {
+			&:not(:first-of-type):not(:last-of-type) {
+				padding-left: @col-padding /2;
+				padding-right: @col-padding /2;
+			}
+			&:first-of-type {
+				padding-right: @col-padding /2;
+			}
+			&:last-of-type {
+				padding-left: @col-padding /2;
+			}
+		}
+	}
 }
-[class^="col-"] {
+[class^="col-"], [class*=" col-"] {
 	min-height: 1px;
 	padding-left: @col-padding;
 	padding-right: @col-padding;
@@ -55,20 +72,6 @@
 			& > * {
 				width: 100%;
 			}
-		}
-	}
-	
-	// collapsed gutter
-	&.collapse-gutter {
-		&:not(:first-of-type):not(:last-of-type) {
-			padding-left: @col-padding /2;
-			padding-right: @col-padding /2;
-		}
-		&:first-of-type {
-			padding-right: @col-padding /2;
-		}
-		&:last-of-type {
-			padding-left: @col-padding /2;
 		}
 	}
 }
