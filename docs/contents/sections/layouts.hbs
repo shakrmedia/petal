@@ -2,6 +2,12 @@
 
 <p>Petal provides a basic layout method where you can make quick, simple column layouts. Note that this is a very 'light' implementation, so unlike some other proper grid systems, Petal not provide automatic overrides for mobile screen widths.</p>
 
+<p>By default, Petal uses the CSS3 Flexbox properties for column layouts. Most modern browsers <a href="http://caniuse.com/#search=flex">will support</a> flexboxes just fine (in case of IE, versions 10 and up), but if for some reason you need to fall back to the traditional 'float' method, change the <code>@col-method: flex;</code> to <code>float</code>.</p>
+
+<p>By the looks, both methods will display exactly the same with the same settings. Using flexbox has some benefits, including a cleaner markup because you don't need the <a href="http://nicolasgallagher.com/micro-clearfix-hack/">micro clearfix</a> hack anymore (that inserts pseudo <code>:before</code> and <code>:after</code> elements to the parent row element), and that you can use some optional classes that will work only in flexbox mode.</p>
+
+<br>
+
 <h3>Container</h3>
 <p>Add the <code>.container</code> class to a container div where you would insert your site contents into. Usually a single page/view will have only one <code>.container</code>.</p>
 
@@ -31,6 +37,8 @@
 </div>
 
 <p>Place a div with the <code>.row</code> class, then insert <code>.col-<em>x</em></code> class inside to make columns, where <em>x</em> is the number of columns the row is divided into. (Supports 2,3,4 columns)</p>
+
+<p>The <code>.row</code> element has a negative horizontal margin with the same width as the <code>@container-padding</code>, so that the columns inside rows won't have doubled padding width. If you're not using a <code>.row</code> inside <code>.container</code>, make sure you manually specify paddings for the parent wrapper (You can use a <code>.ph-15</code> <a href="#section-quickmargins">quick-padding</a> class)</p>
 
 <p>The default left/right padding for the columns is 15px, same as the <code>.container</code> inner paddings. To change this, modify the <code>@col-padding</code> value. It's recommended that you keep the column padding value and the container inner padding value equal.</p>
 
@@ -83,74 +91,76 @@
 
 <br>
 
-<h3>Column Options (only for Flexbox method)</h3>
+<h5>Collapsed column gutters</h5>
+<div class="demo-panel gray ph-15 pv-5">
+	<h6 class="label">Normal</h6>
+	<div class="row">
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3 bg-green-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+	</div>
+	<div class="row">
+		<div class="col-3 bg-red-l2 stretch pv-5 colspan-2"><div class="panel p-15">.col-3.colspan-2</div></div>
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+	</div>
+	<h6 class="label">Collapsed Gutters</h6>
+	<div class="row collapse-gutter">
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3 bg-green-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+	</div>
+	<div class="row collapse-gutter">
+		<div class="col-3 bg-red-l2 stretch pv-5 colspan-2"><div class="panel p-15">.col-3.colspan-2</div></div>
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+	</div>
+</div>
 
-
-<p>By the looks, both methods will display exactly the same with the same settings. Benefits of using flexbox are that markup will be more cleaner because you don't need the <a href="http://nicolasgallagher.com/micro-clearfix-hack/">micro clearfix</a> hack anymore (it inserts pseudo <code>:before</code> and <code>:after</code> elements to the parent row element); 2.  </p>
-<p>Make sure the browser you're developing your project for <a href="http://caniuse.com/#search=flex">has proper support for flexboxes</a>. Petal does not provide automatic table fallbacks for older browsers.</p>
+<p>Add <code>.collapse-gutter</code> class on parent <code>.row</code> elements and it will 'collapse' the gutter inbetween columns by reducing the padding space to half while keeping the outer paddings on left and right. This is useful in cases where you want to make a layout out of <a href="#section-panels">Panels</a> and want to reduce the visible horizontal gutter size inbetween them.</p>
 
 <br>
 
-<h5>Collapsed column gutters</h5>
-<div class="demo-panel gray p-15">
-	<div class="row mv-10">
-		<div class="col-3"><div class="bg-red-l1 p-10">Column 1</div></div>
-		<div class="col-3"><div class="bg-red-l1 p-10">Column 2</div></div>
-		<div class="col-3"><div class="bg-red-l1 p-10">Column 3</div></div>
-	</div>
-	<div class="row mv-10">
-		<div class="col-3 collapse-gutter stretch"><div class="bg-green-l1 p-10">Column 1 (Collapsed gutter)</div></div>
-		<div class="col-3 collapse-gutter stretch"><div class="bg-green-l1 p-10">Column 2 (Collapsed gutter)</div></div>
-		<div class="col-3 collapse-gutter stretch"><div class="bg-green-l1 p-10">Column 3 (Collapsed gutter)</div></div>
-	</div>
-</div>
-
-<p>An optional <code>.collapse-gutter</code> class added on <code>.col-x</code> elements will 'collapse' the gutter inbetween columns by reducing the padding space to half while keeping the outer paddings on left and right. This is useful when you want to keep the global container padding value but just want to reduce the size of the gutter to be equal to the padding width. </p>
-
-<h5>Example Layout</h5>
-<div class="demo-panel gray p-15">
-	<div class="row pb-10">
-		<div class="col-3 collapse-gutter stretch colspan-2">
-			<div class="panel p-15">.col-3.colspan-2
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quas quisquam nisi voluptatibus.</p>
-			<p>Nested Columns</p>
-			<div class="row mv-10">
-				<div class="col-2"><div class="bg-red-l1 p-10">Nested Column 1</div></div>
-				<div class="col-2"><div class="bg-red-l1 p-10">Nested Column 2</div></div>
-			</div>
-			<div class="row mv-10">
-				<div class="col-2 collapse-gutter"><div class="bg-green-l1 p-10">Nested Column 1 (Collapsed gutter)</div></div>
-				<div class="col-2 collapse-gutter"><div class="bg-green-l1 p-10">Nested Column 2 (Collapsed gutter)</div></div>
-			</div>
-			</div>		
-		</div>
-		<div class="col-3 collapse-gutter stretch">
-			<div class="panel p-15 mb-10">.col-3</div>
-			<div class="panel p-15 mb-10">.col-3</div>
-			<div class="panel p-15">.col-3</div>
-		</div>
-	</div>
-</div>
-<div class="demo-code">
-{{#markdown}}
-``` html
-<div class="row pb-10">
+<h5>Vertically stretched columns (Flexbox Only)</h5>
+<div class="demo-panel gray ph-15 pv-5">
+	<h6 class="label">Normal</h6>
+	<div class="row collapse-gutter pb-10">
 		<div class="col-3 colspan-2">
-			<div class="panel p-15">.col-3.colspan-2<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quas quisquam nisi voluptatibus.
-			<div class="row mv-10">
-				<div class="col-2"><div class="bg-red-l2 p-10">Nested Column 1</div></div>
-				<div class="col-2"><div class="bg-red-l2 p-10">Nested Column 2</div></div>
-			</div>
+			<div class="panel p-15">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus nam ad, eligendi dolor similique provident nisi magnam, eum itaque, quibusdam nostrum libero.
 			</div>		
 		</div>
 		<div class="col-3">
-			<div class="panel p-15 mb-10">.col-3</div>
-			<div class="panel p-15 mb-10">.col-3</div>
-			<div class="panel p-15">.col-3</div>
+			<div class="panel p-15 mb-10">Lorem ipsum dolor sit amet.</div>
+			<div class="panel p-15">Autem harum beatae alias voluptas ipsa, illo consequatur.</div>
 		</div>
 	</div>
+
+	<h6 class="label">Stretched</h6>
+	<div class="row collapse-gutter pb-10">
+		<div class="col-3 stretch colspan-2">
+			<div class="panel p-15">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus nam ad, eligendi dolor similique provident nisi magnam, eum itaque, quibusdam nostrum libero.
+			</div>		
+		</div>
+		<div class="col-3">
+			<div class="panel p-15 mb-10">Lorem ipsum dolor sit amet.</div>
+			<div class="panel p-15">Autem harum beatae alias voluptas ipsa, illo consequatur.</div>
+		</div>
+	</div>
+</div>
+
+<p>Add <code>.stretch</code> class on <code>.col-x</code> elements to vertically stretch children elements to row height. This will only work when you're using the flexbox columns.</p>
+
+<br>
+
+<h4>Customizable LESS variables</h4>
+<div class="demo-code">
+{{#markdown}}
+``` less
+// layout
+@container-width: 980px;
+@container-padding: 15px;
+@col-method: flex; // flex or float (legacy)
+@col-padding: 15px;
 ```
 {{/markdown}}
 </div>
-
-<p>As you can see, nested columns inside columns are also possible. Use the quick margin/padding classes appropriately to space out the panels.</p>
