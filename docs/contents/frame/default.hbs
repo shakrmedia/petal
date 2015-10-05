@@ -228,6 +228,12 @@
 		$('#table-demo table').toggleClass(tableClass);
 	});
 
+	// Form spinner toggle button
+	$('#input-spinner-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('[data-toggle-loading-state]').toggleClass('loading');
+	});
+
 
 	// load highlight.js
 	$(document).ready(function() {

@@ -13,7 +13,7 @@
 
 <br>
 
-<h4>Form groups</h4>
+<h3>Form groups</h3>
 
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 <form>
@@ -106,7 +106,7 @@
 
 <br>
 
-<h4>Input groups</h4>
+<h3>Input groups</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 <form>
 	<div class="form-group">
@@ -176,7 +176,110 @@
 
 <br>
 
-<h5>Customizable options</h5>
+<h3>Form Validation</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<div class="row">
+	<div class="col-2">
+		<div class="form-group">
+			<label class="form-label" for="demoForm4Username">Username</label>
+			<div class="input-group validation valid">
+				<input class="input" id="demoForm4Username" type="text" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="form-label" for="demoForm4Email">Email</label>
+			<div class="input-group validation warning">
+				<input class="input" id="demoForm4Email" type="email" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="form-label" for="demoForm4Password">Password</label>
+			<div class="input-group validation error">
+				<input class="input" id="demoForm4Password" type="password" />
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="form-group">
+	<label class="form-label" for="demoForm4Username">Username</label>
+	<div class="input-group validation valid">
+		<input class="input" id="demoForm4Username" type="text" />
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="demoForm4Email">Email</label>
+	<div class="input-group validation warning">
+		<input class="input" id="demoForm4Email" type="email" />
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="form-label" for="demoForm4Password">Password</label>
+	<div class="input-group validation error">
+		<input class="input" id="demoForm4Password" type="password" />
+	</div>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>You can insert little icons at the right When you need validation states for input boxes. Place the <code>input</code> inside an <code>.input-group</code>  and add <code>.validation</code> class on the input group; then append <code>.valid</code>, <code>.warning</code>, <code>.error</code>, depending on the state.</p>
+
+<p>Use javascript if you want to dynamically validate contents and control the states of the input boxes.</p>
+
+<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.inline-form</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>	
+
+<br>
+
+<h4>Spinner in inputs</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<div class="row">
+	<div class="col-2">
+		<div class="form-group">
+			<div class="input-group validation valid" data-toggle-loading-state>
+				<input class="input" id="demoFormSpinner1" type="text" />
+			</div>
+			<p class="form-caption">With <code>.validation</code> class</p>
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="form-group">
+			<div class="input-group" data-toggle-loading-state>
+				<input class="input" id="demoFormSpinner2" type="text" />
+			</div>
+			<p class="form-caption">Standalone <code>.loading</code></p>
+		</div>
+	</div>
+</div>
+<button class="btn" id="input-spinner-demo-toggle">Toggle State</button>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="form-group">
+	<div class="input-group validation loading">
+		<input class="input" id="demoFormSpinner1" type="text" />
+	</div>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>When you need a loading indicator inside a input box. Same way as above, place the <code>input</code> inside an <code>.input-group</code>, and add the <code>.loading</code> class on the input group.</p>
+
+<p>The <code>.loading</code> class can be used stand-alone without the <code>.validation</code> class. When using both together, the loading spinner will always override the validation state icons.</p>
+
+
+<br>
+
+<h4>Customizable options</h4>
 <div class="demo-code">
 {{#markdown}}
 ``` less
