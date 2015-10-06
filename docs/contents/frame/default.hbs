@@ -224,14 +224,13 @@
 
 	$('input[data-toggle-class]').click(function(e) {
 		var tableClass = $(this).attr('data-toggle-class');
-		console.log(tableClass);
 		$('#table-demo table').toggleClass(tableClass);
 	});
 
 	// Form spinner toggle button
 	$('#input-spinner-demo-toggle').click(function(e) {
 		e.preventDefault();
-		$('[data-toggle-loading-state]').toggleClass('loading');
+		$('[data-toggle-loading-state]').toggleClass('valid').toggleClass('loading');
 	});
 
 

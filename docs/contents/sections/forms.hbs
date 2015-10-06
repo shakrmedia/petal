@@ -178,27 +178,55 @@
 
 <h3>Form Validation</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
-<div class="row">
+<div class="row collapse-gutter">
 	<div class="col-2">
-		<div class="form-group">
+		<div class="form-group validation valid">
 			<label class="form-label" for="demoForm4Username">Username</label>
-			<div class="input-group validation valid">
+			<div class="input-group">
 				<input class="input" id="demoForm4Username" type="text" />
 			</div>
+			<p class="form-caption">Username is available!</p>
 		</div>
 
-		<div class="form-group">
-			<label class="form-label" for="demoForm4Email">Email</label>
-			<div class="input-group validation warning">
-				<input class="input" id="demoForm4Email" type="email" />
+		<div class="form-group validation warning">
+			<label class="form-label" for="demoForm4Name">Name</label>
+			<div class="input-group">
+				<input class="input" id="demoForm4Name" type="text" />
 			</div>
+			<p class="form-caption">That's a strange name...</p>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group validation error">
 			<label class="form-label" for="demoForm4Password">Password</label>
-			<div class="input-group validation error">
+			<div class="input-group">
 				<input class="input" id="demoForm4Password" type="password" />
 			</div>
+			<p class="form-caption">Invalid Password.</p>
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="form-group validation border-colors valid">
+			<label class="form-label" for="demoForm4Username">Username</label>
+			<div class="input-group">
+				<input class="input" id="demoForm4Username" type="text" />
+			</div>
+			<p class="form-caption">Username is available!</p>
+		</div>
+
+		<div class="form-group validation border-colors warning">
+			<label class="form-label" for="demoForm4Name">Name</label>
+			<div class="input-group">
+				<input class="input" id="demoForm4Name" type="text" />
+			</div>
+			<p class="form-caption">That's a strange name...</p>
+		</div>
+
+		<div class="form-group validation border-colors error">
+			<label class="form-label" for="demoForm4Password">Password</label>
+			<div class="input-group">
+				<input class="input" id="demoForm4Password" type="password" />
+			</div>
+			<p class="form-caption">Invalid Password.</p>
 		</div>
 	</div>
 </div>
@@ -206,35 +234,45 @@
 <div class="demo-code">
 {{#markdown}}
 ``` html
-<div class="form-group">
+<div class="form-group validation valid">
 	<label class="form-label" for="demoForm4Username">Username</label>
-	<div class="input-group validation valid">
+	<div class="input-group">
 		<input class="input" id="demoForm4Username" type="text" />
 	</div>
+	<p class="form-caption">Username is available!</p>
 </div>
 
-<div class="form-group">
-	<label class="form-label" for="demoForm4Email">Email</label>
-	<div class="input-group validation warning">
-		<input class="input" id="demoForm4Email" type="email" />
+<div class="form-group validation warning">
+	<label class="form-label" for="demoForm4Name">Name</label>
+	<div class="input-group">
+		<input class="input" id="demoForm4Name" type="text" />
 	</div>
+	<p class="form-caption">That's a strange name...</p>
 </div>
 
-<div class="form-group">
+<div class="form-group validation error">
 	<label class="form-label" for="demoForm4Password">Password</label>
-	<div class="input-group validation error">
+	<div class="input-group">
 		<input class="input" id="demoForm4Password" type="password" />
 	</div>
+	<p class="form-caption">Invalid Password.</p>
 </div>
 ```
 {{/markdown}}
 </div>
 
-<p>You can insert little icons at the right When you need validation states for input boxes. Place the <code>input</code> inside an <code>.input-group</code>  and add <code>.validation</code> class on the input group; then append <code>.valid</code>, <code>.warning</code>, <code>.error</code>, depending on the state.</p>
+<p>You can insert little icons at the right When you need validation states for input boxes. Place the <code>input</code> inside an <code>.input-group</code>  and add <code>.validation</code> class on the parent <code>.form-group</code>; then append <code>.valid</code>, <code>.warning</code>, <code>.error</code> on the form group depending on the state.</p>
 
 <p>Use javascript if you want to dynamically validate contents and control the states of the input boxes.</p>
 
 <p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.inline-form</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>	
+
+
+<h5>Options</h5>
+
+<ul>
+	<li><code>.border-colors</code> on <code>.form-group.validation</code> : Apply the validation state colors to the input borders as well</li>
+</ul>
 
 <br>
 
@@ -242,19 +280,21 @@
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 <div class="row">
 	<div class="col-2">
-		<div class="form-group">
-			<div class="input-group validation valid" data-toggle-loading-state>
+		<div class="form-group validation border-colors valid" data-toggle-loading-state>
+			<label class="form-label">With <code>.validation</code> class</label>
+			<div class="input-group">
 				<input class="input" id="demoFormSpinner1" type="text" />
 			</div>
-			<p class="form-caption">With <code>.validation</code> class</p>
+			<p class="form-caption">Caption Message</p>
 		</div>
 	</div>
 	<div class="col-2">
-		<div class="form-group">
-			<div class="input-group" data-toggle-loading-state>
+		<div class="form-group" data-toggle-loading-state>
+			<label class="form-label">Standalone <code>.loading</code></label>
+			<div class="input-group">
 				<input class="input" id="demoFormSpinner2" type="text" />
 			</div>
-			<p class="form-caption">Standalone <code>.loading</code></p>
+			<p class="form-caption">Caption Message</p>
 		</div>
 	</div>
 </div>
@@ -263,8 +303,8 @@
 <div class="demo-code">
 {{#markdown}}
 ``` html
-<div class="form-group">
-	<div class="input-group validation loading">
+<div class="form-group validation loading">
+	<div class="input-group">
 		<input class="input" id="demoFormSpinner1" type="text" />
 	</div>
 </div>
