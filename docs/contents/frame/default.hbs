@@ -233,6 +233,23 @@
 		$('[data-toggle-loading-state]').toggleClass('valid').toggleClass('loading');
 	});
 
+	// Spinner button simulation
+	$('[data-btn-type="save"]').click(function(e) {
+		var button = $(this);
+		e.preventDefault();
+		button.addClass('loading');
+
+		setTimeout(function() {
+			button.removeClass('loading');
+			button.addClass('loading-done');
+
+			setTimeout(function() {
+				button.removeClass('loading-done');
+			}, 3000);
+
+		}, 3000);
+	});
+
 
 	// load highlight.js
 	$(document).ready(function() {

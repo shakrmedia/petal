@@ -314,6 +314,63 @@
 
 <br>
 
+
+<h4>Buttons with spinners</h4>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<label class="form-label">Spinner/Icons on left</label>
+	<div class="btn-group">
+		<button class="btn green spinner" data-btn-type="save">Apply</button>
+		<button class="btn spinner has-icon" data-btn-type="save"><i class="petalicon petalicon-save"></i> Save</button>
+		<button class="btn spinner white has-icon" data-btn-type="save"><i class="petalicon petalicon-save"></i> Save</button>
+	</div>
+	<div class="btn-group">
+		<button class="btn compact green spinner" data-btn-type="save">Apply</button>
+		<button class="btn compact spinner has-icon" data-btn-type="save"><i class="petalicon petalicon-save"></i> Save</button>
+		<button class="btn compact spinner white has-icon" data-btn-type="save"><i class="petalicon petalicon-save"></i> Save</button>
+	</div>
+
+	<br>
+
+	<label class="form-label">Spinner/Icons on right</label>
+	<div class="btn-group">
+		<button class="btn green spinner icon-right" data-btn-type="save">Apply</button>
+		<button class="btn spinner icon-right has-icon" data-btn-type="save">Save <i class="petalicon petalicon-save"></i></button>
+	</div>
+	<div class="btn-group">
+		<button class="btn compact green spinner icon-right" data-btn-type="save">Apply</button>
+		<button class="btn compact spinner icon-right has-icon" data-btn-type="save">Save <i class="petalicon petalicon-save"></i></button>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<!-- Plain button -->
+<button class="btn spinner">Save</button>
+
+<!-- With preexisting icon -->
+<button class="btn spinner icon-right has-icon">Save <i class="petalicon petalicon-save"></i></button>
+
+```
+{{/markdown}}
+</div>
+
+
+<p>Spinners inside buttons are useful when you want to indicate progress following the action called by the button. Just add <code>.spinner</code> class on a <code>.btn</code>, then dynamically append <code>.loading</code> class with javascript to insert an animated spinner.</p>
+
+<p>As the example above, after the progress is finished you can change the <code>.loading</code> class to <code>.loading-done</code> before removing class to indicate end of progress.</p>
+
+<h5>Options</h5>
+
+<ul>
+	<li><code>.has-icon</code> : Use when button already has a Petalicon icon in it (only works for <code>&lt;i class="petalicon ~"&gt;</code>) </li>
+	<li><code>.icon-right</code> : Display spinner on the right / when an icon already exists inside the button (after text)</li>
+</ul>
+
+<p><b>Note:</b> Hollow style icons are not supported. Compact size icons are supported. When generating custom-colored icons with lighter colors where text is not white, spinner may not appear.</p>
+
+<br>
+
 <h4>Customizable LESS variables</h4>
 <div class="demo-code">
 {{#markdown}}

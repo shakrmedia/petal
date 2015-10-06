@@ -538,6 +538,166 @@ ul.dropdown-menu {
 
 }
 
+// button with loader inside
+.btn.spinner {
+	position: relative;
+	transition-property: background, border-color, color, box-shadow, opacity, padding;
+
+	i.petalicon {
+		transition-property: transform, opacity;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-out;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		display: inline-block;
+		top: 50%;
+		width: 16px;
+		height: 16px;
+		margin-top: -8px;
+		vertical-align: middle;
+
+		// initial state
+		opacity: 0;
+		transition-property: transform, width, opacity;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-out;
+	}
+
+	// loading state
+	&.loading {
+
+		i.petalicon {
+			opacity: 0;
+		}
+
+		&:before {
+			@btn-spinner-color: #fff;
+			@btn-spinner-svg-data: escape("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='@{btn-spinner-color}' opacity='.3' d='M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z'/><path fill='@{btn-spinner-color}' d='M8 2c3.3 0 6 2.7 6 6h2c0-4.4-3.6-8-8-8v2z'/></svg>");
+			background-image: url("data:image/svg+xml,@{btn-spinner-svg-data}");
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			@keyframes spinner-rotate {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			animation: spinner-rotate 1s linear infinite;
+			opacity: 1;
+		}
+		
+		// override for white btn
+		&.white:before {
+			@btn-spinner-color: #000;
+			@btn-spinner-svg-data: escape("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='@{btn-spinner-color}' opacity='.3' d='M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z'/><path fill='@{btn-spinner-color}' d='M8 2c3.3 0 6 2.7 6 6h2c0-4.4-3.6-8-8-8v2z'/></svg>");
+			background-image: url("data:image/svg+xml,@{btn-spinner-svg-data}");
+		}
+	}
+
+	// loading-done
+	&.loading-done {
+
+		i.petalicon {
+			opacity: 0;
+		}
+		
+		&:before {
+			.petalicon;
+			.petalicon-check;
+
+			@keyframes check-whop {
+				0% {
+					transform: scale(1.4);
+					opacity: 0;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+
+			animation: check-whop 0.2s ease-out forwards;
+		}
+	}
+
+	// position spinner
+	&:not(.icon-right) {
+		&:before {
+			left: 18px;
+		}
+		&.compact:before {
+			left: 15px;
+		}
+	}
+
+	&:not(.icon-right).loading,
+	&:not(.icon-right).loading-done {
+		padding-left: 20px + 20px;
+		pointer-events: none;
+
+		&.compact {
+			padding-left: 15px + 20px;
+		}
+	}
+
+	// icon on right
+	&.icon-right {
+
+		i.petalicon {
+			padding-left: 3px;
+		}
+
+		&:before {
+			right: 18px;
+		}
+		&.compact:before {
+			right: 15px;
+		}
+	}
+
+	&.icon-right.loading,
+	&.icon-right.loading-done {
+		padding-right: 20px + 20px;
+		pointer-events: none;
+
+		&.compact {
+			padding-right: 15px + 20px;
+		}
+	}
+}
+
+// when icon already exists
+.btn.spinner.has-icon {
+
+	// loading state
+	&:not(.icon-right).loading,
+	&:not(.icon-right).loading-done {
+		padding-left: 20px;
+
+		&.compact {
+			padding-left: 15px;
+		}
+	}
+
+	// loading state
+	&.icon-right.loading,
+	&.icon-right.loading-done {
+		padding-right: 20px;
+
+		&.compact {
+			padding-right: 15px;
+		}
+	}
+}
+
 
 /* button color sets */
 .btn {
