@@ -720,21 +720,21 @@ input[type="radio"].radiobox:disabled + label {
 	&.onoff-type {
 
 		label span:before {
-			background-color: fadeout(@green,30%);
+			background-color: fadeout(@okay-color,30%);
 		}
 		&:hover label span:before {
-			background-color: fadeout(@green,20%);
+			background-color: fadeout(@okay-color,20%);
 		}
 		label span:after {
 			background-color: #888;
 		}
 		input[type="checkbox"]:checked + label span:after {
-			background-color: @green-d2;
+			background-color: multiply(@okay-color,@d2-additive);
 		}
 		
 		// ticker color on dark
 		.dark & input[type="checkbox"]:checked + label span:after {
-			background-color: @green-l1;
+			background-color: screen(@okay-color,@l1-additive);
 		}
 	}
 
@@ -751,7 +751,7 @@ input[type="radio"].radiobox:disabled + label {
 		}
 		
 		input[type="checkbox"]:checked + label span:after {
-			background-color: saturate(@green-l1, 50%) !important;
+			background-color: saturate(screen(@okay-color,@l1-additive), 50%) !important;
 		}
 	}
 
