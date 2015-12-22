@@ -134,3 +134,37 @@
 	}
 }
 
+.col-5 {
+	width: 20%;
+
+	& when (@col-method = flex) {
+		max-width: (100% / 5);
+		flex-basis: (100% / 5);
+	}
+
+	&.colspan-2 {
+		width: 40%;
+
+		& when (@col-method = flex) {
+			max-width: (100% * (2/5));
+			flex-basis: (100% * (2/5));
+		}
+	}
+	&.colspan-3 {
+		width: 60%;
+
+		& when (@col-method = flex) {
+			max-width: (100% * (3/5));
+			flex-basis: (100% * (3/5));
+		}
+	}
+	&.colspan-4 {
+		width: 80%;
+
+		& when (@col-method = flex) {
+			max-width: (100% * (4/5));
+			flex-basis: (100% * (4/5));
+		}
+	}
+}
+
