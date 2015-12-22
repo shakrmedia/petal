@@ -173,7 +173,8 @@ textarea.input {
 	&.valid, 
 	&.warning,
 	&.error {
-		input.input {
+		input.input,
+		textarea.input {
 			padding-right: 30px;
 		}
 
@@ -208,11 +209,14 @@ textarea.input {
 	&.valid {
 
 		&.border-colors {
-			input.input {
+			input.input,
+			textarea.input {
 				border-color: screen(@okay-color,@l1-additive);
 			}
 			input.input:hover,
-			input.input:focus {
+			textarea.input:hover,
+			input.input:focus,
+			textarea.input:focus {
 				border-color: @okay-color;
 			}
 		}
@@ -231,11 +235,14 @@ textarea.input {
 	&.warning {
 
 		&.border-colors {
-			input.input {
+			input.input,
+			textarea.input {
 				border-color: screen(@warning-color,@l1-additive);
 			}
 			input.input:hover,
-			input.input:focus {
+			textarea.input:hover,
+			input.input:focus,
+			textarea.input:focus {
 				border-color: @warning-color;
 			}
 		}
@@ -253,11 +260,14 @@ textarea.input {
 	&.error {
 
 		&.border-colors {
-			input.input {
+			input.input,
+			textarea.input {
 				border-color: screen(@danger-color,@l1-additive);
 			}
 			input.input:hover,
-			input.input:focus {
+			textarea.input:hover,
+			input.input:focus,
+			textarea.input:focus {
 				border-color: @danger-color;
 			}
 		}
@@ -282,7 +292,8 @@ textarea.input {
 		position: relative;
 	}
 
-	input.input {
+	input.input,
+	textarea.input {
 		padding-right: 30px;
 	}
 
