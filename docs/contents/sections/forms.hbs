@@ -5,11 +5,12 @@
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 	<input class="input" type="text" placeholder="Name" />
 	<input class="input" type="email" placeholder="Email" />
-	<input class="input" type="text" placeholder="Disabled" disabled />
 	<button class="btn">Button</button>
 </div>
 
 <p>Add <code>.input</code> class to an <code>&lt;input&gt;</code> element to apply the design.</p>
+
+<p>Add the same <code>.input</code> class to a <code>&lt;textarea&gt;</code> for the same design.</p>
 
 <br>
 
@@ -103,6 +104,28 @@
 </div>
 
 <p>Append <code>.form-inline</code> class to a parent container to put <code>.form-groups</code> in one line. You need to apply paddings and margins manually.</p>
+
+<br>
+
+<h3>Special States</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="form-group">
+		<label for="demoFormStates1" class="form-label">Disabled</label>
+		<input class="input" type="text" id="demoFormStates1" placeholder="Disabled" disabled />
+	</div>
+	<div class="form-group">
+		<label for="demoFormStates2" class="form-label">Readonly</label>
+		<input class="input" type="text" id="demoFormStates2" placeholder="Readonly" readonly />
+	</div>
+	<div class="form-group">
+		<label for="demoFormStates3" class="form-label">Static Text</label>
+		<p class="form-placeholder" id="demoFormStates3">Placeholder Text</p>
+	</div>
+</div>
+
+<p>You can use <code>disabled</code> and <code>readonly</code> attributes on the <code>&lt;input&gt;</code>s.</p>
+<p>There is also a <code>.form-placeholder</code> class you can use on a non-input element to position a static text inside a form layout.</p>
 
 <br>
 

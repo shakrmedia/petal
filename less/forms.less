@@ -73,6 +73,14 @@ textarea.input {
 	min-width: 250px;
 }
 
+.form-placeholder {
+	padding: 10px 0;
+	margin: 5px 0;
+	font-size: @input-font-size;
+	line-height: 1em;
+	vertical-align: middle;
+}
+
 .dark {
 	input, textarea, label {
 		color: #fff;
@@ -94,6 +102,13 @@ textarea.input {
 
 		.dark &, &.ondark {
 			border-color: @gray-d1;
+		}
+	}
+
+	&[readonly] {
+		background: fadeout(@gray,90%);
+
+		.dark &, &.ondark {
 		}
 	}
 }
