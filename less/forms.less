@@ -179,6 +179,44 @@ textarea.input {
 
 }
 
+// horizontal form group
+.form-horizontal {
+	.form-group {
+		width: auto;
+		margin-left: -@col-padding;
+		margin-right: -@col-padding;
+
+		& when (@col-method = float) {
+			.cf; // clearfix
+		}
+		
+		& when (@col-method = flex) {
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch;
+			flex-wrap: wrap;
+		}
+
+		& > [class^="col-"],
+		& > [class*=" col-"] {
+			&:not(:first-of-type):not(:last-of-type) {
+				padding-left: @col-padding /2;
+				padding-right: @col-padding /2;
+			}
+			&:first-of-type {
+				padding-right: @col-padding /2;
+			}
+			&:last-of-type {
+				padding-left: @col-padding /2;
+			}
+		}
+
+		.form-label {
+			padding: 10px 0;
+			margin: 5px 0;
+		}
+	}
+}
 
 // input validation
 .form-group.validation {

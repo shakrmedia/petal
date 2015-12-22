@@ -113,6 +113,91 @@
 
 <br>
 
+<h3>Horizontal form group</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form class="form-horizontal">
+	<div class="form-group">
+		<div class="col-5">
+			<label class="form-label" for="demoFormHorizontalEmail">Email</label>
+		</div>
+		<div class="col-5 colspan-4">
+			<input class="input" id="demoFormHorizontalEmail" type="email" placeholder="Email" />
+			<p class="form-caption">Enter your email address.</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-5">
+			<label class="form-label" for="demoFormHorizontalPassword">Password</label>
+		</div>
+		<div class="col-5 colspan-4">
+			<input class="input" id="demoFormHorizontalPassword" type="password" placeholder="Password" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-5">
+			<label class="form-label" for="demoFormHorizontalComments">Comments</label>
+		</div>
+		<div class="col-5 colspan-4">		
+			<textarea class="input" name="demoFormHorizontalComments" id="demoFormHorizontalComments" cols="30" rows="10"></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-5">
+		</div>
+		<div class="col-5 colspan-4">		
+			<a class="btn">Submit</a>
+		</div>
+	</div>
+</form>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<form class="form-horizontal">
+	<div class="form-group">
+		<div class="col-5">
+			<label class="form-label" for="demoFormHorizontalEmail">Email</label>
+		</div>
+		<div class="col-5 colspan-4">
+			<input class="input" id="demoFormHorizontalEmail" type="email" placeholder="Email" />
+			<p class="form-caption">Enter your email address.</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-5">
+			<label class="form-label" for="demoFormHorizontalPassword">Password</label>
+		</div>
+		<div class="col-5 colspan-4">
+			<input class="input" id="demoFormHorizontalPassword" type="password" placeholder="Password" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-5">
+			<label class="form-label" for="demoFormHorizontalComments">Comments</label>
+		</div>
+		<div class="col-5 colspan-4">		
+			<textarea class="input" name="demoFormHorizontalComments" id="demoFormHorizontalComments" cols="30" rows="10"></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-5">
+		</div>
+		<div class="col-5 colspan-4">		
+			<a class="btn">Submit</a>
+		</div>
+	</div>
+</form>
+```
+{{/markdown}}
+</div>
+
+<p>Add a <code>.form-horizontal</code> class to the enclosing <code>&lt;form&gt;</code> or <code>&lt;div&gt;</code> for a row-and-column layout. Then insert <code>.col-x</code> columns as you would for an ordinary column layout. You don't need to add <code>.row</code>s here because the <code>.form-group</code>s inside a horizontal forms automatically gain the styles that the <code>.row</code>s have.</p>
+
+<p>One difference is that columns placed inside a horizontal form are automatically applied with the <code>.collapse-gutter</code> setting to save space inbetween.</p>
+
+<br>
+
 <h3>Special States</h3>
 
 <div class="demo-panel p-15" data-toggle-bg="toggle">
