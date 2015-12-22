@@ -68,6 +68,10 @@
 		}
 	}
 
+	&:focus {
+		box-shadow: 0 0px 1px rgba(0,0,0,.2);
+	}
+
 	&:active {
 		& when (@btn-disable-shadows = false) {
 			box-shadow: 0 0px 1px rgba(0,0,0,.2);
@@ -79,10 +83,6 @@
 	.active > &[data-toggle] {
 		z-index: @btn-active-z-index;
 		perspective: 500;
-		
-		& when (@btn-disable-shadows = false) {
-			box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
-		}
 	}
 
 	.caret {
@@ -119,11 +119,24 @@
 				color: @text-color;
 				background-color: @btn-color-l1;
 				border-color: @btn-color-d2;
+
+				&:hover {
+					color: @text-color;
+				}
+				&:focus {
+					color: @text-color;
+					border-color: @btn-color-d1;
+					box-shadow: 0 0px 2px rgba(0,0,0,.3);
+				}
 			}
 			
-			&:hover, &:focus {
+			&:hover {
 				background-color: @btn-color-l1;
 				border-color: @btn-color-d1;
+			}
+
+			&:focus {
+				border-color: @btn-color-d2;
 			}
 
 			&:active {
@@ -155,11 +168,20 @@
 					border-color: @btn-color-l2;
 					background-color: @btn-color;
 				}
+				&:focus {
+					color: @text-color;
+					border-color: @btn-color-d1;
+					box-shadow: 0 0px 2px rgba(0,0,0,.3);
+				}
 			}
 
-			&:hover, &:focus {
+			&:hover {
 				background-color: @btn-color-d1;
 				border-color: @btn-color-l1;
+			}
+
+			&:focus {
+				border-color: @btn-color-l2;
 			}
 
 			&:active {
@@ -191,10 +213,18 @@
 				border-top-color: @btn-color; 
 			}
 			
-			&:hover, &:focus {
+			&:hover {
 				color: @text-color;
 				border-color: @btn-color;
 				background-color: @btn-color;
+			}
+
+			&:focus {
+				color: @btn-color-d2;
+				border-color: @btn-color-d2;
+			}
+			&:focus:hover {
+				color: @text-color;
 			}
 
 			&:active {
@@ -202,12 +232,19 @@
 				background-color: @btn-color-d1;
 				border-color: @btn-color-d2;
 			}
-
+			
+			.dark &:focus {
+				color: @btn-color-l1;
+				border-color: @btn-color-l1;
+			}
+			.dark &:focus:hover {
+				color: @text-color;
+			}
 			.dark &:active {
 				border-color: @btn-color-l1;
 			}
 
-			&:hover, &:focus, &:active,
+			&:hover, &:active,
 			&.active, .active > &[data-toggle="dropdown"] {
 				.caret {
 					border-top-color: @text-color; 
