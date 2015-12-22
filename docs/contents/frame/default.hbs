@@ -227,6 +227,16 @@
 		$('#table-demo table').toggleClass(tableClass);
 	});
 
+	// Form fieldset disable toggle
+	$('#fieldset-disable-switch').change(function(e) {
+		if($(this).prop('checked')){
+			$('#fieldsetDisableDemo').prop('disabled', true);	
+		}
+		else {
+			$('#fieldsetDisableDemo').prop('disabled', false);	
+		}
+	});
+
 	// Form spinner toggle button
 	$('#input-spinner-demo-toggle').click(function(e) {
 		e.preventDefault();

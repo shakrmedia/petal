@@ -135,6 +135,7 @@
 
 		&.disabled,
 		&:disabled,
+		fieldset[disabled] &,
 		:disabled + label & {
 			color: @text-color !important;
 			background-color: @btn-color !important;
@@ -216,6 +217,7 @@
 
 		&.hollow.disabled,
 		&.hollow:disabled,
+		fieldset[disabled] &.hollow,
 		:disabled + label &.hollow {
 			color: @btn-color !important;
 			border-color: @btn-color !important;
@@ -271,6 +273,7 @@
 & when (@gray-disabled-btn = true) {
 	.btn.disabled, 
 	.btn:disabled,
+	fieldset[disabled] .btn,
 	:disabled + label .btn {
 		background-color: #666 !important;
 		color: #aaa !important;
@@ -284,7 +287,8 @@
 	}
 	.btn.hollow.disabled, 
 	.btn.hollow:disabled,
-	:disabled + label .btn {
+	fieldset[disabled] .btn.hollow,
+	:disabled + label .btn.hollow {
 		background: none !important;
 		color: #aaa !important;
 		border-color: #aaa !important;
@@ -299,6 +303,7 @@
 
 .btn.disabled,
 .btn:disabled,
+fieldset[disabled] .btn,
 :disabled + label .btn {
 	opacity: 0.5;
 	cursor: default !important;
@@ -433,7 +438,8 @@
 		z-index: @btn-active-z-index;
 	}
 
-	&.disabled {
+	&.disabled,
+	fieldset[disabled] & {
 		opacity: 0.5;
 		pointer-events: none;
 

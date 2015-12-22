@@ -102,7 +102,8 @@ textarea.input {
 		border-color: @danger-color;
 	}
 
-	&:disabled {
+	&:disabled,
+	fieldset:disabled & {
 		border-color: @gray-l1;
 		background: fadeout(@gray,80%);
 		opacity: 0.7;
@@ -623,7 +624,9 @@ input[type="radio"].radiobox:checked + label　{
 
 // disabled
 input[type="checkbox"].checkbox:disabled + label, 
-input[type="radio"].radiobox:disabled + label {
+input[type="radio"].radiobox:disabled + label,
+fieldset:disabled input[type="checkbox"].checkbox + label,
+fieldset:disabled input[type="radio"].radiobox + label {
 	&:before, &:hover:before {
 		background-color: fadeout(@gray,60%);
 		border-color: fadeout(@gray-l1,50%);
@@ -771,7 +774,9 @@ input[type="radio"].radiobox:disabled + label {
 		background-color: fadeout(@color,40%);
 	}
 	&:hover input[type="checkbox"]:not(:disabled) + label span:before, 
-	&:hover input[type="checkbox"]:not(:disabled) + label span:after {
+	&:hover input[type="checkbox"]:not(:disabled) + label span:after,
+	fieldset:not([disabled]) &:hover input[type="checkbox"] + label span:before, 
+	fieldset:not([disabled]) &:hover input[type="checkbox"] + label span:after {
 		transform: translate(-@chk-switch-size+2px);
 	}
 
@@ -827,13 +832,15 @@ input[type="radio"].radiobox:disabled + label {
 	}
 
 	// disabled
-	&.disabled label {
+	&.disabled label,
+	fieldset[disabled] & label {
 		&, &:hover, &:active {
 			background-color: fadeout(@gray,80%);
 			border-color: fadeout(@gray-l1,50%);
 		}
 	}
-	input[type="checkbox"]:disabled + label span {
+	input[type="checkbox"]:disabled + label span,
+	fieldset[disabled] input[type="checkbox"] + label span {
 		opacity: 0.5;
 
 		&:before {

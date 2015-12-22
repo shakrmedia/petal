@@ -198,28 +198,6 @@
 
 <br>
 
-<h3>Special States</h3>
-
-<div class="demo-panel p-15" data-toggle-bg="toggle">
-	<div class="form-group">
-		<label for="demoFormStates1" class="form-label">Disabled</label>
-		<input class="input" type="text" id="demoFormStates1" placeholder="Disabled" disabled />
-	</div>
-	<div class="form-group">
-		<label for="demoFormStates2" class="form-label">Readonly</label>
-		<input class="input" type="text" id="demoFormStates2" placeholder="Readonly" readonly />
-	</div>
-	<div class="form-group">
-		<label for="demoFormStates3" class="form-label">Static Text</label>
-		<p class="form-placeholder" id="demoFormStates3">Placeholder Text</p>
-	</div>
-</div>
-
-<p>You can use <code>disabled</code> and <code>readonly</code> attributes on the <code>&lt;input&gt;</code>s.</p>
-<p>There is also a <code>.form-placeholder</code> class you can use on a non-input element to position a static text inside a form layout.</p>
-
-<br>
-
 <h3>Input groups</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 <form>
@@ -289,6 +267,94 @@
 <p>If you want spacing inbetween the text input and the button, add <code>.spaced</code> class in the addon span.</p>
 
 <br>
+
+<h3>Special States</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="form-group">
+		<label for="demoFormStates1" class="form-label">Disabled</label>
+		<input class="input" type="text" id="demoFormStates1" placeholder="Disabled" disabled />
+	</div>
+	<div class="form-group">
+		<label for="demoFormStates2" class="form-label">Readonly</label>
+		<input class="input" type="text" id="demoFormStates2" placeholder="Readonly" readonly />
+	</div>
+	<div class="form-group">
+		<label for="demoFormStates3" class="form-label">Static Text</label>
+		<p class="form-placeholder" id="demoFormStates3">Placeholder Text</p>
+	</div>
+</div>
+
+<p>You can use <code>disabled</code> and <code>readonly</code> attributes on the <code>&lt;input&gt;</code>s.</p>
+<p>There is also a <code>.form-placeholder</code> class you can use on a non-input element to position a static text inside a form layout.</p>
+
+<br>
+
+
+
+<h3>Disabling whole form groups</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form>
+	<fieldset id="fieldsetDisableDemo" disabled>
+		<div class="form-group">
+			<label class="form-label" for="fieldsetDisableDemoFormEmail">Email</label>
+			<input class="input" id="fieldsetDisableDemoFormEmail" type="email" placeholder="Email" />
+			<p class="form-caption">Enter your email address.</p>
+		</div>
+		<div class="form-group">
+			<label class="form-label" for="fieldsetDisableDemoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
+			<input class="input" id="fieldsetDisableDemoFormPassword" type="password" placeholder="Password" />
+		</div>
+		<div class="form-group">
+			<label class="form-label" for="fieldsetDisableDemoFormComments">Comments</label>
+			<textarea class="input" name="fieldsetDisableDemoFormComments" id="fieldsetDisableDemoFormComments" cols="30" rows="10"></textarea>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="form-group">
+					<input type="radio" name="fieldsetDisableDemoFormRadio" id="fieldsetDisableDemoFormRadio1" class="radiobox" checked>
+					<label for="fieldsetDisableDemoFormRadio1">Radio Option 1</label>
+					<input type="radio" name="fieldsetDisableDemoFormRadio" id="fieldsetDisableDemoFormRadio2" class="radiobox">
+					<label for="fieldsetDisableDemoFormRadio2">Radio Option 2</label>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="form-group">
+					<input type="checkbox" id="fieldsetDisableDemoFormCheckbox" class="checkbox">
+					<label for="fieldsetDisableDemoFormCheckbox">Checkbox</label>
+
+					<span class="chk-switch-label">Switch</span>
+					<div class="chk-switch">
+						<input type="checkbox" class="chk-switch" id="fieldsetDisableDemoFormSwitch" checked>
+						<label for="fieldsetDisableDemoFormSwitch"><span></span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<a class="btn green">Submit</a>
+		</div>
+	</fieldset>
+</form>
+</div>
+<div class="demo-panel form-group gray p-10">
+	<span class="chk-switch-label">Toggle Fieldset Disable</span>
+	<div class="chk-switch">
+		<input type="checkbox" class="chk-switch" id="fieldset-disable-switch" data-toggle-class="fieldset-disable" checked>
+		<label for="fieldset-disable-switch"><span></span></label>
+	</div>
+</div>
+
+<p>Put form-groups and elements inside <code>&lt;fieldset&gt;</code> with a <code>disabled</code> attribute to disable the whole block.</p>
+
+<p>This will apply disabled styles to Input, Textarea, Buttons, Checkboxes and Check Switches. Buttons with <code>.btn</code> classes on an <code>a</code> element instead of <code>button</code> will be disabled as well, but since it only prevents click through the <code>pointer-events: none</code> CSS property, for safety use Javascript to completely disable interaction.</p>
+
+<br>
+
+
+
+
 
 <h3>Form Validation</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
