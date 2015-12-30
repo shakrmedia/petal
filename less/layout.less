@@ -46,10 +46,10 @@
 				padding-left: @col-padding /2;
 				padding-right: @col-padding /2;
 			}
-			&:first-of-type {
+			&:first-of-type:not(:last-of-type) {
 				padding-right: @col-padding /2;
 			}
-			&:last-of-type {
+			&:last-of-type:not(:first-of-type) {
 				padding-left: @col-padding /2;
 			}
 		}
