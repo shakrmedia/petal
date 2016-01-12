@@ -105,7 +105,7 @@ textarea.input {
 	&:disabled,
 	fieldset:disabled & {
 		border-color: @gray-l1;
-		background: fadeout(@gray,80%);
+		background-color: fadeout(@gray,80%);
 		opacity: 0.7;
 
 		.dark &, &.ondark {
@@ -114,7 +114,7 @@ textarea.input {
 	}
 
 	&[readonly] {
-		background: fadeout(@gray,90%);
+		background-color: fadeout(@gray,90%);
 
 		.dark &, &.ondark {
 		}
@@ -416,7 +416,7 @@ textarea.input {
 
 	.input-addon {
 		padding: (10px-@input-border-width) 10px;
-		background: fadeout(@gray-l2,50%);
+		background-color: fadeout(@gray-l2,50%);
 		border: @input-border-width solid @gray-l1;
 		font-size: @input-font-size;
 		border-right-width: 0;
@@ -910,7 +910,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 	.selecter-selected {
 		position: relative;
 
-		background: #fff;
+		background-color: #fff;
 		border: @selectbox-border-width solid #aaa;
 		color: inherit;
 		cursor: pointer;
@@ -998,7 +998,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		.selecter-item {
 			width: 100%;
 
-			background: #fff;
+			background-color: #fff;
 			color: #333;
 			cursor: pointer;
 			display: block;
@@ -1025,11 +1025,11 @@ fieldset:disabled input[type="radio"].radiobox + label {
 
 			&.selected {
 				font-weight: bold;
-				background: fadeout(@color-l1,80%);
+				background-color: fadeout(@color-l1,80%);
 				.colorset(@selectbox-color);
 
 				&:hover {
-					background: fadeout(@color-l1,60%);
+					background-color: fadeout(@color-l1,60%);
 				}
 			}
 
@@ -1133,7 +1133,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 
 		.selecter-selected,
 		.selecter-selected:hover {
-			background: #fff;
+			background-color: #fff;
 			border-color: #ccc;
 			color: #ccc;
 			cursor: default;
@@ -1145,7 +1145,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		}
 
 		.selecter-options {
-			background: #fff;
+			background-color: #fff;
 			border-color: #ccc;
 		}
 
@@ -1158,7 +1158,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 
 		.selecter-item.selected,
 		.selecter-item.selected:hover {
-			background: #fff;
+			background-color: #fff;
 		}
 
 		.selecter-item,
