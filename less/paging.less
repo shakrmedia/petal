@@ -43,7 +43,7 @@
 			vertical-align: middle;
 			.drop-shadow-lighter;
 
-			transition-property: background-color, color, transform;
+			transition-property: background-color, color, transform, box-shadow;
 			transition-duration: 0.2s;
 
 			&:hover {
@@ -139,6 +139,33 @@
 		vertical-align: middle;
 	}
 
+	// dark variants
+	&.ondark, .dark & {
+		.pg-block {
+			a {
+				color: #fff;
+				background-color: #444;
+
+				&:hover {
+					color: @primary-accent-color;
+				}
+			}
+
+			&.active a {
+				color: #fff;
+				background-color: @color-l1;
+
+				.colorset(@primary-accent-color);
+			}
+
+			&.disabled {
+				opacity: 0.3;
+			}
+		}
+	}
+	
+
+	// inline
 	&.inline {
 		.pg-block{
 
@@ -170,5 +197,6 @@
 		}
 	}
 
+	
 
 }
