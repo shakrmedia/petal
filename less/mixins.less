@@ -14,15 +14,19 @@
 
 /* drop shadow mixin */
 .drop-shadow {
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	box-shadow+: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .drop-shadow-light {
-	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	box-shadow+: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .drop-shadow-lighter {
-	box-shadow: 0 1px 4px rgba(0,0,0,.05);
+	box-shadow+: 0 1px 4px rgba(0,0,0,.05);
+}
+
+.drop-shadow-deep{
+	box-shadow+: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 
