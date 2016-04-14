@@ -870,6 +870,13 @@ fieldset:disabled input[type="radio"].radiobox + label {
 // uses Selecter (https://github.com/Formstone/Selecter)
 
 .selecter {
+	
+	// generate shades
+	@selectbox-color-l1: screen(@selectbox-color,@l1-additive);
+	@selectbox-color-l2: screen(@selectbox-color,@l2-additive);
+	@selectbox-color-d1: multiply(@selectbox-color,@d1-additive);
+	@selectbox-color-d2: multiply(@selectbox-color,@d2-additive);
+
 	position: relative;
 	display: block;
 	margin: 5px 0;
@@ -911,7 +918,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		position: relative;
 
 		background-color: #fff;
-		border: @selectbox-border-width solid #aaa;
+		border: @selectbox-border-width solid @gray-l1;
 		color: inherit;
 		cursor: pointer;
 		display: block;
@@ -923,7 +930,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		text-overflow: clip;
 		z-index: @selectbox-selected-z-index;
 
-		transition: border-color .15s, background-color .15s, box-shadow .15s;
+		transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
 		
 
 		// caret
@@ -947,15 +954,6 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			transition: 0.2s border-color, 0.3s transform;
 		}
 
-		&:hover {
-			border-color: @selectbox-color;
-			
-			&:after {
-				border-top-color: @selectbox-color;
-			}
-		}
-
-
 	}
 
 	// selectbox options
@@ -967,15 +965,19 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		top: 100%;
 		left: 0;
 
-		border: @selectbox-border-width solid @gray;
-		border-width: 0 @selectbox-border-width @selectbox-border-width;
+		border: none;
 		background-color: #fff;
 		display: none;
-		margin: 0;
 		overflow: auto;
 		overflow-x: hidden;
+		margin: 5px 0;
 		padding: 0;
 		z-index: @selectbox-options-z-index;
+
+		.drop-shadow-deep;
+		box-shadow+: 0 0 1px 0 rgba(0,0,0,0.1) inset; 
+
+		transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
 
 
 		// optgroup header
@@ -998,8 +1000,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		.selecter-item {
 			width: 100%;
 
-			background-color: #fff;
-			color: #333;
+			background-color: transparent;
 			cursor: pointer;
 			display: block;
 			font-size: 0.9em;
@@ -1024,12 +1025,28 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			}
 
 			&.selected {
+				position: relative;
 				font-weight: bold;
-				background-color: fadeout(@color-l1,80%);
-				.colorset(@selectbox-color);
+				padding: 8px 40px 8px 20px;
+				background-color: @selectbox-color;
+				color: #fff;
 
 				&:hover {
-					background-color: fadeout(@color-l1,60%);
+					background-color: fadeout(@selectbox-color,20%);
+				}
+
+				&:after {
+					content: "";
+					position: absolute;
+					top: 8px;
+					right: 20px;
+					display: inline-block;
+					width: 16px;
+					height: 16px;
+					
+					@checkmark-color: #fff;
+					@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
+					background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 				}
 			}
 
@@ -1042,10 +1059,28 @@ fieldset:disabled input[type="radio"].radiobox + label {
 
 	}
 
+	// hover
+	&:hover {
+		.selecter-selected {
+			background-color: #fafafa;
+			border-color: darken(@gray-l1,10%);
+
+			& when (@selectbox-disable-shadows = false) {
+				box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
+			}
+			
+			&:after {
+				border-top-color: @gray;
+			}
+		}
+	}
+
 	
 	// focused state
 	&.focus, &:focus { 
+
 		.selecter-selected {
+			background-color: #fafafa;
 			border-color: @selectbox-color;
 			.drop-shadow-light;
 
@@ -1054,11 +1089,6 @@ fieldset:disabled input[type="radio"].radiobox + label {
 				border-top-color: @selectbox-color;
 			}
 		}
-
-		.selecter-options {
-			border-color: @selectbox-color;
-			.drop-shadow;
-		}
 	}
 
 	// open state
@@ -1066,13 +1096,18 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		z-index: @selectbox-container-open-z-index;
 
 		.selecter-selected {
+			background-color: @selectbox-color;
+			border-color: @selectbox-color-d1;
+			color: #fff;
 			
 			// flip caret
 			&:after {
 				transform: rotateX(180deg);
+				border-top-color: #fff;
 			}
 
 		}
+
 	}
 
 
@@ -1083,6 +1118,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			border-width: @selectbox-border-width;
 			border-color: @selectbox-color;
 			top: 0;
+			margin: 0;
 		}
 
 	}
@@ -1109,6 +1145,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			.selecter-options {
 				top: auto;
 				bottom: 0;
+				border-width: @selectbox-border-width;
 			}
 
 		}
@@ -1119,24 +1156,42 @@ fieldset:disabled input[type="radio"].radiobox + label {
 	&.multiple {
 		.selecter-options {
 			width: 100%;
-
 			position: static;
-
-			border-width: @selectbox-border-width;
+			border: @selectbox-border-width solid @gray-l1;
 			display: block;
+			box-shadow: none;
+		}
+
+		&:hover {
+			.selecter-options {
+				border-color: darken(@gray-l1,10%);
+			}
+			& when (@selectbox-disable-shadows = false) {
+				box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
+			}
+		}
+
+		&.focus, &:focus {
+			.selecter-options {
+				border-color: @selectbox-color;
+				.drop-shadow;
+			}
 		}
 	}
 
 
 	// disabled
 	&.disabled {
+		opacity: 0.7;
 
 		.selecter-selected,
 		.selecter-selected:hover {
 			background-color: #fff;
-			border-color: #ccc;
-			color: #ccc;
+			color: @gray;
+			border-color: @gray-l1 !important;
+			pointer-events: none;
 			cursor: default;
+			box-shadow: none;
 		}
 		
 		// caret
@@ -1145,26 +1200,60 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		}
 
 		.selecter-options {
-			background-color: #fff;
-			border-color: #ccc;
+			border-color: @gray-l1 !important;
+			pointer-events: none;
+			box-shadow: none !important;
 		}
 
 		.selecter-group,
 		.selecter-item {
 			border-color: #ccc;
-			color: #ccc;
 			cursor: default;
-		}
-
-		.selecter-item.selected,
-		.selecter-item.selected:hover {
-			background-color: #fff;
 		}
 
 		.selecter-item,
 		.selecter-item:hover {
 			color: #ccc;
-			background-color: #fff;
+		}
+
+		&.multiple.focus,
+		&.multiple:focus {
+			box-shadow: none !important;
+		}
+
+	}
+
+	// dark
+	.dark &, &.ondark {
+
+		.selecter-selected {
+			border-color: @gray;
+			background-color: fadeout(@black,60%);
+		}
+			
+		&:hover .selecter-selected {
+			border-color: @gray-l1;
+		}
+		&:focus .selecter-selected {
+			border-color: @primary-accent-color;
+			background-color: fadeout(@black,30%);
+		}
+		
+
+		.selecter-options {
+			background-color: #000;
+			.drop-shadow-deep;
+			box-shadow+: 0 0 1px 0 rgba(255,255,255,0.1) inset; 
+		}
+
+		.selecter-item {
+			&:hover {
+				background-color: rgba(255,255,255,.2);
+			}
+		}
+
+		&.disabled {
+
 		}
 	}
 

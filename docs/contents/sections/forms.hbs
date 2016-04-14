@@ -749,7 +749,7 @@
 
 
 <h3 id="section-forms-selectboxes">Selectboxes</h3>
-<div class="demo-panel p-15">
+<div class="demo-panel p-15" data-toggle-bg="toggle">
 <form>
 <div class="row">
 
@@ -799,7 +799,7 @@
 		<label class="form-label" for="demoSelectbox3">Cover style</label>
 		<select name="selectbox3" id="demoSelectbox3" class="selectbox cover">
 			<option>Lorem</option>
-			<option>ipsum</option>
+			<option selected>ipsum</option>
 			<option>dolor</option>
 			<option>sit</option>
 			<option>amet</option>
@@ -813,6 +813,16 @@
 			<option>dolor</option>
 			<option>sit</option>
 			<option>amet</option>
+			<option selected>consectetur</option>
+		</select>
+
+		<label class="form-label" for="demoSelectbox-dropup">Menu from Bottom (forced)</label>
+		<select name="selectbox-dropup" id="demoSelectbox-dropup" class="selectbox bottom">
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option selected>dolor</option>
+			<option>sit</option>
+			<option>amet</option>
 			<option>consectetur</option>
 		</select>
 	</div>
@@ -821,11 +831,11 @@
 		<select name="selectbox4" id="demoSelectbox4" class="selectbox" multiple>
 			<optgroup label="Group 1">
 				<option>Lorem</option>
-				<option>ipsum</option>
+				<option selected>ipsum</option>
 			</optgroup>
 			<optgroup label="Group 2">
-				<option>dolor</option>
-				<option>sit</option>
+				<option selected>dolor</option>
+				<option selected>sit</option>
 				<option>amet</option>
 				<option>consectetur</option>
 			</optgroup>
@@ -834,6 +844,20 @@
 
 </div>
 </form>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<select name="selectbox3" id="demoSelectbox3" class="selectbox cover bottom" multiple disabled>
+	<option>Lorem</option>
+	<option>ipsum</option>
+	<option>dolor</option>
+	<option>sit</option>
+	<option>amet</option>
+	<option>consectetur</option>
+</select>
+```
+{{/markdown}}
 </div>
 
 <p>Selectboxes uses <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal-functions.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
