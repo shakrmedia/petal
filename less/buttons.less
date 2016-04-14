@@ -144,6 +144,10 @@
 				border-color: @btn-color-d2;
 			}
 
+			.caret {
+				border-top-color: @text-color;
+			}
+
 		}
 
 		&.disabled,
@@ -275,11 +279,18 @@
 		& + ul.dropdown-menu,
 		& + ul.dropdown-menu ul.dropdown-menu {
 			background: @btn-color-d1;
+			color: @text-color;
+
+			li.divider {
+				@dropdown-divider-color: contrast(@@base-color, fadeout(#000,10%), #fff, 20%);
+
+				border-bottom-color: fadeout(@dropdown-divider-color,80%);
+			}
 		}
 	}
 	
 	// define text color
-	@text-color: contrast(@@base-color, #000, #fff, 80%);
+	@text-color: contrast(@@base-color, #333, #fff, 80%);
 
 	// when option is provided
 	& when (@option = 'custom') {
