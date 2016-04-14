@@ -30,6 +30,7 @@
 	var options = {
 		callback: $.noop,
 		cover: false,
+		bottom: false,
 		customClass: "",
 		label: "",
 		external: false,
@@ -493,15 +494,15 @@
 
 		var data = e.data;
 
-		// Make sure it's not alerady open
+		// Make sure it's not already open
 		if (!data.$selecter.hasClass("open")) {
 			var offset = data.$selecter.offset(),
-				bodyHeight = $body.outerHeight(),
+				//bodyHeight = $body.outerHeight(),
 				optionsHeight = data.$itemsWrapper.outerHeight(true),
 				selectedOffset = (data.index >= 0) ? data.$items.eq(data.index).position() : { left: 0, top: 0 };
 
 			// Calculate bottom of document
-			if (offset.top + optionsHeight > bodyHeight) {
+			if (offset.top + optionsHeight > window.innerHeight + Math.max(window.scrollY, document.documentElement.scrollTop) || data.bottom) {
 				data.$selecter.addClass("bottom");
 			}
 
@@ -546,8 +547,12 @@
 		// Make sure it's actually open
 		if (data.$selecter.hasClass("open")) {
 			data.$itemsWrapper.hide();
-			data.$selecter.removeClass("open bottom")
+			data.$selecter.removeClass("open")
 						  .addClass("closed");
+
+			if(!data.bottom) {
+				data.$selecter.removeClass('bottom');
+			}
 
 			$body.off(".selecter-" + data.guid);
 		}

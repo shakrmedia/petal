@@ -267,9 +267,12 @@
 	    hljs.highlightBlock(block);
 	  });
 
-	  $(".demo-panel select").not('.cover').selecter();
+	  $(".demo-panel select").not('.cover').not('.bottom').selecter();
 	  $(".demo-panel select.cover").selecter({
 	  	cover: true
+	  });
+	  $(".demo-panel select.bottom").selecter({
+	  	bottom: true
 	  });
 	});
 
