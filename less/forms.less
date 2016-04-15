@@ -1006,7 +1006,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			font-size: 0.9em;
 			margin: 0 0 1px 0;
 			overflow: hidden;
-			padding: 8px 20px;
+			padding: 8px 22px;
 			text-decoration: none;
 			text-overflow: ellipsis;
 
@@ -1024,15 +1024,19 @@ fieldset:disabled input[type="radio"].radiobox + label {
 				background-color: rgba(0,0,0,.05);
 			}
 
+			&:active {
+				background-color: @selectbox-color;
+				color: #fff;
+			}
+
 			&.selected {
 				position: relative;
 				font-weight: bold;
-				padding: 8px 40px 8px 20px;
-				background-color: @selectbox-color;
-				color: #fff;
+				padding-right: 42px;
 
 				&:hover {
 					background-color: fadeout(@selectbox-color,20%);
+					color: #fff;
 				}
 
 				&:after {
@@ -1044,7 +1048,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 					width: 16px;
 					height: 16px;
 					
-					@checkmark-color: #fff;
+					@checkmark-color: @selectbox-color;
 					@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
 					background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 				}
@@ -1054,6 +1058,24 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			&.disabled:hover {
 				color: #aaa;
 				cursor: not-allowed;
+			}
+		}
+
+		&:not(:active) .selecter-item {
+
+			&.selected {
+				background-color: @selectbox-color;
+				color: #fff;
+
+				&:hover {
+					background-color: fadeout(@selectbox-color,20%);
+				}
+
+				&:after {
+					@checkmark-color: #fff;
+					@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
+					background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
+				}
 			}
 		}
 
