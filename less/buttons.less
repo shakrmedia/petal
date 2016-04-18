@@ -12,7 +12,6 @@
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
 	border-top: 4px solid #fff;
-	line-height: 1em;
 
 	& when (@btn-disable-transition = false) {
 		transition: 0.2s border-color, 0.3s transform;
@@ -27,8 +26,7 @@
 	height: 0;
 	border-top: 4px solid transparent;
 	border-bottom: 4px solid transparent;
-	border-left: 4px solid #fff;
-	line-height: 1em;	
+	border-left: 4px solid #fff;	
 }
 
 /* default button */
@@ -46,7 +44,7 @@
 	text-transform: uppercase;
 	white-space: nowrap;
 	letter-spacing: 2px;
-	line-height: (@input-font-size / @btn-font-size); // match line height of input
+	line-height: 1.2;
 	vertical-align: middle;
 
 	color: #fff;
@@ -98,7 +96,7 @@
 		padding-bottom: 5px;
 		padding-left: 15px;
 		padding-right: 15px;
-		line-height: 1em;
+		line-height: 1;
 	}
 }
 
