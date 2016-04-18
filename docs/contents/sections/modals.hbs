@@ -1,0 +1,111 @@
+<h2 id="section-modals">Modals</h2>
+			
+<h4>Basic Modal</h4>
+<div class="demo-panel modal-demo" data-toggle-bg="toggle">
+	<div class="modal">
+		<span class="close-btn"></span>
+
+		<div class="modal-header">
+			<h3 class="modal-header-text">Header text</h3>
+			<p class="sub">Header caption</p>
+		</div>
+		<div class="modal-body">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+			Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. 
+			Necessitatibus, est dicta ea totam neque!
+			</p>
+		</div>
+		<div class="modal-footer btn-row">
+			<button class="btn hollow gray">Cancel</button>
+			<button class="btn green align-right">Confirm</button>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="modal">
+	<span class="close-btn"></span>
+
+	<div class="modal-header">
+		<h3 class="modal-header-text">Header text</h3>
+		<p class="sub">Header caption</p>
+	</div>
+	<div class="modal-body">
+		<p>...</p>
+	</div>
+	<div class="modal-footer btn-row">
+		<button class="btn hollow gray">Cancel</button>
+		<button class="btn green align-right">Confirm</button>
+	</div>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>Petal provides preset layout and style for a generic modal. The basic modal only includes code for basic styling of the modal so you can freely set the position of the modal.</p>
+
+<p>Basic modal has only a small minimum width and height set, so it will stretch according to your content inside or you will have to manually set size.</p>
+
+<br>
+
+<h4>Full-page Modal</h4>
+<div class="demo-panel">
+	<div class="p-20">
+		<button class="btn" id="demo-fp-modal-open-btn">Open Demo Modal</button>
+	</div>
+
+	<div class="fullpage-modal-container" id="demo-fp-modal">
+		<div class="overlay"></div>
+		<div class="fullpage-modal-inner-wrap">
+			<div class="fullpage-modal">
+				<span class="close-btn" id="demo-fp-modal-close-btn"></span>
+
+				<div class="modal-header">
+					<h3 class="modal-header-text">Header text</h3>
+					<p class="sub">Header caption</p>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. 
+					Necessitatibus, est dicta ea totam neque!
+					</p>
+				</div>
+				<div class="modal-footer btn-row">
+					<button class="btn hollow gray">Cancel</button>
+					<button class="btn green align-right">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="fullpage-modal-container">
+	<div class="overlay"></div>
+	<div class="fullpage-modal-inner-wrap">
+		<div class="fullpage-modal">
+			<span class="close-btn"></span>
+
+			<div class="modal-header">
+				<h3 class="modal-header-text">Header text</h3>
+				<p class="sub">Header caption</p>
+			</div>
+			<div class="modal-body">
+				<p>...</p>
+			</div>
+			<div class="modal-footer btn-row">
+				<button class="btn hollow gray">Cancel</button>
+				<button class="btn green align-right">Confirm</button>
+			</div>
+		</div>
+	</div>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>Full-page modals on the other hand are made for rather larger-sized modals that will fill the center of the page. Petal provides preset layout classes to position the modal in center of the page using nested table properties to ensure modal will be positioned consistently regardless of inner content's size.</p>
+
+<br>

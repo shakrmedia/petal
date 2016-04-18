@@ -86,6 +86,10 @@
 		</section>
 
 		<section>
+			{{> modals }}
+		</section>
+
+		<section>
 			{{> petalicon }}
 		</section>
 	</div>
@@ -101,6 +105,7 @@
 				<li><a href="#section-tables">Tables</a></li>
 				<li><a href="#section-paging">Paging</a></li>
 				<li><a href="#section-panels">Panels</a></li>
+				<li><a href="#section-modals">Modals</a></li>
 				<li><a href="#section-petalicon">Petalicons</a></li>
 			</ul>
 
@@ -258,6 +263,15 @@
 			}, 3000);
 
 		}, 3000);
+	});
+
+	// Demo Modal Toggle
+	$('#demo-fp-modal-open-btn').click(function(e) {
+		$('#demo-fp-modal').addClass('visible');
+	});
+	
+	$('#demo-fp-modal-close-btn').click(function(e) {
+		$('#demo-fp-modal').removeClass('visible');
 	});
 
 
