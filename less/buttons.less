@@ -35,7 +35,7 @@
 
 	display: inline-block;
 	margin: 0;
-	padding: 8px 20px;
+	padding: (10px - @btn-border-width) 20px;
 
 	font-size: @btn-font-size; //0.8em
 	font-weight: @btn-font-weight;
@@ -43,15 +43,15 @@
 	text-decoration: none !important;
 	text-transform: uppercase;
 	white-space: nowrap;
-	letter-spacing: 2px;
-	line-height: 1.2;
+	letter-spacing: @btn-letter-spacing;
+	line-height: @btn-line-height;
 	vertical-align: middle;
 
 	color: #fff;
 	background: none;
 	background-color: @primary-accent-color;
 	cursor: pointer;
-	border: 2px solid transparent;
+	border: @btn-border-width solid transparent;
 	border-radius: 0;
 	outline: none !important;
 	
@@ -388,8 +388,8 @@ fieldset[disabled] .btn,
 			display: block;
 			position: absolute;
 			width: 2px;
-			margin: -2px 0;
-			left: -2px;
+			margin: -@btn-border-width 0;
+			left: -@btn-border-width;
 			top: 0;
 			bottom: 0;
 			background: rgba(0,0,0,0.1);
@@ -402,8 +402,8 @@ fieldset[disabled] .btn,
 		}
 
 		&:active {
-			border-left-width: 2px;
-			margin-left: -2px;
+			border-left-width: @btn-border-width;
+			margin-left: -@btn-border-width;
 			transition-duration: 0s;
 		}
 	}
@@ -423,8 +423,8 @@ fieldset[disabled] .btn,
 
 	// active override 
 	&.active .btn + .btn.dropdown {
-		border-left-width: 2px;
-		margin-left: -2px;
+		border-left-width: @btn-border-width;
+		margin-left: -@btn-border-width;
 	}
 	
 	
@@ -454,7 +454,7 @@ fieldset[disabled] .btn,
 	}
 
 	.btn + .btn {
-		margin-left: -2px;
+		margin-left: -@btn-border-width;
 	}
 	.btn {
 		z-index: @btn-normal-z-index;
@@ -474,7 +474,7 @@ fieldset[disabled] .btn,
 	}
 
 	label ~ label .btn {
-		margin-left: -2px;
+		margin-left: -@btn-border-width;
 	}
 
 	label .btn {
