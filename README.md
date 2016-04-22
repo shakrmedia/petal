@@ -43,6 +43,9 @@ Alternatively, you can also clone the whole repository and use [grunt](http://gr
 To customize options, change the values of variables in `petal.less` before compiling.
 
 
+## Changelog
+Please view [Releases](https://github.com/shakrmedia/petal/releases) for the changelog.
+
 
 ## External projects included in Petal
 - [normalize.css](https://github.com/necolas/normalize.css) by Nicolas Gallagher & Jonathan Neal : MIT License
