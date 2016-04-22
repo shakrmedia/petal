@@ -578,7 +578,7 @@ input[type="radio"].radiobox + label　{
 		padding: 0;
 		background-clip: content-box;
 
-		& when (@checkbox-disable-animation = false) {
+		& when (@checkbox-disable-transition = false) {
 			transition: width 0.1s, transform 0.1s;
 		}
 	}
@@ -739,7 +739,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			background-clip: content-box;
 			transform: translate(-@chk-switch-size);
 
-			& when (@chk-switch-disable-animation = false) {
+			& when (@chk-switch-disable-transition = false) {
 				transition: transform 0.1s, background-color 0.1s;
 			}
 		}
@@ -755,7 +755,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			background-color: @color-d1;
 			transform: translate(-@chk-switch-size);
 
-			& when (@chk-switch-disable-animation = false) {
+			& when (@chk-switch-disable-transition = false) {
 				transition: transform 0.1s;
 			}
 		}
