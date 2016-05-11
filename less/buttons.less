@@ -280,7 +280,7 @@
 			color: @text-color;
 
 			li.divider {
-				@dropdown-divider-color: contrast(@@base-color, fadeout(#000,10%), #fff, 20%);
+				@dropdown-divider-color: contrast(darken(@@base-color,(luma(@@base-color)/4)), fadeout(#000,10%), #fff,20%);
 
 				border-bottom-color: fadeout(@dropdown-divider-color,80%);
 			}
@@ -288,7 +288,7 @@
 	}
 	
 	// define text color
-	@text-color: contrast(@@base-color, #333, #fff, 80%);
+	@text-color: contrast(darken(@@base-color,(luma(@@base-color)/2.3)),#333,#fff,24%);
 
 	// when option is provided
 	& when (@option = 'custom') {
