@@ -3,44 +3,20 @@ Petal [![Build Status](https://magnum.travis-ci.com/shakrmedia/petal.svg?token=o
 
 <img align="right" width="100" height="100" src="http://shakrmedia.github.io/petal/logo.svg">
 
-Petal is a modern, light CSS UI framework developed at [Shakr](http://shakr.com). 
+Petal is a modern, light CSS UI framework developed at [Shakr](http://shakr.com).
 
 Petal aims to provide an ample set of consistently designed UI components you can easily utilize in your web projects.
 
 Petal is fully coded on LESS from scratch.
 
 
-## Setting up Petal
-### The Quick Way
-Include the `link` code inside the `<head>` of your HTML file.
-```HTML
-<link rel="stylesheet" type="text/css" href="https://shakr-petal.s3-ap-northeast-1.amazonaws.com/edge/petal.min.css">
-```
-
-Refer to the documentation page on how to use the available components and style classes.
+## Setting up Petal in your project
+Please refer to the [documentation](http://shakrmedia.github.io/petal/) for detailed ways to use Petal to your project.
 
 
-## CDN links
-In case you want an uncompressed version of the code, we also have that.
-
-#### Uncompressed 
-```
-https://shakr-petal.s3-ap-northeast-1.amazonaws.com/edge/petal.css
-```
-
-#### Minified 
-```
-https://shakr-petal.s3-ap-northeast-1.amazonaws.com/edge/petal.min.css
-```
-
-### The Custom Way
-You can customize some settings like colors and font options to fit the look of your project design and manually compile your own build of Petal.
-
-If you already have a LESS compiler set up in your project, just copy the files in the `less` folder from the [Petal repository](https://github.com/ShakrMedia/petal) to your local project folder. It's recommended you put the Petal files in a separate directory (presumably, named "Petal") to avoid confusion.
-
-Alternatively, you can also clone the whole repository and use [grunt](http://gruntjs.com/) to compile Petal, then add the compiled CSS file to your project.
-
-To customize options, change the values of variables in `petal.less` before compiling.
+## Developing Petal
+Petal uses [Grunt](http://gruntjs.com/getting-started) for compiling LESS files to a single `petal.css` and also building the documentation pages with 
+[Assemble](http://assemble.io/). Default task `grunt` will compile the CSS file and documentation for a single time. Run `grunt dev` to go into development mode where files in the Petal directory will be watched when you save any of the source files, which is handy when you will be actively making changes to the code!
 
 
 ## Changelog
@@ -55,7 +31,7 @@ Please view [Releases](https://github.com/shakrmedia/petal/releases) for the cha
 
 ## Author
 - **Hansol Kim** (zvuc) : https://github.com/zvuc/
-- and the Shakr Dev team
+- with help and support from the Shakr Dev team
 
 
 ## License 
