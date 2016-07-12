@@ -182,9 +182,11 @@
 </div>
 
 
-<p>Petalicons is an icon set with over 130 original icons included in Petal. All icons are in vector SVG format packed into one font file. Use them the same way you would do with <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a>, using the <code>.petalicon</code> base class and the class for the specific icon. All icon classes should have the <code>.petalicon-</code> prefix.</p>
+<p>Petalicons is an icon set with over 130 original icons included in Petal. All icons are in vector SVG format packed into one font file.</p>
 
+<h5>Inserting icons directly in HTML</h5>
 
+<p>First use the <code>.petalicon</code> class to load the basic style for the icon element, then write the class name for the actual icon, like example below:</p>
 <div class="demo-code">
 {{#markdown}}
 ``` html
@@ -194,23 +196,21 @@
 {{/markdown}}
 </div>
 
-<p>You can apply the petalicon classes to elements other than <code>&lt;i&gt;</code> too, but you generally shouldn't have any text or other elements inside the tags. The icons use the <code>:before</code> pseudo-element to insert unicode characters that are replaced by the icon font glyphs.</p>
+<p>Although the petalicon classes are not bound to <code>&lt;i&gt;</code> tags, but it's recommended you use a unique separate element for the icons to avoid collision. The icons use the <code>:before</code> pseudo-element to insert unicode characters that are replaced by the glyphs in the icon font.</p>
 
-<p>The icons require external icon font files to be loaded properly, so make sure the file path set by the <code>@petalicon-file-path</code> variable in petal.less file is valid.</p>
+<p>The icons require external icon font files to be loaded properly, so make sure the file path set by the <code>@petalicon-file-path</code> variable in the petal.less file is valid.</p>
 
 <br>
 
-<h5>Inserting icons through LESS stylesheets</h5>
-<p>The Petalicon LESS stylesheet file is written in the way that you can also use them as LESS mixin classes inside your project stylesheet.</p>
-
-<p>If you're following <a href="#setup-petal-method03">Setup Method 3</a> above you don't need to set up anything else; if not, you'll need include at least the <code>petalicon.less</code> file and define the <code>@petalicon-file-path</code> variable in your stylesheet so that the icon font files will load properly. Once it's included, you can easily call the icon classes as mixins to add and manipulate icons in your project without having to set icons explicitly in HTML markup.</p>
+<h5>Inserting icons in stylesheets</h5>
+<p>You can also insert icons through stylesheets as LESS mixin classes inside your project stylesheet. You can only use this method if you're including Petal source less files in your project's stylesheet build.</p>
 
 <div class="demo-code">
 {{#markdown}}
 ``` html
 <!-- HTML code -->
 <div class="lock-state-indicator locked">
-	<i class="petalicon"></i>
+	<span class="icon"></span>
 	<span class="text-label">Locked</span>
 </div>
 ```
@@ -219,13 +219,15 @@
 // LESS code
 .lock-state-indicator {
 	&.unlocked {
-		.petalicon:before {
+		.icon:before {
+			.petalicon;
 			.petalicon-lock-unlocked;
 		}
 	}
 
 	&.locked {
-		.petalicon:before {
+		.icon:before {
+			.petalicon;
 			.petalicon-lock-locked;
 		}
 	}
@@ -235,46 +237,14 @@
 {{/markdown}}
 </div>
 
-<p>Like so, you can dynamically set which icons will be displayed depending on the class of parent element. Make sure you're calling the mixins inside a <code>:before</code> pseudo element.</p>
-
-<br>
-
-<h5>Complete dynamic insertion</h5>
-<div class="demo-panel p-15">
-	<div class="dynamic-icon-container">Label Text</div>
-</div>
-<div class="demo-code">
-{{#markdown}}
-``` html
-<!-- HTML code -->
-<div class="dynamic-icon-container">Label Text</div>
-```
-
-``` less
-// LESS code
-@petalicon-file-path: '../assets';
-@import "./less/petalicon.less";
-
-.dynamic-icon-container:before {
-	.petalicon;
-	.petalicon-check-round;
-	font-size: 40px;
-	background: #eee;
-	color: #f05a67;
-}
-
-```
-{{/markdown}}
-</div>
-
-<p>Another way is to insert the icon completely dynamically by using just the pseudo-elements like the example above. Call the <code>.petalicon</code> and <code>.petalicon-<i>{icon-name}</i></code> classes as mixins inside the <code>:before</code> pseudo selector to insert the icon.</p>
+<p>Make sure you're calling the mixins inside a <code>:before</code> (or <code>:after</code>) pseudo element.</p>
 
 <br> 
 
 <h5>Managing icon size and alignment</h5>
-<p>The icons are are all designed on a 16px grid and fine-tuned to match the pixel grid. The <code>.petalicon</code> class strictly defines the icons as 16px size by default to ensure icons stay sharp at small sizes. In cases you want to resize icons, you must target the <code>.petalicon:before</code> pseudo element and manually override <code>font-size</code>.</p>
+<p>The icons are are all designed on a 16px grid and fine-tuned to match the pixel grid. The <code>.petalicon</code> class strictly defines the icons as 16px size by default to ensure icons stay sharp at small sizes. In cases you want to resize icons, you must target the <code>.petalicon:before</code> pseudo element and manually override <code>font-size</code> property.</p>
 
-<p>If you want to simply double the icon size to 32px, use the optional class <code>.x2</code>. You can also call it as a LESS mixin by writing <code>.petalicon.x2()</code>.</p>
+<p>If you want to simply double the icon size to 32px, use the optional class <code>.x2</code>. You can also call it as a LESS mixin by writing <code>.petalicon.x2();</code>.</p>
 
 
 <div class="demo-panel p-15 gray">
