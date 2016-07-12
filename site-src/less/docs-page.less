@@ -1,9 +1,4 @@
-/* documentation page stylesheet */
-
-@petalicon-file-path: '../assets';
-@import "./less/color-palette.less";
-@import "./less/petalicon.less";
-
+// documentation page stylesheet
 body {
 	color: #333;
 	padding: 0;
@@ -18,6 +13,41 @@ body {
 }
 
 // header
+header#site-header {
+	padding: 10px 20px;
+	border-bottom: 1px solid #eee;
+
+	h1 {
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 1.2em;
+		font-weight: bold;
+		margin: 0 20px 0 0;
+	}
+
+	nav {
+		display: inline-block;
+
+		ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				margin: 0;
+				padding: 5px 10px;
+
+				a {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
 #page-header {
 	height: auto;
 	border-bottom: 2px solid #eee;
@@ -29,7 +59,7 @@ body {
 		float: right;
 		padding-right: 20px;
 	}
-	.logo img {
+	.logo svg {
 		width: 190px;
 		height: 190px;
 		padding: 20px;

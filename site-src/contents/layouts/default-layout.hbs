@@ -21,103 +21,17 @@
 
 <body>
 
-<header class="stretch" id="page-header">
-	<div class="container" id="top">
-		
-			<div class="logo">
-				<img src="./logo.svg" width="150" height="150" alt="Petal Logo">
-			</div>
-			<h1 class="keepcase">Petal</h1>
-			<br>
-			<p class="version">v{{package.version}} - {{now "%Y-%m-%d"}}</p>
-			<p>{{package.description}}</p>
-			<p>Fork on <a href="{{package.repository.url}}">GitHub repo</a>.</p>
-			<p>Includes <a href="http://necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal (MIT License). <br>
-			Includes <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License).
-			<br>
-			Uses <a href="http://www.google.com/fonts/specimen/Lato">Lato font</a> by Łukasz Dziedzic (SIL OFL 1.1) as the default font, hosted on Google Fonts.</p>
-		
-		
-		<br>
-		
-		
-			{{> start }}
-		
-	</div>
+<header id="site-header">
+	<h1>Petal Documentation</h1>
+	<nav>
+		<ul>
+			<li><a href="./docs/start.html">Getting Started</a></li>
+			<li><a href="./docs/layout.html">Features</a></li>
+		</ul>
+	</nav>
 </header>
 
-<div class="container">
-<div class="row">
-	<div class="col-4 colspan-3">
-		<section>
-			{{> layouts }}
-		</section>
-
-		<section>
-			{{> typography }}
-		</section>
-
-		<section>
-			{{> quickmargins }}
-		</section>
-
-		<section>
-			{{> colors }}
-		</section>
-		
-		<section>
-			{{> buttons }}
-		</section>
-
-		<section>
-			{{> forms }}
-		</section>
-
-		<section>
-			{{> tables }}
-		</section>
-
-		<section>
-			{{> paging }}
-		</section>
-
-		<section>
-			{{> panels }}
-		</section>
-
-		<section>
-			{{> modals }}
-		</section>
-
-		<section>
-			{{> petalicon }}
-		</section>
-	</div>
-	<div class="col-4">
-		<nav id="menu">
-			<ul>
-				<li><a href="#section-layout">Layout</a></li>
-				<li><a href="#section-typography">Typography</a></li>
-				<li><a href="#section-quickmargins">Quick Margins &amp; Paddings</a></li>
-				<li><a href="#section-colors">Colors</a></li>
-				<li><a href="#section-buttons">Buttons</a></li>
-				<li><a href="#section-forms">Form elements</a></li>
-				<li><a href="#section-tables">Tables</a></li>
-				<li><a href="#section-paging">Paging</a></li>
-				<li><a href="#section-panels">Panels</a></li>
-				<li><a href="#section-modals">Modals</a></li>
-				<li><a href="#section-petalicon">Petalicons</a></li>
-			</ul>
-
-			<p>
-				<a href="#top" class="totop">Back to top</a>
-			</p>
-
-			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
-		</nav> 
-	</div>
-</div>
-</div><!-- container end -->
+{{> body }}
 
 <footer class="stretch">
 	<div class="container">

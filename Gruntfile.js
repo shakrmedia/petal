@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 
     // LESS
     less: {
-      main: {
+      petal: {
         expand: true,
         cwd: "less",
         src: ["petal.less"],
@@ -36,10 +36,10 @@ module.exports = function(grunt) {
       },
       docs: {
         expand: true,
-        cwd: "docs/less",
-        src: ["*.less"],
+        cwd: "site-src/less",
+        src: ["docs.less"],
         ext: ".css",
-        dest: "./"
+        dest: "_gh-pages"
       }
     },
 
@@ -49,11 +49,17 @@ module.exports = function(grunt) {
         browser: ["last 3 versions", "ie 10"],
         remove: false
       },
-      build: {
+      petal: {
         expand: true,
         cwd: "build",
         src: ["petal.css"],
         dest: "build"
+      },
+      docs: {
+        expand: true,
+        cwd: "_gh-pages",
+        src: ["docs.less"],
+        dest: "_gh-pages"
       }
     },
 
@@ -86,41 +92,61 @@ module.exports = function(grunt) {
         mangle: false
       },
       build: {
-		src: ['js/*.js'],
-		dest: 'build/<%= pkg.codename %>.min.js'
-	  }
+    		src: ['js/*.js'],
+    		dest: 'build/<%= pkg.codename %>.min.js'
+  	  }
     },
     
     // concat
     concat: {
       build: {
-	    files: {
-		  'build/<%= pkg.codename %>.js':'js/*.js'
-	    }
-	  }
+  	    files: {
+  		  'build/<%= pkg.codename %>.js':'js/*.js'
+  	    }
+  	  }
+    },
+
+    // assemble
+    assemble: {
+  	  options: {
+        flatten: true,
+        assets: 'assets',
+        partials: 'site-src/contents/pages/**/*.hbs',
+        layoutdir: 'site-src/contents/layouts',
+        layout: 'default-layout.hbs',
+        data: 'package.json'
+      },
+
+      landing: {
+        files: [{
+          expand: true,
+          cwd: 'site-src/contents/pages/',
+          src: ['index.hbs'],
+          dest: '_gh-pages',
+          ext: '.html'
+        }]
+      },
+
+      docs: {
+        options: {
+          layout: 'docs-layout.hbs'
+        },
+        files: [{
+          expand: true,
+          cwd: 'site-src/contents/pages/docs',
+          src: ['*.hbs'],
+          dest: '_gh-pages/docs',
+          ext: '.html'
+        }]
+      }
+      
     },
 
     // watch
     watch: {
-      less: {
-        files: ['less/**/*', 'docs/contents/**/*', 'docs/less/*', 'js/*'],
+      main: {
+        files: ['less/**/*', 'site-src/contents/**/*', 'site-src/less/*', 'js/*'],
         tasks: ['default']
-      }
-    },
-    
-    // assemble
-    assemble: {
-  	  options: {
-          flatten: true,
-          partials: 'docs/contents/sections/*.hbs',
-          layoutdir: 'docs/contents/frame',
-          layout: 'default.hbs',
-          data: 'package.json'
-      },
-      docs: {
-        files: {
-          'index': 'docs/contents/sections/*.hbs'
-        }
       }
     }
   });

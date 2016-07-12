@@ -1,2 +1,5 @@
 node_modules/
 _ignore/
+_gh-pages/
+build/
+/index.html

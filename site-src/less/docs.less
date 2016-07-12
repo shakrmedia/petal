@@ -1,0 +1,41 @@
+// --------------------------------------
+// Base stylesheet for Documentation site
+// --------------------------------------
+
+// Import Petal
+
+@petal-base-path: './less';
+@petalicon-file-path: '../assets';
+
+
+// default variables
+@import '@{petal-base-path}/variables.less';
+
+// import Lato font
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700,900,900italic,700italic,400italic,300italic,300';
+
+// basics
+@import '@{petal-base-path}/mixins.less';
+@import '@{petal-base-path}/normalize.less';
+@import '@{petal-base-path}/color-palette.less';
+@import '@{petal-base-path}/petalicon.less';
+@import '@{petal-base-path}/z-index.less';
+@import '@{petal-base-path}/basic.less';
+
+// modules
+@import '@{petal-base-path}/layout.less';
+@import '@{petal-base-path}/colors.less';
+@import '@{petal-base-path}/typography.less';
+@import '@{petal-base-path}/buttons.less';
+@import '@{petal-base-path}/forms.less';
+@import '@{petal-base-path}/tables.less';
+@import '@{petal-base-path}/paging.less';
+@import '@{petal-base-path}/panels.less';
+@import '@{petal-base-path}/modals.less';
+
+// custom variables
+// @import 'custom-variables.less';
+
+
+// documentation page layout
+@import 'docs-page.less';
