@@ -8,10 +8,27 @@ section {
 		border-bottom: none;
 	}
 
-	& > h2 {
-		padding-bottom: 10px;
+	.section-header {
 		border-bottom: 2px solid @red-l2;
+		padding-bottom: 5px;
 		margin-bottom: 30px;
+
+		h2 {
+			margin-bottom: 5px;
+		}
+
+		.sub {
+			font-size: 0.8em;
+			color: #666;
+			margin: 2px 0;
+
+			.file-ref {
+				display: inline-block;
+				padding: 2px 7px;
+				background-color: #eee;
+
+			}
+		}
 	}
 
 
@@ -117,8 +134,10 @@ section {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 0.8em;
-	color: #fff;
-	background: #eee;
+	
+	&.text-white {
+		color: #fff;
+	}
 }
 
 // petalicons

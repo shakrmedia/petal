@@ -5,8 +5,20 @@ section: components
 list-order: 4
 ---
 
-<h2 id="section-colors">Colors</h2>
-<p>Petal offers shades of the 3 colors from the Shakr color scheme.</p>
+<div class="section-header">
+	<h2 id="section-colors">Colors</h2>
+	<p class="sub">
+		<span class="file-ref">color-palette.less</span>
+		<span class="file-ref">colors.less</span>
+	</p>
+</div>
+
+<p>Petal offers shades of the 3 colors from the Shakr color scheme as globally usable LESS variables: <code>@red</code>, <code>@green</code>, <code>@blue</code>. Append <code>-l1</code>, <code>-l2</code> for lighter shades, <code>-d1</code>, <code>-d2</code> for darker shades. </p>
+
+<p>There are also some preset classes where you can quickly add text and background color properties.</p>
+
+<br>
+
 <div class="row">
 	<div class="col-3">
 		<h5>Text colors</h5>
@@ -17,19 +29,19 @@ list-order: 4
 		<p><div class="colorblock text-red-d2">Text</div><code>.text-red-d2</code></p>
 	</div>
 	<div class="col-3">
-		<h5>Background colors</h5>
-		<p><div class="colorblock bg-green-l2">Text</div><code>.bg-green-l2</code></p>
-		<p><div class="colorblock bg-green-l1">Text</div><code>.bg-green-l1</code></p>
-		<p><div class="colorblock bg-green">Text</div><code>.bg-green</code></p>
-		<p><div class="colorblock bg-green-d1">Text</div><code>.bg-green-d1</code></p>
-		<p><div class="colorblock bg-green-d2">Text</div><code>.bg-green-d2</code></p>
+		<h5>BG colors</h5>
+		<p><div class="colorblock text-white bg-green-l2">Text</div><code>.bg-green-l2</code></p>
+		<p><div class="colorblock text-white bg-green-l1">Text</div><code>.bg-green-l1</code></p>
+		<p><div class="colorblock text-white bg-green">Text</div><code>.bg-green</code></p>
+		<p><div class="colorblock text-white bg-green-d1">Text</div><code>.bg-green-d1</code></p>
+		<p><div class="colorblock text-white bg-green-d2">Text</div><code>.bg-green-d2</code></p>
 	</div>
 	<div class="col-3">
 		<h5>Also, blue</h5>
-		<p><div class="colorblock bg-blue-l2">Text</div><code>.bg-blue-l2</code></p>
-		<p><div class="colorblock bg-blue-l1">Text</div><code>.bg-blue-l1</code></p>
-		<p><div class="colorblock bg-blue">Text</div><code>.bg-blue</code></p>
-		<p><div class="colorblock bg-blue-d1">Text</div><code>.bg-blue-d1</code></p>
-		<p><div class="colorblock bg-blue-d2">Text</div><code>.bg-blue-d2</code></p>
+		<p><div class="colorblock text-white bg-blue-l2">Text</div><code>.bg-blue-l2</code></p>
+		<p><div class="colorblock text-white bg-blue-l1">Text</div><code>.bg-blue-l1</code></p>
+		<p><div class="colorblock text-white bg-blue">Text</div><code>.bg-blue</code></p>
+		<p><div class="colorblock text-white bg-blue-d1">Text</div><code>.bg-blue-d1</code></p>
+		<p><div class="colorblock text-white bg-blue-d2">Text</div><code>.bg-blue-d2</code></p>
 	</div>
 </div>
