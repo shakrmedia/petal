@@ -142,8 +142,22 @@ module.exports = function(grunt) {
       
     },
 
+
+    connect: {
+      main: {
+        options: {
+          port: 9000,
+          base: '_gh-pages/',
+          livereload: true
+        }
+      }
+    },
+
     // watch
     watch: {
+      options: {
+        livereload: 9000
+      },
       main: {
         files: ['less/**/*', 'site-src/contents/**/*', 'site-src/less/*', 'js/*'],
         tasks: ['default']
@@ -153,6 +167,6 @@ module.exports = function(grunt) {
   
   grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'uglify', 'concat', 'usebanner', 'assemble']);
   grunt.registerTask('js', ['uglify', 'concat']);
-  grunt.registerTask('dev', ['watch']);
+  grunt.registerTask('dev', ['connect', 'watch']);
   
 }
