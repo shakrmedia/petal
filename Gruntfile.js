@@ -180,7 +180,7 @@ module.exports = function(grunt) {
         options: {
           port: 9000,
           base: '_gh-pages/',
-          livereload: true
+          livereload: 9001
         }
       }
     },
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
     // watch
     watch: {
       options: {
-        livereload: 9000
+        livereload: 9001
       },
       main: {
         files: ['less/**/*', 'site-src/contents/**/*', 'site-src/less/*', 'js/*'],
