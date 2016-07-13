@@ -32,6 +32,7 @@
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-connect": "~1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
     "load-grunt-tasks": "^3.1.0"
   }
 }

@@ -106,12 +106,31 @@ module.exports = function(grunt) {
   	  }
     },
 
+    copy: {
+      assets: {
+        files: [{
+          expand: true,
+          cwd: 'assets',
+          src: ['**/*.png','**/*.jpg','**/*.svg','**/*.woff','**/*.ttf','**/*.eot'],
+          dest: '_gh-pages/assets'
+        }]
+      },
+      js: {
+        files: [{
+          expand: true,
+          cwd: 'build',
+          src: ['**/*.js'],
+          dest: '_gh-pages/assets'
+        }]
+      }
+    },
+
     // assemble
     assemble: {
   	  options: {
         flatten: true,
         assets: '_gh-pages/assets',
-        partials: 'site-src/contents/pages/**/*.hbs',
+        partials: 'site-src/contents/**/*.hbs',
         layoutdir: 'site-src/contents/layouts',
         layout: 'default-layout.hbs',
         data: 'package.json'
@@ -178,7 +197,7 @@ module.exports = function(grunt) {
     }
   });
   
-  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'uglify', 'concat', 'usebanner', 'assemble']);
+  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'uglify', 'concat', 'usebanner', 'copy', 'assemble']);
   grunt.registerTask('js', ['uglify', 'concat']);
   grunt.registerTask('dev', ['connect', 'watch']);
   
