@@ -1,0 +1,60 @@
+// right index menu
+#sidenav {
+    position: relative;
+    top: 0;
+    padding: 10px 0 10px 0;
+    box-sizing: border-box;
+    margin: 20px 0;
+
+    &.fix-top {
+        position: fixed;
+        top: 50px;
+    }
+
+    a {
+        color: #333;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: bold;
+        transition: 0.2s;
+
+        &:hover {
+            text-decoration: none;
+            color: @red;
+        }
+
+        &.totop {
+            color: #aaa;
+
+            &:hover {
+                color: #666;
+            }
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0 0 30px 0;
+    }
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        a {
+            display: block;
+            padding: 7px 0;
+            border-bottom: 1px solid #eee;
+        
+            &:hover {
+                border-bottom: 1px solid @red;
+            }
+        }
+
+        &.active a {
+            color: @red;
+            border-bottom-color: @red;
+        }
+    }
+}

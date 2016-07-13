@@ -51,7 +51,7 @@
 
 	var lastId;
 	var header = $("#page-header");
-	var nav = $("nav#menu");
+	var nav = $("nav#sidenav");
 	var headerHeight = header.outerHeight();
 
 	// // All list items
@@ -64,7 +64,7 @@
 	// });
 
 	// smooth scroll to anchor
-	$('nav#menu a').click(function(e){
+	$('nav#sidenav a').click(function(e){
 		var href = $(this).attr("href");
 		var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
 		$("html,body").stop().animate({ 
