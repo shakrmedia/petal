@@ -13,8 +13,8 @@ body {
 }
 
 .content-wrap {
-    padding-top: 50px;
-    min-height: 700px;
+    padding-top: 60px;
+    min-height: 600px;
 }
 
 // petal logo
@@ -36,4 +36,25 @@ body {
         width: 80px;
         heigh: 80px;
     }
+}
+
+a.totop {
+    display: inline-block;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: 0.2s;
+
+    &:before {
+        .petalicon;
+        .petalicon-chevron-small-up;
+        margin-right: 3px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: #666;
+    }
+    
 }

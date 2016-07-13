@@ -7,25 +7,28 @@ layout: default-layout.hbs
 	<div class="col-4 colspan-3">
 		<section>
 			{{> body }}
+
+			{{> back-to-top }}
 		</section>
 	</div>
 	<div class="col-4">
+		{{#is area "docs"}}
 		<nav id="sidenav">
 			<ul>
 				{{#withSort pages "data.list-order"}}
 					{{#is data.section "components"}}
-						{{!> sidenav-link }}
-						<li{{#is ../../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../../page.dest this.dest}}">{{data.title}}</a></li>
+					<li{{#is ../../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../../page.dest this.dest}}">{{data.title}}</a></li>
 					{{/is}}
 				{{/withSort}}
 			</ul>
 
 			<p>
-				<a href="#top" class="totop">Back to top</a>
+				{{> back-to-top }}
 			</p>
 
 			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
 		</nav> 
+		{{/is}}
 	</div>
 </div>
 </div><!-- container end -->

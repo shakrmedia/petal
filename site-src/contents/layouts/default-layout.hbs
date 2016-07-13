@@ -15,7 +15,6 @@
 	<meta charset="utf-8"> 
 
 	<link rel="stylesheet" href="{{assets}}/docs.css">
-	<link rel="stylesheet" href="{{assets}}/build/petal.css">
 
 	<title>{{#is area "docs"}}{{title}} | {{/is}}Petal</title>
 </head>
@@ -24,7 +23,7 @@
 
 {{> header }}
 
-<div class="content-wrap">
+<div id="top" class="content-wrap">
 	{{> body }}
 </div>
 
@@ -50,18 +49,9 @@
 	});
 
 	var lastId;
-	var header = $("#page-header");
+	var header = $("#site-header");
+	var footer = $("#site-footer");
 	var nav = $("nav#sidenav");
-	var headerHeight = header.outerHeight();
-
-	// // All list items
-	// var menuItems = nav.find("li a");
-
-	// // Anchors corresponding to menu items
-	// var scrollItems = menuItems.map(function(){
-	// 	var item = $($(this).attr("href"));
-	// 	if (item.length==1) { return item; }
-	// });
 
 	// smooth scroll to anchor
 	$('nav#sidenav a').click(function(e){
@@ -73,44 +63,6 @@
 		e.preventDefault();
 	});
 
-	function scrollnav(){
-		// // Get container scroll position
-		// var fromTop = $(window).scrollTop()+headerHeight;
-		
-		// // Get id of current scroll item
-		// var cur = scrollItems.map(function(){
-		// 	if ($(this).offset().top < fromTop) {
-		// 		return this;
-		// 	}
-		// });
-
-		// // Get the id of the current element
-		// cur = cur[cur.length-1];
-		// var id = cur && cur.length ? cur[0].id : "";
-
-		// if (lastId !== id) {
-		// 	lastId = id;
-		// 	// Set/remove active class
-		// 	menuItems
-		// 	 .parent().removeClass("active")
-		// 	 .end().filter("[href=#"+id+"]").parent().addClass("active");
-		// };
-
-		// toggle fix-top class for menu
-		if ($(window).scrollTop() > headerHeight) {
-			nav.addClass("fix-top"); 
-		} else {
-			nav.removeClass("fix-top");
-		}
-
-	}
-
-	$(function(){
-		scrollnav();
-	});
-
-	// Bind to scroll
-	$(window).scroll(scrollnav);
 
 	// button demo background toggler
 	$('#btn-demo-toggle').click(function(e) {
