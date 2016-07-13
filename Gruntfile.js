@@ -127,6 +127,19 @@ module.exports = function(grunt) {
         }]
       },
 
+      start: {
+        options: {
+          layout: 'docs-layout.hbs'
+        },
+        files: [{
+          expand: true,
+          cwd: 'site-src/contents/pages/start',
+          src: ['*.hbs'],
+          dest: '_gh-pages/start',
+          ext: '.html'
+        }]
+      },
+
       docs: {
         options: {
           layout: 'docs-layout.hbs'

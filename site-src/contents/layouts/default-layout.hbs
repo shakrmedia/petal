@@ -13,22 +13,25 @@
 	-->
 
 	<meta charset="utf-8"> 
+
 	<link rel="stylesheet" href="{{assets}}/docs.css">
 	<link rel="stylesheet" href="{{assets}}/build/petal.css">
 
-	<title>Petal Documentation</title>
+	<title>{{#is area "docs"}}{{title}} | {{/is}}Petal</title>
 </head>
 
 <body>
 
 <header id="site-header">
-	<h1>Petal Documentation</h1>
-	<nav>
-		<ul>
-			<li><a href="./docs/start.html">Getting Started</a></li>
-			<li><a href="./docs/layouts.html">Features</a></li>
-		</ul>
-	</nav>
+	<div class="container">
+		<h1><a href="{{relative page.dest "_gh-pages/./"}}">Petal</a></h1>
+		<nav>
+			<ul>
+				<li{{#is area "start"}} class="active"{{/is}}><a href="{{relative page.dest "_gh-pages/start"}}/">Get Started</a></li>
+				<li{{#is area "docs"}} class="active"{{/is}}><a href="{{relative page.dest "_gh-pages/docs"}}/">Docs</a></li>
+			</ul>
+		</nav>
+	</div>
 </header>
 
 {{> body }}
@@ -69,14 +72,14 @@
 	var nav = $("nav#menu");
 	var headerHeight = header.outerHeight();
 
-	// All list items
-	var menuItems = nav.find("li a");
+	// // All list items
+	// var menuItems = nav.find("li a");
 
-	// Anchors corresponding to menu items
-	var scrollItems = menuItems.map(function(){
-		var item = $($(this).attr("href"));
-		if (item.length==1) { return item; }
-	});
+	// // Anchors corresponding to menu items
+	// var scrollItems = menuItems.map(function(){
+	// 	var item = $($(this).attr("href"));
+	// 	if (item.length==1) { return item; }
+	// });
 
 	// smooth scroll to anchor
 	$('nav#menu a').click(function(e){
@@ -89,27 +92,27 @@
 	});
 
 	function scrollnav(){
-		// Get container scroll position
-		var fromTop = $(window).scrollTop()+headerHeight;
+		// // Get container scroll position
+		// var fromTop = $(window).scrollTop()+headerHeight;
 		
-		// Get id of current scroll item
-		var cur = scrollItems.map(function(){
-			if ($(this).offset().top < fromTop) {
-				return this;
-			}
-		});
+		// // Get id of current scroll item
+		// var cur = scrollItems.map(function(){
+		// 	if ($(this).offset().top < fromTop) {
+		// 		return this;
+		// 	}
+		// });
 
-		// Get the id of the current element
-		cur = cur[cur.length-1];
-		var id = cur && cur.length ? cur[0].id : "";
+		// // Get the id of the current element
+		// cur = cur[cur.length-1];
+		// var id = cur && cur.length ? cur[0].id : "";
 
-		if (lastId !== id) {
-			lastId = id;
-			// Set/remove active class
-			menuItems
-			 .parent().removeClass("active")
-			 .end().filter("[href=#"+id+"]").parent().addClass("active");
-		};
+		// if (lastId !== id) {
+		// 	lastId = id;
+		// 	// Set/remove active class
+		// 	menuItems
+		// 	 .parent().removeClass("active")
+		// 	 .end().filter("[href=#"+id+"]").parent().addClass("active");
+		// };
 
 		// toggle fix-top class for menu
 		if ($(window).scrollTop() > headerHeight) {
