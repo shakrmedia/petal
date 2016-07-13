@@ -22,37 +22,19 @@
 
 <body>
 
-<header id="site-header">
-	<div class="container">
-		<h1><a href="{{relative page.dest "_gh-pages/./"}}">Petal</a></h1>
-		<nav>
-			<ul>
-				<li{{#is area "start"}} class="active"{{/is}}><a href="{{relative page.dest "_gh-pages/start"}}/">Get Started</a></li>
-				<li{{#is area "docs"}} class="active"{{/is}}><a href="{{relative page.dest "_gh-pages/docs"}}/">Docs</a></li>
-			</ul>
-		</nav>
-	</div>
-</header>
+{{> header }}
 
-{{> body }}
+<div class="content-wrap">
+	{{> body }}
+</div>
 
-<footer class="stretch">
-	<div class="container">
-		<div class="credits">
-			<h4>Credits</h4>
-			<p>{{package.name}} v{{package.version}} - {{now "%Y-%m-%d"}}</p>
-			<p>An open source project by <a href="http://shakr.com">Shakr</a></p>
-			<p>©2015-{{now "%Y"}} Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
-		</div>
-	</div>
-</footer>
-	
+{{> footer }}	
 
 </body>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="./build/petal.min.js"></script>
+<script src="{{assets}}/petal.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
