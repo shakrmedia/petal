@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         cwd: "site-src/less",
         src: ["docs.less"],
         ext: ".css",
-        dest: "_gh-pages"
+        dest: "_gh-pages/assets"
       }
     },
 
@@ -57,9 +57,9 @@ module.exports = function(grunt) {
       },
       docs: {
         expand: true,
-        cwd: "_gh-pages",
-        src: ["docs.less"],
-        dest: "_gh-pages"
+        cwd: "_gh-pages/assets",
+        src: ["docs.css"],
+        dest: "_gh-pages/assets"
       }
     },
 
@@ -110,7 +110,7 @@ module.exports = function(grunt) {
     assemble: {
   	  options: {
         flatten: true,
-        assets: 'assets',
+        assets: '_gh-pages/assets',
         partials: 'site-src/contents/pages/**/*.hbs',
         layoutdir: 'site-src/contents/layouts',
         layout: 'default-layout.hbs',
