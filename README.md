@@ -1,7 +1,7 @@
 Petal [![Build Status](https://magnum.travis-ci.com/shakrmedia/petal.svg?token=oGydrksF8C4ZzTmuT3Ki&branch=master)](https://magnum.travis-ci.com/shakrmedia/petal)
 =====
 
-<img align="right" width="100" height="100" src="http://shakrmedia.github.io/petal/logo.svg">
+<img align="right" width="100" height="100" src="http://shakrmedia.github.io/petal/assets/petal-logo.svg">
 
 Petal is a modern, light CSS UI framework developed at [Shakr](http://shakr.com).
 
