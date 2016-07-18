@@ -198,6 +198,7 @@ module.exports = function(grunt) {
   });
   
   grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'uglify', 'concat', 'usebanner', 'copy', 'assemble']);
+  grunt.registerTask('petal', ['less:petal', 'autoprefixer:petal', 'cssmin', 'uglify', 'concat', 'usebanner']);
   grunt.registerTask('js', ['uglify', 'concat']);
   grunt.registerTask('dev', ['connect', 'watch']);
   

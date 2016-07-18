@@ -7,7 +7,7 @@ install:
   - npm install
 
 script:
-  - grunt default
+  - grunt petal
 
 deploy:
   provider: s3
