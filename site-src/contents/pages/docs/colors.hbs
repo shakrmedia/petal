@@ -8,7 +8,6 @@ list-order: 4
 <div class="section-header">
 	<h2 id="section-colors">Colors</h2>
 	<p class="sub">
-		<span class="file-ref">color-palette.less</span>
 		<span class="file-ref">colors.less</span>
 	</p>
 </div>
@@ -45,3 +44,24 @@ list-order: 4
 		<p><div class="colorblock text-white bg-blue-d2">Text</div><code>.bg-blue-d2</code></p>
 	</div>
 </div>
+
+<br>
+
+<h3>Adding more colors</h3>
+<p>To add custom colors, add them as variables at the bottom of <code>color-palette.less</code> file and you'll be able to use them for customizing your own build of Petal.</p>
+
+<div class="demo-code">
+{{#markdown}}
+``` less
+// user added custom colors
+@purple: #c37dc4;
+@orange: #f1a85b;
+@teal: #21c5c7;
+```
+{{/markdown}}
+</div>
+
+<p>Many parts of Petal refer to the <code>@primary-accent-color</code> variable to use as the base color of things. By default the primary accent color is set to <code>@blue</code>, which means buttons, form input borders, checkboxes will all use the blue color as the common color.</p>
+
+<p>After adding your own color to the <code>color-palette.less</code> change the value of <code>@primary-accent-color</code> to your desired color to apply the main color change to all elements.</p>
+

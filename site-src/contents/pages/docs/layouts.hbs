@@ -12,23 +12,41 @@ list-order: 1
 	</p>
 </div>
 
-<p>Petal provides a basic layout method where you can make quick, simple column layouts. Note that this is a very 'light' implementation, so unlike some other proper grid systems, Petal not provide automatic overrides for mobile screen widths.</p>
+<h3>Container</h3>
+<p>A <code>.container</code> is the top-most wrapper for your main contents. By default a container has a fixed value (980px) to limit the content width. Modify the <code>@container-width</code> variable to change the width. A container has the left and right margins set to <code>auto</code> that will center the container inside its parent.</p>
 
-<p>By default, Petal uses the CSS3 Flexbox properties for column layouts. Most modern browsers <a href="http://caniuse.com/#search=flex">will support</a> flexboxes just fine (in case of IE, versions 10 and up), but if for some reason you need to fall back to the traditional 'float' method, change the <code>@col-method: flex;</code> to <code>float</code>.</p>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<header>
+	<div class="container">
+		Header content
+	</div>
+</header>
+<section>
+	<div class="container">
+		Section content
+	</div>
+</section>
+```
+{{/markdown}}
+</div>
+
+<p>For example, to create a common landing-page layout where you have multiple section divided vertically that differ in background colors, you would have parent section elements that stretch horizontally, then inside you would have a container that wraps the contents.</p>
+
+<p>If for some reason you need to override the container width and stretch it 100% of the parent width, add <code>.stretch</code> to it. The <code>.stretch</code> class also works independently. (<code>width: 100%</code> is the only property it has.)</p>
+
+<br>
+
+<h3>Columns</h3>
+<p>Petal has a basic layout system where you can make quick, simple columns. This doesn't include any responsive overrides for mobile screen widths though; the columns will always stretch and collapse relatively to the container width.</p>
+
+<p>By default, Petal uses the CSS3 Flexbox properties for column layouts. Most modern browsers <a href="http://caniuse.com/#search=flex">support</a> flexboxes just fine (in case of IE, versions 10 and up), but if for some reason you need to fall back to the traditional 'float' method, change the <code>@col-method: flex;</code> in your variables sheet to <code>float</code>.</p>
 
 <p>By the looks, both methods will display exactly the same with the same settings. Using flexbox has some benefits, including a cleaner markup because you don't need the <a href="http://nicolasgallagher.com/micro-clearfix-hack/">micro clearfix</a> hack anymore (that inserts pseudo <code>:before</code> and <code>:after</code> elements to the parent row element), and that you can use some optional classes that will work only in flexbox mode.</p>
 
 <br>
 
-<h3>Container</h3>
-<p>Add the <code>.container</code> class to a container div where you would insert your site contents into. Usually a single page/view will have only one <code>.container</code>.</p>
-
-<p>Container width is set as a LESS variable <code>@container-width</code> in <code>petal.less</code> file. Default value is 980px; modify the value to change fixed width.</p>
-
-<br>
-
-<h3>Columns</h3>
-<p>Easily create column layouts for the whole page or parts of the page.</p>
 <div class="row borders mb-10">
 	<div class="col-1 bg-green-l2"><span>.col-1</span></div>
 </div>
