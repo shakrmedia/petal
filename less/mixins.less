@@ -2,6 +2,9 @@
 // *  Global Mixins
 // * ================================= *
 
+// import dependencies
+@import (reference) 'variables.less';
+
 // color generate mixin
 .colorset(@input-color) {
 	@color: @input-color;
@@ -25,7 +28,7 @@
 	box-shadow+: 0 1px 4px rgba(0,0,0,.05);
 }
 
-.drop-shadow-deep{
+.drop-shadow-deep {
 	box-shadow+: 0 5px 15px rgba(0,0,0,0.2);
 }
 
