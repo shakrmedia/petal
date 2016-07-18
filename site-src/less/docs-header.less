@@ -1,0 +1,94 @@
+// header
+header#site-header {
+	position: fixed;
+	z-index: 10000;
+	width: 100%;
+	height: 60px;
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+	
+	.container {
+		height: 100%;
+	}
+
+
+	.logo-link {
+		display: inline-block;
+		font-size: 1.4em;
+		font-weight: 900;
+		margin: 0 20px 0 0;
+		color: #333;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		.logo {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			margin-right: 4px;
+			background-image: url('@{assets-path}/petal-logo.svg');
+			background-size: 24px 24px;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			vertical-align: middle;
+		}
+
+		.text-label {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+
+	nav {
+		height: 100%;
+		display: inline-block;
+
+		ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				margin: 0 10px 0 0;
+				padding: 0;
+
+				a {
+					display: block;
+					padding: 0 10px;
+					line-height: 40px;
+					font-size: 0.8em;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					color: #999;
+
+					&:hover {
+						color: #666;
+						text-decoration: none;
+					}
+				}
+
+				&.active a {
+					color: @red;
+				}
+			
+			}
+		}
+	}
+
+	.get-btn {
+		float: right;
+		margin-top: 0;
+
+		&:before {
+			.petalicon;
+			.petalicon-download;
+			margin-right: 4px;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+<header id="site-header">
+    <div class="container">
+        <a class="logo-link" href="{{relative page.dest "_gh-pages/./"}}"><span class="logo"></span><span class="text-label">Petal</span></a>
+        <nav>
+            <ul>
+                <li{{#is area "start"}} class="active"{{/is}}><a href="{{relative page.dest "_gh-pages/start"}}/">Get Started</a></li>
+                <li{{#is area "docs"}} class="active"{{/is}}><a href="{{relative page.dest "_gh-pages/docs"}}/">Docs</a></li>
+            </ul>
+        </nav>
+
+        <a href="{{package.repository.url}}releases/latest" class="btn red hollow get-btn">Get Petal</a>
+
+    </div>
+</header>

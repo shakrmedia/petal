@@ -1,0 +1,96 @@
+---
+title: Panels
+area: docs
+section: components
+list-order: 9
+---
+
+<div class="section-header">
+	<h2 id="section-panels">Panels</h2>
+	<p class="sub">
+		<span class="file-ref">panels.less</span>
+	</p>
+</div>
+			
+<h4>Basic Panels</h4>
+<div class="demo-panel gray" data-toggle-bg="toggle">
+	<div class="panel m-20">
+		<div class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+	</div>
+	<div class="panel m-20">
+		<div class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+	</div>
+</div>
+<p>For various sections of a page. Add the <code>.panel</code> class to apply a white background and a subtle shadow. Manually apply padding and margins appropriately.</p>
+
+<br>
+
+<h4>Cards</h4>
+<div class="demo-panel p-20 gray" data-toggle-bg="toggle">
+	<div class="row">
+		<div class="col-2">
+			<div class="card hover-em">
+				<div class="card-image">
+					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMzNBM0RDIiBkPSJNMCAwaDIwMHYyMDBIMHoiLz48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMCAwdjIwMGg3Ny40QzEwNC4zIDEyMi43IDE2Mi4zIDY3IDIwMCA0MC4yVjBIMHoiLz48cGF0aCBmaWxsPSIjRjE1QjY3IiBkPSJNMCAwdjIwMGgyNy41QzI3LjEgMTI2LjEgNTIuNCA1NC42IDk0LjIgMEgweiIvPjwvc3ZnPg==" alt="">
+				</div>
+				<div class="p-20">
+					<h5>Lorem Ipsum</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					<button class="btn green hollow">View</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-2">
+			<div class="card hover-em">
+				<div class="card-image">
+					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMzNBM0RDIiBkPSJNMCAwaDIwMHYyMDBIMHoiLz48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMCAwdjIwMGg3Ny40QzEwNC4zIDEyMi43IDE2Mi4zIDY3IDIwMCA0MC4yVjBIMHoiLz48cGF0aCBmaWxsPSIjRjE1QjY3IiBkPSJNMCAwdjIwMGgyNy41QzI3LjEgMTI2LjEgNTIuNCA1NC42IDk0LjIgMEgweiIvPjwvc3ZnPg==" alt="">
+				</div>
+				<div class="p-20">
+					<h5>Consectetur Elit</h5>
+					<p>Velit saepe, aspernatur ipsa? Dolores sint harum dolorem quod tempore.</p>
+					<button class="btn green hollow">View</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<p>A variation of a panel, use for card-based item lists.</p>
+
+<h5>Options</h5>
+<ul>
+	<li><code>.hover-em</code> : darkened shadow emphasis when hovering over.
+</ul>
+
+<br>
+
+<h4>Labels</h4>
+<div class="demo-panel p-20" data-toggle-bg="toggle">
+	<h1>h1. Lorem Ipsum <span class="label">Label</span></h1>
+	<h2>h2. Lorem Ipsum <span class="label">Label</span></h2>
+	<h3>h3. Lorem Ipsum <span class="label">Label</span></h3>
+	<h4>h4. Lorem Ipsum <span class="label">Label</span></h4>
+	<h5>h5. Lorem Ipsum <span class="label">Label</span></h5>
+	<h6>h6. Lorem Ipsum <span class="label">Label</span></h6>
+	
+	<br>
+
+	<h5>Variations</h5>
+	<div>
+		<span class="label">Default</span> <span class="label accent">Accent</span> <span class="label okay">Okay</span> <span class="label warning">Warning</span> <span class="label danger">Danger</span>
+	</div>
+	<div class="mt-10">
+		<span class="label white">Default</span> <span class="label white accent">Accent</span> <span class="label white okay">Okay</span> <span class="label white warning">Warning</span> <span class="label white danger">Danger</span>
+	</div>
+</div>
+
+<p>Use <code>.label</code> on a <code>&lt;span&gt;</code> element. <b>Does not support other elements other than <code>&lt;span&gt;</code></b> to minimize the Petal style being inherited in project-specific classes because it is a rather commonly used class name.</p>
+<p></b>Append emphasis classes <code>.accent</code>, <code>.okay</code>, <code>.warning</code>, <code>.danger</code> for color variations.</p>
+<p><code>.white</code> will make inverted color with a white background and black text; append the emphasis classes listed above with <code>.white</code> and it will change the text colors instead.</p>
+
+<h4>Badges</h4>
+<div class="demo-panel p-20" data-toggle-bg="toggle">
+	<span class="badge">1</span> <span class="badge accent">20</span> <span class="badge okay">3</span> <span class="badge warning">4</span> <span class="badge danger">5</span>
+</div>
+
+<p>Same thing as labels, just change it to <code>.badge</code>. Applies to <code>&lt;span&gt;</code> only.</p>
