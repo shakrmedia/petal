@@ -15,8 +15,21 @@ Please refer to the [documentation](http://shakrmedia.github.io/petal/) for deta
 
 
 ## Developing Petal
-Petal uses [Grunt](http://gruntjs.com/getting-started) for compiling LESS files to a single `petal.css` and also building the documentation pages with 
-[Assemble](http://assemble.io/). Default task `grunt` will compile the CSS file and documentation for a single time. Run `grunt dev` to go into development mode where files in the Petal directory will be watched when you save any of the source files, which is handy when you will be actively making changes to the code!
+#### Build Petal
+Petal uses [Grunt](http://gruntjs.com/getting-started) for compiling LESS files to a single `petal.css` file. Run `grunt petal` to compile Petal for a single time. Run `grunt dev` to go into development mode where files in the Petal directory will be watched, building automatically when you make changes to any of the source files. (This will also build the documentation.)
+
+#### Build Docs
+Petal's [documentation](http://shakrmedia.github.io/petal/) is built using [Assemble](http://assemble.io/). Run `grunt` (default task) to build Petal and documentation pages for a single time, `grunt dev` for continuous watching and automatic building. The documentation will be built into `_gh-pages` folder; this folder is ignored by git 
+
+The `dev` task will also run a local webserver based on the `_gh-pages` folder. While running the `dev` task, you can access the built documentation at `localhost:9000`. The pages will also livereload when you save any of the watched files.
+
+#### Deploy Docs
+To deploy the docs, you will need to set up the `_gh-pages` folder as the root folder of the Petal repository's `gh-pages` branch. To do this, first remove the existing `_gh-pages` folder. Then run:
+```
+git clone --branch gh-pages https://github.com/shakrmedia/petal.git _gh-pages
+```
+This will clone the existing `gh-pages` branch to the `_gh-pages` folder inside Petal's repo folder. Now you can run `grunt` in Petal to build the files, navigate back into `_gh-pages` folder, push the changed files to `gh-pages` branch. Github page will be automatically updated.
+
 
 
 ## Changelog
