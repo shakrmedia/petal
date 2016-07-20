@@ -11,7 +11,13 @@ Petal is fully coded on LESS from scratch.
 
 
 ## Setting up Petal in your project
-Please refer to the [documentation](http://shakrmedia.github.io/petal/) for detailed ways to use Petal to your project.
+```
+https://petalcdn.shakr.com/edge/petal.css
+https://petalcdn.shakr.com/edge/petal.min.css
+```
+Use the CDN links above for a quick slap-on usage.
+
+Please refer to the [documentation](http://shakrmedia.github.io/petal/) for other advanced ways to use Petal in your project.
 
 
 ## Developing Petal
