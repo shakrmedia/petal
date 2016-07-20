@@ -40,6 +40,20 @@ module.exports = function(grunt) {
         src: ["docs.less"],
         ext: ".css",
         dest: "_gh-pages/assets"
+      },
+      dist: {
+        options: {
+          modifyVars: {
+            "petalicon-file-path": "'.'"
+          }
+        },
+        files: [{
+          expand: true,
+          cwd: "less",
+          src: ["petal.less"],
+          ext: ".css",
+          dest: "_dist"
+        }]
       }
     },
 
@@ -60,29 +74,24 @@ module.exports = function(grunt) {
         cwd: "_gh-pages/assets",
         src: ["docs.css"],
         dest: "_gh-pages/assets"
+      },
+      dist: {
+        expand: true,
+        cwd: "_dist",
+        src: ["petal.css"],
+        dest: "_dist"
       }
     },
 
     // css minify
     cssmin: {
-      minify: {
+      petal: {
         src: "build/petal.css",
         dest: "build/petal.min.css"
-      }
-    },
-
-
-    // Banner
-    usebanner: {
-      options: {
-        position: 'top',
-        banner: '<%= meta.banner %>'
       },
-      files: {
-        src: [
-            "build/<%= pkg.codename %>.css",
-            "build/<%= pkg.codename %>.min.css",
-          ]
+      dist: {
+        src: "_dist/petal.css",
+        dest: "_dist/petal.min.css"
       }
     },
     
@@ -91,23 +100,32 @@ module.exports = function(grunt) {
       options: {
         mangle: false
       },
-      build: {
+      petal: {
     		src: ['js/*.js'],
     		dest: 'build/<%= pkg.codename %>.min.js'
-  	  }
+  	  },
+      dist: {
+        src: ['js/*.js'],
+        dest: '_dist/<%= pkg.codename %>.min.js'
+      }
     },
     
     // concat
     concat: {
-      build: {
+      petal: {
   	    files: {
   		  'build/<%= pkg.codename %>.js':'js/*.js'
   	    }
-  	  }
+  	  },
+      dist: {
+        files: {
+        '_dist/<%= pkg.codename %>.js':'dist/*.js'
+        }
+      }
     },
 
     copy: {
-      assets: {
+      docs_assets: {
         files: [{
           expand: true,
           cwd: 'assets',
@@ -115,12 +133,20 @@ module.exports = function(grunt) {
           dest: '_gh-pages/assets'
         }]
       },
-      js: {
+      docs_js: {
         files: [{
           expand: true,
           cwd: 'build',
           src: ['**/*.js'],
           dest: '_gh-pages/assets'
+        }]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'assets',
+          src: ['petalicon.*'],
+          dest: '_dist'
         }]
       }
     },
@@ -174,7 +200,27 @@ module.exports = function(grunt) {
       
     },
 
+    // Banner
+    usebanner: {
+      options: {
+        position: 'top',
+        banner: '<%= meta.banner %>'
+      },
+      petal: {
+        src: [
+            "build/<%= pkg.codename %>.css",
+            "build/<%= pkg.codename %>.min.css",
+          ]
+      },
+      dist: {
+        src: [
+            "_dist/<%= pkg.codename %>.css",
+            "_dist/<%= pkg.codename %>.min.css",
+          ]
+      }
+    },
 
+    // start webserver
     connect: {
       main: {
         options: {
@@ -197,9 +243,16 @@ module.exports = function(grunt) {
     }
   });
   
-  grunt.registerTask('default', ['less', 'autoprefixer', 'cssmin', 'uglify', 'concat', 'usebanner', 'copy', 'assemble']);
-  grunt.registerTask('petal', ['less:petal', 'autoprefixer:petal', 'cssmin', 'uglify', 'concat', 'usebanner']);
-  grunt.registerTask('js', ['uglify', 'concat']);
+  grunt.registerTask('default', [
+    'less:petal', 'less:docs', 
+    'autoprefixer:petal', 'autoprefixer:docs',
+    'cssmin:petal', 
+    'uglify:petal', 'concat:petal', 'usebanner:petal', 
+    'copy:docs_assets', 'copy:docs_js', 
+    'assemble']);
+  grunt.registerTask('petal', ['less:petal', 'autoprefixer:petal', 'cssmin:petal', 'uglify:petal', 'concat:petal', 'usebanner:petal']);
+  grunt.registerTask('petal-dist', ['less:dist', 'autoprefixer:dist', 'cssmin:dist', 'uglify:dist', 'concat:dist', 'usebanner:dist', 'copy:dist']);
+  grunt.registerTask('js', ['uglify:petal', 'concat:petal']);
   grunt.registerTask('dev', ['connect', 'watch']);
   
 }
