@@ -19,5 +19,5 @@ deploy:
   skip_cleanup: true
   acl: public_read
   region: ap-northeast-1
-  local_dir: dist
+  local_dir: _dist
   upload_dir: edge
