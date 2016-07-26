@@ -16,20 +16,24 @@
 
 
 /* drop shadow mixin */
-.drop-shadow {
-	box-shadow+: 0 2px 4px rgba(0,0,0,0.2);
+@drop-shadow: 0 2px 4px rgba(0,0,0,0.2);
+.drop-shadow { 
+	box-shadow: @drop-shadow; 
 }
 
-.drop-shadow-light {
-	box-shadow+: 0 2px 4px rgba(0,0,0,0.1);
+@drop-shadow-light: 0 2px 4px rgba(0,0,0,0.1);
+.drop-shadow-light { 
+	box-shadow: @drop-shadow-light; 
 }
 
-.drop-shadow-lighter {
-	box-shadow+: 0 1px 4px rgba(0,0,0,.05);
+@drop-shadow-lighter: 0 1px 4px rgba(0,0,0,.05);
+.drop-shadow-lighter { 
+	box-shadow: @drop-shadow-lighter; 
 }
 
-.drop-shadow-deep {
-	box-shadow+: 0 5px 15px rgba(0,0,0,0.2);
+@drop-shadow-deep: 0 5px 15px rgba(0,0,0,0.2);
+.drop-shadow-deep { 
+	box-shadow: @drop-shadow-deep; 
 }
 
 
