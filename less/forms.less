@@ -1113,12 +1113,6 @@ fieldset:disabled input[type="radio"].radiobox + label {
 					background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 				}
 			}
-
-			&.disabled,
-			&.disabled:hover {
-				color: #aaa;
-				cursor: not-allowed;
-			}
 		}
 
 	}
@@ -1156,6 +1150,17 @@ fieldset:disabled input[type="radio"].radiobox + label {
 				@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
 				background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 			}
+		}
+	}
+
+	.selecter-options .selecter-item {
+		&.disabled,
+		&.disabled:hover, {
+			color: #aaa;
+			cursor: not-allowed;
+		}
+		&.disabled:active {
+			background-color: rgba(0,0,0,.05);
 		}
 	}
 
