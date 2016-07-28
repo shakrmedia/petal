@@ -6,18 +6,7 @@
 @import (reference) 'color-palette.less';
 @import (reference) 'mixins.less';
 
-.panel {
-	background-color: #fff;
-	box-shadow: 0 1px 4px rgba(0,0,0,.05);
-	transition: background-color .15s, box-shadow .15s, color .15s;
-
-	.dark &, &.ondark {
-		background-color: #444;
-		box-shadow: 0 1px 4px rgba(0,0,0,.1);
-	}
-}
-
-.card {
+.panel, .card {
 	background-color: #fff;
 	box-shadow: 0 1px 4px rgba(0,0,0,.05);
 	transition: background-color .15s, box-shadow .15s, color .15s;
