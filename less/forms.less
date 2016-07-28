@@ -51,6 +51,11 @@ textarea.input {
 	outline: none;
 	border-radius: 0;
 	vertical-align: middle;
+	
+	// border-radius
+	& when (@input-border-radius > 0) {
+		border-radius: @input-border-radius;
+	}
 
 	&:hover {
 		border-color: darken(@gray-l1,10%);
@@ -408,6 +413,23 @@ textarea.input {
 		display: table-cell;
 		margin: 0;
 		vertical-align: middle;
+	
+		// border-radius
+		& when (@input-border-radius > 0) {
+			border-radius: 0;
+
+			&:only-child {
+				border-radius: @input-border-radius;
+			}
+			&:first-child {
+				border-top-left-radius: @input-border-radius;
+				border-bottom-left-radius: @input-border-radius;
+			}
+			&:last-child {
+				border-top-right-radius: @input-border-radius;
+				border-bottom-right-radius: @input-border-radius;
+			}
+		}
 	}
 
 	.input-addon, .input-addon-btn {
@@ -433,6 +455,45 @@ textarea.input {
 		&:last-child {
 			border-right-width: @input-border-width;
 			border-left-width: 0;
+		}
+
+	}
+	
+	// border-radius
+	& when (@input-border-radius > 0) {
+		.input-addon {
+			&:only-child {
+				border-radius: @input-border-radius;
+			}
+			&:first-child {
+				border-top-left-radius: @input-border-radius;
+				border-bottom-left-radius: @input-border-radius;
+			}
+			&:last-child {
+				border-top-right-radius: @input-border-radius;
+				border-bottom-right-radius: @input-border-radius;
+			}
+		}
+		.input-addon-btn {
+
+			// reset when btn-border-radius exists
+			& when (@btn-border-radius > 0) {
+				.btn {
+					border-radius: 0;
+				}
+			}
+
+			&:only-child .btn {
+				border-radius: @input-border-radius;
+			}
+			&:first-child .btn {
+				border-top-left-radius: @input-border-radius;
+				border-bottom-left-radius: @input-border-radius;
+			}
+			&:last-child .btn {
+				border-top-right-radius: @input-border-radius;
+				border-bottom-right-radius: @input-border-radius;
+			}
 		}
 	}
 }
@@ -922,6 +983,10 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		text-overflow: clip;
 		z-index: @selectbox-selected-z-index;
 
+		& when (@selectbox-border-radius > 0) {
+			border-radius: @selectbox-border-radius;
+		}
+
 		transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
 		
 
@@ -967,6 +1032,10 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		z-index: @selectbox-options-z-index;
 
 		box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(0,0,0,0.1) inset; 
+		
+		& when (@selectbox-border-radius > 0) {
+			border-radius: @selectbox-border-radius;
+		}
 
 		transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
 
@@ -1191,6 +1260,10 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			border: @selectbox-border-width solid @gray-l1;
 			display: block;
 			box-shadow: none;
+
+			& when (@selectbox-border-radius > 0) {
+				border-radius: @selectbox-border-radius;
+			}
 		}
 
 		&:hover {

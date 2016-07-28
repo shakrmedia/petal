@@ -11,6 +11,10 @@
 	box-shadow: 0 1px 4px rgba(0,0,0,.05);
 	transition: background-color .15s, box-shadow .15s, color .15s;
 
+	& when (@panel-border-radius > 0) {
+		border-radius: @panel-border-radius;
+	}
+
 	&.hover-em:hover {
 		.drop-shadow-light;
 	}
@@ -88,8 +92,14 @@ span.badge {
 
 span.label {
 	font-style: italic;
+
+	& when (@label-border-radius > 0) {
+		border-radius: @label-border-radius;
+	}
 }
 
 span.badge {
-	border-radius: 10em;
+	& when (@badge-border-radius > 0) {
+		border-radius: @badge-border-radius;
+	}
 }
