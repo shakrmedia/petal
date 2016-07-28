@@ -272,7 +272,7 @@ list-order: 5
 <h4>Split button variant</h4>
 
 <div class="demo-panel p-15" data-toggle-bg="toggle">
-	<div class="btn-group">
+	<div class="btn-group btn-split">
 		<div class="btn-group">
 			<button class="btn green">Button</button>
 			<button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
@@ -281,7 +281,7 @@ list-order: 5
 				<li><a href="#">Menu item 2</a></li>
 			</ul>
 		</div>
-		<div class="btn-group">
+		<div class="btn-group btn-split">
 			<button class="btn red">Button</button>
 			<button class="btn red dropdown" data-toggle="dropdown"><span class="caret"></span></button>
 			<ul class="dropdown-menu" data-dropdown-align="right">
@@ -289,7 +289,7 @@ list-order: 5
 				<li><a href="#">Menu item 2</a></li>
 			</ul>
 		</div>
-		<div class="btn-group">
+		<div class="btn-group btn-split">
 			<button class="btn blue hollow">Button</button>
 			<button class="btn blue hollow dropdown" data-toggle="dropdown"><span class="caret"></span></button>
 			<ul class="dropdown-menu" data-dropdown-align="right">
@@ -302,7 +302,7 @@ list-order: 5
 <div class="demo-code">
 {{#markdown}}
 ``` html
-<div class="btn-group">
+<div class="btn-group btn-split">
   <button class="btn green">Button</button>
   <button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
   <ul class="dropdown-menu" data-dropdown-align="right">
@@ -314,9 +314,10 @@ list-order: 5
 {{/markdown}}
 </div>
 
-<p>Create two <code>.btn</code>s and insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
 
-<p>In this case, the <code>.btn-group</code> class on parent element is <b>required</b> for correct appearance.</p>
+<p>Create a <code>.btn-group.btn-split</code> wrapper element and make two <code>.btn</code>s. Insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
+
+<p><i><b>Note:</b> <code>.btn-split</code> class is required along with <code>.btn-group</code> since 0.5.0.</i></p>
 
 <p>If you're using the <code>.compact</code> option, you need to apply them to both the actual button and the dropdown caret button.</p>
 
@@ -391,7 +392,12 @@ list-order: 5
 {{#markdown}}
 ``` less
 // buttons 
-@btn-font-size: 0.8em;
+@btn-border-width: 2px;
+@btn-border-radius: 0;
+@btn-font-size: 0.9em;
+@btn-font-weight: 900;
+@btn-letter-spacing: 2px;
+@btn-line-height: 1.2;
 @btn-dropdown-menu-item-font-size: 0.9em;
 @gray-disabled-btn: false;
 @btn-disable-transition: false;

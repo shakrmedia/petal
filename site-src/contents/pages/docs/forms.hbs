@@ -516,11 +516,14 @@ list-order: 6
 ``` less
 // forms 
 @input-border-width: 2px;
+@input-border-radius: 0;
 @input-font-size: 0.9em;
 @input-textarea-font-size: 0.8em;
 @input-label-font-size: 0.8em;
-@input-caption-font-size: 0.8em;
+@input-label-font-weight: 900;
 @input-label-letter-spacing: 2px;
+@input-line-height: 1.2;
+@input-caption-font-size: 0.8em;
 ```
 {{/markdown}}
 </div>
@@ -585,7 +588,7 @@ list-order: 6
 @checkbox-border-radius: 100%;
 @radiobox-border-radius: 100%;
 @checkbox-color: @primary-accent-color;
-@checkbox-disable-animation: false;
+@checkbox-disable-transition: false;
 ```
 {{/markdown}}
 </div>
@@ -701,7 +704,7 @@ list-order: 6
 @chk-switch-border-width: @input-border-width; //2px
 @chk-switch-border-radius: @checkbox-size;
 @chk-switch-color: @primary-accent-color;
-@chk-switch-disable-animation: false;
+@chk-switch-disable-transition: false;
 @chk-switch-disable-shadows: false;
 ```
 {{/markdown}}
@@ -889,8 +892,10 @@ list-order: 6
 {{#markdown}}
 ``` less
 // selectbox
-@selectbox-border-width: @input-border-width;
+@selectbox-border-width: @input-border-width; //2px
+@selectbox-border-radius: @input-border-radius;
 @selectbox-color: @primary-accent-color;
+@selectbox-disable-shadows: false;
 ```
 {{/markdown}}
 </div>
