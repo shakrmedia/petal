@@ -1052,6 +1052,9 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			}
 		}
 
+	}
+
+	&:not(.multiple) .selecter-options {
 		&:not(:active) .selecter-item {
 
 			&.selected {
@@ -1069,7 +1072,22 @@ fieldset:disabled input[type="radio"].radiobox + label {
 				}
 			}
 		}
+	}
+	&.multiple .selecter-options {
+		.selecter-item.selected {
+			background-color: @selectbox-color;
+			color: #fff;
 
+			&:hover {
+				background-color: fadeout(@selectbox-color,20%);
+			}
+
+			&:after {
+				@checkmark-color: #fff;
+				@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
+				background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
+			}
+		}
 	}
 
 	// hover
