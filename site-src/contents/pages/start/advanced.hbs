@@ -1,0 +1,58 @@
+---
+title: Advanced Setup
+area: start
+section: start
+list-order: 1
+---
+
+<h3>Advanced Setup</h3>
+
+<p>Petal is designed with customization in mind, so you can change the colors and looks of the UI elements with ease when needed. Customizing requires overriding the values of global variables such as <code>@primary-accent-color</code>, and compiling your own version of Petal with the changed files.</p>
+
+<h5 class="keepcase">1. Downloading Petal</h5>
+<p>There are several ways in which you can get your hands on Petal. You can either download the <a href="{{package.repository.url}}releases/latest">latest release</a> from the repository, extract the files and there will be the source files. You can also clone the <a href="https://github.com/ShakrMedia/petal">Petal repository</a> from GitHub. Use command line or GUI applications to clone to your local folder.
+
+<h5 class="keepcase">2. Customizing variables</h5>
+<p>Now that you can edit the source files, open up <code>variables.less</code> (the default variable settings) file inside the <code>less</code> folder. Copy the contents of it to <code>custom-variables.less</code> file which is empty initially. This is the file that will override the default variables. Modify the values you want to alter in it, save it, and you're ready for building.</p>
+
+<h5 class="keepcase">3. Building with Grunt</h5>
+<p>To build, you'll need to set up <a target="_blank" href="http://gruntjs.com/getting-started">Grunt</a> to use the preincluded build tasks in Petal. Navigate to your local Petal directory and run <code>npm install</code> to install dependencies, then do <code>grunt petal</code> to build Petal. Petal will be built as <code>petal.css</code> and <code>petal.min.css</code> inside <code>build</code> folder.</p>
+
+
+<h5 class="keepcase">4. Apply to your project</h5>
+<p>Once you have compiled files, copy the file into your project's directory, link it as you would with other CSS files. Include it before any other stylesheets so that your site stylesheet can override Petal when needed.</p>
+
+<br>
+
+<h4>Complete Integration</h4>
+
+<p>While you can keep Petal and your site stylesheet separated in individual files, you can also just import Petal altogether <i>into</i> your project's root stylesheet (given that you only have a single final output CSS file). By doing this you gain several benefits including being able to use Petal's LESS mixins in your site's stylesheet as well, and assign <a href="./docs/petalicons.html">petalicons</a> right inside your stylesheet.</p>
+
+
+<p>To do this, download or clone Petal into your project directory so you can access the source files from your site's stylesheet. Or, if you already use <a target="_blank" href="https://www.npmjs.com/">npm</a> in your project, you can also include Petal as a dependency. Insert Petal in your `package.json` file as such:</p>
+
+<div class="code-block">
+{{#markdown}}
+``` js
+"dependencies": {
+    "petal": "git+https://github.com/ShakrMedia/petal.git"
+}
+```
+{{/markdown}}
+</div>
+
+<p>Then run <code>npm install petal</code> to install Petal. Petal will be installed inside your <code>node_modules</code> folder. Benefits of using npm is that it will be easier to manage when updating Petal to newer versions in the future.</p>
+
+<p>After you have access to the source files, import Petal at the top of your base stylesheet:</p>
+
+<div class="code-block">
+{{#markdown}}
+``` less
+@import 'path/to/src/petal.less';
+```
+{{/markdown}}
+</div>
+
+<p>Make sure you set the right relative path considering the folder structure.</p>
+
+<p>To reduce size of compiled stylesheet you can also decide to import only specific parts of Petal like <code>buttons.less</code>. In such case, copy contents of <code>petal.less</code> (the base file) and remove parts you want to leave out.</p>
