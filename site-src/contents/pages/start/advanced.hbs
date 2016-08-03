@@ -7,13 +7,13 @@ list-order: 1
 
 <h3>Advanced Setup</h3>
 
-<p>Petal is designed with customization in mind, so you can change the colors and looks of the UI elements with ease when needed. Customizing requires overriding the values of global variables such as <code>@primary-accent-color</code>, and compiling your own version of Petal with the changed files.</p>
+<p>Petal is designed with customization in mind, so you can change the colors and looks of the UI elements with ease when needed. Customizing requires overriding the values of <a href="../docs/variables.html">global variables</a> such as <code>@primary-accent-color</code>, and compiling your own version of Petal with the changed files.</p>
 
 <h5 class="keepcase">1. Downloading Petal</h5>
 <p>There are several ways in which you can get your hands on Petal. You can either download the <a href="{{package.repository.url}}releases/latest">latest release</a> from the repository, extract the files and there will be the source files. You can also clone the <a href="https://github.com/ShakrMedia/petal">Petal repository</a> from GitHub. Use command line or GUI applications to clone to your local folder.
 
 <h5 class="keepcase">2. Customizing variables</h5>
-<p>Now that you can edit the source files, open up <code>variables.less</code> (the default variable settings) file inside the <code>less</code> folder. Copy the contents of it to <code>custom-variables.less</code> file which is empty initially. This is the file that will override the default variables. Modify the values you want to alter in it, save it, and you're ready for building.</p>
+<p>Now that you can edit the source files, open up <code>variables.less</code> (the default variable settings) file inside the <code>less</code> folder. Copy the contents of it to <code>custom-variables.less</code> file which is empty initially. This is the file that will override the default variables. Modify the values you want to alter in it, save it, and you're ready for building. See the <a href="../docs/variables.html">documentation page</a> for more information.</p>
 
 <h5 class="keepcase">3. Building with Grunt</h5>
 <p>To build, you'll need to set up <a target="_blank" href="http://gruntjs.com/getting-started">Grunt</a> to use the preincluded build tasks in Petal. Navigate to your local Petal directory and run <code>npm install</code> to install dependencies, then do <code>grunt petal</code> to build Petal. Petal will be built as <code>petal.css</code> and <code>petal.min.css</code> inside <code>build</code> folder.</p>
