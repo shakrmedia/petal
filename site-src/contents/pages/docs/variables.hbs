@@ -1,0 +1,106 @@
+---
+title: Customizing Variables
+area: docs
+section: intro
+list-order: 1
+---
+
+<h3>Customizing Variables</h3>
+
+<p>Petal uses global variables for key properties that affect the look of the common UI elements. All global variables are defined in the <code>variables.less</code> file. Change the value of the variables such as <code>@primary-accent-color</code>, and it will affect all classes where it refers to the variable.</p>
+
+<p>However when editing, we recommended that you <strong>do not</strong> directly alter the values in the stock <code>variables.less</code> file, but instead use a different file to override the existing values. This is to prevent builds from failing in case new variables have been added or existing ones have been changed in newer versions. Because stock <code>variables.less</code> file is always pulled alongside other files, it will be kept up to date when you update Petal. In the similar sense, it's generally a good idea to not make direct edits to Petal's source code so that you don't have to manually keep track of any changes you made to the files before upgrading to future versions.</p>
+
+<p>Use the included <code>custom-variables.less</code> file instead to insert any variables you want to override, or just create a new file in your project folder containing the override variables, and import the file when compiling.</p>
+
+<br>
+
+<h4>List of variables (Default values)</h4>
+
+<div class="demo-code">
+{{#markdown}}
+```less
+// layout
+@container-width: 980px;
+@container-padding: 15px;
+@col-method: flex; // flex or float (legacy)
+@col-padding: 15px;
+
+// typography
+@base-font: "Lato";
+@base-font-size: 16px;
+@base-font-color: #333;
+@base-line-height: 1.2;
+@header-uppercase: true;
+@header-letter-spacing: 2px;
+@header-font-weight: 900;
+@paragraph-line-height: 1.5;
+
+// colors
+@primary-accent-color: @blue;
+@okay-color: @green;
+@warning-color: @yellow;
+@danger-color: @red;
+@link-text-color: @red;
+
+// buttons 
+@btn-border-width: 2px;
+@btn-border-radius: 0;
+@btn-font-size: 0.9em;
+@btn-font-weight: 900;
+@btn-letter-spacing: 2px;
+@btn-line-height: 1.2;
+@btn-dropdown-menu-item-font-size: 0.9em;
+@gray-disabled-btn: false;
+@btn-disable-transition: false;
+@btn-disable-shadows: false;
+
+// forms 
+@input-border-width: 2px;
+@input-border-radius: 0;
+@input-font-size: 0.9em;
+@input-textarea-font-size: 0.8em;
+@input-label-font-size: 0.8em;
+@input-label-font-weight: 900;
+@input-label-letter-spacing: 2px;
+@input-line-height: 1.2;
+@input-caption-font-size: 0.8em;
+
+// checkboxes & radioboxes
+@checkbox-size: 20px;
+@checkbox-border-width: @input-border-width; //2px
+@checkbox-border-radius: 100%;
+@radiobox-border-radius: 100%;
+@checkbox-color: @primary-accent-color;
+@checkbox-disable-transition: false;
+
+// switch toggle
+@chk-switch-size: 24px;
+@chk-switch-border-width: @input-border-width; //2px
+@chk-switch-border-radius: @checkbox-size;
+@chk-switch-color: @primary-accent-color;
+@chk-switch-disable-transition: false;
+@chk-switch-disable-shadows: false;
+
+// selectbox
+@selectbox-border-width: @input-border-width; //2px
+@selectbox-border-radius: @input-border-radius;
+@selectbox-color: @primary-accent-color;
+@selectbox-disable-shadows: false;
+
+// panels
+@panel-border-radius: 0;
+@label-border-radius: 0;
+@badge-border-radius: 10em;
+
+// petalicons
+@petalicon-file-path: '../assets';
+```
+{{/markdown}}
+</div>
+
+<p>Accepted values for the variables depend on the property it's inserted in; generally the variable name implies the CSS property name it's referring to, so it should be pretty straightforward.</p>
+
+<p>Some that have the <code>true</code> or <code>false</code> values are used for switches of toggling some features on and off, like transitions or shadows. As with other variables, try testing out with different values and see how they actually affect the appearance.</p>
+
+<p>Some color variables have their default values referring to another variable (<code>@primary-accent-color</code>) - this is to keep every color consistent by using a single brand color. You can set colors for different elements separately if you wish to.</p>
