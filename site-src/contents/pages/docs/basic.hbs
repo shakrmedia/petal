@@ -1,0 +1,34 @@
+---
+title: Basic
+area: docs
+section: components
+list-order: 0
+---
+
+<div class="section-header">
+	<h2 id="section-layout">Basic</h2>
+	<p class="sub">
+		<span class="file-ref">basic.less</span>
+	</p>
+</div>
+
+<h4>Base Font sizes</h4>
+<p>The <code>basic.less</code> file includes styles for the <code>html</code> and <code>body</code> tags, setting up the base style for the global font-family and font-size. <code>html</code>'s font size follows the value set by variable <code>@base-font-size</code> (default: 16px), and <code>body</code> font size is set to <code>1rem</code>. The header tags (<code>h1</code>,<code>h2</code>...) defined in <a href="typography.html">typography.less</a> have font sizes set with <code>rem</code> units as well so it's important that you set an appropriate font size for your root <code>html</code> tag.</p>
+
+<br>
+
+<h4>Important: <code>border-box</code> required</h4>
+<p>Petal bases all styles' sizings on the <code>border-box</code> CSS box model.</p>
+
+
+<div class="demo-code">
+{{#markdown}}
+```less
+* {
+    box-sizing: border-box;
+}
+```
+{{/markdown}}
+</div>
+
+<p>The <code>box-sizing</code> property is declared for all elements (<code>*</code>) inside <code>basic.less</code> file, so it's important that you include this part of code by either importing <code>basic.less</code> or manually setting the property for Petal to ensure everything looks as intended.</p>

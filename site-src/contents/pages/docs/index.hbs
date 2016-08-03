@@ -1,10 +1,60 @@
 ---
-title: Welcome to the Docs
+title: Welcome to the docs
 area: docs
 section: intro
 list-order: 0
 ---
 
-<h3>Welcome to the Petal Docs</h3>
+<div class="section-header">
+    <h2>Welcome to the Docs</h2>
+</div>
 
-<p>Click on the items on the left to browse through the available sections.</p>
+<h4>Petal.less</h4>
+
+<p>Petal is comprised of several sub-files ('modules') that contain the classes and styles relevant to the each UI element kind. The <code>petal.less</code> file serves as the wrapper file that imports the modules. </p>
+
+<p>Here's how it looks:</p>
+
+<div class="demo-code">
+{{#markdown}}
+```less
+// * ================================= *
+// *  Petal.less main file
+// * ================================= *
+
+// default variables
+@import 'variables.less';
+
+// import Lato font
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700,900,900italic,700italic,400italic,300italic,300';
+
+// basics
+@import 'mixins.less';
+@import 'normalize.less';
+@import 'color-palette.less';
+@import 'petalicon.less';
+@import 'z-index.less';
+
+// modules
+@import 'basic.less';
+@import 'layout.less';
+@import 'utilities.less';
+@import 'colors.less';
+@import 'typography.less';
+@import 'buttons.less';
+@import 'forms.less';
+@import 'tables.less';
+@import 'paging.less';
+@import 'panels.less';
+@import 'modals.less';
+
+// custom variables
+@import 'custom-variables.less';
+
+```
+{{/markdown}}
+</div>
+
+<p>All modules have included a <code>(reference)</code> import for any dependency it may have (variables, mixins) so they can be compiled independently. Given that all files are on the same directory, you can exclude some modules you don't need, or even choose to import only one of the modules you want. But beware that the modules only contain the styles related to that specific UI element, so if you leave out some modules such as <code>basic.less</code> and <code>typography.less</code>, fonts, text sizes or styles may look weird because they won't have any base styles declared. Use appropriately by combining Petal with your site's own stylesheet.</p>
+
+<p>Check out the documentation for each modules by clicking the items on the left.</p>
