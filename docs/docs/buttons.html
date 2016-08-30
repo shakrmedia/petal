@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- 
+		Petal Documentation
+
+		petal.less v0.5.0 - 2016-08-30
+		A modern, light CSS UI framework by Shakr
+		https://shakrmedia.github.io/petal
+
+		Copyright 2015-2016 Shakr Media Co., Ltd.; MIT License
+	-->
+
+	<meta charset="utf-8"> 
+
+	<link rel="stylesheet" href="../assets/docs.css">
+
+	<title>Buttons | Petal</title>
+</head>
+
+<body>
+
+<header id="site-header">
+    <div class="container">
+        <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
+        <nav>
+            <ul>
+                <li><a href="../start/">Get Started</a></li>
+                <li class="active"><a href="../docs/">Docs</a></li>
+            </ul>
+        </nav>
+
+        <a href="https://github.com/shakrmedia/petal.gitreleases/latest" class="btn red hollow get-btn">Get Petal</a>
+
+    </div>
+</header>
+
+<div id="top" class="content-wrap">
+	
+
+<div class="container">
+<div class="row">
+	<div class="col-4 colspan-3">
+		<section>
+			
+
+<div class="section-header">
+	<h2 id="section-buttons">Buttons</h2>
+	<p class="sub">
+		<span class="file-ref">buttons.less</span>
+	</p>
+</div>
+			
+<p>Petal features a complex button style generator inside the LESS code to make adding new color sets as simple as possible.</p>
+
+<br>
+
+<h3>Basic Button</h3>
+<div class="demo-panel p-15">
+	<div class="block">
+		<a href="#" class="btn">Button</a>
+		<p class="clabel"><code>.btn</code></p>
+	</div>
+</div>
+
+<p>To make a button, simply add the <code>.btn</code> class, presumably to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. The default color is blue, and some preset colors provided are demonstrated below:</p>
+
+<br>
+
+<div class="demo-panel p-15 cf" data-toggle-bg="toggle">
+<div class="row">
+	<div class="col-2">
+		<h5>Default</h5>
+		<div class="block">
+			<a href="#" class="btn">Button</a>
+			<p class="clabel"><code>.btn</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn blue">Button</a>
+			<p class="clabel"><code>.btn.blue</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn green">Button</a>
+			<p class="clabel"><code>.btn.green</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn red">Button</a>
+			<p class="clabel"><code>.btn.red</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn black">Button</a>
+			<p class="clabel"><code>.btn.black</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn white">Button</a>
+			<p class="clabel"><code>.btn.white</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn disabled">Button</a>
+			<p class="clabel"><code>.btn.disabled</code></p>
+		</div>
+	</div>
+	<div class="col-2">
+		<h5>Hollow</h5>
+		<div class="block">
+			<a href="#" class="btn hollow">Button</a>
+			<p class="clabel"><code>.btn.hollow</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow blue">Button</a>
+			<p class="clabel"><code>.btn.hollow.blue</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow green">Button</a>
+			<p class="clabel"><code>.btn.hollow.green</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow red">Button</a>
+			<p class="clabel"><code>.btn.hollow.red</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow black">Button</a>
+			<p class="clabel"><code>.btn.hollow.black</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow white">Button</a>
+			<p class="clabel"><code>.btn.hollow.white</code></p>
+		</div>
+		<div class="block">
+			<a href="#" class="btn hollow disabled">Button</a>
+			<p class="clabel"><code>.btn.hollow.disabled</code></p>
+		</div>
+	</div>
+</div>
+</div>
+
+<h5>Options</h5>
+
+<ul>
+	<li><code>.hollow</code> : Hollow style alternative</li>
+	<li><code>.disabled</code> OR <code>:disabled</code> (attribute) : Disabled state</li>
+	<li><code>.ondark</code> on button OR <code>.dark</code> on parent : Alternative style on dark backgrounds</li>
+	<li><code>.whitetext</code> : Force white text on buttons</li>
+	<li><code>.compact</code> : Smaller sized buttons with reduced padding</li>
+</ul>
+
+<br>
+
+<h5>Generating additional color sets</h5>
+
+<p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
+
+<div class="demo-code">
+<pre><code class="language-less">// Add colors here
+&amp;.my-color    { .generate-btn(&#39;my-color&#39;) }
+&amp;.my-color2   { .generate-btn(&#39;my-color2&#39;; &#39;custom&#39;) }</code></pre>
+
+</div>
+
+<p>The 'custom' option is provided for when you want to specify the l1, l2, d1, d2 shades manually. Define all 5 variables including base color in <b>color-palette.less</b> and append the <code>'custom'</code> option at the end.</p>
+
+<br>
+
+<h3>Button groups</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">
+		<button class="btn">Button</button>
+		<button class="btn green">Button</button>
+		<button class="btn red">Button</button>
+	</div>
+</div>
+
+<p>Put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
+
+<br>
+
+<h3>
+	Segmented button groups
+	<span class="badge warning js-req">Requires JavaScript</span>
+</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group btn-group-segmented">
+		<button class="btn hollow active" data-toggle="toggle" data-toggle-state="active">Button</button>
+		<button class="btn hollow" data-toggle="toggle">Button</button>
+		<button class="btn hollow disabled" data-toggle="toggle">Button</button>
+	</div>
+</div>
+
+<p>Add <code>.btn-group-segmented</code> with <code>.btn-group</code> to remove the space inbetween buttons in a button group to make them visually look like segmented buttons. Petal doesn't provide preset functions for segmented buttons, however. You'll need to manually write your javascript code to make them actually work--or, use the <a href="forms.html#section-forms-segmented-radio">radiobox method</a>.</p>
+
+<p>Use <code>.disabled</code> class on buttons to disable each buttons, or add <code>.disabled</code> on the <code>btn-group</code> to disable the whole group.</p>
+
+<br>
+
+<h3>
+	Toggle Buttons
+	<span class="badge warning js-req">Requires JavaScript</span>
+</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">	
+		<button class="btn hollow blue toggle active" data-toggle="toggle" data-toggle-state="active">Toggle</button>
+		<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn green toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn red toggle" data-toggle="toggle">Toggle</button>
+	</div>
+</div>
+
+<p>Add <code>data-toggle="toggle"</code> on the button to make it toggleable.</p>
+
+<br>
+
+<h3>
+	Button Dropdowns
+	<span class="badge warning js-req">Requires JavaScript</span>
+</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group">
+		<div class="btn-group">
+			<button class="btn dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn hollow dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li class="submenu">
+					<a href="#">Submenu 1</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Submenu item 1</a></li>
+						<li><a href="#">Submenu item 2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn hollow green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li class="submenu">
+					<a href="#">Submenu 1</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Submenu item 1</a></li>
+						<li><a href="#">Submenu item 2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+		<div class="btn-group">
+			<button class="btn red dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Menu item 3</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;btn-group&quot;&gt;
+  &lt;button class=&quot;btn hollow dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;Menu &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;ul class=&quot;dropdown-menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;submenu&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Submenu 1&lt;/a&gt;
+      &lt;ul class=&quot;dropdown-menu&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Submenu item 2&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+</div>
+
+<p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
+
+<p>The <code>.btn-group</code> class on parent element is not required but is recommended for better layout.</p>
+
+<br>
+
+<h4>Split button variant</h4>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="btn-group btn-split">
+		<div class="btn-group">
+			<button class="btn green">Button</button>
+			<button class="btn green dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+		<div class="btn-group btn-split">
+			<button class="btn red">Button</button>
+			<button class="btn red dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+		<div class="btn-group btn-split">
+			<button class="btn blue hollow">Button</button>
+			<button class="btn blue hollow dropdown" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu" data-dropdown-align="right">
+				<li><a href="#">Menu item 1</a></li>
+				<li><a href="#">Menu item 2</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;btn-group btn-split&quot;&gt;
+  &lt;button class=&quot;btn green&quot;&gt;Button&lt;/button&gt;
+  &lt;button class=&quot;btn green dropdown&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;ul class=&quot;dropdown-menu&quot; data-dropdown-align=&quot;right&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu item 2&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+</div>
+
+
+<p>Create a <code>.btn-group.btn-split</code> wrapper element and make two <code>.btn</code>s. Insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
+
+<p><i><b>Note:</b> <code>.btn-split</code> class is required along with <code>.btn-group</code> since 0.5.0.</i></p>
+
+<p>If you're using the <code>.compact</code> option, you need to apply them to both the actual button and the dropdown caret button.</p>
+
+<h5>Options</h5>
+<p>Add <code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code>to right align the menu.</p>
+
+
+<br>
+
+
+<h3>
+	Buttons with spinners
+	<span class="badge warning js-req">Requires JavaScript</span>
+</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<label class="form-label">Spinner/Icons on left</label>
+	<div class="btn-group">
+		<button class="btn green btn-spinner" data-btn-type="save">Apply</button>
+		<button class="btn btn-spinner has-icon" data-btn-type="save"><i class="petalicon petalicon-save"></i> Save</button>
+		<button class="btn btn-spinner white has-icon" data-btn-type="save"><i class="petalicon petalicon-save"></i> Save</button>
+	</div>
+	<div class="btn-group">
+		<button class="btn compact green btn-spinner" data-btn-type="save">Apply</button>
+		<button class="btn compact btn-spinner has-icon" data-btn-type="save"><i class="petalicon petalicon-save"></i> Save</button>
+		<button class="btn compact btn-spinner white has-icon" data-btn-type="save"><i class="petalicon petalicon-save"></i> Save</button>
+	</div>
+
+	<br>
+
+	<label class="form-label">Spinner/Icons on right</label>
+	<div class="btn-group">
+		<button class="btn green btn-spinner icon-right" data-btn-type="save">Apply</button>
+		<button class="btn btn-spinner icon-right has-icon" data-btn-type="save">Save <i class="petalicon petalicon-save"></i></button>
+		<button class="btn btn-spinner white icon-right has-icon" data-btn-type="save">Save <i class="petalicon petalicon-save"></i></button>
+
+	</div>
+	<div class="btn-group">
+		<button class="btn compact green btn-spinner icon-right" data-btn-type="save">Apply</button>
+		<button class="btn compact btn-spinner icon-right has-icon" data-btn-type="save">Save <i class="petalicon petalicon-save"></i></button>
+		<button class="btn compact btn-spinner white icon-right has-icon" data-btn-type="save">Save <i class="petalicon petalicon-save"></i></button>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;!-- Plain button --&gt;
+&lt;button class=&quot;btn btn-spinner&quot;&gt;Save&lt;/button&gt;
+
+&lt;!-- With preexisting icon --&gt;
+&lt;button class=&quot;btn btn-spinner icon-right has-icon&quot;&gt;Save &lt;i class=&quot;petalicon petalicon-save&quot;&gt;&lt;/i&gt;&lt;/button&gt;</code></pre>
+
+</div>
+
+
+<p>Spinners inside buttons are useful when you want to indicate progress following the action called by the button. Just add <code>.btn-spinner</code> class on a <code>.btn</code>, then dynamically append <code>.loading</code> class with javascript to insert an animated spinner.</p>
+
+<p>As the example above, after the progress is finished you can change the <code>.loading</code> class to <code>.loading-done</code> before removing class to indicate end of progress.</p>
+
+<h5>Options</h5>
+
+<ul>
+	<li><code>.has-icon</code> : Use when button already has a Petalicon icon in it (only works for <code>&lt;i class="petalicon ~"&gt;</code>) </li>
+	<li><code>.icon-right</code> : Display spinner on the right / when an icon already exists inside the button (after text)</li>
+</ul>
+
+<p><b>Note:</b> Hollow style icons are not supported. Compact size icons are supported. When generating custom-colored icons with lighter colors where text is not white, spinner may not appear.</p>
+
+<br>
+
+<h4>Customizable LESS variables</h4>
+<div class="demo-code">
+<pre><code class="language-less">// buttons 
+@btn-border-width: 2px;
+@btn-border-radius: 0;
+@btn-font-size: 0.9em;
+@btn-font-weight: 900;
+@btn-letter-spacing: 2px;
+@btn-line-height: 1.2;
+@btn-dropdown-menu-item-font-size: 0.9em;
+@gray-disabled-btn: false;
+@btn-disable-transition: false;
+@btn-disable-shadows: false;</code></pre>
+
+</div>
+			
+			<div class="section-footer">
+				<a href="#top" class="totop">Back to top</a>
+			</div>
+		</section>
+	</div>
+	<div class="col-4">
+		
+
+
+		
+		<nav id="sidenav">
+			
+			<h5 class="list-header">Introduction</h5>
+			<ul>
+				
+					
+					<li><a href="index.html">Welcome to the docs</a></li>
+					
+				
+					
+				
+					
+					<li><a href="variables.html">Variables</a></li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+
+			<h5 class="list-header">Components</h5>
+			<ul>
+				
+					
+				
+					
+					<li><a href="basic.html">Basic</a></li>
+					
+				
+					
+				
+					
+					<li><a href="layouts.html">Layout</a></li>
+					
+				
+					
+					<li><a href="typography.html">Typography</a></li>
+					
+				
+					
+					<li><a href="utilities.html">Utilities</a></li>
+					
+				
+					
+					<li><a href="colors.html">Colors</a></li>
+					
+				
+					
+					<li class="active"><a href="buttons.html">Buttons</a></li>
+					
+				
+					
+					<li><a href="forms.html">Form Elements</a></li>
+					
+				
+					
+					<li><a href="tables.html">Tables</a></li>
+					
+				
+					
+					<li><a href="paging.html">Paging</a></li>
+					
+				
+					
+					<li><a href="panels.html">Panels</a></li>
+					
+				
+					
+					<li><a href="modals.html">Modals</a></li>
+					
+				
+					
+					<li><a href="petalicon.html">Petalicons</a></li>
+					
+				
+			</ul>
+			
+			
+		</nav> 
+		
+	</div>
+</div>
+</div><!-- container end -->
+
+</div>
+
+<footer id="site-footer" class="stretch">
+    <div class="container">
+        <p class="petal-ver">
+            Site built on 2016-08-30<br>
+            <b>(petal.less v0.5.0)</b></p>
+
+        <div class="footer-credits">
+            
+            <a href="https://www.shakr.com" class="shakr-logo">
+                <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
+                    <g id="fills-cut">
+                        <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
+                            c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
+                            C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
+                        <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
+                            c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
+                            c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
+                        <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
+                            c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
+                            c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
+                    </g>
+                </svg>
+            </a>
+
+            <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
+            ©2015-2016 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
+        </div>
+
+    </div>
+</footer>	
+
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../assets/petal.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
+
+
+
+<script>
+	// original code from http://jsfiddle.net/mekwall/up4nu/
+
+	// prevent default button clicks
+	$('a[href="#"], button').click(function(event) {  
+		event.preventDefault();
+	});
+
+	var lastId;
+	var header = $("#site-header");
+	var footer = $("#site-footer");
+	var nav = $("nav#sidenav");
+
+	// smooth scroll to anchor
+	$('nav#sidenav a').click(function(e){
+		var href = $(this).attr("href");
+		var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
+		$("html,body").stop().animate({ 
+			scrollTop: offsetTop
+		}, 300);
+		e.preventDefault();
+	});
+
+
+	// button demo background toggler
+	$('#btn-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('[data-toggle-bg]').toggleClass('dark');
+	});
+
+	// Table section class toggle
+	$('input[data-toggle-class]').each(function(e) {
+		var tableClass = $(this).attr('data-toggle-class');
+		if($(this).prop('checked')){
+			$('#table-demo table').addClass(tableClass);	
+		}
+	});
+
+	$('input[data-toggle-class]').click(function(e) {
+		var tableClass = $(this).attr('data-toggle-class');
+		$('#table-demo table').toggleClass(tableClass);
+	});
+
+	// Form fieldset disable toggle
+	$('#fieldset-disable-switch').change(function(e) {
+		if($(this).prop('checked')){
+			$('#fieldsetDisableDemo').prop('disabled', true);	
+		}
+		else {
+			$('#fieldsetDisableDemo').prop('disabled', false);	
+		}
+	});
+
+	// Form spinner toggle button
+	$('#input-spinner-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('[data-toggle-loading-state]').toggleClass('valid').toggleClass('loading');
+	});
+
+	// Spinner button simulation
+	$('[data-btn-type="save"]').click(function(e) {
+		var button = $(this);
+		e.preventDefault();
+		button.addClass('loading');
+
+		setTimeout(function() {
+			button.removeClass('loading');
+			button.addClass('loading-done');
+
+			setTimeout(function() {
+				button.removeClass('loading-done');
+			}, 3000);
+
+		}, 3000);
+	});
+
+	// Demo Modal Toggle
+	$('#demo-fp-modal-open-btn').click(function(e) {
+		$('#demo-fp-modal').addClass('visible');
+	});
+	
+	$('[data-modal-close]').click(function(e) {
+		$('#demo-fp-modal').removeClass('visible');
+	});
+
+
+	// load highlight.js
+	$(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+	    hljs.highlightBlock(block);
+	  });
+
+	  $(".demo-panel select").not('.cover').not('.bottom').selecter();
+	  $(".demo-panel select.cover").selecter({
+	  	cover: true
+	  });
+	  $(".demo-panel select.bottom").selecter({
+	  	bottom: true
+	  });
+	});
+
+
+
+</script>
+
+
+</html>

@@ -1,6 +1,5 @@
 node_modules/
 _ignore/
-_gh-pages/
 _dist/
 build/
 /index.html

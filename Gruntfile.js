@@ -36,10 +36,10 @@ module.exports = function(grunt) {
       },
       docs: {
         expand: true,
-        cwd: "site-src/less",
+        cwd: "docs-src/less",
         src: ["docs.less"],
         ext: ".css",
-        dest: "_gh-pages/assets"
+        dest: "docs/assets"
       },
       dist: {
         options: {
@@ -71,9 +71,9 @@ module.exports = function(grunt) {
       },
       docs: {
         expand: true,
-        cwd: "_gh-pages/assets",
+        cwd: "docs/assets",
         src: ["docs.css"],
-        dest: "_gh-pages/assets"
+        dest: "docs/assets"
       },
       dist: {
         expand: true,
@@ -130,7 +130,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'assets',
           src: ['**/*.png','**/*.jpg','**/*.svg','**/*.woff','**/*.ttf','**/*.eot'],
-          dest: '_gh-pages/assets'
+          dest: 'docs/assets'
         }]
       },
       docs_js: {
@@ -138,7 +138,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'build',
           src: ['**/*.js'],
-          dest: '_gh-pages/assets'
+          dest: 'docs/assets'
         }]
       },
       dist: {
@@ -155,9 +155,9 @@ module.exports = function(grunt) {
     assemble: {
   	  options: {
         flatten: true,
-        assets: '_gh-pages/assets',
-        partials: 'site-src/contents/**/*.hbs',
-        layoutdir: 'site-src/contents/layouts',
+        assets: 'docs/assets',
+        partials: 'docs-src/contents/**/*.hbs',
+        layoutdir: 'docs-src/contents/layouts',
         layout: 'default-layout.hbs',
         data: 'package.json'
       },
@@ -165,9 +165,9 @@ module.exports = function(grunt) {
       landing: {
         files: [{
           expand: true,
-          cwd: 'site-src/contents/pages/',
+          cwd: 'docs-src/contents/pages/',
           src: ['index.hbs'],
-          dest: '_gh-pages',
+          dest: 'docs',
           ext: '.html'
         }]
       },
@@ -178,9 +178,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'site-src/contents/pages/start',
+          cwd: 'docs-src/contents/pages/start',
           src: ['*.hbs'],
-          dest: '_gh-pages/start',
+          dest: 'docs/start',
           ext: '.html'
         }]
       },
@@ -191,9 +191,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'site-src/contents/pages/docs',
+          cwd: 'docs-src/contents/pages/docs',
           src: ['*.hbs'],
-          dest: '_gh-pages/docs',
+          dest: 'docs/docs',
           ext: '.html'
         }]
       }
@@ -225,7 +225,7 @@ module.exports = function(grunt) {
       main: {
         options: {
           port: 9000,
-          base: '_gh-pages/',
+          base: 'docs/',
           livereload: 9001
         }
       }
@@ -237,7 +237,7 @@ module.exports = function(grunt) {
         livereload: 9001
       },
       main: {
-        files: ['less/**/*', 'site-src/contents/**/*', 'site-src/less/*', 'js/*'],
+        files: ['less/**/*', 'docs-src/contents/**/*', 'docs-src/less/*', 'js/*'],
         tasks: ['default']
       }
     }

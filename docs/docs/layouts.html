@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- 
+		Petal Documentation
+
+		petal.less v0.5.0 - 2016-08-30
+		A modern, light CSS UI framework by Shakr
+		https://shakrmedia.github.io/petal
+
+		Copyright 2015-2016 Shakr Media Co., Ltd.; MIT License
+	-->
+
+	<meta charset="utf-8"> 
+
+	<link rel="stylesheet" href="../assets/docs.css">
+
+	<title>Layout | Petal</title>
+</head>
+
+<body>
+
+<header id="site-header">
+    <div class="container">
+        <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
+        <nav>
+            <ul>
+                <li><a href="../start/">Get Started</a></li>
+                <li class="active"><a href="../docs/">Docs</a></li>
+            </ul>
+        </nav>
+
+        <a href="https://github.com/shakrmedia/petal.gitreleases/latest" class="btn red hollow get-btn">Get Petal</a>
+
+    </div>
+</header>
+
+<div id="top" class="content-wrap">
+	
+
+<div class="container">
+<div class="row">
+	<div class="col-4 colspan-3">
+		<section>
+			
+
+<div class="section-header">
+	<h2 id="section-layout">Layout</h2>
+	<p class="sub">
+		<span class="file-ref">layout.less</span>
+	</p>
+</div>
+
+<h3>Container</h3>
+<p>A <code>.container</code> is the top-most wrapper for your main contents. By default a container has a fixed value (980px) to limit the content width. Modify the <code>@container-width</code> variable to change the width. A container has the left and right margins set to <code>auto</code> that will center the container inside its parent.</p>
+
+<div class="demo-code">
+<pre><code class="language-html">&lt;header&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        Header content
+    &lt;/div&gt;
+&lt;/header&gt;
+&lt;section&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        Section content
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+</div>
+
+<p>For example, to create a common landing-page layout where you have multiple section divided vertically that differ in background colors, you would have parent section elements that stretch horizontally, then inside you would have a container that wraps the contents.</p>
+
+<p>If for some reason you need to override the container width and stretch it 100% of the parent width, add <code>.stretch</code> to it. The <code>.stretch</code> class also works independently. (<code>width: 100%</code> is the only property it has.)</p>
+
+<br>
+
+<h3>Columns</h3>
+<p>Petal has a basic layout system where you can make quick, simple columns. This doesn't include any responsive overrides for mobile screen widths though; the columns will always stretch and collapse relatively to the container width.</p>
+
+<p>By default, Petal uses the CSS3 Flexbox properties for column layouts. Most modern browsers <a href="http://caniuse.com/#search=flex">support</a> flexboxes just fine (in case of IE, versions 10 and up), but if for some reason you need to fall back to the traditional 'float' method, change the <code>@col-method: flex;</code> in your variables sheet to <code>float</code>.</p>
+
+<p>By the looks, both methods will display exactly the same with the same settings. Using flexbox has some benefits, including a cleaner markup because you don't need the <a href="http://nicolasgallagher.com/micro-clearfix-hack/">micro clearfix</a> hack anymore (that inserts pseudo <code>:before</code> and <code>:after</code> elements to the parent row element), and that you can use some optional classes that will work only in flexbox mode.</p>
+
+<br>
+
+<div class="row borders mb-10">
+	<div class="col-1 bg-green-l2"><span>.col-1</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+	<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+</div>
+
+<p>Place a div with the <code>.row</code> class, then insert <code>.col-<em>x</em></code> class inside to make columns, where <em>x</em> is the number of columns the row is divided into. (Supports up to 5 columns)</p>
+
+<p>The <code>.row</code> element has a negative horizontal margin with the same width as the <code>@container-padding</code>, so that the columns inside rows won't have doubled padding width. If you're not using a <code>.row</code> inside <code>.container</code>, make sure you manually specify paddings for the parent wrapper (You can use a <code>.ph-15</code> <a href="utilities.html">quick-padding</a> class)</p>
+
+<p>The default left/right padding for the columns is 15px, same as the <code>.container</code> inner paddings. To change this, modify the <code>@col-padding</code> value. It's recommended that you keep the column padding value and the container inner padding value equal.</p>
+
+<br>
+
+<h5>Spanned columns</h5>
+<div class="row borders mb-10">
+	<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+	<div class="col-3 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+</div>
+<div class="row borders mb-10">
+	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+	<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-3</span></div>
+</div>
+
+<p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
+
+<br>
+
+<h5>Nesting columns</h5>
+<div class="row borders mb-10">
+	<div class="col-3 bg-blue-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+			<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+		</div>
+	</div>
+	<div class="col-3 bg-green-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+		</div>
+	</div>
+	<div class="col-3 bg-red-l2">
+		<span>.col-3</span>
+		<div class="row borders">
+			<div class="col-1 bg-red-l1"><span>.col-1</span></div>
+		</div>
+	</div>
+</div>
+<p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code>s as well. </p>
+
+<br>
+
+<h5>Collapsed column gutters</h5>
+<div class="demo-panel gray ph-15 pv-5">
+	<h6 class="label">Normal</h6>
+	<div class="row">
+		<div class="col-1 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-1</div></div>
+	</div>
+	<div class="row">
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3 bg-green-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+	</div>
+	<div class="row">
+		<div class="col-3 bg-red-l2 stretch pv-5 colspan-2"><div class="panel p-15">.col-3.colspan-2</div></div>
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+	</div>
+	<h6 class="label">Collapsed Gutters</h6>
+	<div class="row collapse-gutter">
+		<div class="col-1 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-1</div></div>
+	</div>
+	<div class="row collapse-gutter">
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3 bg-green-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+	</div>
+	<div class="row collapse-gutter">
+		<div class="col-3 bg-red-l2 stretch pv-5 colspan-2"><div class="panel p-15">.col-3.colspan-2</div></div>
+		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
+	</div>
+</div>
+
+<p>Add <code>.collapse-gutter</code> class on parent <code>.row</code> elements and it will 'collapse' the gutter inbetween columns by reducing the padding space to half while keeping the outer paddings on left and right. This is useful in cases where you want to make a layout out of <a href="panels.html">Panels</a> and want to reduce the visible horizontal gutter size inbetween them.</p>
+
+<br>
+
+<h5>Vertically stretched columns (Flexbox Only)</h5>
+<div class="demo-panel gray ph-15 pv-5">
+	<h6 class="label">Normal</h6>
+	<div class="row collapse-gutter pb-10">
+		<div class="col-3 colspan-2">
+			<div class="panel p-15">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus nam ad, eligendi dolor similique provident nisi magnam, eum itaque, quibusdam nostrum libero.
+			</div>		
+		</div>
+		<div class="col-3">
+			<div class="panel p-15 mb-10">Lorem ipsum dolor sit amet.</div>
+			<div class="panel p-15">Autem harum beatae alias voluptas ipsa, illo consequatur.</div>
+		</div>
+	</div>
+
+	<h6 class="label">Stretched</h6>
+	<div class="row collapse-gutter pb-10">
+		<div class="col-3 stretch colspan-2">
+			<div class="panel p-15">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus nam ad, eligendi dolor similique provident nisi magnam, eum itaque, quibusdam nostrum libero.
+			</div>		
+		</div>
+		<div class="col-3">
+			<div class="panel p-15 mb-10">Lorem ipsum dolor sit amet.</div>
+			<div class="panel p-15">Autem harum beatae alias voluptas ipsa, illo consequatur.</div>
+		</div>
+	</div>
+</div>
+
+<p>Add <code>.stretch</code> class on <code>.col-x</code> elements to vertically stretch children elements to row height. This will only work when you're using the flexbox columns.</p>
+
+<br>
+
+<h4>Customizable LESS variables</h4>
+<div class="demo-code">
+<pre><code class="language-less">// layout
+@container-width: 980px;
+@container-padding: 15px;
+@col-method: flex; // flex or float (legacy)
+@col-padding: 15px;</code></pre>
+
+</div>
+			
+			<div class="section-footer">
+				<a href="#top" class="totop">Back to top</a>
+			</div>
+		</section>
+	</div>
+	<div class="col-4">
+		
+
+
+		
+		<nav id="sidenav">
+			
+			<h5 class="list-header">Introduction</h5>
+			<ul>
+				
+					
+					<li><a href="index.html">Welcome to the docs</a></li>
+					
+				
+					
+				
+					
+					<li><a href="variables.html">Variables</a></li>
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			</ul>
+
+			<h5 class="list-header">Components</h5>
+			<ul>
+				
+					
+				
+					
+					<li><a href="basic.html">Basic</a></li>
+					
+				
+					
+				
+					
+					<li class="active"><a href="layouts.html">Layout</a></li>
+					
+				
+					
+					<li><a href="typography.html">Typography</a></li>
+					
+				
+					
+					<li><a href="utilities.html">Utilities</a></li>
+					
+				
+					
+					<li><a href="colors.html">Colors</a></li>
+					
+				
+					
+					<li><a href="buttons.html">Buttons</a></li>
+					
+				
+					
+					<li><a href="forms.html">Form Elements</a></li>
+					
+				
+					
+					<li><a href="tables.html">Tables</a></li>
+					
+				
+					
+					<li><a href="paging.html">Paging</a></li>
+					
+				
+					
+					<li><a href="panels.html">Panels</a></li>
+					
+				
+					
+					<li><a href="modals.html">Modals</a></li>
+					
+				
+					
+					<li><a href="petalicon.html">Petalicons</a></li>
+					
+				
+			</ul>
+			
+			
+		</nav> 
+		
+	</div>
+</div>
+</div><!-- container end -->
+
+</div>
+
+<footer id="site-footer" class="stretch">
+    <div class="container">
+        <p class="petal-ver">
+            Site built on 2016-08-30<br>
+            <b>(petal.less v0.5.0)</b></p>
+
+        <div class="footer-credits">
+            
+            <a href="https://www.shakr.com" class="shakr-logo">
+                <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
+                    <g id="fills-cut">
+                        <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
+                            c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
+                            C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
+                        <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
+                            c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
+                            c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
+                        <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
+                            c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
+                            c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
+                    </g>
+                </svg>
+            </a>
+
+            <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
+            ©2015-2016 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
+        </div>
+
+    </div>
+</footer>	
+
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../assets/petal.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
+
+
+
+<script>
+	// original code from http://jsfiddle.net/mekwall/up4nu/
+
+	// prevent default button clicks
+	$('a[href="#"], button').click(function(event) {  
+		event.preventDefault();
+	});
+
+	var lastId;
+	var header = $("#site-header");
+	var footer = $("#site-footer");
+	var nav = $("nav#sidenav");
+
+	// smooth scroll to anchor
+	$('nav#sidenav a').click(function(e){
+		var href = $(this).attr("href");
+		var offsetTop = href === "#" ? 0 : $(href).offset().top-30;
+		$("html,body").stop().animate({ 
+			scrollTop: offsetTop
+		}, 300);
+		e.preventDefault();
+	});
+
+
+	// button demo background toggler
+	$('#btn-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('[data-toggle-bg]').toggleClass('dark');
+	});
+
+	// Table section class toggle
+	$('input[data-toggle-class]').each(function(e) {
+		var tableClass = $(this).attr('data-toggle-class');
+		if($(this).prop('checked')){
+			$('#table-demo table').addClass(tableClass);	
+		}
+	});
+
+	$('input[data-toggle-class]').click(function(e) {
+		var tableClass = $(this).attr('data-toggle-class');
+		$('#table-demo table').toggleClass(tableClass);
+	});
+
+	// Form fieldset disable toggle
+	$('#fieldset-disable-switch').change(function(e) {
+		if($(this).prop('checked')){
+			$('#fieldsetDisableDemo').prop('disabled', true);	
+		}
+		else {
+			$('#fieldsetDisableDemo').prop('disabled', false);	
+		}
+	});
+
+	// Form spinner toggle button
+	$('#input-spinner-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('[data-toggle-loading-state]').toggleClass('valid').toggleClass('loading');
+	});
+
+	// Spinner button simulation
+	$('[data-btn-type="save"]').click(function(e) {
+		var button = $(this);
+		e.preventDefault();
+		button.addClass('loading');
+
+		setTimeout(function() {
+			button.removeClass('loading');
+			button.addClass('loading-done');
+
+			setTimeout(function() {
+				button.removeClass('loading-done');
+			}, 3000);
+
+		}, 3000);
+	});
+
+	// Demo Modal Toggle
+	$('#demo-fp-modal-open-btn').click(function(e) {
+		$('#demo-fp-modal').addClass('visible');
+	});
+	
+	$('[data-modal-close]').click(function(e) {
+		$('#demo-fp-modal').removeClass('visible');
+	});
+
+
+	// load highlight.js
+	$(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+	    hljs.highlightBlock(block);
+	  });
+
+	  $(".demo-panel select").not('.cover').not('.bottom').selecter();
+	  $(".demo-panel select.cover").selecter({
+	  	cover: true
+	  });
+	  $(".demo-panel select.bottom").selecter({
+	  	bottom: true
+	  });
+	});
+
+
+
+</script>
+
+
+</html>
