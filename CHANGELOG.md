@@ -22,13 +22,13 @@ Also, this will probably the first release after Petal will be open-sourced. Yay
 
 ## 0.4.0
 
-- Quick margins and padding classes are now in a separate file named `utilities.less` instead of existing `mixins.less`. Add `utilities.less` to import list in your base stylesheet. (83d9b0042a8f018fdfb2cf298e792670dcec6117)
-- Adds reference import for dependencies per individual modules. (Variables, mixins, etc) Thanks to this, you can now import individual modules without having to check for which dependencies you need for each files. If you are using `custom-variables.less` override, make sure you import them after the actual modules and they will override default values just fine as they were. (9d20eed1b1fb7c23040ac51836c9bbaf91f3a493)
-- `.block`, `.inline-block` quick classes have been removed from `layout.less`. Manually define them in your site stylesheet if you need them. (846f3f9913d7169b6917c4b6d85553d3efb3ad62)
-- `basic.less` is now treated as one of the modules, not dependencies. (cf493b048cd94981c4fcb6e683754200c2075b08)
-- Font order and fallback font for monospace text blocks has been changed. (cf493b048cd94981c4fcb6e683754200c2075b08)
-- Text-related code (`code`, `pre`, `hr`, `li`, `a`) have been moved from `basic.less` to `typography.less`.  (2300dc412feaa810ccd6986ad347da8bc1890ce7)
-- `h5` header tag now uses `rem` unit just as others. (2300dc412feaa810ccd6986ad347da8bc1890ce7)
+- Quick margins and padding classes are now in a separate file named `utilities.less` instead of existing `mixins.less`. Add `utilities.less` to import list in your base stylesheet.
+- Adds reference import for dependencies per individual modules.import individual modules without having to check for which dependencies you need for each files. If you are using `custom-variables.less` override, make sure you import them after the actual modules and they will override default values just fine as they were.
+- `.block`, `.inline-block` quick classes have been removed from `layout.less`. Manually define them in your site stylesheet if you need them.
+- `basic.less` is now treated as one of the modules, not dependencies.
+- Font order and fallback font for monospace text blocks has been changed.
+- Text-related code
+- `h5` header tag now uses `rem` unit just as others.
 
 
 ## 0.3.2
