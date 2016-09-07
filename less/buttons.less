@@ -110,6 +110,10 @@
 	.active[data-dropdown-state="open"] > & .caret {
 		transform: rotateX(180deg);
 	}
+
+	.petalicon {
+		line-height: 0;
+	}
 	
 	// compact size
 	&.compact {
@@ -686,6 +690,7 @@ ul.dropdown-menu {
 		height: 16px;
 		margin-top: -8px;
 		vertical-align: middle;
+		line-height: 1;
 
 		// initial state
 		opacity: 0;
@@ -773,11 +778,11 @@ ul.dropdown-menu {
 
 	&:not(.icon-right).loading,
 	&:not(.icon-right).loading-done {
-		padding-left: 20px + 20px;
+		padding-left: 20px + 25px;
 		pointer-events: none;
 
 		&.compact {
-			padding-left: 15px + 20px;
+			padding-left: 15px + 25px;
 		}
 	}
 
@@ -798,11 +803,11 @@ ul.dropdown-menu {
 
 	&.icon-right.loading,
 	&.icon-right.loading-done {
-		padding-right: 20px + 20px;
+		padding-right: 20px + 25px;
 		pointer-events: none;
 
 		&.compact {
-			padding-right: 15px + 20px;
+			padding-right: 15px + 25px;
 		}
 	}
 }

@@ -1317,6 +1317,9 @@ hr {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
 }
+.btn .petalicon {
+  line-height: 0;
+}
 .btn.compact {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -1560,6 +1563,7 @@ ul.dropdown-menu > .submenu:hover ul.dropdown-menu {
   height: 16px;
   margin-top: -8px;
   vertical-align: middle;
+  line-height: 1;
   opacity: 0;
   -webkit-transition-property: -webkit-transform, width, opacity;
           transition-property: transform, width, opacity;
@@ -1576,8 +1580,8 @@ ul.dropdown-menu > .submenu:hover ul.dropdown-menu {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-animation: spinner-rotate 1s linear infinite;
-          animation: spinner-rotate 1s linear infinite;
+  -webkit-animation: spinner-rotate 0.4s linear infinite;
+          animation: spinner-rotate 0.4s linear infinite;
   opacity: 1;
 }
 @-webkit-keyframes spinner-rotate {
@@ -1656,12 +1660,12 @@ ul.dropdown-menu > .submenu:hover ul.dropdown-menu {
 }
 .btn.btn-spinner:not(.icon-right).loading,
 .btn.btn-spinner:not(.icon-right).loading-done {
-  padding-left: 40px;
+  padding-left: 45px;
   pointer-events: none;
 }
 .btn.btn-spinner:not(.icon-right).loading.compact,
 .btn.btn-spinner:not(.icon-right).loading-done.compact {
-  padding-left: 35px;
+  padding-left: 40px;
 }
 .btn.btn-spinner.icon-right i.petalicon {
   margin-left: 3px;
@@ -1674,12 +1678,12 @@ ul.dropdown-menu > .submenu:hover ul.dropdown-menu {
 }
 .btn.btn-spinner.icon-right.loading,
 .btn.btn-spinner.icon-right.loading-done {
-  padding-right: 40px;
+  padding-right: 45px;
   pointer-events: none;
 }
 .btn.btn-spinner.icon-right.loading.compact,
 .btn.btn-spinner.icon-right.loading-done.compact {
-  padding-right: 35px;
+  padding-right: 40px;
 }
 .btn.btn-spinner.has-icon:not(.icon-right).loading,
 .btn.btn-spinner.has-icon:not(.icon-right).loading-done {
@@ -3143,8 +3147,8 @@ textarea.input[readonly] {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-animation: spinner-rotate 1s linear infinite;
-          animation: spinner-rotate 1s linear infinite;
+  -webkit-animation: spinner-rotate 0.4s linear infinite;
+          animation: spinner-rotate 0.4s linear infinite;
   opacity: 1;
 }
 @keyframes spinner-rotate {
