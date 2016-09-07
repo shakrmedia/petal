@@ -254,6 +254,15 @@
 	</div>
 
 	<div class="form-group">
+		<label class="form-label" for="demoForm3Email">Email</label>
+		<div class="input-group">
+			<input class="input" id="demoForm3Email" placeholder="yourname" type="text" />
+			<span class="input-addon">@</span>
+			<input class="input" id="demoForm3EmailB" placeholder="yourcompany.com" type="text" />
+		</div>
+	</div>
+
+	<div class="form-group">
 		<label class="form-label" for="demoForm3Subdomain">Subdomain</label>
 		<div class="input-group">
 			<input class="input" id="demoForm3Subdomain" type="text" />
@@ -275,30 +284,23 @@
     &lt;div class=&quot;form-group&quot;&gt;
         &lt;label class=&quot;form-label&quot; for=&quot;demoForm3Username&quot;&gt;Username&lt;/label&gt;
         &lt;div class=&quot;input-group&quot;&gt;
+            &lt;!-- input addon up front --&gt;
             &lt;span class=&quot;input-addon&quot;&gt;@&lt;/span&gt;
+
+            &lt;!-- input --&gt;
             &lt;input class=&quot;input&quot; id=&quot;demoForm3Username&quot; type=&quot;text&quot; /&gt;
-            &lt;span class=&quot;input-addon-btn&quot;&gt;&lt;button class=&quot;btn green&quot;&gt;Check&lt;/button&gt;&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
 
-    &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label class=&quot;form-label&quot; for=&quot;demoForm3Subdomain&quot;&gt;Subdomain&lt;/label&gt;
-        &lt;div class=&quot;input-group&quot;&gt;
-            &lt;input class=&quot;input&quot; id=&quot;demoForm3Subdomain&quot; type=&quot;text&quot; /&gt;
-            &lt;span class=&quot;input-addon&quot;&gt;.somesite.com&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label class=&quot;form-label&quot; for=&quot;demoForm3Search&quot;&gt;Search&lt;/label&gt;
-        &lt;div class=&quot;input-group&quot;&gt;
-            &lt;input class=&quot;input&quot; id=&quot;demoForm3Search&quot; type=&quot;text&quot; /&gt;
-            &lt;span class=&quot;input-addon-btn&quot;&gt;&lt;button class=&quot;btn&quot;&gt;Search&lt;/button&gt;&lt;/span&gt;
+            &lt;!-- input addon button --&gt;
+            &lt;span class=&quot;input-addon-btn&quot;&gt;
+                &lt;button class=&quot;btn green&quot;&gt;Check&lt;/button&gt;
+            &lt;/span&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
 
 </div>
+
+<p>Input groups are used when you want to put form elements like input fields, buttons or text as addons in one line blocks. <code>.input-group</code> uses flexbox for layout so child components will stretch appropriately and keep same height if any sibling element happens to be larger than the other.</p>
 
 <p>Place <code>.input-addon</code> class blocks before or after the input. Enclose them with a <code>.input-group</code> container.</p>
 

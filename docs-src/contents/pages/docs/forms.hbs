@@ -223,6 +223,15 @@ list-order: 6
 	</div>
 
 	<div class="form-group">
+		<label class="form-label" for="demoForm3Email">Email</label>
+		<div class="input-group">
+			<input class="input" id="demoForm3Email" placeholder="yourname" type="text" />
+			<span class="input-addon">@</span>
+			<input class="input" id="demoForm3EmailB" placeholder="yourcompany.com" type="text" />
+		</div>
+	</div>
+
+	<div class="form-group">
 		<label class="form-label" for="demoForm3Subdomain">Subdomain</label>
 		<div class="input-group">
 			<input class="input" id="demoForm3Subdomain" type="text" />
@@ -246,31 +255,24 @@ list-order: 6
 	<div class="form-group">
 		<label class="form-label" for="demoForm3Username">Username</label>
 		<div class="input-group">
+			<!-- input addon up front -->
 			<span class="input-addon">@</span>
+
+			<!-- input -->
 			<input class="input" id="demoForm3Username" type="text" />
-			<span class="input-addon-btn"><button class="btn green">Check</button></span>
-		</div>
-	</div>
 
-	<div class="form-group">
-		<label class="form-label" for="demoForm3Subdomain">Subdomain</label>
-		<div class="input-group">
-			<input class="input" id="demoForm3Subdomain" type="text" />
-			<span class="input-addon">.somesite.com</span>
-		</div>
-	</div>
-
-	<div class="form-group">
-		<label class="form-label" for="demoForm3Search">Search</label>
-		<div class="input-group">
-			<input class="input" id="demoForm3Search" type="text" />
-			<span class="input-addon-btn"><button class="btn">Search</button></span>
+			<!-- input addon button -->
+			<span class="input-addon-btn">
+				<button class="btn green">Check</button>
+			</span>
 		</div>
 	</div>
 </form>
 ```
 {{/markdown}}
 </div>
+
+<p>Input groups are used when you want to put form elements like input fields, buttons or text as addons in one line blocks. <code>.input-group</code> uses flexbox for layout so child components will stretch appropriately and keep same height if any sibling element happens to be larger than the other.</p>
 
 <p>Place <code>.input-addon</code> class blocks before or after the input. Enclose them with a <code>.input-group</code> container.</p>
 

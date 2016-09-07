@@ -3158,36 +3158,50 @@ textarea.input[readonly] {
   }
 }
 .input-group {
-  display: table;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
 }
 .input-group input.input {
-  display: table-cell;
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   margin: 0;
   vertical-align: middle;
 }
 .input-group .input-addon,
 .input-group .input-addon-btn {
-  width: 1%;
-  display: table-cell;
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   vertical-align: middle;
   margin: 0;
   line-height: 1.2;
+  white-space: nowrap;
 }
 .input-group .input-addon {
   padding: 8px 10px;
   background-color: rgba(221, 221, 221, 0.5);
   border: 2px solid #bbb;
   font-size: 0.9em;
+  border-left-width: 0;
   border-right-width: 0;
 }
 .dark .input-group .input-addon,
 .input-group .input-addon.ondark {
   border-color: #999;
 }
+.input-group .input-addon:first-child {
+  border-left-width: 2px;
+}
 .input-group .input-addon:last-child {
   border-right-width: 2px;
-  border-left-width: 0;
+}
+.input-group .input-addon-btn .btn {
+  height: 100%;
 }
 .form-inline .form-group {
   vertical-align: middle;

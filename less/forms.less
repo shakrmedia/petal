@@ -406,11 +406,12 @@ textarea.input {
 
 // input groups
 .input-group {
-	display: table;
+	display: flex;
 	width: 100%;
 
 	input.input {
-		display: table-cell;
+		display: block;
+		flex: 0 1 auto;
 		margin: 0;
 		vertical-align: middle;
 	
@@ -433,12 +434,12 @@ textarea.input {
 	}
 
 	.input-addon, .input-addon-btn {
-		width: 1%;
-		display: table-cell;
+		display: block;
+		flex: 0 1 auto;
 		vertical-align: middle;
 		margin: 0;
 		line-height: @input-line-height;
-		
+		white-space: nowrap;
 	}
 
 	.input-addon {
@@ -446,17 +447,27 @@ textarea.input {
 		background-color: fadeout(@gray-l2,50%);
 		border: @input-border-width solid @gray-l1;
 		font-size: @input-font-size;
+		border-left-width: 0;
 		border-right-width: 0;
 
 		.dark &, &.ondark {
 			border-color: @gray;
 		}
 
-		&:last-child {
-			border-right-width: @input-border-width;
-			border-left-width: 0;
+		&:first-child {
+			border-left-width: @input-border-width;
 		}
 
+		&:last-child {
+			border-right-width: @input-border-width;
+		}
+
+	}
+
+	.input-addon-btn {
+		.btn {
+			height: 100%;
+		}
 	}
 	
 	// border-radius
