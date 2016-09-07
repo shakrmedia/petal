@@ -4529,6 +4529,9 @@ footer .shakr-logo .shakr-feathers {
   width: 48px;
   height: 48px;
 }
+footer p {
+  padding-top: 5px;
+}
 footer .petal-ver {
   float: right;
   text-align: right;
@@ -4727,6 +4730,11 @@ section .section-footer {
   margin-top: 30px;
   padding-top: 15px;
   border-top: 1px solid #eee;
+}
+section .section-footer .datestamp {
+  float: right;
+  font-size: 0.9em;
+  color: #666;
 }
 .clabel {
   display: inline-block;
