@@ -163,39 +163,27 @@ module.exports = function(grunt) {
       },
 
       landing: {
-        files: [{
-          expand: true,
-          cwd: 'docs-src/contents/pages/',
-          src: ['index.hbs'],
-          dest: 'docs',
-          ext: '.html'
-        }]
+        files: {
+          'docs/': ['docs-src/contents/pages/*.hbs' ],
+        }
       },
 
       start: {
         options: {
           layout: 'docs-layout.hbs'
         },
-        files: [{
-          expand: true,
-          cwd: 'docs-src/contents/pages/start',
-          src: ['*.hbs'],
-          dest: 'docs/start',
-          ext: '.html'
-        }]
+        files: {
+          'docs/start': ['docs-src/contents/pages/start/*.hbs' ],
+        }
       },
 
       docs: {
         options: {
           layout: 'docs-layout.hbs'
         },
-        files: [{
-          expand: true,
-          cwd: 'docs-src/contents/pages/docs',
-          src: ['*.hbs'],
-          dest: 'docs/docs',
-          ext: '.html'
-        }]
+        files: {
+          'docs/docs': ['docs-src/contents/pages/docs/*.hbs' ],
+        }
       }
       
     },
