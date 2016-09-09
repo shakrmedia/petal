@@ -762,9 +762,40 @@ list-order: 6
 <hr class="subdivider">
 
 
-
 <h3 id="section-forms-selectboxes">
 	Selectboxes
+</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<select name="selectbox" id="demoSelectbox" class="select">
+	<option>Lorem</option>
+	<option>ipsum</option>
+	<option>dolor</option>
+	<option>sit</option>
+	<option>amet</option>
+	<option>consectetur</option>
+</select>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<select name="selectbox" id="demoSelectbox" class="select">
+	<option>Lorem</option>
+	<option>ipsum</option>
+	<option>dolor</option>
+	<option>sit</option>
+	<option>amet</option>
+	<option>consectetur</option>
+</select>
+```
+{{/markdown}}
+</div>
+
+<p>Use <code>.select</code> class on <code>&lt;select&gt;</code> to style the selectbox. Without JavaScript, only the box will be styled and dropdown menu will remain the same following default styles depending on your browser/platform. For more thorough styling, use the JavaScript method below.</p>
+
+<br>
+
+<h3 id="section-forms-selectboxes">
+	Selectboxes (Selecter)
 
 	<span class="badge warning js-req">Requires JavaScript</span>
 </h3>
@@ -773,8 +804,8 @@ list-order: 6
 <div class="row">
 
 	<div class="col-2">
-		<label class="form-label" for="demoSelectbox">Selectbox</label>
-		<select name="selectbox" id="demoSelectbox" class="selectbox">
+		<label class="form-label" for="demoSelectbox1">Selectbox</label>
+		<select name="selectbox" id="demoSelectbox1" class="selectbox">
 			<option>Lorem</option>
 			<option>ipsum</option>
 			<option>dolor</option>
@@ -879,7 +910,7 @@ list-order: 6
 {{/markdown}}
 </div>
 
-<p>Selectboxes uses <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal-functions.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
+<p>To style a selectbox completely, JavaScript must be used to replace existing <code>&lt;select&gt;</code> because a <code>&lt;select&gt;</code> element is very limited in terms of CSS. Petal implemented selectbox styles using <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal-functions.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
 
 <p>The Selecter plugin is not activated by default because of possible usability issues. To initialize, include the line of code below in your site page (change the selector to whichever selectbox you want to apply to).</p>
 
