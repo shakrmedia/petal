@@ -8,7 +8,7 @@ module.exports = function(grunt) {
   'use strict';
   
   require("load-grunt-tasks")(grunt, {
-    pattern: ['grunt-*', 'assemble']
+    pattern: ['grunt-*']
   });
   
   grunt.initConfig({
