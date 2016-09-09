@@ -57,11 +57,15 @@ module.exports = function(grunt) {
       }
     },
 
-    // Autoprefixer
-    autoprefixer: {
+    // postcss (autoprefixer)
+    postcss: {
       options: {
-        browser: ["last 3 versions", "ie 10"],
-        remove: false
+        processors: [
+          require('autoprefixer')({
+            browsers:["last 3 versions", "ie 10"],
+            remove: false
+          })
+        ]
       },
       petal: {
         expand: true,
@@ -233,13 +237,13 @@ module.exports = function(grunt) {
   
   grunt.registerTask('default', [
     'less:petal', 'less:docs', 
-    'autoprefixer:petal', 'autoprefixer:docs',
+    'postcss:petal', 'postcss:docs',
     'cssmin:petal', 
     'uglify:petal', 'concat:petal', 'usebanner:petal', 
     'copy:docs_assets', 'copy:docs_js', 
     'newer:assemble']);
-  grunt.registerTask('petal', ['less:petal', 'autoprefixer:petal', 'cssmin:petal', 'uglify:petal', 'concat:petal', 'usebanner:petal']);
-  grunt.registerTask('petal-dist', ['less:dist', 'autoprefixer:dist', 'cssmin:dist', 'uglify:dist', 'concat:dist', 'usebanner:dist', 'copy:dist']);
+  grunt.registerTask('petal', ['less:petal', 'postcss:petal', 'cssmin:petal', 'uglify:petal', 'concat:petal', 'usebanner:petal']);
+  grunt.registerTask('petal-dist', ['less:dist', 'postcss:dist', 'cssmin:dist', 'uglify:dist', 'concat:dist', 'usebanner:dist', 'copy:dist']);
   grunt.registerTask('js', ['uglify:petal', 'concat:petal']);
   grunt.registerTask('dev', ['connect', 'watch']);
   
