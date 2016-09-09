@@ -1,0 +1,50 @@
+---
+title: Progress
+area: docs
+section: components
+list-order: 7
+---
+
+<div class="section-header">
+	<h2 id="section-forms">Progress</h2>
+	<p class="sub">
+		<span class="file-ref">progress.less</span>
+	</p>
+</div>
+
+<h3>Spinner</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="row">
+		<div class="col-3">
+			<span class="form-label">Regular (24px)</span>
+			<span class="spinner spinner-demo"><span></span></span>
+		</div>
+		<div class="col-3">
+			<span class="form-label">Small (16px)</span>
+			<span class="spinner small spinner-demo"><span></span></span>
+		</div>
+		<div class="col-3">
+			<span class="form-label">Big (40px)</span>
+			<span class="spinner big spinner-demo"><span></span></span>
+		</div>
+	</div>
+	<div class="btn-group">
+		<button class="btn" id="spinner-demo-toggle">Toggle Spin</button>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<span class="spinner spinning"><span></span></span>
+<span class="spinner spinning small"><span></span></span>
+<span class="spinner spinning big"><span></span></span>
+```
+{{/markdown}}
+</div>
+
+<p>Simple spinners made with just two <code>&lt;span&gt;</code> elements and CSS. Spinning animation is entirely made with CSS so you don't need to do any additional work to make them spin: just add <code>.spinning</code> class to spinner.</p>
+<p>You will need to use JavaScript though, if you want to toggle spinning animation and/or display and hide spinner where you need them. Use <code>.hidden</code> class on <code>.spinner</code> when you need to hide the spinner.</p>
+
+
+

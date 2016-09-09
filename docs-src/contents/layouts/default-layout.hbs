@@ -116,6 +116,12 @@
 		}, 3000);
 	});
 
+	// Spinner toggle button
+	$('#spinner-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('.spinner').toggleClass('spinning');
+	});
+
 	// Demo Modal Toggle
 	$('#demo-fp-modal-open-btn').click(function(e) {
 		$('#demo-fp-modal').addClass('visible');

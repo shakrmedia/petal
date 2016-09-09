@@ -771,17 +771,18 @@ body {
 .row {
   margin-left: -15px;
   margin-right: -15px;
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .row.collapse-gutter > [class^="col-"]:not(:first-of-type):not(:last-of-type),
 .row.collapse-gutter > [class*=" col-"]:not(:first-of-type):not(:last-of-type) {
@@ -804,11 +805,12 @@ body {
 }
 [class^="col-"] .stretch,
 [class*=" col-"] .stretch {
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 [class^="col-"] .stretch > *,
 [class*=" col-"] .stretch > * {
@@ -817,68 +819,79 @@ body {
 .col-1 {
   width: 100%;
   max-width: 100%;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
 }
 .col-2 {
   width: 50%;
   max-width: 50%;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
 }
 .col-3 {
   width: 33.3333%;
   max-width: 33.33333333%;
-  -ms-flex-preferred-size: 33.33333333%;
-      flex-basis: 33.33333333%;
+  -webkit-flex-basis: 33.33333333%;
+      -ms-flex-preferred-size: 33.33333333%;
+          flex-basis: 33.33333333%;
 }
 .col-3.colspan-2 {
   width: 66.66666667%;
   max-width: 66.66666667%;
-  -ms-flex-preferred-size: 66.66666667%;
-      flex-basis: 66.66666667%;
+  -webkit-flex-basis: 66.66666667%;
+      -ms-flex-preferred-size: 66.66666667%;
+          flex-basis: 66.66666667%;
 }
 .col-4 {
   width: 25%;
   max-width: 25%;
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  -webkit-flex-basis: 25%;
+      -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
 }
 .col-4.colspan-2 {
   width: 50%;
   max-width: 50%;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
 }
 .col-4.colspan-3 {
   width: 75%;
   max-width: 75%;
-  -ms-flex-preferred-size: 75%;
-      flex-basis: 75%;
+  -webkit-flex-basis: 75%;
+      -ms-flex-preferred-size: 75%;
+          flex-basis: 75%;
 }
 .col-5 {
   width: 20%;
   max-width: 20%;
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  -webkit-flex-basis: 20%;
+      -ms-flex-preferred-size: 20%;
+          flex-basis: 20%;
 }
 .col-5.colspan-2 {
   width: 40%;
   max-width: 40%;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  -webkit-flex-basis: 40%;
+      -ms-flex-preferred-size: 40%;
+          flex-basis: 40%;
 }
 .col-5.colspan-3 {
   width: 60%;
   max-width: 60%;
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
+  -webkit-flex-basis: 60%;
+      -ms-flex-preferred-size: 60%;
+          flex-basis: 60%;
 }
 .col-5.colspan-4 {
   width: 80%;
   max-width: 80%;
-  -ms-flex-preferred-size: 80%;
-      flex-basis: 80%;
+  -webkit-flex-basis: 80%;
+      -ms-flex-preferred-size: 80%;
+          flex-basis: 80%;
 }
 /* quick margins and paddings */
 .m-5 {
@@ -1252,8 +1265,9 @@ hr {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
   border-top: 4px solid #fff;
-  -webkit-transition: 0.2s border-color, 0.3s -webkit-transform;
-          transition: 0.2s border-color, 0.3s transform;
+  transition: 0.2s border-color, 0.3s -webkit-transform;
+  transition: 0.2s border-color, 0.3s transform;
+  transition: 0.2s border-color, 0.3s transform, 0.3s -webkit-transform;
 }
 .caret-right {
   position: relative;
@@ -1287,10 +1301,8 @@ hr {
   border: 2px solid transparent;
   border-radius: 0;
   outline: none !important;
-  -webkit-transition-property: background, border-color, color, box-shadow, opacity;
-          transition-property: background, border-color, color, box-shadow, opacity;
-  -webkit-transition-duration: .15s;
-          transition-duration: .15s;
+  transition-property: background, border-color, color, box-shadow, opacity;
+  transition-duration: .15s;
 }
 .btn:hover {
   box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.2);
@@ -1300,8 +1312,7 @@ hr {
 }
 .btn:active {
   box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
-  -webkit-transition-duration: 0s;
-          transition-duration: 0s;
+  transition-duration: 0s;
 }
 .btn.active,
 .active > .btn[data-toggle] {
@@ -1390,14 +1401,12 @@ fieldset[disabled] .btn,
   background: rgba(0, 0, 0, 0.1);
   opacity: 1;
   z-index: 0;
-  -webkit-transition: opacity .15s;
-          transition: opacity .15s;
+  transition: opacity .15s;
 }
 .btn-group.btn-split .btn + .btn.dropdown:active {
   border-left-width: 2px;
   margin-left: -2px;
-  -webkit-transition-duration: 0s;
-          transition-duration: 0s;
+  transition-duration: 0s;
 }
 .dark .btn-group.btn-split .btn + .btn.dropdown:not(.hollow):before {
   background: rgba(255, 255, 255, 0.3);
@@ -1412,21 +1421,17 @@ fieldset[disabled] .btn,
   opacity: 0;
 }
 .btn-group.btn-split .btn + .btn.dropdown:active:before {
-  -webkit-transition-duration: 0s;
-          transition-duration: 0s;
+  transition-duration: 0s;
 }
 .btn-group.btn-split.active .btn + .btn.dropdown:before {
-  -webkit-transition-duration: .15s;
-          transition-duration: .15s;
+  transition-duration: .15s;
 }
 .btn-group.btn-split.active .btn + .btn.dropdown:active:before {
-  -webkit-transition-duration: 0s !important;
-          transition-duration: 0s !important;
+  transition-duration: 0s !important;
 }
 /* segmented button group */
 .btn-group-segmented {
-  -webkit-transition: 0.2s opacity;
-          transition: 0.2s opacity;
+  transition: 0.2s opacity;
 }
 .btn-group-segmented .btn + .btn {
   margin-left: -2px;
@@ -1523,8 +1528,9 @@ ul.dropdown-menu > .submenu > a:after {
   top: 50%;
   right: 10px;
   margin-top: -4px;
-  -webkit-transition: 0.2s -webkit-transform;
-          transition: 0.2s transform;
+  transition: 0.2s -webkit-transform;
+  transition: 0.2s transform;
+  transition: 0.2s transform, 0.2s -webkit-transform;
 }
 ul.dropdown-menu > .submenu ul.dropdown-menu {
   display: none;
@@ -1533,6 +1539,7 @@ ul.dropdown-menu > .submenu ul.dropdown-menu {
 }
 ul.dropdown-menu > .submenu:hover > a:after {
   -webkit-transform: translateX(2px);
+      -ms-transform: translateX(2px);
           transform: translateX(2px);
 }
 ul.dropdown-menu > .submenu:hover ul.dropdown-menu {
@@ -1543,16 +1550,14 @@ ul.dropdown-menu > .submenu:hover ul.dropdown-menu {
 }
 .btn.btn-spinner {
   position: relative;
-  -webkit-transition-property: background, border-color, color, box-shadow, opacity, padding;
-          transition-property: background, border-color, color, box-shadow, opacity, padding;
+  transition-property: background, border-color, color, box-shadow, opacity, padding;
 }
 .btn.btn-spinner i.petalicon {
-  -webkit-transition-property: -webkit-transform, opacity;
-          transition-property: transform, opacity;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 }
 .btn.btn-spinner:before {
   content: "";
@@ -1565,12 +1570,11 @@ ul.dropdown-menu > .submenu:hover ul.dropdown-menu {
   vertical-align: middle;
   line-height: 1;
   opacity: 0;
-  -webkit-transition-property: -webkit-transform, width, opacity;
-          transition-property: transform, width, opacity;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
+  transition-property: width, opacity, -webkit-transform;
+  transition-property: transform, width, opacity;
+  transition-property: transform, width, opacity, -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 }
 .btn.btn-spinner.loading i.petalicon {
   opacity: 0;
@@ -2826,8 +2830,7 @@ textarea.input {
   margin: 5px 0;
   font-size: 0.9em;
   line-height: 1.2;
-  -webkit-transition: box-shadow 0.15s, border-color 0.15s, background-color 0.15s, color 0.15s;
-          transition: box-shadow 0.15s, border-color 0.15s, background-color 0.15s, color 0.15s;
+  transition: box-shadow 0.15s, border-color 0.15s, background-color 0.15s, color 0.15s;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -2965,17 +2968,18 @@ textarea.input[readonly] {
   width: auto;
   margin-left: -15px;
   margin-right: -15px;
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .form-horizontal .form-group > [class^="col-"]:not(:first-of-type):not(:last-of-type),
 .form-horizontal .form-group > [class*=" col-"]:not(:first-of-type):not(:last-of-type) {
@@ -3162,14 +3166,14 @@ textarea.input[readonly] {
   }
 }
 .input-group {
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 .input-group input.input {
   display: block;
-  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
   margin: 0;
@@ -3178,7 +3182,7 @@ textarea.input[readonly] {
 .input-group .input-addon,
 .input-group .input-addon-btn {
   display: block;
-  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
   vertical-align: middle;
@@ -3259,8 +3263,7 @@ input[type="radio"].radiobox + label:before {
   border: 2px solid #bbb;
   background-color: #fff;
   box-sizing: border-box;
-  -webkit-transition: 0.2s;
-          transition: 0.2s;
+  transition: 0.2s;
 }
 input[type="checkbox"].checkbox + label:hover:before,
 input[type="radio"].radiobox + label:hover:before {
@@ -3270,8 +3273,7 @@ input[type="checkbox"].checkbox + label:active:before,
 input[type="radio"].radiobox + label:active:before {
   border-color: #30a4dc;
   background-color: #ddd;
-  -webkit-transition-duration: 0;
-          transition-duration: 0;
+  transition-duration: 0;
 }
 .dark input[type="checkbox"].checkbox + label:before,
 .dark input[type="radio"].radiobox + label:before {
@@ -3315,8 +3317,9 @@ input[type="radio"].radiobox + label:after {
   box-sizing: border-box;
   padding: 0;
   background-clip: content-box;
-  -webkit-transition: width 0.1s, -webkit-transform 0.1s;
-          transition: width 0.1s, transform 0.1s;
+  transition: width 0.1s, -webkit-transform 0.1s;
+  transition: width 0.1s, transform 0.1s;
+  transition: width 0.1s, transform 0.1s, -webkit-transform 0.1s;
 }
 .dark input[type="checkbox"].checkbox + label:after,
 .dark input[type="radio"].radiobox + label:after {
@@ -3327,6 +3330,7 @@ input[type="radio"].radiobox + label:after {
   height: 20px;
   padding: 5px;
   -webkit-transform: scale(0);
+      -ms-transform: scale(0);
           transform: scale(0);
   background-color: #2a91c2;
 }
@@ -3338,6 +3342,7 @@ input[type="checkbox"].checkbox:checked + label:after {
 }
 input[type="radio"].radiobox:checked + label:after {
   -webkit-transform: scale(1);
+      -ms-transform: scale(1);
           transform: scale(1);
   background-image: none !important;
 }
@@ -3401,10 +3406,8 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
   background-color: #fff;
   border: 2px solid #bbb;
   border-radius: 20px;
-  -webkit-transition-property: border-color, background-color;
-          transition-property: border-color, background-color;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-property: border-color, background-color;
+  transition-duration: 0.2s;
 }
 .chk-switch label:hover {
   border-color: #a2a2a2;
@@ -3412,8 +3415,7 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
 .chk-switch label:active {
   border-color: #30a4dc;
   background-color: #ddd;
-  -webkit-transition-duration: 0;
-          transition-duration: 0;
+  transition-duration: 0;
 }
 .dark .chk-switch label {
   border-color: #666;
@@ -3450,9 +3452,11 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
   border-radius: 20px;
   background-clip: content-box;
   -webkit-transform: translate(-24px);
+      -ms-transform: translate(-24px);
           transform: translate(-24px);
-  -webkit-transition: -webkit-transform 0.1s, background-color 0.1s;
-          transition: transform 0.1s, background-color 0.1s;
+  transition: background-color 0.1s, -webkit-transform 0.1s;
+  transition: transform 0.1s, background-color 0.1s;
+  transition: transform 0.1s, background-color 0.1s, -webkit-transform 0.1s;
 }
 .chk-switch label span:after {
   content: "";
@@ -3464,9 +3468,11 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
   border-radius: 20px;
   background-color: #2a91c2;
   -webkit-transform: translate(-24px);
+      -ms-transform: translate(-24px);
           transform: translate(-24px);
-  -webkit-transition: -webkit-transform 0.1s;
-          transition: transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
 }
 .dark .chk-switch label span:after {
   background-color: #69bde6;
@@ -3482,16 +3488,19 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
 fieldset:not([disabled]) .chk-switch:hover input[type="checkbox"] + label span:before,
 fieldset:not([disabled]) .chk-switch:hover input[type="checkbox"] + label span:after {
   -webkit-transform: translate(-22px);
+      -ms-transform: translate(-22px);
           transform: translate(-22px);
 }
 .chk-switch input[type="checkbox"]:checked + label span:before,
 .chk-switch input[type="checkbox"]:checked + label span:after {
   -webkit-transform: translate(0);
+      -ms-transform: translate(0);
           transform: translate(0);
 }
 .chk-switch:hover input[type="checkbox"]:checked:not(:disabled) + label span:before,
 .chk-switch:hover input[type="checkbox"]:checked:not(:disabled) + label span:after {
   -webkit-transform: translate(-2px);
+      -ms-transform: translate(-2px);
           transform: translate(-2px);
 }
 .chk-switch.onoff-type label span:before {
@@ -3591,8 +3600,7 @@ fieldset[disabled] .chk-switch label:active {
   padding: 8px 40px 8px 20px;
   text-overflow: clip;
   z-index: 2;
-  -webkit-transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s, color 0.15s;
-          transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s, color 0.15s;
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s, color 0.15s;
 }
 .selecter .selecter-selected:after {
   height: 0;
@@ -3609,8 +3617,9 @@ fieldset[disabled] .chk-switch label:active {
   margin: auto 0;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-transition: 0.2s border-color, 0.3s -webkit-transform;
-          transition: 0.2s border-color, 0.3s transform;
+  transition: 0.2s border-color, 0.3s -webkit-transform;
+  transition: 0.2s border-color, 0.3s transform;
+  transition: 0.2s border-color, 0.3s transform, 0.3s -webkit-transform;
 }
 .selecter .selecter-options {
   width: 100%;
@@ -3627,8 +3636,7 @@ fieldset[disabled] .chk-switch label:active {
   padding: 0;
   z-index: 50;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 1px 0 rgba(0, 0, 0, 0.1) inset;
-  -webkit-transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s, color 0.15s;
-          transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s, color 0.15s;
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s, color 0.15s;
 }
 .selecter .selecter-options .selecter-group {
   color: #aaa;
@@ -3839,6 +3847,56 @@ fieldset[disabled] .chk-switch label:active {
 .selecter.ondark .selecter-item:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.spinner span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(102, 102, 102, 0.2);
+  border-top-color: #30a4dc;
+  border-radius: 40px;
+}
+.spinner.spinning span {
+  -webkit-animation: spinner-rotate 0.6s linear infinite;
+          animation: spinner-rotate 0.6s linear infinite;
+}
+@keyframes spinner-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.spinner.hidden {
+  display: none;
+}
+.spinner.small {
+  width: 16px;
+  height: 16px;
+}
+.spinner.small span {
+  width: 16px;
+  height: 16px;
+}
+.spinner.big {
+  width: 40px;
+  height: 40px;
+}
+.spinner.big span {
+  width: 40px;
+  height: 40px;
+  border-width: 3px;
+}
 table.table {
   width: 100%;
   background-color: #fff;
@@ -3985,10 +4043,10 @@ table.table.table-condensed td {
   box-sizing: content-box;
   vertical-align: middle;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  -webkit-transition-property: background-color, color, -webkit-transform, box-shadow;
-          transition-property: background-color, color, transform, box-shadow;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-property: background-color, color, box-shadow, -webkit-transform;
+  transition-property: background-color, color, transform, box-shadow;
+  transition-property: background-color, color, transform, box-shadow, -webkit-transform;
+  transition-duration: 0.2s;
 }
 .paging .pg-block a:hover {
   text-decoration: none;
@@ -4022,8 +4080,9 @@ table.table.table-condensed td {
   margin: 0 10px;
 }
 .paging .pg-block .petalicon {
-  -webkit-transition: -webkit-transform 0.2s;
-          transition: transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 .paging .pg-block.prev {
   margin-left: 5px;
@@ -4046,10 +4105,12 @@ table.table.table-condensed td {
 }
 .paging .pg-block.prev:not(.disabled):hover .petalicon {
   -webkit-transform: translateX(-2px);
+      -ms-transform: translateX(-2px);
           transform: translateX(-2px);
 }
 .paging .pg-block.next:not(.disabled):hover .petalicon {
   -webkit-transform: translateX(2px);
+      -ms-transform: translateX(2px);
           transform: translateX(2px);
 }
 .paging .pg-ellipsis {
@@ -4107,8 +4168,7 @@ table.table.table-condensed td {
 .card {
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  -webkit-transition: background-color 0.15s, box-shadow 0.15s, color 0.15s;
-          transition: background-color 0.15s, box-shadow 0.15s, color 0.15s;
+  transition: background-color 0.15s, box-shadow 0.15s, color 0.15s;
 }
 .panel.hover-em:hover,
 .card.hover-em:hover {
@@ -4277,8 +4337,7 @@ span.badge {
   box-sizing: content-box;
   opacity: 0.5;
   cursor: pointer;
-  -webkit-transition: opacity 0.2s;
-          transition: opacity 0.2s;
+  transition: opacity 0.2s;
 }
 .modal .close-btn:before {
   font-family: 'petalicon';
@@ -4367,8 +4426,7 @@ span.badge {
   margin: -7px;
   box-sizing: content-box;
   opacity: 0.5;
-  -webkit-transition: opacity 0.2s;
-          transition: opacity 0.2s;
+  transition: opacity 0.2s;
   cursor: pointer;
 }
 .fullpage-modal .close-btn:before {
@@ -4425,8 +4483,7 @@ a.totop {
   text-transform: uppercase;
   font-size: 0.8em;
   font-weight: bold;
-  -webkit-transition: 0.2s;
-          transition: 0.2s;
+  transition: 0.2s;
 }
 a.totop:before {
   font-family: 'petalicon';
@@ -4583,8 +4640,7 @@ footer .petal-ver {
 #sidenav li a {
   color: #333;
   font-size: 0.9em;
-  -webkit-transition: 0.2s;
-          transition: 0.2s;
+  transition: 0.2s;
   display: block;
   padding: 7px 0;
   border-bottom: 1px solid #eee;
@@ -4604,7 +4660,6 @@ footer .petal-ver {
   padding-bottom: 50px;
   margin: 0;
   text-align: center;
-  background-image: -webkit-radial-gradient(circle farthest-corner at center top, #fff 0%, rgba(248, 179, 185, 0.2) 50%, rgba(248, 179, 185, 0.8) 100%);
   background-image: radial-gradient(circle farthest-corner at center top, #fff 0%, rgba(248, 179, 185, 0.2) 50%, rgba(248, 179, 185, 0.8) 100%);
 }
 #landing .logo-wrap {
@@ -4681,8 +4736,7 @@ section h3 .badge.js-req {
 section .demo-panel {
   border: 1px solid #ddd;
   margin: 10px 0;
-  -webkit-transition: 0.2s;
-          transition: 0.2s;
+  transition: 0.2s;
 }
 section .demo-panel.dark {
   border-color: #000;

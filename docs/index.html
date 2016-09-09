@@ -5,7 +5,7 @@
 	<!-- 
 		Petal Documentation
 
-		petal.less v0.5.1 - 2016-09-07
+		petal.less v0.5.1
 		A modern, light CSS UI framework by Shakr
 		https://shakrmedia.github.io/petal
 
@@ -35,7 +35,6 @@
 
     </div>
 </header>
-
 <div id="top" class="content-wrap">
 	<section id="landing" class="hero">
 	<div class="container">
@@ -49,7 +48,7 @@
 			<p class="hero-sub">A modern, light CSS UI framework developed at Shakr.<br>Based on LESS.</p>	
 
 			<a href="https://github.com/shakrmedia/petal/releases/latest" class="btn red get-btn">Get latest version</a>
-			<p class="version">v0.5.1 - 2016-09-07</p>
+			<p class="version">v0.5.1 - 2016-09-09</p>
 		
 	</div>
 </section>
@@ -94,8 +93,7 @@
         </div>
 
     </div>
-</footer>	
-
+</footer>
 </body>
 
 
@@ -181,6 +179,12 @@
 			}, 3000);
 
 		}, 3000);
+	});
+
+	// Spinner toggle button
+	$('#spinner-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('.spinner').toggleClass('spinning');
 	});
 
 	// Demo Modal Toggle

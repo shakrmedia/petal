@@ -180,6 +180,7 @@
 					<li><a href="colors.html">Colors</a></li>
 					<li><a href="buttons.html">Buttons</a></li>
 					<li><a href="forms.html">Form Elements</a></li>
+					<li><a href="progress.html">Progress</a></li>
 					<li><a href="tables.html">Tables</a></li>
 					<li><a href="paging.html">Paging</a></li>
 					<li><a href="panels.html">Panels</a></li>
@@ -309,6 +310,12 @@
 			}, 3000);
 
 		}, 3000);
+	});
+
+	// Spinner toggle button
+	$('#spinner-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('.spinner').toggleClass('spinning');
 	});
 
 	// Demo Modal Toggle
