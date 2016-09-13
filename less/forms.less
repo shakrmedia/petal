@@ -948,8 +948,8 @@ select.select {
 	font-size: 0.9em;
 	font-weight: bold;
 	margin: 0;
-	overflow: hidden;
 	padding: 8px 40px 8px 20px;
+	border-radius: 0;
 	text-overflow: clip;
 
 	& when (@selectbox-border-radius > 0) {
@@ -957,6 +957,7 @@ select.select {
 	}
 
 	transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
+
 
 	// hover
 	&:hover {
@@ -970,10 +971,40 @@ select.select {
 
 	
 	// focused state
-	&.focus, &:focus { 
+	&:focus { 
+		outline: none !important;
 		background-color: #fafafa;
 		border-color: @selectbox-color;
 		.drop-shadow-light;	
+	}
+	
+	// disabled
+	&:disabled {
+		opacity: 0.7;
+		background-color: #fff;
+		color: @gray;
+		border-color: @gray-l1 !important;
+		pointer-events: none;
+		cursor: default;
+		box-shadow: none;
+	}
+	
+	// multiple
+	&[multiple] {
+		background-image: none;
+		padding: 0;
+
+		&:hover {
+			background-color: #fff;
+		}
+
+		option {
+			padding: 8px 40px 8px 20px;
+		}
+	}
+
+	&.stretch {
+		width: 100%;
 	}
 }
 

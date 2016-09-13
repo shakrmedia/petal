@@ -757,14 +757,40 @@
 	Selectboxes
 </h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
-<select name="selectbox" id="demoSelectbox" class="select">
-	<option>Lorem</option>
-	<option>ipsum</option>
-	<option>dolor</option>
-	<option>sit</option>
-	<option>amet</option>
-	<option>consectetur</option>
-</select>
+<div class="row">
+	<div class="col-2">
+		<label class="form-label" for="demoSelectboxSimple1">Selectbox</label>
+		<select name="selectbox" id="demoSelectboxSimple1" class="select stretch">
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+			<option>sit</option>
+			<option>amet</option>
+			<option>consectetur</option>
+		</select>
+		<br>
+		<label class="form-label" for="demoSelectboxSimple2">Selectbox (disabled)</label>
+		<select name="selectbox" id="demoSelectboxSimple2" class="select stretch" disabled>
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+			<option>sit</option>
+			<option>amet</option>
+			<option>consectetur</option>
+		</select>
+	</div>
+	<div class="col-2">
+		<label class="form-label" for="demoSelectboxSimple3">Selectbox (Multiple)</label>
+		<select name="selectbox" id="demoSelectboxSimple3" class="select stretch" multiple>
+			<option>Lorem</option>
+			<option>ipsum</option>
+			<option>dolor</option>
+			<option>sit</option>
+			<option>amet</option>
+			<option>consectetur</option>
+		</select>
+		</div>
+	</div>
 </div>
 <div class="demo-code">
 <pre><code class="language-html">&lt;select name=&quot;selectbox&quot; id=&quot;demoSelectbox&quot; class=&quot;select&quot;&gt;
@@ -777,7 +803,9 @@
 &lt;/select&gt;</code></pre>
 </div>
 
-<p>Use <code>.select</code> class on <code>&lt;select&gt;</code> to style the selectbox. Without JavaScript, only the box will be styled and dropdown menu will remain the same following default styles depending on your browser/platform. For more thorough styling, use the JavaScript method below.</p>
+<p>Use <code>.select</code> class on <code>&lt;select&gt;</code> to style the selectbox. Without JavaScript however, styling a selectbox is very limited and so only the dropdown box will be styled. Dropdown menu will follow default native styles depending on your browser/platform and will differ in appearance. For consistent styling across all platforms, use the JavaScript method below.</p>
+
+<p>Use <code>.stretch</code> class to make selectbox width to 100%.</p>
 
 <br>
 
