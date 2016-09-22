@@ -2961,9 +2961,6 @@ textarea.input[readonly] {
   width: 100%;
   display: block;
 }
-.form-group .input-group input.input {
-  display: table-cell;
-}
 .form-horizontal .form-group {
   width: auto;
   margin-left: -15px;
@@ -3171,7 +3168,8 @@ textarea.input[readonly] {
   display: flex;
   width: 100%;
 }
-.input-group input.input {
+.input-group input.input,
+.input-group textarea.input {
   display: block;
   -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
@@ -3181,7 +3179,9 @@ textarea.input[readonly] {
 }
 .input-group .input-addon,
 .input-group .input-addon-btn {
-  display: block;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
@@ -3207,9 +3207,6 @@ textarea.input[readonly] {
 }
 .input-group .input-addon:last-child {
   border-right-width: 2px;
-}
-.input-group .input-addon-btn .btn {
-  height: 100%;
 }
 .form-inline .form-group {
   vertical-align: middle;

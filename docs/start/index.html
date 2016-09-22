@@ -196,6 +196,12 @@
 		}, 3000);
 	});
 
+	// Spinner toggle button
+	$('#spinner-demo-toggle').click(function(e) {
+		e.preventDefault();
+		$('.spinner').toggleClass('spinning');
+	});
+
 	// Demo Modal Toggle
 	$('#demo-fp-modal-open-btn').click(function(e) {
 		$('#demo-fp-modal').addClass('visible');
@@ -212,11 +218,11 @@
 	    hljs.highlightBlock(block);
 	  });
 
-	  $(".demo-panel select").not('.cover').not('.bottom').selecter();
-	  $(".demo-panel select.cover").selecter({
+	  $(".demo-panel select.selectbox").not('.cover').not('.bottom').selecter();
+	  $(".demo-panel select.selectbox.cover").selecter({
 	  	cover: true
 	  });
-	  $(".demo-panel select.bottom").selecter({
+	  $(".demo-panel select.selectbox.bottom").selecter({
 	  	bottom: true
 	  });
 	});
