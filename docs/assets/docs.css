@@ -218,6 +218,33 @@ th {
 .petalicon.x2 {
   font-size: 32px;
 }
+.petalicon-arrow-horizontal:before {
+  content: "\e916";
+}
+.petalicon-arrow-vertical:before {
+  content: "\e917";
+}
+.petalicon-check-round-filled:before {
+  content: "\e918";
+}
+.petalicon-cross-round-filled:before {
+  content: "\e919";
+}
+.petalicon-fit-horizontal:before {
+  content: "\e91a";
+}
+.petalicon-fit-vertical:before {
+  content: "\e91b";
+}
+.petalicon-rotate-ccw:before {
+  content: "\e91c";
+}
+.petalicon-rotate-cw:before {
+  content: "\e91d";
+}
+.petalicon-undo:before {
+  content: "\e91e";
+}
 .petalicon-align-center:before {
   content: "\e600";
 }
