@@ -17,6 +17,12 @@ https://petalcdn.shakr.com/edge/petal.min.css
 ```
 Use the CDN links above for a quick slap-on usage.
 
+If you want to install through npm, run
+```
+npm install petal.less
+```
+in your console.
+
 Please refer to the [documentation](http://shakrmedia.github.io/petal/) for other advanced ways to use Petal in your project.
 
 

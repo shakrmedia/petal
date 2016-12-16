@@ -10,7 +10,12 @@ list-order: 1
 <p>Petal is designed with customization in mind, so you can change the colors and looks of the UI elements with ease when needed. Customizing requires overriding the values of <a href="../docs/variables.html">global variables</a> such as <code>@primary-accent-color</code>, and compiling your own version of Petal with the changed files.</p>
 
 <h5 class="keepcase">1. Downloading Petal</h5>
-<p>There are several ways in which you can get your hands on Petal. You can either download the <a href="{{package.repository.url}}releases/latest">latest release</a> from the repository, extract the files and there will be the source files. You can also clone the <a href="https://github.com/ShakrMedia/petal">Petal repository</a> from GitHub. Use command line or GUI applications to clone to your local folder.
+<p>There are several ways in which you can get your hands on Petal.</p>
+<ul>
+<li>Download the <a href="{{package.repository.url}}releases/latest">latest release</a> from Github.</li>
+<li>Clone the <a href="https://github.com/ShakrMedia/petal">Petal repository</a> from GitHub. Use command line or GUI applications to clone to your local folder.</li>
+<li><code>npm install petal.less</code> to install Petal from <a href="https://www.npmjs.com/package/petal.less" target="_blank">npm</a>.</li>
+</ul>
 
 <h5 class="keepcase">2. Customizing variables</h5>
 <p>Now that you can edit the source files, open up <code>variables.less</code> (the default variable settings) file inside the <code>less</code> folder. Copy the contents of it to <code>custom-variables.less</code> file which is empty initially. This is the file that will override the default variables. Modify the values you want to alter in it, save it, and you're ready for building. See the <a href="../docs/variables.html">documentation page</a> for more information.</p>
@@ -29,13 +34,13 @@ list-order: 1
 <p>While you can keep Petal and your site stylesheet separated in individual files, you can also just import Petal altogether <i>into</i> your project's root stylesheet (given that you only have a single final output CSS file). By doing this you gain several benefits including being able to use Petal's LESS mixins in your site's stylesheet as well, and assign <a href="./docs/petalicons.html">petalicons</a> right inside your stylesheet.</p>
 
 
-<p>To do this, download or clone Petal into your project directory so you can access the source files from your site's stylesheet. Or, if you already use <a target="_blank" href="https://www.npmjs.com/">npm</a> in your project, you can also include Petal as a dependency. Insert Petal in your `package.json` file as such:</p>
+<p>To do this, download or clone Petal into your project directory so you can access the source files from your site's stylesheet. Or, if you already use <a target="_blank" href="https://www.npmjs.com/">npm</a> in your project, you can also include Petal as a dependency. Insert Petal in your <code>package.json</code> file as such:</p>
 
 <div class="code-block">
 {{#markdown}}
 ``` js
 "dependencies": {
-    "petal": "git+https://github.com/ShakrMedia/petal.git"
+    "petal.less": "^0.5.3"
 }
 ```
 {{/markdown}}
