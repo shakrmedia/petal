@@ -100,6 +100,20 @@ list-order: 6
 		<a class="btn">Submit</a>
 	</div>
 </form>
+<form class="form-inline">
+	<div class="form-group">
+		<div class="input-group">
+			<label class="input-addon" for="demoForm2firstname">First Name</label>
+			<input class="input" id="demoForm2firstname" type="text" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="input-group">
+			<label class="input-addon" for="demoForm2lastname">Last Name</label>
+			<input class="input" id="demoForm2lastname" type="text" />
+		</div>
+	</div>
+</form>
 </div>
 <div class="demo-code">
 {{#markdown}}
@@ -115,6 +129,20 @@ list-order: 6
 	</div>
 	<div class="form-group">
 		<a class="btn">Submit</a>
+	</div>
+</form>
+<form class="form-inline">
+	<div class="form-group">
+		<div class="input-group">
+			<label class="input-addon" for="demoForm2firstname">First Name</label>
+			<input class="input" id="demoForm2firstname" type="text" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="input-group">
+			<label class="input-addon" for="demoForm2lastname">Last Name</label>
+			<input class="input" id="demoForm2lastname" type="text" />
+		</div>
 	</div>
 </form>
 ```
@@ -465,7 +493,7 @@ list-order: 6
 
 <p>Use javascript if you want to dynamically validate contents and control the states of the input boxes.</p>
 
-<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.inline-form</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>	
+<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.form-inline</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>	
 
 <p>Caption message texts (<code>.form-caption</code>) inside a form group with the validation classes will be also colored following the the validation states.</p>
 

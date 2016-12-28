@@ -5,7 +5,7 @@
 	<!-- 
 		Petal Documentation
 
-		petal.less v0.5.3
+		petal.less v0.5.4
 		A modern, light CSS UI framework by Shakr based on LESS.
 		https://shakrmedia.github.io/petal
 
@@ -149,6 +149,20 @@
 		<a class="btn">Submit</a>
 	</div>
 </form>
+<form class="form-inline">
+	<div class="form-group">
+		<div class="input-group">
+			<label class="input-addon" for="demoForm2firstname">First Name</label>
+			<input class="input" id="demoForm2firstname" type="text" />
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="input-group">
+			<label class="input-addon" for="demoForm2lastname">Last Name</label>
+			<input class="input" id="demoForm2lastname" type="text" />
+		</div>
+	</div>
+</form>
 </div>
 <div class="demo-code">
 <pre><code class="language-html">&lt;form class=&quot;form-inline&quot;&gt;
@@ -162,6 +176,20 @@
     &lt;/div&gt;
     &lt;div class=&quot;form-group&quot;&gt;
         &lt;a class=&quot;btn&quot;&gt;Submit&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;form class=&quot;form-inline&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;div class=&quot;input-group&quot;&gt;
+            &lt;label class=&quot;input-addon&quot; for=&quot;demoForm2firstname&quot;&gt;First Name&lt;/label&gt;
+            &lt;input class=&quot;input&quot; id=&quot;demoForm2firstname&quot; type=&quot;text&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;div class=&quot;input-group&quot;&gt;
+            &lt;label class=&quot;input-addon&quot; for=&quot;demoForm2lastname&quot;&gt;Last Name&lt;/label&gt;
+            &lt;input class=&quot;input&quot; id=&quot;demoForm2lastname&quot; type=&quot;text&quot; /&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
 </div>
@@ -498,7 +526,7 @@
 
 <p>Use javascript if you want to dynamically validate contents and control the states of the input boxes.</p>
 
-<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.inline-form</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>	
+<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.form-inline</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>	
 
 <p>Caption message texts (<code>.form-caption</code>) inside a form group with the validation classes will be also colored following the the validation states.</p>
 
@@ -1015,7 +1043,7 @@
     <div class="container">
         <p class="petal-ver">
             petal.less<br>
-            <b> v0.5.3</b></p>
+            <b> v0.5.4</b></p>
 
         <div class="footer-credits">
             
