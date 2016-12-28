@@ -2858,6 +2858,7 @@ textarea.input {
   font-size: 0.9em;
   line-height: 1.2;
   transition: box-shadow 0.15s, border-color 0.15s, background-color 0.15s, color 0.15s;
+  background-color: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -3242,7 +3243,9 @@ textarea.input[readonly] {
   margin-bottom: inherit;
 }
 .form-inline .input-group {
-  display: inline-table;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   width: auto;
 }
 .form-inline input[type="checkbox"].checkbox + label,
