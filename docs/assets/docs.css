@@ -1343,7 +1343,7 @@ hr {
 }
 .btn.active,
 .active > .btn[data-toggle] {
-  z-index: 2;
+  z-index: 1;
   -webkit-perspective: 500;
           perspective: 500;
 }
@@ -1403,10 +1403,10 @@ fieldset[disabled] .btn,
 }
 .btn-group .btn {
   float: left;
-  z-index: 1;
+  z-index: auto;
 }
 .btn-group .btn:active {
-  z-index: 2;
+  z-index: 1;
 }
 /* split button */
 .btn-group.btn-split .btn + .btn.dropdown {
@@ -1464,10 +1464,10 @@ fieldset[disabled] .btn,
   margin-left: -2px;
 }
 .btn-group-segmented .btn {
-  z-index: 1;
+  z-index: auto;
 }
 .btn-group-segmented .btn.active {
-  z-index: 2;
+  z-index: 1;
 }
 .btn-group-segmented input[type="radio"] {
   opacity: 0;
@@ -1480,10 +1480,10 @@ fieldset[disabled] .btn,
   margin-left: -2px;
 }
 .btn-group-segmented label .btn {
-  z-index: 1;
+  z-index: auto;
 }
 .btn-group-segmented :checked + label .btn {
-  z-index: 2;
+  z-index: 1;
 }
 .btn-group-segmented.disabled,
 fieldset[disabled] .btn-group-segmented {
@@ -3640,7 +3640,7 @@ select.select.stretch {
   position: relative;
   display: block;
   margin: 5px 0;
-  z-index: 1;
+  z-index: auto;
 }
 .selecter:focus {
   box-shadow: none;
@@ -3680,7 +3680,6 @@ select.select.stretch {
   overflow: hidden;
   padding: 8px 40px 8px 20px;
   text-overflow: clip;
-  z-index: 2;
   transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s, color 0.15s;
 }
 .selecter .selecter-selected:after {
