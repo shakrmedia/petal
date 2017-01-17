@@ -27,6 +27,7 @@
 
 // buttons 
 @btn-border-width: 2px;
+@btn-border-radius: 0;
 @btn-font-size: 0.9em;
 @btn-font-weight: 900;
 @btn-letter-spacing: 2px;
@@ -35,9 +36,11 @@
 @gray-disabled-btn: false;
 @btn-disable-transition: false;
 @btn-disable-shadows: false;
+@btn-spinner-animation-duration: 0.4s;
 
 // forms 
 @input-border-width: 2px;
+@input-border-radius: 0;
 @input-font-size: 0.9em;
 @input-textarea-font-size: 0.8em;
 @input-label-font-size: 0.8em;
@@ -45,6 +48,9 @@
 @input-label-letter-spacing: 2px;
 @input-line-height: 1.2;
 @input-caption-font-size: 0.8em;
+@input-spinner-color: @primary-accent-color;
+@input-spinner-animation-duration: 0.4s;
+@input-html5-validation-styles: true;
 
 // checkboxes & radioboxes
 @checkbox-size: 20px;
@@ -64,8 +70,17 @@
 
 // selectbox
 @selectbox-border-width: @input-border-width; //2px
+@selectbox-border-radius: @input-border-radius;
 @selectbox-color: @primary-accent-color;
 @selectbox-disable-shadows: false;
+
+// progress
+@spinner-color: @primary-accent-color;
+
+// panels
+@panel-border-radius: 0;
+@label-border-radius: 0;
+@badge-border-radius: 10em;
 
 // petalicons
 @petalicon-file-path: '../assets';
