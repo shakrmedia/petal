@@ -110,9 +110,12 @@ textarea.input {
 // attribute styles
 input.input,
 textarea.input {
-
-	&:invalid, &:invalid:hover {
-		border-color: @danger-color;
+	
+	// html5 invalid style
+	& when (@input-html5-validation-styles = true) {
+		&:invalid, &:invalid:hover {
+			border-color: @danger-color;
+		}
 	}
 
 	&:disabled,
@@ -677,6 +680,16 @@ input[type="radio"].radiobox:checked + label　{
 	}
 }
 
+// html5 invalid state
+& when (@input-html5-validation-styles = true) {
+	input[type="checkbox"].checkbox:invalid + label,
+	input[type="radio"].radiobox:invalid + label　{
+		&:before,
+		.dark &:before {
+			border-color: @danger-color;
+		}
+	}
+}
 // disabled
 input[type="checkbox"].checkbox:disabled + label, 
 input[type="radio"].radiobox:disabled + label,
