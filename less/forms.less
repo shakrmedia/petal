@@ -117,7 +117,8 @@ textarea.input {
 			border-color: @danger-color;
 		}
 	}
-
+	
+	// disabled
 	&:disabled,
 	fieldset:disabled & {
 		border-color: @gray-l1;
@@ -129,6 +130,7 @@ textarea.input {
 		}
 	}
 
+	// readonly
 	&[readonly] {
 		background-color: fadeout(@gray,90%);
 
@@ -278,18 +280,16 @@ textarea.input {
 	
 	// valid
 	&.valid {
-
-		&.border-colors {
-			input.input,
-			textarea.input {
-				border-color: screen(@okay-color,@l1-additive);
-			}
-			input.input:hover,
-			textarea.input:hover,
-			input.input:focus,
-			textarea.input:focus {
-				border-color: @okay-color;
-			}
+		
+		input.input,
+		textarea.input {
+			border-color: screen(@okay-color,@l1-additive);
+		}
+		input.input:hover,
+		textarea.input:hover,
+		input.input:focus,
+		textarea.input:focus {
+			border-color: @okay-color;
 		}
 
 		.input-group:after {
@@ -305,17 +305,15 @@ textarea.input {
 	// warning
 	&.warning {
 
-		&.border-colors {
-			input.input,
-			textarea.input {
-				border-color: screen(@warning-color,@l1-additive);
-			}
-			input.input:hover,
-			textarea.input:hover,
-			input.input:focus,
-			textarea.input:focus {
-				border-color: @warning-color;
-			}
+		input.input,
+		textarea.input {
+			border-color: screen(@warning-color,@l1-additive);
+		}
+		input.input:hover,
+		textarea.input:hover,
+		input.input:focus,
+		textarea.input:focus {
+			border-color: @warning-color;
 		}
 
 		.input-group:after {
@@ -330,17 +328,15 @@ textarea.input {
 	}
 	&.error {
 
-		&.border-colors {
-			input.input,
-			textarea.input {
-				border-color: screen(@danger-color,@l1-additive);
-			}
-			input.input:hover,
-			textarea.input:hover,
-			input.input:focus,
-			textarea.input:focus {
-				border-color: @danger-color;
-			}
+		input.input,
+		textarea.input {
+			border-color: screen(@danger-color,@l1-additive);
+		}
+		input.input:hover,
+		textarea.input:hover,
+		input.input:focus,
+		textarea.input:focus {
+			border-color: @danger-color;
 		}
 
 		.input-group:after {
@@ -921,8 +917,6 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			border-color: fadeout(@gray,50%);
 		}
 	}
-
-
 
 	.colorset(@chk-switch-color);
 
