@@ -250,7 +250,9 @@ textarea.input {
 		textarea.input {
 			padding-right: 30px;
 		}
+	}
 
+	&.validation-icons {
 		.input-group:after {
 			content: "";
 			display: inline-block;
@@ -292,10 +294,12 @@ textarea.input {
 			border-color: @okay-color;
 		}
 
-		.input-group:after {
-			.petalicon;
-			.petalicon-check;
-			color: @okay-color;
+		&.validation-icons {
+			.input-group:after {
+				.petalicon;
+				.petalicon-check;
+				color: @okay-color;
+			}
 		}
 
 		.form-caption {
@@ -316,10 +320,12 @@ textarea.input {
 			border-color: @warning-color;
 		}
 
-		.input-group:after {
-			.petalicon;
-			.petalicon-warning;
-			color: @warning-color;
+		&.validation-icons {
+			.input-group:after {
+				.petalicon;
+				.petalicon-warning;
+				color: @warning-color;
+			}
 		}
 
 		.form-caption {
@@ -339,10 +345,12 @@ textarea.input {
 			border-color: @danger-color;
 		}
 
-		.input-group:after {
-			.petalicon;
-			.petalicon-exclamation;
-			color: @danger-color;
+		&.validation-icons {
+			.input-group:after {
+				.petalicon;
+				.petalicon-exclamation;
+				color: @danger-color;
+			}
 		}
 
 		.form-caption {
