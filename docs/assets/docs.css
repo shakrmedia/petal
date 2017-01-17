@@ -3040,9 +3040,7 @@ textarea.input[readonly] {
 .form-group.validation.error textarea.input {
   padding-right: 30px;
 }
-.form-group.validation.valid .input-group:after,
-.form-group.validation.warning .input-group:after,
-.form-group.validation.error .input-group:after {
+.form-group.validation.validation-icons .input-group:after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -3068,17 +3066,17 @@ textarea.input[readonly] {
     opacity: 1;
   }
 }
-.form-group.validation.valid.border-colors input.input,
-.form-group.validation.valid.border-colors textarea.input {
+.form-group.validation.valid input.input,
+.form-group.validation.valid textarea.input {
   border-color: #c7dc8f;
 }
-.form-group.validation.valid.border-colors input.input:hover,
-.form-group.validation.valid.border-colors textarea.input:hover,
-.form-group.validation.valid.border-colors input.input:focus,
-.form-group.validation.valid.border-colors textarea.input:focus {
+.form-group.validation.valid input.input:hover,
+.form-group.validation.valid textarea.input:hover,
+.form-group.validation.valid input.input:focus,
+.form-group.validation.valid textarea.input:focus {
   border-color: #b2cf65;
 }
-.form-group.validation.valid .input-group:after {
+.form-group.validation.valid.validation-icons .input-group:after {
   font-family: 'petalicon';
   speak: none;
   font-style: normal;
@@ -3095,17 +3093,17 @@ textarea.input[readonly] {
 .form-group.validation.valid .form-caption {
   color: #b2cf65;
 }
-.form-group.validation.warning.border-colors input.input,
-.form-group.validation.warning.border-colors textarea.input {
+.form-group.validation.warning input.input,
+.form-group.validation.warning textarea.input {
   border-color: #f4ce63;
 }
-.form-group.validation.warning.border-colors input.input:hover,
-.form-group.validation.warning.border-colors textarea.input:hover,
-.form-group.validation.warning.border-colors input.input:focus,
-.form-group.validation.warning.border-colors textarea.input:focus {
+.form-group.validation.warning input.input:hover,
+.form-group.validation.warning textarea.input:hover,
+.form-group.validation.warning input.input:focus,
+.form-group.validation.warning textarea.input:focus {
   border-color: #f0bc28;
 }
-.form-group.validation.warning .input-group:after {
+.form-group.validation.warning.validation-icons .input-group:after {
   font-family: 'petalicon';
   speak: none;
   font-style: normal;
@@ -3122,17 +3120,17 @@ textarea.input[readonly] {
 .form-group.validation.warning .form-caption {
   color: #f0bc28;
 }
-.form-group.validation.error.border-colors input.input,
-.form-group.validation.error.border-colors textarea.input {
+.form-group.validation.error input.input,
+.form-group.validation.error textarea.input {
   border-color: #f48791;
 }
-.form-group.validation.error.border-colors input.input:hover,
-.form-group.validation.error.border-colors textarea.input:hover,
-.form-group.validation.error.border-colors input.input:focus,
-.form-group.validation.error.border-colors textarea.input:focus {
+.form-group.validation.error input.input:hover,
+.form-group.validation.error textarea.input:hover,
+.form-group.validation.error input.input:focus,
+.form-group.validation.error textarea.input:focus {
   border-color: #f05a67;
 }
-.form-group.validation.error .input-group:after {
+.form-group.validation.error.validation-icons .input-group:after {
   font-family: 'petalicon';
   speak: none;
   font-style: normal;
@@ -3372,6 +3370,18 @@ input[type="radio"].radiobox:checked + label:after {
       -ms-transform: scale(1);
           transform: scale(1);
   background-image: none !important;
+}
+input[type="checkbox"].checkbox:invalid + label:before,
+input[type="radio"].radiobox:invalid + label:before,
+.dark input[type="checkbox"].checkbox:invalid + label:before,
+.dark input[type="radio"].radiobox:invalid + label:before {
+  border-color: #f05a67;
+}
+input[type="checkbox"].checkbox.validation.error + label:before,
+input[type="radio"].radiobox.validation.error + label:before,
+.dark input[type="checkbox"].checkbox.validation.error + label:before,
+.dark input[type="radio"].radiobox.validation.error + label:before {
+  border-color: #f05a67;
 }
 input[type="checkbox"].checkbox:disabled + label:before,
 input[type="radio"].radiobox:disabled + label:before,

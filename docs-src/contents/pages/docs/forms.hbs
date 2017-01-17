@@ -338,234 +338,6 @@ list-order: 6
 
 <br>
 
-
-
-<h3>Disabling whole form groups</h3>
-
-<div class="demo-panel p-15" data-toggle-bg="toggle">
-<form>
-	<fieldset id="fieldsetDisableDemo" disabled>
-		<div class="form-group">
-			<label class="form-label" for="fieldsetDisableDemoFormEmail">Email</label>
-			<input class="input" id="fieldsetDisableDemoFormEmail" type="email" placeholder="Email" />
-			<p class="form-caption">Enter your email address.</p>
-		</div>
-		<div class="form-group">
-			<label class="form-label" for="fieldsetDisableDemoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
-			<input class="input" id="fieldsetDisableDemoFormPassword" type="password" placeholder="Password" />
-		</div>
-		<div class="form-group">
-			<label class="form-label" for="fieldsetDisableDemoFormComments">Comments</label>
-			<textarea class="input" name="fieldsetDisableDemoFormComments" id="fieldsetDisableDemoFormComments" cols="30" rows="10"></textarea>
-		</div>
-		<div class="row">
-			<div class="col-2">
-				<div class="form-group">
-					<input type="radio" name="fieldsetDisableDemoFormRadio" id="fieldsetDisableDemoFormRadio1" class="radiobox" checked>
-					<label for="fieldsetDisableDemoFormRadio1">Radio Option 1</label>
-					<input type="radio" name="fieldsetDisableDemoFormRadio" id="fieldsetDisableDemoFormRadio2" class="radiobox">
-					<label for="fieldsetDisableDemoFormRadio2">Radio Option 2</label>
-				</div>
-			</div>
-			<div class="col-2">
-				<div class="form-group">
-					<input type="checkbox" id="fieldsetDisableDemoFormCheckbox" class="checkbox">
-					<label for="fieldsetDisableDemoFormCheckbox">Checkbox</label>
-
-					<span class="chk-switch-label">Switch</span>
-					<div class="chk-switch">
-						<input type="checkbox" class="chk-switch" id="fieldsetDisableDemoFormSwitch" checked>
-						<label for="fieldsetDisableDemoFormSwitch"><span></span></label>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="form-group">
-			<a class="btn green">Submit</a>
-		</div>
-	</fieldset>
-</form>
-</div>
-<div class="demo-panel form-group gray p-10">
-	<span class="chk-switch-label">Toggle Fieldset Disable</span>
-	<div class="chk-switch">
-		<input type="checkbox" class="chk-switch" id="fieldset-disable-switch" data-toggle-class="fieldset-disable" checked>
-		<label for="fieldset-disable-switch"><span></span></label>
-	</div>
-</div>
-
-<p>Put form-groups and elements inside <code>&lt;fieldset&gt;</code> with a <code>disabled</code> attribute to disable the whole block.</p>
-
-<p>This will apply disabled styles to Input, Textarea, Buttons, Checkboxes and Check Switches. Buttons with <code>.btn</code> classes on an <code>a</code> element instead of <code>button</code> will be disabled as well, but since it only prevents click through the <code>pointer-events: none</code> CSS property, for safety use Javascript to completely disable interaction.</p>
-
-<br>
-
-
-
-
-
-<h3>Form Validation</h3>
-<div class="demo-panel p-15" data-toggle-bg="toggle">
-<div class="row collapse-gutter">
-	<div class="col-2">
-		<div class="form-group validation valid">
-			<label class="form-label" for="demoForm4Username">Username</label>
-			<div class="input-group">
-				<input class="input" id="demoForm4Username" type="text" />
-			</div>
-			<p class="form-caption">Username is available!</p>
-		</div>
-
-		<div class="form-group validation warning">
-			<label class="form-label" for="demoForm4Name">Name</label>
-			<div class="input-group">
-				<input class="input" id="demoForm4Name" type="text" />
-			</div>
-			<p class="form-caption">That's a strange name...</p>
-		</div>
-
-		<div class="form-group validation error">
-			<label class="form-label" for="demoForm4Password">Password</label>
-			<div class="input-group">
-				<input class="input" id="demoForm4Password" type="password" />
-			</div>
-			<p class="form-caption">Invalid Password.</p>
-		</div>
-	</div>
-	<div class="col-2">
-		<div class="form-group validation border-colors valid">
-			<label class="form-label" for="demoForm4Username">Username</label>
-			<div class="input-group">
-				<input class="input" id="demoForm4Username" type="text" />
-			</div>
-			<p class="form-caption">Username is available!</p>
-		</div>
-
-		<div class="form-group validation border-colors warning">
-			<label class="form-label" for="demoForm4Name">Name</label>
-			<div class="input-group">
-				<input class="input" id="demoForm4Name" type="text" />
-			</div>
-			<p class="form-caption">That's a strange name...</p>
-		</div>
-
-		<div class="form-group validation border-colors error">
-			<label class="form-label" for="demoForm4Password">Password</label>
-			<div class="input-group">
-				<input class="input" id="demoForm4Password" type="password" />
-			</div>
-			<p class="form-caption">Invalid Password.</p>
-		</div>
-	</div>
-</div>
-</div>
-<div class="demo-code">
-{{#markdown}}
-``` html
-<div class="form-group validation valid">
-	<label class="form-label" for="demoForm4Username">Username</label>
-	<div class="input-group">
-		<input class="input" id="demoForm4Username" type="text" />
-	</div>
-	<p class="form-caption">Username is available!</p>
-</div>
-
-<div class="form-group validation warning">
-	<label class="form-label" for="demoForm4Name">Name</label>
-	<div class="input-group">
-		<input class="input" id="demoForm4Name" type="text" />
-	</div>
-	<p class="form-caption">That's a strange name...</p>
-</div>
-
-<div class="form-group validation error">
-	<label class="form-label" for="demoForm4Password">Password</label>
-	<div class="input-group">
-		<input class="input" id="demoForm4Password" type="password" />
-	</div>
-	<p class="form-caption">Invalid Password.</p>
-</div>
-```
-{{/markdown}}
-</div>
-
-<p>You can insert little icons at the right When you need validation states for input boxes. Place the <code>input</code> inside an <code>.input-group</code>  and add <code>.validation</code> class on the parent <code>.form-group</code>; then append <code>.valid</code>, <code>.warning</code>, <code>.error</code> on the form group depending on the state.</p>
-
-<p>Use javascript if you want to dynamically validate contents and control the states of the input boxes.</p>
-
-<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.form-inline</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>	
-
-<p>Caption message texts (<code>.form-caption</code>) inside a form group with the validation classes will be also colored following the the validation states.</p>
-
-<h5>Options</h5>
-
-<ul>
-	<li><code>.border-colors</code> on <code>.form-group.validation</code> : Apply the validation state colors to the input borders as well</li>
-</ul>
-
-<br>
-
-<h4>Spinner in inputs</h4>
-<div class="demo-panel p-15" data-toggle-bg="toggle">
-<div class="row">
-	<div class="col-2">
-		<div class="form-group validation border-colors valid" data-toggle-loading-state>
-			<label class="form-label">With <code>.validation</code> class</label>
-			<div class="input-group">
-				<input class="input" id="demoFormSpinner1" type="text" />
-			</div>
-			<p class="form-caption">Caption Message</p>
-		</div>
-	</div>
-	<div class="col-2">
-		<div class="form-group" data-toggle-loading-state>
-			<label class="form-label">Standalone <code>.loading</code></label>
-			<div class="input-group">
-				<input class="input" id="demoFormSpinner2" type="text" />
-			</div>
-			<p class="form-caption">Caption Message</p>
-		</div>
-	</div>
-</div>
-<button class="btn" id="input-spinner-demo-toggle">Toggle State</button>
-</div>
-<div class="demo-code">
-{{#markdown}}
-``` html
-<div class="form-group validation loading">
-	<div class="input-group">
-		<input class="input" id="demoFormSpinner1" type="text" />
-	</div>
-</div>
-```
-{{/markdown}}
-</div>
-
-<p>When you need a loading indicator inside a input box. Same way as above, place the <code>input</code> inside an <code>.input-group</code>, and add the <code>.loading</code> class on the input group.</p>
-
-<p>The <code>.loading</code> class can be used stand-alone without the <code>.validation</code> class. When using both together, the loading spinner will always override the validation state icons.</p>
-
-
-<br>
-
-<h4>Customizable options</h4>
-<div class="demo-code">
-{{#markdown}}
-``` less
-// forms 
-@input-border-width: 2px;
-@input-border-radius: 0;
-@input-font-size: 0.9em;
-@input-textarea-font-size: 0.8em;
-@input-label-font-size: 0.8em;
-@input-label-font-weight: 900;
-@input-label-letter-spacing: 2px;
-@input-line-height: 1.2;
-@input-caption-font-size: 0.8em;
-```
-{{/markdown}}
-</div>
-
 <br>
 <hr class="subdivider">
 
@@ -747,6 +519,272 @@ list-order: 6
 ```
 {{/markdown}}
 </div>
+
+
+<br>
+<hr class="subdivider">
+
+<h3>Disabling whole form groups</h3>
+
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<form>
+	<fieldset id="fieldsetDisableDemo" disabled>
+		<div class="form-group">
+			<label class="form-label" for="fieldsetDisableDemoFormEmail">Email</label>
+			<input class="input" id="fieldsetDisableDemoFormEmail" type="email" placeholder="Email" />
+			<p class="form-caption">Enter your email address.</p>
+		</div>
+		<div class="form-group">
+			<label class="form-label" for="fieldsetDisableDemoFormPassword">Password <span class="form-caption">- Inline captions inside labels are fine too.</span></label>
+			<input class="input" id="fieldsetDisableDemoFormPassword" type="password" placeholder="Password" />
+		</div>
+		<div class="form-group">
+			<label class="form-label" for="fieldsetDisableDemoFormComments">Comments</label>
+			<textarea class="input" name="fieldsetDisableDemoFormComments" id="fieldsetDisableDemoFormComments" cols="30" rows="10"></textarea>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<div class="form-group">
+					<input type="radio" name="fieldsetDisableDemoFormRadio" id="fieldsetDisableDemoFormRadio1" class="radiobox" checked>
+					<label for="fieldsetDisableDemoFormRadio1">Radio Option 1</label>
+					<input type="radio" name="fieldsetDisableDemoFormRadio" id="fieldsetDisableDemoFormRadio2" class="radiobox">
+					<label for="fieldsetDisableDemoFormRadio2">Radio Option 2</label>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="form-group">
+					<input type="checkbox" id="fieldsetDisableDemoFormCheckbox" class="checkbox">
+					<label for="fieldsetDisableDemoFormCheckbox">Checkbox</label>
+
+					<span class="chk-switch-label">Switch</span>
+					<div class="chk-switch">
+						<input type="checkbox" class="chk-switch" id="fieldsetDisableDemoFormSwitch" checked>
+						<label for="fieldsetDisableDemoFormSwitch"><span></span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<a class="btn green">Submit</a>
+		</div>
+	</fieldset>
+</form>
+</div>
+<div class="demo-panel form-group gray p-10">
+	<span class="chk-switch-label">Toggle Fieldset Disable</span>
+	<div class="chk-switch">
+		<input type="checkbox" class="chk-switch" id="fieldset-disable-switch" data-toggle-class="fieldset-disable" checked>
+		<label for="fieldset-disable-switch"><span></span></label>
+	</div>
+</div>
+
+<p>Put form-groups and elements inside <code>&lt;fieldset&gt;</code> with a <code>disabled</code> attribute to disable the whole block.</p>
+
+<p>This will apply disabled styles to Input, Textarea, Buttons, Checkboxes and Check Switches. Buttons with <code>.btn</code> classes on an <code>a</code> element instead of <code>button</code> will be disabled as well, but since it only prevents click through the <code>pointer-events: none</code> CSS property, for safety use Javascript to completely disable interaction.</p>
+
+<br>
+
+<h4>Customizable options</h4>
+<div class="demo-code">
+{{#markdown}}
+``` less
+// forms 
+@input-border-width: 2px;
+@input-border-radius: 0;
+@input-font-size: 0.9em;
+@input-textarea-font-size: 0.8em;
+@input-label-font-size: 0.8em;
+@input-label-font-weight: 900;
+@input-label-letter-spacing: 2px;
+@input-line-height: 1.2;
+```
+{{/markdown}}
+</div>
+
+<br>
+
+<h3>Form Validation</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<div class="row collapse-gutter">
+	<div class="col-2">
+		<div class="form-group validation valid">
+			<label class="form-label" for="validationDemoFormUsername">Username</label>
+			<input class="input" id="validationDemoFormUsername" type="text" />
+			<p class="form-caption">Username is available!</p>
+		</div>
+
+		<div class="form-group validation warning">
+			<label class="form-label" for="validationDemoFormName">Name</label>
+			<input class="input" id="validationDemoFormName" type="text" />
+			<p class="form-caption">That's a strange name...</p>
+		</div>
+
+		<div class="form-group validation error">
+			<label class="form-label" for="validationDemoFormPassword">Password</label>
+			<input class="input" id="validationDemoFormPassword" type="password" />
+			<p class="form-caption">Invalid Password.</p>
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="form-group validation validation-icons valid">
+			<label class="form-label" for="validationDemoFormUsername">Username</label>
+			<div class="input-group">
+				<input class="input" id="validationDemoFormUsername" type="text" />
+			</div>
+			<p class="form-caption">Username is available!</p>
+		</div>
+
+		<div class="form-group validation validation-icons warning">
+			<label class="form-label" for="validationDemoFormName">Name</label>
+			<div class="input-group">
+				<input class="input" id="validationDemoFormName" type="text" />
+			</div>
+			<p class="form-caption">That's a strange name...</p>
+		</div>
+
+		<div class="form-group validation validation-icons error">
+			<label class="form-label" for="validationDemoFormPassword">Password</label>
+			<div class="input-group">
+				<input class="input" id="validationDemoFormPassword" type="password" />
+			</div>
+			<p class="form-caption">Invalid Password.</p>
+		</div>
+	</div>
+</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="form-group validation valid">
+	<label class="form-label" for="username">Username</label>
+	<div class="input-group">
+		<input class="input" id="username" type="text" />
+	</div>
+	<p class="form-caption">Username is available!</p>
+</div>
+
+<div class="form-group validation warning">
+	<label class="form-label" for="name">Name</label>
+	<div class="input-group">
+		<input class="input" id="name" type="text" />
+	</div>
+	<p class="form-caption">That's a strange name...</p>
+</div>
+
+<div class="form-group validation error">
+	<label class="form-label" for="password">Password</label>
+	<div class="input-group">
+		<input class="input" id="password" type="password" />
+	</div>
+	<p class="form-caption">Invalid Password.</p>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>Petal offers validation state styles for form inputs. Add <code>.validation</code> class and appropriate state classes <code>.valid</code>, <code>.warning</code>, <code>.error</code> classes to <code>.form-group</code> to override border colors. You need to use custom JavaScript for actual validation of contents and append appropriate state classes to HTML elements.</p>
+
+<h5>Feedback Icons</h5>
+<p>Additionally, you can display feedback icons at the right of input boxes along with accented border colors. Add <code>.validation-icons</code> class on form group, then place the <code>input</code> inside an <code>.input-group</code> and the icons will appear.</p>
+
+<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.form-inline</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>
+
+<h5>Colored Caption Texts</h5>
+<p>Caption message texts (<code>.form-caption</code>) inside a form group with the validation classes will be also colored following the the validation states.</p>
+
+<br>
+
+<h4>Checkbox and Radiobox validation</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="form-group">
+		<input type="checkbox" id="validationDemoFormCheckbox" class="checkbox validation error" required>
+		<label for="validationDemoFormCheckbox">I agree to terms of service.</label>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="form-group">
+	<input type="checkbox" id="checkbox" class="checkbox validation error" required>
+	<label for="checkbox">I agree to terms of service.</label>
+</div>
+```
+{{/markdown}}
+</div>
+<p>For checkboxes and radioboxes, only <code>.error</code> state style is available. You can use this when you want to highlight checkboxes as invalid when they have <code>required</code> attribute and user should check (or uncheck) to proceed. Note that unlike form inputs, checkboxes take the <code>.validation.error</code> class on <code>&lt;input&gt;</code> rather than on parent <code>.form-group</code>s. (In other words, checkboxes and radioboxes do not require parent form-groups for validation style.</p>
+
+<br>
+
+<h4>Disabling HTML5 default validation states</h4>
+<p>Petal by default setting includes style overrides for HTML5 form validation attribute <code>:invalid</code>. So <a href="http://caniuse.com/#search=%3Ainvalid" target="_blank">if the browser supports</a> native validation of inputs, Petal will target <code>:invalid</code> pseudo-class and display the border color as red. This is convenient when you want a simple visual validation you can use on the fly, but if your project has a more sophisticated validation system of your own the <code>:invalid</code> state style may interfere with custom validation class styles (for example, if you want to not show invalid state when input is yet untouched). In such cases, you can choose not to output <code>:invalid</code> related style overrides on build by setting the <code>@input-html5-validation-styles</code> global variable to <code>false</code>.</p>
+
+<br>
+
+<h4>Customizable options</h4>
+<div class="demo-code">
+{{#markdown}}
+``` less
+@input-html5-validation-styles: true;
+```
+{{/markdown}}
+</div>
+
+<br>
+<hr class="subdivider">
+
+<h3>Spinner in inputs</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+<div class="row">
+	<div class="col-2">
+		<div class="form-group" data-toggle-loading-state>
+			<label class="form-label">Standalone <code>.loading</code></label>
+			<div class="input-group">
+				<input class="input" id="demoFormSpinner2" type="text" />
+			</div>
+			<p class="form-caption">Caption Message</p>
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="form-group validation border-colors valid" data-toggle-loading-state>
+			<label class="form-label">With <code>.validation</code> class</label>
+			<div class="input-group">
+				<input class="input" id="demoFormSpinner1" type="text" />
+			</div>
+			<p class="form-caption">Caption Message</p>
+		</div>
+	</div>
+</div>
+<button class="btn" id="input-spinner-demo-toggle">Toggle State</button>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="form-group validation loading">
+	<div class="input-group">
+		<input class="input" id="demoFormSpinner1" type="text" />
+	</div>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>When you need a loading indicator inside a input box. Same way as above, place the <code>input</code> inside an <code>.input-group</code>, and add the <code>.loading</code> class on the input group.</p>
+
+<p>The <code>.loading</code> class can be used stand-alone without the <code>.validation</code> class. When using both together, the loading spinner will always override the validation state icons.</p>
+
+
+<br>
+
+<h4>Customizable options</h4>
+<div class="demo-code">
+{{#markdown}}
+``` less
+@input-spinner-color: @primary-accent-color;
+@input-spinner-animation-duration: 0.4s;
+```
+{{/markdown}}
+</div>
+
 
 <br>
 <hr class="subdivider">
