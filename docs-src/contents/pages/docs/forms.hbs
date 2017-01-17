@@ -735,7 +735,10 @@ list-order: 6
 <br>
 <hr class="subdivider">
 
-<h3 id="section-forms-input-spinners">Spinner in inputs</h3>
+<h3 id="section-forms-input-spinners">
+	Spinner in inputs
+	<a href="javascript.html"><span class="badge warning js-req">Requires JavaScript</span></a>
+</h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 <div class="row">
 	<div class="col-2">
@@ -757,7 +760,7 @@ list-order: 6
 		</div>
 	</div>
 </div>
-<button class="btn" id="input-spinner-demo-toggle">Toggle State</button>
+<button class="btn" id="input-spinner-demo-toggle">Toggle Spinner</button>
 </div>
 <div class="demo-code">
 {{#markdown}}
@@ -771,10 +774,9 @@ list-order: 6
 {{/markdown}}
 </div>
 
-<p>When you need a loading indicator inside a input box. Same way as above, place the <code>input</code> inside an <code>.input-group</code>, and add the <code>.loading</code> class on the input group.</p>
+<p>When you need a loading indicator inside a input box. Place the <code>input</code> inside an <code>.input-group</code>, and append the <code>.loading</code> class on the input group when you want to display the spinner.</p>
 
-<p>The <code>.loading</code> class can be used stand-alone without the <code>.validation</code> class. When using both together, the loading spinner will always override the validation state icons.</p>
-
+<p>The <code>.loading</code> class can be used stand-alone or along with the <code>.validation</code> class. When using <code>.loading</code> class on <code>.validation</code>, the loading spinner will always override the validation state icons.</p>
 
 <br>
 
@@ -902,7 +904,7 @@ list-order: 6
 <h3 id="section-forms-selectboxes">
 	Selectboxes (Selecter)
 
-	<span class="badge warning js-req">Requires JavaScript</span>
+	<a href="javascript.html"><span class="badge warning js-req">Requires JavaScript</span></a>
 </h3>
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 <form>
@@ -1015,7 +1017,7 @@ list-order: 6
 {{/markdown}}
 </div>
 
-<p>To style a selectbox completely, JavaScript must be used to replace existing <code>&lt;select&gt;</code> because a <code>&lt;select&gt;</code> element is very limited in terms of CSS. Petal implemented selectbox styles using <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal-functions.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
+<p>To style a selectbox completely, JavaScript must be used to replace existing <code>&lt;select&gt;</code> because a <code>&lt;select&gt;</code> element is very limited in terms of CSS. Petal implemented selectbox styles using <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
 
 <p>The Selecter plugin is not activated by default because of possible usability issues. To initialize, include the line of code below in your site page (change the selector to whichever selectbox you want to apply to).</p>
 

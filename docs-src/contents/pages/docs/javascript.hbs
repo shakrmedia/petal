@@ -1,0 +1,25 @@
+---
+title: About JavaScript
+area: docs
+section: intro
+list-order: 3
+---
+
+<div class="section-header">
+    <h2>Disclaimer regarding JavaScript</h2>
+</div>
+
+<p>While Petal tries to implement many of the UI elements purely in CSS without need of JavaScript to function (checkboxes, switches, etc), some more sophisticated functions require help of JavaScript. Features demonstrated in this documentation that require JavaScript for full functionality have the <span class="badge warning js-req">Requires JavaScript</span> label attached on section headers (example: <a href="buttons.html#section-buttons-toggle">Toggle Buttons</a>, <a href="buttons.html#section-buttons-spinners">Buttons with Spinners</a>, <a href="forms.html#section-forms-validation">Form Validations</a> etc.).</p>
+
+<p>There are two <code>.js</code> files that are included in Petal repository's <code>/js</code> directory: <code>jquery.fs.selecter.js</code> and <code>petal-functions.js</code>.</p>
+
+<ol>
+    <li>
+        <p><b><code>jquery.fs.selecter.js</code></b> is the file forked from <a href="https://github.com/Formstone/Selecter">Selecter jQuery Plugin</a> (by Ben Plum, MIT License). If you want to use the <a href="forms.html#section-buttons-selecter">selectbox replacement styles</a> provided in Petal, you will need to include the JavaScript file in your HTML as well as jQuery that the plugin is based on.</p>
+    </li>
+    <li>
+        <p><b><code>petal-functions.js</code></b> includes functions that make toggle buttons and dropdown menus work. This is also based on jQuery (<i>very crudely coded—vanilla JS replacement contributions are welcome!</i>) . If you are proficient with plain JavaScript or if you're planning to use other JavaScript frameworks, you can exclude the file altogether and write your own code to make it work with Petal-provided styles.</p>
+    </li>
+</ol>
+
+<p>The <code>Petal.js</code> file that is shipped with Petal is a simply a concatenated file of the two files mentioned above. So in clarification, Petal is jQuery-dependent only if you are planning to use the stock provided JS files. If you are concerned about optimizing dependencies or just don't need jQuery in your project, you are free to exclude the JS files while still using Petal CSS.</p>
