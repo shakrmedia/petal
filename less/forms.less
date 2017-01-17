@@ -694,6 +694,17 @@ input[type="radio"].radiobox:checked + label　{
 		}
 	}
 }
+
+// custom checkbox validation class
+input[type="checkbox"].checkbox.validation.error + label,
+input[type="radio"].radiobox.validation.error + label　{
+	&:before,
+	.dark &:before {
+		border-color: @danger-color;
+	}
+}
+
+
 // disabled
 input[type="checkbox"].checkbox:disabled + label, 
 input[type="radio"].radiobox:disabled + label,
