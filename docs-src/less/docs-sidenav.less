@@ -1,13 +1,14 @@
 // right index menu
 #sidenav {
     position: relative;
-    padding: 10px 0 10px 0;
+    padding: 20px 0 20px 0;
     box-sizing: border-box;
-    margin: 20px 0 30px 0;
+    margin: 10px 0 30px 0;
     width: 215px;
 
-    @media screen and (min-height: 700px) {
-        position: fixed;
+    &.sticky {
+        position: -webkit-sticky;
+        position: sticky;
         top: 60px;
     }
 
