@@ -30,7 +30,7 @@
 
 	<link rel="stylesheet" href="../assets/docs.css">
 
-	<title>Progress | Petal</title>
+	<title>About JavaScript | Petal</title>
 </head>
 
 <body>
@@ -59,45 +59,23 @@
 			
 
 <div class="section-header">
-	<h2 id="section-forms">Progress</h2>
-	<p class="sub">
-		<span class="file-ref">progress.less</span>
-	</p>
+    <h2>Disclaimer regarding JavaScript</h2>
 </div>
 
-<h3>Spinner</h3>
+<p>While Petal tries to implement many of the UI elements purely in CSS without need of JavaScript to function (checkboxes, switches, etc), some more sophisticated functions require help of JavaScript. Features demonstrated in this documentation that require JavaScript for full functionality have the <span class="badge warning js-req">Requires JavaScript</span> label attached on section headers (example: <a href="buttons.html#section-buttons-toggle">Toggle Buttons</a>, <a href="buttons.html#section-buttons-spinners">Buttons with Spinners</a>, <a href="forms.html#section-forms-validation">Form Validations</a> etc.).</p>
 
-<div class="demo-panel p-15" data-toggle-bg="toggle">
-	<div class="row">
-		<div class="col-3">
-			<span class="form-label">Regular (24px)</span>
-			<span class="spinner spinner-demo"><span></span></span>
-		</div>
-		<div class="col-3">
-			<span class="form-label">Small (16px)</span>
-			<span class="spinner small spinner-demo"><span></span></span>
-		</div>
-		<div class="col-3">
-			<span class="form-label">Big (40px)</span>
-			<span class="spinner big spinner-demo"><span></span></span>
-		</div>
-	</div>
-	<div class="btn-group">
-		<button class="btn" id="spinner-demo-toggle">Toggle Spin</button>
-	</div>
-</div>
-<div class="demo-code">
-<pre><code class="language-html">&lt;span class=&quot;spinner spinning&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;spinner spinning small&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;spinner spinning big&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;</code></pre>
-</div>
+<p>There are two <code>.js</code> files that are included in Petal repository's <code>/js</code> directory: <code>jquery.fs.selecter.js</code> and <code>petal-functions.js</code>.</p>
 
-<p>Simple spinners made with just two <code>&lt;span&gt;</code> elements and CSS. Spinning animation is entirely made with CSS so you don't need to do any additional work to make them spin: just add <code>.spinning</code> class to spinner.</p>
-<p>You will need to use JavaScript though, if you want to toggle spinning animation and/or display and hide spinner where you need them. Use <code>.hidden</code> class on <code>.spinner</code> when you need to hide the spinner.</p>
+<ol>
+    <li>
+        <p><b><code>jquery.fs.selecter.js</code></b> is the file forked from <a href="https://github.com/Formstone/Selecter">Selecter jQuery Plugin</a> (by Ben Plum, MIT License). If you want to use the <a href="forms.html#section-buttons-selecter">selectbox replacement styles</a> provided in Petal, you will need to include the JavaScript file in your HTML as well as jQuery that the plugin is based on.</p>
+    </li>
+    <li>
+        <p><b><code>petal-functions.js</code></b> includes functions that make toggle buttons and dropdown menus work. This is also based on jQuery (<i>very crudely coded—vanilla JS replacement contributions are welcome!</i>) . If you are proficient with plain JavaScript or if you're planning to use other JavaScript frameworks, you can exclude the file altogether and write your own code to make it work with Petal-provided styles.</p>
+    </li>
+</ol>
 
-
-
-
+<p>The <code>Petal.js</code> file that is shipped with Petal is a simply a concatenated file of the two files mentioned above. So in clarification, Petal is jQuery-dependent only if you are planning to use the stock provided JS files. If you are concerned about optimizing dependencies or just don't need jQuery in your project, you are free to exclude the JS files while still using Petal CSS.</p>
 			
 			<div class="section-footer">
 				<a href="#top" class="totop">Back to top</a>			</div>
@@ -112,7 +90,7 @@
 			<ul>
 					<li><a href="index.html">Welcome to the docs</a></li>
 					<li><a href="variables.html">Variables</a></li>
-					<li><a href="javascript.html">About JavaScript</a></li>
+					<li class="active"><a href="javascript.html">About JavaScript</a></li>
 			</ul>
 
 			<h5 class="list-header">Components</h5>
@@ -124,7 +102,7 @@
 					<li><a href="colors.html">Colors</a></li>
 					<li><a href="buttons.html">Buttons</a></li>
 					<li><a href="forms.html">Form Elements</a></li>
-					<li class="active"><a href="progress.html">Progress</a></li>
+					<li><a href="progress.html">Progress</a></li>
 					<li><a href="tables.html">Tables</a></li>
 					<li><a href="paging.html">Paging</a></li>
 					<li><a href="panels.html">Panels</a></li>
@@ -132,10 +110,6 @@
 					<li><a href="petalicon.html">Petalicons</a></li>
 			</ul>
 			
-			<p>
-				<a href="#top" class="totop">Back to top</a>			</p>
-
-			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
 		</nav> 
 	</div>
 </div>
