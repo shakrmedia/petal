@@ -3032,12 +3032,12 @@ textarea.input[readonly] {
 .form-group.validation input.input {
   box-sizing: border-box;
 }
-.form-group.validation.valid input.input,
-.form-group.validation.warning input.input,
-.form-group.validation.error input.input,
-.form-group.validation.valid textarea.input,
-.form-group.validation.warning textarea.input,
-.form-group.validation.error textarea.input {
+.form-group.validation.validation-icons.valid input.input,
+.form-group.validation.validation-icons.warning input.input,
+.form-group.validation.validation-icons.error input.input,
+.form-group.validation.validation-icons.valid textarea.input,
+.form-group.validation.validation-icons.warning textarea.input,
+.form-group.validation.validation-icons.error textarea.input {
   padding-right: 30px;
 }
 .form-group.validation.validation-icons .input-group:after {
@@ -3647,6 +3647,15 @@ select.select[multiple] option {
 select.select.stretch {
   width: 100%;
 }
+.dark select.select,
+select.select.ondark {
+  background-color: #000;
+  color: #fff;
+}
+.dark select.select[multiple]:hover,
+select.select.ondark[multiple]:hover {
+  background-color: #000;
+}
 .selecter {
   position: relative;
   display: block;
@@ -3913,6 +3922,10 @@ select.select.stretch {
 .selecter.disabled.multiple.focus,
 .selecter.disabled.multiple:focus {
   box-shadow: none !important;
+}
+.dark .selecter,
+.selecter.ondark {
+  color: #fff;
 }
 .dark .selecter .selecter-selected,
 .selecter.ondark .selecter-selected {
