@@ -243,16 +243,16 @@ textarea.input {
 		box-sizing: border-box;
 	}
 
-	&.valid, 
-	&.warning,
-	&.error {
-		input.input,
-		textarea.input {
-			padding-right: 30px;
-		}
-	}
-
 	&.validation-icons {
+		&.valid, 
+		&.warning,
+		&.error {
+			input.input,
+			textarea.input {
+				padding-right: 30px;
+			}
+		}
+
 		.input-group:after {
 			content: "";
 			display: inline-block;
