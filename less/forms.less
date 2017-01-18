@@ -1025,6 +1025,18 @@ select.select {
 	&.stretch {
 		width: 100%;
 	}
+
+	// dark mode
+	.dark &, &.ondark {
+		background-color: #000;
+		color: #fff;
+
+		&[multiple] {
+			&:hover {
+				background-color: #000;
+			}
+		}
+	}
 }
 
 // * ================================= *
