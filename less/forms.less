@@ -1045,6 +1045,7 @@ select.select {
 // uses Selecter (https://github.com/Formstone/Selecter)
 
 .selecter {
+& when (@include-selecter = true) {
 	
 	// generate shades
 	@selectbox-color-l1: screen(@selectbox-color,@l1-additive);
@@ -1488,5 +1489,6 @@ select.select {
 		}
 	}
 
+}
 
 }// end .selecter
