@@ -54,16 +54,18 @@
 		font-size: 1.2em;
 	}
 	
-	// dark style
-	.dark &, &.ondark {
-		background-color: #333;
+	& when (@include-dark = true) {
+		// dark style
+		.dark &, &.ondark {
+			background-color: #333;
 
-		.modal-header {
-			background-color: #444;
-		}
+			.modal-header {
+				background-color: #444;
+			}
 
-		.btn-row {
-			border-top-color: #444;
+			.btn-row {
+				border-top-color: #444;
+			}
 		}
 	}
 }

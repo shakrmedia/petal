@@ -144,27 +144,29 @@
 		vertical-align: middle;
 	}
 
-	// dark variants
-	&.ondark, .dark & {
-		.pg-block {
-			a {
-				color: #fff;
-				background-color: #444;
+	& when (@include-dark = true) {
+		// dark variants
+		&.ondark, .dark & {
+			.pg-block {
+				a {
+					color: #fff;
+					background-color: #444;
 
-				&:hover {
-					color: @primary-accent-color;
+					&:hover {
+						color: @primary-accent-color;
+					}
 				}
-			}
 
-			&.active a {
-				color: #fff;
-				background-color: @color-l1;
+				&.active a {
+					color: #fff;
+					background-color: @color-l1;
 
-				.colorset(@primary-accent-color);
-			}
+					.colorset(@primary-accent-color);
+				}
 
-			&.disabled {
-				opacity: 0.3;
+				&.disabled {
+					opacity: 0.3;
+				}
 			}
 		}
 	}
@@ -174,8 +176,10 @@
 	&.inline {
 		.pg-block{
 
-			.dark & a {
-				color: #fff;
+			& when (@include-dark = true) {
+				.dark & a {
+					color: #fff;
+				}
 			}
 			
 			a, 

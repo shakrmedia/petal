@@ -99,8 +99,10 @@ code {
 	letter-spacing: 0;
 	text-transform: none;
 
-	.dark & {
-		background-color: #666;
+	& when (@include-dark = true) {
+		.dark & {
+			background-color: #666;
+		}
 	}
 }
 
