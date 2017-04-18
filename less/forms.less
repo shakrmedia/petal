@@ -1089,205 +1089,221 @@ select.select {
 // * ================================= *
 // uses Selecter (https://github.com/Formstone/Selecter)
 
-.selecter {
 & when (@include-selecter = true) {
-	
-	// generate shades
-	@selectbox-color-l1: screen(@selectbox-color,@l1-additive);
-	@selectbox-color-l2: screen(@selectbox-color,@l2-additive);
-	@selectbox-color-d1: multiply(@selectbox-color,@d1-additive);
-	@selectbox-color-d2: multiply(@selectbox-color,@d2-additive);
+	.selecter {
+		// generate shades
+		@selectbox-color-l1: screen(@selectbox-color,@l1-additive);
+		@selectbox-color-l2: screen(@selectbox-color,@l2-additive);
+		@selectbox-color-d1: multiply(@selectbox-color,@d1-additive);
+		@selectbox-color-d2: multiply(@selectbox-color,@d2-additive);
 
-	position: relative;
-	display: block;
-	margin: 5px 0;
-	z-index: @selectbox-container-z-index;
+		position: relative;
+		display: block;
+		margin: 5px 0;
+		z-index: @selectbox-container-z-index;
 
-	&:focus {
-		box-shadow: none;
-		outline: none;
-	}
-
-	&,
-	& * {
-		user-select: none !important;
-	}
-
-
-	// original select element
-	.selecter-element {
-		width: 100%;
-		height: 100%;
-
-		position: absolute;
-		left: 0;
-
-		opacity: 0;
-		z-index: @selectbox-original-z-index;
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
 
 		&,
-		&:focus {
-			outline: none;
-			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-			-webkit-tap-highlight-color: transparent;
-		}
-	}
-
-
-	// current selectbox selected
-	.selecter-selected {
-		position: relative;
-
-		background-color: #fff;
-		border: @selectbox-border-width solid @gray-l1;
-		color: inherit;
-		cursor: pointer;
-		display: block;
-		font-size: 0.9em;
-		font-weight: bold;
-		margin: 0;
-		overflow: hidden;
-		padding: 8px 40px 8px 20px;
-		text-overflow: clip;
-
-		& when (@selectbox-border-radius > 0) {
-			border-radius: @selectbox-border-radius;
+		& * {
+			user-select: none !important;
 		}
 
-		transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
-		
 
-		// caret
-		&:after {
-			height: 0;
-			width: 0;
+		// original select element
+		.selecter-element {
+			width: 100%;
+			height: 100%;
 
 			position: absolute;
-			top: 0;
-			right: 15px;
-			bottom: 0;
+			left: 0;
 
-			border-left: 4px solid transparent;
-			border-right: 4px solid transparent;
-			border-top: 4px solid #aaa;
-			content: '';
-			display: block;
-			margin: auto 0;
+			opacity: 0;
+			z-index: @selectbox-original-z-index;
 
-			transform-style: preserve-3d;
-			transition: 0.2s border-color, 0.3s transform;
-		}
-
-	}
-
-	// selectbox options
-	.selecter-options {
-		width: 100%;
-		max-height: 250px;
-
-		position: absolute;
-		top: 100%;
-		left: 0;
-
-		border: none;
-		background-color: #fff;
-		display: none;
-		overflow: auto;
-		overflow-x: hidden;
-		margin: 5px 0;
-		padding: 0;
-		z-index: @selectbox-options-z-index;
-
-		box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(0,0,0,0.1) inset; 
-		
-		& when (@selectbox-border-radius > 0) {
-			border-radius: @selectbox-border-radius;
-		}
-
-		transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
-
-
-		// optgroup header
-		.selecter-group {
-			color: #aaa;
-			display: block;
-			font-size: 0.8em;
-			margin: 5px 0 0 0;
-			padding: 5px 20px 5px 15px;
-			text-transform: uppercase;
-			font-weight: bold;
-
-			&:first-child {
-				margin-top: 0;
+			&,
+			&:focus {
+				outline: none;
+				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+				-webkit-tap-highlight-color: transparent;
 			}
 		}
 
 
-		// selectbox option items
-		.selecter-item {
-			width: 100%;
+		// current selectbox selected
+		.selecter-selected {
+			position: relative;
 
-			background-color: transparent;
+			background-color: #fff;
+			border: @selectbox-border-width solid @gray-l1;
+			color: inherit;
 			cursor: pointer;
 			display: block;
 			font-size: 0.9em;
-			margin: 0 0 1px 0;
+			font-weight: bold;
+			margin: 0;
 			overflow: hidden;
-			padding: 8px 22px;
-			text-decoration: none;
-			text-overflow: ellipsis;
+			padding: 8px 40px 8px 20px;
+			text-overflow: clip;
 
-			&.placeholder {
-				display: none;
+			& when (@selectbox-border-radius > 0) {
+				border-radius: @selectbox-border-radius;
 			}
 
-			&:last-child {
-				margin-bottom: 0;
-			}
+			transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
 			
 
-			// option hover
-			&:hover {
-				background-color: rgba(0,0,0,.05);
+			// caret
+			&:after {
+				height: 0;
+				width: 0;
+
+				position: absolute;
+				top: 0;
+				right: 15px;
+				bottom: 0;
+
+				border-left: 4px solid transparent;
+				border-right: 4px solid transparent;
+				border-top: 4px solid #aaa;
+				content: '';
+				display: block;
+				margin: auto 0;
+
+				transform-style: preserve-3d;
+				transition: 0.2s border-color, 0.3s transform;
 			}
 
-			&:active {
-				background-color: @selectbox-color;
-				color: #fff;
+		}
+
+		// selectbox options
+		.selecter-options {
+			width: 100%;
+			max-height: 250px;
+
+			position: absolute;
+			top: 100%;
+			left: 0;
+
+			border: none;
+			background-color: #fff;
+			display: none;
+			overflow: auto;
+			overflow-x: hidden;
+			margin: 5px 0;
+			padding: 0;
+			z-index: @selectbox-options-z-index;
+
+			box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(0,0,0,0.1) inset; 
+			
+			& when (@selectbox-border-radius > 0) {
+				border-radius: @selectbox-border-radius;
 			}
 
-			&.selected {
-				position: relative;
+			transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
+
+
+			// optgroup header
+			.selecter-group {
+				color: #aaa;
+				display: block;
+				font-size: 0.8em;
+				margin: 5px 0 0 0;
+				padding: 5px 20px 5px 15px;
+				text-transform: uppercase;
 				font-weight: bold;
-				padding-right: 42px;
 
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+
+
+			// selectbox option items
+			.selecter-item {
+				width: 100%;
+
+				background-color: transparent;
+				cursor: pointer;
+				display: block;
+				font-size: 0.9em;
+				margin: 0 0 1px 0;
+				overflow: hidden;
+				padding: 8px 22px;
+				text-decoration: none;
+				text-overflow: ellipsis;
+
+				&.placeholder {
+					display: none;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+
+				// option hover
 				&:hover {
-					background-color: fadeout(@selectbox-color,20%);
+					background-color: rgba(0,0,0,.05);
+				}
+
+				&:active {
+					background-color: @selectbox-color;
 					color: #fff;
 				}
 
-				&:after {
-					content: "";
-					position: absolute;
-					top: 8px;
-					right: 20px;
-					display: inline-block;
-					width: 16px;
-					height: 16px;
-					
-					@checkmark-color: @selectbox-color;
-					@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
-					background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
+				&.selected {
+					position: relative;
+					font-weight: bold;
+					padding-right: 42px;
+
+					&:hover {
+						background-color: fadeout(@selectbox-color,20%);
+						color: #fff;
+					}
+
+					&:after {
+						content: "";
+						position: absolute;
+						top: 8px;
+						right: 20px;
+						display: inline-block;
+						width: 16px;
+						height: 16px;
+						
+						@checkmark-color: @selectbox-color;
+						@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
+						background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
+					}
+				}
+			}
+
+		}
+
+		&:not(.multiple) .selecter-options {
+			&:not(:active) .selecter-item {
+
+				&.selected {
+					background-color: @selectbox-color;
+					color: #fff;
+
+					&:hover {
+						background-color: fadeout(@selectbox-color,20%);
+					}
+
+					&:after {
+						@checkmark-color: #fff;
+						@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
+						background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
+					}
 				}
 			}
 		}
-
-	}
-
-	&:not(.multiple) .selecter-options {
-		&:not(:active) .selecter-item {
-
-			&.selected {
+		&.multiple .selecter-options {
+			.selecter-item.selected {
 				background-color: @selectbox-color;
 				color: #fff;
 
@@ -1302,112 +1318,67 @@ select.select {
 				}
 			}
 		}
-	}
-	&.multiple .selecter-options {
-		.selecter-item.selected {
-			background-color: @selectbox-color;
-			color: #fff;
 
-			&:hover {
-				background-color: fadeout(@selectbox-color,20%);
+		.selecter-options .selecter-item {
+			&.disabled,
+			&.disabled:hover, {
+				color: #aaa;
+				cursor: not-allowed;
 			}
-
-			&:after {
-				@checkmark-color: #fff;
-				@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
-				background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
+			&.disabled:active {
+				background-color: rgba(0,0,0,.05);
 			}
 		}
-	}
 
-	.selecter-options .selecter-item {
-		&.disabled,
-		&.disabled:hover, {
-			color: #aaa;
-			cursor: not-allowed;
-		}
-		&.disabled:active {
-			background-color: rgba(0,0,0,.05);
-		}
-	}
+		// hover
+		&:hover {
+			.selecter-selected {
+				background-color: #fafafa;
+				border-color: darken(@gray-l1,10%);
 
-	// hover
-	&:hover {
-		.selecter-selected {
-			background-color: #fafafa;
-			border-color: darken(@gray-l1,10%);
-
-			& when (@selectbox-disable-shadows = false) {
-				box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
-			}
-			
-			&:after {
-				border-top-color: @gray;
+				& when (@selectbox-disable-shadows = false) {
+					box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
+				}
+				
+				&:after {
+					border-top-color: @gray;
+				}
 			}
 		}
-	}
 
-	
-	// focused state
-	&.focus, &:focus { 
+		
+		// focused state
+		&.focus, &:focus { 
 
-		.selecter-selected {
-			background-color: #fafafa;
-			border-color: @selectbox-color;
-			.drop-shadow-light;
+			.selecter-selected {
+				background-color: #fafafa;
+				border-color: @selectbox-color;
+				.drop-shadow-light;
 
-			// caret color
-			&:after {
-				border-top-color: @selectbox-color;
+				// caret color
+				&:after {
+					border-top-color: @selectbox-color;
+				}
 			}
 		}
-	}
 
-	// open state
-	&.open {
-		z-index: @selectbox-container-open-z-index;
+		// open state
+		&.open {
+			z-index: @selectbox-container-open-z-index;
 
-		.selecter-selected {
-			background-color: @selectbox-color;
-			border-color: @selectbox-color-d1;
-			color: #fff;
-			
-			// flip caret
-			&:after {
-				transform: rotateX(180deg);
-				border-top-color: #fff;
+			.selecter-selected {
+				background-color: @selectbox-color;
+				border-color: @selectbox-color-d1;
+				color: #fff;
+				
+				// flip caret
+				&:after {
+					transform: rotateX(180deg);
+					border-top-color: #fff;
+				}
+
 			}
 
-		}
-
-	}
-
-
-	// 'cover' style option
-	&.cover {
-
-		.selecter-options {
-			border-width: @selectbox-border-width;
-			border-color: @selectbox-color;
-			top: 0;
-			margin: 0;
-		}
-
-	}
-
-
-	// if at bottom of screen
-	&.bottom {
-
-		.selecter-options {
-			top: auto;
-			bottom: 100%;
-
-			border-width: @selectbox-border-width @selectbox-border-width 0;
-		}
-
-		.selecter-item:last-child {
-			border: none;
 		}
 
 
@@ -1415,127 +1386,155 @@ select.select {
 		&.cover {
 
 			.selecter-options {
-				top: auto;
-				bottom: 0;
 				border-width: @selectbox-border-width;
-			}
-
-		}
-	}
-
-
-	// multiple select
-	&.multiple {
-		.selecter-options {
-			width: 100%;
-			position: static;
-			border: @selectbox-border-width solid @gray-l1;
-			display: block;
-			box-shadow: none;
-
-			& when (@selectbox-border-radius > 0) {
-				border-radius: @selectbox-border-radius;
-			}
-		}
-
-		&:hover {
-			.selecter-options {
-				border-color: darken(@gray-l1,10%);
-			}
-			& when (@selectbox-disable-shadows = false) {
-				box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
-			}
-		}
-
-		&.focus, &:focus {
-			.selecter-options {
 				border-color: @selectbox-color;
-				.drop-shadow;
+				top: 0;
+				margin: 0;
 			}
-		}
-	}
 
-
-	// disabled
-	&.disabled {
-		opacity: 0.7;
-
-		.selecter-selected,
-		.selecter-selected:hover {
-			background-color: #fff;
-			color: @gray;
-			border-color: @gray-l1 !important;
-			pointer-events: none;
-			cursor: default;
-			box-shadow: none;
-		}
-		
-		// caret
-		.selecter-selected:after {
-			border-top-color: #ccc;
 		}
 
-		.selecter-options {
-			border-color: @gray-l1 !important;
-			pointer-events: none;
-			box-shadow: none !important;
-		}
 
-		.selecter-group,
-		.selecter-item {
-			border-color: #ccc;
-			cursor: default;
-		}
-
-		.selecter-item,
-		.selecter-item:hover {
-			color: #ccc;
-		}
-
-		&.multiple.focus,
-		&.multiple:focus {
-			box-shadow: none !important;
-		}
-
-	}
-
-	& when (@include-dark = true) {
-		// dark
-		.dark &, &.ondark {
-			color: #fff;
-
-			.selecter-selected {
-				border-color: @gray;
-				background-color: fadeout(@black,60%);
-			}
-				
-			&:hover .selecter-selected {
-				border-color: @gray-l1;
-			}
-			&:focus .selecter-selected {
-				border-color: @primary-accent-color;
-				background-color: fadeout(@black,30%);
-			}
-			
+		// if at bottom of screen
+		&.bottom {
 
 			.selecter-options {
-				background-color: #000;
-				.drop-shadow-deep;
-				box-shadow+: 0 0 1px 0 rgba(255,255,255,0.1) inset; 
+				top: auto;
+				bottom: 100%;
+
+				border-width: @selectbox-border-width @selectbox-border-width 0;
 			}
 
-			.selecter-item {
-				&:hover {
-					background-color: rgba(255,255,255,.2);
+			.selecter-item:last-child {
+				border: none;
+			}
+
+
+			// 'cover' style option
+			&.cover {
+
+				.selecter-options {
+					top: auto;
+					bottom: 0;
+					border-width: @selectbox-border-width;
+				}
+
+			}
+		}
+
+
+		// multiple select
+		&.multiple {
+			.selecter-options {
+				width: 100%;
+				position: static;
+				border: @selectbox-border-width solid @gray-l1;
+				display: block;
+				box-shadow: none;
+
+				& when (@selectbox-border-radius > 0) {
+					border-radius: @selectbox-border-radius;
 				}
 			}
 
-			&.disabled {
+			&:hover {
+				.selecter-options {
+					border-color: darken(@gray-l1,10%);
+				}
+				& when (@selectbox-disable-shadows = false) {
+					box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
+				}
+			}
 
+			&.focus, &:focus {
+				.selecter-options {
+					border-color: @selectbox-color;
+					.drop-shadow;
+				}
 			}
 		}
-	}
 
-}
+
+		// disabled
+		&.disabled {
+			opacity: 0.7;
+
+			.selecter-selected,
+			.selecter-selected:hover {
+				background-color: #fff;
+				color: @gray;
+				border-color: @gray-l1 !important;
+				pointer-events: none;
+				cursor: default;
+				box-shadow: none;
+			}
+			
+			// caret
+			.selecter-selected:after {
+				border-top-color: #ccc;
+			}
+
+			.selecter-options {
+				border-color: @gray-l1 !important;
+				pointer-events: none;
+				box-shadow: none !important;
+			}
+
+			.selecter-group,
+			.selecter-item {
+				border-color: #ccc;
+				cursor: default;
+			}
+
+			.selecter-item,
+			.selecter-item:hover {
+				color: #ccc;
+			}
+
+			&.multiple.focus,
+			&.multiple:focus {
+				box-shadow: none !important;
+			}
+
+		}
+
+		& when (@include-dark = true) {
+			// dark
+			.dark &, &.ondark {
+				color: #fff;
+
+				.selecter-selected {
+					border-color: @gray;
+					background-color: fadeout(@black,60%);
+				}
+					
+				&:hover .selecter-selected {
+					border-color: @gray-l1;
+				}
+				&:focus .selecter-selected {
+					border-color: @primary-accent-color;
+					background-color: fadeout(@black,30%);
+				}
+				
+
+				.selecter-options {
+					background-color: #000;
+					.drop-shadow-deep;
+					box-shadow+: 0 0 1px 0 rgba(255,255,255,0.1) inset; 
+				}
+
+				.selecter-item {
+					&:hover {
+						background-color: rgba(255,255,255,.2);
+					}
+				}
+
+				&.disabled {
+
+				}
+			}
+		}
+
+	}
 
 }// end .selecter
