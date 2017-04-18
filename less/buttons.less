@@ -218,18 +218,16 @@
 				}
 			}
 			
-			& when (@include-dark = true) {
-				// for segmented button active state on dark
-				.dark :checked + label &,
-				.dark :checked + label &.hollow {
-					color: @text-color;
-					background-color: @btn-color-d1;
-					border-color: @btn-color-l2;
+			// for segmented button active state on dark
+			.dark :checked + label &,
+			.dark :checked + label &.hollow {
+				color: @text-color;
+				background-color: @btn-color-d1;
+				border-color: @btn-color-l2;
 
-					&:hover {
-						border-color: @btn-color-l2;
-						background-color: @btn-color;
-					}
+				&:hover {
+					border-color: @btn-color-l2;
+					background-color: @btn-color;
 				}
 			}
 		}
