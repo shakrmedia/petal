@@ -6,9 +6,11 @@ table.table {
 	width: 100%;
 	background-color: #fff;
 
-	.dark &,
-	&.ondark {
-		background-color: #222;
+	& when (@include-dark = true) {
+		.dark &,
+		&.ondark {
+			background-color: #222;
+		}
 	}
 	
 	caption {
@@ -28,9 +30,11 @@ table.table {
 		text-align: left;
 		border-bottom: 1px solid #ddd;
 
-		.dark &,
-		&.ondark {
-			border-bottom-color: #444;
+		& when (@include-dark = true) {
+			.dark &,
+			&.ondark {
+				border-bottom-color: #444;
+			}
 		}
 
 		&.nowrap {
@@ -42,9 +46,11 @@ table.table {
 	thead tr:last-child td {
 		border-bottom: 2px solid #ccc;
 
-		.dark &,
-		&.ondark {
-			border-bottom-color: #555;
+		& when (@include-dark = true) {
+			.dark &,
+			&.ondark {
+				border-bottom-color: #555;
+			}
 		}
 	}
 
@@ -52,9 +58,11 @@ table.table {
 	tfoot tr:first-child td {
 		border-top: 2px solid #ccc;
 
-		.dark &,
-		&.ondark {
-			border-top-color: #555;
+		& when (@include-dark = true) {
+			.dark &,
+			&.ondark {
+				border-top-color: #555;
+			}
 		}
 	}
 
@@ -69,9 +77,11 @@ table.table {
 		th, td {
 			border-right: 1px solid #ddd;
 
-			.dark &,
-			&.ondark {
-				border-right-color: #444;
+			& when (@include-dark = true) {
+				.dark &,
+				&.ondark {
+					border-right-color: #444;
+				}
 			}
 
 			&:last-child {
@@ -84,9 +94,11 @@ table.table {
 	&.table-outer-borders {
 		border: 1px solid #ddd;
 
-		.dark &,
-		&.ondark {
-			border-color: #444;
+		& when (@include-dark = true) {
+			.dark &,
+			&.ondark {
+				border-color: #444;
+			}
 		}
 
 	}
@@ -96,9 +108,11 @@ table.table {
 		tr:nth-child(2n) {
 			background-color: #fcfcfc;
 
-			.dark &,
-			&.ondark {
-				background-color: fadeout(#fff,95%);
+			& when (@include-dark = true) {
+				.dark &,
+				&.ondark {
+					background-color: fadeout(#fff,95%);
+				}
 			}
 
 		}
@@ -110,9 +124,11 @@ table.table {
 		tbody tr:hover {
 			background-color: #f7f7f7;
 
-			.dark &,
-			&.ondark {
-				background-color: fadeout(#fff,90%);
+			& when (@include-dark = true) {
+				.dark &,
+				&.ondark {
+					background-color: fadeout(#fff,90%);
+				}
 			}
 		}
 	}

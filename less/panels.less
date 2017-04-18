@@ -19,12 +19,14 @@
 		.drop-shadow-light;
 	}
 
-	.dark &, &.ondark {
-		background-color: #444;
-		box-shadow: 0 1px 4px rgba(0,0,0,.1);
+	& when (@include-dark = true) {
+		.dark &, &.ondark {
+			background-color: #444;
+			box-shadow: 0 1px 4px rgba(0,0,0,.1);
 
-		&.hover-em:hover {
-			.drop-shadow-light;
+			&.hover-em:hover {
+				.drop-shadow-light;
+			}
 		}
 	}
 }
