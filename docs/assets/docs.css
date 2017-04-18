@@ -3322,7 +3322,9 @@ input[type="radio"].radiobox + label:after {
   border-radius: 100%;
 }
 input[type="checkbox"].checkbox:focus + label:before,
-input[type="radio"].radiobox:focus + label:before,
+input[type="radio"].radiobox:focus + label:before {
+  border-color: #30a4dc;
+}
 .dark input[type="checkbox"].checkbox:focus + label:before,
 .dark input[type="radio"].radiobox:focus + label:before {
   border-color: #30a4dc;
@@ -3372,13 +3374,17 @@ input[type="radio"].radiobox:checked + label:after {
   background-image: none !important;
 }
 input[type="checkbox"].checkbox:invalid + label:before,
-input[type="radio"].radiobox:invalid + label:before,
+input[type="radio"].radiobox:invalid + label:before {
+  border-color: #f05a67;
+}
 .dark input[type="checkbox"].checkbox:invalid + label:before,
 .dark input[type="radio"].radiobox:invalid + label:before {
   border-color: #f05a67;
 }
 input[type="checkbox"].checkbox.validation.error + label:before,
-input[type="radio"].radiobox.validation.error + label:before,
+input[type="radio"].radiobox.validation.error + label:before {
+  border-color: #f05a67;
+}
 .dark input[type="checkbox"].checkbox.validation.error + label:before,
 .dark input[type="radio"].radiobox.validation.error + label:before {
   border-color: #f05a67;

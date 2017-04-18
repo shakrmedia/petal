@@ -1014,6 +1014,8 @@
 
 <p>Refer to the <a href="http://formstone.it/components/selecter">Selecter documentation page</a> for more options.</p>
 
+<p>If you are not planning to use Selecter in your project, you can turn it off by setting the <code>@include-selecter</code> variable to <code>false</code>. When this is switched off, the relevant code will not be included in compiled code thus saving some file size.</p>
+
 <br>
 
 <h5>Customizable options</h5>
@@ -1022,7 +1024,8 @@
 @selectbox-border-width: @input-border-width; //2px
 @selectbox-border-radius: @input-border-radius;
 @selectbox-color: @primary-accent-color;
-@selectbox-disable-shadows: false;</code></pre>
+@selectbox-disable-shadows: false;
+@include-selecter: true;</code></pre>
 </div>
 
 

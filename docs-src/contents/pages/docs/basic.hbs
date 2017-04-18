@@ -32,3 +32,12 @@ list-order: 0
 </div>
 
 <p>The <code>box-sizing</code> property is declared for all elements (<code>*</code>) inside <code>basic.less</code> file, so it's important that you include this part of code by either importing <code>basic.less</code> or manually setting the property for Petal to ensure everything looks as intended.</p>
+
+<br>
+
+<h4>Dark style variants</h4>
+<p>Many of the UI elements provided in Petal include additional 'dark' style variants with them. The dark variants add slight modifications to existing styles to make them better appear on darker backgrounds. For example, a button's border color will appear lighter instead of darker when on a dark background.</p>
+
+<p>Click on the 'Toggle Light/Dark' button on the sidebar of this document anytime to see how UI elements look on dark backgrounds. The background color of the demo panels (where applicable) will be inverted for the demonstration.</p>
+
+<p>If you are not planning to use dark styles in your project (if you only have bright backgrounds), you can turn it off by setting the <code>@include-dark</code> variable to <code>false</code>. When this is switched off, the relevant code will not be included in compiled code thus saving some file size.</p>
