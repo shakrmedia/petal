@@ -246,7 +246,7 @@ module.exports = function(grunt) {
     'cssmin:petal', 
     'uglify:petal', 'concat:petal', 'usebanner:petal', 
     'copy:docs_assets', 'copy:docs_js', 
-    'newer:assemble']);
+    'assemble']);
   grunt.registerTask('petal', ['less:petal', 'postcss:petal', 'cssmin:petal', 'uglify:petal', 'concat:petal', 'usebanner:petal']);
   grunt.registerTask('petal-dist', ['less:dist', 'postcss:dist', 'cssmin:dist', 'uglify:dist', 'concat:dist', 'usebanner:dist', 'copy:dist']);
   grunt.registerTask('js', ['uglify:petal', 'concat:petal']);
