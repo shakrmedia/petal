@@ -627,9 +627,14 @@ input[type="radio"].radiobox + label {
 // focus (tab select) state
 input[type="checkbox"].checkbox:focus + label,
 input[type="radio"].radiobox:focus + label {
-	&:before,
-	.dark &:before {
+	&:before {
 		border-color: @primary-accent-color;
+	}
+
+	& when (@include-dark = true) {
+		.dark &:before {
+			border-color: @primary-accent-color;
+		}
 	}
 }
 
@@ -704,9 +709,14 @@ input[type="radio"].radiobox:checked + label　{
 & when (@input-html5-validation-styles = true) {
 	input[type="checkbox"].checkbox:invalid + label,
 	input[type="radio"].radiobox:invalid + label　{
-		&:before,
-		.dark &:before {
+		&:before {
 			border-color: @danger-color;
+		}
+
+		& when (@include-dark = true) {
+			.dark &:before {
+				border-color: @danger-color;
+			}
 		}
 	}
 }
@@ -714,9 +724,14 @@ input[type="radio"].radiobox:checked + label　{
 // custom checkbox validation class
 input[type="checkbox"].checkbox.validation.error + label,
 input[type="radio"].radiobox.validation.error + label　{
-	&:before,
-	.dark &:before {
+	&:before {
 		border-color: @danger-color;
+	}
+
+	& when (@include-dark = true) {
+		.dark &:before {
+			border-color: @danger-color;
+		}
 	}
 }
 
