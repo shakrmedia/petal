@@ -30,7 +30,7 @@
 
 	<link rel="stylesheet" href="../assets/docs.css">
 
-	<title>Panels | Petal</title>
+	<title>Alerts | Petal</title>
 </head>
 
 <body>
@@ -59,104 +59,133 @@
 			
 
 <div class="section-header">
-	<h2 id="section-panels">Panels</h2>
+	<h2 id="section-alerts">Alerts</h2>
 	<p class="sub">
-		<span class="file-ref">panels.less</span>
+		<span class="file-ref">alerts.less</span>
 	</p>
 </div>
 			
-<h4>Basic Panels</h4>
-<div class="demo-panel gray" data-toggle-bg="toggle">
-	<div class="panel m-20">
-		<div class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+<h4>Basic Alerts</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="alert">
+		<strong>Notice:</strong> Take a look at this alert message now.
 	</div>
-	<div class="panel m-20">
-		<div class="p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+	<div class="alert accent">
+		<strong>Heads up:</strong> This message will be more noticeable than the plain one.
 	</div>
-</div>
-<p>For various sections of a page. Add the <code>.panel</code> class to apply a white background and a subtle shadow. Manually apply padding and margins appropriately.</p>
-
-<br>
-
-<h4>Cards</h4>
-<div class="demo-panel p-20 gray" data-toggle-bg="toggle">
-	<div class="row">
-		<div class="col-2">
-			<div class="card hover-em">
-				<div class="card-image">
-					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMzNBM0RDIiBkPSJNMCAwaDIwMHYyMDBIMHoiLz48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMCAwdjIwMGg3Ny40QzEwNC4zIDEyMi43IDE2Mi4zIDY3IDIwMCA0MC4yVjBIMHoiLz48cGF0aCBmaWxsPSIjRjE1QjY3IiBkPSJNMCAwdjIwMGgyNy41QzI3LjEgMTI2LjEgNTIuNCA1NC42IDk0LjIgMEgweiIvPjwvc3ZnPg==" alt="">
-				</div>
-				<div class="p-20">
-					<h5>Lorem Ipsum</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-					<button class="btn green hollow">View</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-2">
-			<div class="card hover-em">
-				<div class="card-image">
-					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjMzNBM0RDIiBkPSJNMCAwaDIwMHYyMDBIMHoiLz48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMCAwdjIwMGg3Ny40QzEwNC4zIDEyMi43IDE2Mi4zIDY3IDIwMCA0MC4yVjBIMHoiLz48cGF0aCBmaWxsPSIjRjE1QjY3IiBkPSJNMCAwdjIwMGgyNy41QzI3LjEgMTI2LjEgNTIuNCA1NC42IDk0LjIgMEgweiIvPjwvc3ZnPg==" alt="">
-				</div>
-				<div class="p-20">
-					<h5>Consectetur Elit</h5>
-					<p>Velit saepe, aspernatur ipsa? Dolores sint harum dolorem quod tempore.</p>
-					<button class="btn green hollow">View</button>
-				</div>
-			</div>
-		</div>
+	<div class="alert okay">
+		<strong>Success!</strong> Your request has been successfully submitted.
+	</div>
+	<div class="alert warning">
+		<strong>Warning:</strong> Your subscription will end in 15 days.
+	</div>
+	<div class="alert danger">
+		<strong>Action required:</strong> Your account is currently suspended.
 	</div>
 </div>
-<p>A variation of a panel, use for card-based item lists.</p>
-
-<h5>Options</h5>
-<ul>
-	<li><code>.hover-em</code> : darkened shadow emphasis when hovering over.
-</ul>
-
-<br>
-
-<h4>Labels</h4>
-<div class="demo-panel p-20" data-toggle-bg="toggle">
-	<h1>h1. Lorem Ipsum <span class="label">Label</span></h1>
-	<h2>h2. Lorem Ipsum <span class="label">Label</span></h2>
-	<h3>h3. Lorem Ipsum <span class="label">Label</span></h3>
-	<h4>h4. Lorem Ipsum <span class="label">Label</span></h4>
-	<h5>h5. Lorem Ipsum <span class="label">Label</span></h5>
-	<h6>h6. Lorem Ipsum <span class="label">Label</span></h6>
-	
-	<br>
-
-	<h5>Variations</h5>
-	<div>
-		<span class="label">Default</span> <span class="label accent">Accent</span> <span class="label okay">Okay</span> <span class="label warning">Warning</span> <span class="label danger">Danger</span>
-	</div>
-	<div class="mt-10">
-		<span class="label white">Default</span> <span class="label white accent">Accent</span> <span class="label white okay">Okay</span> <span class="label white warning">Warning</span> <span class="label white danger">Danger</span>
-	</div>
-</div>
-
-<p>Use <code>.label</code> on a <code>&lt;span&gt;</code> element. <b>Does not support other elements other than <code>&lt;span&gt;</code></b> to minimize the Petal style being inherited in project-specific classes because it is a rather commonly used class name.</p>
-<p></b>Append emphasis classes <code>.accent</code>, <code>.okay</code>, <code>.warning</code>, <code>.danger</code> for color variations.</p>
-<p><code>.white</code> will make inverted color with a white background and black text; append the emphasis classes listed above with <code>.white</code> and it will change the text colors instead.</p>
-
-<h4>Badges</h4>
-<div class="demo-panel p-20" data-toggle-bg="toggle">
-	<span class="badge">1</span> <span class="badge accent">20</span> <span class="badge okay">3</span> <span class="badge warning">4</span> <span class="badge danger">5</span>
-</div>
-
-<p>Same thing as labels, just change it to <code>.badge</code>. Applies to <code>&lt;span&gt;</code> only.</p>
-
-<br>
-
-<h5>Customizable options</h5>
 <div class="demo-code">
-<pre><code class="language-less">// panels
-@panel-border-radius: 0;
-@label-border-radius: 0;
-@badge-border-radius: 10em;</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;alert&quot;&gt;
+    &lt;strong&gt;Notice:&lt;/strong&gt; Take a look at this alert message now.
+&lt;/div&gt;
+&lt;div class=&quot;alert accent&quot;&gt;
+    &lt;strong&gt;Heads up:&lt;/strong&gt; This message will be more noticeable than the plain one.
+&lt;/div&gt;
+&lt;div class=&quot;alert okay&quot;&gt;
+    &lt;strong&gt;Success!&lt;/strong&gt; Your request has been successfully submitted.
+&lt;/div&gt;
+&lt;div class=&quot;alert warning&quot;&gt;
+    &lt;strong&gt;Warning:&lt;/strong&gt; Your subscription will end in 15 days.
+&lt;/div&gt;
+&lt;div class=&quot;alert danger&quot;&gt;
+    &lt;strong&gt;Action required:&lt;/strong&gt; Your account is currently suspended.
+&lt;/div&gt;</code></pre>
 </div>
+
+<p>Alerts are suitable for displaying short messages that needs users' attention. Alert boxes will apply simple background color and padding to make the message block stand out from standard content. Use the optional <code>.accent</code>, <code>.okay</code>, <code>.warning</code>, <code>.danger</code> classes to add background colors that fit the context of the message.</p>
+
+<br>
+
+<h4>Alert with icon</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="alert">
+		<span class="alert-icon"><i class="petalicon petalicon-info"></i></span> Pro Tip: Getting plenty of sleep can help you if you're tired.
+	</div>
+	<div class="alert okay">
+		<span class="alert-icon"><i class="petalicon petalicon-check-round"></i></span> Permission granted.
+	</div>
+	<div class="alert warning">
+		<span class="alert-icon"><i class="petalicon petalicon-warning"></i></span> We're running out of time.
+	</div>
+	<div class="alert danger">
+		<span class="alert-icon"><i class="petalicon petalicon-notice"></i></span> Our base is under attack.
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;alert okay&quot;&gt;
+    &lt;span class=&quot;alert-icon&quot;&gt;&lt;i class=&quot;petalicon petalicon-check-round&quot;&gt;&lt;/i&gt;&lt;/span&gt; Your request has been successfully submitted.
+&lt;/div&gt;</code></pre>
+</div>
+
+<p>To help better convey the context of the message, you can add an icon to your alert message. Simply add a <a href="petalicons.html">petalicon</a> in front of your text. Wrap them around with <code>&lt;span class="alert-icon"&gt;</code> to add some margin between the icon and the text.</p>
+
+<br>
+
+<h4>Large Alerts</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="alert large">
+		<span class="alert-icon">
+			<i class="petalicon petalicon-info"></i>
+		</span>
+		<div class="alert-text">
+			<h4>Information</h4>
+			<p>Never gonna give you up, never gonna let you down</p>
+		</div>
+	</div>
+	<div class="alert large okay">
+		<span class="alert-icon">
+			<i class="petalicon petalicon-check-round"></i>
+		</span>
+		<div class="alert-text">
+			<h4>Success</h4>
+			<p>Never gonna run around and desert you</p>
+		</div>
+	</div>
+	<div class="alert large warning">
+		<span class="alert-icon">
+			<i class="petalicon petalicon-warning"></i>
+		</span>
+		<div class="alert-text">
+			<h4>Warning</h4>
+			<p>Never gonna make you cry, Never gonna say goodbye</p>
+		</div>
+	</div>
+	<div class="alert large danger">
+		<span class="alert-icon">
+			<i class="petalicon petalicon-notice"></i>
+		</span>
+		<div class="alert-text">
+			<h4>Error</h4>
+			<p>Never gonna tell a lie and hurt you</p>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;alert large warning&quot;&gt;
+    &lt;span class=&quot;alert-icon&quot;&gt;
+        &lt;i class=&quot;petalicon petalicon-warning&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;div class=&quot;alert-text&quot;&gt;
+        &lt;h4&gt;Warning&lt;/h4&gt;
+        &lt;p&gt;Your subscription will end in 15 days.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<p>If you want to display your alerts more prominently, there is a large variant of the alert that doubles the size of the alert icon (32px), applies color and aligns it to the left. You need the <code>.alert-icon</code> wrap for the icon, and also the <code>.alert-text</code> wrap for the text block. Insert any HTML elements you want to include in the area.</p>
+
+<p>Note: When <code>&lt;p&gt;</code> paragraph tags are used inside alerts and they happen to be the last child of the block, bottom margin will be removed to prevent inconsistent padding for the entire alert box.</p>
+
+
 			
 			<div class="section-footer">
 				<a href="#top" class="totop">Back to top</a>			</div>
@@ -186,8 +215,8 @@
 					<li><a href="progress.html">Progress</a></li>
 					<li><a href="tables.html">Tables</a></li>
 					<li><a href="paging.html">Paging</a></li>
-					<li class="active"><a href="panels.html">Panels</a></li>
-					<li><a href="alerts.html">Alerts</a></li>
+					<li><a href="panels.html">Panels</a></li>
+					<li class="active"><a href="alerts.html">Alerts</a></li>
 					<li><a href="modals.html">Modals</a></li>
 					<li><a href="petalicon.html">Petalicons</a></li>
 			</ul>

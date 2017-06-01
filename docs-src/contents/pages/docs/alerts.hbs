@@ -1,0 +1,146 @@
+---
+title: Alerts
+area: docs
+section: components
+list-order: 11
+---
+
+<div class="section-header">
+	<h2 id="section-alerts">Alerts</h2>
+	<p class="sub">
+		<span class="file-ref">alerts.less</span>
+	</p>
+</div>
+			
+<h4>Basic Alerts</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="alert">
+		<strong>Notice:</strong> Take a look at this alert message now.
+	</div>
+	<div class="alert accent">
+		<strong>Heads up:</strong> This message will be more noticeable than the plain one.
+	</div>
+	<div class="alert okay">
+		<strong>Success!</strong> Your request has been successfully submitted.
+	</div>
+	<div class="alert warning">
+		<strong>Warning:</strong> Your subscription will end in 15 days.
+	</div>
+	<div class="alert danger">
+		<strong>Action required:</strong> Your account is currently suspended.
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="alert">
+	<strong>Notice:</strong> Take a look at this alert message now.
+</div>
+<div class="alert accent">
+	<strong>Heads up:</strong> This message will be more noticeable than the plain one.
+</div>
+<div class="alert okay">
+	<strong>Success!</strong> Your request has been successfully submitted.
+</div>
+<div class="alert warning">
+	<strong>Warning:</strong> Your subscription will end in 15 days.
+</div>
+<div class="alert danger">
+	<strong>Action required:</strong> Your account is currently suspended.
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>Alerts are suitable for displaying short messages that needs users' attention. Alert boxes will apply simple background color and padding to make the message block stand out from standard content. Use the optional <code>.accent</code>, <code>.okay</code>, <code>.warning</code>, <code>.danger</code> classes to add background colors that fit the context of the message.</p>
+
+<br>
+
+<h4>Alert with icon</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="alert">
+		<span class="alert-icon"><i class="petalicon petalicon-info"></i></span> Pro Tip: Getting plenty of sleep can help you if you're tired.
+	</div>
+	<div class="alert okay">
+		<span class="alert-icon"><i class="petalicon petalicon-check-round"></i></span> Permission granted.
+	</div>
+	<div class="alert warning">
+		<span class="alert-icon"><i class="petalicon petalicon-warning"></i></span> We're running out of time.
+	</div>
+	<div class="alert danger">
+		<span class="alert-icon"><i class="petalicon petalicon-notice"></i></span> Our base is under attack.
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="alert okay">
+	<span class="alert-icon"><i class="petalicon petalicon-check-round"></i></span> Your request has been successfully submitted.
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>To help better convey the context of the message, you can add an icon to your alert message. Simply add a <a href="petalicons.html">petalicon</a> in front of your text. Wrap them around with <code>&lt;span class="alert-icon"&gt;</code> to add some margin between the icon and the text.</p>
+
+<br>
+
+<h4>Large Alerts</h4>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+	<div class="alert large">
+		<span class="alert-icon">
+			<i class="petalicon petalicon-info"></i>
+		</span>
+		<div class="alert-text">
+			<h4>Information</h4>
+			<p>Never gonna give you up, never gonna let you down</p>
+		</div>
+	</div>
+	<div class="alert large okay">
+		<span class="alert-icon">
+			<i class="petalicon petalicon-check-round"></i>
+		</span>
+		<div class="alert-text">
+			<h4>Success</h4>
+			<p>Never gonna run around and desert you</p>
+		</div>
+	</div>
+	<div class="alert large warning">
+		<span class="alert-icon">
+			<i class="petalicon petalicon-warning"></i>
+		</span>
+		<div class="alert-text">
+			<h4>Warning</h4>
+			<p>Never gonna make you cry, Never gonna say goodbye</p>
+		</div>
+	</div>
+	<div class="alert large danger">
+		<span class="alert-icon">
+			<i class="petalicon petalicon-notice"></i>
+		</span>
+		<div class="alert-text">
+			<h4>Error</h4>
+			<p>Never gonna tell a lie and hurt you</p>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="alert large warning">
+	<span class="alert-icon">
+		<i class="petalicon petalicon-warning"></i>
+	</span>
+	<div class="alert-text">
+		<h4>Warning</h4>
+		<p>Your subscription will end in 15 days.</p>
+	</div>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>If you want to display your alerts more prominently, there is a large variant of the alert that doubles the size of the alert icon (32px), applies color and aligns it to the left. You need the <code>.alert-icon</code> wrap for the icon, and also the <code>.alert-text</code> wrap for the text block. Insert any HTML elements you want to include in the area.</p>
+
+<p>Note: When <code>&lt;p&gt;</code> paragraph tags are used inside alerts and they happen to be the last child of the block, bottom margin will be removed to prevent inconsistent padding for the entire alert box.</p>
+
