@@ -1197,7 +1197,7 @@ select.select {
 			padding: 0;
 			z-index: @selectbox-options-z-index;
 
-			box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(0,0,0,0.1) inset; 
+			box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(0,0,0,0.1); 
 			
 			& when (@selectbox-border-radius > 0) {
 				border-radius: @selectbox-border-radius;
@@ -1519,8 +1519,7 @@ select.select {
 
 				.selecter-options {
 					background-color: #000;
-					.drop-shadow-deep;
-					box-shadow+: 0 0 1px 0 rgba(255,255,255,0.1) inset; 
+					box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(255,255,255,0.1);
 				}
 
 				.selecter-item {
