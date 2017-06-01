@@ -1,0 +1,136 @@
+// * ================================= *
+// *  Alerts
+// * ================================= *
+
+// import dependencies
+@import (reference) 'color-palette.less';
+@import (reference) 'mixins.less';
+
+.alert {
+	padding: 15px 20px;
+	margin: 0 0 10px 0;
+	background-color: @gray-l2;
+
+	&.accent {
+		.colorset(@primary-accent-color);
+		background-color: @color-l2;
+	}
+
+	&.okay {
+		.colorset(@okay-color);
+		background-color: @color-l2;
+	}
+
+	&.warning {
+		.colorset(@warning-color);
+		background-color: @color-l2;
+	}
+
+	&.danger {
+		.colorset(@danger-color);
+		background-color: @color-l2;
+	}
+
+	& when (@include-dark = true) {
+		// dark style
+		.dark &, &.ondark {
+			background-color: @gray-d2;
+
+			&.accent {
+				.colorset(@primary-accent-color);
+				background-color: @color-d2;
+			}
+
+			&.okay {
+				.colorset(@okay-color);
+				background-color: @color-d2;
+			}
+
+			&.warning {
+				.colorset(@warning-color);
+				background-color: @color-d2;
+			}
+
+			&.danger {
+				.colorset(@danger-color);
+				background-color: @color-d2;
+			}
+		}
+	}
+
+	// inner paragraph styles
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	// alert icon
+	.alert-icon {
+		margin-right: 3px;
+	}
+	
+	// large variant
+	&.large {
+
+		.alert-icon {
+			float: left;
+			margin-right: 15px;
+			color: @gray-d2;
+
+			.petalicon {
+				font-size: 32px;
+				line-height: 32px;
+			}
+		}
+
+		&.accent .alert-icon {
+			.colorset(@primary-accent-color);
+			color: @color-d2;
+		}
+
+		&.okay .alert-icon {
+			.colorset(@okay-color);
+			color: @color-d2;
+		}
+
+		&.warning .alert-icon {
+			.colorset(@warning-color);
+			color: @color-d2;
+		}
+
+		&.danger .alert-icon {
+			.colorset(@danger-color);
+			color: @color-d2;
+		}
+
+		& when (@include-dark = true) {
+			// dark style
+			.dark &, &.ondark {
+
+				.alert-icon {
+					color: @gray-l2;
+				}
+
+				&.accent .alert-icon {
+					.colorset(@primary-accent-color);
+					color: @color-l2;
+				}
+
+				&.okay .alert-icon {
+					.colorset(@okay-color);
+					color: @color-l2;
+				}
+
+				&.warning .alert-icon {
+					.colorset(@warning-color);
+					color: @color-l2;
+				}
+
+				&.danger .alert-icon {
+					.colorset(@danger-color);
+					color: @color-l2;
+				}
+			}
+		}
+	}
+
+}
