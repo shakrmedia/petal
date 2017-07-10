@@ -97,6 +97,15 @@ section {
 	.demo-code {
 		border: 1px solid #ddd;
 		margin: 10px 0;
+
+		.demo-header {
+			background-color: #ddd;
+			padding: 5px 10px;
+			font-weight: bold;
+			font-size: 0.8em;
+			border-top: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+		}
 	}
 
 	.demo-panel + .demo-code {
@@ -158,6 +167,28 @@ section {
 	
 	&.text-white {
 		color: #fff;
+	}
+}
+
+// tab demo
+.tab-demo {
+	.tab-content-wrap {
+		.tab-content {
+			display: none;
+		}
+	}
+
+	#tab-contentdemo01:checked ~ .tab-content-wrap #tab-content-01 {
+		display: block;
+	}
+	#tab-contentdemo02:checked ~ .tab-content-wrap #tab-content-02 {
+		display: block;
+	}
+	#tab-contentdemo03:checked ~ .tab-content-wrap #tab-content-03 {
+		display: block;
+	}
+	#tab-contentdemo04:checked ~ .tab-content-wrap #tab-content-04 {
+		display: block;
 	}
 }
 

@@ -88,6 +88,21 @@ $('[data-modal-close]').click(function(e) {
     $('#demo-fp-modal').removeClass('visible');
 });
 
+// Tabs demo
+$('.tab-group').each(function() {
+    var $tabs = $(this).find('.tab');
+    
+    $tabs.each(function() {
+        var $this = $(this);
+
+        $this.click(function() {
+            if($this.hasClass('disabled')) { return; }
+
+            $tabs.removeClass('selected');
+            $this.addClass('selected');
+        });
+    });
+});
 
 // load highlight.js
 $(document).ready(function() {

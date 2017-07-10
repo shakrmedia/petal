@@ -1,0 +1,251 @@
+---
+title: Tabs
+area: docs
+section: components
+list-order: 11
+---
+
+<div class="section-header">
+	<h2 id="section-panels">Tabs</h2>
+	<p class="sub">
+		<span class="file-ref">tabs.less</span>
+	</p>
+</div>
+			
+<h3>
+	Tabs
+	<a href="javascript.html"><span class="badge warning js-req">Requires JavaScript</span></a>
+</h3>
+<div class="demo-panel gray tab-demo" data-toggle-bg="toggle">
+	<div class="ph-20 mv-10">
+		<label for="" class="form-label">default</label>
+	</div>
+	<div class="panel mv-10 mh-20">
+		<div class="tab-group" id="tab-simpledemo-group-1">
+            <div class="tab selected" id="tab-simpledemo-1-01"><span class="tab-icon"><i class="petalicon petalicon-star"></i></span> <span class="tab-label">Selected Tab</span> <span class="badge">1</span></div>
+
+            <div class="tab" id="tab-simpledemo-1-02"><span class="tab-icon"><i class="petalicon petalicon-heart"></i></span> <span class="tab-label">Normal Tab</span></div>
+
+            <div class="tab disabled" id="tab-simpledemo-1-03"><span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span> <span class="tab-label">Disabled Tab</span></div>
+
+            <div class="tab spacer"></div>
+        </div>
+	</div>
+	
+	<div class="ph-20 mv-10">
+		<label for="" class="form-label">tab-style-01</label>
+	</div>
+	<div class="panel mv-10 mh-20">
+		<div class="tab-group tab-style-01" id="tab-simpledemo-group-2">
+            <div class="tab selected" id="tab-simpledemo-2-01"><span class="tab-icon"><i class="petalicon petalicon-star"></i></span> <span class="tab-label">Selected Tab</span> <span class="badge">1</span></div>
+
+            <div class="tab" id="tab-simpledemo-2-02"><span class="tab-icon"><i class="petalicon petalicon-heart"></i></span> <span class="tab-label">Normal Tab</span></div>
+
+            <div class="tab disabled" id="tab-simpledemo-2-03"><span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span> <span class="tab-label">Disabled Tab</span></div>
+
+            <div class="tab spacer"></div>
+        </div>
+	</div>
+	
+	<div class="ph-20 mv-10">
+		<label for="" class="form-label">tab-style-02</label>
+	</div>
+	<div class="panel mv-10 mh-20">
+		<div class="tab-group tab-style-02" id="tab-simpledemo-group-2">
+            <div class="tab selected" id="tab-simpledemo-3-01"><span class="tab-icon"><i class="petalicon petalicon-star"></i></span> <span class="tab-label">Selected Tab</span> <span class="badge">1</span></div>
+
+            <div class="tab" id="tab-simpledemo-3-02"><span class="tab-icon"><i class="petalicon petalicon-heart"></i></span> <span class="tab-label">Normal Tab</span></div>
+
+            <div class="tab disabled" id="tab-simpledemo-3-03"><span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span> <span class="tab-label">Disabled Tab</span></div>
+
+            <div class="tab spacer"></div>
+        </div>
+	</div>
+
+    <div class="ph-20 mv-10">
+        <label for="" class="form-label">compact</label>
+    </div>
+    <div class="panel mv-10 mh-20">
+        <div class="tab-group tab-style-02 compact" id="tab-simpledemo-group-4">
+            <div class="tab selected" id="tab-simpledemo-4-01"><span class="tab-icon"><i class="petalicon petalicon-star"></i></span> <span class="tab-label">Selected Tab</span> <span class="badge">1</span></div>
+
+            <div class="tab" id="tab-simpledemo-4-02"><span class="tab-icon"><i class="petalicon petalicon-heart"></i></span> <span class="tab-label">Normal Tab</span></div>
+
+            <div class="tab disabled" id="tab-simpledemo-4-03"><span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span> <span class="tab-label">Disabled Tab</span></div>
+
+            <div class="tab spacer"></div>
+        </div>
+    </div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="tab-group tab-style-01" id="tab-simpledemo-group-1">
+    <div class="tab selected" id="tab-simpledemo-1-01">
+		<span class="tab-icon"><i class="petalicon petalicon-star"></i></span>
+		<span class="tab-label">Selected Tab</span> 
+		<span class="badge">1</span>
+    </div>
+
+    <div class="tab" id="tab-simpledemo-1-02">
+		<span class="tab-icon"><i class="petalicon petalicon-heart"></i></span>
+		<span class="tab-label">Normal Tab</span>
+    </div>
+
+    <div class="tab disabled" id="tab-simpledemo-1-02">
+		<span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span>
+		<span class="tab-label">Disabled Tab</span>
+    </div>
+
+    <div class="tab spacer"></div>
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>You can make a simple tabbed interface with styles provided by Petal. Include markup for <code>.tab</code> in a <code>.tab-group</code>. The tab label text must be wrapped with <code>span.tab-lable</code> for proper styling. Add <code>tab-icon</code>, <code>badge</code> inside the tab if you need them.</p>
+
+<h5>Optional classes on <code>.tab-group</code></h5>
+<ul>
+    <li><code>.tab-style-01</code> : Alternative design 1</li>
+    <li><code>.tab-style-02</code> : Alternative design 2</li>
+    <li><code>.compact</code> : Compact size (half-sized paddings)</li>
+</ul>
+
+<br>
+
+<h5>Tab Action States</h5>
+<p>Petal tab UI ships with <code>hover</code>, <code>active</code>, <code>selected</code> and <code>disabled</code> states. Hover and active states are handled by CSS pseudo-classes so you don't need to do anything. But for selected state, you need to write your own JavaScript code for adding and removing class accordingly. Add <code>.selected</code> and <code>.disabled</code> classes on <code>.tab</code> div where you want to apply respective states visually.</p>
+
+<br>
+
+<h5>Flexbox Required</h5>
+<p>The tab UI uses CSS Flexbox properties and may not display properly on older unsupported browsers.</p>
+
+<br>
+
+<h5>Spacer</h5>
+<p>Use an empty div element with <code>.tab.spacer</code> class to add a spacer dummy tab that extends to the end of the tab-group bar. (See demo above)</p>
+
+<br>
+
+<h3>Tabs (No JS - Radiobox Method)</h3>
+<div class="demo-panel gray tab-demo" data-toggle-bg="toggle">
+	<div class="panel m-20">
+		<div class="tab-group tab-style-01">
+            <input type="radio" name="tab-nojs-group" id="tab-nojs01" checked>
+            <label for="tab-nojs01"><div class="tab"><span class="tab-icon"><i class="petalicon petalicon-device-mobile"></i></span> <span class="tab-label">Mobile</span><span class="badge">1</span></div></label>
+            <input type="radio" name="tab-nojs-group" id="tab-nojs02">
+            <label for="tab-nojs02"><div class="tab"><span class="tab-icon"><i class="petalicon petalicon-device-tv"></i></span> <span class="tab-label">TV</span></div></label>
+            <input type="radio" name="tab-nojs-group" id="tab-nojs03" disabled>
+            <label for="tab-nojs03"><div class="tab"><span class="tab-icon"><i class="petalicon petalicon-device-laptop"></i></span> <span class="tab-label">Laptop</span></div></label>
+        </div>
+	</div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<div class="tab-group tab-style-01">
+    <input type="radio" name="tab-nojs-group" id="tab-nojs01" checked>
+    <label for="tab-nojs01">
+    	<div class="tab">
+			<span class="tab-icon"><i class="petalicon petalicon-device-mobile"></i></span>
+			<span class="tab-label">Mobile</span>
+			<span class="badge">1</span>
+    	</div>
+    </label>
+
+	...
+
+</div>
+```
+{{/markdown}}
+</div>
+
+<p>If you don't want to use JavaScript, you can use the radiobox method (utilizing <code>:checked</code> state and CSS adjacent selectors) to make it work without JavaScript. Markup is similar but the tab div goes into a wrapping <code>&lt;label&gt;</code>. Just before the <code>&lt;label&gt;</code> you need to place the <code>&lt;input type="radio"&gt;</code>. Make sure you point the <code>&lt;label&gt;</code> to the correct corresponding <code>&lt;input&gt;</code> by matching the <code>id</code> and <code>for</code> attributes.</p>
+
+<p>With this method, since tab refers to the radiobox's <code>checked</code> state for determining selected state, you don't need to manually add <code>.selected</code> class on tabs. Convenient!</p>
+
+<p>If you want to disable one of the tabs, add a <code>disabled</code> attribute on corresponding <code>&lt;input&gt;</code> not tabs.</p>
+
+<br>
+
+<h4>Tabs with content (Radiobox Method)</h4>
+<div class="demo-panel gray tab-demo" data-toggle-bg="toggle">
+	<div class="panel m-20">
+		<div class="tab-group tab-style-02">
+            <input type="radio" name="tab-contentdemo-group" id="tab-contentdemo01" checked>
+            <label for="tab-contentdemo01"><div class="tab"><span class="tab-label">Tab 01</span></div></label>
+
+            <input type="radio" name="tab-contentdemo-group" id="tab-contentdemo02">
+            <label for="tab-contentdemo02"><div class="tab"><span class="tab-label">Tab 02</span></div></label>
+
+            <div class="tab spacer"></div>
+
+            <div class="tab-content-wrap">
+				<div id="tab-content-01" class="tab-content p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+				<div id="tab-content-02" class="tab-content p-20">Qui dolorum incidunt quas alias repellendus earum fugit a. Beatae debitis impedit eum unde tenetur non, excepturi facilis repellat, repellendus, saepe repudiandae! Necessitatibus, est dicta ea totam neque!</div>
+			</div>
+        </div>
+	</div>
+</div>
+<div class="demo-code">
+<div class="demo-header">HTML</div>
+{{#markdown}}
+``` html
+<div class="tab-group tab-style-02">
+    <input type="radio" name="tab-contentdemo-group" id="tab-contentdemo01" checked>
+    <label for="tab-contentdemo01"><div class="tab"><span class="tab-label">Tab 01</span></div></label>
+
+    <input type="radio" name="tab-contentdemo-group" id="tab-contentdemo02">
+    <label for="tab-contentdemo02"><div class="tab"><span class="tab-label">Tab 02</span></div></label>
+
+    <div class="tab spacer"></div>
+
+    <div class="tab-content-wrap">
+		<div id="tab-content-01" class="tab-content p-20">Tab 01 Content</div>
+		<div id="tab-content-02" class="tab-content p-20">Tab 02 Content</div>
+	</div>
+</div>
+```
+{{/markdown}}
+<div class="demo-header">LESS</div>
+{{#markdown}}
+``` less
+// tab demo
+.tab-demo {
+	.tab-content-wrap {
+		.tab-content {
+			display: none;
+		}
+	}
+
+    // show #tab-content-01 when #tab-contentdemo01 is checked
+	#tab-contentdemo01:checked ~ .tab-content-wrap #tab-content-01 {
+		display: block;
+	}
+
+    // show #tab-content-02 when #tab-contentdemo02 is checked
+	#tab-contentdemo02:checked ~ .tab-content-wrap #tab-content-02 {
+		display: block;
+	}
+}
+```
+{{/markdown}}
+</div>
+
+<p>Going further, you can implement the actual tab content switching work without JavaScript too. This uses the same radiobox method as above. To do this, include the <code>.tab-content-wrap</code> inside the <code>.tab-group</code>, right after the last tab <code>&lt;label&gt;</code> element. Then write the CSS code that toggles the <code>display</code> of tab content using the sibling selector (<code>~</code>), like the demo above.</p>
+
+<br>
+
+<h5>Customizable options</h5>
+<div class="demo-code">
+{{#markdown}}
+``` less
+// tabs
+@tab-color: @primary-accent-color;
+@tab-style-01: enabled;
+@tab-style-02: enabled;
+```
+{{/markdown}}
+</div>
