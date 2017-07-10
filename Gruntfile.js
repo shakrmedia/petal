@@ -234,7 +234,7 @@ module.exports = function(grunt) {
         livereload: 9001
       },
       main: {
-        files: ['less/**/*', 'docs-src/contents/**/*', 'docs-src/less/*', 'js/*'],
+        files: ['less/**/*', 'docs-src/**/*', 'js/*'],
         tasks: ['default']
       }
     }
