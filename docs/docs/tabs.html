@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- 
+		Petal Documentation
+
+		petal.less v0.8.0
+		A modern, light CSS UI framework by Shakr based on LESS.
+		https://shakrmedia.github.io/petal
+
+		Copyright 2015-2017 Shakr Media Co., Ltd.; MIT License
+	-->
+
+	<meta charset="utf-8"> 
+	<meta name="description" content="Petal - A modern, light CSS UI framework by Shakr based on LESS.">
+
+	<meta property="og:title" content="Petal"/>
+	<meta property="og:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg"/>
+	<meta property="og:site_name" content="Petal"/>
+	<meta property="og:url" content="https://shakrmedia.github.io/petal/"/>
+	<meta property="og:description" content="A modern, light CSS UI framework by Shakr based on LESS."/>
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@shakrmedia">
+	<meta name="twitter:creator" content="@zvuuc">
+	<meta name="twitter:title" content="Petal">
+	<meta name="twitter:description" content="A modern, light CSS UI framework by Shakr based on LESS.">
+	<meta name="twitter:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg">
+
+	<link rel="stylesheet" href="../assets/docs.css">
+
+	<title>Tabs | Petal</title>
+</head>
+
+<body>
+
+<header id="site-header">
+    <div class="container">
+        <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
+        <nav>
+            <ul>
+                <li><a href="../start/">Get Started</a></li>
+                <li class="active"><a href="../docs/">Docs</a></li>
+            </ul>
+        </nav>
+
+        <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
+
+    </div>
+</header>
+<div id="top" class="content-wrap">
+	
+
+<div class="container">
+<div class="row">
+	<div class="col-4 colspan-3">
+		<section>
+			
+
+<div class="section-header">
+	<h2 id="section-panels">Tabs</h2>
+	<p class="sub">
+		<span class="file-ref">tabs.less</span>
+	</p>
+</div>
+			
+<h3>
+	Tabs
+	<a href="javascript.html"><span class="badge warning js-req">Requires JavaScript</span></a>
+</h3>
+<div class="demo-panel gray tab-demo" data-toggle-bg="toggle">
+	<div class="ph-20 mv-10">
+		<label for="" class="form-label">default</label>
+	</div>
+	<div class="panel mv-10 mh-20">
+		<div class="tab-group" id="tab-simpledemo-group-1">
+            <div class="tab selected" id="tab-simpledemo-1-01"><span class="tab-icon"><i class="petalicon petalicon-star"></i></span> <span class="tab-label">Selected Tab</span> <span class="badge">1</span></div>
+
+            <div class="tab" id="tab-simpledemo-1-02"><span class="tab-icon"><i class="petalicon petalicon-heart"></i></span> <span class="tab-label">Normal Tab</span></div>
+
+            <div class="tab disabled" id="tab-simpledemo-1-03"><span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span> <span class="tab-label">Disabled Tab</span></div>
+
+            <div class="tab spacer"></div>
+        </div>
+	</div>
+	
+	<div class="ph-20 mv-10">
+		<label for="" class="form-label">tab-style-01</label>
+	</div>
+	<div class="panel mv-10 mh-20">
+		<div class="tab-group tab-style-01" id="tab-simpledemo-group-2">
+            <div class="tab selected" id="tab-simpledemo-2-01"><span class="tab-icon"><i class="petalicon petalicon-star"></i></span> <span class="tab-label">Selected Tab</span> <span class="badge">1</span></div>
+
+            <div class="tab" id="tab-simpledemo-2-02"><span class="tab-icon"><i class="petalicon petalicon-heart"></i></span> <span class="tab-label">Normal Tab</span></div>
+
+            <div class="tab disabled" id="tab-simpledemo-2-03"><span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span> <span class="tab-label">Disabled Tab</span></div>
+
+            <div class="tab spacer"></div>
+        </div>
+	</div>
+	
+	<div class="ph-20 mv-10">
+		<label for="" class="form-label">tab-style-02</label>
+	</div>
+	<div class="panel mv-10 mh-20">
+		<div class="tab-group tab-style-02" id="tab-simpledemo-group-2">
+            <div class="tab selected" id="tab-simpledemo-3-01"><span class="tab-icon"><i class="petalicon petalicon-star"></i></span> <span class="tab-label">Selected Tab</span> <span class="badge">1</span></div>
+
+            <div class="tab" id="tab-simpledemo-3-02"><span class="tab-icon"><i class="petalicon petalicon-heart"></i></span> <span class="tab-label">Normal Tab</span></div>
+
+            <div class="tab disabled" id="tab-simpledemo-3-03"><span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span> <span class="tab-label">Disabled Tab</span></div>
+
+            <div class="tab spacer"></div>
+        </div>
+	</div>
+
+    <div class="ph-20 mv-10">
+        <label for="" class="form-label">compact</label>
+    </div>
+    <div class="panel mv-10 mh-20">
+        <div class="tab-group tab-style-02 compact" id="tab-simpledemo-group-4">
+            <div class="tab selected" id="tab-simpledemo-4-01"><span class="tab-icon"><i class="petalicon petalicon-star"></i></span> <span class="tab-label">Selected Tab</span> <span class="badge">1</span></div>
+
+            <div class="tab" id="tab-simpledemo-4-02"><span class="tab-icon"><i class="petalicon petalicon-heart"></i></span> <span class="tab-label">Normal Tab</span></div>
+
+            <div class="tab disabled" id="tab-simpledemo-4-03"><span class="tab-icon"><i class="petalicon petalicon-not-allowed"></i></span> <span class="tab-label">Disabled Tab</span></div>
+
+            <div class="tab spacer"></div>
+        </div>
+    </div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;tab-group tab-style-01&quot; id=&quot;tab-simpledemo-group-1&quot;&gt;
+    &lt;div class=&quot;tab selected&quot; id=&quot;tab-simpledemo-1-01&quot;&gt;
+        &lt;span class=&quot;tab-icon&quot;&gt;&lt;i class=&quot;petalicon petalicon-star&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;span class=&quot;tab-label&quot;&gt;Selected Tab&lt;/span&gt; 
+        &lt;span class=&quot;badge&quot;&gt;1&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;tab&quot; id=&quot;tab-simpledemo-1-02&quot;&gt;
+        &lt;span class=&quot;tab-icon&quot;&gt;&lt;i class=&quot;petalicon petalicon-heart&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;span class=&quot;tab-label&quot;&gt;Normal Tab&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;tab disabled&quot; id=&quot;tab-simpledemo-1-02&quot;&gt;
+        &lt;span class=&quot;tab-icon&quot;&gt;&lt;i class=&quot;petalicon petalicon-not-allowed&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;span class=&quot;tab-label&quot;&gt;Disabled Tab&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;tab spacer&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<p>You can make a simple tabbed interface with styles provided by Petal. Include markup for <code>.tab</code> in a <code>.tab-group</code>. The tab label text must be wrapped with <code>span.tab-lable</code> for proper styling. Add <code>tab-icon</code>, <code>badge</code> inside the tab if you need them.</p>
+
+<h5>Optional classes on <code>.tab-group</code></h5>
+<ul>
+    <li><code>.tab-style-01</code> : Alternative design 1</li>
+    <li><code>.tab-style-02</code> : Alternative design 2</li>
+    <li><code>.compact</code> : Compact size (half-sized paddings)</li>
+</ul>
+
+<br>
+
+<h5>Tab Action States</h5>
+<p>Petal tab UI ships with <code>hover</code>, <code>active</code>, <code>selected</code> and <code>disabled</code> states. Hover and active states are handled by CSS pseudo-classes so you don't need to do anything. But for selected state, you need to write your own JavaScript code for adding and removing class accordingly. Add <code>.selected</code> and <code>.disabled</code> classes on <code>.tab</code> div where you want to apply respective states visually.</p>
+
+<br>
+
+<h5>Flexbox Required</h5>
+<p>The tab UI uses CSS Flexbox properties and may not display properly on older unsupported browsers.</p>
+
+<br>
+
+<h5>Spacer</h5>
+<p>Use an empty div element with <code>.tab.spacer</code> class to add a spacer dummy tab that extends to the end of the tab-group bar. (See demo above)</p>
+
+<br>
+
+<h3>Tabs (No JS - Radiobox Method)</h3>
+<div class="demo-panel gray tab-demo" data-toggle-bg="toggle">
+	<div class="panel m-20">
+		<div class="tab-group tab-style-01">
+            <input type="radio" name="tab-nojs-group" id="tab-nojs01" checked>
+            <label for="tab-nojs01"><div class="tab"><span class="tab-icon"><i class="petalicon petalicon-device-mobile"></i></span> <span class="tab-label">Mobile</span><span class="badge">1</span></div></label>
+            <input type="radio" name="tab-nojs-group" id="tab-nojs02">
+            <label for="tab-nojs02"><div class="tab"><span class="tab-icon"><i class="petalicon petalicon-device-tv"></i></span> <span class="tab-label">TV</span></div></label>
+            <input type="radio" name="tab-nojs-group" id="tab-nojs03" disabled>
+            <label for="tab-nojs03"><div class="tab"><span class="tab-icon"><i class="petalicon petalicon-device-laptop"></i></span> <span class="tab-label">Laptop</span></div></label>
+        </div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;tab-group tab-style-01&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tab-nojs-group&quot; id=&quot;tab-nojs01&quot; checked&gt;
+    &lt;label for=&quot;tab-nojs01&quot;&gt;
+        &lt;div class=&quot;tab&quot;&gt;
+            &lt;span class=&quot;tab-icon&quot;&gt;&lt;i class=&quot;petalicon petalicon-device-mobile&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;span class=&quot;tab-label&quot;&gt;Mobile&lt;/span&gt;
+            &lt;span class=&quot;badge&quot;&gt;1&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/label&gt;
+
+    ...
+
+&lt;/div&gt;</code></pre>
+</div>
+
+<p>If you don't want to use JavaScript, you can use the radiobox method (utilizing <code>:checked</code> state and CSS adjacent selectors) to make it work without JavaScript. Markup is similar but the tab div goes into a wrapping <code>&lt;label&gt;</code>. Just before the <code>&lt;label&gt;</code> you need to place the <code>&lt;input type="radio"&gt;</code>. Make sure you point the <code>&lt;label&gt;</code> to the correct corresponding <code>&lt;input&gt;</code> by matching the <code>id</code> and <code>for</code> attributes.</p>
+
+<p>With this method, since tab refers to the radiobox's <code>checked</code> state for determining selected state, you don't need to manually add <code>.selected</code> class on tabs. Convenient!</p>
+
+<p>If you want to disable one of the tabs, add a <code>disabled</code> attribute on corresponding <code>&lt;input&gt;</code> not tabs.</p>
+
+<br>
+
+<h4>Tabs with content (Radiobox Method)</h4>
+<div class="demo-panel gray tab-demo" data-toggle-bg="toggle">
+	<div class="panel m-20">
+		<div class="tab-group tab-style-02">
+            <input type="radio" name="tab-contentdemo-group" id="tab-contentdemo01" checked>
+            <label for="tab-contentdemo01"><div class="tab"><span class="tab-label">Tab 01</span></div></label>
+
+            <input type="radio" name="tab-contentdemo-group" id="tab-contentdemo02">
+            <label for="tab-contentdemo02"><div class="tab"><span class="tab-label">Tab 02</span></div></label>
+
+            <div class="tab spacer"></div>
+
+            <div class="tab-content-wrap">
+				<div id="tab-content-01" class="tab-content p-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. Necessitatibus, est dicta ea totam neque!</div>
+				<div id="tab-content-02" class="tab-content p-20">Qui dolorum incidunt quas alias repellendus earum fugit a. Beatae debitis impedit eum unde tenetur non, excepturi facilis repellat, repellendus, saepe repudiandae! Necessitatibus, est dicta ea totam neque!</div>
+			</div>
+        </div>
+	</div>
+</div>
+<div class="demo-code">
+<div class="demo-header">HTML</div>
+<pre><code class="language-html">&lt;div class=&quot;tab-group tab-style-02&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tab-contentdemo-group&quot; id=&quot;tab-contentdemo01&quot; checked&gt;
+    &lt;label for=&quot;tab-contentdemo01&quot;&gt;&lt;div class=&quot;tab&quot;&gt;&lt;span class=&quot;tab-label&quot;&gt;Tab 01&lt;/span&gt;&lt;/div&gt;&lt;/label&gt;
+
+    &lt;input type=&quot;radio&quot; name=&quot;tab-contentdemo-group&quot; id=&quot;tab-contentdemo02&quot;&gt;
+    &lt;label for=&quot;tab-contentdemo02&quot;&gt;&lt;div class=&quot;tab&quot;&gt;&lt;span class=&quot;tab-label&quot;&gt;Tab 02&lt;/span&gt;&lt;/div&gt;&lt;/label&gt;
+
+    &lt;div class=&quot;tab spacer&quot;&gt;&lt;/div&gt;
+
+    &lt;div class=&quot;tab-content-wrap&quot;&gt;
+        &lt;div id=&quot;tab-content-01&quot; class=&quot;tab-content p-20&quot;&gt;Tab 01 Content&lt;/div&gt;
+        &lt;div id=&quot;tab-content-02&quot; class=&quot;tab-content p-20&quot;&gt;Tab 02 Content&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<div class="demo-header">LESS</div>
+<pre><code class="language-less">// tab demo
+.tab-demo {
+    .tab-content-wrap {
+        .tab-content {
+            display: none;
+        }
+    }
+
+    // show #tab-content-01 when #tab-contentdemo01 is checked
+    #tab-contentdemo01:checked ~ .tab-content-wrap #tab-content-01 {
+        display: block;
+    }
+
+    // show #tab-content-02 when #tab-contentdemo02 is checked
+    #tab-contentdemo02:checked ~ .tab-content-wrap #tab-content-02 {
+        display: block;
+    }
+}</code></pre>
+</div>
+
+<p>Going further, you can implement the actual tab content switching work without JavaScript too. This uses the same radiobox method as above. To do this, include the <code>.tab-content-wrap</code> inside the <code>.tab-group</code>, right after the last tab <code>&lt;label&gt;</code> element. Then write the CSS code that toggles the <code>display</code> of tab content using the sibling selector (<code>~</code>), like the demo above.</p>
+
+<br>
+
+<h5>Customizable options</h5>
+<div class="demo-code">
+<pre><code class="language-less">// tabs
+@tab-color: @primary-accent-color;
+@tab-style-01: enabled;
+@tab-style-02: enabled;</code></pre>
+</div>
+			
+			<div class="section-footer">
+				<a href="#top" class="totop">Back to top</a>			</div>
+		</section>
+	</div>
+	<div class="col-4">
+
+
+		<nav id="sidenav" class="sticky">
+			
+			<h5 class="list-header">Introduction</h5>
+			<ul>
+					<li><a href="index.html">Welcome to the docs</a></li>
+					<li><a href="variables.html">Variables</a></li>
+					<li><a href="javascript.html">About JavaScript</a></li>
+			</ul>
+
+			<h5 class="list-header">Components</h5>
+			<ul>
+					<li><a href="basic.html">Basic</a></li>
+					<li><a href="layouts.html">Layout</a></li>
+					<li><a href="typography.html">Typography</a></li>
+					<li><a href="utilities.html">Utilities</a></li>
+					<li><a href="colors.html">Colors</a></li>
+					<li><a href="buttons.html">Buttons</a></li>
+					<li><a href="forms.html">Form Elements</a></li>
+					<li><a href="progress.html">Progress</a></li>
+					<li><a href="tables.html">Tables</a></li>
+					<li><a href="paging.html">Paging</a></li>
+					<li><a href="panels.html">Panels</a></li>
+					<li class="active"><a href="tabs.html">Tabs</a></li>
+					<li><a href="alerts.html">Alerts</a></li>
+					<li><a href="modals.html">Modals</a></li>
+					<li><a href="petalicon.html">Petalicons</a></li>
+			</ul>
+			
+			<p>
+				<a href="#top" class="totop">Back to top</a>			</p>
+
+			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
+		</nav> 
+	</div>
+</div>
+</div><!-- container end -->
+
+</div>
+
+<footer id="site-footer" class="stretch">
+    <div class="container">
+        <p class="petal-ver">
+            petal.less<br>
+            <b> v0.8.0</b></p>
+
+        <div class="footer-credits">
+            
+            <a href="https://www.shakr.com" class="shakr-logo">
+                <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
+                    <g id="fills-cut">
+                        <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
+                            c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
+                            C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
+                        <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
+                            c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
+                            c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
+                        <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
+                            c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
+                            c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
+                    </g>
+                </svg>
+            </a>
+
+            <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
+            ©2015-2017 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
+        </div>
+
+    </div>
+</footer>
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../assets/petal.min.js"></script>
+<script src="../assets/stickyfill.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/less.min.js"></script>
+
+<script src="../assets/petal-docs.js"></script>
+
+
+</html>
