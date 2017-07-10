@@ -1,0 +1,250 @@
+// * ================================= *
+// *  Tabs
+// * ================================= *
+
+// import dependencies
+@import (reference) 'variables.less';
+@import (reference) 'color-palette.less';
+@import (reference) 'mixins.less';
+@import (reference) 'petalicon.less';
+@import (reference) 'z-index.less';
+
+// tabs
+.tab-group {
+	display: flex;
+	flex-flow: row wrap;
+	position: relative;
+	overflow: hidden;
+	background-color: #ddd;
+
+	.tab {
+		position: relative;
+		display: block;
+		padding: 12px 30px;
+		margin-right: 1px;
+		background-color: @gray;
+		color: #fff;
+		cursor: pointer;
+		transition-property: background-color, color;
+		transition-duration: 0.15s;
+		
+		// spacer dummy tab
+		&.spacer {
+			flex: 1 1 0;
+			pointer-events: none;
+			cursor: default;
+			margin-right: 0;
+			padding: 0;
+
+			.tab-inner {
+			}
+		}
+
+		& > span {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			z-index: 1;
+		}
+
+		.tab-icon {
+			margin-right: 3px;
+
+			.petalicon {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+
+		.tab-label {
+		}
+
+		.badge {
+			margin-left: 5px;
+
+			&:empty {
+				display: none;
+				margin-left: 0;
+			}
+		}
+
+		&:hover {
+			background-color: @gray-d1;
+		}
+
+		&:active {
+			background-color: @gray-d2;
+		}
+	}
+
+	// radiobox method
+	input[type="radio"] {
+		opacity: 0;
+		height: 0;
+		width: 0;
+		position: absolute;
+		overflow: hidden;
+	}
+
+	label ~ label .tab {
+	}
+
+	label .tab {
+		// z-index: @btn-normal-z-index;
+	}
+
+	.tab.selected,
+	:checked + label .tab {
+		background-color: @tab-color;
+	}
+
+	.tab.disabled,
+	:disabled + label .tab {
+		color: @gray-l1;
+		pointer-events: none;
+	}
+
+	// when including content in tab-group
+	.tab-content {
+		flex-basis: 100%;
+	}
+
+	// compact
+	&.compact {
+		.tab {
+			padding: 5px 15px;
+		}
+	}
+}
+
+// alternative designs
+& when (@tab-style-01 = enabled) {
+	.tab-group.tab-style-01 {
+		overflow: hidden;
+		background-color: #fff;
+
+		.tab {
+			padding-top: 10px;
+			padding-bottom: 14px;
+			background-color: transparent;
+			color: #333;
+
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 3px;
+				background-color: #ccc;
+				transition-property: background-color;
+				transition-duration: 0.15s;
+			}
+
+			&:hover:before {
+				background-color: @gray;
+			}
+
+			&:active:before {
+				background-color: @gray-d2;
+			}
+		}
+
+		.tab.selected,
+		:checked + label .tab {
+			.colorset(@tab-color);
+			background-color: transparent;
+			color: @color-d1;
+
+			&:before {
+				background-color: @color-d1;
+			}
+		}
+
+		.tab.disabled,
+		:disabled + label .tab {
+			color: @gray-l1;
+			
+			&:before {
+				background-color: #ccc;
+			}
+		}
+
+		// compact
+		&.compact {
+			.tab {
+				padding-top: 3px;
+				padding-bottom: 7px;
+			}
+		}
+	}
+}
+
+& when (@tab-style-02 = enabled) {
+	.tab-group.tab-style-02 {
+		overflow: visible;
+		background-color: #fff;
+
+		.tab {
+			padding-top: 10px;
+			padding-bottom: 14px;
+			overflow: hidden;
+			background-color: #ccc;
+			color: #333;
+
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: -5px;
+				right: -5px;
+				bottom: 3px;
+				height: 100%;
+				background-color: #fff;
+				opacity: 1;
+				z-index: 0;
+				transform: scaleY(1);
+				transform-origin: center top;
+				transition-property: opacity, transform;
+				transition-duration: 0.15s;
+			}
+
+			&:hover {
+				background-color: @gray;
+			}
+
+			&:active {
+				background-color: @gray-d2;
+			}
+		}
+
+		.tab.selected,
+		:checked + label .tab {
+			.colorset(@tab-color);
+			background-color: @color;
+			color: #fff;
+
+			&:before {
+				transform: scaleY(0);
+				opacity: 0;
+			}
+		}
+
+		.tab.disabled,
+		:disabled + label .tab {
+			color: @gray-l1;
+		}
+
+		// compact
+		&.compact {
+			.tab {
+				padding-top: 3px;
+				padding-bottom: 7px;
+			}
+		}
+	}
+
+}
+
+
