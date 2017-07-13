@@ -3524,13 +3524,11 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
 .chk-switch:not(.ab-type) label span:before {
   background-color: rgba(48, 164, 220, 0.5);
 }
-.chk-switch:not(.ab-type):hover label span:before {
+.chk-switch:not(.ab-type) label:hover span:before {
   background-color: rgba(48, 164, 220, 0.6);
 }
-.chk-switch:hover input[type="checkbox"]:not(:disabled) + label span:before,
-.chk-switch:hover input[type="checkbox"]:not(:disabled) + label span:after,
-fieldset:not([disabled]) .chk-switch:hover input[type="checkbox"] + label span:before,
-fieldset:not([disabled]) .chk-switch:hover input[type="checkbox"] + label span:after {
+.chk-switch input[type="checkbox"] + label:hover span:before,
+.chk-switch input[type="checkbox"] + label:hover span:after {
   -webkit-transform: translate(-22px);
       -ms-transform: translate(-22px);
           transform: translate(-22px);
@@ -3541,8 +3539,8 @@ fieldset:not([disabled]) .chk-switch:hover input[type="checkbox"] + label span:a
       -ms-transform: translate(0);
           transform: translate(0);
 }
-.chk-switch:hover input[type="checkbox"]:checked:not(:disabled) + label span:before,
-.chk-switch:hover input[type="checkbox"]:checked:not(:disabled) + label span:after {
+.chk-switch input[type="checkbox"]:checked + label:hover span:before,
+.chk-switch input[type="checkbox"]:checked + label:hover span:after {
   -webkit-transform: translate(-2px);
       -ms-transform: translate(-2px);
           transform: translate(-2px);
@@ -3550,7 +3548,7 @@ fieldset:not([disabled]) .chk-switch:hover input[type="checkbox"] + label span:a
 .chk-switch.onoff-type label span:before {
   background-color: rgba(178, 207, 101, 0.7);
 }
-.chk-switch.onoff-type:hover label span:before {
+.chk-switch.onoff-type label:hover span:before {
   background-color: rgba(178, 207, 101, 0.8);
 }
 .chk-switch.onoff-type label span:after {
@@ -3573,27 +3571,40 @@ fieldset:not([disabled]) .chk-switch:hover input[type="checkbox"] + label span:a
 .chk-switch.onoff-type.led input[type="checkbox"]:checked + label span:after {
   background-color: #d7ff6c !important;
 }
+.chk-switch.disabled,
+fieldset:disabled .chk-switch {
+  pointer-events: none;
+}
 .chk-switch.disabled label,
-fieldset[disabled] .chk-switch label,
+fieldset:disabled .chk-switch label {
+  pointer-events: none;
+}
+.chk-switch.disabled label,
+fieldset:disabled .chk-switch label,
 .chk-switch.disabled label:hover,
-fieldset[disabled] .chk-switch label:hover,
+fieldset:disabled .chk-switch label:hover,
 .chk-switch.disabled label:active,
-fieldset[disabled] .chk-switch label:active {
+fieldset:disabled .chk-switch label:active {
   background-color: rgba(153, 153, 153, 0.2);
   border-color: rgba(187, 187, 187, 0.5);
 }
+.chk-switch input[type="checkbox"]:disabled + label,
+.chk-switch fieldset:disabled input[type="checkbox"] + label {
+  pointer-events: none;
+}
 .chk-switch input[type="checkbox"]:disabled + label span,
-.chk-switch fieldset[disabled] input[type="checkbox"] + label span {
+.chk-switch fieldset:disabled input[type="checkbox"] + label span {
   opacity: 0.5;
+  pointer-events: none;
 }
 .chk-switch input[type="checkbox"]:disabled + label span:before,
-.chk-switch fieldset[disabled] input[type="checkbox"] + label span:before {
+.chk-switch fieldset:disabled input[type="checkbox"] + label span:before {
   border-color: rgba(187, 187, 187, 0.5);
 }
 .dark .chk-switch input[type="checkbox"]:disabled + label span:before,
-.dark .chk-switch fieldset[disabled] input[type="checkbox"] + label span:before,
+.dark .chk-switch fieldset:disabled input[type="checkbox"] + label span:before,
 .dark .chk-switch input[type="checkbox"]:disabled + label span:hover:before,
-.dark .chk-switch fieldset[disabled] input[type="checkbox"] + label span:hover:before {
+.dark .chk-switch fieldset:disabled input[type="checkbox"] + label span:hover:before {
   border-color: rgba(153, 153, 153, 0.5);
 }
 .chk-switch.align-right {
