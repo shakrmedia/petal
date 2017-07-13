@@ -891,14 +891,13 @@ fieldset:disabled input[type="radio"].radiobox + label {
 	&:not(.ab-type) label span:before {
 		background-color: fadeout(@color,50%);
 	}
-	&:not(.ab-type):hover label span:before {
+	&:not(.ab-type) label:hover span:before {
 		background-color: fadeout(@color,40%);
 	}
-	&:hover input[type="checkbox"]:not(:disabled) + label span:before, 
-	&:hover input[type="checkbox"]:not(:disabled) + label span:after,
-	fieldset:not([disabled]) &:hover input[type="checkbox"] + label span:before, 
-	fieldset:not([disabled]) &:hover input[type="checkbox"] + label span:after {
-		transform: translate(-@chk-switch-size+2px);
+	input[type="checkbox"] + label:hover span {
+		&:before, &:after {
+			transform: translate(-@chk-switch-size+2px);
+		}
 	}
 
 	// checked state
@@ -907,10 +906,12 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			transform: translate(0);
 		}
 	}
-
-	&:hover input[type="checkbox"]:checked:not(:disabled) + label span:before, 
-	&:hover input[type="checkbox"]:checked:not(:disabled) + label span:after {
-		transform: translate(-2px);
+	
+	// checked state - hover
+	input[type="checkbox"]:checked + label:hover span {
+		&:before, &:after {
+			transform: translate(-2px);
+		}
 	}
 
 	// on-off led
@@ -919,7 +920,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		label span:before {
 			background-color: fadeout(@okay-color,30%);
 		}
-		&:hover label span:before {
+		label:hover span:before {
 			background-color: fadeout(@okay-color,20%);
 		}
 		label span:after {
@@ -957,25 +958,37 @@ fieldset:disabled input[type="radio"].radiobox + label {
 	}
 
 	// disabled
-	&.disabled label,
-	fieldset[disabled] & label {
-		&, &:hover, &:active {
-			background-color: fadeout(@gray,80%);
-			border-color: fadeout(@gray-l1,50%);
-		}
+	&.disabled,
+	fieldset:disabled & {
+		pointer-events: none;
+
+		label {
+			pointer-events: none;
+
+			&, &:hover, &:active {
+				background-color: fadeout(@gray,80%);
+				border-color: fadeout(@gray-l1,50%);
+			}
+		}	
 	}
-	input[type="checkbox"]:disabled + label span,
-	fieldset[disabled] input[type="checkbox"] + label span {
-		opacity: 0.5;
 
-		&:before {
-			border-color: fadeout(@gray-l1,50%);
-		}
+	input[type="checkbox"]:disabled + label,
+	fieldset:disabled input[type="checkbox"] + label {
+		pointer-events: none;
 
-		& when (@include-dark = true) {
-			.dark &:before,
-			.dark &:hover:before {
-				border-color: fadeout(@gray,50%);
+		span {
+			opacity: 0.5;
+			pointer-events: none;
+
+			&:before {
+				border-color: fadeout(@gray-l1,50%);
+			}
+
+			& when (@include-dark = true) {
+				.dark &:before,
+				.dark &:hover:before {
+					border-color: fadeout(@gray,50%);
+				}
 			}
 		}
 	}
