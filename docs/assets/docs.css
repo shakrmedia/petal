@@ -4595,14 +4595,26 @@ span.badge {
 .alert .alert-icon {
   margin-right: 3px;
 }
+.alert.large {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
 .alert.large .alert-icon {
-  float: left;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   margin-right: 15px;
   color: #666;
 }
 .alert.large .alert-icon .petalicon {
   font-size: 32px;
   line-height: 32px;
+}
+.alert.large .alert-text {
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 .alert.large.accent .alert-icon {
   color: #257da7;
