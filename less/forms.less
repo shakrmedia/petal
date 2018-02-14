@@ -850,7 +850,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		margin: 2px;
 		border-radius: @chk-switch-border-radius;
 		overflow: hidden;
-		-webkit-transform: scaleX(1); // hack for webkit overflow render bug
+		-webkit-transform: translate3d(0,0,0); // hack for safari render bug
 
 		&:before {
 			content: "";
