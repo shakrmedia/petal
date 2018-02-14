@@ -3483,7 +3483,7 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
   margin: 2px;
   border-radius: 20px;
   overflow: hidden;
-  -webkit-transform: scaleX(1);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 .chk-switch label span:before {
   content: "";
@@ -4104,14 +4104,14 @@ table.table.table-striped tr:nth-child(2n) {
 table.table.table-striped tr:nth-child(2n).ondark {
   background-color: rgba(255, 255, 255, 0.05);
 }
-table.table.table-hover > tr:hover,
-table.table.table-hover tbody tr:hover {
+table.table.table-hover > tr:hover td,
+table.table.table-hover tbody tr:hover td {
   background-color: #f7f7f7;
 }
-.dark table.table.table-hover > tr:hover,
-.dark table.table.table-hover tbody tr:hover,
-table.table.table-hover > tr:hover.ondark,
-table.table.table-hover tbody tr:hover.ondark {
+.dark table.table.table-hover > tr:hover td,
+.dark table.table.table-hover tbody tr:hover td,
+table.table.table-hover > tr:hover td.ondark,
+table.table.table-hover tbody tr:hover td.ondark {
   background-color: rgba(255, 255, 255, 0.1);
 }
 table.table.table-condensed th,
