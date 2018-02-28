@@ -4615,7 +4615,7 @@ span.badge {
 }
 .dark .alert .alert-icon,
 .alert.ondark .alert-icon {
-  color: #747474;
+  color: #d0d0d0;
 }
 .dark .alert.accent,
 .alert.ondark.accent {
@@ -4623,7 +4623,7 @@ span.badge {
 }
 .dark .alert.accent .alert-icon,
 .alert.ondark.accent .alert-icon {
-  color: #257da7;
+  color: #9fd5ef;
 }
 .dark .alert.okay,
 .alert.ondark.okay {
@@ -4631,7 +4631,7 @@ span.badge {
 }
 .dark .alert.okay .alert-icon,
 .alert.ondark.okay .alert-icon {
-  color: #879d4d;
+  color: #dbe9b8;
 }
 .dark .alert.warning,
 .alert.ondark.warning {
@@ -4639,7 +4639,7 @@ span.badge {
 }
 .dark .alert.warning .alert-icon,
 .alert.ondark.warning .alert-icon {
-  color: #b78f1e;
+  color: #f8e09c;
 }
 .dark .alert.danger,
 .alert.ondark.danger {
@@ -4647,7 +4647,7 @@ span.badge {
 }
 .dark .alert.danger .alert-icon,
 .alert.ondark.danger .alert-icon {
-  color: #b7444e;
+  color: #f8b3b9;
 }
 .modal,
 .fullpage-modal {
