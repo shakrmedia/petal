@@ -14,54 +14,6 @@
 	display: flex;
 	padding: 15px 20px;
 	margin: 0 0 10px 0;
-	background-color: @gray-l2;
-
-	&.accent {
-		.colorset(@primary-accent-color);
-		background-color: @color-l2;
-	}
-
-	&.okay {
-		.colorset(@okay-color);
-		background-color: @color-l2;
-	}
-
-	&.warning {
-		.colorset(@warning-color);
-		background-color: @color-l2;
-	}
-
-	&.danger {
-		.colorset(@danger-color);
-		background-color: @color-l2;
-	}
-
-	& when (@include-dark = true) {
-		// dark style
-		.dark &, &.ondark {
-			background-color: @gray-d2;
-
-			&.accent {
-				.colorset(@primary-accent-color);
-				background-color: @color-d2;
-			}
-
-			&.okay {
-				.colorset(@okay-color);
-				background-color: @color-d2;
-			}
-
-			&.warning {
-				.colorset(@warning-color);
-				background-color: @color-d2;
-			}
-
-			&.danger {
-				.colorset(@danger-color);
-				background-color: @color-d2;
-			}
-		}
-	}
 
 	// inner paragraph styles
 	p:last-child {
@@ -81,7 +33,6 @@
 
 	// large variant
 	&.large {
-
 		.alert-icon {
 			margin-right: 15px;
 
@@ -90,56 +41,101 @@
 				line-height: 32px;
 			}
 		}
+	}
 
-		&.accent .alert-icon {
-			.colorset(@primary-accent-color);
+	// colors
+	& {
+		.colorset(@alert-color);
+		background-color: @color-l2;
+
+		.alert-icon {
 			color: @color-d2;
 		}
+	}
 
-		&.okay .alert-icon {
-			.colorset(@okay-color);
+	&.accent {
+		.colorset(@alert-accent-color);
+		background-color: @color-l2;
+
+		.alert-icon {
 			color: @color-d2;
 		}
+	}
 
-		&.warning .alert-icon {
-			.colorset(@warning-color);
+	&.okay {
+		.colorset(@alert-okay-color);
+		background-color: @color-l2;
+
+		.alert-icon {
 			color: @color-d2;
 		}
+	}
 
-		&.danger .alert-icon {
-			.colorset(@danger-color);
+	&.warning {
+		.colorset(@alert-warning-color);
+		background-color: @color-l2;
+
+		.alert-icon {
 			color: @color-d2;
 		}
+	}
 
-		& when (@include-dark = true) {
-			// dark style
-			.dark &, &.ondark {
+	&.danger {
+		.colorset(@alert-danger-color);
+		background-color: @color-l2;
+
+		.alert-icon {
+			color: @color-d2;
+		}
+	}
+
+	& when (@include-dark = true) {
+		// dark style
+		.dark &, &.ondark {
+			& {
+				.colorset(@alert-color);
+				background-color: @color-d2;
 
 				.alert-icon {
-					color: @gray-l2;
+					color: @color-d2;
 				}
+			}
 
-				&.accent .alert-icon {
-					.colorset(@primary-accent-color);
-					color: @color-l2;
+			&.accent {
+				.colorset(@alert-accent-color);
+				background-color: @color-d2;
+
+				.alert-icon {
+					color: @color-d2;
 				}
+			}
 
-				&.okay .alert-icon {
-					.colorset(@okay-color);
-					color: @color-l2;
+			&.okay {
+				.colorset(@alert-okay-color);
+				background-color: @color-d2;
+
+				.alert-icon {
+					color: @color-d2;
 				}
+			}
 
-				&.warning .alert-icon {
-					.colorset(@warning-color);
-					color: @color-l2;
+			&.warning {
+				.colorset(@alert-warning-color);
+				background-color: @color-d2;
+
+				.alert-icon {
+					color: @color-d2;
 				}
+			}
 
-				&.danger .alert-icon {
-					.colorset(@danger-color);
-					color: @color-l2;
+			&.danger {
+				.colorset(@alert-danger-color);
+				background-color: @color-d2;
+
+				.alert-icon {
+					color: @color-d2;
 				}
 			}
 		}
 	}
-
 }
