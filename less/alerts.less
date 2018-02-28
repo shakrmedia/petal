@@ -11,6 +11,7 @@
 @import (reference) 'mixins.less';
 
 .alert {
+	display: flex;
 	padding: 15px 20px;
 	margin: 0 0 10px 0;
 	background-color: @gray-l2;
@@ -69,26 +70,25 @@
 
 	// alert icon
 	.alert-icon {
-		margin-right: 3px;
+		flex: 0 1 auto;
+		margin-right: 7px;
+		color: @gray-d2;
 	}
 	
+	.alert-text {
+		flex: 1 1 auto;
+	}
+
 	// large variant
 	&.large {
-		display: flex;
 
 		.alert-icon {
-			flex: 0 1 auto;
 			margin-right: 15px;
-			color: @gray-d2;
 
 			.petalicon {
 				font-size: 32px;
 				line-height: 32px;
 			}
-		}
-
-		.alert-text {
-			flex: 1 1 auto;
 		}
 
 		&.accent .alert-icon {
