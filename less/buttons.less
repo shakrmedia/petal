@@ -852,18 +852,25 @@ fieldset[disabled] .btn,
 	}
 }
 
+.generate-color-btns(@colors; @options; @index) when (@index > 0) {
+	.generate-color-btns(@colors; @options; (@index - 1)); // decrement.
+
+	@color: extract(@colors, @index);
+	@option: extract(@options, @index);
+	
+	& when not (@@color = @primary-accent-color) {
+		&.@{color} {
+			.generate-btn('@{color}'; @option; @include-dropdown);
+		}
+	}
+}
 
 /* button color sets */
 .btn {
 
 	& 		{ .generate-btn('primary-accent-color'; 'auto'; @include-dropdown) } 
 
-	&.blue 	{ .generate-btn('blue'; 'custom'; @include-dropdown) }
-	&.green { .generate-btn('green'; 'custom'; @include-dropdown) }
-	&.red 	{ .generate-btn('red'; 'custom'; @include-dropdown) }
+	@btn-colors-length: length(@btn-colors);
 
-	&.black 	{ .generate-btn('black'; 'auto'; @include-dropdown) } 
-	&.gray 		{ .generate-btn('gray'; 'auto'; @include-dropdown) } 
-	&.white 	{ .generate-btn('white'; 'auto'; @include-dropdown) }
-
+	.generate-color-btns(@btn-colors, @btn-color-options, @btn-colors-length);
 }
