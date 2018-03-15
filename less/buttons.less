@@ -137,38 +137,38 @@
 		// default filled style
 		& {
 			color: @text-color;
-			background-color: @btn-color;
+			background-color: @color;
 			
 			// for toggle button
 			&.active, &.hollow.active,
 			:checked + label &,
 			:checked + label &.hollow {
 				color: @text-color;
-				background-color: @btn-color-l1;
-				border-color: @btn-color-d2;
+				background-color: @color-l1;
+				border-color: @color-d2;
 
 				&:hover {
 					color: @text-color;
 				}
 				&:focus {
 					color: @text-color;
-					border-color: @btn-color-d1;
+					border-color: @color-d1;
 					box-shadow: 0 0px 2px rgba(0,0,0,.3);
 				}
 			}
 			
 			&:hover {
-				background-color: @btn-color-l1;
-				border-color: @btn-color-d1;
+				background-color: @color-l1;
+				border-color: @color-d1;
 			}
 
 			&:focus {
-				border-color: @btn-color-d2;
+				border-color: @color-d2;
 			}
 
 			&:active {
-				background-color: @btn-color-d1;
-				border-color: @btn-color-d2;
+				background-color: @color-d1;
+				border-color: @color-d2;
 			}
 
 			.caret {
@@ -182,7 +182,7 @@
 		fieldset[disabled] &,
 		:disabled + label & {
 			color: @text-color !important;
-			background-color: @btn-color !important;
+			background-color: @color !important;
 			border-color: transparent !important;
 		}
 
@@ -193,32 +193,32 @@
 				// for toggle button
 				&.active {
 					color: @text-color;
-					background-color: @btn-color-d1;
-					border-color: @btn-color-l2;
+					background-color: @color-d1;
+					border-color: @color-l2;
 
 					&:hover {
-						border-color: @btn-color-l2;
-						background-color: @btn-color;
+						border-color: @color-l2;
+						background-color: @color;
 					}
 					&:focus {
 						color: @text-color;
-						border-color: @btn-color-d1;
+						border-color: @color-d1;
 						box-shadow: 0 0px 2px rgba(0,0,0,.3);
 					}
 				}
 
 				&:hover {
-					background-color: @btn-color-d1;
-					border-color: @btn-color-l1;
+					background-color: @color-d1;
+					border-color: @color-l1;
 				}
 
 				&:focus {
-					border-color: @btn-color-l2;
+					border-color: @color-l2;
 				}
 
 				&:active {
-					background-color: @btn-color-d2;
-					border-color: @btn-color;
+					background-color: @color-d2;
+					border-color: @color;
 				}
 			}
 			
@@ -226,35 +226,35 @@
 			.dark :checked + label &,
 			.dark :checked + label &.hollow {
 				color: @text-color;
-				background-color: @btn-color-d1;
-				border-color: @btn-color-l2;
+				background-color: @color-d1;
+				border-color: @color-l2;
 
 				&:hover {
-					border-color: @btn-color-l2;
-					background-color: @btn-color;
+					border-color: @color-l2;
+					background-color: @color;
 				}
 			}
 		}
 
 		// hollow style
 		&.hollow {
-			color: @btn-color;
-			border-color: @btn-color;
+			color: @color;
+			border-color: @color;
 			background: none;
 
 			.caret {
-				border-top-color: @btn-color; 
+				border-top-color: @color; 
 			}
 			
 			&:hover {
 				color: @text-color;
-				border-color: @btn-color;
-				background-color: @btn-color;
+				border-color: @color;
+				background-color: @color;
 			}
 
 			&:focus {
-				color: @btn-color-d2;
-				border-color: @btn-color-d2;
+				color: @color-d2;
+				border-color: @color-d2;
 			}
 			&:focus:hover {
 				color: @text-color;
@@ -262,20 +262,20 @@
 
 			&:active {
 				color: @text-color;
-				background-color: @btn-color-d1;
-				border-color: @btn-color-d2;
+				background-color: @color-d1;
+				border-color: @color-d2;
 			}
 			
 			& when (@include-dark = true) {
 				.dark &:focus {
-					color: @btn-color-l1;
-					border-color: @btn-color-l1;
+					color: @color-l1;
+					border-color: @color-l1;
 				}
 				.dark &:focus:hover {
 					color: @text-color;
 				}
 				.dark &:active {
-					border-color: @btn-color-l1;
+					border-color: @color-l1;
 				}
 			}
 
@@ -293,8 +293,8 @@
 		&.hollow:disabled,
 		fieldset[disabled] &.hollow,
 		:disabled + label &.hollow {
-			color: @btn-color !important;
-			border-color: @btn-color !important;
+			color: @color !important;
+			border-color: @color !important;
 			background: none !important;
 		}
 
@@ -304,15 +304,15 @@
 			.active > &[data-toggle="dropdown"]:focus,
 			.active > &[data-toggle="dropdown"]:active {
 				color: @text-color;
-				background-color: @btn-color-d2;
-				border-color: @btn-color-d2;
+				background-color: @color-d2;
+				border-color: @color-d2;
 			}
 
 			
 			// dropdown styles
 			& + ul.dropdown-menu,
 			& + ul.dropdown-menu ul.dropdown-menu {
-				background: @btn-color-d1;
+				background: @color-d1;
 				color: @text-color;
 
 				li.divider {
@@ -329,31 +329,35 @@
 
 	// when option is provided
 	& when (@option = 'custom') {
-		@btn-color: @@base-color;
-		@btn-color-l1: ~'@{@{base-color}-l1}';
-		@btn-color-l2: ~'@{@{base-color}-l2}';
-		@btn-color-d1: ~'@{@{base-color}-d1}';
-		@btn-color-d2: ~'@{@{base-color}-d2}';
+		@color: @@base-color;
+		@color-l1: ~'@{@{base-color}-l1}';
+		@color-l2: ~'@{@{base-color}-l2}';
+		@color-d1: ~'@{@{base-color}-d1}';
+		@color-d2: ~'@{@{base-color}-d2}';
 		
-		.generate-btn-styles();
+		// skip if entered color is same as primary-accent-color
+		// but run if color is exactly primary-accent-color (required for default run)
+		& when not (@@base-color = @primary-accent-color), (@base-color = 'primary-accent-color') {
+			.generate-btn-styles();
+		}
 	}
 
 	// else
 	& when not (@option = 'custom') {
-		@btn-color: @@base-color;
-		@btn-color-l1: screen(@btn-color,@l1-additive);
-		@btn-color-l2: screen(@btn-color,@l2-additive);
-		@btn-color-d1: multiply(@btn-color,@d1-additive);
-		@btn-color-d2: multiply(@btn-color,@d2-additive);
-
-		.generate-btn-styles();
+		.colorset(@@base-color);
+		
+		// skip if entered color is same as primary-accent-color
+		// but run if color is exactly primary-accent-color (required for default run)
+		& when not (@@base-color = @primary-accent-color), (@base-color = 'primary-accent-color') {
+			.generate-btn-styles();
+		}
 	}
 	
 }
 
 
-/* disabled */
 & when (@gray-disabled-btn = true) {
+/* gray disabled btn */
 	.btn.disabled, 
 	.btn:disabled,
 	fieldset[disabled] .btn,
