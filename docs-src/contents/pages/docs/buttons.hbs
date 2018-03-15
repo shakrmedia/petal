@@ -274,11 +274,11 @@ list-order: 5
 
 <p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
 
-<p>The <code>.btn-group</code> class on parent element is not required but is recommended for better layout.</p>
+<p>The <code>.btn-group</code> class on parent element is required (0.9.0+) for the dropdown style to apply properly.</p>
 
 <br>
 
-<h4>Split button variant</h4>
+<h4>Dropdown - Split button variant</h4>
 
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 	<div class="btn-group btn-split">
@@ -324,14 +324,16 @@ list-order: 5
 </div>
 
 
-<p>Create a <code>.btn-group.btn-split</code> wrapper element and make two <code>.btn</code>s. Insert <code>span.caret</code> and the required <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes to the second one. </p>
-
-<p><i><b>Note:</b> <code>.btn-split</code> class is required along with <code>.btn-group</code> since 0.5.0.</i></p>
+<p>Put two <code>.btn</code>s inside a <code>.btn-group.btn-split</code> wrapper element (<code>.btn-split</code> class required for 0.5.0+). For the smaller button on the right, insert the caret for the content; attach <code>.dropdown</code> class as well as the <code>data-toggle="dropdown"</code> attribute.</p>
 
 <p>If you're using the <code>.compact</code> option, you need to apply them to both the actual button and the dropdown caret button.</p>
 
 <h5>Options</h5>
-<p>Add <code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code>to right align the menu.</p>
+<ul>
+	<li><code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code> : Align the menu to the right.</li>
+	<li><code>@include-btn-dropdown</code> : set to <code>false</code> if you're not going to use any button dropdowns in your project. Related code will not be included in compiled stylesheet.</li>
+	<li><code>@include-btn-split</code> : set to <code>false</code> if you're not going to use any split buttons in your project. (Split button requires the button dropdown styles, so if you have <code>@include-btn-dropdown</code> set to false, split buttons will not render properly regardless the value of <code>@include-btn-split</code>.)</li>
+</ul>
 
 
 <br>
@@ -404,13 +406,14 @@ list-order: 5
 {{#markdown}}
 ``` less
 // buttons 
+@include-btn-split: false;
+@include-btn-dropdown: false;
 @btn-border-width: 2px;
 @btn-border-radius: 0;
 @btn-font-size: 0.9em;
 @btn-font-weight: 900;
 @btn-letter-spacing: 2px;
 @btn-line-height: 1.2;
-@btn-include-dropdown: true;
 @btn-dropdown-menu-item-font-size: 0.9em;
 @gray-disabled-btn: false;
 @btn-disable-transition: false;
