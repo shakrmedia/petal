@@ -25,6 +25,10 @@ list-order: 1
 <div class="demo-code">
 {{#markdown}}
 ```less
+// global settings
+@include-dark: true;
+@disable-auto-shade-generator: false;
+
 // layout
 @container-width: 980px;
 @container-padding: 15px;
@@ -49,6 +53,9 @@ list-order: 1
 @link-text-color: @red;
 
 // buttons 
+@include-btn-dropdown: true;
+@include-btn-split: true;
+@btn-disable-colored-dropdown: false;
 @btn-border-width: 2px;
 @btn-border-radius: 0;
 @btn-font-size: 0.9em;
@@ -60,6 +67,8 @@ list-order: 1
 @btn-disable-transition: false;
 @btn-disable-shadows: false;
 @btn-spinner-animation-duration: 0.4s;
+@btn-text-color-contrast-threshold: 60%;
+@btn-colors: blue, green, red;
 
 // forms 
 @input-border-width: 2px;
@@ -98,9 +107,6 @@ list-order: 1
 @selectbox-disable-shadows: false;
 @include-selecter: true;
 
-// dark
-@include-dark: true;
-
 // progress
 @spinner-color: @primary-accent-color;
 
@@ -108,6 +114,18 @@ list-order: 1
 @panel-border-radius: 0;
 @label-border-radius: 0;
 @badge-border-radius: 10em;
+
+// tabs
+@tab-color: @primary-accent-color;
+@tab-style-01: enabled; // enabled or disabled
+@tab-style-02: enabled; // enabled or disabled
+
+// alerts
+@alert-color: @gray;
+@alert-accent-color: @primary-accent-color;
+@alert-okay-color: @okay-color;
+@alert-warning-color: @warning-color;
+@alert-danger-color: @danger-color;
 
 // petalicons
 @petalicon-file-path: '../assets';

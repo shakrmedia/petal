@@ -47,13 +47,13 @@ list-order: 4
 
 <br>
 
-<h3>Adding more colors</h3>
-<p>To add custom colors, add them as variables at the bottom of <code>color-palette.less</code> file and you'll be able to use them for customizing your own build of Petal.</p>
+<h3 id="section-colors-adding-more">Adding more colors</h3>
+<p>To add custom colors, define them as variables in your variables sheet and you'll be able to use them throughout for customizing your own build of Petal.</p>
 
 <div class="demo-code">
 {{#markdown}}
 ``` less
-// user added custom colors
+// my custom colors
 @purple: #c37dc4;
 @orange: #f1a85b;
 @teal: #21c5c7;
@@ -61,7 +61,10 @@ list-order: 4
 {{/markdown}}
 </div>
 
+<br>
+
+<h3>Setting your own primary accent color</h3>
 <p>Many parts of Petal refer to the <code>@primary-accent-color</code> variable to use as the base color of things. By default the primary accent color is set to <code>@blue</code>, which means buttons, form input borders, checkboxes will all use the blue color as the common color.</p>
 
-<p>After adding your own color to the <code>color-palette.less</code> change the value of <code>@primary-accent-color</code> to your desired color to apply the main color change to all elements.</p>
+<p>After adding your own color to your variables sheet, change the value of <code>@primary-accent-color</code> to your desired color to apply the main color change to all elements.</p>
 
