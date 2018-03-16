@@ -7,7 +7,7 @@
 // * ================================= *
 
 // Includes color variables used globally in other modules.
-// generally, the static palette (red, blue, green) should not be touched
+// The main palette variables (red, blue, green) are required for some modules.
 
 // Required for dynamic color generation
 // DO NOT TOUCH unless you know what you're doing!
@@ -26,7 +26,7 @@
 @gray-l1: #bbb;
 @gray-l2: #ddd;
 
-// default static palette
+// default main palette
 @red: #f05a67;
 @red-l1: #f48791;
 @red-l2: #f8b3b9;
@@ -51,8 +51,7 @@
 @yellow-d1: multiply(@yellow,@d1-additive);
 @yellow-d2: multiply(@yellow,@d2-additive);
 
-
-// user added custom colors
+// additional colors
 @purple: #c37dc4;
 @orange: #f1a85b;
 @teal: #21c5c7;
