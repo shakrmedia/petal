@@ -130,68 +130,104 @@
 }
 
 // static palette button styles generator mixin
-.generate-btn(@base-color: 'primary-accent-color'; @option: 'auto') {
+.generate-btn(@base-color: 'primary-accent-color') {
 	
 	// inner mixin
 	.generate-btn-styles() {
-		// default filled style
-		& {
-			color: @text-color;
-			background-color: @color;
-			
-			// for toggle button
-			&.active, &.hollow.active,
-			:checked + label &,
-			:checked + label &.hollow {
+		// skip if entered color is same as primary-accent-color
+		// but run if color is exactly primary-accent-color (required for default run)
+		& when not (@@base-color = @primary-accent-color), (@base-color = 'primary-accent-color') {
+			// default filled style
+			& {
 				color: @text-color;
-				background-color: @color-l1;
-				border-color: @color-d2;
-
-				&:hover {
-					color: @text-color;
-				}
-				&:focus {
-					color: @text-color;
-					border-color: @color-d1;
-					box-shadow: 0 0px 2px rgba(0,0,0,.3);
-				}
-			}
-			
-			&:hover {
-				background-color: @color-l1;
-				border-color: @color-d1;
-			}
-
-			&:focus {
-				border-color: @color-d2;
-			}
-
-			&:active {
-				background-color: @color-d1;
-				border-color: @color-d2;
-			}
-
-			.caret {
-				border-top-color: @text-color;
-			}
-
-		}
-
-		&.disabled,
-		&:disabled,
-		fieldset[disabled] &,
-		:disabled + label & {
-			color: @text-color !important;
-			background-color: @color !important;
-			border-color: transparent !important;
-		}
-
-		& when (@include-dark = true) {
-			// on dark background
-			&.ondark, .dark & {
-
+				background-color: @color;
+				
 				// for toggle button
-				&.active {
+				&.active, &.hollow.active,
+				:checked + label &,
+				:checked + label &.hollow {
+					color: @text-color;
+					background-color: @color-l1;
+					border-color: @color-d2;
+
+					&:hover {
+						color: @text-color;
+					}
+					&:focus {
+						color: @text-color;
+						border-color: @color-d1;
+						box-shadow: 0 0px 2px rgba(0,0,0,.3);
+					}
+				}
+				
+				&:hover {
+					background-color: @color-l1;
+					border-color: @color-d1;
+				}
+
+				&:focus {
+					border-color: @color-d2;
+				}
+
+				&:active {
+					background-color: @color-d1;
+					border-color: @color-d2;
+				}
+
+				.caret {
+					border-top-color: @text-color;
+				}
+
+			}
+
+			&.disabled,
+			&:disabled,
+			fieldset[disabled] &,
+			:disabled + label & {
+				color: @text-color !important;
+				background-color: @color !important;
+				border-color: transparent !important;
+			}
+
+			& when (@include-dark = true) {
+				// on dark background
+				&.ondark, .dark & {
+
+					// for toggle button
+					&.active {
+						color: @text-color;
+						background-color: @color-d1;
+						border-color: @color-l2;
+
+						&:hover {
+							border-color: @color-l2;
+							background-color: @color;
+						}
+						&:focus {
+							color: @text-color;
+							border-color: @color-d1;
+							box-shadow: 0 0px 2px rgba(0,0,0,.3);
+						}
+					}
+
+					&:hover {
+						background-color: @color-d1;
+						border-color: @color-l1;
+					}
+
+					&:focus {
+						border-color: @color-l2;
+					}
+
+					&:active {
+						background-color: @color-d2;
+						border-color: @color;
+					}
+				}
+				
+				// for segmented button active state on dark
+				.dark :checked + label &,
+				.dark :checked + label &.hollow {
 					color: @text-color;
 					background-color: @color-d1;
 					border-color: @color-l2;
@@ -200,125 +236,93 @@
 						border-color: @color-l2;
 						background-color: @color;
 					}
-					&:focus {
-						color: @text-color;
-						border-color: @color-d1;
-						box-shadow: 0 0px 2px rgba(0,0,0,.3);
-					}
 				}
+			}
 
+			// hollow style
+			&.hollow {
+				color: @color;
+				border-color: @color;
+				background: none;
+
+				.caret {
+					border-top-color: @color; 
+				}
+				
 				&:hover {
-					background-color: @color-d1;
-					border-color: @color-l1;
+					color: @text-color;
+					border-color: @color;
+					background-color: @color;
 				}
 
 				&:focus {
-					border-color: @color-l2;
+					color: @color-d2;
+					border-color: @color-d2;
+				}
+				&:focus:hover {
+					color: @text-color;
 				}
 
 				&:active {
-					background-color: @color-d2;
-					border-color: @color;
-				}
-			}
-			
-			// for segmented button active state on dark
-			.dark :checked + label &,
-			.dark :checked + label &.hollow {
-				color: @text-color;
-				background-color: @color-d1;
-				border-color: @color-l2;
-
-				&:hover {
-					border-color: @color-l2;
-					background-color: @color;
-				}
-			}
-		}
-
-		// hollow style
-		&.hollow {
-			color: @color;
-			border-color: @color;
-			background: none;
-
-			.caret {
-				border-top-color: @color; 
-			}
-			
-			&:hover {
-				color: @text-color;
-				border-color: @color;
-				background-color: @color;
-			}
-
-			&:focus {
-				color: @color-d2;
-				border-color: @color-d2;
-			}
-			&:focus:hover {
-				color: @text-color;
-			}
-
-			&:active {
-				color: @text-color;
-				background-color: @color-d1;
-				border-color: @color-d2;
-			}
-			
-			& when (@include-dark = true) {
-				.dark &:focus {
-					color: @color-l1;
-					border-color: @color-l1;
-				}
-				.dark &:focus:hover {
 					color: @text-color;
+					background-color: @color-d1;
+					border-color: @color-d2;
 				}
-				.dark &:active {
-					border-color: @color-l1;
+				
+				& when (@include-dark = true) {
+					.dark &:focus {
+						color: @color-l1;
+						border-color: @color-l1;
+					}
+					.dark &:focus:hover {
+						color: @text-color;
+					}
+					.dark &:active {
+						border-color: @color-l1;
+					}
 				}
+
+				& when (@include-btn-dropdown = true) {
+					&:hover, &:active,
+					&.active, .active > &[data-toggle="dropdown"] {
+						.caret {
+							border-top-color: @text-color; 
+						}
+					} 
+				}
+			}
+
+			&.hollow.disabled,
+			&.hollow:disabled,
+			fieldset[disabled] &.hollow,
+			:disabled + label &.hollow {
+				color: @color !important;
+				border-color: @color !important;
+				background: none !important;
 			}
 
 			& when (@include-btn-dropdown = true) {
-				&:hover, &:active,
-				&.active, .active > &[data-toggle="dropdown"] {
-					.caret {
-						border-top-color: @text-color; 
+				.active > &[data-toggle="dropdown"],
+				.active > &[data-toggle="dropdown"]:hover,
+				.active > &[data-toggle="dropdown"]:focus,
+				.active > &[data-toggle="dropdown"]:active {
+					color: @text-color;
+					background-color: @color-d2;
+					border-color: @color-d2;
+				}
+
+				
+				// dropdown styles
+				& + ul.dropdown-menu,
+				& + ul.dropdown-menu ul.dropdown-menu {
+					background: @color-d1;
+					color: @text-color;
+
+					li.divider {
+						@dropdown-divider-color: contrast(darken(@@base-color,(luma(@@base-color)/4)), fadeout(#000,10%), #fff,20%);
+
+						border-bottom-color: fadeout(@dropdown-divider-color,80%);
 					}
-				} 
-			}
-		}
-
-		&.hollow.disabled,
-		&.hollow:disabled,
-		fieldset[disabled] &.hollow,
-		:disabled + label &.hollow {
-			color: @color !important;
-			border-color: @color !important;
-			background: none !important;
-		}
-
-		& when (@include-btn-dropdown = true) {
-			.active > &[data-toggle="dropdown"],
-			.active > &[data-toggle="dropdown"]:hover,
-			.active > &[data-toggle="dropdown"]:focus,
-			.active > &[data-toggle="dropdown"]:active {
-				color: @text-color;
-				background-color: @color-d2;
-				border-color: @color-d2;
-			}
-
-			
-			// dropdown styles
-			& + ul.dropdown-menu,
-			& + ul.dropdown-menu ul.dropdown-menu {
-				background: @color-d1;
-				color: @text-color;
-
-				li.divider {
-					@dropdown-divider-color: contrast(darken(@@base-color,(luma(@@base-color)/4)), fadeout(#000,10%), #fff,20%);
-
-					border-bottom-color: fadeout(@dropdown-divider-color,80%);
 				}
 			}
 		}
@@ -327,30 +331,21 @@
 	// define text color
 	@text-color: contrast(darken(@@base-color,(luma(@@base-color)/2.3)),#333,#fff,24%);
 
-	// when option is provided
-	& when (@option = 'custom') {
+	// when auto shade generator is disabled
+	& when (@disable-auto-shade-generator = true) {
 		@color: @@base-color;
 		@color-l1: ~'@{@{base-color}-l1}';
 		@color-l2: ~'@{@{base-color}-l2}';
 		@color-d1: ~'@{@{base-color}-d1}';
 		@color-d2: ~'@{@{base-color}-d2}';
 		
-		// skip if entered color is same as primary-accent-color
-		// but run if color is exactly primary-accent-color (required for default run)
-		& when not (@@base-color = @primary-accent-color), (@base-color = 'primary-accent-color') {
-			.generate-btn-styles();
-		}
+		.generate-btn-styles();
 	}
 
 	// else
-	& when not (@option = 'custom') {
+	& when not (@disable-auto-shade-generator = true) {
 		.colorset(@@base-color);
-		
-		// skip if entered color is same as primary-accent-color
-		// but run if color is exactly primary-accent-color (required for default run)
-		& when not (@@base-color = @primary-accent-color), (@base-color = 'primary-accent-color') {
-			.generate-btn-styles();
-		}
+		.generate-btn-styles();
 	}
 	
 }
@@ -864,13 +859,13 @@ fieldset[disabled] .btn,
 }
 
 .btn.blue {
-	.generate-btn('blue'; 'custom');
+	.generate-btn('blue');
 }
 .btn.green {
-	.generate-btn('green'; 'custom');
+	.generate-btn('green');
 }
 .btn.red {
-	.generate-btn('red'; 'custom');
+	.generate-btn('red');
 }
 
 .btn.black {
