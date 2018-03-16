@@ -14,7 +14,7 @@
 @import (reference) 'z-index.less';
 
 /* common caret */
-.caret {
+.caret(@caret-color: #fff) {
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
@@ -22,14 +22,17 @@
 	height: 0;
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
-	border-top: 4px solid #fff;
+	border-top: 4px solid @caret-color;
 
 	& when (@btn-disable-transition = false) {
 		transition: 0.2s border-color, 0.3s transform;
 	}
 }
+.caret {
+	.caret;
+}
 
-.caret-right {
+.caret-right(@caret-color: #fff) {
 	position: relative;
 	display: inline-block;
 	bottom: 2px;
@@ -37,7 +40,10 @@
 	height: 0;
 	border-top: 4px solid transparent;
 	border-bottom: 4px solid transparent;
-	border-left: 4px solid #fff;	
+	border-left: 4px solid @caret-color;	
+}
+.caret-right {
+	.caret-right;
 }
 
 /* default button */
@@ -533,7 +539,7 @@ fieldset[disabled] .btn,
 
 			&:hover > a {
 				text-decoration: none;
-				background: rgba(255,255,255,.3);
+				background: rgba(0,0,0,.1);
 			}
 
 			&.divider {
@@ -554,7 +560,7 @@ fieldset[disabled] .btn,
 
 				&:after {
 					content: "";
-					.caret-right;
+					.caret-right(@base-font-color);
 					position: absolute;
 					top: 50%;
 					right: 10px;
