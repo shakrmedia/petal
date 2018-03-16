@@ -307,7 +307,9 @@
 				background: none !important;
 			}
 
+			// dropdown styles
 			& when (@include-btn-dropdown = true) {
+				// button active state
 				.active > &[data-toggle="dropdown"],
 				.active > &[data-toggle="dropdown"]:hover,
 				.active > &[data-toggle="dropdown"]:focus,
@@ -317,17 +319,28 @@
 					border-color: @color-d2;
 				}
 
-				
-				// dropdown styles
-				& + ul.dropdown-menu,
-				& + ul.dropdown-menu ul.dropdown-menu {
-					background: @color-d1;
-					color: @text-color;
+				// override dropdown menu colors
+				& when not (@btn-disable-colored-dropdown = true) {
+					& + ul.dropdown-menu,
+					& + ul.dropdown-menu ul.dropdown-menu {
+						background: @color-d1;
+						color: @text-color;
+						
+						// override list item hover highlight
+						li:hover > a {
+							@highlight-color: contrast(@@base-color,@color-d2,@color-l1,@btn-text-color-contrast-threshold);
+							background-color: fadeout(@highlight-color,50%);;
+						}
 
-					li.divider {
-						@dropdown-divider-color: @text-color;
-
-						border-bottom-color: fadeout(@dropdown-divider-color,80%);
+						// override divider color
+						li.divider {
+							border-bottom-color: fadeout(@text-color,80%);
+						}
+						
+						// override caret color
+						& > .submenu > a:after {
+							border-left-color: @text-color;
+						}
 					}
 				}
 			}
@@ -505,9 +518,9 @@ fieldset[disabled] .btn,
 		margin: 0;
 		padding: 0;
 		list-style: none;
-
-		background: @blue-d1;
-		color: #fff;
+		
+		background-color: #fff;
+		color: @base-font-color;
 		font-size: 1em;
 		box-shadow: @drop-shadow-deep; 
 
@@ -858,19 +871,20 @@ fieldset[disabled] .btn,
 	}
 }
 
-
-/* button color sets */
+// generate single default color button
 .btn { 
 	.generate-btn('primary-accent-color');
 }
 
+// generate color buttons
 .generate-color-btns(@colors; @index) when (@index > 0) {
 	.generate-color-btns(@colors; (@index - 1)); // decrement.
 
-	@color: extract(@colors, @index);
+	@btn-color: extract(@colors, @index);
 	
-	.btn.@{color} {
-		.generate-btn('@{color}');
+	// generate new classes for button colors
+	.btn.@{btn-color} {
+		.generate-btn(~'@{btn-color}');
 	}
 }
 
