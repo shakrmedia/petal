@@ -46,7 +46,7 @@
 	// colors
 	& {
 		.colorset(@alert-color);
-		background-color: @color-l2;
+		background-color: lighten(@color-l2,7%);
 
 		.alert-icon {
 			color: @color-d2;
@@ -55,7 +55,7 @@
 
 	&.accent {
 		.colorset(@alert-accent-color);
-		background-color: @color-l2;
+		background-color: lighten(@color-l2,7%);
 
 		.alert-icon {
 			color: @color-d2;
@@ -64,7 +64,7 @@
 
 	&.okay {
 		.colorset(@alert-okay-color);
-		background-color: @color-l2;
+		background-color: lighten(@color-l2,7%);
 
 		.alert-icon {
 			color: @color-d2;
@@ -73,7 +73,7 @@
 
 	&.warning {
 		.colorset(@alert-warning-color);
-		background-color: @color-l2;
+		background-color: lighten(@color-l2,7%);
 
 		.alert-icon {
 			color: @color-d2;
@@ -82,7 +82,7 @@
 
 	&.danger {
 		.colorset(@alert-danger-color);
-		background-color: @color-l2;
+		background-color: lighten(@color-l2,7%);
 
 		.alert-icon {
 			color: @color-d2;
@@ -94,46 +94,46 @@
 		.dark &, &.ondark {
 			& {
 				.colorset(@alert-color);
-				background-color: @color-d2;
+				background-color: darken(@color-d2,10%);
 
 				.alert-icon {
-					color: @color-l2;
+					color: @color-l1;
 				}
 			}
 
 			&.accent {
 				.colorset(@alert-accent-color);
-				background-color: @color-d2;
+				background-color: darken(@color-d2,10%);
 
 				.alert-icon {
-					color: @color-l2;
+					color: @color-l1;
 				}
 			}
 
 			&.okay {
 				.colorset(@alert-okay-color);
-				background-color: @color-d2;
+				background-color: darken(@color-d2,10%);
 
 				.alert-icon {
-					color: @color-l2;
+					color: @color-l1;
 				}
 			}
 
 			&.warning {
 				.colorset(@alert-warning-color);
-				background-color: @color-d2;
+				background-color: darken(@color-d2,10%);
 
 				.alert-icon {
-					color: @color-l2;
+					color: @color-l1;
 				}
 			}
 
 			&.danger {
 				.colorset(@alert-danger-color);
-				background-color: @color-d2;
+				background-color: darken(@color-d2,10%);
 
 				.alert-icon {
-					color: @color-l2;
+					color: @color-l1;
 				}
 			}
 		}
