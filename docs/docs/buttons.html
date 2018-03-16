@@ -67,110 +67,112 @@
 			
 <p>Petal features a complex button style generator inside the LESS code to make adding new color sets as simple as possible.</p>
 
-<br>
-
 <h3 id="section-buttons-basic">Basic Button</h3>
 <div class="demo-panel p-15">
+	<div class="block">
+		<button class="btn">Button</button>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;button class=&quot;btn&quot;&gt;&lt;/button&gt;</code></pre>
+</div>
+
+<p>To make a button, simply add the <code>.btn</code> class, presumably to a <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> element.</p>
+
+<h4>Button Style Options</h4>
+<div class="demo-panel">
+	<div class="row">
+		<div class="col-2">
+			<div class="p-15">
+				<button class="btn hollow">Button</button>
+				<button class="btn compact">Button</button>
+			</div>
+		</div>
+		<div class="col-2">
+			<div class="dark p-15">
+				<button class="btn hollow whitetext">Button</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;button class=&quot;btn hollow&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;btn compact&quot;&gt;Button&lt;/button&gt;
+
+&lt;button class=&quot;btn hollow whitetext&quot;&gt;Button&lt;/button&gt;</code></pre>
+</div>
+
+<p>Add <code>.hollow</code> to your button to get an outline-only style. Add <code>.compact</code> for a smaller sized version with reduced padding.</p>
+<p><code>.whitetext</code> class is used when you want to force white-colored text—useful when used with 'hollow' style on dark backgrounds.</p>
+
+<h4>Disabled Button</h4>
+<div class="demo-panel p-15">
+	<div class="block">
+		<button class="btn disabled">Button</button>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;button class=&quot;btn disabled&quot; disabled&gt;Button&lt;/button&gt;</code></pre>
+</div>
+
+<p>Use the <code>:disabled</code> attribute or <code>.disabled</code> class to visually disable the button.</p>
+
+<h4>Button Colors</h4>
+<p>By default, Petal provides 3 button colors for easy use:</p>
+
+<div class="demo-panel p-15 cf" data-toggle-bg="toggle">
 	<div class="block">
 		<a href="#" class="btn">Button</a>
 		<p class="clabel"><code>.btn</code></p>
 	</div>
-</div>
-
-<p>To make a button, simply add the <code>.btn</code> class, presumably to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element. The default color is blue, and some preset colors provided are demonstrated below:</p>
-
-<br>
-
-<div class="demo-panel p-15 cf" data-toggle-bg="toggle">
-<div class="row">
-	<div class="col-2">
-		<h5>Default</h5>
-		<div class="block">
-			<a href="#" class="btn">Button</a>
-			<p class="clabel"><code>.btn</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn blue">Button</a>
-			<p class="clabel"><code>.btn.blue</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn green">Button</a>
-			<p class="clabel"><code>.btn.green</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn red">Button</a>
-			<p class="clabel"><code>.btn.red</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn black">Button</a>
-			<p class="clabel"><code>.btn.black</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn white">Button</a>
-			<p class="clabel"><code>.btn.white</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn disabled">Button</a>
-			<p class="clabel"><code>.btn.disabled</code></p>
-		</div>
+	<div class="block">
+		<a href="#" class="btn blue">Button</a>
+		<p class="clabel"><code>.btn.blue</code></p>
 	</div>
-	<div class="col-2">
-		<h5>Hollow</h5>
-		<div class="block">
-			<a href="#" class="btn hollow">Button</a>
-			<p class="clabel"><code>.btn.hollow</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn hollow blue">Button</a>
-			<p class="clabel"><code>.btn.hollow.blue</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn hollow green">Button</a>
-			<p class="clabel"><code>.btn.hollow.green</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn hollow red">Button</a>
-			<p class="clabel"><code>.btn.hollow.red</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn hollow black">Button</a>
-			<p class="clabel"><code>.btn.hollow.black</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn hollow white">Button</a>
-			<p class="clabel"><code>.btn.hollow.white</code></p>
-		</div>
-		<div class="block">
-			<a href="#" class="btn hollow disabled">Button</a>
-			<p class="clabel"><code>.btn.hollow.disabled</code></p>
-		</div>
+	<div class="block">
+		<a href="#" class="btn green">Button</a>
+		<p class="clabel"><code>.btn.green</code></p>
+	</div>
+	<div class="block">
+		<a href="#" class="btn red">Button</a>
+		<p class="clabel"><code>.btn.red</code></p>
 	</div>
 </div>
-</div>
 
-<h5>Options</h5>
+<p>Just add the color names as classes along with the <code>.btn</code> class to change the button color. If you don't explicitly specify the button color, it will follow whatever color is set as your <code>@primary-accent-color</code> (default is blue).</p>
 
-<ul>
-	<li><code>.hollow</code> : Hollow style alternative</li>
-	<li><code>.disabled</code> OR <code>:disabled</code> (attribute) : Disabled state</li>
-	<li><code>.ondark</code> on button OR <code>.dark</code> on parent : Alternative style on dark backgrounds</li>
-	<li><code>.whitetext</code> : Force white text on buttons</li>
-	<li><code>.compact</code> : Smaller sized buttons with reduced padding</li>
-</ul>
+<h4>Generating additional color buttons</h4>
 
-<br>
-
-<h5>Generating additional color sets</h5>
-
-<p>You can add new button colors easily. First add your color as a variable in <b>color-palette.less</b> then add a line in <b>buttons.less</b>.</p>
+<p>If you have <a href="colors.html#section-colors-adding-more">added your own custom colors</a> to the palette, you easily generate button styles with those colors. Make sure you added your colors as variables in your project variables sheet:</p>
 
 <div class="demo-code">
-<pre><code class="language-less">// Add colors here
-&amp;.my-color    { .generate-btn(&#39;my-color&#39;) }
-&amp;.my-color2   { .generate-btn(&#39;my-color2&#39;; &#39;custom&#39;) }</code></pre>
+<pre><code class="language-less">// my custom colors
+@purple: #c37dc4;
+@orange: #f1a85b;</code></pre>
 </div>
 
-<p>The 'custom' option is provided for when you want to specify the l1, l2, d1, d2 shades manually. Define all 5 variables including base color in <b>color-palette.less</b> and append the <code>'custom'</code> option at the end.</p>
+<p>Then you want to generate buttons with these colors by adding to the list as defined in the <code>@btn-colors</code> variable. Separate color names with commas.</p>
+
+<div class="demo-code">
+<pre><code class="language-less">// buttons
+@btn-colors: blue, green, purple, orange;</code></pre>
+</div>
+
+<p>Now when you compile your stylesheet, you'll see that <code>.btn.purple</code> and <code>.btn.orange</code> classes are generated. Use the class on buttons as you would with other colored buttons.</p>
+
+<div class="demo-panel p-15">
+	<div class="block">
+		<button class="btn orange">Button</button>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;button class=&quot;btn orange&quot;&gt;&lt;/button&gt;</code></pre>
+</div>
+
+<p>When generating colored button styles, Petal automatically calculates the button text color to be either white or black depending on the color of the button for legibility. If you want to manually override this settings, modify the <code>@btn-text-color-contrast-threshold</code> variable to change the results (default is 60%). Setting this to 0% will always make the button text color black.</p>
+
+<div class="alert accent"><span class="alert-icon"><i class="petalicon petalicon-notice"></i></span> <span class="alert-text">Overriding <code>@btn-colors</code> variable is completely optional; if you don't specify your own override for the button colors, the default set (blue, green, red) will be generated. However, if you do override the <code>@btn-colors</code> variable but don't have blue, green, red included in list, they will not be included in final output.</span></div>
+<div class="alert accent"><span class="alert-icon"><i class="petalicon petalicon-notice"></i></span> <span class="alert-text">The 'custom' optional parameter that existed for the <code>.generate-btn()</code> mixin has been deprecated since 0.9.0.</span></div>
 
 <br>
 
@@ -181,6 +183,13 @@
 		<button class="btn green">Button</button>
 		<button class="btn red">Button</button>
 	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;btn-group&quot;&gt;
+    &lt;button class=&quot;btn&quot;&gt;Button&lt;/button&gt;
+    &lt;button class=&quot;btn green&quot;&gt;Button&lt;/button&gt;
+    &lt;button class=&quot;btn red&quot;&gt;Button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 </div>
 
 <p>Put the <code>.btn</code>s inside a <code>.btn-group</code> and they will become inline blocks.</p>
@@ -198,6 +207,13 @@
 		<button class="btn hollow disabled" data-toggle="toggle">Button</button>
 	</div>
 </div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;div class=&quot;btn-group btn-group-segmented&quot;&gt;
+    &lt;button class=&quot;btn hollow active&quot; data-toggle=&quot;toggle&quot; data-toggle-state=&quot;active&quot;&gt;Button&lt;/button&gt;
+    &lt;button class=&quot;btn hollow&quot; data-toggle=&quot;toggle&quot;&gt;Button&lt;/button&gt;
+    &lt;button class=&quot;btn hollow disabled&quot; data-toggle=&quot;toggle&quot;&gt;Button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</div>
 
 <p>Add <code>.btn-group-segmented</code> with <code>.btn-group</code> to remove the space inbetween buttons in a button group to make them visually look like segmented buttons. Petal doesn't provide preset functions for segmented buttons, however. You'll need to manually write your javascript code to make them actually work--or, use the <a href="forms.html#section-forms-segmented-radio">radiobox method</a>.</p>
 
@@ -212,12 +228,14 @@
 
 <div class="demo-panel p-15" data-toggle-bg="toggle">
 	<div class="btn-group">	
-		<button class="btn hollow blue toggle active" data-toggle="toggle" data-toggle-state="active">Toggle</button>
-		<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
-		<button class="btn hollow blue toggle" data-toggle="toggle">Toggle</button>
-		<button class="btn green toggle" data-toggle="toggle">Toggle</button>
-		<button class="btn red toggle" data-toggle="toggle">Toggle</button>
+		<button class="btn hollow blue active" data-toggle="toggle" data-toggle-state="active">Toggle</button>
+		<button class="btn hollow blue" data-toggle="toggle">Toggle</button>
+		<button class="btn green" data-toggle="toggle">Toggle</button>
+		<button class="btn red" data-toggle="toggle">Toggle</button>
 	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;button class=&quot;btn&quot; data-toggle=&quot;toggle&quot;&gt;Toggle&lt;/button&gt;</code></pre>
 </div>
 
 <p>Add <code>data-toggle="toggle"</code> on the button to make it toggleable.</p>
@@ -269,7 +287,7 @@
 		</div>
 
 		<div class="btn-group">
-			<button class="btn hollow green dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
+			<button class="btn white dropdown" data-toggle="dropdown">Menu <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 				<li><a href="#">Menu item 1</a></li>
 				<li><a href="#">Menu item 2</a></li>
@@ -320,6 +338,8 @@
 <p>Attach a <code>&lt;ul&gt;</code> structured list menu with appropriate markups right after the <code>.btn</code>. The <code>.dropdown</code> class and <code>data-toggle="dropdown"</code> attributes are required to activate the toggle function. </p>	
 
 <p>The <code>.btn-group</code> class on parent element is required (0.9.0+) for the dropdown style to apply properly.</p>
+
+<p>With default settings, the colors of the dropdown menu and the items will follow the color of the button. If you don't want this, set <code>@btn-disable-colored-dropdown</code> to <code>false</code> and you will always get plain white background colors.</p>
 
 <br>
 
@@ -374,6 +394,7 @@
 	<li><code>data-dropdown-align="right"</code> on <code>ul.dropdown-menu</code> : Align the menu to the right.</li>
 	<li><code>@include-btn-dropdown</code> : set to <code>false</code> if you're not going to use any button dropdowns in your project. Related code will not be included in compiled stylesheet.</li>
 	<li><code>@include-btn-split</code> : set to <code>false</code> if you're not going to use any split buttons in your project. (Split button requires the button dropdown styles, so if you have <code>@include-btn-dropdown</code> set to false, split buttons will not render properly regardless the value of <code>@include-btn-split</code>.)</li>
+	<li><code>@btn-disable-colored-dropdown</code> : set to <code>false</code> if you don't want colored dropdown menus. You'll get black-on-white menus regardless of the button color.</li>
 </ul>
 
 
@@ -437,11 +458,12 @@
 
 <br>
 
-<h4>Customizable LESS variables</h4>
+<h3>Customizable LESS variables</h3>
 <div class="demo-code">
 <pre><code class="language-less">// buttons 
-@include-btn-split: false;
-@include-btn-dropdown: false;
+@include-btn-dropdown: true;
+@include-btn-split: true;
+@btn-disable-colored-dropdown: false;
 @btn-border-width: 2px;
 @btn-border-radius: 0;
 @btn-font-size: 0.9em;
@@ -452,7 +474,9 @@
 @gray-disabled-btn: false;
 @btn-disable-transition: false;
 @btn-disable-shadows: false;
-@btn-spinner-animation-duration: 0.4s;</code></pre>
+@btn-spinner-animation-duration: 0.4s;
+@btn-text-color-contrast-threshold: 60%;
+@btn-colors: blue, green, red, black, gray, white;</code></pre>
 </div>
 			
 			<div class="section-footer">
