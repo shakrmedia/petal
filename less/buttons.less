@@ -858,22 +858,15 @@ fieldset[disabled] .btn,
 	.generate-btn('primary-accent-color');
 }
 
-.btn.blue {
-	.generate-btn('blue');
-}
-.btn.green {
-	.generate-btn('green');
-}
-.btn.red {
-	.generate-btn('red');
+.generate-color-btns(@colors; @index) when (@index > 0) {
+	.generate-color-btns(@colors; (@index - 1)); // decrement.
+
+	@color: extract(@colors, @index);
+	
+	.btn.@{color} {
+		.generate-btn('@{color}');
+	}
 }
 
-.btn.black {
-	.generate-btn('black');
-} 
-.btn.gray {
-	.generate-btn('gray');
-} 
-.btn.white {
-	.generate-btn('white');
-}
+@btn-colors-length: length(@btn-colors);
+.generate-color-btns(@btn-colors, @btn-colors-length);
