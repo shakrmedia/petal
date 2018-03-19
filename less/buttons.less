@@ -350,22 +350,8 @@
 	// define text color
 	@text-color: contrast(@@base-color,@base-font-color,#fff,@btn-text-color-contrast-threshold);
 
-	// when auto shade generator is disabled
-	& when (@disable-auto-shade-generator = true) {
-		@color: @@base-color;
-		@color-l1: ~'@{@{base-color}-l1}';
-		@color-l2: ~'@{@{base-color}-l2}';
-		@color-d1: ~'@{@{base-color}-d1}';
-		@color-d2: ~'@{@{base-color}-d2}';
-		
-		.generate-btn-styles();
-	}
-
-	// else
-	& when not (@disable-auto-shade-generator = true) {
-		.colorset(@@base-color);
-		.generate-btn-styles();
-	}
+	.colorset(@@base-color);
+	.generate-btn-styles();
 	
 }
 
@@ -873,7 +859,7 @@ fieldset[disabled] .btn,
 
 // generate single default color button
 .btn { 
-	.generate-btn('primary-accent-color');
+	.generate-btn();
 }
 
 // generate color buttons
