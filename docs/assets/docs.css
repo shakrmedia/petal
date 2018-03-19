@@ -1084,20 +1084,20 @@ body {
 .text-red-d2 {
   color: #b7444e;
 }
-.text-blue {
-  color: #30a4dc;
+.bg-red {
+  background-color: #f05a67;
 }
-.text-blue-l1 {
-  color: #69bde6;
+.bg-red-l1 {
+  background-color: #f48791;
 }
-.text-blue-l2 {
-  color: #9fd5ef;
+.bg-red-l2 {
+  background-color: #f8b3b9;
 }
-.text-blue-d1 {
-  color: #2a91c2;
+.bg-red-d1 {
+  background-color: #d44f5b;
 }
-.text-blue-d2 {
-  color: #257da7;
+.bg-red-d2 {
+  background-color: #b7444e;
 }
 .text-green {
   color: #b2cf65;
@@ -1114,20 +1114,35 @@ body {
 .text-green-d2 {
   color: #879d4d;
 }
-.bg-red {
-  background-color: #f05a67;
+.bg-green {
+  background-color: #b2cf65;
 }
-.bg-red-l1 {
-  background-color: #f48791;
+.bg-green-l1 {
+  background-color: #c7dc8f;
 }
-.bg-red-l2 {
-  background-color: #f8b3b9;
+.bg-green-l2 {
+  background-color: #dbe9b8;
 }
-.bg-red-d1 {
-  background-color: #d44f5b;
+.bg-green-d1 {
+  background-color: #9db759;
 }
-.bg-red-d2 {
-  background-color: #b7444e;
+.bg-green-d2 {
+  background-color: #879d4d;
+}
+.text-blue {
+  color: #30a4dc;
+}
+.text-blue-l1 {
+  color: #69bde6;
+}
+.text-blue-l2 {
+  color: #9fd5ef;
+}
+.text-blue-d1 {
+  color: #2a91c2;
+}
+.text-blue-d2 {
+  color: #257da7;
 }
 .bg-blue {
   background-color: #30a4dc;
@@ -1144,20 +1159,35 @@ body {
 .bg-blue-d2 {
   background-color: #257da7;
 }
-.bg-green {
-  background-color: #b2cf65;
+.text-orange {
+  color: #f1a85b;
 }
-.bg-green-l1 {
-  background-color: #c7dc8f;
+.text-orange-l1 {
+  color: #f5c088;
 }
-.bg-green-l2 {
-  background-color: #dbe9b8;
+.text-orange-l2 {
+  color: #f9d7b3;
 }
-.bg-green-d1 {
-  background-color: #9db759;
+.text-orange-d1 {
+  color: #d59450;
 }
-.bg-green-d2 {
-  background-color: #879d4d;
+.text-orange-d2 {
+  color: #b78045;
+}
+.bg-orange {
+  background-color: #f1a85b;
+}
+.bg-orange-l1 {
+  background-color: #f5c088;
+}
+.bg-orange-l2 {
+  background-color: #f9d7b3;
+}
+.bg-orange-d1 {
+  background-color: #d59450;
+}
+.bg-orange-d2 {
+  background-color: #b78045;
 }
 h1,
 h2,
@@ -2714,170 +2744,6 @@ fieldset[disabled] .btn.white.hollow,
 .btn.white + ul.dropdown-menu > .submenu > a:after,
 .btn.white + ul.dropdown-menu ul.dropdown-menu > .submenu > a:after {
   border-left-color: #333;
-}
-.btn.orange {
-  color: #fff;
-  background-color: #f1a85b;
-}
-.btn.orange.active,
-.btn.orange.hollow.active,
-:checked + label .btn.orange,
-:checked + label .btn.orange.hollow {
-  color: #fff;
-  background-color: #f5c088;
-  border-color: #b78045;
-}
-.btn.orange.active:hover,
-.btn.orange.hollow.active:hover,
-:checked + label .btn.orange:hover,
-:checked + label .btn.orange.hollow:hover {
-  color: #fff;
-}
-.btn.orange.active:focus,
-.btn.orange.hollow.active:focus,
-:checked + label .btn.orange:focus,
-:checked + label .btn.orange.hollow:focus {
-  color: #fff;
-  border-color: #d59450;
-  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
-}
-.btn.orange:hover {
-  background-color: #f5c088;
-  border-color: #d59450;
-}
-.btn.orange:focus {
-  border-color: #b78045;
-}
-.btn.orange:active {
-  background-color: #d59450;
-  border-color: #b78045;
-}
-.btn.orange .caret {
-  border-top-color: #fff;
-}
-.btn.orange.disabled,
-.btn.orange:disabled,
-fieldset[disabled] .btn.orange,
-:disabled + label .btn.orange {
-  color: #fff !important;
-  background-color: #f1a85b !important;
-  border-color: transparent !important;
-}
-.btn.orange.ondark.active,
-.dark .btn.orange.active {
-  color: #fff;
-  background-color: #d59450;
-  border-color: #f9d7b3;
-}
-.btn.orange.ondark.active:hover,
-.dark .btn.orange.active:hover {
-  border-color: #f9d7b3;
-  background-color: #f1a85b;
-}
-.btn.orange.ondark.active:focus,
-.dark .btn.orange.active:focus {
-  color: #fff;
-  border-color: #d59450;
-  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
-}
-.btn.orange.ondark:hover,
-.dark .btn.orange:hover {
-  background-color: #d59450;
-  border-color: #f5c088;
-}
-.btn.orange.ondark:focus,
-.dark .btn.orange:focus {
-  border-color: #f9d7b3;
-}
-.btn.orange.ondark:active,
-.dark .btn.orange:active {
-  background-color: #b78045;
-  border-color: #f1a85b;
-}
-.dark :checked + label .btn.orange,
-.dark :checked + label .btn.orange.hollow {
-  color: #fff;
-  background-color: #d59450;
-  border-color: #f9d7b3;
-}
-.dark :checked + label .btn.orange:hover,
-.dark :checked + label .btn.orange.hollow:hover {
-  border-color: #f9d7b3;
-  background-color: #f1a85b;
-}
-.btn.orange.hollow {
-  color: #f1a85b;
-  border-color: #f1a85b;
-  background: none;
-}
-.btn.orange.hollow .caret {
-  border-top-color: #f1a85b;
-}
-.btn.orange.hollow:hover {
-  color: #fff;
-  border-color: #f1a85b;
-  background-color: #f1a85b;
-}
-.btn.orange.hollow:focus {
-  color: #b78045;
-  border-color: #b78045;
-}
-.btn.orange.hollow:focus:hover {
-  color: #fff;
-}
-.btn.orange.hollow:active {
-  color: #fff;
-  background-color: #d59450;
-  border-color: #b78045;
-}
-.dark .btn.orange.hollow:focus {
-  color: #f5c088;
-  border-color: #f5c088;
-}
-.dark .btn.orange.hollow:focus:hover {
-  color: #fff;
-}
-.dark .btn.orange.hollow:active {
-  border-color: #f5c088;
-}
-.btn.orange.hollow:hover .caret,
-.btn.orange.hollow:active .caret,
-.btn.orange.hollow.active .caret,
-.active > .btn.orange.hollow[data-toggle="dropdown"] .caret {
-  border-top-color: #fff;
-}
-.btn.orange.hollow.disabled,
-.btn.orange.hollow:disabled,
-fieldset[disabled] .btn.orange.hollow,
-:disabled + label .btn.orange.hollow {
-  color: #f1a85b !important;
-  border-color: #f1a85b !important;
-  background: none !important;
-}
-.active > .btn.orange[data-toggle="dropdown"],
-.active > .btn.orange[data-toggle="dropdown"]:hover,
-.active > .btn.orange[data-toggle="dropdown"]:focus,
-.active > .btn.orange[data-toggle="dropdown"]:active {
-  color: #fff;
-  background-color: #b78045;
-  border-color: #b78045;
-}
-.btn.orange + ul.dropdown-menu,
-.btn.orange + ul.dropdown-menu ul.dropdown-menu {
-  background: #d59450;
-  color: #fff;
-}
-.btn.orange + ul.dropdown-menu li:hover > a,
-.btn.orange + ul.dropdown-menu ul.dropdown-menu li:hover > a {
-  background-color: rgba(245, 192, 136, 0.5);
-}
-.btn.orange + ul.dropdown-menu li.divider,
-.btn.orange + ul.dropdown-menu ul.dropdown-menu li.divider {
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-}
-.btn.orange + ul.dropdown-menu > .submenu > a:after,
-.btn.orange + ul.dropdown-menu ul.dropdown-menu > .submenu > a:after {
-  border-left-color: #fff;
 }
 input[type="number"] {
   -moz-appearance: textfield;

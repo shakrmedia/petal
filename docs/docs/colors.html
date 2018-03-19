@@ -5,7 +5,7 @@
 	<!-- 
 		Petal Documentation
 
-		petal.less v0.9.0
+		petal.less v0.9.1
 		A modern, light CSS UI framework by Shakr based on LESS.
 		https://shakrmedia.github.io/petal
 
@@ -110,6 +110,29 @@
 @teal: #21c5c7;</code></pre>
 </div>
 
+<h3>Generating custom color preset classes</h3>
+<p>After you have added your own colors, if you want to generate new preset utility classes with your colors, add them to the <code>@preset-colors</code> variable. Separate color names with commas.</p>
+
+<div class="demo-code">
+<pre><code class="language-less">@preset-colors: red, green, blue, orange, teal;</code></pre>
+</div>
+
+<p>Then in the compiled result, you'll see the classes have been generated as such:</p>
+
+<div class="demo-code">
+<pre><code class="language-less">.text-orange { color: #f1a85b; }
+.text-orange-l1 { color: #f5c088; }
+.text-orange-l2 { color: #f9d7b3; }
+.text-orange-d1 { color: #d59450; }
+.text-orange-d2 { color: #b78045; }
+.bg-orange { background-color: #f1a85b; }
+.bg-orange-l1 { background-color: #f5c088; }
+.bg-orange-l2 { background-color: #f9d7b3; }
+.bg-orange-d1 { background-color: #d59450; }
+.bg-orange-d2 { background-color: #b78045; }
+...</code></pre>
+</div>
+
 <br>
 
 <h3>Setting your own primary accent color</h3>
@@ -169,7 +192,7 @@
     <div class="container">
         <p class="petal-ver">
             petal.less<br>
-            <b> v0.9.0</b></p>
+            <b> v0.9.1</b></p>
 
         <div class="footer-credits">
             

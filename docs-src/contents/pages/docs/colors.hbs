@@ -61,6 +61,37 @@ list-order: 4
 {{/markdown}}
 </div>
 
+<h3>Generating custom color preset classes</h3>
+<p>After you have added your own colors, if you want to generate new preset utility classes with your colors, add them to the <code>@preset-colors</code> variable. Separate color names with commas.</p>
+
+<div class="demo-code">
+{{#markdown}}
+``` less
+@preset-colors: red, green, blue, orange, teal;
+```
+{{/markdown}}
+</div>
+
+<p>Then in the compiled result, you'll see the classes have been generated as such:</p>
+
+<div class="demo-code">
+{{#markdown}}
+``` less
+.text-orange { color: #f1a85b; }
+.text-orange-l1 { color: #f5c088; }
+.text-orange-l2 { color: #f9d7b3; }
+.text-orange-d1 { color: #d59450; }
+.text-orange-d2 { color: #b78045; }
+.bg-orange { background-color: #f1a85b; }
+.bg-orange-l1 { background-color: #f5c088; }
+.bg-orange-l2 { background-color: #f9d7b3; }
+.bg-orange-d1 { background-color: #d59450; }
+.bg-orange-d2 { background-color: #b78045; }
+...
+```
+{{/markdown}}
+</div>
+
 <br>
 
 <h3>Setting your own primary accent color</h3>
