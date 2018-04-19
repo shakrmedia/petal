@@ -946,15 +946,15 @@ fieldset:disabled input[type="radio"].radiobox + label {
 
 	&.onoff-type.led {
 		label span:after {
-			border: (((@chk-switch-size - 8px)/2) - 2px) solid #888;
+			border: (((@chk-switch-size - 8px)/2) - 2px) solid #aaa;
 			box-sizing: border-box;
-			background-color: saturate(@red, 50%) !important;
+			background-color: #f00 !important;
 		}
 		
 		& when (@include-dark = true) {
 			// ticker color on dark
 			.dark & label span:after {
-				border-color: #ccc;
+				border-color: #bbb;
 			}
 		}
 		
