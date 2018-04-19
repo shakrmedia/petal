@@ -766,9 +766,12 @@ fieldset:disabled input[type="radio"].radiobox + label {
 // * ================================= *
 // *  Switch Toggle
 // * ================================= *
+.chk-switch-wrap {
+	display: flex;
+	align-items: center;
+}
 .chk-switch-label {
 	display: inline-block;
-	vertical-align: middle;
 }
 
 .chk-switch-label + .chk-switch {
@@ -790,7 +793,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 	}
 
 	label {
-		display: inline-block;
+		display: block;
 		position: relative;
 		width: (@chk-switch-size * 2) - 4px;
 		height: @chk-switch-size - 4px;
