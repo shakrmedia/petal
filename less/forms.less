@@ -585,7 +585,7 @@ input[type="radio"].radiobox + label {
 		border: @checkbox-border-width solid @gray-l1;
 		background-color: #fff;
 		box-sizing: border-box;
-		transition: 0.2s;
+		transition: border-color 0.2s, background-color 0.2s;
 	}
 
 	&:hover:before {
@@ -1193,7 +1193,7 @@ select.select {
 				margin: auto 0;
 
 				transform-style: preserve-3d;
-				transition: 0.2s border-color, 0.3s transform;
+				transition: border-color 0.2s, transform 0.3s;
 			}
 
 		}
