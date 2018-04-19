@@ -570,17 +570,16 @@ input[type="radio"].radiobox:not(:checked) {
 
 input[type="checkbox"].checkbox + label,
 input[type="radio"].radiobox + label {
+	display: flex;
+	align-items: center;
 	margin: 5px 0;
 	position: relative;
 	cursor: pointer;
-	padding-left: (@checkbox-size + 5px);
 
 	&:before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
 		content: "";
+		display: block;
+		margin-right: 3px;
 		width: @checkbox-size;
 		height: @checkbox-size;
 		border: @checkbox-border-width solid @gray-l1;
