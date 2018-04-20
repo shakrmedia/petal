@@ -5,7 +5,7 @@
 	<!-- 
 		Petal Documentation
 
-		petal.less v0.9.2
+		petal.less v0.10.0
 		A modern, light CSS UI framework by Shakr based on LESS.
 		https://shakrmedia.github.io/petal
 
@@ -426,6 +426,7 @@
 <pre><code class="language-less">// checkboxes &amp; radioboxes
 @checkbox-size: 20px;
 @checkbox-border-width: @input-border-width; //2px
+@checkbox-check-thickness: @input-border-width; //2px
 @checkbox-border-radius: 100%;
 @radiobox-border-radius: 100%;
 @checkbox-color: @primary-accent-color;
@@ -628,8 +629,9 @@
 @input-textarea-font-size: 0.8em;
 @input-label-font-size: 0.8em;
 @input-label-font-weight: 900;
-@input-label-letter-spacing: 2px;
-@input-line-height: 1.2;</code></pre>
+@input-label-letter-spacing: 0.1em;
+@input-line-height: 1.2;
+@input-caption-font-size: 0.8em;</code></pre>
 </div>
 
 <br>
@@ -662,7 +664,7 @@
 	<div class="col-2">
 		<div class="form-group validation validation-icons valid">
 			<label class="form-label" for="validationDemoFormUsername">Username</label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="validationDemoFormUsername" type="text" />
 			</div>
 			<p class="form-caption">Username is available!</p>
@@ -670,7 +672,7 @@
 
 		<div class="form-group validation validation-icons warning">
 			<label class="form-label" for="validationDemoFormName">Name</label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="validationDemoFormName" type="text" />
 			</div>
 			<p class="form-caption">That's a strange name...</p>
@@ -678,46 +680,42 @@
 
 		<div class="form-group validation validation-icons error">
 			<label class="form-label" for="validationDemoFormPassword">Password</label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="validationDemoFormPassword" type="password" />
 			</div>
 			<p class="form-caption">Invalid Password.</p>
 		</div>
 	</div>
 </div>
+
 </div>
 <div class="demo-code">
-<pre><code class="language-html">&lt;div class=&quot;form-group validation valid&quot;&gt;
-    &lt;label class=&quot;form-label&quot; for=&quot;username&quot;&gt;Username&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input class=&quot;input&quot; id=&quot;username&quot; type=&quot;text&quot; /&gt;
-    &lt;/div&gt;
+<pre><code class="language-html">&lt;!-- Just border colors --&gt;
+&lt;div class=&quot;form-group validation valid&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;username&quot;&gt;Username&lt;/label&gt;    
+    &lt;input class=&quot;input&quot; id=&quot;username&quot; type=&quot;text&quot; /&gt;
     &lt;p class=&quot;form-caption&quot;&gt;Username is available!&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;form-group validation warning&quot;&gt;
-    &lt;label class=&quot;form-label&quot; for=&quot;name&quot;&gt;Name&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input class=&quot;input&quot; id=&quot;name&quot; type=&quot;text&quot; /&gt;
+&lt;!-- With validation icons --&gt;
+&lt;div class=&quot;form-group validation validation-icons valid&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;username&quot;&gt;Username&lt;/label&gt;
+    &lt;div class=&quot;input-wrap&quot;&gt;
+        &lt;input class=&quot;input&quot; id=&quot;username&quot; type=&quot;text&quot; /&gt;
     &lt;/div&gt;
-    &lt;p class=&quot;form-caption&quot;&gt;That&#39;s a strange name...&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;form-group validation error&quot;&gt;
-    &lt;label class=&quot;form-label&quot; for=&quot;password&quot;&gt;Password&lt;/label&gt;
-    &lt;div class=&quot;input-group&quot;&gt;
-        &lt;input class=&quot;input&quot; id=&quot;password&quot; type=&quot;password&quot; /&gt;
-    &lt;/div&gt;
-    &lt;p class=&quot;form-caption&quot;&gt;Invalid Password.&lt;/p&gt;
+    &lt;p class=&quot;form-caption&quot;&gt;Username is available!&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 </div>
 
 <p>Petal offers validation state styles for form inputs. Add <code>.validation</code> class and appropriate state classes <code>.valid</code>, <code>.warning</code>, <code>.error</code> classes to <code>.form-group</code> to override border colors. You need to use custom JavaScript for actual validation of contents and append appropriate state classes to HTML elements.</p>
 
 <h5>Feedback Icons</h5>
-<p>Additionally, you can display feedback icons at the right of input boxes along with accented border colors. Add <code>.validation-icons</code> class on form group, then place the <code>input</code> inside an <code>.input-group</code> and the icons will appear.</p>
+<p>To show feedback icons at the right side of input boxes, add <code>.validation-icons</code> class on form-group, then wrap the <code>input</code> with an <code>.input-wrap</code>. Padding will be automatically added to the input to compensate for space where the icon will be displayed.</p>
 
-<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.form-inline</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>
+<div class="alert accent">
+	<span class="alert-icon"><i class="petalicon petalicon-info"></i></span>
+	<p class="alert-text">In versions prior to 0.10.0, <code>.input-group</code> was used for wrapping inputs. This caused problems when nesting inputs in input-groups combined with inline buttons, so it was changed to <code>.input-wrap</code>. If you've upgraded to 0.10.0+ and validation icons don't appear anymore, just change the existing <code>.input-group</code> to <code>.input-wrap</code>.</p>
+</div>
 
 <h5>Colored Caption Texts</h5>
 <p>Caption message texts (<code>.form-caption</code>) inside a form group with the validation classes will be also colored following the the validation states.</p>
@@ -763,16 +761,16 @@
 	<div class="col-2">
 		<div class="form-group" data-toggle-loading-state>
 			<label class="form-label">Standalone <code>.loading</code></label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="demoFormSpinner2" type="text" />
 			</div>
 			<p class="form-caption">Caption Message</p>
 		</div>
 	</div>
 	<div class="col-2">
-		<div class="form-group validation border-colors valid" data-toggle-loading-state>
+		<div class="form-group validation validation-icons border-colors valid" data-toggle-loading-state>
 			<label class="form-label">With <code>.validation</code> class</label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="demoFormSpinner1" type="text" />
 			</div>
 			<p class="form-caption">Caption Message</p>
@@ -782,7 +780,7 @@
 <button class="btn" id="input-spinner-demo-toggle">Toggle Spinner</button>
 </div>
 <div class="demo-code">
-<pre><code class="language-html">&lt;div class=&quot;form-group validation loading&quot;&gt;
+<pre><code class="language-html">&lt;div class=&quot;form-group validation validation-icons loading&quot;&gt;
     &lt;div class=&quot;input-group&quot;&gt;
         &lt;input class=&quot;input&quot; id=&quot;demoFormSpinner1&quot; type=&quot;text&quot; /&gt;
     &lt;/div&gt;
@@ -1094,7 +1092,7 @@
     <div class="container">
         <p class="petal-ver">
             petal.less<br>
-            <b> v0.9.2</b></p>
+            <b> v0.10.0</b></p>
 
         <div class="footer-credits">
             

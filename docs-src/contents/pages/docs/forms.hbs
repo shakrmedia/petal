@@ -395,6 +395,7 @@ list-order: 6
 // checkboxes & radioboxes
 @checkbox-size: 20px;
 @checkbox-border-width: @input-border-width; //2px
+@checkbox-check-thickness: @input-border-width; //2px
 @checkbox-border-radius: 100%;
 @radiobox-border-radius: 100%;
 @checkbox-color: @primary-accent-color;
@@ -609,8 +610,9 @@ list-order: 6
 @input-textarea-font-size: 0.8em;
 @input-label-font-size: 0.8em;
 @input-label-font-weight: 900;
-@input-label-letter-spacing: 2px;
+@input-label-letter-spacing: 0.1em;
 @input-line-height: 1.2;
+@input-caption-font-size: 0.8em;
 ```
 {{/markdown}}
 </div>
@@ -645,7 +647,7 @@ list-order: 6
 	<div class="col-2">
 		<div class="form-group validation validation-icons valid">
 			<label class="form-label" for="validationDemoFormUsername">Username</label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="validationDemoFormUsername" type="text" />
 			</div>
 			<p class="form-caption">Username is available!</p>
@@ -653,7 +655,7 @@ list-order: 6
 
 		<div class="form-group validation validation-icons warning">
 			<label class="form-label" for="validationDemoFormName">Name</label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="validationDemoFormName" type="text" />
 			</div>
 			<p class="form-caption">That's a strange name...</p>
@@ -661,39 +663,32 @@ list-order: 6
 
 		<div class="form-group validation validation-icons error">
 			<label class="form-label" for="validationDemoFormPassword">Password</label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="validationDemoFormPassword" type="password" />
 			</div>
 			<p class="form-caption">Invalid Password.</p>
 		</div>
 	</div>
 </div>
+
 </div>
 <div class="demo-code">
 {{#markdown}}
 ``` html
+<!-- Just border colors -->
 <div class="form-group validation valid">
-	<label class="form-label" for="username">Username</label>
-	<div class="input-group">
-		<input class="input" id="username" type="text" />
-	</div>
+	<label class="form-label" for="username">Username</label>	
+	<input class="input" id="username" type="text" />
 	<p class="form-caption">Username is available!</p>
 </div>
 
-<div class="form-group validation warning">
-	<label class="form-label" for="name">Name</label>
-	<div class="input-group">
-		<input class="input" id="name" type="text" />
+<!-- With validation icons -->
+<div class="form-group validation validation-icons valid">
+	<label class="form-label" for="username">Username</label>
+	<div class="input-wrap">
+		<input class="input" id="username" type="text" />
 	</div>
-	<p class="form-caption">That's a strange name...</p>
-</div>
-
-<div class="form-group validation error">
-	<label class="form-label" for="password">Password</label>
-	<div class="input-group">
-		<input class="input" id="password" type="password" />
-	</div>
-	<p class="form-caption">Invalid Password.</p>
+	<p class="form-caption">Username is available!</p>
 </div>
 ```
 {{/markdown}}
@@ -702,9 +697,12 @@ list-order: 6
 <p>Petal offers validation state styles for form inputs. Add <code>.validation</code> class and appropriate state classes <code>.valid</code>, <code>.warning</code>, <code>.error</code> classes to <code>.form-group</code> to override border colors. You need to use custom JavaScript for actual validation of contents and append appropriate state classes to HTML elements.</p>
 
 <h5>Feedback Icons</h5>
-<p>Additionally, you can display feedback icons at the right of input boxes along with accented border colors. Add <code>.validation-icons</code> class on form group, then place the <code>input</code> inside an <code>.input-group</code> and the icons will appear.</p>
+<p>To show feedback icons at the right side of input boxes, add <code>.validation-icons</code> class on form-group, then wrap the <code>input</code> with an <code>.input-wrap</code>. Padding will be automatically added to the input to compensate for space where the icon will be displayed.</p>
 
-<p>To compensate for the spaces the icons take up, the state classes will append additional padding on the right side of the input box. Note that if the input box does not have a set <code>width</code> value or has <code>width: auto;</code>, (for example, when it's in an <code>.form-inline</code>), the input box width will visually shift when the icons or spinners are added. Make sure you manually set the widths or use full-width form groups if you don't want this.</p>
+<div class="alert accent">
+	<span class="alert-icon"><i class="petalicon petalicon-info"></i></span>
+	<p class="alert-text">In versions prior to 0.10.0, <code>.input-group</code> was used for wrapping inputs. This caused problems when nesting inputs in input-groups combined with inline buttons, so it was changed to <code>.input-wrap</code>. If you've upgraded to 0.10.0+ and validation icons don't appear anymore, just change the existing <code>.input-group</code> to <code>.input-wrap</code>.</p>
+</div>
 
 <h5>Colored Caption Texts</h5>
 <p>Caption message texts (<code>.form-caption</code>) inside a form group with the validation classes will be also colored following the the validation states.</p>
@@ -758,16 +756,16 @@ list-order: 6
 	<div class="col-2">
 		<div class="form-group" data-toggle-loading-state>
 			<label class="form-label">Standalone <code>.loading</code></label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="demoFormSpinner2" type="text" />
 			</div>
 			<p class="form-caption">Caption Message</p>
 		</div>
 	</div>
 	<div class="col-2">
-		<div class="form-group validation border-colors valid" data-toggle-loading-state>
+		<div class="form-group validation validation-icons border-colors valid" data-toggle-loading-state>
 			<label class="form-label">With <code>.validation</code> class</label>
-			<div class="input-group">
+			<div class="input-wrap">
 				<input class="input" id="demoFormSpinner1" type="text" />
 			</div>
 			<p class="form-caption">Caption Message</p>
@@ -779,7 +777,7 @@ list-order: 6
 <div class="demo-code">
 {{#markdown}}
 ``` html
-<div class="form-group validation loading">
+<div class="form-group validation validation-icons loading">
 	<div class="input-group">
 		<input class="input" id="demoFormSpinner1" type="text" />
 	</div>
