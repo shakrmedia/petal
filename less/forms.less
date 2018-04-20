@@ -653,7 +653,7 @@ input[type="radio"].radiobox + label　{
 		height: @checkbox-size;
 		//background-image: data-uri('../assets/checkmark.svg');
 
-		@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="@{color-d1}" d="M2 8l2-2 3 3 6-6 2 2-8 8z"/></svg>');
+		@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="@{color-d1}" stroke-width="@{checkbox-check-thickness}" d="M3 7l4 4 7-7" vector-effect="non-scaling-stroke"/></svg>');
 		background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 
 		background-size: @checkbox-size @checkbox-size;
@@ -669,7 +669,7 @@ input[type="radio"].radiobox + label　{
 
 	& when (@include-dark = true) {
 		.dark &:after {
-			@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="@{color-l1}" d="M2 8l2-2 3 3 6-6 2 2-8 8z"/></svg>');
+			@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="@{color-l1}" stroke-width="@{checkbox-check-thickness}" d="M3 7l4 4 7-7" vector-effect="non-scaling-stroke"/></svg>');
 			background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 		}
 	}
@@ -681,7 +681,7 @@ input[type="radio"].radiobox + label　{
 	&:after {
 		width: @checkbox-size;
 		height: @checkbox-size;
-		padding: 5px;
+		padding: (@checkbox-size / 4);
 		transform: scale(0);
 		background-color: @color-d1;
 	}
