@@ -3,3 +3,5 @@ _ignore/
 _dist/
 build/
 /index.html
+yarn.lock
+package-lock.json
