@@ -247,8 +247,9 @@ textarea.input {
 .form-group.validation {
 	position: relative;
 
-	.input-group {
+	.input-wrap {
 		position: relative;
+		width: 100%;
 	}
 
 	input.input {
@@ -265,7 +266,7 @@ textarea.input {
 			}
 		}
 
-		.input-group:after {
+		.input-wrap:after {
 			content: "";
 			display: inline-block;
 			position: absolute;
@@ -307,7 +308,7 @@ textarea.input {
 		}
 
 		&.validation-icons {
-			.input-group:after {
+			.input-wrap:after {
 				.petalicon;
 				.petalicon-check;
 				color: @okay-color;
@@ -333,7 +334,7 @@ textarea.input {
 		}
 
 		&.validation-icons {
-			.input-group:after {
+			.input-wrap:after {
 				.petalicon;
 				.petalicon-warning;
 				color: @warning-color;
@@ -358,7 +359,7 @@ textarea.input {
 		}
 
 		&.validation-icons {
-			.input-group:after {
+			.input-wrap:after {
 				.petalicon;
 				.petalicon-exclamation;
 				color: @danger-color;
@@ -375,8 +376,9 @@ textarea.input {
 .form-group.loading {
 	position: relative;
 
-	.input-group {
+	.input-wrap {
 		position: relative;
+		width: 100%;
 	}
 
 	input.input,
@@ -384,10 +386,10 @@ textarea.input {
 		padding-right: 30px;
 	}
 
-	&.valid .input-group:after, 
-	&.warning .input-group:after,
-	&.error .input-group:after,
-	.input-group:after {
+	&.valid .input-wrap:after, 
+	&.warning .input-wrap:after,
+	&.error .input-wrap:after,
+	.input-wrap:after {
 		content: "";
 		display: inline-block;
 		position: absolute;
