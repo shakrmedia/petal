@@ -12,8 +12,8 @@ Petal is fully coded on LESS from scratch.
 
 ## Setting up Petal in your project
 ```
-https://petalcdn.shakr.com/edge/petal.css
-https://petalcdn.shakr.com/edge/petal.min.css
+https://cdn.rawgit.com/shakrmedia/petal/c23361bf/dist/petal.css
+https://cdn.rawgit.com/shakrmedia/petal/c23361bf/dist/petal.min.css
 ```
 Use the CDN links above for a quick slap-on usage.
 
