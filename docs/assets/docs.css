@@ -4671,6 +4671,9 @@ body {
   color: #333;
   padding: 0;
 }
+body.dark {
+  background-color: #151515;
+}
 .content-wrap {
   padding-top: 60px;
   min-height: 600px;
@@ -4927,6 +4930,7 @@ footer .petal-ver {
 }
 #content-pane.landing {
   padding: 0;
+  max-width: 100%;
 }
 .hero {
   height: auto;
