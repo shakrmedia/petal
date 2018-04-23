@@ -1,14 +1,11 @@
-<header id="site-header">
-    <div class="container">
-        <a class="logo-link" href="{{relative page.dest "docs/./"}}"><span class="logo"></span><span class="text-label">Petal</span></a>
-        <nav>
-            <ul>
-                <li{{#is area "start"}} class="active"{{/is}}><a href="{{relative page.dest "docs/start"}}/">Get Started</a></li>
-                <li{{#is area "docs"}} class="active"{{/is}}><a href="{{relative page.dest "docs/docs"}}/">Docs</a></li>
-            </ul>
-        </nav>
+<header id="site-header">    
+    <a class="logo-link" href="{{relative page.dest "docs/./"}}"><span class="logo"></span><span class="text-label">Petal</span></a>
+    <nav>
+        <ul>
+            <li{{#is area "start"}} class="active"{{/is}}><a href="{{relative page.dest "docs/start"}}/">Get Started</a></li>
+            <li{{#is area "docs"}} class="active"{{/is}}><a href="{{relative page.dest "docs/docs"}}/">Docs</a></li>
+        </ul>
+    </nav>
 
-        <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
-
-    </div>
+    <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
 </header>

@@ -2,8 +2,8 @@
 layout: default-layout.hbs
 ---
 
-<div class="nav-pane">
-	<nav id="sidenav">
+<div id="nav-pane">
+	<nav id="sidenav" class="sticky">
 		{{#is area "start"}}
 			<ul>
 				{{#withSort pages "data.list-order"}}
@@ -45,7 +45,7 @@ layout: default-layout.hbs
 </div>
 
 <div id="content-pane">
-	<div class="container">
+	<div class="container stretch limit-width">
 		<section>
 			{{> body }}
 			

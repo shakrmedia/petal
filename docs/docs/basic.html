@@ -35,71 +35,23 @@
 
 <body>
 
-<header id="site-header">
-    <div class="container">
-        <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
-        <nav>
-            <ul>
-                <li><a href="../start/">Get Started</a></li>
-                <li class="active"><a href="../docs/">Docs</a></li>
-            </ul>
-        </nav>
+<header id="site-header">    
+    <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
+    <nav>
+        <ul>
+            <li><a href="../start/">Get Started</a></li>
+            <li class="active"><a href="./">Docs</a></li>
+        </ul>
+    </nav>
 
-        <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
-
-    </div>
+    <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
 </header>
 <div id="top" class="content-wrap">
 	
 
-<div class="container">
-<div class="row">
-	<div class="col-4 colspan-3">
-		<section>
-			
+<div id="nav-pane">
+	<nav id="sidenav" class="sticky">
 
-<div class="section-header">
-	<h2 id="section-layout">Basic</h2>
-	<p class="sub">
-		<span class="file-ref">basic.less</span>
-	</p>
-</div>
-
-<h4>Base Font sizes</h4>
-<p>The <code>basic.less</code> file includes styles for the <code>html</code> and <code>body</code> tags, setting up the base style for the global font-family and font-size. <code>html</code>'s font size follows the value set by variable <code>@base-font-size</code> (default: 16px), and <code>body</code> font size is set to <code>1rem</code>. The header tags (<code>h1</code>,<code>h2</code>...) defined in <a href="typography.html">typography.less</a> have font sizes set with <code>rem</code> units as well so it's important that you set an appropriate font size for your root <code>html</code> tag.</p>
-
-<br>
-
-<h4>Important: <code>border-box</code> required</h4>
-<p>Petal bases all styles' sizings on the <code>border-box</code> CSS box model.</p>
-
-
-<div class="demo-code">
-<pre><code class="language-less">* {
-    box-sizing: border-box;
-}</code></pre>
-</div>
-
-<p>The <code>box-sizing</code> property is declared for all elements (<code>*</code>) inside <code>basic.less</code> file, so it's important that you include this part of code by either importing <code>basic.less</code> or manually setting the property for Petal to ensure everything looks as intended.</p>
-
-<br>
-
-<h4>Dark style variants</h4>
-<p>Many of the UI elements provided in Petal include additional 'dark' style variants with them. The dark variants add slight modifications to existing styles to make them better appear on darker backgrounds. For example, a button's border color will appear lighter instead of darker when on a dark background.</p>
-
-<p>Click on the 'Toggle Light/Dark' button on the sidebar of this document anytime to see how UI elements look on dark backgrounds. The background color of the demo panels (where applicable) will be inverted for the demonstration.</p>
-
-<p>If you are not planning to use dark styles in your project (if you only have bright backgrounds), you can turn it off by setting the <code>@include-dark</code> variable to <code>false</code>. When this is switched off, the relevant code will not be included in compiled code thus saving some file size.</p>
-			
-			<div class="section-footer">
-				<a href="#top" class="totop">Back to top</a>			</div>
-		</section>
-	</div>
-	<div class="col-4">
-
-
-		<nav id="sidenav" class="sticky">
-			
 			<h5 class="list-header">Introduction</h5>
 			<ul>
 					<li><a href="index.html">Welcome to the docs</a></li>
@@ -126,45 +78,84 @@
 					<li><a href="petalicon.html">Petalicons</a></li>
 			</ul>
 			
-			<p>
-				<a href="#top" class="totop">Back to top</a>			</p>
+				<p>
+					<a href="#top" class="totop">Back to top</a>				</p>
 
-			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
-		</nav> 
-	</div>
+				<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
+	</nav>
 </div>
-</div><!-- container end -->
 
+<div id="content-pane">
+	<div class="container stretch limit-width">
+		<section>
+			
+
+<div class="section-header">
+	<h2 id="section-layout">Basic</h2>
+	<p class="sub">
+		<span class="file-ref">basic.less</span>
+	</p>
+</div>
+
+<h4>Base Font sizes</h4>
+<p>The <code>basic.less</code> file includes styles for the <code>html</code> and <code>body</code> tags, setting up the base style for the global font-family and font-size. <code>html</code>'s font size follows the value set by variable <code>@base-font-size</code> (default: 16px), and <code>body</code> font size is set to <code>1rem</code>. The header tags (<code>h1</code>,<code>h2</code>...) defined in <a href="typography.html">typography.less</a> have font sizes set with <code>rem</code> units as well so it's important that you set an appropriate font size for your root <code>html</code> tag.</p>
+
+<br>
+
+<h4>Important: <code>border-box</code> required</h4>
+<p>Petal bases all styles' sizings on the <code>border-box</code> CSS box model.</p>
+
+
+<div class="demo-code">
+<pre><code class="language-less">* {
+    box-sizing: border-box;
+}
+</code></pre>
+</div>
+
+<p>The <code>box-sizing</code> property is declared for all elements (<code>*</code>) inside <code>basic.less</code> file, so it's important that you include this part of code by either importing <code>basic.less</code> or manually setting the property for Petal to ensure everything looks as intended.</p>
+
+<br>
+
+<h4>Dark style variants</h4>
+<p>Many of the UI elements provided in Petal include additional 'dark' style variants with them. The dark variants add slight modifications to existing styles to make them better appear on darker backgrounds. For example, a button's border color will appear lighter instead of darker when on a dark background.</p>
+
+<p>Click on the 'Toggle Light/Dark' button on the sidebar of this document anytime to see how UI elements look on dark backgrounds. The background color of the demo panels (where applicable) will be inverted for the demonstration.</p>
+
+<p>If you are not planning to use dark styles in your project (if you only have bright backgrounds), you can turn it off by setting the <code>@include-dark</code> variable to <code>false</code>. When this is switched off, the relevant code will not be included in compiled code thus saving some file size.</p>
+			
+			<div class="section-footer">
+				<a href="#top" class="totop">Back to top</a>			</div>
+		</section>
+	</div><!-- container end -->
+</div>
 </div>
 
 <footer id="site-footer" class="stretch">
-    <div class="container">
-        <p class="petal-ver">
-            petal.less<br>
-            <b> v0.10.0</b></p>
+    <p class="petal-ver">
+        petal.less<br>
+        <b> v0.10.0</b></p>
 
-        <div class="footer-credits">
-            
-            <a href="https://www.shakr.com" class="shakr-logo">
-                <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
-                    <g id="fills-cut">
-                        <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
-                            c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
-                            C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
-                        <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
-                            c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
-                            c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
-                        <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
-                            c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
-                            c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
-                    </g>
-                </svg>
-            </a>
+    <div class="footer-credits">
+        
+        <a href="https://www.shakr.com" class="shakr-logo">
+            <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
+                <g id="fills-cut">
+                    <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
+                        c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
+                        C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
+                    <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
+                        c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
+                        c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
+                    <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
+                        c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
+                        c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
+                </g>
+            </svg>
+        </a>
 
-            <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
-            ©2015-2018 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
-        </div>
-
+        <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
+        ©2015-2018 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
     </div>
 </footer>
 </body>

@@ -5,16 +5,24 @@ body {
 }
 
 .container {
-    @media screen and (max-width: (980px + 40)) {
-        width: 100%;
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+
 }
 
 .content-wrap {
     padding-top: 60px;
     min-height: 600px;
+    display: flex;
+
+    #nav-pane {
+        flex: 0 0 auto;
+        width: 240px;
+        background-color: #eee;
+    }
+
+    #content-pane {
+        flex: 1 1 auto;
+        padding: 30px 20px;
+    }
 }
 
 // petal logo

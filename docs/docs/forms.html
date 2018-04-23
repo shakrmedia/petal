@@ -35,26 +35,58 @@
 
 <body>
 
-<header id="site-header">
-    <div class="container">
-        <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
-        <nav>
-            <ul>
-                <li><a href="../start/">Get Started</a></li>
-                <li class="active"><a href="../docs/">Docs</a></li>
-            </ul>
-        </nav>
+<header id="site-header">    
+    <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
+    <nav>
+        <ul>
+            <li><a href="../start/">Get Started</a></li>
+            <li class="active"><a href="./">Docs</a></li>
+        </ul>
+    </nav>
 
-        <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
-
-    </div>
+    <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
 </header>
 <div id="top" class="content-wrap">
 	
 
-<div class="container">
-<div class="row">
-	<div class="col-4 colspan-3">
+<div id="nav-pane">
+	<nav id="sidenav" class="sticky">
+
+			<h5 class="list-header">Introduction</h5>
+			<ul>
+					<li><a href="index.html">Welcome to the docs</a></li>
+					<li><a href="variables.html">Variables</a></li>
+					<li><a href="javascript.html">About JavaScript</a></li>
+			</ul>
+
+			<h5 class="list-header">Components</h5>
+			<ul>
+					<li><a href="basic.html">Basic</a></li>
+					<li><a href="layouts.html">Layout</a></li>
+					<li><a href="typography.html">Typography</a></li>
+					<li><a href="utilities.html">Utilities</a></li>
+					<li><a href="colors.html">Colors</a></li>
+					<li><a href="buttons.html">Buttons</a></li>
+					<li class="active"><a href="forms.html">Form Elements</a></li>
+					<li><a href="progress.html">Progress</a></li>
+					<li><a href="tables.html">Tables</a></li>
+					<li><a href="paging.html">Paging</a></li>
+					<li><a href="panels.html">Panels</a></li>
+					<li><a href="tabs.html">Tabs</a></li>
+					<li><a href="alerts.html">Alerts</a></li>
+					<li><a href="modals.html">Modals</a></li>
+					<li><a href="petalicon.html">Petalicons</a></li>
+			</ul>
+			
+				<p>
+					<a href="#top" class="totop">Back to top</a>				</p>
+
+				<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
+	</nav>
+</div>
+
+<div id="content-pane">
+	<div class="container stretch limit-width">
 		<section>
 			
 
@@ -125,7 +157,8 @@
     &lt;div class=&quot;form-group&quot;&gt;
         &lt;a class=&quot;btn&quot;&gt;Submit&lt;/a&gt;
     &lt;/div&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;
+</code></pre>
 </div>
 
 <p>Include <code>&lt;label&gt;</code>s and <code>&lt;input&gt;</code>s inside a <code>.form-group</code> to have them stretch across the container as block elements.</p>
@@ -191,7 +224,8 @@
             &lt;input class=&quot;input&quot; id=&quot;demoForm2lastname&quot; type=&quot;text&quot; /&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;
+</code></pre>
 </div>
 
 <p>Append <code>.form-inline</code> class to a parent container to put <code>.form-groups</code> in one line. You need to apply paddings and margins manually.</p>
@@ -259,18 +293,19 @@
         &lt;div class=&quot;col-5&quot;&gt;
             &lt;label class=&quot;form-label&quot; for=&quot;demoFormHorizontalComments&quot;&gt;Comments&lt;/label&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;col-5 colspan-4&quot;&gt;        
+        &lt;div class=&quot;col-5 colspan-4&quot;&gt;       
             &lt;textarea class=&quot;input&quot; name=&quot;demoFormHorizontalComments&quot; id=&quot;demoFormHorizontalComments&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;form-group&quot;&gt;
         &lt;div class=&quot;col-5&quot;&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;col-5 colspan-4&quot;&gt;        
+        &lt;div class=&quot;col-5 colspan-4&quot;&gt;       
             &lt;a class=&quot;btn&quot;&gt;Submit&lt;/a&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;
+</code></pre>
 </div>
 
 <p>Add a <code>.form-horizontal</code> class to the enclosing <code>&lt;form&gt;</code> or <code>&lt;div&gt;</code> for a row-and-column layout. Then insert <code>.col-x</code> columns as you would for an ordinary column layout. You don't need to add <code>.row</code>s here because the <code>.form-group</code>s inside a horizontal forms automatically gain the styles that the <code>.row</code>s have.</p>
@@ -342,7 +377,8 @@
             &lt;/span&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/form&gt;</code></pre>
+&lt;/form&gt;
+</code></pre>
 </div>
 
 <p>Input groups are used when you want to put form elements like input fields, buttons or text as addons in one line blocks. <code>.input-group</code> uses flexbox for layout so child components will stretch appropriately and keep same height if any sibling element happens to be larger than the other.</p>
@@ -412,7 +448,8 @@
 
 &lt;!-- Radiobox --&gt;
 &lt;input class=&quot;radiobox&quot; type=&quot;radio&quot; name=&quot;demoRadio&quot; id=&quot;demoRadio1&quot; checked&gt;
-&lt;label for=&quot;demoRadio1&quot;&gt;Radiobox 1&lt;/label&gt;</code></pre>
+&lt;label for=&quot;demoRadio1&quot;&gt;Radiobox 1&lt;/label&gt;
+</code></pre>
 </div>
 
 <p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
@@ -430,7 +467,8 @@
 @checkbox-border-radius: 100%;
 @radiobox-border-radius: 100%;
 @checkbox-color: @primary-accent-color;
-@checkbox-disable-transition: false;</code></pre>
+@checkbox-disable-transition: false;
+</code></pre>
 </div>
 <br>
 
@@ -528,7 +566,8 @@
         &lt;/div&gt;
         &lt;span class=&quot;chk-switch-label&quot;&gt;ON&lt;/span&gt;
     &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
 </div>
 
 <p>"Switch" style toggles using checkboxes. <code>span.chk-switch-label</code> is optional. You must have the <code>.chk-switch</code> and the markup inside for the switch to work. Wrap the label and switch with <code>.chk-switch-wrap</code> if you want to center-align the text and the switch.</p>
@@ -553,7 +592,8 @@
 @chk-switch-border-radius: @checkbox-size;
 @chk-switch-color: @primary-accent-color;
 @chk-switch-disable-transition: false;
-@chk-switch-disable-shadows: false;</code></pre>
+@chk-switch-disable-shadows: false;
+</code></pre>
 </div>
 
 
@@ -631,7 +671,8 @@
 @input-label-font-weight: 900;
 @input-label-letter-spacing: 0.1em;
 @input-line-height: 1.2;
-@input-caption-font-size: 0.8em;</code></pre>
+@input-caption-font-size: 0.8em;
+</code></pre>
 </div>
 
 <br>
@@ -692,7 +733,7 @@
 <div class="demo-code">
 <pre><code class="language-html">&lt;!-- Just border colors --&gt;
 &lt;div class=&quot;form-group validation valid&quot;&gt;
-    &lt;label class=&quot;form-label&quot; for=&quot;username&quot;&gt;Username&lt;/label&gt;    
+    &lt;label class=&quot;form-label&quot; for=&quot;username&quot;&gt;Username&lt;/label&gt;   
     &lt;input class=&quot;input&quot; id=&quot;username&quot; type=&quot;text&quot; /&gt;
     &lt;p class=&quot;form-caption&quot;&gt;Username is available!&lt;/p&gt;
 &lt;/div&gt;
@@ -704,7 +745,8 @@
         &lt;input class=&quot;input&quot; id=&quot;username&quot; type=&quot;text&quot; /&gt;
     &lt;/div&gt;
     &lt;p class=&quot;form-caption&quot;&gt;Username is available!&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
 </div>
 
 <p>Petal offers validation state styles for form inputs. Add <code>.validation</code> class and appropriate state classes <code>.valid</code>, <code>.warning</code>, <code>.error</code> classes to <code>.form-group</code> to override border colors. You need to use custom JavaScript for actual validation of contents and append appropriate state classes to HTML elements.</p>
@@ -733,7 +775,8 @@
 <pre><code class="language-html">&lt;div class=&quot;form-group&quot;&gt;
     &lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; class=&quot;checkbox validation error&quot; required&gt;
     &lt;label for=&quot;checkbox&quot;&gt;I agree to terms of service.&lt;/label&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
 </div>
 <p>For checkboxes and radioboxes, only <code>.error</code> state style is available. You can use this when you want to highlight checkboxes as invalid when they have <code>required</code> attribute and user should check (or uncheck) to proceed. Note that unlike form inputs, checkboxes take the <code>.validation.error</code> class on <code>&lt;input&gt;</code> rather than on parent <code>.form-group</code>s. (In other words, checkboxes and radioboxes do not require parent form-groups for validation style.</p>
 
@@ -746,7 +789,8 @@
 
 <h4>Customizable options</h4>
 <div class="demo-code">
-<pre><code class="language-less">@input-html5-validation-styles: true;</code></pre>
+<pre><code class="language-less">@input-html5-validation-styles: true;
+</code></pre>
 </div>
 
 <br>
@@ -784,7 +828,8 @@
     &lt;div class=&quot;input-group&quot;&gt;
         &lt;input class=&quot;input&quot; id=&quot;demoFormSpinner1&quot; type=&quot;text&quot; /&gt;
     &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
 </div>
 
 <p>When you need a loading indicator inside a input box. Place the <code>input</code> inside an <code>.input-group</code>, and append the <code>.loading</code> class on the input group when you want to display the spinner.</p>
@@ -796,7 +841,8 @@
 <h4>Customizable options</h4>
 <div class="demo-code">
 <pre><code class="language-less">@input-spinner-color: @primary-accent-color;
-@input-spinner-animation-duration: 0.4s;</code></pre>
+@input-spinner-animation-duration: 0.4s;
+</code></pre>
 </div>
 
 
@@ -833,7 +879,8 @@
 
     &lt;input type=&quot;radio&quot; name=&quot;demoSegmented&quot; id=&quot;demoSegmented4&quot; disabled&gt;
     &lt;label for=&quot;demoSegmented4&quot;&gt;&lt;div class=&quot;btn hollow&quot;&gt;Option 4&lt;/div&gt;&lt;/label&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
 </div>
 
 <p>This method uses radio buttons to make segmented button groups toggle function work without using JavaScript.</p>
@@ -893,7 +940,8 @@
     &lt;option&gt;sit&lt;/option&gt;
     &lt;option&gt;amet&lt;/option&gt;
     &lt;option&gt;consectetur&lt;/option&gt;
-&lt;/select&gt;</code></pre>
+&lt;/select&gt;
+</code></pre>
 </div>
 
 <p>Use <code>.select</code> class on <code>&lt;select&gt;</code> to style the selectbox. Without JavaScript however, styling a selectbox is very limited and so only the dropdown box will be styled. Dropdown menu will follow default native styles depending on your browser/platform and will differ in appearance. For consistent styling across all platforms, use the JavaScript method below.</p>
@@ -1011,7 +1059,8 @@
     &lt;option&gt;sit&lt;/option&gt;
     &lt;option&gt;amet&lt;/option&gt;
     &lt;option&gt;consectetur&lt;/option&gt;
-&lt;/select&gt;</code></pre>
+&lt;/select&gt;
+</code></pre>
 </div>
 
 <p>To style a selectbox completely, JavaScript must be used to replace existing <code>&lt;select&gt;</code> because a <code>&lt;select&gt;</code> element is very limited in terms of CSS. Petal implemented selectbox styles using <a href="https://github.com/Formstone/Selecter">Selecter</a> jQuery Plugin by Ben Plum (MIT License). The javascript file is included as-is in <b>petal.js</b>, but the CSS code is completely customized to fit the Petal style.</p>
@@ -1037,7 +1086,8 @@
 @selectbox-border-radius: @input-border-radius;
 @selectbox-color: @primary-accent-color;
 @selectbox-disable-shadows: false;
-@include-selecter: true;</code></pre>
+@include-selecter: true;
+</code></pre>
 </div>
 
 
@@ -1045,77 +1095,35 @@
 			<div class="section-footer">
 				<a href="#top" class="totop">Back to top</a>			</div>
 		</section>
-	</div>
-	<div class="col-4">
-
-
-		<nav id="sidenav" class="sticky">
-			
-			<h5 class="list-header">Introduction</h5>
-			<ul>
-					<li><a href="index.html">Welcome to the docs</a></li>
-					<li><a href="variables.html">Variables</a></li>
-					<li><a href="javascript.html">About JavaScript</a></li>
-			</ul>
-
-			<h5 class="list-header">Components</h5>
-			<ul>
-					<li><a href="basic.html">Basic</a></li>
-					<li><a href="layouts.html">Layout</a></li>
-					<li><a href="typography.html">Typography</a></li>
-					<li><a href="utilities.html">Utilities</a></li>
-					<li><a href="colors.html">Colors</a></li>
-					<li><a href="buttons.html">Buttons</a></li>
-					<li class="active"><a href="forms.html">Form Elements</a></li>
-					<li><a href="progress.html">Progress</a></li>
-					<li><a href="tables.html">Tables</a></li>
-					<li><a href="paging.html">Paging</a></li>
-					<li><a href="panels.html">Panels</a></li>
-					<li><a href="tabs.html">Tabs</a></li>
-					<li><a href="alerts.html">Alerts</a></li>
-					<li><a href="modals.html">Modals</a></li>
-					<li><a href="petalicon.html">Petalicons</a></li>
-			</ul>
-			
-			<p>
-				<a href="#top" class="totop">Back to top</a>			</p>
-
-			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
-		</nav> 
-	</div>
+	</div><!-- container end -->
 </div>
-</div><!-- container end -->
-
 </div>
 
 <footer id="site-footer" class="stretch">
-    <div class="container">
-        <p class="petal-ver">
-            petal.less<br>
-            <b> v0.10.0</b></p>
+    <p class="petal-ver">
+        petal.less<br>
+        <b> v0.10.0</b></p>
 
-        <div class="footer-credits">
-            
-            <a href="https://www.shakr.com" class="shakr-logo">
-                <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
-                    <g id="fills-cut">
-                        <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
-                            c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
-                            C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
-                        <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
-                            c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
-                            c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
-                        <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
-                            c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
-                            c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
-                    </g>
-                </svg>
-            </a>
+    <div class="footer-credits">
+        
+        <a href="https://www.shakr.com" class="shakr-logo">
+            <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
+                <g id="fills-cut">
+                    <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
+                        c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
+                        C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
+                    <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
+                        c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
+                        c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
+                    <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
+                        c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
+                        c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
+                </g>
+            </svg>
+        </a>
 
-            <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
-            ©2015-2018 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
-        </div>
-
+        <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
+        ©2015-2018 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
     </div>
 </footer>
 </body>

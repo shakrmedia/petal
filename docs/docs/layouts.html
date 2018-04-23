@@ -35,26 +35,58 @@
 
 <body>
 
-<header id="site-header">
-    <div class="container">
-        <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
-        <nav>
-            <ul>
-                <li><a href="../start/">Get Started</a></li>
-                <li class="active"><a href="../docs/">Docs</a></li>
-            </ul>
-        </nav>
+<header id="site-header">    
+    <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
+    <nav>
+        <ul>
+            <li><a href="../start/">Get Started</a></li>
+            <li class="active"><a href="./">Docs</a></li>
+        </ul>
+    </nav>
 
-        <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
-
-    </div>
+    <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
 </header>
 <div id="top" class="content-wrap">
 	
 
-<div class="container">
-<div class="row">
-	<div class="col-4 colspan-3">
+<div id="nav-pane">
+	<nav id="sidenav" class="sticky">
+
+			<h5 class="list-header">Introduction</h5>
+			<ul>
+					<li><a href="index.html">Welcome to the docs</a></li>
+					<li><a href="variables.html">Variables</a></li>
+					<li><a href="javascript.html">About JavaScript</a></li>
+			</ul>
+
+			<h5 class="list-header">Components</h5>
+			<ul>
+					<li><a href="basic.html">Basic</a></li>
+					<li class="active"><a href="layouts.html">Layout</a></li>
+					<li><a href="typography.html">Typography</a></li>
+					<li><a href="utilities.html">Utilities</a></li>
+					<li><a href="colors.html">Colors</a></li>
+					<li><a href="buttons.html">Buttons</a></li>
+					<li><a href="forms.html">Form Elements</a></li>
+					<li><a href="progress.html">Progress</a></li>
+					<li><a href="tables.html">Tables</a></li>
+					<li><a href="paging.html">Paging</a></li>
+					<li><a href="panels.html">Panels</a></li>
+					<li><a href="tabs.html">Tabs</a></li>
+					<li><a href="alerts.html">Alerts</a></li>
+					<li><a href="modals.html">Modals</a></li>
+					<li><a href="petalicon.html">Petalicons</a></li>
+			</ul>
+			
+				<p>
+					<a href="#top" class="totop">Back to top</a>				</p>
+
+				<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
+	</nav>
+</div>
+
+<div id="content-pane">
+	<div class="container stretch limit-width">
 		<section>
 			
 
@@ -68,6 +100,17 @@
 <h3>Container</h3>
 <p>A <code>.container</code> is the top-most wrapper for your main contents. By default a container has a fixed value (980px) to limit the content width. Modify the <code>@container-width</code> variable to change the width. A container has the left and right margins set to <code>auto</code> that will center the container inside its parent.</p>
 
+<div class="demo-panel container-demo">
+	<div class="demo-section s01">
+		<span class="label">header</span>
+		<div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
+	</div>
+
+	<div class="demo-section s02">
+		<span class="label">section</span>
+		<div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
+	</div>
+</div>
 <div class="demo-code">
 <pre><code class="language-html">&lt;header&gt;
     &lt;div class=&quot;container&quot;&gt;
@@ -78,12 +121,55 @@
     &lt;div class=&quot;container&quot;&gt;
         Section content
     &lt;/div&gt;
-&lt;/section&gt;</code></pre>
+&lt;/section&gt;
+</code></pre>
 </div>
 
 <p>For example, to create a common landing-page layout where you have multiple section divided vertically that differ in background colors, you would have parent section elements that stretch horizontally, then inside you would have a container that wraps the contents.</p>
 
-<p>If for some reason you need to override the container width and stretch it 100% of the parent width, add <code>.stretch</code> to it. The <code>.stretch</code> class also works independently. (<code>width: 100%</code> is the only property it has.)</p>
+<h4>Fluid-width containers</h4>
+<div class="demo-panel container-demo">
+	<div class="demo-section">
+		<div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
+	</div>
+
+	<div class="demo-section">
+		<div class="demo-container stretch"><span class="label">.container.stretch</span>(100%)</div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;section&gt;
+    &lt;div class=&quot;container stretch&quot;&gt;
+        Section content
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+</div>
+
+<p>If you want your container to stretch to 100% of the parent width, add <code>.stretch</code> class on it. The <code>.stretch</code> class also works independently. (<code>width: 100%</code> is the only property it has.)</p>
+
+<h4>Fluid, but with limited-width containers</h4>
+<div class="demo-panel container-demo">
+	<div class="demo-section">
+		<div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
+	</div>
+	<div class="demo-section" style="width: 70%">
+		<div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
+	</div>
+	<div class="demo-section" style="width: 40%">
+		<div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
+	</div>
+</div>
+<div class="demo-code">
+<pre><code class="language-html">&lt;section&gt;
+    &lt;div class=&quot;container stretch limit-width&quot;&gt;
+        Section content
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+</div>
+
+<p>If you want your container to stretch to 100% of the parent width but also be limited to a specific width, add <code>.limit-width</code> class on a <code>.container.stretch</code>. The <code>@container-max-width</code> variable is used for defining <code>max-width</code> for the container. By default, it's set to the same value as the container width (980px).</p>
 
 <br>
 
@@ -96,30 +182,32 @@
 
 <br>
 
-<div class="row borders mb-10">
-	<div class="col-1 bg-green-l2"><span>.col-1</span></div>
-</div>
-<div class="row borders mb-10">
-	<div class="col-2 bg-green-l2"><span>.col-2</span></div>
-	<div class="col-2 bg-green-l2"><span>.col-2</span></div>
-</div>
-<div class="row borders mb-10">
-	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-	<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-</div>
-<div class="row borders mb-10">
-	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-	<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-</div>
-<div class="row borders mb-10">
-	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-	<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+<div class="demo-panel columns-demo">
+	<div class="row borders mb-10">
+		<div class="col-1 bg-green-l2"><span>.col-1</span></div>
+	</div>
+	<div class="row borders mb-10">
+		<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+		<div class="col-2 bg-green-l2"><span>.col-2</span></div>
+	</div>
+	<div class="row borders mb-10">
+		<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+		<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+		<div class="col-3 bg-green-l2"><span>.col-3</span></div>
+	</div>
+	<div class="row borders mb-10">
+		<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+		<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+		<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+		<div class="col-4 bg-green-l2"><span>.col-4</span></div>
+	</div>
+	<div class="row borders mb-10">
+		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
+	</div>
 </div>
 
 <p>Place a div with the <code>.row</code> class, then insert <code>.col-<em>x</em></code> class inside to make columns, where <em>x</em> is the number of columns the row is divided into. (Supports up to 5 columns)</p>
@@ -131,18 +219,20 @@
 <br>
 
 <h5>Spanned columns</h5>
-<div class="row borders mb-10">
-	<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
-	<div class="col-3 bg-blue-l2"><span>.col-3</span></div>
-</div>
-<div class="row borders mb-10">
-	<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
-	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-</div>
-<div class="row borders mb-10">
-	<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-	<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-3</span></div>
+<div class="demo-panel columns-demo">
+	<div class="row borders mb-10">
+		<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
+		<div class="col-3 bg-blue-l2"><span>.col-3</span></div>
+	</div>
+	<div class="row borders mb-10">
+		<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
+		<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+		<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+	</div>
+	<div class="row borders mb-10">
+		<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
+		<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-3</span></div>
+	</div>
 </div>
 
 <p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
@@ -150,26 +240,28 @@
 <br>
 
 <h5>Nesting columns</h5>
-<div class="row borders mb-10">
-	<div class="col-3 bg-blue-l2">
-		<span>.col-3</span>
-		<div class="row borders">
-			<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
-			<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+<div class="demo-panel columns-demo">
+	<div class="row borders mb-10">
+		<div class="col-3 bg-blue-l2">
+			<span>.col-3</span>
+			<div class="row borders">
+				<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+				<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
+			</div>
 		</div>
-	</div>
-	<div class="col-3 bg-green-l2">
-		<span>.col-3</span>
-		<div class="row borders">
-			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-			<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+		<div class="col-3 bg-green-l2">
+			<span>.col-3</span>
+			<div class="row borders">
+				<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+				<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+				<div class="col-3 bg-green-l1"><span>.col-3</span></div>
+			</div>
 		</div>
-	</div>
-	<div class="col-3 bg-red-l2">
-		<span>.col-3</span>
-		<div class="row borders">
-			<div class="col-1 bg-red-l1"><span>.col-1</span></div>
+		<div class="col-3 bg-red-l2">
+			<span>.col-3</span>
+			<div class="row borders">
+				<div class="col-1 bg-red-l1"><span>.col-1</span></div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -250,83 +342,42 @@
 @container-width: 980px;
 @container-padding: 15px;
 @col-method: flex; // flex or float (legacy)
-@col-padding: 15px;</code></pre>
+@col-padding: 15px;
+</code></pre>
 </div>
 			
 			<div class="section-footer">
 				<a href="#top" class="totop">Back to top</a>			</div>
 		</section>
-	</div>
-	<div class="col-4">
-
-
-		<nav id="sidenav" class="sticky">
-			
-			<h5 class="list-header">Introduction</h5>
-			<ul>
-					<li><a href="index.html">Welcome to the docs</a></li>
-					<li><a href="variables.html">Variables</a></li>
-					<li><a href="javascript.html">About JavaScript</a></li>
-			</ul>
-
-			<h5 class="list-header">Components</h5>
-			<ul>
-					<li><a href="basic.html">Basic</a></li>
-					<li class="active"><a href="layouts.html">Layout</a></li>
-					<li><a href="typography.html">Typography</a></li>
-					<li><a href="utilities.html">Utilities</a></li>
-					<li><a href="colors.html">Colors</a></li>
-					<li><a href="buttons.html">Buttons</a></li>
-					<li><a href="forms.html">Form Elements</a></li>
-					<li><a href="progress.html">Progress</a></li>
-					<li><a href="tables.html">Tables</a></li>
-					<li><a href="paging.html">Paging</a></li>
-					<li><a href="panels.html">Panels</a></li>
-					<li><a href="tabs.html">Tabs</a></li>
-					<li><a href="alerts.html">Alerts</a></li>
-					<li><a href="modals.html">Modals</a></li>
-					<li><a href="petalicon.html">Petalicons</a></li>
-			</ul>
-			
-			<p>
-				<a href="#top" class="totop">Back to top</a>			</p>
-
-			<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
-		</nav> 
-	</div>
+	</div><!-- container end -->
 </div>
-</div><!-- container end -->
-
 </div>
 
 <footer id="site-footer" class="stretch">
-    <div class="container">
-        <p class="petal-ver">
-            petal.less<br>
-            <b> v0.10.0</b></p>
+    <p class="petal-ver">
+        petal.less<br>
+        <b> v0.10.0</b></p>
 
-        <div class="footer-credits">
-            
-            <a href="https://www.shakr.com" class="shakr-logo">
-                <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
-                    <g id="fills-cut">
-                        <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
-                            c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
-                            C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
-                        <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
-                            c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
-                            c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
-                        <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
-                            c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
-                            c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
-                    </g>
-                </svg>
-            </a>
+    <div class="footer-credits">
+        
+        <a href="https://www.shakr.com" class="shakr-logo">
+            <svg class="shakr-feathers" version="1.1" viewBox="0 0 800 800">
+                <g id="fills-cut">
+                    <path class="wing red" fill="#F15B67" d="M165.8,579.3c-4.8-20.1-6.9-45.9-6.2-68.9c3-108.1,63.9-206.8,144.9-259.1
+                        c-2.6-16.3-11.5-29.5-26.9-38.5c-40.4-23.6-87.2,4.8-113.6,51.2c-26.4,46.4-39.6,86.4-43.2,136.4c-5.2,69.8,15.3,137.7,50,192.4
+                        C169.6,590.8,167.8,587.7,165.8,579.3z"></path>
+                    <path class="wing green" fill="#A6CE39" d="M169.1,586.3c0-2.8,0.4-5.6,0.9-8.3c1-5.6,15.6-86.8,83.6-160
+                        c60.9-65.3,140.9-104.2,229.8-108.9c11.8-24.5,6.2-46.2-4.2-61.5c-15.2-22-65.2-56-155.6-7.6c-90.4,48.4-160.8,154-164,270.4
+                        c-0.7,23,1.3,48.8,6.2,68.9c2.1,8.9,4,11.8,5.2,13.8c0.1,0.1,0.2,0.3,0.3,0.4C169.9,591.5,169.1,589,169.1,586.3z"></path>
+                    <path class="wing blue" fill="#33A3DC" d="M182.2,599.5c-7.2,0-13.1-5.9-13.1-13.1c0-2.8,0.4-5.6,0.9-8.3
+                        c1-5.6,15.6-86.8,83.6-160c83.2-89.2,202-129.1,330.4-100c113.6,25.7,108,103.6,86,137.2c-22.8,34.8-68.8,53-152.8,45.6
+                        c-71.6-6.3-136-6.4-214,23.2c-58.1,22.1-88.6,48.4-101.9,61.8c-2,2-7.9,8.2-10.8,10.7c-2.1,1.7-4.9,2.9-8,3L182.2,599.5z"></path>
+                </g>
+            </svg>
+        </a>
 
-            <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
-            ©2015-2018 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
-        </div>
-
+        <p>An open source project by <a href="http://shakr.com">Shakr</a><br>
+        ©2015-2018 Shakr. Released under the <a href="http://opensource.org/licenses/MIT"> MIT License</a>.</p>
     </div>
 </footer>
 </body>
