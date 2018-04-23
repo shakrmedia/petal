@@ -6,11 +6,11 @@
 
 module.exports = function(grunt) {
   'use strict';
-  
+
   require("load-grunt-tasks")(grunt, {
     pattern: ['grunt-*']
   });
-  
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
           cwd: "less",
           src: ["petal.less"],
           ext: ".css",
-          dest: "_dist"
+          dest: "dist"
         }]
       }
     },
@@ -82,9 +82,9 @@ module.exports = function(grunt) {
       },
       dist: {
         expand: true,
-        cwd: "_dist",
+        cwd: "dist",
         src: ["petal.css"],
-        dest: "_dist"
+        dest: "dist"
       }
     },
 
@@ -95,11 +95,11 @@ module.exports = function(grunt) {
         dest: "build/petal.min.css"
       },
       dist: {
-        src: "_dist/petal.css",
-        dest: "_dist/petal.min.css"
+        src: "dist/petal.css",
+        dest: "dist/petal.min.css"
       }
     },
-    
+
     // uglify
     uglify: {
       options: {
@@ -111,10 +111,10 @@ module.exports = function(grunt) {
   	  },
       dist: {
         src: ['js/*.js'],
-        dest: '_dist/<%= pkg.codename %>.min.js'
+        dest: 'dist/<%= pkg.codename %>.min.js'
       }
     },
-    
+
     // concat
     concat: {
       petal: {
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
   	  },
       dist: {
         files: {
-        '_dist/<%= pkg.codename %>.js':'dist/*.js'
+        'dist/<%= pkg.codename %>.js':'dist/*.js'
         }
       }
     },
@@ -156,7 +156,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'assets',
           src: ['petalicon.*'],
-          dest: '_dist'
+          dest: 'dist'
         }]
       }
     },
@@ -199,7 +199,7 @@ module.exports = function(grunt) {
           'docs/docs': ['docs-src/contents/pages/docs/*.hbs' ],
         }
       }
-      
+
     },
 
     // Banner
@@ -219,8 +219,8 @@ module.exports = function(grunt) {
           banner: '<%= meta.banner_compact %>'
         },
         src: [
-            "_dist/<%= pkg.codename %>.css",
-            "_dist/<%= pkg.codename %>.min.css",
+            "dist/<%= pkg.codename %>.css",
+            "dist/<%= pkg.codename %>.min.css",
           ]
       }
     },
@@ -247,17 +247,18 @@ module.exports = function(grunt) {
       }
     }
   });
-  
+
   grunt.registerTask('default', [
-    'less:petal', 'less:docs', 
+    'less:petal', 'less:docs',
     'postcss:petal', 'postcss:docs',
-    'cssmin:petal', 
-    'uglify:petal', 'concat:petal', 'usebanner:petal', 
-    'copy:docs_assets', 'copy:docs_js', 
-    'assemble']);
+    'cssmin:petal',
+    'uglify:petal', 'concat:petal', 'usebanner:petal',
+    'copy:docs_assets', 'copy:docs_js',
+    'assemble',
+    'petal-dist']);
   grunt.registerTask('petal', ['less:petal', 'postcss:petal', 'cssmin:petal', 'uglify:petal', 'concat:petal', 'usebanner:petal']);
   grunt.registerTask('petal-dist', ['less:dist', 'postcss:dist', 'cssmin:dist', 'uglify:dist', 'concat:dist', 'usebanner:dist', 'copy:dist']);
   grunt.registerTask('js', ['uglify:petal', 'concat:petal']);
   grunt.registerTask('dev', ['connect', 'watch']);
-  
+
 }

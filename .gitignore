@@ -1,6 +1,5 @@
 node_modules/
 _ignore/
-_dist/
 build/
 /index.html
 yarn.lock
