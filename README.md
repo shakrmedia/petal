@@ -40,9 +40,8 @@ The `dev` task will also run a local webserver based on the `docs` folder. While
 Please view [Releases](https://github.com/shakrmedia/petal/releases) for the changelog.
 
 
-## External projects included in Petal
+## Attribution
 - [normalize.css](https://github.com/necolas/normalize.css) by Nicolas Gallagher & Jonathan Neal : MIT License
-- [Lato font](http://www.google.com/fonts/specimen/Lato) by Łukasz Dziedzic : SIL Open Font License, 1.1
 - [Selecter](https://github.com/Formstone/Selecter) by Ben Plum : MIT License
 
 
