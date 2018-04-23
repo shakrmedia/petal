@@ -5210,6 +5210,9 @@ section .section-footer .datestamp {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.demo-panel .stretch .panel {
+  height: 100%;
+}
 .clabel {
   display: inline-block;
   margin-top: 5px;
