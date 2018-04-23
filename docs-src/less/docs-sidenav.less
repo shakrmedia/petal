@@ -3,6 +3,8 @@
     position: relative;
     box-sizing: border-box;
     padding: 30px 0 30px 20px;
+    max-height: ~'calc(100vh - 60px)';
+    overflow-y: auto;
 
     &.sticky {
         position: -webkit-sticky;
@@ -29,7 +31,7 @@
             color: #333;
             display: block;
             padding: 7px 10px;
-        
+
             &:hover {
                 text-decoration: none;
                 color: @red;
@@ -41,4 +43,20 @@
             background-color: @red;
         }
     }
+}
+
+.dark #sidenav {
+	li {
+		a {
+	        color: #eee;
+
+	        &:hover {
+	        	color: @red-l1;
+	        }
+	    }
+
+	    &.active a {
+            color: #fff;
+        }
+	}
 }

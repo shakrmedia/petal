@@ -1,4 +1,4 @@
-//syntax highlight 
+//syntax highlight
 
 // additives override
 @l1-additive: #464646;
@@ -139,10 +139,16 @@
 .hljs {
     display: block;
     overflow-x: auto;
-    background: #fff;
+    background-color: #f0f0f0;
     color: #4d4d4c; // dark gray
-    padding: .5em;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
     -webkit-text-size-adjust: none;
+
+    .dark & {
+		background-color: #111;
+		color: #ddd;
+	}
 }
 
 .coffeescript .javascript,

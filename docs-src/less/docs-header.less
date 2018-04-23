@@ -1,24 +1,37 @@
 // header
 header#site-header {
 	position: fixed;
+	display: flex;
+	align-items: center;
 	z-index: 10000;
 	width: 100%;
 	height: 60px;
 	padding: 10px 20px;
 	background-color: #fff;
-	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-	
+	box-shadow: 0 2px 0 0 fadeout(#eee,10%);
+
+	.dark & {
+		background-color: #151515;
+		color: #eee;
+		box-shadow: 0 2px 0 0 fadeout(#333,10%);
+	}
+
 	.container {
 		height: 100%;
 	}
 
 
 	.logo-link {
-		display: inline-block;
-		font-size: 1.4em;
+		display: flex;
+		align-items: center;
+		font-size: 1.6em;
 		font-weight: 900;
 		margin: 0 20px 0 0;
 		color: #333;
+
+		.dark & {
+			color: #fff;
+		}
 
 		&:hover {
 			text-decoration: none;
@@ -33,19 +46,17 @@ header#site-header {
 			background-size: 24px 24px;
 			background-repeat: no-repeat;
 			background-position: 0 0;
-			vertical-align: middle;
 		}
 
 		.text-label {
 			display: inline-block;
-			vertical-align: middle;
 		}
 	}
 
 
 	nav {
 		height: 100%;
-		display: inline-block;
+		margin-right: auto;
 
 		ul {
 			display: block;
@@ -76,19 +87,32 @@ header#site-header {
 				&.active a {
 					color: @red;
 				}
-			
+
 			}
+		}
+	}
+
+	.chk-switch-wrap {
+		display: inline-flex;
+		margin: 0 20px;
+
+		.chk-switch-label {
+			margin-right: 5px;
 		}
 	}
 
 	.get-btn {
 		float: right;
-		margin-top: 0;
+		margin-left: 10px;
 
 		&:after {
 			.petalicon;
 			.petalicon-download;
 			margin-left: 7px;
+		}
+
+		.dark & {
+			color: #fff;
 		}
 	}
 }

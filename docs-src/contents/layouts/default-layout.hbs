@@ -2,35 +2,35 @@
 <html>
 
 <head>
-	<!-- 
-		Petal Documentation
+  <!--
+    Petal Documentation
 
-		{{package.name}} v{{package.version}}
-		{{package.description}}
-		{{package.homepage}}
+    {{package.name}} v{{package.version}}
+    {{package.description}}
+    {{package.homepage}}
 
-		Copyright 2015-{{moment format="YYYY"}} {{package.author.name}}; {{package.license}} License
-	-->
+    Copyright 2015-{{moment format="YYYY"}} {{package.author.name}}; {{package.license}} License
+  -->
 
-	<meta charset="utf-8"> 
-	<meta name="description" content="Petal - {{package.description}}">
+  <meta charset="utf-8">
+  <meta name="description" content="Petal - {{package.description}}">
 
-	<meta property="og:title" content="Petal"/>
-	<meta property="og:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg"/>
-	<meta property="og:site_name" content="Petal"/>
-	<meta property="og:url" content="{{package.homepage}}/"/>
-	<meta property="og:description" content="{{package.description}}"/>
+  <meta property="og:title" content="Petal"/>
+  <meta property="og:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg"/>
+  <meta property="og:site_name" content="Petal"/>
+  <meta property="og:url" content="{{package.homepage}}/"/>
+  <meta property="og:description" content="{{package.description}}"/>
 
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@shakrmedia">
-	<meta name="twitter:creator" content="@zvuuc">
-	<meta name="twitter:title" content="Petal">
-	<meta name="twitter:description" content="{{package.description}}">
-	<meta name="twitter:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@shakrmedia">
+  <meta name="twitter:creator" content="@zvuuc">
+  <meta name="twitter:title" content="Petal">
+  <meta name="twitter:description" content="{{package.description}}">
+  <meta name="twitter:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg">
 
-	<link rel="stylesheet" href="{{assets}}/docs.css">
+  <link rel="stylesheet" href="{{assets}}/docs.css">
 
-	<title>{{#is area "docs"}}{{title}} | {{/is}}Petal</title>
+  <title>{{#is area "docs"}}{{title}} | {{/is}}Petal</title>
 </head>
 
 <body>
@@ -38,13 +38,34 @@
 {{> header }}
 
 <div id="top" class="content-wrap">
-	{{> body }}
+  {{> body }}
 </div>
 
 {{> footer }}
 
 </body>
 
+<script>
+  const darkToggleChkValue = ~~(sessionStorage.getItem('darkToggleChkValue'));
+  const darkToggleChk = document.getElementById('demo-dark-toggle');
+  if (darkToggleChkValue) {
+    document.body.classList.add('dark');
+    darkToggleChk.checked = darkToggleChkValue;
+  }
+
+  document.addEventListener('DOMContentLoaded', _ => {
+    darkToggleChk.addEventListener('change', e => {
+      const darkToggleChkValue = ~~(darkToggleChk.checked);
+      sessionStorage.setItem('darkToggleChkValue', darkToggleChkValue);
+
+      if (darkToggleChkValue) {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+    });
+  });
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="{{assets}}/petal.min.js"></script>

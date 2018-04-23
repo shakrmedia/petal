@@ -3,55 +3,47 @@ layout: default-layout.hbs
 ---
 
 <div id="nav-pane">
-	<nav id="sidenav" class="sticky">
-		{{#is area "start"}}
-			<ul>
-				{{#withSort pages "data.list-order"}}
-					{{#is data.section "start"}}
-					<li{{#is ../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../page.dest this.dest}}">{{data.title}}</a></li>
-					{{/is}}
-				{{/withSort}}
-			</ul>
-		{{/is}}
+  <nav id="sidenav" class="sticky">
+    {{#is area "start"}}
+      <ul>
+        {{#withSort pages "data.list-order"}}
+          {{#is data.section "start"}}
+          <li{{#is ../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../page.dest this.dest}}">{{data.title}}</a></li>
+          {{/is}}
+        {{/withSort}}
+      </ul>
+    {{/is}}
 
-		{{#is area "docs"}}
-			<h5 class="list-header">Introduction</h5>
-			<ul>
-				{{#withSort pages "data.list-order"}}
-					{{#is data.section "intro"}}
-					<li{{#is ../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../page.dest this.dest}}">{{data.title}}</a></li>
-					{{/is}}
-				{{/withSort}}
-			</ul>
+    {{#is area "docs"}}
+      <h5 class="list-header">Introduction</h5>
+      <ul>
+        {{#withSort pages "data.list-order"}}
+          {{#is data.section "intro"}}
+          <li{{#is ../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../page.dest this.dest}}">{{data.title}}</a></li>
+          {{/is}}
+        {{/withSort}}
+      </ul>
 
-			<h5 class="list-header">Components</h5>
-			<ul>
-				{{#withSort pages "data.list-order"}}
-					{{#is data.section "components"}}
-					<li{{#is ../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../page.dest this.dest}}">{{data.title}}</a></li>
-					{{/is}}
-				{{/withSort}}
-			</ul>
-			
-			{{#is section "components"}}
-				<p>
-					{{> back-to-top }}
-				</p>
-
-				<button class="btn hollow red" id="btn-demo-toggle" data-toggle="toggle">Toggle Light/Dark</button>
-			{{/is}}
-		{{/is}}
-	</nav>
+      <h5 class="list-header">Components</h5>
+      <ul>
+        {{#withSort pages "data.list-order"}}
+          {{#is data.section "components"}}
+          <li{{#is ../page.dest this.dest}} class="active"{{/is}}><a href="{{relative ../page.dest this.dest}}">{{data.title}}</a></li>
+          {{/is}}
+        {{/withSort}}
+      </ul>
+    {{/is}}
+  </nav>
 </div>
 
 <div id="content-pane">
-	<div class="container stretch limit-width">
-		<section>
-			{{> body }}
-			
-			<div class="section-footer">
-				{{> back-to-top }}
-			</div>
-		</section>
-	</div><!-- container end -->
+  <div class="container stretch limit-width">
+    <section>
+      {{> body }}
+
+      <div class="section-footer">
+        {{> back-to-top }}
+      </div>
+    </section>
+  </div><!-- container end -->
 </div>

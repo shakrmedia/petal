@@ -9,16 +9,28 @@
 	margin: 0;
 	text-align: center;
 
-	background-image: 
+	background-image:
 		radial-gradient(
-			circle farthest-corner at center, 
-			lighten(@red-l2,20%) 30%, 
-			lighten(@red-l2,12%) 50%, 
-			lighten(@red-l2,10%) 50%, 
+			circle farthest-corner at center,
+			lighten(@red-l2,20%) 30%,
+			lighten(@red-l2,12%) 50%,
+			lighten(@red-l2,10%) 50%,
 			lighten(@red-l2,10%) 70%,
 			lighten(@red-l2,8%) 70%
 		);
-	
+
+	.dark & {
+		background-image:
+			radial-gradient(
+				circle farthest-corner at center,
+				darken(@red-d2,25%) 30%,
+				darken(@red-d2,20%) 50%,
+				darken(@red-d2,16%) 50%,
+				darken(@red-d2,16%) 70%,
+				darken(@red-d2,12%) 70%
+			);
+	}
+
 	.logo-wrap {
 		display: inline-block;
 		padding: 20px;
@@ -26,7 +38,7 @@
 		border: 2px solid #eee;
 		background-color: #fff;
 		border-radius: 100px;
-		
+
 		.petal-logo {
 			width: 100px;
 			height: 100px;
@@ -46,7 +58,7 @@
 		font-size: 1.1em;
 		margin-top: 20px;
 	}
-	
+
 	.version {
 		font-size: 0.9em;
 		margin-top: 5px;
@@ -64,7 +76,7 @@
 		border: 1px solid #ddd;
 		margin: 10px 0;
 	}
-	
+
 
 }
 

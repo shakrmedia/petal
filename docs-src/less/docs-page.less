@@ -13,6 +13,10 @@ section {
 		padding-bottom: 5px;
 		margin-bottom: 30px;
 
+		.dark & {
+			border-bottom-color: @red-d2;
+		}
+
 		h2 {
 			margin-bottom: 5px;
 		}
@@ -22,12 +26,20 @@ section {
 			color: #666;
 			margin: 2px 0;
 
+			.dark & {
+				color: #ddd;
+			}
+
 			.file-ref {
 				display: inline-block;
 				padding: 2px 7px;
 				background-color: #eee;
 
+				.dark & {
+					background-color: #333;
+				}
 			}
+
 		}
 	}
 
@@ -38,6 +50,8 @@ section {
 			font-size: 0.6em;
 			float: right;
 			margin-top: 5px;
+			padding-left: 10px;
+			padding-right: 10px;
 		}
 	}
 
@@ -47,13 +61,8 @@ section {
 	}
 
 	.demo-panel {
-		border: 1px solid #ddd;
+		border: 1px solid fadeout(#aaa,60%);
 		margin: 10px 0;
-		transition: 0.2s border-color, 0.2s background-color;
-
-		&.dark {
-			border-color: #000;
-		}
 
 		.card {
 
@@ -61,7 +70,7 @@ section {
 				margin: 0 0 10px 0;
 			}
 			.card-image {
-				background: @green-l1;
+				background-color: @green-l1;
 				height: 200px;
 				overflow: hidden;
 
@@ -83,57 +92,63 @@ section {
 	}
 
 	.light {
-		background: #fff;
+		background-color: #fff;
 	}
 	.gray {
-		background: #eee;
+		background-color: #eee;
+
+		.dark & {
+			background-color: #333;
+		}
 	}
 	.dark {
-		background: #222;
+		background-color: #222;
 		color: #fff;
 	}
 
-	pre code,
-	pre code.hljs {
-		background: #f0f0f0;
-		padding: 15px;
-		font-size: 0.9em;
+	pre {
+		background-color: #f0f0f0;
+
+		.dark & {
+			background-color: #111;
+		}
+	}
+
+
+	.badge.js-req {
+		.dark & {
+			background-color: @yellow-d2;
+		}
 	}
 
 	.demo-code {
-		border: 1px solid #ddd;
+		border: 1px solid fadeout(#aaa,60%);
 		margin: 10px 0;
 
+		pre {
+			padding: 15px;
+		}
+
+		pre code {
+			background-color: transparent;
+			padding: 0;
+			font-size: 0.9rem;
+			line-height: 1.1rem;
+		}
+
 		.demo-header {
-			background-color: #ddd;
+			background-color: fadeout(#aaa,60%);
 			padding: 5px 10px;
 			font-weight: bold;
 			font-size: 0.8em;
-			border-top: 1px solid #ddd;
-			border-bottom: 1px solid #ddd;
+			border-top: 1px solid fadeout(#aaa,60%);
+			border-bottom: 1px solid fadeout(#aaa,60%);
 		}
 	}
 
 	.demo-panel + .demo-code {
-		margin-top: -11px;
-	}
-
-
-	// for grid demo
-	.row.borders {
-		outline: 1px dashed #aaa;
-	}
-
-	.borders [class^="col-"] {
-		box-shadow: 0 0 0 1px #fff inset;
-		padding-top: 10px;
-		padding-bottom: 10px;
-	}
-
-	.borders [class^="col-"] span {
-		display: block;
-		padding-top: 5px;
-		padding-bottom: 5px;
+		margin-top: -10px;
+		border-top: none;
 	}
 
 	hr.subdivider {
@@ -145,6 +160,10 @@ section {
 		padding-top: 15px;
 		border-top: 1px solid #eee;
 
+		.dark & {
+			border-top-color: #333;
+		}
+
 		.datestamp {
 			float: right;
 			font-size: 0.9em;
@@ -152,6 +171,13 @@ section {
 		}
 	}
 
+}
+
+// dark mode toggle
+.dark-toggle-switch-wrap {
+	position: sticky;
+	right: 0;
+	bottom: 0;
 }
 
 // for container demo
@@ -170,8 +196,16 @@ section {
 		padding: 1px;
 		background-color: fadeout(@blue-l2,45%);
 
+		.dark & {
+			background-color: fadeout(@blue-d2,45%);
+		}
+
 		&.s02 {
 			background-color: fadeout(@green-l2,45%);
+
+			.dark & {
+				background-color: fadeout(@green-d2,45%);
+			}
 		}
 	}
 	.demo-container {
@@ -184,6 +218,10 @@ section {
 		text-align: center;
 		border: 1px dashed @gray;
 		color: #666;
+
+		.dark & {
+			color: #eee;
+		}
 
 		&.fixed {
 			width: 70%;
@@ -199,6 +237,53 @@ section {
 // for columns demo
 .columns-demo {
 	padding: 20px 40px;
+
+	.row.borders {
+		outline: 1px dashed #aaa;
+	}
+
+	[class^="col"] {
+		&.demo-col-green {
+			background-color: fadeout(@green-l2,45%);
+
+			.dark & {
+				background-color: fadeout(@green-d2,45%);
+			}
+		}
+
+		&.demo-col-blue {
+			background-color: fadeout(@blue-l2,45%);
+
+			.dark & {
+				background-color: fadeout(@blue-d2,45%);
+			}
+		}
+
+		&.demo-col-red {
+			background-color: fadeout(@red-l2,45%);
+
+			.dark & {
+				background-color: fadeout(@red-d2,45%);
+			}
+		}
+
+	}
+
+	.borders [class^="col-"] {
+		box-shadow: 0 0 0 1px #fff inset;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		.dark & {
+			box-shadow: 0 0 0 1px #000 inset;
+		}
+	}
+
+	.borders [class^="col-"] span {
+		display: block;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
 }
 
 
@@ -217,7 +302,7 @@ section {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 0.8em;
-	
+
 	&.text-white {
 		color: #fff;
 	}
@@ -249,12 +334,21 @@ section {
 .petalicon-demo {
 	.inner-wrap {
 		border: 1px solid #fff;
+
+		.dark & {
+			border-color: #000;
+		}
 	}
 
 	.icon-block {
 		padding: 5px 10px;
-		background: #f0f0f0;
+		background-color: #f0f0f0;
 		border: 1px solid #fff;
+
+		.dark & {
+			background-color: #222;
+			border-color: #000;
+		}
 
 		i {
 			margin-right: 8px;
@@ -268,8 +362,12 @@ section {
 		}
 
 		&:hover {
-			background: @blue-l1;
+			background-color: @blue-l1;
 			color: #fff;
+
+			.dark & {
+				background-color: @blue-d2;
+			}
 		}
 	}
 }
@@ -280,7 +378,7 @@ section {
 		.petalicon;
 		.petalicon-check-round;
 		font-size: 40px;
-		background: #eee;
+		background-color: #eee;
 		color: #f05a67;
 	}
 }

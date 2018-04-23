@@ -6,38 +6,38 @@ list-order: 1
 ---
 
 <div class="section-header">
-	<h2 id="section-layout">Layout</h2>
-	<p class="sub">
-		<span class="file-ref">layout.less</span>
-	</p>
+  <h2 id="section-layout">Layout</h2>
+  <p class="sub">
+    <span class="file-ref">layout.less</span>
+  </p>
 </div>
 
 <h3>Container</h3>
 <p>A <code>.container</code> is the top-most wrapper for your main contents. By default a container has a fixed value (980px) to limit the content width. Modify the <code>@container-width</code> variable to change the width. A container has the left and right margins set to <code>auto</code> that will center the container inside its parent.</p>
 
 <div class="demo-panel container-demo">
-	<div class="demo-section s01">
-		<span class="label">header</span>
-		<div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
-	</div>
+  <div class="demo-section s01">
+    <span class="label">header</span>
+    <div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
+  </div>
 
-	<div class="demo-section s02">
-		<span class="label">section</span>
-		<div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
-	</div>
+  <div class="demo-section s02">
+    <span class="label">section</span>
+    <div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
+  </div>
 </div>
 <div class="demo-code">
 {{#markdown}}
 ``` html
 <header>
-	<div class="container">
-		Header content
-	</div>
+  <div class="container">
+    Header content
+  </div>
 </header>
 <section>
-	<div class="container">
-		Section content
-	</div>
+  <div class="container">
+    Section content
+  </div>
 </section>
 ```
 {{/markdown}}
@@ -47,21 +47,21 @@ list-order: 1
 
 <h4>Fluid-width containers</h4>
 <div class="demo-panel container-demo">
-	<div class="demo-section">
-		<div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
-	</div>
+  <div class="demo-section">
+    <div class="demo-container fixed"><span class="label">.container</span>(980px)</div>
+  </div>
 
-	<div class="demo-section">
-		<div class="demo-container stretch"><span class="label">.container.stretch</span>(100%)</div>
-	</div>
+  <div class="demo-section">
+    <div class="demo-container stretch"><span class="label">.container.stretch</span>(100%)</div>
+  </div>
 </div>
 <div class="demo-code">
 {{#markdown}}
 ``` html
 <section>
-	<div class="container stretch">
-		Section content
-	</div>
+  <div class="container stretch">
+    Section content
+  </div>
 </section>
 ```
 {{/markdown}}
@@ -71,23 +71,23 @@ list-order: 1
 
 <h4>Fluid, but with limited-width containers</h4>
 <div class="demo-panel container-demo">
-	<div class="demo-section">
-		<div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
-	</div>
-	<div class="demo-section" style="width: 70%">
-		<div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
-	</div>
-	<div class="demo-section" style="width: 40%">
-		<div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
-	</div>
+  <div class="demo-section">
+    <div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
+  </div>
+  <div class="demo-section" style="width: 70%">
+    <div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
+  </div>
+  <div class="demo-section" style="width: 40%">
+    <div class="demo-container fixed limit-width"><span class="label">.container.stretch.limit-width</span>(100%, limited max-width)</div>
+  </div>
 </div>
 <div class="demo-code">
 {{#markdown}}
 ``` html
 <section>
-	<div class="container stretch limit-width">
-		Section content
-	</div>
+  <div class="container stretch limit-width">
+    Section content
+  </div>
 </section>
 ```
 {{/markdown}}
@@ -107,31 +107,31 @@ list-order: 1
 <br>
 
 <div class="demo-panel columns-demo">
-	<div class="row borders mb-10">
-		<div class="col-1 bg-green-l2"><span>.col-1</span></div>
-	</div>
-	<div class="row borders mb-10">
-		<div class="col-2 bg-green-l2"><span>.col-2</span></div>
-		<div class="col-2 bg-green-l2"><span>.col-2</span></div>
-	</div>
-	<div class="row borders mb-10">
-		<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-		<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-		<div class="col-3 bg-green-l2"><span>.col-3</span></div>
-	</div>
-	<div class="row borders mb-10">
-		<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-		<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-		<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-		<div class="col-4 bg-green-l2"><span>.col-4</span></div>
-	</div>
-	<div class="row borders mb-10">
-		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-		<div class="col-5 bg-green-l2"><span>.col-5</span></div>
-	</div>
+  <div class="row borders mb-10">
+    <div class="col-1 demo-col-green"><span>.col-1</span></div>
+  </div>
+  <div class="row borders mb-10">
+    <div class="col-2 demo-col-green"><span>.col-2</span></div>
+    <div class="col-2 demo-col-green"><span>.col-2</span></div>
+  </div>
+  <div class="row borders mb-10">
+    <div class="col-3 demo-col-green"><span>.col-3</span></div>
+    <div class="col-3 demo-col-green"><span>.col-3</span></div>
+    <div class="col-3 demo-col-green"><span>.col-3</span></div>
+  </div>
+  <div class="row borders mb-10">
+    <div class="col-4 demo-col-green"><span>.col-4</span></div>
+    <div class="col-4 demo-col-green"><span>.col-4</span></div>
+    <div class="col-4 demo-col-green"><span>.col-4</span></div>
+    <div class="col-4 demo-col-green"><span>.col-4</span></div>
+  </div>
+  <div class="row borders mb-10">
+    <div class="col-5 demo-col-green"><span>.col-5</span></div>
+    <div class="col-5 demo-col-green"><span>.col-5</span></div>
+    <div class="col-5 demo-col-green"><span>.col-5</span></div>
+    <div class="col-5 demo-col-green"><span>.col-5</span></div>
+    <div class="col-5 demo-col-green"><span>.col-5</span></div>
+  </div>
 </div>
 
 <p>Place a div with the <code>.row</code> class, then insert <code>.col-<em>x</em></code> class inside to make columns, where <em>x</em> is the number of columns the row is divided into. (Supports up to 5 columns)</p>
@@ -144,19 +144,19 @@ list-order: 1
 
 <h5>Spanned columns</h5>
 <div class="demo-panel columns-demo">
-	<div class="row borders mb-10">
-		<div class="col-3 colspan-2 bg-blue-l2"><span>.col-3.colspan-2</span></div>
-		<div class="col-3 bg-blue-l2"><span>.col-3</span></div>
-	</div>
-	<div class="row borders mb-10">
-		<div class="col-4 colspan-2 bg-blue-l2"><span>.col-4.colspan-2</span></div>
-		<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-		<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-	</div>
-	<div class="row borders mb-10">
-		<div class="col-4 bg-blue-l2"><span>.col-4</span></div>
-		<div class="col-4 colspan-3 bg-blue-l2"><span>.col-4.colspan-3</span></div>
-	</div>
+  <div class="row borders mb-10">
+    <div class="col-3 colspan-2 demo-col-blue"><span>.col-3.colspan-2</span></div>
+    <div class="col-3 demo-col-blue"><span>.col-3</span></div>
+  </div>
+  <div class="row borders mb-10">
+    <div class="col-4 colspan-2 demo-col-blue"><span>.col-4.colspan-2</span></div>
+    <div class="col-4 demo-col-blue"><span>.col-4</span></div>
+    <div class="col-4 demo-col-blue"><span>.col-4</span></div>
+  </div>
+  <div class="row borders mb-10">
+    <div class="col-4 demo-col-blue"><span>.col-4</span></div>
+    <div class="col-4 colspan-3 demo-col-blue"><span>.col-4.colspan-3</span></div>
+  </div>
 </div>
 
 <p>Add <code>.colspan-<em>x</em></code> to column divs, where <em>x</em> is the number of columns you would 'merge' (think of a table layout).</p>
@@ -165,29 +165,29 @@ list-order: 1
 
 <h5>Nesting columns</h5>
 <div class="demo-panel columns-demo">
-	<div class="row borders mb-10">
-		<div class="col-3 bg-blue-l2">
-			<span>.col-3</span>
-			<div class="row borders">
-				<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
-				<div class="col-2 bg-blue-l1"><span>.col-2</span></div>
-			</div>
-		</div>
-		<div class="col-3 bg-green-l2">
-			<span>.col-3</span>
-			<div class="row borders">
-				<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-				<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-				<div class="col-3 bg-green-l1"><span>.col-3</span></div>
-			</div>
-		</div>
-		<div class="col-3 bg-red-l2">
-			<span>.col-3</span>
-			<div class="row borders">
-				<div class="col-1 bg-red-l1"><span>.col-1</span></div>
-			</div>
-		</div>
-	</div>
+  <div class="row borders mb-10">
+    <div class="col-3 demo-col-blue">
+      <span>.col-3</span>
+      <div class="row borders">
+        <div class="col-2 demo-col-blue"><span>.col-2</span></div>
+        <div class="col-2 demo-col-blue"><span>.col-2</span></div>
+      </div>
+    </div>
+    <div class="col-3 demo-col-green">
+      <span>.col-3</span>
+      <div class="row borders">
+        <div class="col-3 demo-col-green"><span>.col-3</span></div>
+        <div class="col-3 demo-col-green"><span>.col-3</span></div>
+        <div class="col-3 demo-col-green"><span>.col-3</span></div>
+      </div>
+    </div>
+    <div class="col-3 demo-col-red">
+      <span>.col-3</span>
+      <div class="row borders">
+        <div class="col-1 demo-col-red"><span>.col-1</span></div>
+      </div>
+    </div>
+  </div>
 </div>
 <p>You can nest any columns inside columns. Just don't forget to nest <code>.row</code>s as well. </p>
 
@@ -195,32 +195,32 @@ list-order: 1
 
 <h5>Collapsed column gutters</h5>
 <div class="demo-panel gray ph-15 pv-5">
-	<h6 class="label">Normal</h6>
-	<div class="row">
-		<div class="col-1 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-1</div></div>
-	</div>
-	<div class="row">
-		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
-		<div class="col-3 bg-green-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
-		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
-	</div>
-	<div class="row">
-		<div class="col-3 bg-red-l2 stretch pv-5 colspan-2"><div class="panel p-15">.col-3.colspan-2</div></div>
-		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
-	</div>
-	<h6 class="label">Collapsed Gutters</h6>
-	<div class="row collapse-gutter">
-		<div class="col-1 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-1</div></div>
-	</div>
-	<div class="row collapse-gutter">
-		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
-		<div class="col-3 bg-green-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
-		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
-	</div>
-	<div class="row collapse-gutter">
-		<div class="col-3 bg-red-l2 stretch pv-5 colspan-2"><div class="panel p-15">.col-3.colspan-2</div></div>
-		<div class="col-3 bg-blue-l2 stretch pv-5"><div class="panel p-15">.col-3</div></div>
-	</div>
+  <h6 class="label">Normal</h6>
+  <div class="row">
+    <div class="col-1 demo-col-blue stretch pv-5"><div class="panel p-15">.col-1</div></div>
+  </div>
+  <div class="row">
+    <div class="col-3 demo-col-blue stretch pv-5"><div class="panel p-15">.col-3</div></div>
+    <div class="col-3 demo-col-green stretch pv-5"><div class="panel p-15">.col-3</div></div>
+    <div class="col-3 demo-col-blue stretch pv-5"><div class="panel p-15">.col-3</div></div>
+  </div>
+  <div class="row">
+    <div class="col-3 demo-col-red stretch pv-5 colspan-2"><div class="panel p-15">.col-3.colspan-2</div></div>
+    <div class="col-3 demo-col-blue stretch pv-5"><div class="panel p-15">.col-3</div></div>
+  </div>
+  <h6 class="label">Collapsed Gutters</h6>
+  <div class="row collapse-gutter">
+    <div class="col-1 demo-col-blue stretch pv-5"><div class="panel p-15">.col-1</div></div>
+  </div>
+  <div class="row collapse-gutter">
+    <div class="col-3 demo-col-blue stretch pv-5"><div class="panel p-15">.col-3</div></div>
+    <div class="col-3 demo-col-green stretch pv-5"><div class="panel p-15">.col-3</div></div>
+    <div class="col-3 demo-col-blue stretch pv-5"><div class="panel p-15">.col-3</div></div>
+  </div>
+  <div class="row collapse-gutter">
+    <div class="col-3 demo-col-red stretch pv-5 colspan-2"><div class="panel p-15">.col-3.colspan-2</div></div>
+    <div class="col-3 demo-col-blue stretch pv-5"><div class="panel p-15">.col-3</div></div>
+  </div>
 </div>
 
 <p>Add <code>.collapse-gutter</code> class on parent <code>.row</code> elements and it will 'collapse' the gutter inbetween columns by reducing the padding space to half while keeping the outer paddings on left and right. This is useful in cases where you want to make a layout out of <a href="panels.html">Panels</a> and want to reduce the visible horizontal gutter size inbetween them.</p>
@@ -229,31 +229,31 @@ list-order: 1
 
 <h5>Vertically stretched columns (Flexbox Only)</h5>
 <div class="demo-panel gray ph-15 pv-5">
-	<h6 class="label">Normal</h6>
-	<div class="row collapse-gutter pb-10">
-		<div class="col-3 colspan-2">
-			<div class="panel p-15">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus nam ad, eligendi dolor similique provident nisi magnam, eum itaque, quibusdam nostrum libero.
-			</div>		
-		</div>
-		<div class="col-3">
-			<div class="panel p-15 mb-10">Lorem ipsum dolor sit amet.</div>
-			<div class="panel p-15">Autem harum beatae alias voluptas ipsa, illo consequatur.</div>
-		</div>
-	</div>
+  <h6 class="label">Normal</h6>
+  <div class="row collapse-gutter pb-10">
+    <div class="col-3 colspan-2">
+      <div class="panel p-15">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus nam ad, eligendi dolor similique provident nisi magnam, eum itaque, quibusdam nostrum libero.
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="panel p-15 mb-10">Lorem ipsum dolor sit amet.</div>
+      <div class="panel p-15">Autem harum beatae alias voluptas ipsa, illo consequatur.</div>
+    </div>
+  </div>
 
-	<h6 class="label">Stretched</h6>
-	<div class="row collapse-gutter pb-10">
-		<div class="col-3 stretch colspan-2">
-			<div class="panel p-15">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus nam ad, eligendi dolor similique provident nisi magnam, eum itaque, quibusdam nostrum libero.
-			</div>		
-		</div>
-		<div class="col-3">
-			<div class="panel p-15 mb-10">Lorem ipsum dolor sit amet.</div>
-			<div class="panel p-15">Autem harum beatae alias voluptas ipsa, illo consequatur.</div>
-		</div>
-	</div>
+  <h6 class="label">Stretched</h6>
+  <div class="row collapse-gutter pb-10">
+    <div class="col-3 stretch colspan-2">
+      <div class="panel p-15">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus nam ad, eligendi dolor similique provident nisi magnam, eum itaque, quibusdam nostrum libero.
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="panel p-15 mb-10">Lorem ipsum dolor sit amet.</div>
+      <div class="panel p-15">Autem harum beatae alias voluptas ipsa, illo consequatur.</div>
+    </div>
+  </div>
 </div>
 
 <p>Add <code>.stretch</code> class on <code>.col-x</code> elements to vertically stretch children elements to row height. This will only work when you're using the flexbox columns.</p>

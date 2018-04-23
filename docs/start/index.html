@@ -2,69 +2,80 @@
 <html>
 
 <head>
-	<!-- 
-		Petal Documentation
+  <!--
+    Petal Documentation
 
-		petal.less v0.10.0
-		A modern, light CSS UI framework by Shakr based on LESS.
-		https://shakrmedia.github.io/petal
+    petal.less v0.10.0
+    A modern, light CSS UI framework by Shakr based on LESS.
+    https://shakrmedia.github.io/petal
 
-		Copyright 2015-2018 Shakr Media Co., Ltd.; MIT License
-	-->
+    Copyright 2015-2018 Shakr Media Co., Ltd.; MIT License
+  -->
 
-	<meta charset="utf-8"> 
-	<meta name="description" content="Petal - A modern, light CSS UI framework by Shakr based on LESS.">
+  <meta charset="utf-8">
+  <meta name="description" content="Petal - A modern, light CSS UI framework by Shakr based on LESS.">
 
-	<meta property="og:title" content="Petal"/>
-	<meta property="og:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg"/>
-	<meta property="og:site_name" content="Petal"/>
-	<meta property="og:url" content="https://shakrmedia.github.io/petal/"/>
-	<meta property="og:description" content="A modern, light CSS UI framework by Shakr based on LESS."/>
+  <meta property="og:title" content="Petal"/>
+  <meta property="og:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg"/>
+  <meta property="og:site_name" content="Petal"/>
+  <meta property="og:url" content="https://shakrmedia.github.io/petal/"/>
+  <meta property="og:description" content="A modern, light CSS UI framework by Shakr based on LESS."/>
 
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@shakrmedia">
-	<meta name="twitter:creator" content="@zvuuc">
-	<meta name="twitter:title" content="Petal">
-	<meta name="twitter:description" content="A modern, light CSS UI framework by Shakr based on LESS.">
-	<meta name="twitter:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@shakrmedia">
+  <meta name="twitter:creator" content="@zvuuc">
+  <meta name="twitter:title" content="Petal">
+  <meta name="twitter:description" content="A modern, light CSS UI framework by Shakr based on LESS.">
+  <meta name="twitter:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg">
 
-	<link rel="stylesheet" href="../assets/docs.css">
+  <link rel="stylesheet" href="../assets/docs.css">
 
-	<title>Petal</title>
+  <title>Petal</title>
 </head>
 
 <body>
 
-<header id="site-header">    
-    <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
-    <nav>
-        <ul>
-            <li class="active"><a href="./">Get Started</a></li>
-            <li><a href="../docs/">Docs</a></li>
-        </ul>
-    </nav>
+<header id="site-header">
+  <a class="logo-link" href=".."><span class="logo"></span><span class="text-label">Petal</span></a>
+  <nav>
+    <ul>
+      <li class="active"><a href="./">Get Started</a></li>
+      <li><a href="../docs/">Docs</a></li>
+    </ul>
+  </nav>
 
-    <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
+  <div class="chk-switch-wrap">
+    <span class="chk-switch-label">Dark Mode</span>
+    <div class="chk-switch onoff-type led">
+      <input type="checkbox" id="demo-dark-toggle">
+      <label for="demo-dark-toggle"><span></span></label>
+    </div>
+  </div>
+
+  <a href="https://github.com/shakrmedia/petal/releases/latest" target="_blank" class="btn red hollow get-btn">Get Petal</a>
 </header>
+
 <div id="top" class="content-wrap">
-	
+  
 
 <div id="nav-pane">
-	<nav id="sidenav" class="sticky">
-			<ul>
-					<li class="active"><a href="index.html">Quick Start</a></li>
-					<li><a href="advanced.html">Advanced Setup</a></li>
-			</ul>
+  <nav id="sidenav" class="sticky">
+      <ul>
+          <li class="active"><a href="index.html">Quick Start</a></li>
+          <li><a href="advanced.html">Advanced Setup</a></li>
+      </ul>
 
-	</nav>
+  </nav>
 </div>
 
 <div id="content-pane">
-	<div class="container stretch limit-width">
-		<section>
-			
+  <div class="container stretch limit-width">
+    <section>
+      
 
-<h3>Setting up Petal</h3>
+<div class="section-header">
+	<h2>Setting up Petal</h2>
+</div>
 
 <h4>Quick Start</h4>
 
@@ -80,12 +91,13 @@
 <p>Now you can use all the Petal classes and styles in your project's HTML file.</p>
 
 <p>If you want to customize options and personalize Petal style for your project, you will need to build Petal manually. Head to <a href="advanced.html">Custom Building</a> for guide and recommendations on integrating Petal into your project.</p>
-			
-			<div class="section-footer">
-				<a href="#top" class="totop">Back to top</a>			</div>
-		</section>
-	</div><!-- container end -->
+
+      <div class="section-footer">
+        <a href="#top" class="totop">Back to top</a>      </div>
+    </section>
+  </div><!-- container end -->
 </div>
+
 </div>
 
 <footer id="site-footer" class="stretch">
@@ -117,6 +129,27 @@
 </footer>
 </body>
 
+<script>
+  const darkToggleChkValue = ~~(sessionStorage.getItem('darkToggleChkValue'));
+  const darkToggleChk = document.getElementById('demo-dark-toggle');
+  if (darkToggleChkValue) {
+    document.body.classList.add('dark');
+    darkToggleChk.checked = darkToggleChkValue;
+  }
+
+  document.addEventListener('DOMContentLoaded', _ => {
+    darkToggleChk.addEventListener('change', e => {
+      const darkToggleChkValue = ~~(darkToggleChk.checked);
+      sessionStorage.setItem('darkToggleChkValue', darkToggleChkValue);
+
+      if (darkToggleChkValue) {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+    });
+  });
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="../assets/petal.min.js"></script>
