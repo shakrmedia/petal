@@ -1,7 +1,75 @@
 //syntax highlight 
 
+// additives override
+@l1-additive: #464646;
+@l2-additive: #898989;
+@l3-additive: #b8b8b8;
+@l4-additive: #dadada;
+@l5-additive: #f0f0f0;
+@d1-additive: #e1e1e1;
+@d2-additive: #c2c2c2;
+@d3-additive: #9b9b9b;
+@d4-additive: #727272;
+@d5-additive: #4c4c4c;
+
+// Shakr New Palette
+@red: #f05a67;
+@red-l1: screen(@red,@l1-additive);
+@red-l2: screen(@red,@l2-additive);
+@red-d1: multiply(@red,@d1-additive);
+@red-d2: multiply(@red,@d2-additive);
+
+@green: #b2cf65;
+@green-l1: screen(@green,@l1-additive);
+@green-l2: screen(@green,@l2-additive);
+@green-d1: multiply(@green,@d1-additive);
+@green-d2: multiply(@green,@d2-additive);
+
+@blue: #30a4dc;
+@blue-l1: screen(@blue,@l1-additive);
+@blue-l2: screen(@blue,@l2-additive);
+@blue-d1: multiply(@blue,@d1-additive);
+@blue-d2: multiply(@blue,@d2-additive);
+
+@peach: #f58960;
+@peach-l1: screen(@peach,@l1-additive);
+@peach-l2: screen(@peach,@l2-additive);
+@peach-d1: multiply(@peach,@d1-additive);
+@peach-d2: multiply(@peach,@d2-additive);
+
+@orange: #faab58;
+@orange-l1: screen(@orange,@l1-additive);
+@orange-l2: screen(@orange,@l2-additive);
+@orange-d1: multiply(@orange,@d1-additive);
+@orange-d2: multiply(@orange,@d2-additive);
+
+@yellow: #ffd85a;
+@yellow-l1: screen(@yellow,@l1-additive);
+@yellow-l2: screen(@yellow,@l2-additive);
+@yellow-d1: multiply(@yellow,@d1-additive);
+@yellow-d2: multiply(@yellow,@d2-additive);
+
+@teal: #21c5c7;
+@teal-l1: screen(@teal,@l1-additive);
+@teal-l2: screen(@teal,@l2-additive);
+@teal-d1: multiply(@teal,@d1-additive);
+@teal-d2: multiply(@teal,@d2-additive);
+
+@purple: #c37dc4;
+@purple-l1: screen(@purple,@l1-additive);
+@purple-l2: screen(@purple,@l2-additive);
+@purple-d1: multiply(@purple,@d1-additive);
+@purple-d2: multiply(@purple,@d2-additive);
+
+@pink: #f15b82;
+@pink-l1: screen(@pink,@l1-additive);
+@pink-l2: screen(@pink,@l2-additive);
+@pink-d1: multiply(@pink,@d1-additive);
+@pink-d2: multiply(@pink,@d2-additive);
+
+
 .hljs-comment {
-    color:#8e908c
+    color: #8e908c; // gray
 }
 
 .hljs-variable,
@@ -19,7 +87,7 @@
 .language-less .hljs-id,
 .language-less .hljs-class,
 .language-less .hljs-pseudo {
-    color:#c82829
+    color: @red-d1; // red
 }
 
 .hljs-number,
@@ -29,13 +97,13 @@
 .hljs-literal,
 .hljs-params,
 .hljs-constant {
-    color:#f5871f
+    color: @orange-d1; // orange
 }
 
 .ruby .hljs-class .hljs-title,
 .css .hljs-rules .hljs-attribute,
 .language-less .hljs-rules .hljs-attribute {
-    color:#eab700
+    color: @yellow-d1; // yellow
 }
 
 .hljs-string,
@@ -44,12 +112,12 @@
 .hljs-header,
 .ruby .hljs-symbol,
 .xml .hljs-cdata {
-    color:#718c00
+    color: @green-d2; // green
 }
 
 .hljs-title,
 .css .hljs-hexcolor {
-    color:#3e999f
+    color: @teal-d1; // teal
 }
 
 .hljs-function,
@@ -60,21 +128,21 @@
 .perl .hljs-sub,
 .javascript .hljs-title,
 .coffeescript .hljs-title {
-    color:#4271ae
+    color: @blue-d1; // blue
 }
 
 .hljs-keyword,
 .javascript .hljs-function {
-    color:#8959a8
+    color: @purple-d1; // purple
 }
 
 .hljs {
-    display:block;
-    overflow-x:auto;
-    background:#fff;
-    color:#4d4d4c;
-    padding:.5em;
-    -webkit-text-size-adjust:none
+    display: block;
+    overflow-x: auto;
+    background: #fff;
+    color: #4d4d4c; // dark gray
+    padding: .5em;
+    -webkit-text-size-adjust: none;
 }
 
 .coffeescript .javascript,
@@ -84,5 +152,72 @@
 .xml .vbscript,
 .xml .css,
 .xml .hljs-cdata {
-    opacity:.5
+    opacity: .5;
+}
+
+// dark
+.dark {
+    .hljs-variable,
+    .hljs-attribute,
+    .hljs-tag,
+    .hljs-regexp,
+    .ruby .hljs-constant,
+    .xml .hljs-tag .hljs-title,
+    .xml .hljs-pi,
+    .xml .hljs-doctype,
+    .html .hljs-doctype,
+    .css .hljs-id,
+    .css .hljs-class,
+    .css .hljs-pseudo,
+    .language-less .hljs-id,
+    .language-less .hljs-class,
+    .language-less .hljs-pseudo {
+        color: @red; // red
+    }
+
+    .hljs-number,
+    .hljs-preprocessor,
+    .hljs-pragma,
+    .hljs-built_in,
+    .hljs-literal,
+    .hljs-params,
+    .hljs-constant {
+        color: @orange; // orange
+    }
+
+    .ruby .hljs-class .hljs-title,
+    .css .hljs-rules .hljs-attribute,
+    .language-less .hljs-rules .hljs-attribute {
+        color: @yellow; // yellow
+    }
+
+    .hljs-string,
+    .hljs-value,
+    .hljs-inheritance,
+    .hljs-header,
+    .ruby .hljs-symbol,
+    .xml .hljs-cdata {
+        color: @green; // green
+    }
+
+    .hljs-title,
+    .css .hljs-hexcolor {
+        color: @teal; // teal
+    }
+
+    .hljs-function,
+    .python .hljs-decorator,
+    .python .hljs-title,
+    .ruby .hljs-function .hljs-title,
+    .ruby .hljs-title .hljs-keyword,
+    .perl .hljs-sub,
+    .javascript .hljs-title,
+    .coffeescript .hljs-title {
+        color: @blue; // blue
+    }
+
+    .hljs-keyword,
+    .javascript .hljs-function {
+        color: @purple; // purple
+    }
 }
