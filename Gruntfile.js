@@ -22,7 +22,8 @@ module.exports = function(grunt) {
               ' * <%= pkg.homepage %> \n' +
               ' * \n' +
               ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; <%= pkg.license %> License \n' +
-              ' */\n'
+              ' */\n',
+      banner_compact: '/* <%= pkg.name %> v<%= pkg.version %> - (C)<%= grunt.template.today("yyyy") %> Shakr; <%= pkg.license %> License */'
     },
 
     // LESS
@@ -214,6 +215,9 @@ module.exports = function(grunt) {
           ]
       },
       dist: {
+        options: {
+          banner: '<%= meta.banner_compact %>'
+        },
         src: [
             "_dist/<%= pkg.codename %>.css",
             "_dist/<%= pkg.codename %>.min.css",
