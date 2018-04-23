@@ -1,23 +1,29 @@
-#landing {
+#content-pane.landing {
+	padding: 0;
+}
+
+.hero {
 	height: auto;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 	margin: 0;
 	text-align: center;
 
 	background-image: 
 		radial-gradient(
-			circle farthest-corner at center top, 
-			#fff 0%, 
-			fadeout(@red-l2,80%) 50%, 
-			fadeout(@red-l2,20%) 100%
+			circle farthest-corner at center, 
+			lighten(@red-l2,20%) 30%, 
+			lighten(@red-l2,12%) 50%, 
+			lighten(@red-l2,10%) 50%, 
+			lighten(@red-l2,10%) 70%,
+			lighten(@red-l2,8%) 70%
 		);
 	
 	.logo-wrap {
 		display: inline-block;
 		padding: 20px;
 		margin: 0 auto 10px 0;
-		border: 1px solid #eee;
+		border: 2px solid #eee;
 		background-color: #fff;
 		border-radius: 100px;
 		
@@ -32,15 +38,17 @@
 	}
 
 	.hero-sub {
+		font-size: 1.1em;
 		margin: 15px 0;
 	}
 
 	.get-btn {
+		font-size: 1.1em;
 		margin-top: 20px;
 	}
 	
 	.version {
-		font-size: 0.7em;
+		font-size: 0.9em;
 		margin-top: 5px;
 		color: #666;
 	}
@@ -62,5 +70,6 @@
 
 .credits {
 	padding: 30px 0;
+	margin: 0;
 	text-align: center;
 }
