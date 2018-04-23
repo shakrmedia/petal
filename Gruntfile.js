@@ -164,6 +164,10 @@ module.exports = function(grunt) {
     assemble: {
   	  options: {
         flatten: true,
+        helpers: [
+          'handlebars-helpers',
+          'handlebars-helper-eachitems'
+        ],
         assets: 'docs/assets',
         partials: 'docs-src/contents/**/*.hbs',
         layoutdir: 'docs-src/contents/layouts',
