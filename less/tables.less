@@ -2,9 +2,12 @@
 // *  Petal
 // *  http://shakrmedia.github.io/petal
 // *  Copyright 2015-2018 Shakr Media Co., Ltd.
-// *  
+// *
 // *  tables.less - tables
 // * ================================= *
+
+// import dependencies
+@import (reference) 'variables.less';
 
 table.table {
 	width: 100%;
@@ -16,7 +19,7 @@ table.table {
 			background-color: #222;
 		}
 	}
-	
+
 	caption {
 		text-align: left;
 		margin: 10px 0;
@@ -75,7 +78,7 @@ table.table {
 	tfoot tr:last-child td {
 		border-bottom: none;
 	}
-	
+
 	// inner borders
 	&.table-inner-borders {
 		th, td {
@@ -93,7 +96,7 @@ table.table {
 			}
 		}
 	}
-	
+
 	// outer borders
 	&.table-outer-borders {
 		border: 1px solid #ddd;
@@ -106,7 +109,7 @@ table.table {
 		}
 
 	}
-	
+
 	// striped rows
 	&.table-striped {
 		tr:nth-child(2n) {
@@ -136,7 +139,7 @@ table.table {
 			}
 		}
 	}
-	
+
 	// condensed padding
 	&.table-condensed {
 		th, td {

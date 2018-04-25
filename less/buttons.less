@@ -2,13 +2,12 @@
 // *  Petal
 // *  http://shakrmedia.github.io/petal
 // *  Copyright 2015-2018 Shakr Media Co., Ltd.
-// *  
+// *
 // *  buttons.less - buttons
 // * ================================= *
 
 // import dependencies
 @import (reference) 'variables.less';
-@import (reference) 'color-palette.less';
 @import (reference) 'mixins.less';
 @import (reference) 'petalicon.less';
 @import (reference) 'z-index.less';
@@ -40,7 +39,7 @@
 	height: 0;
 	border-top: 4px solid transparent;
 	border-bottom: 4px solid transparent;
-	border-left: 4px solid @caret-color;	
+	border-left: 4px solid @caret-color;
 }
 .caret-right {
 	.caret-right;
@@ -71,13 +70,13 @@
 	border: @btn-border-width solid transparent;
 	border-radius: 0;
 	outline: none !important;
-	
+
 	// transitions
 	& when (@btn-disable-transition = false) {
 		transition-property: background, border-color, color, box-shadow, opacity;
 		transition-duration: .15s;
 	}
-	
+
 	// border-radius
 	& when (@btn-border-radius > 0) {
 		border-radius: @btn-border-radius;
@@ -99,7 +98,7 @@
 		}
 		transition-duration: 0s;
 	}
-	
+
 	// border-radius when active
 	& when (@btn-border-radius > 0) {
 		.active > &[data-toggle] {
@@ -107,12 +106,12 @@
 		}
 	}
 
-	&.active, 
+	&.active,
 	.active > &[data-toggle] {
 		z-index: @btn-active-z-index;
 		perspective: 500;
 	}
-	
+
 	.caret {
 		transform-style: preserve-3d;
 	}
@@ -124,7 +123,7 @@
 	.petalicon {
 		line-height: 0;
 	}
-	
+
 	// compact size
 	&.compact {
 		padding-top: 5px;
@@ -137,7 +136,7 @@
 
 // static palette button styles generator mixin
 .generate-btn(@base-color: 'primary-accent-color') {
-	
+
 	// inner mixin
 	.generate-btn-styles() {
 		// skip if entered color is same as primary-accent-color
@@ -147,7 +146,7 @@
 			& {
 				color: @text-color;
 				background-color: @color;
-				
+
 				// for toggle button
 				&.active, &.hollow.active,
 				:checked + label &,
@@ -165,7 +164,7 @@
 						box-shadow: 0 0px 2px rgba(0,0,0,.3);
 					}
 				}
-				
+
 				&:hover {
 					background-color: @color-l1;
 					border-color: @color-d1;
@@ -230,7 +229,7 @@
 						border-color: @color;
 					}
 				}
-				
+
 				// for segmented button active state on dark
 				.dark :checked + label &,
 				.dark :checked + label &.hollow {
@@ -252,9 +251,9 @@
 				background: none;
 
 				.caret {
-					border-top-color: @color; 
+					border-top-color: @color;
 				}
-				
+
 				&:hover {
 					color: @text-color;
 					border-color: @color;
@@ -274,7 +273,7 @@
 					background-color: @color-d1;
 					border-color: @color-d2;
 				}
-				
+
 				& when (@include-dark = true) {
 					.dark &:focus {
 						color: @color-l1;
@@ -292,9 +291,9 @@
 					&:hover, &:active,
 					&.active, .active > &[data-toggle="dropdown"] {
 						.caret {
-							border-top-color: @text-color; 
+							border-top-color: @text-color;
 						}
-					} 
+					}
 				}
 			}
 
@@ -325,7 +324,7 @@
 					& + ul.dropdown-menu ul.dropdown-menu {
 						background: @color-d1;
 						color: @text-color;
-						
+
 						// override list item hover highlight
 						li:hover > a {
 							@highlight-color: contrast(@@base-color,@color-d2,@color-l1,@btn-text-color-contrast-threshold);
@@ -336,7 +335,7 @@
 						li.divider {
 							border-bottom-color: fadeout(@text-color,80%);
 						}
-						
+
 						// override caret color
 						& > .submenu > a:after {
 							border-left-color: @text-color;
@@ -346,19 +345,19 @@
 			}
 		}
 	}
-	
+
 	// define text color
 	@text-color: contrast(@@base-color,@base-font-color,#fff,@btn-text-color-contrast-threshold);
 
 	.colorset(@@base-color);
 	.generate-btn-styles();
-	
+
 }
 
 
 & when (@gray-disabled-btn = true) {
 /* gray disabled btn */
-	.btn.disabled, 
+	.btn.disabled,
 	.btn:disabled,
 	fieldset[disabled] .btn,
 	:disabled + label .btn {
@@ -372,7 +371,7 @@
 	.btn.hollow {
 		background: none;
 	}
-	.btn.hollow.disabled, 
+	.btn.hollow.disabled,
 	.btn.hollow:disabled,
 	fieldset[disabled] .btn.hollow,
 	:disabled + label .btn.hollow {
@@ -431,7 +430,7 @@ fieldset[disabled] .btn,
 	& when (@btn-disable-transition = false) {
 		transition: 0.2s opacity;
 	}
-	
+
 	& when (@btn-border-radius > 0) {
 		.btn {
 			border-radius: 0;
@@ -447,7 +446,7 @@ fieldset[disabled] .btn,
 			border-top-right-radius: @input-border-radius;
 			border-bottom-right-radius: @input-border-radius;
 		}
-	}	
+	}
 
 
 
@@ -460,7 +459,7 @@ fieldset[disabled] .btn,
 	.btn.active {
 		z-index: @btn-active-z-index;
 	}
-	
+
 	// radiobox method
 	input[type="radio"] {
 		opacity: 0;
@@ -504,11 +503,11 @@ fieldset[disabled] .btn,
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		
+
 		background-color: #fff;
 		color: @base-font-color;
 		font-size: 1em;
-		box-shadow: @drop-shadow-deep; 
+		box-shadow: @drop-shadow-deep;
 
 		& when (@btn-border-radius > 0) {
 			border-radius: 0 @btn-border-radius @btn-border-radius @btn-border-radius;
@@ -548,7 +547,7 @@ fieldset[disabled] .btn,
 				margin-bottom: 5px;
 			}
 		}
-		
+
 		// nested submenu
 		& > .submenu {
 			position: relative;
@@ -610,15 +609,15 @@ fieldset[disabled] .btn,
 					border-top-left-radius: @input-border-radius;
 					border-bottom-left-radius: @input-border-radius;
 				}
-			}	
-			
+			}
+
 			.btn + .btn.dropdown {
 				padding-left: 7px;
 				padding-right: 7px;
 				margin-left: 0px;
 				position: relative;
 				border-left-width: 0;
-				
+
 				// border-radius
 				& when (@btn-border-radius > 0) {
 					border-top-right-radius: @input-border-radius;
@@ -663,13 +662,13 @@ fieldset[disabled] .btn,
 				}
 			}
 
-			// active override 
+			// active override
 			&.active .btn + .btn.dropdown {
 				border-left-width: @btn-border-width;
 				margin-left: -@btn-border-width;
 			}
-			
-			
+
+
 			.btn:hover + .btn.dropdown:before,
 			.btn + .btn.dropdown:active:before,
 			&.active .btn + .btn.dropdown:before {
@@ -747,7 +746,7 @@ fieldset[disabled] .btn,
 			animation: spinner-rotate @btn-spinner-animation-duration linear infinite;
 			opacity: 1;
 		}
-		
+
 		// override for white btn
 		&.white:before {
 			@btn-spinner-color: #000;
@@ -762,7 +761,7 @@ fieldset[disabled] .btn,
 		i.petalicon {
 			opacity: 0;
 		}
-		
+
 		&:before {
 			.petalicon;
 			.petalicon-check;
@@ -858,7 +857,7 @@ fieldset[disabled] .btn,
 }
 
 // generate single default color button
-.btn { 
+.btn {
 	.generate-btn();
 }
 
@@ -867,7 +866,7 @@ fieldset[disabled] .btn,
 	.generate-color-btns(@colors; (@index - 1)); // decrement.
 
 	@btn-color: extract(@colors, @index);
-	
+
 	// generate new classes for button colors
 	.btn.@{btn-color} {
 		.generate-btn(~'@{btn-color}');

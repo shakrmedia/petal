@@ -2,12 +2,12 @@
 // *  Petal
 // *  http://shakrmedia.github.io/petal
 // *  Copyright 2015-2018 Shakr Media Co., Ltd.
-// *  
+// *
 // *  paging.less - pagination
 // * ================================= *
 
 // import dependencies
-@import (reference) 'color-palette.less';
+@import (reference) 'variables.less';
 @import (reference) 'mixins.less';
 @import (reference) 'petalicon.less';
 
@@ -90,7 +90,7 @@
 				cursor: default;
 			}
 		}
-	
+
 
 		&.prev, &.next {
 			min-width: 90px;
@@ -103,27 +103,27 @@
 
 		&.prev {
 			margin-left: 5px;
-			
-			.petalicon { 
+
+			.petalicon {
 				&:before {
 					.petalicon-chevron-left;
 				}
-				margin-right: 5px; 
+				margin-right: 5px;
 			}
 		}
 
 		&.next {
 			margin-right: 5px;
 			float: right;
-			
-			.petalicon { 
+
+			.petalicon {
 				&:before {
 					.petalicon-chevron-right;
 				}
-				margin-left: 5px; 
+				margin-left: 5px;
 			}
 		}
-		
+
 		&.prev:not(.disabled) {
 			&:hover .petalicon { transform: translateX(-2px); }
 		}
@@ -174,7 +174,7 @@
 			}
 		}
 	}
-	
+
 
 	// inline
 	&.inline {
@@ -185,8 +185,8 @@
 					color: #fff;
 				}
 			}
-			
-			a, 
+
+			a,
 			a:hover,
 			a:active,
 			&.active a {
@@ -210,6 +210,6 @@
 		}
 	}
 
-	
+
 
 }

@@ -2,13 +2,12 @@
 // *  Petal
 // *  http://shakrmedia.github.io/petal
 // *  Copyright 2015-2018 Shakr Media Co., Ltd.
-// *  
+// *
 // *  layout.less - container and grid
 // * ================================= *
 
 // import dependencies
 @import (reference) 'variables.less';
-@import (reference) 'color-palette.less';
 @import (reference) 'mixins.less';
 
 /* basic layout */
@@ -36,7 +35,7 @@
 	& when (@col-method = float) {
 		.cf; // clearfix
 	}
-	
+
 	& when (@col-method = flex) {
 		display: flex;
 		justify-content: space-between;
@@ -69,7 +68,7 @@
 	& when (@col-method = float) {
 		float: left;
 	}
-	
+
 	& when (@col-method = flex) {
 		.stretch {
 			display: flex;
@@ -83,7 +82,7 @@
 }
 .col-1 {
 	width: 100%;
-	
+
 	& when (@col-method = flex) {
 		max-width: 100%;
 		flex-basis: 100%;
@@ -94,7 +93,7 @@
 
 	& when (@col-method = flex) {
 		max-width: (100% / 2);
-		flex-basis: (100% / 2);		
+		flex-basis: (100% / 2);
 	}
 }
 .col-3 {
@@ -102,7 +101,7 @@
 
 	& when (@col-method = flex) {
 		max-width: (100% / 3);
-		flex-basis: (100% / 3);		
+		flex-basis: (100% / 3);
 	}
 
 	&.colspan-2 {
@@ -110,7 +109,7 @@
 
 		& when (@col-method = flex) {
 			max-width: (100% * (2/3));
-			flex-basis: (100% * (2/3));	
+			flex-basis: (100% * (2/3));
 		}
 	}
 }

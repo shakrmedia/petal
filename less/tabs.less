@@ -2,13 +2,12 @@
 // *  Petal
 // *  http://shakrmedia.github.io/petal
 // *  Copyright 2015-2018 Shakr Media Co., Ltd.
-// *  
+// *
 // *  tabs.less - tabs
 // * ================================= *
 
 // import dependencies
 @import (reference) 'variables.less';
-@import (reference) 'color-palette.less';
 @import (reference) 'mixins.less';
 @import (reference) 'petalicon.less';
 @import (reference) 'z-index.less';
@@ -31,7 +30,7 @@
 		cursor: pointer;
 		transition-property: background-color, color;
 		transition-duration: 0.15s;
-		
+
 		// spacer dummy tab
 		&.spacer {
 			flex: 1 1 0;
@@ -169,7 +168,7 @@
 		.tab.disabled,
 		:disabled + label .tab {
 			color: @gray-l1;
-			
+
 			&:before {
 				background-color: #ccc;
 			}

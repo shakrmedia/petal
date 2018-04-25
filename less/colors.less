@@ -2,12 +2,12 @@
 // *  Petal
 // *  http://shakrmedia.github.io/petal
 // *  Copyright 2015-2018 Shakr Media Co., Ltd.
-// *  
+// *
 // *  colors.less - color preset classes
 // * ================================= *
 
 // import dependencies
-@import (reference) 'color-palette.less';
+@import (reference) 'variables.less';
 
 .generate-color-presets(@input-color) {
     .text-@{input-color} { color: @color; }
@@ -30,7 +30,7 @@
     .generate-all-color-presets(@colors; (@index - 1));
 
     @preset-color: extract(@colors, @index);
-    
+
     .generate-color-presets(~'@{preset-color}');
 }
 

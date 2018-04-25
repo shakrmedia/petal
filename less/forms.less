@@ -2,13 +2,12 @@
 // *  Petal
 // *  http://shakrmedia.github.io/petal
 // *  Copyright 2015-2018 Shakr Media Co., Ltd.
-// *  
+// *
 // *  forms.less - form elements
 // * ================================= *
 
 // import dependencies
 @import (reference) 'variables.less';
-@import (reference) 'color-palette.less';
 @import (reference) 'mixins.less';
 @import (reference) 'petalicon.less';
 @import (reference) 'z-index.less';
@@ -56,7 +55,7 @@ textarea.input {
 	outline: none;
 	border-radius: 0;
 	vertical-align: middle;
-	
+
 	// border-radius
 	& when (@input-border-radius > 0) {
 		border-radius: @input-border-radius;
@@ -75,7 +74,7 @@ textarea.input {
 		.dark &, &.ondark {
 			border-color: @gray;
 			background-color: fadeout(@black,60%);
-			
+
 			&:hover {
 				border-color: @gray-l1;
 			}
@@ -118,14 +117,14 @@ textarea.input {
 // attribute styles
 input.input,
 textarea.input {
-	
+
 	// html5 invalid style
 	& when (@input-html5-validation-styles = true) {
 		&:invalid, &:invalid:hover {
 			border-color: @danger-color;
 		}
 	}
-	
+
 	// disabled
 	&:disabled,
 	fieldset:disabled & {
@@ -214,7 +213,7 @@ textarea.input {
 		& when (@col-method = float) {
 			.cf; // clearfix
 		}
-		
+
 		& when (@col-method = flex) {
 			display: flex;
 			justify-content: space-between;
@@ -257,7 +256,7 @@ textarea.input {
 	}
 
 	&.validation-icons {
-		&.valid, 
+		&.valid,
 		&.warning,
 		&.error {
 			input.input,
@@ -287,15 +286,15 @@ textarea.input {
 					opacity: 1;
 				}
 			}
-			
+
 			opacity: 1;
 			animation: check-whop 0.2s ease-out forwards;
 		}
 	}
-	
+
 	// valid
 	&.valid {
-		
+
 		input.input,
 		textarea.input {
 			border-color: screen(@okay-color,@l1-additive);
@@ -386,7 +385,7 @@ textarea.input {
 		padding-right: 30px;
 	}
 
-	&.valid .input-wrap:after, 
+	&.valid .input-wrap:after,
 	&.warning .input-wrap:after,
 	&.error .input-wrap:after,
 	.input-wrap:after {
@@ -432,7 +431,7 @@ textarea.input {
 		flex: 0 1 auto;
 		margin: 0;
 		vertical-align: middle;
-	
+
 		// border-radius
 		& when (@input-border-radius > 0) {
 			border-radius: 0;
@@ -483,7 +482,7 @@ textarea.input {
 		}
 
 	}
-	
+
 	// border-radius
 	& when (@input-border-radius > 0) {
 		.input-addon {
@@ -742,7 +741,7 @@ input[type="radio"].radiobox.validation.error + label　{
 
 
 // disabled
-input[type="checkbox"].checkbox:disabled + label, 
+input[type="checkbox"].checkbox:disabled + label,
 input[type="radio"].radiobox:disabled + label,
 fieldset:disabled input[type="checkbox"].checkbox + label,
 fieldset:disabled input[type="radio"].radiobox + label {
@@ -844,7 +843,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		& when (@chk-switch-disable-shadows = false) {
 			box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 		}
-		
+
 	}
 
 	label span {
@@ -895,7 +894,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			}
 		}
 	}
-	
+
 	&:not(.ab-type) label span:before {
 		background-color: fadeout(@color,50%);
 	}
@@ -914,7 +913,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			transform: translate(0);
 		}
 	}
-	
+
 	// checked state - hover
 	input[type="checkbox"]:checked + label:hover span {
 		&:before, &:after {
@@ -937,7 +936,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		input[type="checkbox"]:checked + label span:after {
 			background-color: multiply(@okay-color,@d2-additive);
 		}
-		
+
 		& when (@include-dark = true) {
 			// ticker color on dark
 			.dark & input[type="checkbox"]:checked + label span:after {
@@ -952,14 +951,14 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			box-sizing: border-box;
 			background-color: #f00 !important;
 		}
-		
+
 		& when (@include-dark = true) {
 			// ticker color on dark
 			.dark & label span:after {
 				border-color: #bbb;
 			}
 		}
-		
+
 		input[type="checkbox"]:checked + label span:after {
 			background-color: saturate(screen(@okay-color,@l1-additive), 50%) !important;
 		}
@@ -977,7 +976,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 				background-color: fadeout(@gray,80%);
 				border-color: fadeout(@gray-l1,50%);
 			}
-		}	
+		}
 	}
 
 	input[type="checkbox"]:disabled + label,
@@ -1052,15 +1051,15 @@ select.select {
 		}
 	}
 
-	
+
 	// focused state
-	&:focus { 
+	&:focus {
 		outline: none !important;
 		background-color: #fafafa;
 		border-color: @selectbox-color;
-		.drop-shadow-light;	
+		.drop-shadow-light;
 	}
-	
+
 	// disabled
 	&:disabled {
 		opacity: 0.7;
@@ -1071,7 +1070,7 @@ select.select {
 		cursor: default;
 		box-shadow: none;
 	}
-	
+
 	// multiple
 	&[multiple] {
 		background-image: none;
@@ -1175,7 +1174,7 @@ select.select {
 			}
 
 			transition: border-color .15s, background-color .15s, box-shadow .15s, color .15s;
-			
+
 
 			// caret
 			&:after {
@@ -1218,8 +1217,8 @@ select.select {
 			padding: 0;
 			z-index: @selectbox-options-z-index;
 
-			box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(0,0,0,0.1); 
-			
+			box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(0,0,0,0.1);
+
 			& when (@selectbox-border-radius > 0) {
 				border-radius: @selectbox-border-radius;
 			}
@@ -1264,7 +1263,7 @@ select.select {
 				&:last-child {
 					margin-bottom: 0;
 				}
-				
+
 
 				// option hover
 				&:hover {
@@ -1294,7 +1293,7 @@ select.select {
 						display: inline-block;
 						width: 16px;
 						height: 16px;
-						
+
 						@checkmark-color: @selectbox-color;
 						@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
 						background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
@@ -1360,16 +1359,16 @@ select.select {
 				& when (@selectbox-disable-shadows = false) {
 					box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
 				}
-				
+
 				&:after {
 					border-top-color: @gray;
 				}
 			}
 		}
 
-		
+
 		// focused state
-		&.focus, &:focus { 
+		&.focus, &:focus {
 
 			.selecter-selected {
 				background-color: #fafafa;
@@ -1391,7 +1390,7 @@ select.select {
 				background-color: @selectbox-color;
 				border-color: @selectbox-color-d1;
 				color: #fff;
-				
+
 				// flip caret
 				&:after {
 					transform: rotateX(180deg);
@@ -1489,7 +1488,7 @@ select.select {
 				cursor: default;
 				box-shadow: none;
 			}
-			
+
 			// caret
 			.selecter-selected:after {
 				border-top-color: #ccc;
@@ -1528,7 +1527,7 @@ select.select {
 					border-color: @gray;
 					background-color: fadeout(@black,60%);
 				}
-					
+
 				&:hover .selecter-selected {
 					border-color: @gray-l1;
 				}
@@ -1536,7 +1535,7 @@ select.select {
 					border-color: @primary-accent-color;
 					background-color: fadeout(@black,30%);
 				}
-				
+
 
 				.selecter-options {
 					background-color: #000;
