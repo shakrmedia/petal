@@ -5348,6 +5348,9 @@ section .section-footer .datestamp {
   padding: 3px;
   border: 2px solid #fff;
 }
+.dark .color-patch.base {
+  border-color: #151515;
+}
 .color-patch span {
   display: -ms-flexbox;
   display: flex;
@@ -5360,6 +5363,9 @@ section .section-footer .datestamp {
   background-color: #fff;
   font-family: "SF Mono", "Menlo", "Monaco", "Consolas", "Courier New";
   font-size: 12px;
+}
+.dark .color-patch span {
+  background-color: #151515;
 }
 .color-patch span:before {
   content: "#";
