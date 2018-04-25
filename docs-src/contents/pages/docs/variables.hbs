@@ -23,20 +23,6 @@ list-order: 1
 <h4>List of variables (Default values)</h4>
 
 <div class="demo-code">
-<pre><code>
-// global settings
-@include-dark: true;
-
-// layout
-@container-width: 980px;
-@container-max-width: @container-width;
-@container-padding: 15px;
-@col-method: flex; // flex or float (legacy)
-@col-padding: 15px;
-</pre></code>
-</div>
-
-<div class="demo-code">
 {{#markdown}}
 ```less
 // global settings
@@ -63,7 +49,7 @@ list-order: 1
 // colors
 @primary-accent-color: @blue;
 @okay-color: @green;
-@warning-color: @yellow;
+@warning-color: @gold;
 @danger-color: @red;
 @link-text-color: @red;
 @preset-colors: red, green, blue;
@@ -91,11 +77,12 @@ list-order: 1
 @input-border-radius: 0;
 @input-font-size: 0.9em;
 @input-textarea-font-size: 0.8em;
-@input-label-font-size: 0.8em;
-@input-label-font-weight: 900;
-@input-label-letter-spacing: 0.1em;
 @input-line-height: 1.2;
-@input-caption-font-size: 0.8em;
+@form-label-uppercase: true;
+@form-label-font-size: 0.8em;
+@form-label-font-weight: 900;
+@form-label-letter-spacing: 0.1em;
+@form-caption-font-size: 0.8em;
 @input-spinner-color: @primary-accent-color;
 @input-spinner-animation-duration: 0.4s;
 @input-html5-validation-styles: true;
