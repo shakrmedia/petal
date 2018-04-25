@@ -2,7 +2,7 @@
 // *  Petal
 // *  http://shakrmedia.github.io/petal
 // *  Copyright 2015-2018 Shakr Media Co., Ltd.
-// *  
+// *
 // *  color-palette.less - color variables
 // * ================================= *
 
@@ -13,45 +13,87 @@
 // DO NOT TOUCH unless you know what you're doing!
 @l1-additive: #464646;
 @l2-additive: #898989;
+@l3-additive: #b8b8b8;
+@l4-additive: #dadada;
+@l5-additive: #f0f0f0;
 @d1-additive: #e1e1e1;
 @d2-additive: #c2c2c2;
+@d3-additive: #9b9b9b;
+@d4-additive: #727272;
+@d5-additive: #4c4c4c;
 
-// black and white
+// preset colors
 @black: #000;
 @white: #fff;
 
-@gray: #999;
-@gray-d1: #777;
-@gray-d2: #666;
-@gray-l1: #bbb;
-@gray-l2: #ddd;
-
-// default main palette
 @red: #f05a67;
-@red-l1: #f48791;
-@red-l2: #f8b3b9;
-@red-d1: #d44f5b;
-@red-d2: #b7444e;
-
-@blue: #30a4dc;
-@blue-l1: #69bde6;
-@blue-l2: #9fd5ef;
-@blue-d1: #2a91c2;
-@blue-d2: #257da7;
+@red-l1: screen(@red,@l1-additive);
+@red-l2: screen(@red,@l2-additive);
+@red-d1: multiply(@red,@d1-additive);
+@red-d2: multiply(@red,@d2-additive);
 
 @green: #b2cf65;
-@green-l1: #c7dc8f;
-@green-l2: #dbe9b8;
-@green-d1: #9db759;
-@green-d2: #879d4d;
+@green-l1: screen(@green,@l1-additive);
+@green-l2: screen(@green,@l2-additive);
+@green-d1: multiply(@green,@d1-additive);
+@green-d2: multiply(@green,@d2-additive);
 
-@yellow: #f0bc28;
+@blue: #30a4dc;
+@blue-l1: screen(@blue,@l1-additive);
+@blue-l2: screen(@blue,@l2-additive);
+@blue-d1: multiply(@blue,@d1-additive);
+@blue-d2: multiply(@blue,@d2-additive);
+
+@peach: #f58960;
+@peach-l1: screen(@peach,@l1-additive);
+@peach-l2: screen(@peach,@l2-additive);
+@peach-d1: multiply(@peach,@d1-additive);
+@peach-d2: multiply(@peach,@d2-additive);
+
+@orange: #faab58;
+@orange-l1: screen(@orange,@l1-additive);
+@orange-l2: screen(@orange,@l2-additive);
+@orange-d1: multiply(@orange,@d1-additive);
+@orange-d2: multiply(@orange,@d2-additive);
+
+@gold: #ffc445;
+@gold-l1: screen(@gold,@l1-additive);
+@gold-l2: screen(@gold,@l2-additive);
+@gold-d1: multiply(@gold,@d1-additive);
+@gold-d2: multiply(@gold,@d2-additive);
+
+@yellow: #ffd85a;
 @yellow-l1: screen(@yellow,@l1-additive);
 @yellow-l2: screen(@yellow,@l2-additive);
 @yellow-d1: multiply(@yellow,@d1-additive);
 @yellow-d2: multiply(@yellow,@d2-additive);
 
-// additional colors
-@purple: #c37dc4;
-@orange: #f1a85b;
 @teal: #21c5c7;
+@teal-l1: screen(@teal,@l1-additive);
+@teal-l2: screen(@teal,@l2-additive);
+@teal-d1: multiply(@teal,@d1-additive);
+@teal-d2: multiply(@teal,@d2-additive);
+
+@purple: #c37dc4;
+@purple-l1: screen(@purple,@l1-additive);
+@purple-l2: screen(@purple,@l2-additive);
+@purple-d1: multiply(@purple,@d1-additive);
+@purple-d2: multiply(@purple,@d2-additive);
+
+@pink: #f15b82;
+@pink-l1: screen(@pink,@l1-additive);
+@pink-l2: screen(@pink,@l2-additive);
+@pink-d1: multiply(@pink,@d1-additive);
+@pink-d2: multiply(@pink,@d2-additive);
+
+@brown: #624b63;
+@brown-l1: screen(@brown,@l1-additive);
+@brown-l2: screen(@brown,@l2-additive);
+@brown-d1: multiply(@brown,@d1-additive);
+@brown-d2: multiply(@brown,@d2-additive);;
+
+@gray: #999;
+@gray-l1: screen(@gray,@l1-additive);
+@gray-l2: screen(@gray,@l2-additive);
+@gray-d1: multiply(@gray,@d1-additive);
+@gray-d2: multiply(@gray,@d2-additive);
