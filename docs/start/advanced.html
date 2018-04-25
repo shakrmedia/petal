@@ -164,16 +164,16 @@
 </body>
 
 <script>
-  const darkToggleChkValue = ~~(sessionStorage.getItem('darkToggleChkValue'));
-  const darkToggleChk = document.getElementById('demo-dark-toggle');
+  var darkToggleChkValue = ~~(sessionStorage.getItem('darkToggleChkValue'));
+  var darkToggleChk = document.getElementById('demo-dark-toggle');
   if (darkToggleChkValue) {
     document.body.classList.add('dark');
     darkToggleChk.checked = darkToggleChkValue;
   }
 
-  document.addEventListener('DOMContentLoaded', _ => {
-    darkToggleChk.addEventListener('change', e => {
-      const darkToggleChkValue = ~~(darkToggleChk.checked);
+  document.addEventListener('DOMContentLoaded', function() {
+    darkToggleChk.addEventListener('change', function() {
+      var darkToggleChkValue = ~~(darkToggleChk.checked);
       sessionStorage.setItem('darkToggleChkValue', darkToggleChkValue);
 
       if (darkToggleChkValue) {
