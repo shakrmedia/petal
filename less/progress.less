@@ -12,58 +12,58 @@
 
 // spinner
 .spinner {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
 
-    span {
-        display: block;
-        width: 20px;
-        height: 20px;
-        border-width: 2px;
-        border-style: solid;
-        border-color: fadeout(#666,80%);
-        border-top-color: @spinner-color;
-        border-radius: 40px;
-    }
+	span {
+		display: block;
+		width: 20px;
+		height: 20px;
+		border-width: 2px;
+		border-style: solid;
+		border-color: fadeout(#666,80%);
+		border-top-color: @spinner-color;
+		border-radius: 40px;
+	}
 
-    &.spinning span {
-        @keyframes spinner-rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+	&.spinning span {
+		@keyframes spinner-rotate {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
 
-        animation: spinner-rotate 0.6s linear infinite;
-    }
+		animation: spinner-rotate 0.6s linear infinite;
+	}
 
-    &.hidden {
-        display: none;
-    }
+	&.hidden {
+		display: none;
+	}
 
 
-    &.small {
-        width: 16px;
-        height: 16px;
+	&.small {
+		width: 16px;
+		height: 16px;
 
-        span {
-            width: 16px;
-            height: 16px;
-        }
-    }
+		span {
+			width: 16px;
+			height: 16px;
+		}
+	}
 
-    &.big {
-        width: 40px;
-        height: 40px;
+	&.big {
+		width: 40px;
+		height: 40px;
 
-        span {
-            width: 40px;
-            height: 40px;
-            border-width: 3px;
-        }
-    }
+		span {
+			width: 40px;
+			height: 40px;
+			border-width: 3px;
+		}
+	}
 }

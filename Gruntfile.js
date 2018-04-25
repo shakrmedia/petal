@@ -106,9 +106,9 @@ module.exports = function(grunt) {
         mangle: false
       },
       petal: {
-    		src: ['js/*.js'],
-    		dest: 'build/<%= pkg.codename %>.min.js'
-  	  },
+        src: ['js/*.js'],
+        dest: 'build/<%= pkg.codename %>.min.js'
+      },
       dist: {
         src: ['js/*.js'],
         dest: 'dist/<%= pkg.codename %>.min.js'
@@ -118,10 +118,10 @@ module.exports = function(grunt) {
     // concat
     concat: {
       petal: {
-  	    files: {
-  		  'build/<%= pkg.codename %>.js':'js/*.js'
-  	    }
-  	  },
+        files: {
+        'build/<%= pkg.codename %>.js':'js/*.js'
+        }
+      },
       dist: {
         files: {
         'dist/<%= pkg.codename %>.js':'js/*.js'
@@ -163,7 +163,7 @@ module.exports = function(grunt) {
 
     // assemble
     assemble: {
-  	  options: {
+      options: {
         flatten: true,
         helpers: [
           'handlebars-helpers',

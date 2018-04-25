@@ -6,52 +6,52 @@ list-order: 13
 ---
 
 <div class="section-header">
-	<h2 id="section-modals">Modals</h2>
-	<p class="sub">
-		<span class="file-ref">modals.less</span>
-	</p>
+  <h2 id="section-modals">Modals</h2>
+  <p class="sub">
+    <span class="file-ref">modals.less</span>
+  </p>
 </div>
-			
+
 <h3>
-	Basic Modal
+  Basic Modal
 </h3>
 <div class="demo-panel modal-demo" data-toggle-bg="toggle">
-	<div class="modal">
-		<span class="close-btn"></span>
+  <div class="modal">
+    <span class="close-btn"></span>
 
-		<div class="modal-header">
-			<h3 class="modal-header-text">Header text</h3>
-			<p class="sub">Header caption</p>
-		</div>
-		<div class="modal-body">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-			Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. 
-			Necessitatibus, est dicta ea totam neque!
-			</p>
-		</div>
-		<div class="modal-footer btn-row">
-			<button class="btn hollow gray">Cancel</button>
-			<button class="btn green align-right">Confirm</button>
-		</div>
-	</div>
+    <div class="modal-header">
+      <h3 class="modal-header-text">Header text</h3>
+      <p class="sub">Header caption</p>
+    </div>
+    <div class="modal-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione.
+      Necessitatibus, est dicta ea totam neque!
+      </p>
+    </div>
+    <div class="modal-footer btn-row">
+      <button class="btn hollow gray">Cancel</button>
+      <button class="btn green align-right">Confirm</button>
+    </div>
+  </div>
 </div>
 <div class="demo-code">
 {{#markdown}}
 ``` html
 <div class="modal">
-	<span class="close-btn"></span>
+  <span class="close-btn"></span>
 
-	<div class="modal-header">
-		<h3 class="modal-header-text">Header text</h3>
-		<p class="sub">Header caption</p>
-	</div>
-	<div class="modal-body">
-		<p>...</p>
-	</div>
-	<div class="modal-footer btn-row">
-		<button class="btn hollow gray">Cancel</button>
-		<button class="btn green align-right">Confirm</button>
-	</div>
+  <div class="modal-header">
+    <h3 class="modal-header-text">Header text</h3>
+    <p class="sub">Header caption</p>
+  </div>
+  <div class="modal-body">
+    <p>...</p>
+  </div>
+  <div class="modal-footer btn-row">
+    <button class="btn hollow gray">Cancel</button>
+    <button class="btn green align-right">Confirm</button>
+  </div>
 </div>
 ```
 {{/markdown}}
@@ -66,59 +66,59 @@ list-order: 13
 <br>
 
 <h3>
-	Full-page Modal
+  Full-page Modal
 </h3>
 <div class="demo-panel">
-	<div class="p-20">
-		<button class="btn" id="demo-fp-modal-open-btn">Open Demo Modal</button>
-	</div>
+  <div class="p-20">
+    <button class="btn" id="demo-fp-modal-open-btn">Open Demo Modal</button>
+  </div>
 
-	<div class="fullpage-modal-container" id="demo-fp-modal">
-		<div class="overlay" data-modal-close></div>
-		<div class="fullpage-modal-inner-wrap">
-			<div class="fullpage-modal">
-				<span class="close-btn" data-modal-close></span>
+  <div class="fullpage-modal-container" id="demo-fp-modal">
+    <div class="overlay" data-modal-close></div>
+    <div class="fullpage-modal-inner-wrap">
+      <div class="fullpage-modal">
+        <span class="close-btn" data-modal-close></span>
 
-				<div class="modal-header">
-					<h3 class="modal-header-text">Header text</h3>
-					<p class="sub">Header caption</p>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-					Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione. 
-					Necessitatibus, est dicta ea totam neque!
-					</p>
-				</div>
-				<div class="modal-footer btn-row">
-					<button class="btn hollow gray" data-modal-close>Cancel</button>
-					<button class="btn green align-right" data-modal-close>Confirm</button>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="modal-header">
+          <h3 class="modal-header-text">Header text</h3>
+          <p class="sub">Header caption</p>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Dolores quisquam eum molestias amet et, officia at suscipit quo, tenetur esse, adipisci nisi beatae ratione.
+          Necessitatibus, est dicta ea totam neque!
+          </p>
+        </div>
+        <div class="modal-footer btn-row">
+          <button class="btn hollow gray" data-modal-close>Cancel</button>
+          <button class="btn green align-right" data-modal-close>Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="demo-code">
 {{#markdown}}
 ``` html
 <div class="fullpage-modal-container">
-	<div class="overlay"></div>
-	<div class="fullpage-modal-inner-wrap">
-		<div class="fullpage-modal">
-			<span class="close-btn"></span>
+  <div class="overlay"></div>
+  <div class="fullpage-modal-inner-wrap">
+    <div class="fullpage-modal">
+      <span class="close-btn"></span>
 
-			<div class="modal-header">
-				<h3 class="modal-header-text">Header text</h3>
-				<p class="sub">Header caption</p>
-			</div>
-			<div class="modal-body">
-				<p>...</p>
-			</div>
-			<div class="modal-footer btn-row">
-				<button class="btn hollow gray">Cancel</button>
-				<button class="btn green align-right">Confirm</button>
-			</div>
-		</div>
-	</div>
+      <div class="modal-header">
+        <h3 class="modal-header-text">Header text</h3>
+        <p class="sub">Header caption</p>
+      </div>
+      <div class="modal-body">
+        <p>...</p>
+      </div>
+      <div class="modal-footer btn-row">
+        <button class="btn hollow gray">Cancel</button>
+        <button class="btn green align-right">Confirm</button>
+      </div>
+    </div>
+  </div>
 </div>
 ```
 {{/markdown}}

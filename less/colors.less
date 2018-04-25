@@ -10,28 +10,28 @@
 @import (reference) 'variables.less';
 
 .generate-color-presets(@input-color) {
-    .text-@{input-color} { color: @color; }
-    .text-@{input-color}-l1 { color: @color-l1; }
-    .text-@{input-color}-l2 { color: @color-l2; }
-    .text-@{input-color}-d1 { color: @color-d1; }
-    .text-@{input-color}-d2 { color: @color-d2; }
+	.text-@{input-color} { color: @color; }
+	.text-@{input-color}-l1 { color: @color-l1; }
+	.text-@{input-color}-l2 { color: @color-l2; }
+	.text-@{input-color}-d1 { color: @color-d1; }
+	.text-@{input-color}-d2 { color: @color-d2; }
 
-    .bg-@{input-color} { background-color: @color; }
-    .bg-@{input-color}-l1 { background-color: @color-l1; }
-    .bg-@{input-color}-l2 { background-color: @color-l2; }
-    .bg-@{input-color}-d1 { background-color: @color-d1; }
-    .bg-@{input-color}-d2 { background-color: @color-d2; }
+	.bg-@{input-color} { background-color: @color; }
+	.bg-@{input-color}-l1 { background-color: @color-l1; }
+	.bg-@{input-color}-l2 { background-color: @color-l2; }
+	.bg-@{input-color}-d1 { background-color: @color-d1; }
+	.bg-@{input-color}-d2 { background-color: @color-d2; }
 
-    .colorset(@@input-color);
+	.colorset(@@input-color);
 }
 
 // generate color presets
 .generate-all-color-presets(@colors; @index) when (@index > 0) {
-    .generate-all-color-presets(@colors; (@index - 1));
+	.generate-all-color-presets(@colors; (@index - 1));
 
-    @preset-color: extract(@colors, @index);
+	@preset-color: extract(@colors, @index);
 
-    .generate-color-presets(~'@{preset-color}');
+	.generate-color-presets(~'@{preset-color}');
 }
 
 @preset-colors-length: length(@preset-colors);
