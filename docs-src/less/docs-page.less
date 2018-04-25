@@ -407,3 +407,103 @@ section {
 	}
 }
 
+// color patches
+.color-patch-table {
+	.color-patch-columns-label {
+		display: flex;
+		margin-left: 140px;
+		margin-bottom: 15px;
+
+		span {
+			font-family: @monospace-font;
+			text-align: center;
+			width: 70px;
+
+			&.base {
+				width: 74px;
+			}
+		}
+	}
+}
+
+.color-patch-group {
+	display: flex;
+	align-items: center;
+	margin: 0 0 5px 0;
+
+	.color-patch-name-label {
+		width: 140px;
+		padding-bottom: 16px;
+	}
+}
+
+.color-patch {
+	display: inline-flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	width: 70px;
+	height: 56px;
+	text-transform: uppercase;
+
+	&.base {
+		width: 74px;
+		height: 66px;
+		padding: 3px;
+		border: 2px solid #fff;
+	}
+
+	span {
+		display: flex;
+		width: 100%;
+		height: 16px;
+		align-items: center;
+		justify-content: center;
+		background-color: #fff;
+		font-family: @monospace-font;
+		font-size: 12px;
+
+		&:before {
+			content: "#";
+			color: #aaa;
+		}
+	}
+
+	.generate-color-patch(@color-name) {
+		.colorset(@@color-name);
+		&.@{color-name} {
+			background-color: @color;
+			content: '@{color}';
+		}
+		&.@{color-name}-l1 {
+			background-color: @color-l1;
+			content: '@{color-l1}';
+		}
+		&.@{color-name}-l2 {
+			background-color: @color-l2;
+			content: '@{color-l2}';
+		}
+		&.@{color-name}-d1 {
+			background-color: @color-d1;
+			content: '@{color-d1}';
+		}
+		&.@{color-name}-d2 {
+			background-color: @color-d2;
+			content: '@{color-d2}';
+		}
+	}
+
+	.generate-color-patch(red);
+	.generate-color-patch(green);
+	.generate-color-patch(blue);
+
+	.generate-color-patch(peach);
+	.generate-color-patch(orange);
+	.generate-color-patch(gold);
+	.generate-color-patch(yellow);
+	.generate-color-patch(purple);
+	.generate-color-patch(teal);
+	.generate-color-patch(pink);
+	.generate-color-patch(brown);
+
+	.generate-color-patch(gray);
+}

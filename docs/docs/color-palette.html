@@ -30,7 +30,7 @@
 
   <link rel="stylesheet" href="../assets/docs.min.css">
 
-  <title>Paging | Petal</title>
+  <title>Color Palette | Petal</title>
 </head>
 
 <body>
@@ -65,7 +65,7 @@
       <ul>
           <li><a href="index.html">Petal.less</a></li>
           <li><a href="variables.html">Customizing Settings</a></li>
-          <li><a href="color-palette.html">Color Palette</a></li>
+          <li class="active"><a href="color-palette.html">Color Palette</a></li>
           <li><a href="javascript.html">JavaScript Functions</a></li>
       </ul>
 
@@ -80,7 +80,7 @@
           <li><a href="forms.html">Form Elements</a></li>
           <li><a href="progress.html">Progress</a></li>
           <li><a href="tables.html">Tables</a></li>
-          <li class="active"><a href="paging.html">Paging</a></li>
+          <li><a href="paging.html">Paging</a></li>
           <li><a href="panels.html">Panels</a></li>
           <li><a href="tabs.html">Tabs</a></li>
           <li><a href="alerts.html">Alerts</a></li>
@@ -96,94 +96,137 @@
       
 
 <div class="section-header">
-  <h2 id="section-paging">Paging</h2>
-  <p class="sub">
-    <span class="file-ref">paging.less</span>
-  </p>
+    <h2>Petal Color Palette</h2>
+    <p class="sub">
+        <span class="file-ref">color-palette.less</span>
+    </p>
 </div>
 
-<div class="demo-panel p-15 gray" id="table-demo" data-toggle-bg="toggle">
+<p>Petal provides a number of preset colors with 4 additional shades. Colors and shades are a crucial part of Petal's design so they are always imported along with the default variables.</p>
 
-  <nav class="paging">
-    <div class="prev pg-block disabled"><a><i class="petalicon"></i>PREV</a></div>
-    <ul class="pg-list">
-      <li class="pg-block active"><a>1</a></li>
-      <li class="pg-block"><a>2</a></li>
-      <li class="pg-block"><a>3</a></li>
-      <li class="pg-ellipsis">⋯</li>
-      <li class="pg-block"><a>9</a></li>
-      <li class="pg-block"><a>10</a></li>
-    </ul>
-    <div class="next pg-block"><a>NEXT<i class="petalicon"></i></a></div>
-  </nav>
+<p>This page displays lists the default preset color included in Petal. You can use any of these colors as variables in your projects: just call them by the original names or the shades (For example, a <code>d2</code> shade of orange would be <code>@orange-d2</code>.)</p>
 
-</div>
-<div class="demo-code">
-<pre><code class="language-html">&lt;nav class=&quot;paging&quot;&gt;
-  &lt;div class=&quot;prev pg-block disabled&quot;&gt;&lt;a&gt;&lt;i class=&quot;petalicon&quot;&gt;&lt;/i&gt;PREV&lt;/a&gt;&lt;/div&gt;
-  &lt;ul class=&quot;pg-list&quot;&gt;
-    &lt;li class=&quot;pg-block active&quot;&gt;&lt;a&gt;1&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&quot;pg-block&quot;&gt;&lt;a&gt;2&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&quot;pg-block&quot;&gt;&lt;a&gt;3&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&quot;pg-ellipsis&quot;&gt;⋯&lt;/li&gt;
-    &lt;li class=&quot;pg-block&quot;&gt;&lt;a&gt;9&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&quot;pg-block&quot;&gt;&lt;a&gt;10&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div class=&quot;next pg-block&quot;&gt;&lt;a&gt;NEXT&lt;i class=&quot;petalicon&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;/nav&gt;
-</code></pre>
-</div>
-
-<p>Paging module. The topmost <code>.paging</code> wrapper is set as an <code>inline-block</code>, so you can center easily by adding <code>text-align: center</code> to the parent container if you want to.</p>
-
-<p>Use <code>.disabled</code> class on <code>.pg-block</code> to disable.</p>
-
-<p>If you want to make a paging module with just the prev/next pager buttons, remove the <code>pg-list</code> inbetween; same thing if you want it vice versa with only the page list.</p>
+<p>Petal also provides some quick utility classes for applying these colors on your text or background: learn more about them <a href="colors.html">here</a>.</p>
 
 <br>
 
-<h5>Inline Variant</h5>
+<div class="color-patch-table">
+  <div class="color-patch-columns-label">
+    <span>l2</span>
+    <span>l1</span>
+    <span class="base">Base</span>
+    <span>d1</span>
+    <span>d2</span>
+  </div>
 
-<div class="demo-panel p-15" id="table-demo" data-toggle-bg="toggle">
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@red</code></b></div>
+    <div class="color-patch red-l2"></div>
+    <div class="color-patch red-l1"></div>
+    <div class="color-patch red base"></div>
+    <div class="color-patch red-d1"></div>
+    <div class="color-patch red-d2"></div>
+  </div>
 
-  <nav class="paging inline">
-    <div class="prev pg-block disabled"><a><i class="petalicon"></i>PREV</a></div>
-    <ul class="pg-list">
-      <li class="pg-block active"><a>1</a></li>
-      <li class="pg-block"><a>2</a></li>
-      <li class="pg-block"><a>3</a></li>
-      <li class="pg-ellipsis">⋯</li>
-      <li class="pg-block"><a>9</a></li>
-      <li class="pg-block"><a>10</a></li>
-    </ul>
-    <div class="next pg-block"><a>NEXT<i class="petalicon"></i></a></div>
-  </nav>
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@peach</code></b></div>
+    <div class="color-patch peach-l2"></div>
+    <div class="color-patch peach-l1"></div>
+    <div class="color-patch peach base"></div>
+    <div class="color-patch peach-d1"></div>
+    <div class="color-patch peach-d2"></div>
+  </div>
 
+   <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@orange</code></b></div>
+    <div class="color-patch orange-l2"></div>
+    <div class="color-patch orange-l1"></div>
+    <div class="color-patch orange base"></div>
+    <div class="color-patch orange-d1"></div>
+    <div class="color-patch orange-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@gold</code></b></div>
+    <div class="color-patch gold-l2"></div>
+    <div class="color-patch gold-l1"></div>
+    <div class="color-patch gold base"></div>
+    <div class="color-patch gold-d1"></div>
+    <div class="color-patch gold-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@yellow</code></b></div>
+    <div class="color-patch yellow-l2"></div>
+    <div class="color-patch yellow-l1"></div>
+    <div class="color-patch yellow base"></div>
+    <div class="color-patch yellow-d1"></div>
+    <div class="color-patch yellow-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@green</code></b></div>
+    <div class="color-patch green-l2"></div>
+    <div class="color-patch green-l1"></div>
+    <div class="color-patch green base"></div>
+    <div class="color-patch green-d1"></div>
+    <div class="color-patch green-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@teal</code></b></div>
+    <div class="color-patch teal-l2"></div>
+    <div class="color-patch teal-l1"></div>
+    <div class="color-patch teal base"></div>
+    <div class="color-patch teal-d1"></div>
+    <div class="color-patch teal-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@blue</code></b></div>
+    <div class="color-patch blue-l2"></div>
+    <div class="color-patch blue-l1"></div>
+    <div class="color-patch blue base"></div>
+    <div class="color-patch blue-d1"></div>
+    <div class="color-patch blue-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@purple</code></b></div>
+    <div class="color-patch purple-l2"></div>
+    <div class="color-patch purple-l1"></div>
+    <div class="color-patch purple base"></div>
+    <div class="color-patch purple-d1"></div>
+    <div class="color-patch purple-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@pink</code></b></div>
+    <div class="color-patch pink-l2"></div>
+    <div class="color-patch pink-l1"></div>
+    <div class="color-patch pink base"></div>
+    <div class="color-patch pink-d1"></div>
+    <div class="color-patch pink-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@brown</code></b></div>
+    <div class="color-patch brown-l2"></div>
+    <div class="color-patch brown-l1"></div>
+    <div class="color-patch brown base"></div>
+    <div class="color-patch brown-d1"></div>
+    <div class="color-patch brown-d2"></div>
+  </div>
+
+  <div class="color-patch-group">
+    <div class="color-patch-name-label"><b><code>@gray</code></b></div>
+    <div class="color-patch gray-l2"></div>
+    <div class="color-patch gray-l1"></div>
+    <div class="color-patch gray base"></div>
+    <div class="color-patch gray-d1"></div>
+    <div class="color-patch gray-d2"></div>
+  </div>
 </div>
-
-<p>Add <code>.inline</code> to paging container if you want an inline version without any backgrounds and box shadows.</p>
-
-<br>
-
-<h5>Stretched</h5>
-<div class="demo-panel p-15 gray" id="table-demo" data-toggle-bg="toggle">
-
-  <nav class="paging pg-stretch">
-    <div class="prev pg-block disabled"><a><i class="petalicon"></i>PREV</a></div>
-    <ul class="pg-list">
-      <li class="pg-block active"><a>1</a></li>
-      <li class="pg-block"><a>2</a></li>
-      <li class="pg-block"><a>3</a></li>
-      <li class="pg-ellipsis">⋯</li>
-      <li class="pg-block"><a>9</a></li>
-      <li class="pg-block"><a>10</a></li>
-    </ul>
-    <div class="next pg-block"><a>NEXT<i class="petalicon"></i></a></div>
-  </nav>
-
-</div>
-
-<p>Add <code>.pg-stretch</code> to paging container if you want to align the pager buttons to the ends.</p>
 
 
       <div class="section-footer">

@@ -112,3 +112,12 @@ $(document).ready(function() {
     // stickyfill
     $('.sticky').Stickyfill();
 });
+
+// generate color patch hex labels
+var colors = document.getElementsByClassName('color-patch');
+$(document).ready(function() {
+  for (i = 0; i < colors.length; i++) {
+    var colorValue = window.getComputedStyle(colors[i]).getPropertyValue('content');
+    colors[i].insertAdjacentHTML('beforeend', '<span>'+ colorValue.replace(/['"#]+/g, '') +'</span>');
+  }
+});

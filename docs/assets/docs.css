@@ -5306,6 +5306,305 @@ section .section-footer .datestamp {
 #demo-fp-modal.visible {
   display: table;
 }
+.color-patch-table .color-patch-columns-label {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 140px;
+  margin-bottom: 15px;
+}
+.color-patch-table .color-patch-columns-label span {
+  font-family: "SF Mono", "Menlo", "Monaco", "Consolas", "Courier New";
+  text-align: center;
+  width: 70px;
+}
+.color-patch-table .color-patch-columns-label span.base {
+  width: 74px;
+}
+.color-patch-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin: 0 0 5px 0;
+}
+.color-patch-group .color-patch-name-label {
+  width: 140px;
+  padding-bottom: 16px;
+}
+.color-patch {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  width: 70px;
+  height: 56px;
+  text-transform: uppercase;
+}
+.color-patch.base {
+  width: 74px;
+  height: 66px;
+  padding: 3px;
+  border: 2px solid #fff;
+}
+.color-patch span {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 16px;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background-color: #fff;
+  font-family: "SF Mono", "Menlo", "Monaco", "Consolas", "Courier New";
+  font-size: 12px;
+}
+.color-patch span:before {
+  content: "#";
+  color: #aaa;
+}
+.color-patch.red {
+  background-color: #f05a67;
+  content: '#f05a67';
+}
+.color-patch.red-l1 {
+  background-color: #f48791;
+  content: '#f48791';
+}
+.color-patch.red-l2 {
+  background-color: #f8b3b9;
+  content: '#f8b3b9';
+}
+.color-patch.red-d1 {
+  background-color: #d44f5b;
+  content: '#d44f5b';
+}
+.color-patch.red-d2 {
+  background-color: #b7444e;
+  content: '#b7444e';
+}
+.color-patch.green {
+  background-color: #b2cf65;
+  content: '#b2cf65';
+}
+.color-patch.green-l1 {
+  background-color: #c7dc8f;
+  content: '#c7dc8f';
+}
+.color-patch.green-l2 {
+  background-color: #dbe9b8;
+  content: '#dbe9b8';
+}
+.color-patch.green-d1 {
+  background-color: #9db759;
+  content: '#9db759';
+}
+.color-patch.green-d2 {
+  background-color: #879d4d;
+  content: '#879d4d';
+}
+.color-patch.blue {
+  background-color: #30a4dc;
+  content: '#30a4dc';
+}
+.color-patch.blue-l1 {
+  background-color: #69bde6;
+  content: '#69bde6';
+}
+.color-patch.blue-l2 {
+  background-color: #9fd5ef;
+  content: '#9fd5ef';
+}
+.color-patch.blue-d1 {
+  background-color: #2a91c2;
+  content: '#2a91c2';
+}
+.color-patch.blue-d2 {
+  background-color: #257da7;
+  content: '#257da7';
+}
+.color-patch.peach {
+  background-color: #f58960;
+  content: '#f58960';
+}
+.color-patch.peach-l1 {
+  background-color: #f8a98c;
+  content: '#f8a98c';
+}
+.color-patch.peach-l2 {
+  background-color: #fac8b5;
+  content: '#fac8b5';
+}
+.color-patch.peach-d1 {
+  background-color: #d87955;
+  content: '#d87955';
+}
+.color-patch.peach-d2 {
+  background-color: #ba6849;
+  content: '#ba6849';
+}
+.color-patch.orange {
+  background-color: #faab58;
+  content: '#faab58';
+}
+.color-patch.orange-l1 {
+  background-color: #fbc286;
+  content: '#fbc286';
+}
+.color-patch.orange-l2 {
+  background-color: #fdd8b2;
+  content: '#fdd8b2';
+}
+.color-patch.orange-d1 {
+  background-color: #dd974e;
+  content: '#dd974e';
+}
+.color-patch.orange-d2 {
+  background-color: #be8243;
+  content: '#be8243';
+}
+.color-patch.gold {
+  background-color: #ffc445;
+  content: '#ffc445';
+}
+.color-patch.gold-l1 {
+  background-color: #ffd478;
+  content: '#ffd478';
+}
+.color-patch.gold-l2 {
+  background-color: #ffe4a9;
+  content: '#ffe4a9';
+}
+.color-patch.gold-d1 {
+  background-color: #e1ad3d;
+  content: '#e1ad3d';
+}
+.color-patch.gold-d2 {
+  background-color: #c29534;
+  content: '#c29534';
+}
+.color-patch.yellow {
+  background-color: #ffd85a;
+  content: '#ffd85a';
+}
+.color-patch.yellow-l1 {
+  background-color: #ffe387;
+  content: '#ffe387';
+}
+.color-patch.yellow-l2 {
+  background-color: #ffedb3;
+  content: '#ffedb3';
+}
+.color-patch.yellow-d1 {
+  background-color: #e1bf4f;
+  content: '#e1bf4f';
+}
+.color-patch.yellow-d2 {
+  background-color: #c2a444;
+  content: '#c2a444';
+}
+.color-patch.purple {
+  background-color: #c37dc4;
+  content: '#c37dc4';
+}
+.color-patch.purple-l1 {
+  background-color: #d3a1d4;
+  content: '#d3a1d4';
+}
+.color-patch.purple-l2 {
+  background-color: #e3c3e4;
+  content: '#e3c3e4';
+}
+.color-patch.purple-d1 {
+  background-color: #ac6ead;
+  content: '#ac6ead';
+}
+.color-patch.purple-d2 {
+  background-color: #945f95;
+  content: '#945f95';
+}
+.color-patch.teal {
+  background-color: #21c5c7;
+  content: '#21c5c7';
+}
+.color-patch.teal-l1 {
+  background-color: #5ed5d6;
+  content: '#5ed5d6';
+}
+.color-patch.teal-l2 {
+  background-color: #98e4e5;
+  content: '#98e4e5';
+}
+.color-patch.teal-d1 {
+  background-color: #1daeb0;
+  content: '#1daeb0';
+}
+.color-patch.teal-d2 {
+  background-color: #199697;
+  content: '#199697';
+}
+.color-patch.pink {
+  background-color: #f15b82;
+  content: '#f15b82';
+}
+.color-patch.pink-l1 {
+  background-color: #f588a4;
+  content: '#f588a4';
+}
+.color-patch.pink-l2 {
+  background-color: #f9b3c5;
+  content: '#f9b3c5';
+}
+.color-patch.pink-d1 {
+  background-color: #d55073;
+  content: '#d55073';
+}
+.color-patch.pink-d2 {
+  background-color: #b74563;
+  content: '#b74563';
+}
+.color-patch.brown {
+  background-color: #624b63;
+  content: '#624b63';
+}
+.color-patch.brown-l1 {
+  background-color: #8d7c8e;
+  content: '#8d7c8e';
+}
+.color-patch.brown-l2 {
+  background-color: #b6acb7;
+  content: '#b6acb7';
+}
+.color-patch.brown-d1 {
+  background-color: #564257;
+  content: '#564257';
+}
+.color-patch.brown-d2 {
+  background-color: #4b394b;
+  content: '#4b394b';
+}
+.color-patch.gray {
+  background-color: #999;
+  content: '#999';
+}
+.color-patch.gray-l1 {
+  background-color: #b5b5b5;
+  content: '#b5b5b5';
+}
+.color-patch.gray-l2 {
+  background-color: #d0d0d0;
+  content: '#d0d0d0';
+}
+.color-patch.gray-d1 {
+  background-color: #878787;
+  content: '#878787';
+}
+.color-patch.gray-d2 {
+  background-color: #747474;
+  content: '#747474';
+}
 .hljs-comment {
   color: #8e908c;
 }

@@ -1,12 +1,12 @@
 ---
-title: Variables
+title: Customizing Settings
 area: docs
 section: intro
 list-order: 1
 ---
 
 <div class="section-header">
-    <h2>Variables</h2>
+    <h2>Customizing Settings</h2>
     <p class="sub">
         <span class="file-ref">variables.less</span>
     </p>
@@ -14,7 +14,7 @@ list-order: 1
 
 <p>Petal uses global variables for key properties that affect the look of the common UI elements. All global variables are defined in the <code>variables.less</code> file. Change the value of the variables such as <code>@primary-accent-color</code>, and it will affect all classes where it refers to the variable.</p>
 
-<p>However when editing, we recommended that you <strong>do not</strong> directly alter the values in the stock <code>variables.less</code> file, but instead use a different file to override the existing values. This is to prevent builds from failing in case new variables have been added or existing ones have been changed in newer versions. Because stock <code>variables.less</code> file is always pulled alongside other files, it will be kept up to date when you update Petal. In the similar sense, it's generally a good idea to not make direct edits to Petal's source code so that you don't have to manually keep track of any changes you made to the files before upgrading to future versions.</p>
+<p>However when editing, we recommend that you <strong>do not</strong> directly alter the values in the stock <code>variables.less</code> file, but instead use a different file to override the existing values. This is to prevent builds from failing in case new variables have been added or existing ones have been changed in newer versions. Because stock <code>variables.less</code> file is always pulled alongside other files, it will be kept up to date when you update Petal. In the similar sense, it's generally a good idea to not make direct edits to Petal's source code so that you don't have to manually keep track of any changes you made to the files before upgrading to future versions.</p>
 
 <p>Use the included <code>custom-variables.less</code> file instead to insert any variables you want to override, or just create a new file in your project folder containing the override variables, and import the file when compiling.</p>
 
