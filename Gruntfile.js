@@ -16,25 +16,25 @@ module.exports = function(grunt) {
 
     // Meta
     meta: {
-      banner: '/* \n' +
-              ' * <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> \n' +
-              ' * <%= pkg.description %> \n' +
-              ' * <%= pkg.homepage %> \n' +
-              ' * \n' +
-              ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; <%= pkg.license %> License \n' +
-              ' */\n',
-      banner_compact: '/* <%= pkg.name %> v<%= pkg.version %> - (C)<%= grunt.template.today("yyyy") %> Shakr; <%= pkg.license %> License */'
+      banner: ['/* ',
+              ' * <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> ',
+              ' * <%= pkg.description %> ',
+              ' * <%= pkg.homepage %> ',
+              ' * ',
+              ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; <%= pkg.license %> License ',
+              ' */'].join('\n'),
+      banner_compact: '/* <%= pkg.name %> v<%= pkg.version %> - (C)<%= grunt.template.today("yyyy") %> Shakr; <%= pkg.license %> License */',
+      banner_selecter: ['/* ',
+                        ' * Selecter v3.2.4 - 2015-01-07 ',
+                        ' * A jQuery plugin for replacing default select elements. Part of the Formstone Library. ',
+                        ' * http://formstone.it/selecter/ ',
+                        ' * ',
+                        ' * Copyright 2015 Ben Plum; MIT Licensed ',
+                        ' */'].join('\n')
     },
 
     // LESS
     less: {
-      petal: {
-        expand: true,
-        cwd: "less",
-        src: ["petal.less"],
-        ext: ".css",
-        dest: "build"
-      },
       docs: {
         expand: true,
         cwd: "docs-src/less",
@@ -68,12 +68,6 @@ module.exports = function(grunt) {
           })
         ]
       },
-      petal: {
-        expand: true,
-        cwd: "build",
-        src: ["petal.css"],
-        dest: "build"
-      },
       docs: {
         expand: true,
         cwd: "docs/assets",
@@ -90,9 +84,9 @@ module.exports = function(grunt) {
 
     // css minify
     cssmin: {
-      petal: {
-        src: "build/petal.css",
-        dest: "build/petal.min.css"
+      docs: {
+        src: "docs/assets/docs.css",
+        dest: "docs/assets/docs.min.css"
       },
       dist: {
         src: "dist/petal.css",
@@ -105,26 +99,10 @@ module.exports = function(grunt) {
       options: {
         mangle: false
       },
-      petal: {
-        src: ['js/*.js'],
-        dest: 'build/<%= pkg.codename %>.min.js'
-      },
-      dist: {
-        src: ['js/*.js'],
-        dest: 'dist/<%= pkg.codename %>.min.js'
-      }
-    },
-
-    // concat
-    concat: {
-      petal: {
-        files: {
-        'build/<%= pkg.codename %>.js':'js/*.js'
-        }
-      },
       dist: {
         files: {
-        'dist/<%= pkg.codename %>.js':'js/*.js'
+          'dist/petal.min.js': 'js/petal-functions.js',
+          'dist/jquery.fs.selecter.min.js': 'js/jquery.fs.selecter.js'
         }
       }
     },
@@ -141,7 +119,7 @@ module.exports = function(grunt) {
       docs_js: {
         files: [{
           expand: true,
-          cwd: 'build',
+          cwd: 'dist',
           src: ['*.js'],
           dest: 'docs/assets'
         }, {
@@ -208,20 +186,28 @@ module.exports = function(grunt) {
         position: 'top',
         banner: '<%= meta.banner %>'
       },
-      petal: {
+      full: {
+        options: {
+          banner: '<%= meta.banner %>'
+        },
         src: [
-            "build/<%= pkg.codename %>.css",
-            "build/<%= pkg.codename %>.min.css",
-          ]
+          "dist/<%= pkg.codename %>.css"
+        ]
       },
-      dist: {
+      compact: {
         options: {
           banner: '<%= meta.banner_compact %>'
         },
         src: [
-            "dist/<%= pkg.codename %>.css",
-            "dist/<%= pkg.codename %>.min.css",
-          ]
+          "dist/<%= pkg.codename %>.min.css",
+          "dist/<%= pkg.codename %>.min.js",
+        ]
+      },
+      selecter: {
+        options: {
+          banner: '<%= meta.banner_selecter %>',
+        },
+        src: ['dist/jquery.fs.selecter.min.js']
       }
     },
 
@@ -249,16 +235,19 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
-    'less:petal', 'less:docs',
-    'postcss:petal', 'postcss:docs',
-    'cssmin:petal',
-    'uglify:petal', 'concat:petal', 'usebanner:petal',
-    'copy:docs_assets', 'copy:docs_js',
-    'assemble',
-    'petal-dist']);
-  grunt.registerTask('petal', ['less:petal', 'postcss:petal', 'cssmin:petal', 'uglify:petal', 'concat:petal', 'usebanner:petal']);
-  grunt.registerTask('petal-dist', ['less:dist', 'postcss:dist', 'cssmin:dist', 'uglify:dist', 'concat:dist', 'usebanner:dist', 'copy:dist']);
-  grunt.registerTask('js', ['uglify:petal', 'concat:petal']);
+    'petal-dist',
+    'petal-docs'
+  ]);
+  grunt.registerTask('petal-dist', [
+    'less:dist', 'postcss:dist', 'cssmin:dist',
+    'uglify:dist',
+    'usebanner:full', 'usebanner:compact', 'usebanner:selecter',
+    'copy:dist'
+  ]);
+  grunt.registerTask('petal-docs', [
+    'less:docs', 'postcss:docs', 'cssmin:docs',
+    'copy:docs_assets', 'copy:docs_js', 'assemble'
+  ]);
+  grunt.registerTask('js', ['uglify:dist']);
   grunt.registerTask('dev', ['connect', 'watch']);
-
 }

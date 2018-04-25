@@ -1,4 +1,10 @@
-/* petal.less v0.10.0 - (C)2018 Shakr; MIT License */
+/* 
+ * petal.less v0.10.0 - 2018-04-25 
+ * A modern, light CSS UI framework by Shakr based on LESS. 
+ * https://shakrmedia.github.io/petal 
+ * 
+ * Copyright 2018 Shakr Media Co., Ltd.; MIT License 
+ */
 /* drop shadow mixin */
 .drop-shadow {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
