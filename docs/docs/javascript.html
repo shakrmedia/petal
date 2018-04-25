@@ -28,9 +28,9 @@
   <meta name="twitter:description" content="A modern, light CSS UI framework by Shakr based on LESS.">
   <meta name="twitter:image" content="https://shakrmedia.github.io/petal/assets/petal-og-img.jpg">
 
-  <link rel="stylesheet" href="../assets/docs.css">
+  <link rel="stylesheet" href="../assets/docs.min.css">
 
-  <title>About JavaScript | Petal</title>
+  <title>JavaScript Functions | Petal</title>
 </head>
 
 <body>
@@ -65,7 +65,7 @@
       <ul>
           <li><a href="index.html">Petal.less</a></li>
           <li><a href="variables.html">Variables</a></li>
-          <li class="active"><a href="javascript.html">About JavaScript</a></li>
+          <li class="active"><a href="javascript.html">JavaScript Functions</a></li>
       </ul>
 
       <h5 class="list-header">Components</h5>
@@ -95,23 +95,29 @@
       
 
 <div class="section-header">
-    <h2>Disclaimer regarding JavaScript</h2>
+    <h2>Petal JavaScript Functions</h2>
 </div>
 
-<p>While Petal tries to implement many of the UI elements purely in CSS without need of JavaScript to function (checkboxes, switches, etc), some more sophisticated functions require help of JavaScript. Features demonstrated in this documentation that require JavaScript for full functionality have the <span class="badge warning js-req">Requires JavaScript</span> label attached on section headers (example: <a href="buttons.html#section-buttons-toggle">Toggle Buttons</a>, <a href="buttons.html#section-buttons-spinners">Buttons with Spinners</a>, <a href="forms.html#section-forms-validation">Form Validations</a> etc.).</p>
+<p>Most UI elements provided in Petal don't require additional JavaScript code to be functional (<a href="forms.html#section-forms-checkbox-radio">Checkboxes</a>, <a href="forms.html#section-forms-switches">Switches</a>, etc) because they are implemented in pure CSS. However for some UI components, Petal provides just the styles for them and does not include working functions. For those, you will have to implement JavaScript by yourself.</p>
 
-<p>There are two <code>.js</code> files that are included in Petal repository's <code>/js</code> directory: <code>jquery.fs.selecter.js</code> and <code>petal-functions.js</code>.</p>
+<p>These elements that do require additional JavaScript for full functionality have the <span class="badge warning js-req">Requires JavaScript</span> label attached on section headers, so you'll know they won't work just by applying the HTML and CSS styles.</p>
 
-<ol>
-    <li>
-        <p><b><code>jquery.fs.selecter.js</code></b> is the file forked from <a href="https://github.com/Formstone/Selecter">Selecter jQuery Plugin</a> (by Ben Plum, MIT License). If you want to use the <a href="forms.html#section-buttons-selecter">selectbox replacement styles</a> provided in Petal, you will need to include the JavaScript file in your HTML as well as jQuery that the plugin is based on.</p>
-    </li>
-    <li>
-        <p><b><code>petal-functions.js</code></b> includes functions that make toggle buttons and dropdown menus work. This is also based on jQuery (<i>very crudely coded—vanilla JS replacement contributions are welcome!</i>) . If you are proficient with plain JavaScript or if you're planning to use other JavaScript frameworks, you can exclude the file altogether and write your own code to make it work with Petal-provided styles.</p>
-    </li>
-</ol>
+<p>Among them, we offer a pre-built JavaScript file <b>petal.js</b> (and minified <b>petal.min.js</b>) that include functions for <a href="buttons.html#section-buttons-toggle">Toggle Buttons</a> and <a href="buttons.html#section-buttons-dropdowns">Button Dropdowns</a>. If you wish, you can use them right away just by embedding the script in your HTML:</p>
 
-<p>The <code>Petal.js</code> file that is shipped with Petal is a simply a concatenated file of the two files mentioned above. So in clarification, Petal is jQuery-dependent only if you are planning to use the stock provided JS files. If you are concerned about optimizing dependencies or just don't need jQuery in your project, you are free to exclude the JS files while still using Petal CSS.</p>
+<div class="code-block">
+<pre><code class="language-html">&lt;script src=&quot;path/to/petal.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+</div>
+
+<h4>Selecter</h4>
+<p>Additionally we provide another JavaScript file in Petal package: <b>jquery.fs.selecter.js</b>. This is the file forked from the <a href="https://github.com/Formstone/Selecter">Selecter jQuery Plugin</a> (by Ben Plum, MIT License). Petal's <a href="forms.html#section-buttons-selecter">selectbox replacement styles</a> is built around this plugin. If you want to use this, you'll need to include the <b>jquery.fs.selecter.js</b> file in your HTML as well as a compatible version of jQuery:</p>
+
+<div class="code-block">
+<pre><code class="language-html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;path/to/jquery.fs.selecter.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+</div>
+
 
 
       <div class="section-footer">
