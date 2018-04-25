@@ -124,7 +124,7 @@ module.exports = function(grunt) {
   	  },
       dist: {
         files: {
-        'dist/<%= pkg.codename %>.js':'dist/*.js'
+        'dist/<%= pkg.codename %>.js':'js/*.js'
         }
       }
     },
