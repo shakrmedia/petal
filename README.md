@@ -11,13 +11,17 @@ Petal is fully coded on LESS from scratch.
 
 
 ## Setting up Petal in your project
-```
-https://cdn.rawgit.com/shakrmedia/petal/c23361bf/dist/petal.css
-https://cdn.rawgit.com/shakrmedia/petal/c23361bf/dist/petal.min.css
-```
-Use the CDN links above for a quick slap-on usage.
+Download the [latest release](https://github.com/shakrmedia/petal/releases/latest), copy the `dist` folder to your project folder. (You may want to rename it to something else.)
 
-If you want to install through npm, run
+Insert the link to stylesheet in the `<head>` of your html:
+```
+<link rel="stylesheet" type="text/css" href="dist/petal.min.css">
+```
+Now you can use all the Petal classes and styles in your project's HTML file.
+
+(If you need a pre-built, hosted CDN link, use the rawgit URL as explained in the [documentation](https://shakrmedia.github.io/petal/start).)
+
+Alternatively, if you want to install through npm, run
 ```
 npm install petal.less
 ```
