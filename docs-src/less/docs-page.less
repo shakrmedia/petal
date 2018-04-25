@@ -478,23 +478,23 @@ section {
 
 	.generate-color-patch(@color-name) {
 		.colorset(@@color-name);
-		&.@{color-name} {
+		&.c-@{color-name} {
 			background-color: @color;
 			content: '@{color}';
 		}
-		&.@{color-name}-l1 {
+		&.c-@{color-name}-l1 {
 			background-color: @color-l1;
 			content: '@{color-l1}';
 		}
-		&.@{color-name}-l2 {
+		&.c-@{color-name}-l2 {
 			background-color: @color-l2;
 			content: '@{color-l2}';
 		}
-		&.@{color-name}-d1 {
+		&.c-@{color-name}-d1 {
 			background-color: @color-d1;
 			content: '@{color-d1}';
 		}
-		&.@{color-name}-d2 {
+		&.c-@{color-name}-d2 {
 			background-color: @color-d2;
 			content: '@{color-d2}';
 		}
