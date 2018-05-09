@@ -582,8 +582,9 @@ input[type="radio"].radiobox + label {
 
 	&:before {
 		content: "";
+		flex: 0 0 auto;
 		display: block;
-		margin-right: 3px;
+		margin-right: 0.3em;
 		width: @checkbox-size;
 		height: @checkbox-size;
 		border: @checkbox-border-width solid @gray-l1;
@@ -649,11 +650,12 @@ input[type="checkbox"].checkbox + label,
 input[type="radio"].radiobox + label　{
 	&:after {
 		position: absolute;
-		top: 0;
+		top: 50%;
 		left: 0;
 		display: block;
 		content: "";
 		width: 0;
+		margin-top: -(@checkbox-size / 2);
 		height: @checkbox-size;
 		//background-image: data-uri('../assets/checkmark.svg');
 
