@@ -383,9 +383,46 @@ list-order: 6
 </div>
 
 <p>Custom checkbox and radiobox styles uses CSS3 <code>:after</code> and <code>:before</code> pseudo elements to override default browser appearance.</p>
-<p>Therefore, <code>&lt;label&gt;</code>s are a requirement and must be placed <b>after</b> the <code>&lt;input&gt;</code>s. Also you need to append <code>.checkbox</code> or <code>.radiobox</code> classes to each <code>&lt;input&gt;</code>s for correct appearance.</p>
 
-<p><code>.dark</code> classes on parent elements are supported for darker check/radiobox style variations.</p>
+<p>To apply the styles, place a <code>&lt;label&gt;</code> right next to the <code>&lt;input&gt;</code> with the checkbox/radio type attribute. Then add <code>.checkbox</code> or <code>.radiobox</code> classes to <code>&lt;input&gt;</code>s.</p>
+
+<h5>Alignments</h3>
+<div class="demo-panel p-15" data-toggle-bg="toggle">
+  <div class="row">
+    <div class="col-2">
+      <div class="form-group">
+        <label class="form-label">Normal (center-aligned)</label>
+        <input class="checkbox" type="checkbox" id="demoCheckML1" checked>
+        <label for="demoCheckML1">Apparently this checkbox has so much text that text will wrap around to the next line.</label>
+        <input class="checkbox" type="checkbox" id="demoCheckML2" checked>
+        <label for="demoCheckML2">Coincidentially, this checkbox has a lot of text as well that makes this a multi-line text label too.</label>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="form-group">
+        <label class="form-label">align-top</label>
+        <input class="radiobox align-top" type="radio" name="demoRadioML" id="demoRadioML1" checked>
+        <label for="demoRadioML1">This radiobox label has a significant quantity of words which causes a line break that will occur somewhere inbetween the words of this long sentence.</label>
+        <input class="radiobox align-top" type="radio" name="demoRadioML" id="demoRadioML2" checked>
+        <label for="demoRadioML2">What's good about this is that the abundance of words will greatly enhance the demonstration of long texts that cause the label container to be higher than a single-line text.</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="demo-code">
+{{#markdown}}
+``` html
+<!-- Align to top -->
+<input class="checkbox align-top" type="radio" name="demoCheckML" id="demoCheckML" checked>
+<label for="demoCheckML">Checkbox</label>
+
+<input class="radiobox align-top" type="radio" name="demoRadioML" id="demoRadioML" checked>
+<label for="demoRadioML">Radiobox</label>
+```
+{{/markdown}}
+</div>
+
+<p>By default the checkbox/radiobox will align to the center of the <code>label</code> along with the label text. To align to the top of the container, append <code>.align-top</code> class on the <code>&lt;input&gt;</code> next to the <code>.checkbox</code>/<code>.radiobox</code> class.</p>
 
 <br>
 <h5>Customizable options</h5>
