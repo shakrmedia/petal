@@ -683,6 +683,17 @@ input[type="radio"].radiobox + label　{
 	.colorset(@checkbox-color);
 }
 
+// top aligned
+input[type="checkbox"].checkbox.align-top + label,
+input[type="radio"].radiobox.align-top + label {
+	align-items: flex-start;
+
+	&:after {
+		top: 0;
+		margin-top: 0;
+	}
+}
+
 input[type="radio"].radiobox + label　{
 	&:after {
 		width: @checkbox-size;
