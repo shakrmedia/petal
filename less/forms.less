@@ -907,23 +907,11 @@ fieldset:disabled input[type="radio"].radiobox + label {
 	&:not(.ab-type) label:hover span:before {
 		background-color: fadeout(@color,40%);
 	}
-	input[type="checkbox"] + label:hover span {
-		&:before, &:after {
-			transform: translate(-@chk-switch-size+2px);
-		}
-	}
 
 	// checked state
 	input[type="checkbox"]:checked + label span　{
 		&:before, &:after {
 			transform: translate(0);
-		}
-	}
-
-	// checked state - hover
-	input[type="checkbox"]:checked + label:hover span {
-		&:before, &:after {
-			transform: translate(-2px);
 		}
 	}
 
