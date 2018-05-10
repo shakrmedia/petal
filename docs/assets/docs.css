@@ -3127,21 +3127,20 @@ input[type="radio"].radiobox:not(:checked) {
 }
 input[type="checkbox"].checkbox + label,
 input[type="radio"].radiobox + label {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+  display: block;
+  min-height: 20px;
   margin: 5px 0;
+  padding-left: 25px;
   position: relative;
   cursor: pointer;
 }
 input[type="checkbox"].checkbox + label:before,
 input[type="radio"].radiobox + label:before {
   content: "";
-  -ms-flex: 0 0 auto;
-      flex: 0 0 auto;
+  position: absolute;
+  top: -1px;
   display: block;
-  margin-right: 0.3em;
+  margin-left: -25px;
   width: 20px;
   height: 20px;
   border: 2px solid #b5b5b5;
@@ -3191,12 +3190,11 @@ input[type="radio"].radiobox:focus + label:before {
 input[type="checkbox"].checkbox + label:after,
 input[type="radio"].radiobox + label:after {
   position: absolute;
-  top: 50%;
+  top: -1px;
   left: 0;
   display: block;
   content: "";
   width: 0;
-  margin-top: -10px;
   height: 20px;
   background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%232a91c2%22%20stroke-width%3D%223px%22%20d%3D%22M3%207l4%204%207-7%22%20vector-effect%3D%22non-scaling-stroke%22/%3E%3C/svg%3E');
   background-size: 20px 20px;
@@ -3209,17 +3207,6 @@ input[type="radio"].radiobox + label:after {
 .dark input[type="checkbox"].checkbox + label:after,
 .dark input[type="radio"].radiobox + label:after {
   background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%2369bde6%22%20stroke-width%3D%223px%22%20d%3D%22M3%207l4%204%207-7%22%20vector-effect%3D%22non-scaling-stroke%22/%3E%3C/svg%3E');
-}
-input[type="checkbox"].checkbox.align-top + label,
-input[type="radio"].radiobox.align-top + label {
-  -ms-flex-align: start;
-      -ms-grid-row-align: flex-start;
-      align-items: flex-start;
-}
-input[type="checkbox"].checkbox.align-top + label:after,
-input[type="radio"].radiobox.align-top + label:after {
-  top: 0;
-  margin-top: 0;
 }
 input[type="radio"].radiobox + label:after {
   width: 20px;
