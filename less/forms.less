@@ -574,17 +574,19 @@ input[type="radio"].radiobox:not(:checked) {
 
 input[type="checkbox"].checkbox + label,
 input[type="radio"].radiobox + label {
-	display: flex;
-	align-items: center;
+	display: block;
+	min-height: @checkbox-size;
 	margin: 5px 0;
+	padding-left: @checkbox-size + 5px;
 	position: relative;
 	cursor: pointer;
 
 	&:before {
 		content: "";
-		flex: 0 0 auto;
+		position: absolute;
+		top: -1px;
 		display: block;
-		margin-right: 0.3em;
+		margin-left: (-@checkbox-size - 5px);
 		width: @checkbox-size;
 		height: @checkbox-size;
 		border: @checkbox-border-width solid @gray-l1;
@@ -650,12 +652,11 @@ input[type="checkbox"].checkbox + label,
 input[type="radio"].radiobox + label　{
 	&:after {
 		position: absolute;
-		top: 50%;
+		top: -1px;
 		left: 0;
 		display: block;
 		content: "";
 		width: 0;
-		margin-top: -(@checkbox-size / 2);
 		height: @checkbox-size;
 		//background-image: data-uri('../assets/checkmark.svg');
 
@@ -681,17 +682,6 @@ input[type="radio"].radiobox + label　{
 	}
 
 	.colorset(@checkbox-color);
-}
-
-// top aligned
-input[type="checkbox"].checkbox.align-top + label,
-input[type="radio"].radiobox.align-top + label {
-	align-items: flex-start;
-
-	&:after {
-		top: 0;
-		margin-top: 0;
-	}
 }
 
 input[type="radio"].radiobox + label　{
