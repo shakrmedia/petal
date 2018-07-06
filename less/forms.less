@@ -71,7 +71,7 @@ textarea.input {
 	}
 
 	& when (@include-dark = true) {
-		.dark &, &.ondark {
+		.dark & {
 			border-color: @gray;
 			background-color: fadeout(@black,60%);
 
@@ -133,7 +133,7 @@ textarea.input {
 		opacity: 0.7;
 
 		& when (@include-dark = true) {
-			.dark &, &.ondark {
+			.dark & {
 				border-color: @gray-d1;
 			}
 		}
@@ -144,7 +144,7 @@ textarea.input {
 		background-color: fadeout(@gray,90%);
 
 		& when (@include-dark = true) {
-			.dark &, &.ondark {
+			.dark & {
 			}
 		}
 	}
@@ -471,7 +471,7 @@ textarea.input {
 		border-right-width: 0;
 
 		& when (@include-dark = true) {
-			.dark &, &.ondark {
+			.dark & {
 				border-color: @gray;
 			}
 		}
@@ -1085,7 +1085,7 @@ select.select {
 
 	& when (@include-dark = true) {
 		// dark mode
-		.dark &, &.ondark {
+		.dark & {
 			background-color: #000;
 			color: #fff;
 
@@ -1517,7 +1517,7 @@ select.select {
 
 		& when (@include-dark = true) {
 			// dark
-			.dark &, &.ondark {
+			.dark & {
 				color: #fff;
 
 				.selecter-selected {
