@@ -30,7 +30,7 @@
 
   <link rel="stylesheet" href="../assets/docs.min.css">
 
-  <title>Color Palette | Petal</title>
+  <title>Dark Mode | Petal</title>
 </head>
 
 <body>
@@ -65,9 +65,9 @@
       <ul>
           <li><a href="index.html">Petal.less</a></li>
           <li><a href="variables.html">Customizing Settings</a></li>
-          <li class="active"><a href="color-palette.html">Color Palette</a></li>
+          <li><a href="color-palette.html">Color Palette</a></li>
           <li><a href="javascript.html">JavaScript Functions</a></li>
-          <li><a href="dark-mode.html">Dark Mode</a></li>
+          <li class="active"><a href="dark-mode.html">Dark Mode</a></li>
       </ul>
 
       <h5 class="list-header">Components</h5>
@@ -97,137 +97,47 @@
       
 
 <div class="section-header">
-    <h2>Petal Color Palette</h2>
-    <p class="sub">
-        <span class="file-ref">color-palette.less</span>
-    </p>
+    <h2>Dark Mode</h2>
 </div>
 
-<p>Petal provides a number of preset colors with 4 additional shades. Colors and shades are a crucial part of Petal's design so they are always imported along with the default variables.</p>
+<p>Petal elements are designed both for content on a light background as well as a dark background. When "Dark Mode" is enabled, colors used on UI elements are altered slightly to improve legibility and aesthetics. For example, paragraph text color will become white to be visible on dark background; Button borders when hovering/focusing will be lighter rather than being darker as in normal mode.</p>
 
-<p>This page displays lists the default preset color included in Petal. You can use any of these colors as variables in your projects: just call them by the original names or the shades (For example, a <code>d2</code> shade of orange would be <code>@orange-d2</code>.)</p>
-
-<p>Petal also provides some quick utility classes for applying these colors on your text or background: learn more about them <a href="colors.html">here</a>.</p>
-
-<br>
-
-<div class="color-patch-table">
-  <div class="color-patch-columns-label">
-    <span>l2</span>
-    <span>l1</span>
-    <span class="base">Base</span>
-    <span>d1</span>
-    <span>d2</span>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@red</code></b></div>
-    <div class="color-patch c-red-l2"></div>
-    <div class="color-patch c-red-l1"></div>
-    <div class="color-patch c-red base"></div>
-    <div class="color-patch c-red-d1"></div>
-    <div class="color-patch c-red-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@peach</code></b></div>
-    <div class="color-patch c-peach-l2"></div>
-    <div class="color-patch c-peach-l1"></div>
-    <div class="color-patch c-peach base"></div>
-    <div class="color-patch c-peach-d1"></div>
-    <div class="color-patch c-peach-d2"></div>
-  </div>
-
-   <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@orange</code></b></div>
-    <div class="color-patch c-orange-l2"></div>
-    <div class="color-patch c-orange-l1"></div>
-    <div class="color-patch c-orange base"></div>
-    <div class="color-patch c-orange-d1"></div>
-    <div class="color-patch c-orange-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@gold</code></b></div>
-    <div class="color-patch c-gold-l2"></div>
-    <div class="color-patch c-gold-l1"></div>
-    <div class="color-patch c-gold base"></div>
-    <div class="color-patch c-gold-d1"></div>
-    <div class="color-patch c-gold-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@yellow</code></b></div>
-    <div class="color-patch c-yellow-l2"></div>
-    <div class="color-patch c-yellow-l1"></div>
-    <div class="color-patch c-yellow base"></div>
-    <div class="color-patch c-yellow-d1"></div>
-    <div class="color-patch c-yellow-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@green</code></b></div>
-    <div class="color-patch c-green-l2"></div>
-    <div class="color-patch c-green-l1"></div>
-    <div class="color-patch c-green base"></div>
-    <div class="color-patch c-green-d1"></div>
-    <div class="color-patch c-green-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@teal</code></b></div>
-    <div class="color-patch c-teal-l2"></div>
-    <div class="color-patch c-teal-l1"></div>
-    <div class="color-patch c-teal base"></div>
-    <div class="color-patch c-teal-d1"></div>
-    <div class="color-patch c-teal-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@blue</code></b></div>
-    <div class="color-patch c-blue-l2"></div>
-    <div class="color-patch c-blue-l1"></div>
-    <div class="color-patch c-blue base"></div>
-    <div class="color-patch c-blue-d1"></div>
-    <div class="color-patch c-blue-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@purple</code></b></div>
-    <div class="color-patch c-purple-l2"></div>
-    <div class="color-patch c-purple-l1"></div>
-    <div class="color-patch c-purple base"></div>
-    <div class="color-patch c-purple-d1"></div>
-    <div class="color-patch c-purple-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@pink</code></b></div>
-    <div class="color-patch c-pink-l2"></div>
-    <div class="color-patch c-pink-l1"></div>
-    <div class="color-patch c-pink base"></div>
-    <div class="color-patch c-pink-d1"></div>
-    <div class="color-patch c-pink-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@brown</code></b></div>
-    <div class="color-patch c-brown-l2"></div>
-    <div class="color-patch c-brown-l1"></div>
-    <div class="color-patch c-brown base"></div>
-    <div class="color-patch c-brown-d1"></div>
-    <div class="color-patch c-brown-d2"></div>
-  </div>
-
-  <div class="color-patch-group">
-    <div class="color-patch-name-label"><b><code>@gray</code></b></div>
-    <div class="color-patch c-gray-l2"></div>
-    <div class="color-patch c-gray-l1"></div>
-    <div class="color-patch c-gray base"></div>
-    <div class="color-patch c-gray-d1"></div>
-    <div class="color-patch c-gray-d2"></div>
+<div class="demo-panel">
+  <div class="row">
+    <div class="col-2">
+      <div class="p-15">
+        <label class="form-label">Light</label>
+        <div class="form-group">
+          <input class="input" type="text" name="demoInput" placeholder="Light">
+          <button class="btn">Button</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="dark p-15">
+        <label class="form-label">Dark</label>
+        <div class="form-group">
+          <input class="input" type="text" name="demoInputDark" placeholder="Dark">
+          <button class="btn">Button</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<p>To display UI elements in "Dark Mode", simply add <code>.dark</code> class to any parent element to apply dark style overrides to all children elements.</p>
+
+<p>To preview how Petal UI elements look in both light and dark environments, use the Dark Mode toggle switch on the top right of the Docs page here.</p>
+
+<h4>Excluding dark mode related code</h4>
+<p>If your project does not have any dark background pages and think you won't be needing those bits of dark mode override code, set the <code>@include-dark</code> global variable to <code>false</code>. You'll be able to save some bytes in your compiled stylesheet file.</p>
+
+<h4>When Using Petal with Web Components (Encapsulation)</h4>
+<p>When using Petal modules in a web component stylesheet (importing in directly), just targeting <code>.dark</code> classes in parent elements won't work because of encapsulation. For a workaround, Petal provides an alternative method for targeting shadow hosts with the <code>:host-context(.dark)</code> pseudo class. This way Petal is able to target elements outside of the shadow DOM.</p>
+
+<p>To use this method, set <code>@include-dark</code> global variable to <code>true</code>. (By default, it's set to <code>false</code> to use the traditional method.)</p>
+
+
 
 
       <div class="section-footer">

@@ -1,0 +1,49 @@
+---
+title: Dark Mode
+area: docs
+section: intro
+list-order: 4
+---
+
+<div class="section-header">
+    <h2>Dark Mode</h2>
+</div>
+
+<p>Petal elements are designed both for content on a light background as well as a dark background. When "Dark Mode" is enabled, colors used on UI elements are altered slightly to improve legibility and aesthetics. For example, paragraph text color will become white to be visible on dark background; Button borders when hovering/focusing will be lighter rather than being darker as in normal mode.</p>
+
+<div class="demo-panel">
+  <div class="row">
+    <div class="col-2">
+      <div class="p-15">
+        <label class="form-label">Light</label>
+        <div class="form-group">
+          <input class="input" type="text" name="demoInput" placeholder="Light">
+          <button class="btn">Button</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="dark p-15">
+        <label class="form-label">Dark</label>
+        <div class="form-group">
+          <input class="input" type="text" name="demoInputDark" placeholder="Dark">
+          <button class="btn">Button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>To display UI elements in "Dark Mode", simply add <code>.dark</code> class to any parent element to apply dark style overrides to all children elements.</p>
+
+<p>To preview how Petal UI elements look in both light and dark environments, use the Dark Mode toggle switch on the top right of the Docs page here.</p>
+
+<h4>Excluding dark mode related code</h4>
+<p>If your project does not have any dark background pages and think you won't be needing those bits of dark mode override code, set the <code>@include-dark</code> global variable to <code>false</code>. You'll be able to save some bytes in your compiled stylesheet file.</p>
+
+<h4>When Using Petal with Web Components (Encapsulation)</h4>
+<p>When using Petal modules in a web component stylesheet (importing in directly), just targeting <code>.dark</code> classes in parent elements won't work because of encapsulation. For a workaround, Petal provides an alternative method for targeting shadow hosts with the <code>:host-context(.dark)</code> pseudo class. This way Petal is able to target elements outside of the shadow DOM.</p>
+
+<p>To use this method, set <code>@include-dark</code> global variable to <code>true</code>. (By default, it's set to <code>false</code> to use the traditional method.)</p>
+
+
