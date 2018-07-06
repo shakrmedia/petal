@@ -70,20 +70,19 @@ textarea.input {
 		.drop-shadow-light;
 	}
 
-	& when (@include-dark = true) {
-		.dark & {
-			border-color: @gray;
-			background-color: fadeout(@black,60%);
+	.dark-override({
+		color: #fff;
+		border-color: @gray;
+		background-color: fadeout(@black,60%);
 
-			&:hover {
-				border-color: @gray-l1;
-			}
-			&:focus {
-				border-color: @primary-accent-color;
-				background-color: fadeout(@black,30%);
-			}
+		&:hover {
+			border-color: @gray-l1;
 		}
-	}
+		&:focus {
+			border-color: @primary-accent-color;
+			background-color: fadeout(@black,30%);
+		}
+	});
 }
 
 textarea.input {
@@ -106,14 +105,6 @@ textarea.input {
 	vertical-align: middle;
 }
 
-& when (@include-dark = true) {
-	.dark {
-		input, textarea, label {
-			color: #fff;
-		}
-	}
-}
-
 // attribute styles
 input.input,
 textarea.input {
@@ -132,21 +123,14 @@ textarea.input {
 		background-color: fadeout(@gray,80%);
 		opacity: 0.7;
 
-		& when (@include-dark = true) {
-			.dark & {
-				border-color: @gray-d1;
-			}
-		}
+		.dark-override({
+			border-color: @gray-d1;
+		});
 	}
 
 	// readonly
 	&[readonly] {
 		background-color: fadeout(@gray,90%);
-
-		& when (@include-dark = true) {
-			.dark & {
-			}
-		}
 	}
 }
 
@@ -470,11 +454,9 @@ textarea.input {
 		border-left-width: 0;
 		border-right-width: 0;
 
-		& when (@include-dark = true) {
-			.dark & {
-				border-color: @gray;
-			}
-		}
+		.dark-override({
+			border-color: @gray;
+		});
 
 		&:first-child {
 			border-left-width: @input-border-width;
@@ -604,21 +586,20 @@ input[type="radio"].radiobox + label {
 		transition-duration: 0;
 	}
 
-	& when (@include-dark = true) {
-		// on dark
-		.dark &:before {
+	.dark-override({
+		&:before {
 			border-color: @gray-d2;
 			background-color: #111;
 		}
 
-		.dark &:hover:before {
+		&:hover:before {
 			border-color: lighten(@gray-d2,10%);
 		}
 
-		.dark &:active:before {
+		&:active:before {
 			background-color: #000;
 		}
-	}
+	});
 }
 
 // border radius
@@ -641,11 +622,11 @@ input[type="radio"].radiobox:focus + label {
 		border-color: @primary-accent-color;
 	}
 
-	& when (@include-dark = true) {
-		.dark &:before {
+	.dark-override({
+		&:before {
 			border-color: @primary-accent-color;
 		}
-	}
+	});
 }
 
 input[type="checkbox"].checkbox + label,
@@ -674,12 +655,12 @@ input[type="radio"].radiobox + label　{
 		}
 	}
 
-	& when (@include-dark = true) {
-		.dark &:after {
+	.dark-override({
+		&:after {
 			@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="@{color-l1}" stroke-width="@{checkbox-check-thickness}" d="M3 7l4 4 7-7" vector-effect="non-scaling-stroke"/></svg>');
 			background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 		}
-	}
+	});
 
 	.colorset(@checkbox-color);
 }
@@ -693,11 +674,12 @@ input[type="radio"].radiobox + label　{
 		background-color: @color-d1;
 	}
 
-	& when (@include-dark = true) {
-		.dark &:after {
+	.dark-override({
+		&:after {
 			background-color: @color-l1;
 		}
-	}
+	});
+
 	.colorset(@checkbox-color);
 }
 
@@ -723,11 +705,11 @@ input[type="radio"].radiobox:checked + label　{
 			border-color: @danger-color;
 		}
 
-		& when (@include-dark = true) {
-			.dark &:before {
+		.dark-override({
+			&:before {
 				border-color: @danger-color;
 			}
-		}
+		});
 	}
 }
 
@@ -738,11 +720,11 @@ input[type="radio"].radiobox.validation.error + label　{
 		border-color: @danger-color;
 	}
 
-	& when (@include-dark = true) {
-		.dark &:before {
+	.dark-override({
+		&:before {
 			border-color: @danger-color;
 		}
-	}
+	});
 }
 
 
@@ -760,13 +742,13 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		opacity: 0.5;
 	}
 
-	& when (@include-dark = true) {
-		.dark &:before,
-		.dark &:hover:before {
+	.dark-override({
+		&:before,
+		&:hover:before {
 			background-color: fadeout(@gray-d2,60%);
 			border-color: fadeout(@gray,50%);
 		}
-	}
+	});
 }
 
 
@@ -824,22 +806,21 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			transition-duration: 0;
 		}
 
-		& when (@include-dark = true) {
-			// on dark
-			.dark & {
+		.dark-override({
+			& {
 				border-color: @gray-d2;
 				background-color: #111;
 			}
 
-			.dark &:hover {
+			&:hover {
 				border-color: lighten(@gray-d2,10%);
 			}
 
-			.dark &:active {
+			&:active {
 				border-color: @primary-accent-color;
 				background-color: #000;
 			}
-		}
+		});
 	}
 
 	// highlight border on focus
@@ -894,11 +875,11 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			}
 		}
 
-		& when (@include-dark = true) {
-			.dark &:after {
+		.dark-override({
+			&:after {
 				background-color: @color-l1;
 			}
-		}
+		});
 	}
 
 	&:not(.ab-type) label span:before {
@@ -931,12 +912,12 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			background-color: multiply(@okay-color,@d2-additive);
 		}
 
-		& when (@include-dark = true) {
+		.dark-override({
 			// ticker color on dark
-			.dark & input[type="checkbox"]:checked + label span:after {
+			& input[type="checkbox"]:checked + label span:after {
 				background-color: screen(@okay-color,@l1-additive);
 			}
-		}
+		});
 	}
 
 	&.onoff-type.led {
@@ -946,12 +927,12 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			background-color: #f00 !important;
 		}
 
-		& when (@include-dark = true) {
-			// ticker color on dark
-			.dark & label span:after {
+		// ticker color on dark
+		.dark-override({
+			label span:after {
 				border-color: #bbb;
 			}
-		}
+		});
 
 		input[type="checkbox"]:checked + label span:after {
 			background-color: saturate(screen(@okay-color,@l1-additive), 50%) !important;
@@ -985,12 +966,12 @@ fieldset:disabled input[type="radio"].radiobox + label {
 				border-color: fadeout(@gray-l1,50%);
 			}
 
-			& when (@include-dark = true) {
-				.dark &:before,
-				.dark &:hover:before {
+			.dark-override({
+				&:before,
+				&:hover:before {
 					border-color: fadeout(@gray,50%);
 				}
-			}
+			});
 		}
 	}
 
@@ -1083,19 +1064,17 @@ select.select {
 		width: 100%;
 	}
 
-	& when (@include-dark = true) {
-		// dark mode
-		.dark & {
-			background-color: #000;
-			color: #fff;
+	// dark mode
+	.dark-override({
+		background-color: #000;
+		color: #fff;
 
-			&[multiple] {
-				&:hover {
-					background-color: #000;
-				}
+		&[multiple] {
+			&:hover {
+				background-color: #000;
 			}
 		}
-	}
+	});
 }
 
 // * ================================= *
@@ -1515,42 +1494,39 @@ select.select {
 
 		}
 
-		& when (@include-dark = true) {
-			// dark
-			.dark & {
-				color: #fff;
+		.dark-override({
+			color: #fff;
 
-				.selecter-selected {
-					border-color: @gray;
-					background-color: fadeout(@black,60%);
-				}
+			.selecter-selected {
+				border-color: @gray;
+				background-color: fadeout(@black,60%);
+			}
 
-				&:hover .selecter-selected {
-					border-color: @gray-l1;
-				}
-				&:focus .selecter-selected {
-					border-color: @primary-accent-color;
-					background-color: fadeout(@black,30%);
-				}
+			&:hover .selecter-selected {
+				border-color: @gray-l1;
+			}
+			&:focus .selecter-selected {
+				border-color: @primary-accent-color;
+				background-color: fadeout(@black,30%);
+			}
 
 
-				.selecter-options {
-					background-color: #000;
-					box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(255,255,255,0.1);
-				}
+			.selecter-options {
+				background-color: #000;
+				box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(255,255,255,0.1);
+			}
 
-				.selecter-item {
-					&:hover {
-						background-color: rgba(255,255,255,.2);
-					}
-				}
-
-				&.disabled {
-
+			.selecter-item {
+				&:hover {
+					background-color: rgba(255,255,255,.2);
 				}
 			}
-		}
+
+			&.disabled {
+
+			}
+		});
 
 	}// end .selecter
 
-}// end include-dark guard
+}// end include-selecter guard

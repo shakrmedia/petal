@@ -148,42 +148,40 @@
 		vertical-align: middle;
 	}
 
-	& when (@include-dark = true) {
-		// dark variants
-		.dark & {
-			.pg-block {
-				a {
-					color: #fff;
-					background-color: #444;
+	// dark variants
+	.dark-override({
+		.pg-block {
+			a {
+				color: #fff;
+				background-color: #444;
 
-					&:hover {
-						color: @primary-accent-color;
-					}
-				}
-
-				&.active a {
-					color: #fff;
-					background-color: @color-l1;
-
-					.colorset(@primary-accent-color);
-				}
-
-				&.disabled {
-					opacity: 0.3;
+				&:hover {
+					color: @primary-accent-color;
 				}
 			}
+
+			&.active a {
+				color: #fff;
+				background-color: @color-l1;
+
+				.colorset(@primary-accent-color);
+			}
+
+			&.disabled {
+				opacity: 0.3;
+			}
 		}
-	}
+	});
 
 
 	// inline
 	&.inline {
 		.pg-block{
 
-			& when (@include-dark = true) {
-				.dark & a {
+			a {
+				.dark-override({
 					color: #fff;
-				}
+				});
 			}
 
 			a,

@@ -57,20 +57,18 @@
 		font-size: 1.2em;
 	}
 
-	& when (@include-dark = true) {
-		// dark style
-		.dark & {
-			background-color: #333;
+	// dark style
+	.dark-override({
+		background-color: #333;
 
-			.modal-header {
-				background-color: #444;
-			}
-
-			.btn-row {
-				border-top-color: #444;
-			}
+		.modal-header {
+			background-color: #444;
 		}
-	}
+
+		.btn-row {
+			border-top-color: #444;
+		}
+	});
 }
 
 // standard modal
