@@ -13,12 +13,9 @@ table.table {
 	width: 100%;
 	background-color: #fff;
 
-	& when (@include-dark = true) {
-		.dark &,
-		&.ondark {
-			background-color: #222;
-		}
-	}
+	.dark-override({
+		background-color: #222;
+	});
 
 	caption {
 		text-align: left;
@@ -37,12 +34,9 @@ table.table {
 		text-align: left;
 		border-bottom: 1px solid #ddd;
 
-		& when (@include-dark = true) {
-			.dark &,
-			&.ondark {
-				border-bottom-color: #444;
-			}
-		}
+		.dark-override({
+			border-bottom-color: #444;
+		});
 
 		&.nowrap {
 			white-space: nowrap;
@@ -53,24 +47,18 @@ table.table {
 	thead tr:last-child td {
 		border-bottom: 2px solid #ccc;
 
-		& when (@include-dark = true) {
-			.dark &,
-			&.ondark {
-				border-bottom-color: #555;
-			}
-		}
+		.dark-override({
+			border-bottom-color: #555;
+		});
 	}
 
 	tfoot tr:first-child th,
 	tfoot tr:first-child td {
 		border-top: 2px solid #ccc;
 
-		& when (@include-dark = true) {
-			.dark &,
-			&.ondark {
-				border-top-color: #555;
-			}
-		}
+		.dark-override({
+			border-top-color: #555;
+		});
 	}
 
 
@@ -84,12 +72,9 @@ table.table {
 		th, td {
 			border-right: 1px solid #ddd;
 
-			& when (@include-dark = true) {
-				.dark &,
-				&.ondark {
-					border-right-color: #444;
-				}
-			}
+			.dark-override({
+				border-right-color: #444;
+			});
 
 			&:last-child {
 				border-right: none;
@@ -101,12 +86,9 @@ table.table {
 	&.table-outer-borders {
 		border: 1px solid #ddd;
 
-		& when (@include-dark = true) {
-			.dark &,
-			&.ondark {
-				border-color: #444;
-			}
-		}
+		.dark-override({
+			border-color: #444;
+		});
 
 	}
 
@@ -115,12 +97,9 @@ table.table {
 		tr:nth-child(2n) {
 			background-color: #fcfcfc;
 
-			& when (@include-dark = true) {
-				.dark &,
-				&.ondark {
-					background-color: fadeout(#fff,95%);
-				}
-			}
+			.dark-override({
+				background-color: fadeout(#fff,95%);
+			});
 
 		}
 	}
@@ -131,12 +110,9 @@ table.table {
 		tbody tr:hover td {
 			background-color: #f7f7f7;
 
-			& when (@include-dark = true) {
-				.dark &,
-				&.ondark {
-					background-color: fadeout(#fff,90%);
-				}
-			}
+			.dark-override({
+				background-color: fadeout(#fff,90%);
+			});
 		}
 	}
 

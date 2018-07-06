@@ -194,12 +194,45 @@
 				border-color: transparent !important;
 			}
 
-			& when (@include-dark = true) {
-				// on dark background
-				&.ondark, .dark & {
+			// for toggle button
+			.dark-override({
+				&.active {
+					color: @text-color;
+					background-color: @color-d1;
+					border-color: @color-l2;
 
-					// for toggle button
-					&.active {
+					&:hover {
+						border-color: @color-l2;
+						background-color: @color;
+					}
+					&:focus {
+						color: @text-color;
+						border-color: @color-d1;
+						box-shadow: 0 0px 2px rgba(0,0,0,.3);
+					}
+				}
+
+				&:hover {
+					background-color: @color-d1;
+					border-color: @color-l1;
+				}
+
+				&:focus {
+					border-color: @color-l2;
+				}
+
+				&:active {
+					background-color: @color-d2;
+					border-color: @color;
+				}
+
+			});
+
+			// for segmented button active state on dark
+			& when (@include-dark = true) {
+				& when (@use-webcomponents = false) {
+					.dark :checked + label &,
+					.dark :checked + label &.hollow {
 						color: @text-color;
 						background-color: @color-d1;
 						border-color: @color-l2;
@@ -208,38 +241,19 @@
 							border-color: @color-l2;
 							background-color: @color;
 						}
-						&:focus {
-							color: @text-color;
-							border-color: @color-d1;
-							box-shadow: 0 0px 2px rgba(0,0,0,.3);
-						}
-					}
-
-					&:hover {
-						background-color: @color-d1;
-						border-color: @color-l1;
-					}
-
-					&:focus {
-						border-color: @color-l2;
-					}
-
-					&:active {
-						background-color: @color-d2;
-						border-color: @color;
 					}
 				}
-
-				// for segmented button active state on dark
-				.dark :checked + label &,
-				.dark :checked + label &.hollow {
-					color: @text-color;
-					background-color: @color-d1;
-					border-color: @color-l2;
-
-					&:hover {
+				& when (@use-webcomponents = true) {
+					:host-context(.dark) :checked + label &,
+					:host-context(.dark) :checked + label &.hollow {
+						color: @text-color;
+						background-color: @color-d1;
 						border-color: @color-l2;
-						background-color: @color;
+
+						&:hover {
+							border-color: @color-l2;
+							background-color: @color;
+						}
 					}
 				}
 			}
@@ -274,18 +288,18 @@
 					border-color: @color-d2;
 				}
 
-				& when (@include-dark = true) {
-					.dark &:focus {
+				.dark-override({
+					&:focus {
 						color: @color-l1;
 						border-color: @color-l1;
 					}
-					.dark &:focus:hover {
+					&:focus:hover {
 						color: @text-color;
 					}
-					.dark &:active {
+					&:active {
 						border-color: @color-l1;
 					}
-				}
+				});
 
 				& when (@include-btn-dropdown = true) {
 					&:hover, &:active,
@@ -656,11 +670,11 @@ fieldset[disabled] .btn,
 				}
 			}
 
-			& when (@include-dark = true) {
-				.dark & .btn + .btn.dropdown:not(.hollow):before {
+			.dark-override({
+				.btn + .btn.dropdown:not(.hollow):before {
 					background: rgba(255,255,255,0.3);
 				}
-			}
+			});
 
 			// active override
 			&.active .btn + .btn.dropdown {

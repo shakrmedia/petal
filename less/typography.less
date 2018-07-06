@@ -102,11 +102,9 @@ code {
 	letter-spacing: 0;
 	text-transform: none;
 
-	& when (@include-dark = true) {
-		.dark & {
-			background-color: fadeout(#fff,90%);
-		}
-	}
+	.dark-override({
+		background-color: fadeout(#fff,90%);
+	});
 }
 
 pre {

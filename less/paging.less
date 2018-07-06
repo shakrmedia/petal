@@ -132,6 +132,29 @@
 			&:hover .petalicon { transform: translateX(2px); }
 		}
 
+		// dark override
+		.dark-override({
+			a {
+				color: #fff;
+				background-color: #444;
+
+				&:hover {
+					color: @primary-accent-color;
+				}
+			}
+
+			&.active a {
+				color: #fff;
+				background-color: @color-l1;
+
+				.colorset(@primary-accent-color);
+			}
+
+			&.disabled {
+				opacity: 0.3;
+			}
+
+		});
 	}
 
 	.pg-ellipsis {
@@ -148,42 +171,13 @@
 		vertical-align: middle;
 	}
 
-	& when (@include-dark = true) {
-		// dark variants
-		&.ondark, .dark & {
-			.pg-block {
-				a {
-					color: #fff;
-					background-color: #444;
-
-					&:hover {
-						color: @primary-accent-color;
-					}
-				}
-
-				&.active a {
-					color: #fff;
-					background-color: @color-l1;
-
-					.colorset(@primary-accent-color);
-				}
-
-				&.disabled {
-					opacity: 0.3;
-				}
-			}
-		}
-	}
-
-
 	// inline
 	&.inline {
 		.pg-block{
-
-			& when (@include-dark = true) {
-				.dark & a {
+			a {
+				.dark-override({
 					color: #fff;
-				}
+				});
 			}
 
 			a,

@@ -18,6 +18,21 @@
 	@color-d2: multiply(@color,@d2-additive);
 }
 
+// dark style overrides output mixin
+.dark-override(@rules) {
+	& when (@include-dark = true) {
+		& when (@use-webcomponents = false) {
+			.dark & {
+				@rules();
+			}
+		}
+		& when (@use-webcomponents = true) {
+			:host-context(.dark) & {
+				@rules();
+			}
+		}
+	}
+}
 
 /* drop shadow mixin */
 @drop-shadow: 0 2px 4px rgba(0,0,0,0.2);
