@@ -132,25 +132,8 @@
 			&:hover .petalicon { transform: translateX(2px); }
 		}
 
-	}
-
-	.pg-ellipsis {
-		display: block;
-		float: left;
-		vertical-align: middle;
-		min-height: 20px;
-		padding: 8px 15px;
-		margin: 0 2px;
-		text-align: center;
-		color: #666;
-		overflow: hidden;
-		box-sizing: content-box;
-		vertical-align: middle;
-	}
-
-	// dark variants
-	.dark-override({
-		.pg-block {
+		// dark override
+		.dark-override({
 			a {
 				color: #fff;
 				background-color: #444;
@@ -170,14 +153,27 @@
 			&.disabled {
 				opacity: 0.3;
 			}
-		}
-	});
 
+		});
+	}
+
+	.pg-ellipsis {
+		display: block;
+		float: left;
+		vertical-align: middle;
+		min-height: 20px;
+		padding: 8px 15px;
+		margin: 0 2px;
+		text-align: center;
+		color: #666;
+		overflow: hidden;
+		box-sizing: content-box;
+		vertical-align: middle;
+	}
 
 	// inline
 	&.inline {
 		.pg-block{
-
 			a {
 				.dark-override({
 					color: #fff;
