@@ -1,7 +1,7 @@
 {
   "name": "petal.less",
   "codename": "petal",
-  "version": "0.10.3",
+  "version": "0.11.0",
   "description": "A modern, light CSS UI framework by Shakr based on LESS.",
   "keywords": [
     "petal",
