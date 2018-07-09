@@ -1,5 +1,5 @@
 /* 
- * petal.less v0.11.0 - 2018-07-06 
+ * petal.less v0.11.1 - 2018-07-09 
  * A modern, light CSS UI framework by Shakr based on LESS. 
  * https://shakrmedia.github.io/petal 
  * 
@@ -2657,7 +2657,7 @@ input[type="radio"].radiobox + label:after {
 }
 .dark input[type="checkbox"].checkbox + label:after,
 .dark input[type="radio"].radiobox + label:after {
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23f48791%22%20stroke-width%3D%222px%22%20d%3D%22M3%207l4%204%207-7%22%20vector-effect%3D%22non-scaling-stroke%22/%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%2369bde6%22%20stroke-width%3D%222px%22%20d%3D%22M3%207l4%204%207-7%22%20vector-effect%3D%22non-scaling-stroke%22/%3E%3C/svg%3E');
 }
 input[type="radio"].radiobox + label:after {
   width: 20px;
@@ -2668,7 +2668,7 @@ input[type="radio"].radiobox + label:after {
   background-color: #2a91c2;
 }
 .dark input[type="radio"].radiobox + label:after {
-  background-color: #f48791;
+  background-color: #69bde6;
 }
 input[type="checkbox"].checkbox:checked + label:after {
   width: 20px;
