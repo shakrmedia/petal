@@ -653,14 +653,12 @@ input[type="radio"].radiobox + label　{
 		& when (@checkbox-disable-transition = false) {
 			transition: width 0.1s, transform 0.1s;
 		}
-	}
 
-	.dark-override({
-		&:after {
+		.dark-override({
 			@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="@{color-l1}" stroke-width="@{checkbox-check-thickness}" d="M3 7l4 4 7-7" vector-effect="non-scaling-stroke"/></svg>');
 			background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
-		}
-	});
+		});
+	}
 
 	.colorset(@checkbox-color);
 }
@@ -672,13 +670,12 @@ input[type="radio"].radiobox + label　{
 		padding: (@checkbox-size / 4);
 		transform: scale(0);
 		background-color: @color-d1;
+
+		.dark-override({
+			background-color: @color-l1;
+		});
 	}
 
-	.dark-override({
-		&:after {
-			background-color: @color-l1;
-		}
-	});
 
 	.colorset(@checkbox-color);
 }
