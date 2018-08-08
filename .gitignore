@@ -2,5 +2,4 @@ node_modules/
 _ignore/
 build/
 /index.html
-yarn.lock
 package-lock.json
