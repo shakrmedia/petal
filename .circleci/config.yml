@@ -26,6 +26,9 @@ jobs:
           name: build
           command: $(yarn bin)/grunt petal-dist
 
+      - store_artifacts:
+          path: dist
+
 workflows:
   version: 2
   commit:
