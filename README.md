@@ -1,5 +1,5 @@
 Petal 
-[[![CircleCI](https://circleci.com/gh/shakrmedia/petal.svg?style=svg)](https://circleci.com/gh/shakrmedia/petal)
+[![CircleCI](https://circleci.com/gh/shakrmedia/petal.svg?style=svg)](https://circleci.com/gh/shakrmedia/petal)
 =====
 
 <img align="right" width="100" height="100" src="http://shakrmedia.github.io/petal/assets/petal-logo.svg">
