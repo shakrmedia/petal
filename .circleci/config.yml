@@ -15,9 +15,7 @@ jobs:
       
       - run:
           name: install dependencies
-          command: |
-            yarn global add grunt-cli
-            yarn
+          command: yarn
 
       - save_cache:
           paths:
@@ -26,7 +24,7 @@ jobs:
 
       - run:
           name: build
-          command: grunt petal-dist
+          command: $(yarn bin)/grunt petal-dist
 
 workflows:
   version: 2
