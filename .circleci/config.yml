@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    working_directory: /home/circleci/petal
+    docker:
+      - image: circleci/node:10-stretch-browsers
+    
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - petal-deps-{{ checksum "yarn.lock" }}
+            - petal-deps-
+      
+      - run:
+          name: install dependencies
+          command: |
+            yarn global add grunt-cli
+            yarn
+
+      - save_cache:
+          paths:
+            - ./node_modules
+          key: petal-deps-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: build
+          command: grunt petal-dist
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
