@@ -1,7 +1,7 @@
 /*!
  * petal - Gruntfile
  * http://shakrmedia.github.io/petal
- * Copyright 2015-2018 Shakr Media Co., Ltd.
+ * Copyright 2015-2019 Shakr Media Co., Ltd.
  */
 
 module.exports = function(grunt) {
