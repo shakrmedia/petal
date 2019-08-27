@@ -43,13 +43,15 @@ input[type="week"] {
 // default style
 input.input,
 textarea.input {
-	border: @input-border-width solid @gray-l1;
+	.colorset(@input-border-color);
+
+	border: @input-border-width solid @color-l1;
 	padding: (10px - @input-border-width) 10px;
 	margin: 5px 0;
 	font-size: @input-font-size;
 	line-height: @input-line-height;
 	transition: box-shadow .15s, border-color .15s, background-color .15s, color .15s;
-	background-color: #fff;
+	background-color: @input-bg-color-light;
 	box-shadow: 0 1px 1px rgba(0,0,0,.05) inset;
 	appearance: none;
 	outline: none;
@@ -62,7 +64,7 @@ textarea.input {
 	}
 
 	&:hover {
-		border-color: darken(@gray-l1,10%);
+		border-color: darken(@color-l1,10%);
 	}
 
 	&:focus {
@@ -72,15 +74,15 @@ textarea.input {
 
 	.dark-override({
 		color: #fff;
-		border-color: @gray;
-		background-color: fadeout(@black,60%);
+		border-color: @color;
+		background-color: fadeout(@input-bg-color-dark,60%);
 
 		&:hover {
-			border-color: @gray-l1;
+			border-color: @color-l1;
 		}
 		&:focus {
 			border-color: @primary-accent-color;
-			background-color: fadeout(@black,30%);
+			background-color: fadeout(@input-bg-color-dark,30%);
 		}
 	});
 }
@@ -150,7 +152,7 @@ textarea.input {
 
 .form-caption {
 	font-size: @form-caption-font-size;
-	color: @gray-d1;
+	color: @form-caption-color;
 	margin: 8px 0;
 	text-decoration: none;
 	text-transform: none;
@@ -409,6 +411,8 @@ textarea.input {
 
 // input groups
 .input-group {
+	.colorset(@input-border-color);
+
 	display: flex;
 	width: 100%;
 
@@ -448,14 +452,15 @@ textarea.input {
 
 	.input-addon {
 		padding: (10px-@input-border-width) 10px;
-		background-color: fadeout(@gray-l2,50%);
-		border: @input-border-width solid @gray-l1;
+		background-color: fadeout(@color-l2,50%);
+		border: @input-border-width solid @color-l1;
 		font-size: @input-font-size;
 		border-left-width: 0;
 		border-right-width: 0;
 
 		.dark-override({
-			border-color: @gray;
+			background-color: fadeout(@color-d2,50%);
+			border-color: @color;
 		});
 
 		&:first-child {
@@ -556,6 +561,8 @@ input[type="radio"].radiobox:not(:checked) {
 
 input[type="checkbox"].checkbox + label,
 input[type="radio"].radiobox + label {
+	.colorset(@checkbox-border-color);
+
 	display: block;
 	min-height: @checkbox-size;
 	margin: 5px 0;
@@ -571,33 +578,33 @@ input[type="radio"].radiobox + label {
 		margin-left: (-@checkbox-size - 5px);
 		width: @checkbox-size;
 		height: @checkbox-size;
-		border: @checkbox-border-width solid @gray-l1;
-		background-color: #fff;
+		border: @checkbox-border-width solid @color-l1;
+		background-color: @checkbox-bg-color-light;
 		box-sizing: border-box;
 		transition: border-color 0.2s, background-color 0.2s;
 	}
 
 	&:hover:before {
-		border-color: darken(@gray-l1,10%);
+		border-color: darken(@color-l1,10%);
 	}
 	&:active:before {
 		border-color: @primary-accent-color;
-		background-color: @gray-l2;
+		background-color: darken(@checkbox-bg-color-light,10%);
 		transition-duration: 0;
 	}
 
 	.dark-override({
 		&:before {
-			border-color: @gray-d2;
-			background-color: #111;
+			border-color: @color-d2;
+			background-color: @checkbox-bg-color-dark;
 		}
 
 		&:hover:before {
-			border-color: lighten(@gray-d2,10%);
+			border-color: lighten(@color-d2,10%);
 		}
 
 		&:active:before {
-			background-color: #000;
+			background-color: lighten(@checkbox-bg-color-dark,10%);
 		}
 	});
 }
@@ -986,16 +993,18 @@ fieldset:disabled input[type="radio"].radiobox + label {
 // *  Selectbox
 // * ================================= *
 select.select {
+	.colorset(@selectbox-border-color);
+
 	position: relative;
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
 
-	background-color: #fff;
+	background-color: @selectbox-bg-color-light;
 	background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20width%3D'30'%20height%3D'24'%3E%3Cpath%20fill%3D'%23aaa'%20d%3D'M8%2011l4%204%204-4z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: right center;
-	border: @selectbox-border-width solid @gray-l1;
+	border: @selectbox-border-width solid @color-l1;
 	color: inherit;
 	cursor: pointer;
 	display: block;
@@ -1015,8 +1024,8 @@ select.select {
 
 	// hover
 	&:hover {
-		background-color: #fafafa;
-		border-color: darken(@gray-l1,10%);
+		background-color: darken(@selectbox-bg-color-light,5%);
+		border-color: darken(@color-l1,10%);
 
 		& when (@selectbox-disable-shadows = false) {
 			box-shadow: 0 2px 4px -2px rgba(0,0,0,.2);
@@ -1027,7 +1036,7 @@ select.select {
 	// focused state
 	&:focus {
 		outline: none !important;
-		background-color: #fafafa;
+		background-color: darken(@selectbox-bg-color-light,5%);
 		border-color: @selectbox-color;
 		.drop-shadow-light;
 	}
@@ -1035,7 +1044,7 @@ select.select {
 	// disabled
 	&:disabled {
 		opacity: 0.7;
-		background-color: #fff;
+		background-color: @selectbox-bg-color-light;
 		color: @gray;
 		border-color: @gray-l1 !important;
 		pointer-events: none;
@@ -1049,7 +1058,7 @@ select.select {
 		padding: 0;
 
 		&:hover {
-			background-color: #fff;
+			background-color: @selectbox-bg-color-light;
 		}
 
 		option {
@@ -1063,12 +1072,22 @@ select.select {
 
 	// dark mode
 	.dark-override({
-		background-color: #000;
-		color: #fff;
+		background-color: @selectbox-bg-color-dark;
+		color: @foreground-color-dark;
+
+		&:hover {
+			background-color: lighten(@selectbox-bg-color-dark,5%);
+		}
+
+
+		// focused state
+		&:focus {
+			background-color: lighten(@selectbox-bg-color-dark,5%);
+		}
 
 		&[multiple] {
 			&:hover {
-				background-color: #000;
+				background-color: @selectbox-bg-color-dark;
 			}
 		}
 	});
@@ -1127,7 +1146,7 @@ select.select {
 		.selecter-selected {
 			position: relative;
 
-			background-color: #fff;
+			background-color: @selectbox-bg-color-light;
 			border: @selectbox-border-width solid @gray-l1;
 			color: inherit;
 			cursor: pointer;
@@ -1158,7 +1177,7 @@ select.select {
 
 				border-left: 4px solid transparent;
 				border-right: 4px solid transparent;
-				border-top: 4px solid #aaa;
+				border-top: 4px solid @selectbox-border-color;
 				content: '';
 				display: block;
 				margin: auto 0;
@@ -1179,7 +1198,7 @@ select.select {
 			left: 0;
 
 			border: none;
-			background-color: #fff;
+			background-color: @selectbox-menu-bg-color-light;
 			display: none;
 			overflow: auto;
 			overflow-x: hidden;
@@ -1198,7 +1217,7 @@ select.select {
 
 			// optgroup header
 			.selecter-group {
-				color: #aaa;
+				color: @selectbox-border-color;
 				display: block;
 				font-size: 0.8em;
 				margin: 5px 0 0 0;
@@ -1245,7 +1264,7 @@ select.select {
 
 				&:active {
 					background-color: @selectbox-color;
-					color: #fff;
+					color: @selectbox-bg-color-light;
 				}
 
 				&.selected {
@@ -1255,7 +1274,7 @@ select.select {
 
 					&:hover {
 						background-color: fadeout(@selectbox-color,20%);
-						color: #fff;
+						color: @selectbox-bg-color-light;
 					}
 
 					&:after {
@@ -1281,14 +1300,14 @@ select.select {
 
 				&.selected {
 					background-color: @selectbox-color;
-					color: #fff;
+					color: @selectbox-bg-color-light;
 
 					&:hover {
 						background-color: fadeout(@selectbox-color,20%);
 					}
 
 					&:after {
-						@checkmark-color: #fff;
+						@checkmark-color: @selectbox-bg-color-light;
 						@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
 						background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 					}
@@ -1296,16 +1315,18 @@ select.select {
 			}
 		}
 		&.multiple .selecter-options {
+			background-color: @selectbox-bg-color-light;
+
 			.selecter-item.selected {
 				background-color: @selectbox-color;
-				color: #fff;
+				color: @selectbox-bg-color-light;
 
 				&:hover {
 					background-color: fadeout(@selectbox-color,20%);
 				}
 
 				&:after {
-					@checkmark-color: #fff;
+					@checkmark-color: @selectbox-bg-color-light;
 					@checkmark-svg-data: escape('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon fill="@{checkmark-color}" points="13.7,5.7 12.2,4.3 6.6,9.9 3.8,7.1 2.3,8.5 6.6,12.7 "/></svg>');
 					background-image: url('data:image/svg+xml,@{checkmark-svg-data}');
 				}
@@ -1315,7 +1336,7 @@ select.select {
 		.selecter-options .selecter-item {
 			&.disabled,
 			&.disabled:hover, {
-				color: #aaa;
+				color: @gray-l1;
 				cursor: not-allowed;
 			}
 			&.disabled:active {
@@ -1326,7 +1347,7 @@ select.select {
 		// hover
 		&:hover {
 			.selecter-selected {
-				background-color: #fafafa;
+				background-color: lighten(@selectbox-bg-color-light,5%);
 				border-color: darken(@gray-l1,10%);
 
 				& when (@selectbox-disable-shadows = false) {
@@ -1344,7 +1365,7 @@ select.select {
 		&.focus, &:focus {
 
 			.selecter-selected {
-				background-color: #fafafa;
+				background-color: lighten(@selectbox-bg-color-light,5%);
 				border-color: @selectbox-color;
 				.drop-shadow-light;
 
@@ -1362,12 +1383,12 @@ select.select {
 			.selecter-selected {
 				background-color: @selectbox-color;
 				border-color: @selectbox-color-d1;
-				color: #fff;
+				color: @selectbox-bg-color-light;
 
 				// flip caret
 				&:after {
 					transform: rotateX(180deg);
-					border-top-color: #fff;
+					border-top-color: @selectbox-bg-color-light;
 				}
 
 			}
@@ -1464,7 +1485,7 @@ select.select {
 
 			// caret
 			.selecter-selected:after {
-				border-top-color: #ccc;
+				border-top-color: @gray;
 			}
 
 			.selecter-options {
@@ -1475,13 +1496,13 @@ select.select {
 
 			.selecter-group,
 			.selecter-item {
-				border-color: #ccc;
+				border-color: @gray;
 				cursor: default;
 			}
 
 			.selecter-item,
 			.selecter-item:hover {
-				color: #ccc;
+				color: @gray;
 			}
 
 			&.multiple.focus,
@@ -1492,7 +1513,7 @@ select.select {
 		}
 
 		.dark-override({
-			color: #fff;
+			color: @foreground-color-dark;
 
 			.selecter-selected {
 				border-color: @gray;
@@ -1507,15 +1528,21 @@ select.select {
 				background-color: fadeout(@black,30%);
 			}
 
-
 			.selecter-options {
-				background-color: #000;
+				background-color: @selectbox-menu-bg-color-dark;
 				box-shadow: @drop-shadow-deep, 0 0 1px 0 rgba(255,255,255,0.1);
+			}
+
+			&.multiple .selecter-options {
+				background-color: @selectbox-bg-color-dark;
 			}
 
 			.selecter-item {
 				&:hover {
 					background-color: rgba(255,255,255,.2);
+				}
+				&:active {
+					background-color: @selectbox-color;
 				}
 			}
 

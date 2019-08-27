@@ -111,11 +111,19 @@ pre {
 	padding: 0;
 	margin: 0;
 	background-color: #f0f0f0;
+
+	.dark-override({
+		background-color: fadeout(#fff,90%);
+	});
 }
 
 pre code {
 	background-color: #f0f0f0;
 	padding: 15px;
+
+	.dark-override({
+		background-color: fadeout(#fff,90%);
+	});
 }
 
 // blockquote
@@ -156,7 +164,7 @@ hr {
 	border: none;
 	background-color: #ddd;
 
-	.dark & {
+	.dark-override({
 		background-color: #333;
-	}
+	});
 }
