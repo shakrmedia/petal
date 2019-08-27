@@ -18,7 +18,7 @@
 	flex-flow: row wrap;
 	position: relative;
 	overflow: hidden;
-	background-color: #ddd;
+	background-color: @gray-l1;
 
 	.tab {
 		position: relative;
@@ -118,19 +118,39 @@
 			padding: 5px 15px;
 		}
 	}
+
+	.dark-override({
+		background-color: @gray-d2;
+
+		.tab {
+			background-color: @gray-d3;
+		}
+
+		.tab.selected,
+		:checked + label .tab {
+			background-color: @tab-color;
+		}
+
+		.tab.disabled,
+		:disabled + label .tab {
+			color: @gray-d1;
+		}
+	})
 }
 
 // alternative designs
 & when (@tab-style-01 = enabled) {
 	.tab-group.tab-style-01 {
+		.colorset(@tab-color);
+
 		overflow: hidden;
-		background-color: #fff;
+		background-color: @background-color-light;
 
 		.tab {
 			padding-top: 10px;
 			padding-bottom: 14px;
 			background-color: transparent;
-			color: #333;
+			color: @foreground-color-light;
 
 			&:before {
 				content: "";
@@ -140,7 +160,7 @@
 				right: 0;
 				bottom: 0;
 				height: 3px;
-				background-color: #ccc;
+				background-color: @gray-l2;
 				transition-property: background-color;
 				transition-duration: 0.15s;
 			}
@@ -156,7 +176,6 @@
 
 		.tab.selected,
 		:checked + label .tab {
-			.colorset(@tab-color);
 			background-color: transparent;
 			color: @color-d1;
 
@@ -170,7 +189,7 @@
 			color: @gray-l1;
 
 			&:before {
-				background-color: #ccc;
+				background-color: @gray-l2;
 			}
 		}
 
@@ -181,20 +200,60 @@
 				padding-bottom: 7px;
 			}
 		}
+
+		.dark-override({
+			background-color: @background-color-dark;
+
+			.tab {
+				color: @foreground-color-dark;
+
+				&:before {
+					background-color: @gray-d1;
+				}
+
+				&:hover:before {
+					background-color: @gray-l1;
+				}
+
+				&:active:before {
+					background-color: @gray-l2;
+				}
+			}
+
+			.tab.selected,
+			:checked + label .tab {
+				color: @color-l1;
+
+				&:before {
+					background-color: @color-l1;
+				}
+			}
+
+			.tab.disabled,
+			:disabled + label .tab {
+				color: @gray-d1;
+
+				&:before {
+					background-color: @gray-d1;
+				}
+			}
+		})
 	}
 }
 
 & when (@tab-style-02 = enabled) {
 	.tab-group.tab-style-02 {
+		.colorset(@tab-color);
+
 		overflow: visible;
-		background-color: #fff;
+		background-color: @background-color-light;
 
 		.tab {
 			padding-top: 10px;
 			padding-bottom: 14px;
 			overflow: hidden;
-			background-color: #ccc;
-			color: #333;
+			background-color: @gray-l2;
+			color: @base-font-color;
 
 			&:before {
 				content: "";
@@ -204,7 +263,7 @@
 				right: -5px;
 				bottom: 3px;
 				height: 100%;
-				background-color: #fff;
+				background-color: @background-color-light;
 				opacity: 1;
 				z-index: 0;
 				transform: scaleY(1);
@@ -224,9 +283,8 @@
 
 		.tab.selected,
 		:checked + label .tab {
-			.colorset(@tab-color);
 			background-color: @color;
-			color: #fff;
+			color: @white;
 
 			&:before {
 				transform: scaleY(0);
@@ -236,7 +294,7 @@
 
 		.tab.disabled,
 		:disabled + label .tab {
-			color: @gray-l1;
+			color: @gray-l2;
 		}
 
 		// compact
@@ -246,6 +304,38 @@
 				padding-bottom: 7px;
 			}
 		}
+
+		.dark-override({
+			background-color: @background-color-dark;
+
+			.tab {
+				background-color: @gray-d1;
+				color: @foreground-color-dark;
+
+				&:before {
+					background-color: @background-color-dark;
+				}
+
+				&:hover {
+					background-color: @gray;
+				}
+
+				&:active {
+					background-color: @gray-l2;
+				}
+			}
+
+			.tab.selected,
+			:checked + label .tab {
+				background-color: @color;
+				color: @white;
+			}
+
+			.tab.disabled,
+			:disabled + label .tab {
+				color: @gray-d1;
+			}
+		})
 	}
 
 }

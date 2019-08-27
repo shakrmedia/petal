@@ -4489,7 +4489,7 @@ span.badge {
       flex-flow: row wrap;
   position: relative;
   overflow: hidden;
-  background-color: #ddd;
+  background-color: #b5b5b5;
 }
 .tab-group .tab {
   position: relative;
@@ -4559,15 +4559,29 @@ span.badge {
 .tab-group.compact .tab {
   padding: 5px 15px;
 }
+.dark .tab-group {
+  background-color: #747474;
+}
+.dark .tab-group .tab {
+  background-color: #5d5d5d;
+}
+.dark .tab-group .tab.selected,
+.dark .tab-group :checked + label .tab {
+  background-color: #30a4dc;
+}
+.dark .tab-group .tab.disabled,
+.dark .tab-group :disabled + label .tab {
+  color: #878787;
+}
 .tab-group.tab-style-01 {
   overflow: hidden;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .tab-group.tab-style-01 .tab {
   padding-top: 10px;
   padding-bottom: 14px;
   background-color: transparent;
-  color: #333;
+  color: #000000;
 }
 .tab-group.tab-style-01 .tab:before {
   content: "";
@@ -4577,7 +4591,7 @@ span.badge {
   right: 0;
   bottom: 0;
   height: 3px;
-  background-color: #ccc;
+  background-color: #c2c2c2;
   transition-property: background-color;
   transition-duration: 0.15s;
 }
@@ -4602,21 +4616,52 @@ span.badge {
 }
 .tab-group.tab-style-01 .tab.disabled:before,
 .tab-group.tab-style-01 :disabled + label .tab:before {
-  background-color: #ccc;
+  background-color: #c2c2c2;
 }
 .tab-group.tab-style-01.compact .tab {
   padding-top: 3px;
   padding-bottom: 7px;
 }
+.dark .tab-group.tab-style-01 {
+  background-color: #000000;
+}
+.dark .tab-group.tab-style-01 .tab {
+  color: #ffffff;
+}
+.dark .tab-group.tab-style-01 .tab:before {
+  background-color: #878787;
+}
+.dark .tab-group.tab-style-01 .tab:hover:before {
+  background-color: #b5b5b5;
+}
+.dark .tab-group.tab-style-01 .tab:active:before {
+  background-color: #c2c2c2;
+}
+.dark .tab-group.tab-style-01 .tab.selected,
+.dark .tab-group.tab-style-01 :checked + label .tab {
+  color: #69bde6;
+}
+.dark .tab-group.tab-style-01 .tab.selected:before,
+.dark .tab-group.tab-style-01 :checked + label .tab:before {
+  background-color: #69bde6;
+}
+.dark .tab-group.tab-style-01 .tab.disabled,
+.dark .tab-group.tab-style-01 :disabled + label .tab {
+  color: #878787;
+}
+.dark .tab-group.tab-style-01 .tab.disabled:before,
+.dark .tab-group.tab-style-01 :disabled + label .tab:before {
+  background-color: #878787;
+}
 .tab-group.tab-style-02 {
   overflow: visible;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .tab-group.tab-style-02 .tab {
   padding-top: 10px;
   padding-bottom: 14px;
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #c2c2c2;
   color: #333;
 }
 .tab-group.tab-style-02 .tab:before {
@@ -4627,7 +4672,7 @@ span.badge {
   right: -5px;
   bottom: 3px;
   height: 100%;
-  background-color: #fff;
+  background-color: #ffffff;
   opacity: 1;
   z-index: 0;
   -ms-transform: scaleY(1);
@@ -4646,7 +4691,7 @@ span.badge {
 .tab-group.tab-style-02 .tab.selected,
 .tab-group.tab-style-02 :checked + label .tab {
   background-color: #30a4dc;
-  color: #fff;
+  color: #ffffff;
 }
 .tab-group.tab-style-02 .tab.selected:before,
 .tab-group.tab-style-02 :checked + label .tab:before {
@@ -4656,11 +4701,36 @@ span.badge {
 }
 .tab-group.tab-style-02 .tab.disabled,
 .tab-group.tab-style-02 :disabled + label .tab {
-  color: #b5b5b5;
+  color: #c2c2c2;
 }
 .tab-group.tab-style-02.compact .tab {
   padding-top: 3px;
   padding-bottom: 7px;
+}
+.dark .tab-group.tab-style-02 {
+  background-color: #000000;
+}
+.dark .tab-group.tab-style-02 .tab {
+  background-color: #878787;
+  color: #ffffff;
+}
+.dark .tab-group.tab-style-02 .tab:before {
+  background-color: #000000;
+}
+.dark .tab-group.tab-style-02 .tab:hover {
+  background-color: #999999;
+}
+.dark .tab-group.tab-style-02 .tab:active {
+  background-color: #c2c2c2;
+}
+.dark .tab-group.tab-style-02 .tab.selected,
+.dark .tab-group.tab-style-02 :checked + label .tab {
+  background-color: #30a4dc;
+  color: #ffffff;
+}
+.dark .tab-group.tab-style-02 .tab.disabled,
+.dark .tab-group.tab-style-02 :disabled + label .tab {
+  color: #878787;
 }
 .alert {
   display: -ms-flexbox;
