@@ -409,47 +409,57 @@ section {
 
 // color patches
 .color-patch-table {
+	display: flex;
+	flex-flow: row nowrap;
+	margin-bottom: 20px;
+
 	.color-patch-columns-label {
 		display: flex;
-		margin-left: 140px;
-		margin-bottom: 15px;
+		flex-flow: column;
+		margin-top: 30px;
 
 		span {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
 			font-family: @monospace-font;
-			text-align: center;
-			width: 70px;
+			text-align: right;
+			height: 40px;
+			padding-right: 20px;
 
 			&.base {
-				width: 74px;
+				height: 44px;
 			}
 		}
 	}
 }
 
 .color-patch-group {
-	display: flex;
-	align-items: center;
+	flex: 0 0 auto;
+	display: block;
+	width: 160px;
 	margin: 0 0 5px 0;
 
 	.color-patch-name-label {
 		width: 140px;
-		padding-bottom: 16px;
+		height: 30px;
 	}
 }
 
 .color-patch {
 	display: inline-flex;
-	flex-flow: column nowrap;
+	flex-flow: row nowrap;
+	align-items: center;
 	justify-content: flex-end;
-	width: 70px;
-	height: 56px;
+	width: 120px;
+	height: 40px;
 	text-transform: uppercase;
 
 	&.base {
-		width: 74px;
-		height: 66px;
-		padding: 3px;
-		border: 2px solid #fff;
+		width: 120px;
+		height: 40px;
+		border-top: 2px solid #fff;
+		border-bottom: 2px solid #fff;
 
 		.dark & {
 			border-color: #151515;
@@ -458,13 +468,14 @@ section {
 
 	span {
 		display: flex;
-		width: 100%;
-		height: 16px;
+		width: auto;
+		height: 100%;
 		align-items: center;
 		justify-content: center;
 		background-color: #fff;
 		font-family: @monospace-font;
 		font-size: 12px;
+		padding: 0 4px;
 
 		.dark & {
 			background-color: #151515;
@@ -490,6 +501,22 @@ section {
 			background-color: @color-l2;
 			content: '@{color-l2}';
 		}
+		&.c-@{color-name}-l3 {
+			background-color: @color-l3;
+			content: '@{color-l3}';
+		}
+		&.c-@{color-name}-l4 {
+			background-color: @color-l4;
+			content: '@{color-l4}';
+		}
+		&.c-@{color-name}-l5 {
+			background-color: @color-l5;
+			content: '@{color-l5}';
+		}
+		&.c-@{color-name}-l6 {
+			background-color: @color-l6;
+			content: '@{color-l6}';
+		}
 		&.c-@{color-name}-d1 {
 			background-color: @color-d1;
 			content: '@{color-d1}';
@@ -498,6 +525,23 @@ section {
 			background-color: @color-d2;
 			content: '@{color-d2}';
 		}
+		&.c-@{color-name}-d3 {
+			background-color: @color-d3;
+			content: '@{color-d3}';
+		}
+		&.c-@{color-name}-d4 {
+			background-color: @color-d4;
+			content: '@{color-d4}';
+		}
+		&.c-@{color-name}-d5 {
+			background-color: @color-d5;
+			content: '@{color-d5}';
+		}
+		&.c-@{color-name}-d6 {
+			background-color: @color-d6;
+			content: '@{color-d6}';
+		}
+
 	}
 
 	.generate-color-patch(red);

@@ -14,10 +14,17 @@
 	@color: @input-color;
 	@color-l1: screen(@color,@l1-additive);
 	@color-l2: screen(@color,@l2-additive);
+	@color-l3: screen(@color,@l3-additive);
+	@color-l4: screen(@color,@l4-additive);
+	@color-l5: screen(@color,@l5-additive);
+	@color-l6: screen(@color,@l6-additive);
 	@color-d1: multiply(@color,@d1-additive);
 	@color-d2: multiply(@color,@d2-additive);
+	@color-d3: multiply(@color,@d3-additive);
+	@color-d4: multiply(@color,@d4-additive);
+	@color-d5: multiply(@color,@d5-additive);
+	@color-d6: multiply(@color,@d6-additive);
 }
-
 // dark style overrides output mixin
 .dark-override(@rules) {
 	& when (@include-dark = true) {
