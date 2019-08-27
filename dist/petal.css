@@ -1,5 +1,5 @@
 /* 
- * petal.less v0.11.1 - 2019-08-27 
+ * petal.less v0.11.2 - 2019-08-27 
  * A modern, light CSS UI framework by Shakr based on LESS. 
  * https://shakrmedia.github.io/petal 
  * 
@@ -2824,19 +2824,19 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
   width: 16px;
   height: 16px;
   border-radius: 20px;
-  background-color: #2a91c2;
+  background-color: #878787;
   -ms-transform: translate(-24px);
       transform: translate(-24px);
   transition: transform 0.1s;
 }
 .dark .chk-switch label span:after {
-  background-color: #69bde6;
+  background-color: #b5b5b5;
 }
 .chk-switch:not(.ab-type) label span:before {
-  background-color: rgba(48, 164, 220, 0.5);
+  background-color: rgba(153, 153, 153, 0.5);
 }
 .chk-switch:not(.ab-type) label:hover span:before {
-  background-color: rgba(48, 164, 220, 0.6);
+  background-color: rgba(153, 153, 153, 0.6);
 }
 .chk-switch input[type="checkbox"]:checked + label span:before,
 .chk-switch input[type="checkbox"]:checked + label span:after {

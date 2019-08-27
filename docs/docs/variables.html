@@ -5,7 +5,7 @@
   <!--
     Petal Documentation
 
-    petal.less v0.11.1
+    petal.less v0.11.2
     A modern, light CSS UI framework by Shakr based on LESS.
     https://shakrmedia.github.io/petal
 
@@ -114,8 +114,7 @@
 <h4>List of variables (Default values)</h4>
 
 <div class="demo-code">
-<pre><code class="language-less">// global settings
-@include-dark: true;
+<pre><code class="language-less">@include-dark: true;
 @use-webcomponents: false; // output :host-context(.dark) instead of plain .dark class
 
 // layout
@@ -137,6 +136,10 @@
 @paragraph-line-height: 1.5;
 
 // colors
+@background-color-light: @white; // background color for dark-on-light theme
+@foreground-color-light: @black; // foreground color for dark-on-light theme
+@background-color-dark: @black; // background color for light-on-dark theme
+@foreground-color-dark: @white; // background color for light-on-dark theme
 @primary-accent-color: @blue;
 @okay-color: @green;
 @warning-color: @gold;
@@ -164,7 +167,10 @@
 
 // forms
 @input-border-width: 2px;
+@input-border-color: @gray;
 @input-border-radius: 0;
+@input-bg-color-light: @background-color-light;
+@input-bg-color-dark: @background-color-dark;
 @input-font-size: 0.9em;
 @input-textarea-font-size: 0.8em;
 @input-line-height: 1.2;
@@ -173,6 +179,7 @@
 @form-label-font-weight: 900;
 @form-label-letter-spacing: 0.1em;
 @form-caption-font-size: 0.8em;
+@form-caption-color: fadeout(@gray,30%);
 @input-spinner-color: @primary-accent-color;
 @input-spinner-animation-duration: 0.4s;
 @input-html5-validation-styles: true;
@@ -181,14 +188,18 @@
 @checkbox-size: 20px;
 @checkbox-border-width: @input-border-width; //2px
 @checkbox-check-thickness: @input-border-width; //2px
+@checkbox-border-color: @gray;
 @checkbox-border-radius: 100%;
 @radiobox-border-radius: 100%;
 @checkbox-color: @primary-accent-color;
+@checkbox-bg-color-light: @background-color-light;
+@checkbox-bg-color-dark: lighten(@background-color-dark,10%);
 @checkbox-disable-transition: false;
 
 // switch toggle
 @chk-switch-size: 24px;
 @chk-switch-border-width: @input-border-width; //2px
+@chk-switch-border-color: @input-border-color;
 @chk-switch-border-radius: @checkbox-size;
 @chk-switch-color: @primary-accent-color;
 @chk-switch-disable-transition: false;
@@ -196,13 +207,26 @@
 
 // selectbox
 @selectbox-border-width: @input-border-width; //2px
+@selectbox-border-color: @input-border-color;
 @selectbox-border-radius: @input-border-radius;
 @selectbox-color: @primary-accent-color;
+@selectbox-bg-color-light: @background-color-light;
+@selectbox-bg-color-dark: @background-color-dark;
+@selectbox-menu-bg-color-light: @background-color-light;
+@selectbox-menu-bg-color-dark: lighten(@background-color-dark,13%);
 @selectbox-disable-shadows: false;
 @include-selecter: true;
 
+// tables
+@table-border-color: @gray;
+@table-bg-color-light: @background-color-light;
+@table-bg-color-dark: lighten(@background-color-dark,10%);
+@table-row-highlight-bg-color-light: darken(@table-bg-color-light,5%);
+@table-row-highlight-bg-color-dark: lighten(@table-bg-color-dark,5%);
+
 // progress
 @spinner-color: @primary-accent-color;
+@spinner-base-color: fadeout(@gray-d2,80%);
 
 // panels
 @panel-border-radius: 0;
@@ -245,7 +269,7 @@
 <footer id="site-footer" class="stretch">
     <p class="petal-ver">
         petal.less<br>
-        <b> v0.11.1</b></p>
+        <b> v0.11.2</b></p>
 
     <div class="footer-credits">
 

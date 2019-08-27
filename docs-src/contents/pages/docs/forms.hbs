@@ -337,6 +337,34 @@ list-order: 6
 <p>There is also a <code>.form-placeholder</code> class you can use on a non-input element to position a static text inside a form layout.</p>
 
 <br>
+<h5>Customizable options</h5>
+<div class="demo-code">
+{{#markdown}}
+``` less
+// forms
+@input-border-width: 2px;
+@input-border-color: @gray;
+@input-border-radius: 0;
+@input-bg-color-light: @background-color-light;
+@input-bg-color-dark: @background-color-dark;
+@input-font-size: 0.9em;
+@input-textarea-font-size: 0.8em;
+@input-line-height: 1.2;
+@form-label-uppercase: true;
+@form-label-font-size: 0.8em;
+@form-label-font-weight: 900;
+@form-label-letter-spacing: 0.1em;
+@form-caption-font-size: 0.8em;
+@form-caption-color: fadeout(@gray,30%);
+@input-spinner-color: @primary-accent-color;
+@input-spinner-animation-duration: 0.4s;
+@input-html5-validation-styles: true;
+```
+{{/markdown}}
+</div>
+<br>
+
+<br>
 
 <br>
 <hr class="subdivider">
@@ -396,9 +424,12 @@ list-order: 6
 @checkbox-size: 20px;
 @checkbox-border-width: @input-border-width; //2px
 @checkbox-check-thickness: @input-border-width; //2px
+@checkbox-border-color: @gray;
 @checkbox-border-radius: 100%;
 @radiobox-border-radius: 100%;
 @checkbox-color: @primary-accent-color;
+@checkbox-bg-color-light: @background-color-light;
+@checkbox-bg-color-dark: lighten(@background-color-dark,10%);
 @checkbox-disable-transition: false;
 ```
 {{/markdown}}
@@ -527,6 +558,7 @@ list-order: 6
 // switch toggle
 @chk-switch-size: 24px;
 @chk-switch-border-width: @input-border-width; //2px
+@chk-switch-border-color: @input-border-color;
 @chk-switch-border-radius: @checkbox-size;
 @chk-switch-color: @primary-accent-color;
 @chk-switch-disable-transition: false;
@@ -1052,8 +1084,13 @@ list-order: 6
 ``` less
 // selectbox
 @selectbox-border-width: @input-border-width; //2px
+@selectbox-border-color: @input-border-color;
 @selectbox-border-radius: @input-border-radius;
 @selectbox-color: @primary-accent-color;
+@selectbox-bg-color-light: @background-color-light;
+@selectbox-bg-color-dark: @background-color-dark;
+@selectbox-menu-bg-color-light: @background-color-light;
+@selectbox-menu-bg-color-dark: lighten(@background-color-dark,13%);
 @selectbox-disable-shadows: false;
 @include-selecter: true;
 ```

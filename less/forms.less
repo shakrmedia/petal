@@ -773,6 +773,8 @@ fieldset:disabled input[type="radio"].radiobox + label {
 }
 
 .chk-switch {
+	.colorset(@chk-switch-border-color);
+
 	position: relative;
 	display: inline-block;
 	text-align: left;
@@ -796,28 +798,28 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		overflow: hidden;
 		cursor: pointer;
 		background-color: #fff;
-		border: @chk-switch-border-width solid @gray-l1;
+		border: @chk-switch-border-width solid @color-l1;
 		border-radius: @chk-switch-border-radius;
 		transition-property: border-color, background-color;
 		transition-duration: 0.2s;
 
 		&:hover {
-			border-color: darken(@gray-l1,10%);
+			border-color: darken(@color-l1,10%);
 		}
 		&:active {
 			border-color: @primary-accent-color;
-			background-color: @gray-l2;
+			background-color: @color-l2;
 			transition-duration: 0;
 		}
 
 		.dark-override({
 			& {
-				border-color: @gray-d2;
+				border-color: @color-d2;
 				background-color: #111;
 			}
 
 			&:hover {
-				border-color: lighten(@gray-d2,10%);
+				border-color: lighten(@color-d2,10%);
 			}
 
 			&:active {
