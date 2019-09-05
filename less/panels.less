@@ -11,7 +11,7 @@
 @import (reference) 'mixins.less';
 
 .panel, .card {
-	background-color: #fff;
+	background-color: @panel-bg-color-light;
 	box-shadow: 0 1px 4px rgba(0,0,0,.05);
 	transition: background-color .15s, box-shadow .15s, color .15s;
 
@@ -23,23 +23,21 @@
 		.drop-shadow-light;
 	}
 
-	& when (@include-dark = true) {
-		.dark & {
-			background-color: #444;
-			box-shadow: 0 1px 4px rgba(0,0,0,.1);
+	.dark-override({
+		background-color: @panel-bg-color-dark;
+		box-shadow: 0 1px 4px rgba(0,0,0,.1);
 
-			&.hover-em:hover {
-				.drop-shadow-light;
-			}
+		&.hover-em:hover {
+			.drop-shadow-light;
 		}
-	}
+	});
 }
 
 span.label,
 span.badge {
 	display: inline-block;
 	min-width: 1.5em;
-	background-color: @gray;
+	background-color: @label-badge-bg-color;
 	color: #fff;
 	padding: 0.2em 0.5em;
 	font-size: 0.8em;
