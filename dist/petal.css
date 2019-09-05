@@ -1,5 +1,5 @@
 /* 
- * petal.less v0.12.0 - 2019-08-27 
+ * petal.less v0.12.1 - 2019-09-05 
  * A modern, light CSS UI framework by Shakr based on LESS. 
  * https://shakrmedia.github.io/petal 
  * 
@@ -3705,7 +3705,7 @@ table.table.table-condensed td {
 }
 .panel,
 .card {
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   transition: background-color 0.15s, box-shadow 0.15s, color 0.15s;
 }
@@ -3715,7 +3715,7 @@ table.table.table-condensed td {
 }
 .dark .panel,
 .dark .card {
-  background-color: #444;
+  background-color: #494949;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 .dark .panel.hover-em:hover,
