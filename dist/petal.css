@@ -1,9 +1,9 @@
 /* 
- * petal.less v0.12.3 - 2019-12-12 
+ * petal.less v0.12.4 - 2020-12-17 
  * A modern, light CSS UI framework by Shakr based on LESS. 
  * https://shakrmedia.github.io/petal 
  * 
- * Copyright 2019 Shakr Media Co., Ltd.; MIT License 
+ * Copyright 2020 Shakr Media Co., Ltd.; MIT License 
  */
 /* drop shadow mixin */
 .drop-shadow {
@@ -2994,24 +2994,28 @@ fieldset:disabled input[type="radio"].radiobox + label:after {
   background-color: rgba(178, 207, 101, 0.8);
 }
 .chk-switch.onoff-type label span:after {
-  background-color: #888;
+  background-color: #878787;
 }
 .chk-switch.onoff-type input[type="checkbox"]:checked + label span:after {
   background-color: #879d4d;
+}
+.dark .chk-switch.onoff-type label span:after {
+  background-color: #b5b5b5;
 }
 .dark .chk-switch.onoff-type input[type="checkbox"]:checked + label span:after {
   background-color: #c7dc8f;
 }
 .chk-switch.onoff-type.led label span:after {
-  border: 6px solid #aaa;
+  border: 6px solid #878787;
   box-sizing: border-box;
   background-color: #f00 !important;
 }
 .dark .chk-switch.onoff-type.led label span:after {
-  border-color: #bbb;
+  border-color: #b5b5b5;
 }
 .chk-switch.onoff-type.led input[type="checkbox"]:checked + label span:after {
   background-color: #d7ff6c !important;
+  box-shadow: 0 0 2px rgba(85, 99, 48, 0.7);
 }
 .chk-switch.disabled,
 fieldset:disabled .chk-switch {
@@ -3132,7 +3136,6 @@ select.select.stretch {
 .selecter,
 .selecter * {
   -webkit-user-select: none !important;
-     -moz-user-select: none !important;
       -ms-user-select: none !important;
           user-select: none !important;
 }
