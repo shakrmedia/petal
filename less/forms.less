@@ -865,6 +865,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 			}
 		}
 
+		// handle
 		&:after {
 			content: "";
 			position: absolute;
@@ -911,15 +912,23 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		label:hover span:before {
 			background-color: fadeout(@okay-color,20%);
 		}
+
+		// handle
 		label span:after {
-			background-color: #888;
+			background-color: @color-d1;
 		}
+
+		// handle (checked)
 		input[type="checkbox"]:checked + label span:after {
 			background-color: multiply(@okay-color,@d2-additive);
 		}
 
 		.dark-override({
 			// ticker color on dark
+			label span:after {
+				background-color: @color-l1;
+			}
+
 			& input[type="checkbox"]:checked + label span:after {
 				background-color: screen(@okay-color,@l1-additive);
 			}
@@ -928,7 +937,7 @@ fieldset:disabled input[type="radio"].radiobox + label {
 
 	&.onoff-type.led {
 		label span:after {
-			border: (((@chk-switch-size - 8px)/2) - 2px) solid #aaa;
+			border: (((@chk-switch-size - 8px)/2) - 2px) solid @color-d1;
 			box-sizing: border-box;
 			background-color: #f00 !important;
 		}
@@ -936,12 +945,13 @@ fieldset:disabled input[type="radio"].radiobox + label {
 		// ticker color on dark
 		.dark-override({
 			label span:after {
-				border-color: #bbb;
+				border-color: @color-l1;
 			}
 		});
 
 		input[type="checkbox"]:checked + label span:after {
 			background-color: saturate(screen(@okay-color,@l1-additive), 50%) !important;
+			box-shadow: 0 0 2px fadeout(multiply(@okay-color,@d4-additive),30%);
 		}
 	}
 
