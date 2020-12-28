@@ -12,7 +12,12 @@
     query('[data-dropdown-state="open"]').filter(function(el) {
       return !el.contains(self) || self.getAttribute('data-toggle') === 'dropdown';
     }).map(function(el) {
-      var dropdown_el = el.querySelector('button.dropdown')
+      var dropdown_el = el.querySelector('button.dropdown');
+
+      if (!dropdown_el) {
+        throw new Error('Failed to find target with "dropdown" class.');
+      }
+
       dropdown_el.parentNode.classList.remove('active');
       dropdown_el.parentNode.removeAttribute('data-dropdown-state');
     });
@@ -23,7 +28,10 @@
     var target = event.target;
 
     // prevent closing dropdown when user clicks elements inside dropdown
-    if(target.parentNode.classList.contains('submenu') || target.getAttribute('data-toggle') === 'dropdown') return;
+    if((target.parentNode.classList && target.parentNode.classList.contains('submenu')) ||
+      target.getAttribute('data-toggle') === 'dropdown') {
+      return;
+    }
 
     clearMenus(target);
   });
