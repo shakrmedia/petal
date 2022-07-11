@@ -13,10 +13,15 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: "yarn"
 
       - run: yarn
       - run: $(yarn bin)/grunt petal-dist
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: petal
+          path: dist
