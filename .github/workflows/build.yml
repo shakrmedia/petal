@@ -1,0 +1,22 @@
+name: "Build"
+
+on: push
+
+jobs:
+  image:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "yarn"
+
+      - run: yarn
+      - run: $(yarn bin)/grunt petal-dist
